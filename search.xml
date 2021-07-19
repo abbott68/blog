@@ -582,6 +582,7 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
 <li>Server</li>
 <li>OurDelta</li>
 </ul>
+<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a></p>
 ]]></content>
       <categories>
         <category>数据库</category>
@@ -618,6 +619,8 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
 </ul>
 </li>
 </ul>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
 -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
 -DDEFAULT_CHARSET&#x3D;utf8 \
@@ -739,6 +742,8 @@ affiliates. Other names may be trademarks of their respective
 owners.
 mysql&gt; show databases;
 ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>数据库</category>

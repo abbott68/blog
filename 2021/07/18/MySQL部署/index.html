@@ -27,7 +27,7 @@
 <meta property="og:description" content="MySQL8.0.25 源码编译部署">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-18T06:11:35.000Z">
-<meta property="article:modified_time" content="2021-07-19T09:39:11.600Z">
+<meta property="article:modified_time" content="2021-07-19T10:12:09.886Z">
 <meta property="article:author" content="abbott">
 <meta name="twitter:card" content="summary">
 
@@ -156,7 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">环境介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="nav-number">1.1.</span> <span class="nav-text">源码编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text">初始化数据目录</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">环境介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85cmake%E5%B7%A5%E5%85%B7"><span class="nav-number">1.1.</span> <span class="nav-text">安装cmake工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="nav-number">1.2.</span> <span class="nav-text">源码编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7"><span class="nav-number">1.3.</span> <span class="nav-text">配置用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.4.</span> <span class="nav-text">初始化数据目录</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -296,7 +296,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-19 17:39:11" itemprop="dateModified" datetime="2021-07-19T17:39:11+08:00">2021-07-19</time>
+        <time title="修改时间：2021-07-19 18:12:09" itemprop="dateModified" datetime="2021-07-19T18:12:09+08:00">2021-07-19</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,7 +323,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.7k</span>
+      <span>5.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -353,6 +353,8 @@
 </ul>
 </li>
 </ul>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
 -DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
 -DDEFAULT_CHARSET&#x3D;utf8 \
@@ -474,6 +476,8 @@ affiliates. Other names may be trademarks of their respective
 owners.
 mysql&gt; show databases;
 ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     </div>
 
