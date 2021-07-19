@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Apache</title>
+    <url>/blog/2021/07/16/Apache/</url>
+    <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
+<span id="more"></span>
+<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
+<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
+<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
+<ul>
+<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
+<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
+<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
+</ul>
+<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
+<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
+<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
+</ul>
+<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a href="http://httpd.apache.org/">适合您</a>的版本</p>
+<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
+<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
+# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
+# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
+# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建存放文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2)获取软件包</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
+# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
+# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(3)安装apr</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(4)安装apr-util</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
+# tar xf apr-util-* &amp;&amp; cd apr-util-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(5)安装apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
+# tar xf httpd-* &amp;&amp; cd httpd-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
+--sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
+--with-include-apr \
+--disable-userdir \
+--enable-headers \
+--with-mpm&#x3D;worker \
+--enable-modules&#x3D;most \
+--enable-so \
+--enable-deflate \
+--enable-defate&#x3D;shared \
+--enable-expires-shared \
+--enable-rewrite&#x3D;shared \
+--enable-static-support \
+--with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
+--with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
+--with-ssl \
+--with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(6)编译并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>(7)启动服务进程</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（8）添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
+#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（9）启动Apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（10）查看端口号是否开启 Apache默认端口是80</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a href="http://server-ip/">http://server-ip/</a></p>
+<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
+<ol>
+<li>基于单个IP地址多个socket端口；</li>
+<li>基于多个IP地址一个端口；</li>
+<li>基于单个IP地址一个端口不同域名。</li>
+</ol>
+<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
+<ul>
+<li>修改虚拟主机配置文件</li>
+</ul>
+<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx</title>
+    <url>/blog/2021/07/16/Nginx/</url>
+    <content><![CDATA[<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg"></p>
+<span id="more"></span>
+<h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
+<!--more-->
+
+<h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
+<h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
+<li>更快<br>这表现在两个方面:一方面,在正常情况下,单次请求会得到更快的响应;另一方面,在高峰期(如有数以万计的并发请求),Nginx可以比其他Web服务器更快地响应请求；</li>
+<li>高扩展性<br>Nginx的设计极具扩展性,它完全是由多个不同功能、不同层次、不同类型且耦合度极低的模块组成；</li>
+<li>高可靠性<br>高可靠性是我们选择Nginx的最基本条件,因为Nginx的可靠性是大家有目共睹的,很多家高流量网站都在核心服务器上大规模使用Nginx；</li>
+<li>低内存消耗<br>一般情况下,10000个非活跃的HTTP Keep-Alive连接在Nginx中仅消耗2.5MB的内存,这是Nginx支持高并发连接的基础；</li>
+<li>单机支持10万以上的并发连接<br>这是一个非常重要的特性!随着互联网的迅猛发展和互联网用户数量的成倍增长,各大公司、网站都需要应付海量并发请求,一个能够在峰值期顶住10万以上并发请求的Server,无疑会得到大家的青睐；</li>
+<li>热部署<br>master管理进程与worker工作进程的分离设计,使得Nginx能够提供热部署功能,即可以在7×24小时不间断服务的前提下,升级Nginx的可执行文件；</li>
+<li>最自由的BSD许可协议<br>这是Nginx可以快速发展的强大动力。BSD许可协议不只是允许用户免费使用Nginx,它还允许用户在自己的项目中直接使用或修改Nginx源码,然后发布；</li>
+<li>Apache拥有丰富的模块组件支持，稳定性强，BUG少，动态内容处理强。</li>
+<li>Nginx轻量级，占用资源少，负载均衡，高并发处理强，静态内容处理高效</li>
+</ul>
+<h2 id="部署Nginx服务"><a href="#部署Nginx服务" class="headerlink" title="部署Nginx服务"></a>部署Nginx服务</h2><h4 id="官网获取软件包"><a href="#官网获取软件包" class="headerlink" title="官网获取软件包"></a>官网获取软件包</h4><p>下载<a href="http://nginx.org/en/download.html">适合您</a>的版本<br>以下是做测试用的版本</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.15.5.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果您的主机上没有wget命令请安装<br>Centos RedHat 版本:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>ubuntu Depin系列:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo apt install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx
+# mv nginx-1.15.5.tar.gz  &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# tar xf nginx-1.15.5.tar.gz
+# cd nginx-1.15.5
+# yum -y install gcc gcc-c++ pcre-devel   zlib-devel
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>选项</p>
+<pre class="line-numbers language-none"><code class="language-none">nginx -s stop|quit|raload|reopen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>解释</p>
+<blockquote>
+<p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
+</blockquote>
+<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
+# echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
+# echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
+<pre class="line-numbers language-none"><code class="language-none">server &#123;
+    listen       8080;
+   # listen       somename:8080;
+    server_name  www.gongtongxuexi.com;
+    location &#x2F; &#123;
+        root   html&#x2F;gtxi;
+        index  index.html index.htm;
+    &#125;
+   &#125;
+server &#123;
+    listen       8081;
+   # listen       somename:8080;
+    server_name  www.gongtongjinbu.com;
+
+    location &#x2F; &#123;
+        root   html&#x2F;gtjb;
+        index  index.html index.htm;
+    &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="重新加载配置文件："><a href="#重新加载配置文件：" class="headerlink" title="重新加载配置文件："></a>重新加载配置文件：</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s raload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h4><p>打开浏览器访问 http//iP地址   </p>
+<h4 id="配置文件解释："><a href="#配置文件解释：" class="headerlink" title="配置文件解释："></a>配置文件解释：</h4><pre class="line-numbers language-none"><code class="language-none">keepalive_timeout  65;          # 设置连接超时时间
+# 使用server定义虚拟主机
+  server &#123;
+    listen       80;            # 监听端口
+    server_name  localhost;     # 访问域名
+
+    #charset koi8-r;            # 编码格式
+
+    # 设置虚拟主机的访问日志
+    #access_log  logs&#x2F;host.access.log  main;  
+
+    # 对URL进行匹配
+    location &#x2F; &#123;
+    # 设置网页根路径
+        root   html;
+    # 先找html文件，如果没有则htm
+        index  index.html index.htm;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> HTTPS server<br> <pre class="line-numbers language-none"><code class="language-none">#
+#server &#123;
+#    listen       443 ssl;         监听端口
+#    server_name  localhost;       访问域名
+	指定证书文件，使用相对路径证书需要在与Nginx.conf同目录下
+#    ssl_certificate      cert.pem;
+#    ssl_certificate_key  cert.key;
+		指定会话缓存
+#    ssl_session_cache    shared:SSL:1m;
+#    ssl_session_timeout  5m;
+
+#    ssl_ciphers  HIGH:!aNULL:!MD5;
+#    ssl_prefer_server_ciphers  on;
+
+#    location &#x2F; &#123;
+#        root   html;
+#        index  index.html index.htm;
+#    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="网站的错误代码："><a href="#网站的错误代码：" class="headerlink" title="网站的错误代码："></a><font color=#A52A2A>网站的错误代码：</Font></h3><blockquote>
+<p>1xx: 代表提示信息<br>  2xx: 代表成功信息<br>  3xx: 代表重定向<br>  4xx：代表客户端错误信息<br>  5xx: 代表服务器错误信息</p>
+</blockquote>
+<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
+<h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
+<p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
+<p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>
+<p>2、反向代理有哪些主要应用？</p>
+<p>现在许多大型web网站都用到反向代理。除了可以防止外网对内网服务器的恶性攻击、缓存以减少服务器的压力和访问安全控制之外，还可以进行负载均衡，将用户请求分配给多个服务器。</p>
+<pre class="line-numbers language-none"><code class="language-none"> upstream web1.com&#123;
+           server 192.168.122.206;
+   &#125;
+ upstream web2.com&#123;
+           server 192.168.122.84;
+   &#125;
+
+server &#123;
+    listen       80;
+  # listen       someme:8080;
+   server_name www.web1.com;
+location &#x2F; &#123;
+      proxy_pass  http:&#x2F;&#x2F;web1.com;
+      index  index.html index.htm;
+    &#125;
+  &#125;
+
+ server &#123;
+     listen       80;
+   # listen       somename:8080;
+     server_name  www.web2.com;
+
+  location &#x2F; &#123;
+     proxy_pass   http:&#x2F;&#x2F;web2.com;
+     index  index.html index.htm;
+      &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PSSH</title>
+    <url>/blog/2021/07/16/PSSH/</url>
+    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png"></p>
+<span id="more"></span>
+<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
+# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装pssh</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>pssh 在多个主机上并行运行命令</li>
+<li>pscp 把文件并行复制到多个主机上</li>
+<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
+<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
+<li>pnuke 并行地在多个远程主机上杀死进程</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
+pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>选项解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
+--help        显示帮助信息          
+-h HOST_FILE, 主机文件列表 格式[user@]host[:port]
+-l USER       用户名 (OPTIONAL)
+-p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
+-o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
+-e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
+-t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
+-O OPTION， --option &#x3D; OPTION   SSH选项（可选）
+-v，--verbose  打开警告和诊断消息（可选）
+-A，-askpass   要求输入密码（可选）
+-x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
+-X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
+-i，--inline  每个服务器的内联内联聚合输出和错误
+--inline-stdout 每个服务器的内联标准输出
+-I，--send-input 从标准输入读取并作为输入发送到ssh
+-P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
+172.16.127.161
+172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2.实现远程控制获取被控主机IP地址</p>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果没有报错的话，应该输出类似实验下面的</p>
+<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
+[2] 22:42:03 [SUCCESS] 172.16.127.161
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果有以下错误</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
+Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
+ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
+Are you sure you want to continue connecting (yes&#x2F;no)?
+Host key verification failed.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
+<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
+# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li>把文件并行复制到多个主机上</li>
+</ul>
+<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.远程将主机文件复制到被控端主机上</p>
+<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
+[1] 23:02:17 [SUCCESS] 172.16.127.161
+[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
+</ul>
+<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>并行地在多个远程主机上杀死进程</li>
+</ul>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
+<ul>
+<li>安装Apache</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>开启Apache web服务</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
+[1] 00:32:33 [SUCCESS] 172.16.127.131
+[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:36:46 [SUCCESS] 172.16.127.161
+COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+[2] 00:36:46 [SUCCESS] 172.16.127.131
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>杀死进程</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
+[1] 00:38:39 [SUCCESS] 172.16.127.131
+[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
+[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<p>三台  关闭firewalld</p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL</title>
+    <url>/blog/2021/07/16/MySQL/</url>
+    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
+<span id="more"></span>
+<h2>MySQL 介绍</h2>
+MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
+
+<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
+<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
+<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
+<h2>特性</h2>
+
+<ul>
+<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
+<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
+<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
+<li>支持多线程，充分利用CPU资源，支持多用户。</li>
+<li>优化的SQL查询算法，有效地提高查询速度。</li>
+<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
+<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
+<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
+<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
+<li>可以处理拥有上千万条记录的大型数据库。</li>
+</ul>
+<h2>历史</h2>
+
+<ul>
+<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
+<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
+<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
+<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
+<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
+<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
+<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
+<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
+<li>2008年1月16号 MySQL被Sun公司收购。</li>
+<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
+<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
+</ul>
+<h2>MySQL管理</h2>
+
+<ul>
+<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
+<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
+<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
+<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
+</ul>
+<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
+<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
+<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
+<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
+<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
+<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
+<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
+<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
+</ul>
+<h2>派生版本</h2>
+
+<ul>
+<li>Drizzle</li>
+</ul>
+<p>  ① 介绍</p>
+<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
+<p>  ②特性：</p>
+<blockquote>
+<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
+</blockquote>
+<ol>
+<li>Web 应用。</li>
+<li>云计算组件。</li>
+<li>没有业务逻辑的数据库（又名存储过程）。</li>
+<li>多核架构。</li>
+</ol>
+<ul>
+<li>基于 MySQL 6.0 的源码树</li>
+<li>无附加库</li>
+<li>遵守 POSIX</li>
+<li>微内核设计</li>
+<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
+<li>跨多个节点的 Sharding 技术</li>
+<li>智能代理</li>
+<li>多 CPU/ 多核 CPU</li>
+<li>优化的字段类型</li>
+<li>高效的内存使用</li>
+<li>没有内部 ACL，使用 LDAP/PAM</li>
+<li>没有数据库数据格式化</li>
+<li>整理有序的 Make 系统</li>
+<li>缺省存储引擎为 InnoDB</li>
+<li>移除 Windows 兼容性</li>
+</ul>
+<h2>哲学上更大的差异</h2>
+
+<blockquote>
+<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
+</blockquote>
+<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
+<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
+<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
+<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
+<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
+</ul>
+<h2>版本</h2>
+
+<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
+<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">原始发布日期</th>
+<th align="center">最新版本</th>
+<th align="center">发布日期</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5.1</td>
+<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
+<td align="center">5.1.67</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.2</td>
+<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
+<td align="center">5.2.14</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.3</td>
+<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
+<td align="center">5.3.12</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.5</td>
+<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
+<td align="center">5.5.68</td>
+<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.0</td>
+<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
+<td align="center">10.0.38</td>
+<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.1</td>
+<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
+<td align="center">10.1.48</td>
+<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.2</td>
+<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
+<td align="center">10.2.39</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.3</td>
+<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
+<td align="center">10.3.30</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.4</td>
+<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
+<td align="center">10.4.20</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.5</td>
+<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
+<td align="center">10.5.11</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center"><strong>10.6</strong></td>
+<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
+<td align="center">10.6.3</td>
+<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Percona</li>
+<li>Server</li>
+<li>OurDelta</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+<span id="more"></span>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+</search>

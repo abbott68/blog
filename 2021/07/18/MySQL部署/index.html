@@ -19,28 +19,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"abbott68.github.io","root":"/blog/","images":"/blog/images","scheme":"Gemini","version":"8.6.1","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="MySQL8.0.25 源码编译部署">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apache">
-<meta property="og:url" content="https://abbott68.github.io/blog/2021/07/16/Apache/index.html">
+<meta property="og:title" content="MySQL部署（源码编译）">
+<meta property="og:url" content="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="abbott Blog">
+<meta property="og:description" content="MySQL8.0.25 源码编译部署">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.apache.org/img/asf-estd-1999-logo.jpg">
-<meta property="article:published_time" content="2021-07-16T04:32:53.000Z">
-<meta property="article:modified_time" content="2021-07-16T08:51:42.609Z">
+<meta property="article:published_time" content="2021-07-18T06:11:35.000Z">
+<meta property="article:modified_time" content="2021-07-19T09:39:11.600Z">
 <meta property="article:author" content="abbott">
-<meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.apache.org/img/asf-estd-1999-logo.jpg">
 
 
-<link rel="canonical" href="https://abbott68.github.io/blog/2021/07/16/Apache/">
+<link rel="canonical" href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://abbott68.github.io/blog/2021/07/16/Apache/","path":"2021/07/16/Apache/","title":"Apache"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/","path":"2021/07/18/MySQL部署/","title":"MySQL部署（源码编译）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Apache | abbott Blog</title>
+<title>MySQL部署（源码编译） | abbott Blog</title>
   
 
 
@@ -157,7 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">Apache web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFWeb%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Web服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache-web-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.2.</span> <span class="nav-text">Apache web 服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">工作模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Profork-MPM%E4%B8%8EWorker-MPM%E5%BC%95%E6%93%8E%E5%8C%BA%E5%88%AB%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Profork MPM与Worker MPM引擎区别如下：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache-Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA"><span class="nav-number">1.3.</span> <span class="nav-text">Apache Web服务器搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache%E5%AE%98%E7%BD%91%E8%8E%B7%E5%8F%96%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">Apache官网获取安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAApache-web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">搭建Apache web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%83%A8%E7%BD%B2web%E7%AB%99%E7%82%B9"><span class="nav-number">1.3.1.1.1.</span> <span class="nav-text">一、部署web站点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Apache%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%BA%94%E7%94%A8"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Apache虚拟主机应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Apache%E5%B8%B8%E7%94%A8%E7%9B%AE%E5%BD%95%E8%A7%A3%E9%87%8A"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Apache常用目录解释</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">环境介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="nav-number">1.1.</span> <span class="nav-text">源码编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.</span> <span class="nav-text">初始化数据目录</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -266,7 +265,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://abbott68.github.io/blog/2021/07/16/Apache/">
+    <link itemprop="mainEntityOfPage" href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/logo.png">
@@ -279,7 +278,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Apache<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/Apache.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          MySQL部署（源码编译）<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/MySQL%E9%83%A8%E7%BD%B2.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -289,17 +288,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-07-16 12:32:53 / 修改时间：16:51:42" itemprop="dateCreated datePublished" datetime="2021-07-16T12:32:53+08:00">2021-07-16</time>
+      <time title="创建时间：2021-07-18 14:11:35" itemprop="dateCreated datePublished" datetime="2021-07-18T14:11:35+08:00">2021-07-18</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-19 17:39:11" itemprop="dateModified" datetime="2021-07-19T17:39:11+08:00">2021-07-19</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/web%E6%9C%8D%E5%8A%A1/" itemprop="url" rel="index"><span itemprop="name">web服务</span></a>
+          <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
         </span>
     </span>
 
@@ -318,14 +323,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4k</span>
+      <span>5.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -336,86 +341,139 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
+        <p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
 <span id="more"></span>
-<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
-<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
-<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
-<ul>
-<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
-<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
-<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
 </ul>
-<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
-<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
-<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
+</li>
 </ul>
-<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a target="_blank" rel="noopener" href="http://httpd.apache.org/">适合您</a>的版本</p>
-<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
-<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
-# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
-# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
-# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>创建存放文件夹</p>
-<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(2)获取软件包</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
-# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
-# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(3)安装apr</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(4)安装apr-util</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
-# tar xf apr-util-* &amp;&amp; cd apr-util-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(5)安装apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
-# tar xf httpd-* &amp;&amp; cd httpd-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
---sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
---with-include-apr \
---disable-userdir \
---enable-headers \
---with-mpm&#x3D;worker \
---enable-modules&#x3D;most \
---enable-so \
---enable-deflate \
---enable-defate&#x3D;shared \
---enable-expires-shared \
---enable-rewrite&#x3D;shared \
---enable-static-support \
---with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
---with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
---with-ssl \
---with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(6)编译并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>(7)启动服务进程</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（8）添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
-#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（9）启动Apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（10）查看端口号是否开启 Apache默认端口是80</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a target="_blank" rel="noopener" href="http://server-ip/">http://server-ip/</a></p>
-<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
-<ol>
-<li>基于单个IP地址多个socket端口；</li>
-<li>基于多个IP地址一个端口；</li>
-<li>基于单个IP地址一个端口不同域名。</li>
-</ol>
-<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
-<ul>
-<li>修改虚拟主机配置文件</li>
-</ul>
-<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a target="_blank" rel="noopener" href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 
@@ -455,7 +513,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://abbott68.github.io/blog/2021/07/16/Apache/" title="Apache">https://abbott68.github.io/blog/2021/07/16/Apache/</a>
+      <a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/" title="MySQL部署（源码编译）">https://abbott68.github.io/blog/2021/07/18/MySQL部署/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -463,22 +521,16 @@
 </ul>
 </div>
 
-          <div class="post-tags">
-              <a href="/blog/tags/Web/" rel="tag"># Web</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2021/07/16/PSSH/" rel="prev" title="PSSH">
-                  <i class="fa fa-chevron-left"></i> PSSH
+                <a href="/blog/2021/07/18/Ansible/" rel="prev" title="Ansible">
+                  <i class="fa fa-chevron-left"></i> Ansible
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2021/07/16/Nginx/" rel="next" title="Nginx">
-                  Nginx <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
