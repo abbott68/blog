@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
@@ -90,6 +103,428 @@
       <tags>
         <tag>Web</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>&lt;font color = green &gt;监控系统&lt;/font&gt;</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MySQL</title>
+    <url>/blog/2021/07/16/MySQL/</url>
+    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
+<span id="more"></span>
+<h2>MySQL 介绍</h2>
+MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
+
+<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
+<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
+<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
+<h2>特性</h2>
+
+<ul>
+<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
+<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
+<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
+<li>支持多线程，充分利用CPU资源，支持多用户。</li>
+<li>优化的SQL查询算法，有效地提高查询速度。</li>
+<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
+<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
+<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
+<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
+<li>可以处理拥有上千万条记录的大型数据库。</li>
+</ul>
+<h2>历史</h2>
+
+<ul>
+<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
+<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
+<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
+<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
+<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
+<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
+<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
+<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
+<li>2008年1月16号 MySQL被Sun公司收购。</li>
+<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
+<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
+</ul>
+<h2>MySQL管理</h2>
+
+<ul>
+<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
+<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
+<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
+<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
+</ul>
+<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
+<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
+<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
+<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
+<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
+<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
+<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
+<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
+</ul>
+<h2>派生版本</h2>
+
+<ul>
+<li>Drizzle</li>
+</ul>
+<p>  ① 介绍</p>
+<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
+<p>  ②特性：</p>
+<blockquote>
+<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
+</blockquote>
+<ol>
+<li>Web 应用。</li>
+<li>云计算组件。</li>
+<li>没有业务逻辑的数据库（又名存储过程）。</li>
+<li>多核架构。</li>
+</ol>
+<ul>
+<li>基于 MySQL 6.0 的源码树</li>
+<li>无附加库</li>
+<li>遵守 POSIX</li>
+<li>微内核设计</li>
+<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
+<li>跨多个节点的 Sharding 技术</li>
+<li>智能代理</li>
+<li>多 CPU/ 多核 CPU</li>
+<li>优化的字段类型</li>
+<li>高效的内存使用</li>
+<li>没有内部 ACL，使用 LDAP/PAM</li>
+<li>没有数据库数据格式化</li>
+<li>整理有序的 Make 系统</li>
+<li>缺省存储引擎为 InnoDB</li>
+<li>移除 Windows 兼容性</li>
+</ul>
+<h2>哲学上更大的差异</h2>
+
+<blockquote>
+<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
+</blockquote>
+<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
+<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
+<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
+<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
+<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
+</ul>
+<h2>版本</h2>
+
+<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
+<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">原始发布日期</th>
+<th align="center">最新版本</th>
+<th align="center">发布日期</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5.1</td>
+<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
+<td align="center">5.1.67</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.2</td>
+<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
+<td align="center">5.2.14</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.3</td>
+<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
+<td align="center">5.3.12</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.5</td>
+<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
+<td align="center">5.5.68</td>
+<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.0</td>
+<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
+<td align="center">10.0.38</td>
+<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.1</td>
+<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
+<td align="center">10.1.48</td>
+<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.2</td>
+<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
+<td align="center">10.2.39</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.3</td>
+<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
+<td align="center">10.3.30</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.4</td>
+<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
+<td align="center">10.4.20</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.5</td>
+<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
+<td align="center">10.5.11</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center"><strong>10.6</strong></td>
+<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
+<td align="center">10.6.3</td>
+<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Percona</li>
+<li>Server</li>
+<li>OurDelta</li>
+</ul>
+<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+<span id="more"></span>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>Nginx</title>
@@ -382,440 +817,5 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       <tags>
         <tag>自动化</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL</title>
-    <url>/blog/2021/07/16/MySQL/</url>
-    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
-<span id="more"></span>
-<h2>MySQL 介绍</h2>
-MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
-
-<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
-<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
-<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
-<h2>特性</h2>
-
-<ul>
-<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
-<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
-<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
-<li>支持多线程，充分利用CPU资源，支持多用户。</li>
-<li>优化的SQL查询算法，有效地提高查询速度。</li>
-<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
-<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
-<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
-<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
-<li>可以处理拥有上千万条记录的大型数据库。</li>
-</ul>
-<h2>历史</h2>
-
-<ul>
-<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
-<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
-<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
-<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
-<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
-<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
-<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
-<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
-<li>2008年1月16号 MySQL被Sun公司收购。</li>
-<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
-<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
-</ul>
-<h2>MySQL管理</h2>
-
-<ul>
-<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
-<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
-<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
-<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
-</ul>
-<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
-<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
-<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
-<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
-<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
-<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
-<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
-<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
-</ul>
-<h2>派生版本</h2>
-
-<ul>
-<li>Drizzle</li>
-</ul>
-<p>  ① 介绍</p>
-<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
-<p>  ②特性：</p>
-<blockquote>
-<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
-</blockquote>
-<ol>
-<li>Web 应用。</li>
-<li>云计算组件。</li>
-<li>没有业务逻辑的数据库（又名存储过程）。</li>
-<li>多核架构。</li>
-</ol>
-<ul>
-<li>基于 MySQL 6.0 的源码树</li>
-<li>无附加库</li>
-<li>遵守 POSIX</li>
-<li>微内核设计</li>
-<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
-<li>跨多个节点的 Sharding 技术</li>
-<li>智能代理</li>
-<li>多 CPU/ 多核 CPU</li>
-<li>优化的字段类型</li>
-<li>高效的内存使用</li>
-<li>没有内部 ACL，使用 LDAP/PAM</li>
-<li>没有数据库数据格式化</li>
-<li>整理有序的 Make 系统</li>
-<li>缺省存储引擎为 InnoDB</li>
-<li>移除 Windows 兼容性</li>
-</ul>
-<h2>哲学上更大的差异</h2>
-
-<blockquote>
-<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
-</blockquote>
-<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
-<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
-<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
-<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
-<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
-</ul>
-<h2>版本</h2>
-
-<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
-<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">版本</th>
-<th align="center">原始发布日期</th>
-<th align="center">最新版本</th>
-<th align="center">发布日期</th>
-<th align="center">状态</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">5.1</td>
-<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
-<td align="center">5.1.67</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.2</td>
-<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
-<td align="center">5.2.14</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.3</td>
-<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
-<td align="center">5.3.12</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.5</td>
-<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
-<td align="center">5.5.68</td>
-<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.0</td>
-<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
-<td align="center">10.0.38</td>
-<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.1</td>
-<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
-<td align="center">10.1.48</td>
-<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.2</td>
-<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
-<td align="center">10.2.39</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.3</td>
-<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
-<td align="center">10.3.30</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.4</td>
-<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
-<td align="center">10.4.20</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.5</td>
-<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
-<td align="center">10.5.11</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center"><strong>10.6</strong></td>
-<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
-<td align="center">10.6.3</td>
-<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Percona</li>
-<li>Server</li>
-<li>OurDelta</li>
-</ul>
-<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a></p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（源码编译）</title>
-    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
-<span id="more"></span>
-<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
-<li>centos 8.3</li>
-<li>数据库版本：MySQL-8.0.25</li>
-<li>gcc版本：<ul>
-<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
-<li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font size="4" color="red" >报错:</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
-  You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
-二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
-  packages:
-
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
-三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装依赖：</p>
-<p>注意： rpcgen源没有需下载</p>
-<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动失败（报错）</p>
-<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
-
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
-affiliates. Other names may be trademarks of their respective
-owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>&lt;font color = green &gt;监控系统&lt;/font&gt;</category>
-      </categories>
   </entry>
 </search>
