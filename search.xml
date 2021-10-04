@@ -754,6 +754,7 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
     <url>/blog/2021/07/21/Grafana/</url>
     <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
 <span id="more"></span>
+
 <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
 <h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
 <h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
@@ -814,7 +815,7 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
 </ul>
 ]]></content>
       <categories>
-        <category>监控系统</category>
+        <category>&lt;font color = green &gt;监控系统&lt;/font&gt;</category>
       </categories>
   </entry>
 </search>
