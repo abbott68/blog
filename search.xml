@@ -174,6 +174,214 @@
       </categories>
   </entry>
   <entry>
+    <title>MySQL</title>
+    <url>/blog/2021/07/16/MySQL/</url>
+    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
+<span id="more"></span>
+<h2>MySQL 介绍</h2>
+MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
+
+<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
+<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
+<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
+<h2>特性</h2>
+
+<ul>
+<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
+<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
+<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
+<li>支持多线程，充分利用CPU资源，支持多用户。</li>
+<li>优化的SQL查询算法，有效地提高查询速度。</li>
+<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
+<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
+<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
+<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
+<li>可以处理拥有上千万条记录的大型数据库。</li>
+</ul>
+<h2>历史</h2>
+
+<ul>
+<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
+<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
+<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
+<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
+<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
+<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
+<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
+<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
+<li>2008年1月16号 MySQL被Sun公司收购。</li>
+<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
+<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
+</ul>
+<h2>MySQL管理</h2>
+
+<ul>
+<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
+<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
+<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
+<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
+</ul>
+<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
+<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
+<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
+<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
+<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
+<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
+<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
+<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
+</ul>
+<h2>派生版本</h2>
+
+<ul>
+<li>Drizzle</li>
+</ul>
+<p>  ① 介绍</p>
+<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
+<p>  ②特性：</p>
+<blockquote>
+<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
+</blockquote>
+<ol>
+<li>Web 应用。</li>
+<li>云计算组件。</li>
+<li>没有业务逻辑的数据库（又名存储过程）。</li>
+<li>多核架构。</li>
+</ol>
+<ul>
+<li>基于 MySQL 6.0 的源码树</li>
+<li>无附加库</li>
+<li>遵守 POSIX</li>
+<li>微内核设计</li>
+<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
+<li>跨多个节点的 Sharding 技术</li>
+<li>智能代理</li>
+<li>多 CPU/ 多核 CPU</li>
+<li>优化的字段类型</li>
+<li>高效的内存使用</li>
+<li>没有内部 ACL，使用 LDAP/PAM</li>
+<li>没有数据库数据格式化</li>
+<li>整理有序的 Make 系统</li>
+<li>缺省存储引擎为 InnoDB</li>
+<li>移除 Windows 兼容性</li>
+</ul>
+<h2>哲学上更大的差异</h2>
+
+<blockquote>
+<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
+</blockquote>
+<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
+<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
+<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
+<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
+<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
+</ul>
+<h2>版本</h2>
+
+<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
+<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">原始发布日期</th>
+<th align="center">最新版本</th>
+<th align="center">发布日期</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5.1</td>
+<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
+<td align="center">5.1.67</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.2</td>
+<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
+<td align="center">5.2.14</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.3</td>
+<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
+<td align="center">5.3.12</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.5</td>
+<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
+<td align="center">5.5.68</td>
+<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.0</td>
+<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
+<td align="center">10.0.38</td>
+<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.1</td>
+<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
+<td align="center">10.1.48</td>
+<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.2</td>
+<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
+<td align="center">10.2.39</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.3</td>
+<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
+<td align="center">10.3.30</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.4</td>
+<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
+<td align="center">10.4.20</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.5</td>
+<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
+<td align="center">10.5.11</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center"><strong>10.6</strong></td>
+<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
+<td align="center">10.6.3</td>
+<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Percona</li>
+<li>Server</li>
+<li>OurDelta</li>
+</ul>
+<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL部署（源码编译）</title>
     <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
@@ -608,214 +816,6 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </categories>
       <tags>
         <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL</title>
-    <url>/blog/2021/07/16/MySQL/</url>
-    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
-<span id="more"></span>
-<h2>MySQL 介绍</h2>
-MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
-
-<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
-<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
-<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
-<h2>特性</h2>
-
-<ul>
-<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
-<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
-<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
-<li>支持多线程，充分利用CPU资源，支持多用户。</li>
-<li>优化的SQL查询算法，有效地提高查询速度。</li>
-<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
-<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
-<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
-<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
-<li>可以处理拥有上千万条记录的大型数据库。</li>
-</ul>
-<h2>历史</h2>
-
-<ul>
-<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
-<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
-<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
-<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
-<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
-<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
-<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
-<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
-<li>2008年1月16号 MySQL被Sun公司收购。</li>
-<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
-<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
-</ul>
-<h2>MySQL管理</h2>
-
-<ul>
-<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
-<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
-<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
-<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
-</ul>
-<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
-<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
-<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
-<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
-<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
-<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
-<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
-<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
-</ul>
-<h2>派生版本</h2>
-
-<ul>
-<li>Drizzle</li>
-</ul>
-<p>  ① 介绍</p>
-<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
-<p>  ②特性：</p>
-<blockquote>
-<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
-</blockquote>
-<ol>
-<li>Web 应用。</li>
-<li>云计算组件。</li>
-<li>没有业务逻辑的数据库（又名存储过程）。</li>
-<li>多核架构。</li>
-</ol>
-<ul>
-<li>基于 MySQL 6.0 的源码树</li>
-<li>无附加库</li>
-<li>遵守 POSIX</li>
-<li>微内核设计</li>
-<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
-<li>跨多个节点的 Sharding 技术</li>
-<li>智能代理</li>
-<li>多 CPU/ 多核 CPU</li>
-<li>优化的字段类型</li>
-<li>高效的内存使用</li>
-<li>没有内部 ACL，使用 LDAP/PAM</li>
-<li>没有数据库数据格式化</li>
-<li>整理有序的 Make 系统</li>
-<li>缺省存储引擎为 InnoDB</li>
-<li>移除 Windows 兼容性</li>
-</ul>
-<h2>哲学上更大的差异</h2>
-
-<blockquote>
-<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
-</blockquote>
-<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
-<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
-<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
-<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
-<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
-</ul>
-<h2>版本</h2>
-
-<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
-<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">版本</th>
-<th align="center">原始发布日期</th>
-<th align="center">最新版本</th>
-<th align="center">发布日期</th>
-<th align="center">状态</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">5.1</td>
-<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
-<td align="center">5.1.67</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.2</td>
-<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
-<td align="center">5.2.14</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.3</td>
-<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
-<td align="center">5.3.12</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.5</td>
-<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
-<td align="center">5.5.68</td>
-<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.0</td>
-<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
-<td align="center">10.0.38</td>
-<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.1</td>
-<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
-<td align="center">10.1.48</td>
-<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.2</td>
-<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
-<td align="center">10.2.39</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.3</td>
-<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
-<td align="center">10.3.30</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.4</td>
-<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
-<td align="center">10.4.20</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.5</td>
-<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
-<td align="center">10.5.11</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center"><strong>10.6</strong></td>
-<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
-<td align="center">10.6.3</td>
-<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Percona</li>
-<li>Server</li>
-<li>OurDelta</li>
-</ul>
-<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a></p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
       </tags>
   </entry>
 </search>
