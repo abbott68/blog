@@ -14,166 +14,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Apache</title>
-    <url>/blog/2021/07/16/Apache/</url>
-    <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
-<span id="more"></span>
-<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
-<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
-<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
-<ul>
-<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
-<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
-<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
-</ul>
-<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
-<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
-<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
-</ul>
-<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a href="http://httpd.apache.org/">适合您</a>的版本</p>
-<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
-<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
-# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
-# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
-# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>创建存放文件夹</p>
-<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(2)获取软件包</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
-# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
-# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(3)安装apr</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(4)安装apr-util</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
-# tar xf apr-util-* &amp;&amp; cd apr-util-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(5)安装apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
-# tar xf httpd-* &amp;&amp; cd httpd-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
---sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
---with-include-apr \
---disable-userdir \
---enable-headers \
---with-mpm&#x3D;worker \
---enable-modules&#x3D;most \
---enable-so \
---enable-deflate \
---enable-defate&#x3D;shared \
---enable-expires-shared \
---enable-rewrite&#x3D;shared \
---enable-static-support \
---with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
---with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
---with-ssl \
---with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(6)编译并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>(7)启动服务进程</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（8）添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
-#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（9）启动Apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（10）查看端口号是否开启 Apache默认端口是80</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a href="http://server-ip/">http://server-ip/</a></p>
-<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
-<ol>
-<li>基于单个IP地址多个socket端口；</li>
-<li>基于多个IP地址一个端口；</li>
-<li>基于单个IP地址一个端口不同域名。</li>
-</ol>
-<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
-<ul>
-<li>修改虚拟主机配置文件</li>
-</ul>
-<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
-]]></content>
-      <categories>
-        <category>web服务</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>&lt;font color = green &gt;监控系统&lt;/font&gt;</category>
-      </categories>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/blog/2021/07/16/MySQL/</url>
     <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
@@ -379,6 +219,166 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </categories>
       <tags>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>&lt;font color = green &gt;监控系统&lt;/font&gt;</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Apache</title>
+    <url>/blog/2021/07/16/Apache/</url>
+    <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
+<span id="more"></span>
+<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
+<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
+<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
+<ul>
+<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
+<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
+<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
+</ul>
+<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
+<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
+<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
+</ul>
+<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a href="http://httpd.apache.org/">适合您</a>的版本</p>
+<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
+<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
+# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
+# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
+# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建存放文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2)获取软件包</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
+# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
+# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(3)安装apr</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(4)安装apr-util</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
+# tar xf apr-util-* &amp;&amp; cd apr-util-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(5)安装apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
+# tar xf httpd-* &amp;&amp; cd httpd-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
+--sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
+--with-include-apr \
+--disable-userdir \
+--enable-headers \
+--with-mpm&#x3D;worker \
+--enable-modules&#x3D;most \
+--enable-so \
+--enable-deflate \
+--enable-defate&#x3D;shared \
+--enable-expires-shared \
+--enable-rewrite&#x3D;shared \
+--enable-static-support \
+--with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
+--with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
+--with-ssl \
+--with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(6)编译并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>(7)启动服务进程</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（8）添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
+#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（9）启动Apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（10）查看端口号是否开启 Apache默认端口是80</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a href="http://server-ip/">http://server-ip/</a></p>
+<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
+<ol>
+<li>基于单个IP地址多个socket端口；</li>
+<li>基于多个IP地址一个端口；</li>
+<li>基于单个IP地址一个端口不同域名。</li>
+</ol>
+<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
+<ul>
+<li>修改虚拟主机配置文件</li>
+</ul>
+<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
