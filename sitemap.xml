@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://abbott68.github.io/blog/tags/index.html</loc>
+    
+    <lastmod>2021-10-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://abbott68.github.io/blog/2021/07/16/Nginx/</loc>
     
     <lastmod>2021-10-24</lastmod>
@@ -66,13 +73,6 @@
   
   <url>
     <loc>https://abbott68.github.io/blog/2021/07/16/PSSH/</loc>
-    
-    <lastmod>2021-07-16</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://abbott68.github.io/blog/tags/index.html</loc>
     
     <lastmod>2021-07-16</lastmod>
     
