@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 9.9k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 9 mins.分钟 |
           </span>
   
           
@@ -741,7 +741,80 @@
 </blockquote>
 </li>
 </ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
 
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
       </div>
       <div class="post-tags-categories">
         
