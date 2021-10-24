@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MySQL部署（Yum安装) | abbott Blog</title>
+  <title>abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -629,537 +629,1185 @@
     <!-- 内容区域 -->
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
-        
- <!-- prismjs 代码高亮 -->
- 
-    
-    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
-    
-        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
-    
+        <!-- 首页轮播 -->
+<link href="/blog/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
 
-    <style>
-        pre[class*="language-"] {
-            overflow-y: hidden;
-        }
-        .line-numbers .line-numbers-rows {
-            border: none;
-        }
-    </style>
+
+  <link href="/blog/js/vue-typed-js/index.css" rel="stylesheet">
+
+
+
+
+
+
+<div class="swiper-length" style="display: none;">0</div>
+<div id="appSwiper"
+  class="swiper-no-swiping"
+  @mouseenter="stopAutoPlay()" 
+  @mouseleave="startAutoPlay()"
+>
+  <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
+    
+      <swiper-slide>
+        <div class="item swiper-lazy" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="background-size: 300000px; 
+          background-position: left center;" style="position: relative;">
+          <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+            <div class="flag">
+              
+              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="height: 100%; background-size: cover; 
+                background-position: center center;">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
+              </div>
+              <div class="flag-text">
+                <div class="flag-text-content">
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">青墨书晚风</div>
+                  
+                      <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"></div>
+                    
+                </div>
+                <div style="display: flex;" class="flag-text-btns">
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+      </swiper-slide>
+    
+  </swiper>
   
-
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-<!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/2.jpg')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        MySQL部署（Yum安装)
-      </span>
+    <div id="scroll-down" @click="toPostContent()">
+      <a href="javascript:;">
+        <i class="fas fa-angle-down scroll-down-effects"></i>
+      </a>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-10-10 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-detail-header_category">
-              数据库
-            </a>
-          
-        </span>
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3k |
-          </span>
   
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 3 mins.分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
-  </div>
-  
-  
-    <script src="/blog/js/bubble/bubble.js"></script>
-  
+  <canvas id="header_canvas"style="position:absolute;bottom:0;width:100%;pointer-events:none;"></canvas>
 </div>
 
-
-
-<div class="row justify-position">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>
-      </div>
-      <div class="post-tags-categories">
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>abbott</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/blog/2021/10/10/install.mysql/" target="_blank" title="MySQL部署（Yum安装)">https://abbott68.github.io/blog/2021/10/10/install.mysql/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">c语言初始</div>
-      </div>
-      
-      <!-- <div class="content">
-        一、简介C是一种通用的编程语言，广泛用于系统软件与应用软件的开发。于1969年至1973年间，为了移植与开发UNIX操作
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
-    </div>
-    <a href="/blog/2021/07/21/Grafana/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Grafana</div>
-      </div>
-      <!-- <div class="content">
-        Grafana
-
-
-入门官方帮助手册 这儿
-什么是GrafanaGrafana是开源的可视化和分析软件。它使您可以查询，
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
 
 <script>
-  var body = document.body || document.documentElement || window;
+  var autoplay = JSON.parse('false');
+  var delay = '5000';
+  var loop = JSON.parse('true') ? false : JSON.parse('true');
+  var effect = 'slide';
+  var swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
+  var defaultDesc = '';
+  defaultDesc = defaultDesc.split(',');
+  var defaultDescTypedLoop = JSON.parse('true');
   var vm = new Vue({
-    el: '#appDonate',
+    el: '#appSwiper',
     data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
+      defaultDesc: defaultDesc,
+      defaultDescTypedLoop,
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true // 允许点击小圆点跳转
+        },
+        loop: loop ? true : false,
+        effect, // fade
+        autoplay: (autoplay && swiperLength > 1) ? {
+  　　　　delay,
+  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+    　　} : false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        lazy: {
+          loadPrevNext: true,
+        },
+        on:{
+          init: function() {
+            swiperAnimateCache(this); //隐藏动画元素 
+            swiperAnimate(this); //初始化完成开始动画
+          }, 
+          slideChangeTransitionEnd: function(){ 
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          } 
+        }
+        // Some Swiper option/callback...
+      }
     },
     computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
     },
     mounted() {
+      // console.log('Current Swiper instance object', this.swiper)
+      // this.swiper.slideTo(0, 1000, false)
     },
     methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
+      stopAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.stop();
       },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
+      startAutoPlay() {
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
       },
-      changeTabActive(name) {
-        this.tabActive = name;
+      slideChangeTransitionEnd() {
+        console.log('1');
+      },
+      toPostContent() {
+        const fullHeight = $(window).height() - 60;
+        $('html,body').animate({scrollTop: fullHeight},500);
       }
     },
     created() {}
   })
 </script>
-    
 
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/blog/js/shareJs/social-share.min.js"></script>
-</script>
+  <script src="/blog/js/bubble/homeBubble.js"></script>
 
 <style>
-  .social-share {
-    margin: 20px 0;
+#appSwiper {
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+}
+.default-excerpt {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+}
+.bottom-one-btn {
+  margin-top: 15px;
+}
+.swiper-container {
+  overflow: hidden;
+  z-index: 0;
+}
+.swiper-slide {
+  height: 350px;
+  position: relative;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  padding: 10px 10px;
+  transition: background 0.2s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.swiper-slide .item {
+  width: 100%;
+  height: 100%;
+}
+.flag {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  color: #ffffff;
+  height: 100%;
+  background: #000;
+}
+.flag img {
+  min-height: 100%;
+}
+.flag-text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 9999;
+}
+.flag-text .title {
+  font-size: 1.8rem;
+  font-family: Long Cang,cursive;
+}
+.flag-text .title a {
+  color: #fff;
+  transition: color 0.3s;
+}
+.flag-text .title a:hover {
+  color: #42b983;
+}
+.flag-text .excerpt {
+  color: #eee;
+  font-family: Ubuntu,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  width: 70%;
+  line-height: 30px;
+  height: 150px;
+  margin-top: 2%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #42b983;
+}
+.img-mask {
+  opacity:0.6; filter: alpha(opacity=60);
+}
+.flag-text .read-more {
+  margin-bottom: 30px;
+  padding: 5px 15px;
+  color: #ffffff;
+  border-radius: 20px;
+}
+#scroll-down {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+#scroll-down a {
+  color: #fff;
+}
+@-webkit-keyframes rightan
+  {
+  
+  0%
+  {
+    transform: translateY(0);
+    opacity: 0.5;
   }
+  50% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  100%
+  {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
+.scroll-down-effects {
+  animation: rightan 1.5s infinite;
+}
+/* 当头部导航设置为背景透明的时候 */
+
+  .swiper-slide {
+    height: 400px;
+  }
+  .flag-text {
+    top: 80px;
+  }
+
+
+@media (min-width: 992px) {
+  .swiper-button-prev {
+    margin-left: 15%;
+    transform: translateX(-180%);
+  }
+  .swiper-button-next {
+    margin-right: 15%;
+    transform: translateX(180%);
+  }
+  .flag-text .title {
+    width: 80%;
+    line-height: 35px;
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 1200px) { 
+  .flag {
+    width: 80%;
+  }
+  .swiper-button-prev {
+    margin-left: 10%;
+    transform: translateX(-180%);
+  }
+  .swiper-button-next {
+    margin-right: 10%;
+    transform: translateX(180%);
+  }
+}
+@media (max-width: 992px) {
+  .flag {
+    width: 100%;
+  }
+  .flag-text .title {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .flag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .flag-text .excerpt {
+    width: 100%;
+    line-height: 25px;
+    height: 125px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+  .flag-text .read-more {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 992px) and (min-width: 551px) {
+  .flag-text .excerpt {
+    width: 70%;
+  }
+}
+@media (max-width: 551px) {
+  .swiper-slide {
+    height: 250px;
+  }
+  .flag-text .title {
+    line-height: 30px;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .flag-text .excerpt {
+    font-size: 1rem;
+    line-height: 20px;
+    height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .flag-text .excerpt { 
+    margin-top: 10px;
+  }
+  .flag-text .read-more {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: scale(0.5);
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
+/* 当头部导航设置为背景透明的时候 */
+
+  @media (max-width: 992px) {
+    .flag-text {
+      top: 60px;
+      height: 80%;
+    }
+  }
+  @media (max-width: 551px) {
+    .swiper-slide {
+      height: 310px;
+    }
+  }
+
+
+/* 文字或者按钮居中显示 */
+
+  .flag-text {
+    left: 10%;
+  }
+  .flag-text .flag-text-content {
+    width: 100%;
+    text-align: center;
+  }
+  .flag-text .title {
+    width: 100%;
+    text-align: center;
+  }
+  .flag-text .excerpt { 
+    width: 100%;
+    text-align: center;
+  }
+  .bottom-one-btn {
+    display: flex;
+    justify-content: center;
+  }
+  .default-excerpt {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+  }
+  .flag-text-btns {
+    justify-content: center;
+  }
+  @media (min-width: 992px) {
+    .flag-text .excerpt {
+      line-height: 30px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 992px) {
+    .flag-text {
+      margin-left: 0;
+      transform: translateX(0);
+    }
+  }
+
+
+
+
+/* 全屏显示 */
+
+  .flag {
+    width: 100%;
+  }
+  .swiper-slide {
+    height: calc(100vh - 60px);
+    
+      height: 100vh;
+    
+  }
+  .flag-text {
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    width: 70%;
+    height: auto;
+  }
+  .flag-text .title {
+    font-size: 2.8rem;
+    line-height: 1.5em;
+    max-height: none;
+    /* overflow: visible; */
+  }
+  .flag-text .excerpt {
+    font-size: 1.25rem;
+    height: 150px;
+  }
+  .flag-text .read-more {
+    margin-top: 10px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: -60px!important;
+  }
+  .swiper-btn-color,
+  .swiper-btn-color2 {
+    background-color: transparent;
+    border: 1px solid #fff;
+  }
+  .swiper-btn-color:hover,
+  .swiper-btn-color2:hover {
+    background-color: #42b983;
+    border: 1px solid #42b983!important;
+  }
+  .flag-text-btns {
+    justify-content: center;
+  }
+  .swiper-button-prev {
+    margin-left: 10px;
+    transform: translateX(0);
+    border-radius: 50%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .swiper-button-next {
+    margin-right: 10px;
+    transform: translateX(0);
+    border-radius: 50%;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 992px) {
+    .flag-text .excerpt {
+      line-height: 35px;
+      height: 175px;
+    }
+    .default-excerpt {
+      min-height: 150px;
+    }
+    .typed-element {
+      align-items: unset;
+    }
+  }
+  @media (max-width: 992px) {
+    .flag-text {
+      margin-left: 0;
+      height: 60%;
+      top: 55%;
+    }
+    .flag-text .title {
+      font-size: 2.4rem;
+      margin-top: 0;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .flag-text .excerpt {
+      line-height: 35px;
+      height: 185px;
+    }
+    .flag-text .read-more {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 551px) {
+    .flag-text {
+      height: 60%;
+    }
+    .flag-text .title {
+      font-size: 2.2rem;
+    }
+    .flag-text .excerpt {
+      line-height: 30px;
+    }
+    .flag-text .read-more {
+      margin-top: 50px;
+      padding: 10px 30px;
+    }
+    .swiper-button-prev {
+      margin-left: 0;
+    }
+    .swiper-button-next {
+      margin-right: 0;
+    }
+    .default-excerpt {
+      margin-top: 1rem;
+    }
+  }
+
+
+/* video */
+.swiper-video {
+  width: 100%;
+  height: 100%;
+}
+.swiper-video video {
+  pointer-events: none;
+}
+.swiper-video-maskBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 1;
+}
+@media (min-width: 992px) {
+  
+    .swiper-video {
+      display: none;
+    }
+    .swiper-default-bgImg {
+      display: block;  
+    }
+  
+}
+@media (max-width: 992px) {
+  .swiper-video {
+    display: none;
+  }
+  .swiper-default-bgImg {
+    display: block;  
+  }
+}
+/* video-end */
 </style>
-
-
+<div id="l_main">
+  <div class="l_content">
+    <!-- 自定义的内容 -->
     
+    <!-- 首页座右铭 -->
     
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
+    <!-- 首页公告 -->
     
-      <div id="gitment-container"></div>
+    <!-- 首页文章置顶 -->
+    
 
+
+
+    <div class="bg-floor" id="home-bg-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+    <!-- 每一篇文章卡片 -->
+    <!-- hash算法 -->
+
+<section class="posts">
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2021-07-16</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/blog/2021/07/16/Apache/">Apache</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Web/" rel="tag">Web</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/blog/categories/web%E6%9C%8D%E5%8A%A1/">web服务</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/blog/2021/07/16/Apache/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/blog/medias/9.jpg" class="lazyload placeholder" data-srcset="/blog/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            <p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/blog/2021/07/16/Apache/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/blog/2021/07/16/Apache/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/blog/medias/9.jpg" class="lazyload placeholder" data-srcset="/blog/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+    
+    <article class="post reveal" style="   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2021-07-16</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/blog/2021/07/16/PSSH/">PSSH</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" rel="tag">自动化</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/blog/2021/07/16/PSSH/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            <p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/blog/2021/07/16/PSSH/">
+            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/blog/2021/07/16/PSSH/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+</section>
+    <!-- 翻页 -->
+    
+  <!-- <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/blog/">上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+  </nav> -->
+  <div class="page-nav">
+    
+      <a href="/blog/"
+         class="page-nav-pre">
+         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
+      </a>
+    
+    <div class="page-info">
+        <div class="page-info-text">2 / 2</div>
+    </div>
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
   </div>
 
-  <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  
+<aside id='l_side'>
+  
+    
+      
+        <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/blog/about/'>
+          <img src='http://p0.itc.cn/q_70/images03/20200616/dba37399735a48e7a2a27476b377097c.jpeg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>青墨书晚风</h2>
+        
+        
+          <p>一起学习！加油！！！</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">abbott Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
-      <div class="toc-content">
-        <div class="toc"></div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="/blog/abbott68@126.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/abbott68/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=339097468"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+      
+    
+  
+  
+  
+
+  <div class="layout_sticky">
+    
+      
+    <section class="widget side_category">
+      
+  <header>
+    
+      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+      <div class='content'>
+        <ul class="entry navigation">
+          
+            <li><a class="flat-box"
+              title="/blog/categories/C/" href="/blog/categories/C/"
+              id="blogcategoriesC"
+              ><div class='name'>C</div><div class='badge'>(1)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/blog/categories/Python/" href="/blog/categories/Python/"
+              id="blogcategoriesPython"
+              ><div class='name'>Python</div><div class='badge'>(2)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/blog/categories/font-color-green-%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F-font/" href="/blog/categories/font-color-green-%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F-font/"
+              id="blogcategoriesfont-color-green-E79B91E68EA7E7B3BBE7BB9F-font"
+              ><div class='name'><font color = green >监控系统</font></div><div class='badge'>(1)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/blog/categories/web%E6%9C%8D%E5%8A%A1/" href="/blog/categories/web%E6%9C%8D%E5%8A%A1/"
+              id="blogcategorieswebE69C8DE58AA1"
+              ><div class='name'>web服务</div><div class='badge'>(2)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+              id="blogcategoriesE695B0E68DAEE5BA93"
+              ><div class='name'>数据库</div><div class='badge'>(3)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/" href="/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/"
+              id="blogcategoriesE887AAE58AA8E58C96"
+              ><div class='name'>自动化</div><div class='badge'>(2)</div></a></li>
+          
+        </ul>
+      </div>
+    </section>
+  
+  
+    
+    
+      
+<section class="widget side_tagcloud">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+    <a href="/blog/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">C语言</a> <a href="/blog/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/blog/tags/Pyhon%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">Pyhon语言</a> <a href="/blog/tags/Python-%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">Python 语言</a> <a href="/blog/tags/Web/" style="font-size: 24px; color: #555">Web</a> <a href="/blog/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" style="font-size: 24px; color: #555">自动化</a>
+    </div>
+</section>
+
+  
+    
+    
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/blog/medias/1.jpg" class="lazyload placeholder" data-srcset="/blog/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-24</span>
+                
+              </div>
+              <a class="post-title" href="/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/">Python 函数</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/blog/medias/13.jpg" class="lazyload placeholder" data-srcset="/blog/medias/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-24</span>
+                
+              </div>
+              <a class="post-title" href="/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/">Python初始</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-24</span>
+                
+              </div>
+              <a class="post-title" href="/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/">c语言初始</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/blog/2021/10/10/install.mysql/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/blog/medias/2.jpg" class="lazyload placeholder" data-srcset="/blog/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-10</span>
+                
+              </div>
+              <a class="post-title" href="/blog/2021/10/10/install.mysql/">MySQL部署（Yum安装)</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/blog/2021/07/21/Grafana/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-21</span>
+                
+              </div>
+              <a class="post-title" href="/blog/2021/07/21/Grafana/">Grafana</a>
+            </div>
+          </div>
+        
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
-  </div>
-  <!-- js在scripts目录下的的toc.ejs里面 -->
-  
-
-  <script>
-    function openBtnClickFn () {
-      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('' || 'true');
-      openOrCloseBtn.click(function() {
-        if (open === true) {
-          $(".toc-aside").css({'width': 0, 'padding': 0});
-          $(".toc-content").css({'width': 0});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-          open = false;
-        } else {
-          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
-          $(".toc-content").css({'width': '300px'});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-          open = true;
-        }
-      });
-    };
-    openBtnClickFn();
-    document.addEventListener('pjax:complete', function () {
-      openBtnClickFn();
-    })
     
-  </script>
+  <section class="widget side_archives">
+    
+    <header><a style="color: red" href='/blog/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><span class="card-archive-list-count">7</span></a></li></ul></div>
+  </section>
 
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/blog/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/blog/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+    <section class="widget side_webinfo">
   
-</script>
+  <header>
+    
+      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>11 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2020/01/01'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>29k 字</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          
+          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          
+          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Sun Oct 24 2021 19:04:30 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-10-24 日</div>
+          
+        </div>
+        
+        <script>
+          function timeago(dateTimeStamp) {
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
+              var hour = minute * 60;
+              var day = hour * 24;
+              var week = day * 7;
+              var month = day * 30;
+              var now = new Date().getTime(); //获取当前时间毫秒
+              var diffValue = now - dateTimeStamp; //时间差
+              if (diffValue < 0) {
+                  return;
+              }
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
+              var hourC = diffValue / hour;
+              var dayC = diffValue / day;
+              var weekC = diffValue / week;
+              var monthC = diffValue / month;
+              if (monthC >= 1 && monthC <= 3) {
+                  result = " " + parseInt(monthC) + " 月前"
+              } else if (weekC >= 1 && weekC <= 3) {
+                  result = " " + parseInt(weekC) + " 周前"
+              } else if (dayC >= 1 && dayC <= 6) {
+                  result = " " + parseInt(dayC) + " 天前"
+              } else if (hourC >= 1 && hourC <= 23) {
+                  result = " " + parseInt(hourC) + " 小时前"
+              } else if (minC >= 1 && minC <= 59) {
+                  result = " " + parseInt(minC) + " 分钟前"
+              } else if (diffValue >= 0 && diffValue <= minute) {
+                  result = "刚刚"
+              } else {
+                  var datetime = new Date();
+                  datetime.setTime(dateTimeStamp);
+                  var Nyear = datetime.getFullYear();
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+                  result = Nyear + "-" + Nmonth + "-" + Ndate
+              }
+              return result;
+          }
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2021-10-24 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+    
+  </div>
+</aside>
+
+</div>
+<!-- 花瓣和雪花飘落 -->
+<!-- 雪花和花瓣特效 -->
+
+  
+    <script type="text/javascript">
+      //只在桌面版网页启用特效
+      var windowWidth = $(window).width();
+      if (windowWidth > 768) {
+        loadScript('/blog/js/falling/snow.js');
+      }
+    </script>
+  
+
+
+
+<!-- 灯笼 -->
 
 
       </main>

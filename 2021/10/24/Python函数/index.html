@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MySQL部署（Yum安装) | abbott Blog</title>
+  <title>Python 函数 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -657,21 +657,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/2.jpg')">
+  background-position: center center;position: relative;background-image:url('/blog/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        MySQL部署（Yum安装)
+        Python 函数
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-10-10 |
+          <i class="fas fa-calendar"></i> 发表于：2021-10-24 |
         </span>
       
 
@@ -679,8 +679,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-detail-header_category">
-              数据库
+            <a href="/blog/categories/Python/" class="post-detail-header_category">
+              Python
             </a>
           
         </span>
@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 3 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 1 mins.分钟 |
           </span>
   
           
@@ -717,51 +717,41 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+        <h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
 </ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
 </blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
+</li>
+</ol>
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/Python-%E8%AF%AD%E8%A8%80/" class="">
+              Python 语言
+            </a>
+          
+        </div>
         
       </div>
       
@@ -772,7 +762,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/blog/2021/10/10/install.mysql/" target="_blank" title="MySQL部署（Yum安装)">https://abbott68.github.io/blog/2021/10/10/install.mysql/</a>
+    <a href="/blog/2021/10/24/Python函数/" target="_blank" title="Python 函数">https://abbott68.github.io/blog/2021/10/24/Python函数/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -790,43 +780,21 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">c语言初始</div>
-      </div>
-      
-      <!-- <div class="content">
-        一、简介C是一种通用的编程语言，广泛用于系统软件与应用软件的开发。于1969年至1973年间，为了移植与开发UNIX操作
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/13.jpg" class="lazyload placeholder" data-srcset="/blog/medias/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/blog/2021/07/21/Grafana/" class="post-nav-link">
+    <a href="/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Grafana</div>
+        <div class="title-text">Python初始</div>
       </div>
       <!-- <div class="content">
-        Grafana
-
-
-入门官方帮助手册 这儿
-什么是GrafanaGrafana是开源的可视化和分析软件。它使您可以查询，
+        
       </div> -->
     </a>
   </div>
