@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | abbott Blog</title>
+  <title>openstack原理 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -629,207 +629,559 @@
     <!-- 内容区域 -->
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/blog/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/12.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        openstack原理
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-10-28 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" class="post-detail-header_category">
+              云计算
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 6.1k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 6 mins.分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
+<p><strong>也可以这样理解为：</strong></p>
+<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
+<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
+<p>私有云(Private Cloud)</p>
+<p>社区云(Community cloud)</p>
+<p>混合云(Hybrid Cloud)</p>
+<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
+<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
+<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
+<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
+<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
+<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
+<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
+<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
+<p>4）形成新的云计算产业。</p>
+<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
+<p><strong>2. 对于云计算消费者</strong></p>
+<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
+<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
+<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
+<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
+<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
+<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
+<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
+<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
+<p>9）个人、中小企业和机构也用得起高性能计算。</p>
+<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
+<li>亚马逊AWS.</li>
+<li>微软Azure.</li>
+<li>阿里<strong>云</strong></li>
+<li>UCloud.</li>
+<li>腾讯<strong>云</strong></li>
+</ul>
+<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
+<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
+<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
+<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
+
+<p>各服务组件的功能如下：</p>
+<ul>
+<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
+<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
+<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
+<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
+<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
+<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
+<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
+<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
+<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
+<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
+<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
+</ul>
+<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
+
+<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
+<ul>
+<li>Dashboard （仪表盘）</li>
+<li>Compute （计算）</li>
+<li>Networking (网络）</li>
+<li>ObjectStorage（对象存储） </li>
+<li>Block Storage (块存储)</li>
+<li>Identify （认证）</li>
+<li>Image (镜像）</li>
+<li>Telemetry （计量）</li>
+<li>Orchestration (编排）</li>
+<li>Database (数据库）</li>
+<li>Data Processing Service (数据分析）</li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
         
-        
+        <div class="tags">
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/blog/archives/2021">2021</a>
-            </div>
+            <a href="/blog/tags/openstack/" class="">
+              openstack
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-18</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/">MySQL部署（源码编译）</a>
-            </div>
-          </li>
+        </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/18/Ansible/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-18</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/18/Ansible/">Ansible</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/16/MySQL/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-16</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/16/MySQL/">MySQL</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/16/Nginx/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/7.jpg" class="lazyload placeholder" data-srcset="/blog/medias/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-16</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/16/Nginx/">Nginx</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/16/Apache/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/9.jpg" class="lazyload placeholder" data-srcset="/blog/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-16</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/16/Apache/">Apache</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/07/16/PSSH/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-16</span>
-              </div>
-              <a class="post-title" href="/blog/2021/07/16/PSSH/">PSSH</a>
-            </div>
-          </li>
-        
-      </ul>
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2021/10/28/openstack原理/" target="_blank" title="openstack原理">https://abbott68.github.io/blog/2021/10/28/openstack原理/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/archives/">上一页</a><a class="page-number" href="/blog/archives/">1</a><span class="page-number current">2</span>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/blog/archives/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">2 / 2</div>
-    </div>
-    
+    <a href="/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">promethues安装之二进制</div>
+      </div>
+      <!-- <div class="content">
+        二、安装安装方式：
+使用预编译的二进制文件
+
+源码安装
+
+docker 安装
+
+
+二进制安装2.1   下载并运行 Pr
+      </div> -->
+    </a>
   </div>
 
-  </div>
 </div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>

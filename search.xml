@@ -39,78 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -199,6 +127,78 @@
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -606,147 +606,149 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>PSSH</title>
-    <url>/blog/2021/07/16/PSSH/</url>
-    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
 <span id="more"></span>
-<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
-# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>安装pssh</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
-<li>pssh 在多个主机上并行运行命令</li>
-<li>pscp 把文件并行复制到多个主机上</li>
-<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
-<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
-<li>pnuke 并行地在多个远程主机上杀死进程</li>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
 </ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
-pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>选项解释：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
---help        显示帮助信息          
--h HOST_FILE, 主机文件列表 格式[user@]host[:port]
--l USER       用户名 (OPTIONAL)
--p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
--o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
--e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
--t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
--O OPTION， --option &#x3D; OPTION   SSH选项（可选）
--v，--verbose  打开警告和诊断消息（可选）
--A，-askpass   要求输入密码（可选）
--x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
--X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
--i，--inline  每个服务器的内联内联聚合输出和错误
---inline-stdout 每个服务器的内联标准输出
--I，--send-input 从标准输入读取并作为输入发送到ssh
--P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
-172.16.127.161
-172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>2.实现远程控制获取被控主机IP地址</p>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果没有报错的话，应该输出类似实验下面的</p>
-<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
-[2] 22:42:03 [SUCCESS] 172.16.127.161
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果有以下错误</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
-Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
-ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
-Are you sure you want to continue connecting (yes&#x2F;no)?
-Host key verification failed.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
-<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
-# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
-<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
-<li>把文件并行复制到多个主机上</li>
+</li>
 </ul>
-<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2.远程将主机文件复制到被控端主机上</p>
-<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
-[1] 23:02:17 [SUCCESS] 172.16.127.161
-[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
-</ul>
-<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>并行地在多个远程主机上杀死进程</li>
-</ul>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
-<ul>
-<li>安装Apache</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>开启Apache web服务</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
-[1] 00:32:33 [SUCCESS] 172.16.127.131
-[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:36:46 [SUCCESS] 172.16.127.161
-COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-[2] 00:36:46 [SUCCESS] 172.16.127.131
-COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>杀死进程</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
-[1] 00:38:39 [SUCCESS] 172.16.127.131
-[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
-[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
 
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>三台  关闭firewalld</p>
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
-        <category>自动化</category>
+        <category>数据库</category>
       </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
   </entry>
   <entry>
     <title>Nginx</title>
@@ -897,149 +899,158 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
-    <title>MySQL部署（源码编译）</title>
-    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+    <title>PSSH</title>
+    <url>/blog/2021/07/16/PSSH/</url>
+    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <span id="more"></span>
-<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
-<li>centos 8.3</li>
-<li>数据库版本：MySQL-8.0.25</li>
-<li>gcc版本：<ul>
-<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
-<li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
+<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
+# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装pssh</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>pssh 在多个主机上并行运行命令</li>
+<li>pscp 把文件并行复制到多个主机上</li>
+<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
+<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
+<li>pnuke 并行地在多个远程主机上杀死进程</li>
 </ul>
-</li>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
+pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>选项解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
+--help        显示帮助信息          
+-h HOST_FILE, 主机文件列表 格式[user@]host[:port]
+-l USER       用户名 (OPTIONAL)
+-p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
+-o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
+-e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
+-t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
+-O OPTION， --option &#x3D; OPTION   SSH选项（可选）
+-v，--verbose  打开警告和诊断消息（可选）
+-A，-askpass   要求输入密码（可选）
+-x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
+-X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
+-i，--inline  每个服务器的内联内联聚合输出和错误
+--inline-stdout 每个服务器的内联标准输出
+-I，--send-input 从标准输入读取并作为输入发送到ssh
+-P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
+172.16.127.161
+172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2.实现远程控制获取被控主机IP地址</p>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果没有报错的话，应该输出类似实验下面的</p>
+<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
+[2] 22:42:03 [SUCCESS] 172.16.127.161
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果有以下错误</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
+Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
+ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
+Are you sure you want to continue connecting (yes&#x2F;no)?
+Host key verification failed.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
+<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
+# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li>把文件并行复制到多个主机上</li>
 </ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.远程将主机文件复制到被控端主机上</p>
+<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
+[1] 23:02:17 [SUCCESS] 172.16.127.161
+[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
+</ul>
+<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>并行地在多个远程主机上杀死进程</li>
+</ul>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
+<ul>
+<li>安装Apache</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>开启Apache web服务</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
+[1] 00:32:33 [SUCCESS] 172.16.127.131
+[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:36:46 [SUCCESS] 172.16.127.161
+COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+[2] 00:36:46 [SUCCESS] 172.16.127.131
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>杀死进程</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
+[1] 00:38:39 [SUCCESS] 172.16.127.131
+[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
+[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><font size="4" color="red" >报错:</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
-  You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
-二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
-  packages:
 
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
-三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装依赖：</p>
-<p>注意： rpcgen源没有需下载</p>
-<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>启动失败（报错）</p>
-<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
-
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
-affiliates. Other names may be trademarks of their respective
-owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>三台  关闭firewalld</p>
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>自动化</category>
       </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python初始</title>
+    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Pyhon语言</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python 函数</title>
@@ -1150,17 +1161,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
-    <title>Python初始</title>
-    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Pyhon语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c语言初始</title>
     <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
@@ -1237,6 +1237,86 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       <categories>
         <category>数据库</category>
       </categories>
+  </entry>
+  <entry>
+    <title>openstack原理</title>
+    <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
+<p><strong>也可以这样理解为：</strong></p>
+<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
+<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
+<p>私有云(Private Cloud)</p>
+<p>社区云(Community cloud)</p>
+<p>混合云(Hybrid Cloud)</p>
+<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
+<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
+<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
+<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
+<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
+<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
+<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
+<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
+<p>4）形成新的云计算产业。</p>
+<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
+<p><strong>2. 对于云计算消费者</strong></p>
+<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
+<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
+<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
+<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
+<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
+<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
+<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
+<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
+<p>9）个人、中小企业和机构也用得起高性能计算。</p>
+<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
+<li>亚马逊AWS.</li>
+<li>微软Azure.</li>
+<li>阿里<strong>云</strong></li>
+<li>UCloud.</li>
+<li>腾讯<strong>云</strong></li>
+</ul>
+<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
+<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
+<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
+<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
+
+<p>各服务组件的功能如下：</p>
+<ul>
+<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
+<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
+<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
+<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
+<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
+<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
+<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
+<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
+<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
+<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
+<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
+</ul>
+<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
+
+<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
+<ul>
+<li>Dashboard （仪表盘）</li>
+<li>Compute （计算）</li>
+<li>Networking (网络）</li>
+<li>ObjectStorage（对象存储） </li>
+<li>Block Storage (块存储)</li>
+<li>Identify （认证）</li>
+<li>Image (镜像）</li>
+<li>Telemetry （计量）</li>
+<li>Orchestration (编排）</li>
+<li>Database (数据库）</li>
+<li>Data Processing Service (数据分析）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>云计算</category>
+      </categories>
+      <tags>
+        <tag>openstack</tag>
+      </tags>
   </entry>
   <entry>
     <title>prometheus定义</title>
