@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>5.7多实例 | abbott Blog</title>
+  <title>MySQL数据库客户端配置prompt参数 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -657,21 +657,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/2.jpg')">
+  background-position: center center;position: relative;background-image:url('/blog/medias/6.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        5.7多实例
+        MySQL数据库客户端配置prompt参数
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-10-31 |
+          <i class="fas fa-calendar"></i> 发表于：2021-11-01 |
         </span>
       
 
@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 6.4k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 3.8k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 6 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 3 mins.分钟 |
           </span>
   
           
@@ -717,92 +717,145 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <p>[mysql]</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#49;&#64;&#x31;&#x37;&#50;&#46;&#49;&#54;&#46;&#x35;&#x39;&#46;&#49;&#51;&#51;">&#100;&#101;&#118;&#49;&#64;&#x31;&#x37;&#50;&#46;&#49;&#54;&#46;&#x35;&#x39;&#46;&#49;&#51;&#51;</a> [mysql]&gt;</p>
+<p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
+<p>默认的 mysql 提示很简单：</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>解压并做超链接</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz  &#x2F;app&#x2F;soft&#x2F;
-[root@localhost soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@localhost soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>创建数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost soft]#  mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>创建 主配置 文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3308
-socket&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>创建用户，修改存放数据目录的权限及安装目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@localhost mysql5_data]# chown mysql:mysql -R &#x2F;my_data&#x2F;
-[root@localhost mysql5_data]# chown mysql:mysql -R mysql5&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>初始化：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><font color=red>注意：</font></p>
-<blockquote>
-<p>如果初始化成功之后再进行下一步；如果不确定执行是否成功 ；可以使用echo $? </p>
-<p>0  为执行成功；</p>
-<p>非0 为执行不成功；需要重新初始化执行；</p>
+<p>很好很简单，但是如果您打开了多个 mysql 客户端窗口，则可能很难知道哪个窗口连接到哪个用户和数据库。更改显示数据库和用户的提示可以更容易地快速判断哪个窗口连接到哪个客户端和数据库。</p>
+<h4 id="更改-mysql-提示"><a href="#更改-mysql-提示" class="headerlink" title="更改 mysql 提示"></a>更改 mysql 提示</h4><blockquote>
+<p>要更改提示，请打开您的 MySQL <strong>my.cnf</strong>（或<strong>my.ini，</strong>如果您使用的是 Windows）并在 [mysql] 部分添加以下行。如果该文件没有，请通过添加以下行来创建它。</p>
 </blockquote>
-<p>启动数据库：（两种方式）</p>
-<ul>
-<li><p>使用mysqld 启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# &#x2F;bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>使用mysqld_safe</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld_safe --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[ mysql ]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>解释：</p>
-<blockquote>
-<p>mysqld  开启 之后只有一个进程；</p>
-<p>mysqld_safe：开启之后有两个进程；</p>
-<p>他们之间的关系是mysqld_safe是mysqld 守护进程。 </p>
-</blockquote>
-</li>
-</ul>
-<p>连接数据库 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock -P 3308 -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p> 密码会在初始化的时候随机生成；第一次登录需要，登录之后在修改密码</p>
-</blockquote>
-<h2 id="安装第二个-实例"><a href="#安装第二个-实例" class="headerlink" title="安装第二个 实例"></a>安装第二个 实例</h2><p>创建 数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost data]# mkdir -p my_data2&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在上述行之后添加以下选项。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">prompt&#x3D;\u@\h: [ \d ]&gt; \_<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>修改权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost data]#  chown -R mysql:mysql my_data2&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>‘\u’ 和 ‘\h’ 分别显示用户名和主机名。’\d’ 显示选择的默认数据库。重启客户端会显示修改后的提示，下面是我机器上的样子。’wordpress’ 是我的默认数据库。</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">codediesel@localhost: [ wordpress ]&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>创建my.cnf或者修改原有的配置（添加一下修改一下标签就好）</p>
-<p>注意： 我的my.cnf是独立使用的</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data2]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3307
-socket&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果您不想更改<strong>my.ini</strong>文件或无法更改，您还可以如下所示以交互方式更改提示。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">shell &gt; mysql --prompt&#x3D; &quot;\u@\h:[\d]&gt;\_&quot; -uUSERNAME -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>初始化 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动第二个实例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>测试：连接3307端口实例</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock -P3307 -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>好了现在多实例就创建完成了</p>
+<p>下列出prompt参数的完整选项清单：</p>
+<h4 id="选项列表"><a href="#选项列表" class="headerlink" title="选项列表"></a>选项列表</h4><p>‘prompt’ 参数支持多种选项，完整列表如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th><code>\c</code></th>
+<th>为您发出的每个语句递增的计数器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\D</code></td>
+<td>完整的当前日期</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>默认数据库</td>
+</tr>
+<tr>
+<td><code>\h</code></td>
+<td>服务器主机</td>
+</tr>
+<tr>
+<td><code>\l</code></td>
+<td>当前分隔符（5.0.25 中的新增功能）</td>
+</tr>
+<tr>
+<td><code>\m</code></td>
+<td>当前时间的分钟</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>换行符</td>
+</tr>
+<tr>
+<td><code>\O</code></td>
+<td>三字母格式的当前月份（一月，二月，…）</td>
+</tr>
+<tr>
+<td><code>\o</code></td>
+<td>数字格式的当前月份</td>
+</tr>
+<tr>
+<td><code>\P</code></td>
+<td>上午下午</td>
+</tr>
+<tr>
+<td><code>\p</code></td>
+<td>当前 TCP/IP 端口或套接字文件</td>
+</tr>
+<tr>
+<td><code>\R</code></td>
+<td>当前时间，采用 24 小时军用时间 (0–23)</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>当前时间，标准 12 小时制 (1-12)</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>分号</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>当前时间的秒数</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>一个制表符</td>
+</tr>
+<tr>
+<td><code>\U</code></td>
+<td>您的完整 user_name@host_name 帐户名称</td>
+</tr>
+<tr>
+<td><code>\u</code></td>
+<td>您的用户名</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>服务器版本</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>以三字母格式表示的当前日期（周一、周二、…）</td>
+</tr>
+<tr>
+<td><code>\Y</code></td>
+<td>当前年份，四位数</td>
+</tr>
+<tr>
+<td><code>\y</code></td>
+<td>当前年份，两位数</td>
+</tr>
+<tr>
+<td><code>\_</code></td>
+<td>空间</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>一个空格（反斜杠后面有一个空格）</td>
+</tr>
+<tr>
+<td><code>\&#39;</code></td>
+<td>单引号</td>
+</tr>
+<tr>
+<td><code>\&quot;</code></td>
+<td>双引号</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>文字“ <code>\</code>”反斜杠字符</td>
+</tr>
+<tr>
+<td><code>\*</code>x<code>*</code></td>
+<td>x，对于上面未列出的任何“x”</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="post-tags-categories">
@@ -824,7 +877,7 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/blog/2021/10/31/5-7多实例/" target="_blank" title="5.7多实例">https://abbott68.github.io/blog/2021/10/31/5-7多实例/</a>
+    <a href="/blog/2021/11/01/MySQL数据库客户端配置prompt参数/" target="_blank" title="MySQL数据库客户端配置prompt参数">https://abbott68.github.io/blog/2021/11/01/MySQL数据库客户端配置prompt参数/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -842,40 +895,22 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/6.jpg" class="lazyload placeholder" data-srcset="/blog/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">MySQL数据库客户端配置prompt参数</div>
-      </div>
-      
-      <!-- <div class="content">
-        [mysql]
-prompt=\U [\d]&gt;  显示的效果为 &#100;&#101;&#118;&#49;&#
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/2.jpg" class="lazyload placeholder" data-srcset="/blog/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/" class="post-nav-link">
+    <a href="/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">openstack原理</div>
+        <div class="title-text">5.7多实例</div>
       </div>
       <!-- <div class="content">
-        第一章 原理篇一、云计算之OpenStack1.1    什么是云云计算(Cloud Computing)：一种基于因特
+        多实例安装（基于5.7版本 ）获取软件包:
+[root@localhost ~]#  wget https:&#x2F;
       </div> -->
     </a>
   </div>
