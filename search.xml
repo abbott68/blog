@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>5.7多实例</title>
     <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
@@ -189,44 +227,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAACoCAMAAACPKThEAAAAzFBMVEX////MAAAAAADJAADNAAD09PR6enr6+vqioqKnp6fPz8/f39/QAABGRkadnZ3Dw8M7OzvW1tYUFBS9vb2Wlpbm5ubt7e1NTU1nZ2dWVla1tbU9PT321dX+9/f87+/lior64+OBgYFycnIvLy8jIyONjY2AgIDnk5PSJiZra2snJyf0zMztrKzwuLjWQUEVFRXcXFzifHxfX1/QHh7YTk7gbG3pnZ3ywsL43d3wtLTZNjbYSkrrpqbkhYXVOzvhd3fbWVnfZ2fWJSTVFhbtTysUAAAQWklEQVR4nO2dCXuiOhSGEUQUF9ytuJS6tLU6XWxtO22nm///P00SlpwEFwhWxfo997lVQQZek5OzJCBJRx111FFHHXXUUUcdddRRRx111FFHxVHd9nhycXo3+7r9/Lz9mv27ePwztjq7Pqt9U/f577/Py2Qyl2CVTCbn718XT0ditjrji9v7ZGKVlNzLbPK86xPdtazJV2I1J0+5l7vx721e3ckn3+lWK3n5Md71Se9CnfEsHChH3xfWrk99y+pM3gN2Pb9ys9/UuLoXc1FQtl7/7PoStqTIpJCS17+BVucxOilC6/Xge+Kfl42Qwsp9Wbu+mp/U862wRV9I6+JwHa5HIS9hld4PtCNaDxttVLZyp9qur+sH9LbxRmXr/eACxc7HDzQqW7m/u764zep5c8OfX8m7Q+qHT5vxqZbqobvrK9yYNj/+8fo+FKN1+mOmimp+GM7Dx8+TQso97fo6N6DZVlAdxHD4tSVUCFbcUw/balUEVrxb1nZslQcrzjbrdKuoEKz2rq9YWJMtOAus5taur1lQT1tHlUi8xDOjZf1wYLNYX7u+bBF1IoTLCvlPTBe7vnABiQ+ByvVbu/33QZBWLn7Rzl9hY6Xc2Uc4FYR1H7ekgyWcWlA+3WN8CsKKm8l6EEWVULw+NBY9xGSXVx5ab8KoEu/0KK+Ch8hZO7vw8BLvgQnljR5mIjoYxqkX3gqjYixzR9hDi09gOBZ32N1B0NadaMOKjfuuRSnaMInzZ2HocfFIJxFQvbKHEnUbErl4NKxOhKqNwuU2n4RDnbvFJ7dnehRHlbjkmkPnUvRIsfAbxAcv1Kx8ZubioBtWlGaVtPijWcKscjEIC6M0qwU+5EwY1un2rz2k/kRJhi5IpwgHhYm5bygspTNElaz93sy4SuuSVLdfmrrKfquCNpfQXw3vV5e8r5IPpXo6Q49Sl2oZM/hEFNEYDuvaO0rX8l5eCx/OF0IPZVcNQqvlvZeHkqS7rwdD5nLz6KMCpoK36fZnWfx6il/pMlBJq/aG6aCo2hGaFQgF32beS+GgMPHCn1wVXFYNvW8wrEr0XbEOvoX3SnOsht4xWFa1Sr6aCdqw7sRRQWv8Ovded4UNYJKvgBFW5TK5rLNVrOTRGlZ9slfax0oamgUzIKpOlGZFR/k2bGP/NuY2VAkjTU3hpuNQMNU6luqw0rNmEf/NrmTlAMqjl6qu6xX8poJeaJJm6AFRRStz0WaAYmZqu56FD8hb96rTnvClXjkUKioBJTmsVMcWZVhWVbRXlrI6l+WbFmlHRDW3Q4bSlzgp5cE7SvcepkelT+FjcqkZp11pZ06bcPtgj7KqOx+fsaw8EVbqlSy30nbPFWa1oVAQm3Plw3v7R7gTfrCnh1nd9PsDfGmF5axG3kdLWOE+18OA+po4qyhdEISCxO+g1l08KJyzQxIYBxsaoDBiWZ2sYzXFfZf4EoY4qwjTYkAo2LY/ePQ+EA4KuZGQskppLoWhaZo6y6pFe5e717RQLQxdVgTNSaroIRVi9S3OCoSCTjaUukfWhlJ+mNXUyHstqeEZa4+VOx6Cgd8dB1WXVYY2s3JdlNVzhJIEDQWxZScfUesuHBReM+dn23bD60uEQknHyjqMKkb1hrtyn88AO6UpyipCQlShQ5brqCvUdx8Ld0LGa3B8Btywmi4FR1PWFwXDoI8V8R2a0+a0LztxjgirCBMeQQPwAkDQLd9FWTFeg8OKNCyDZXXCsDqBYwLPCtutFt5AXNCsICvh8Qq66W2vDQHr/ibasBiDha8yhf5iq9yXmNh5CqKVPBul4L1A7KwN3HZHPqhKTksLx6or7AclFBoKgjrXJT30veCBH+AJZisGScegv0YFNR3d8IQ8cJW80EswbsZCe1UwCA1vVsmfSt3bortbwq0JEveuQCgIqQAjJlopvFx0onugCNlj6gfBFAwYHJ9FZ2NZOwARQOLp3k96ECa1B6y7aA4x0sw17ccW2wlnMEEo2GZ4A2deNCj0zy+q9XrAK5fqvV6FvsuMvKSoOeqXy1dTL22cGdnePvq+rVTVc2SNUY8zc6VRj2qENlbSYMjQhIfBe/rzcXaJBomi00//+VgV2EEry7ztufFwlg6SVfuTFPHqWT+slfWOCTJehJ4MVZP0wqhKfxPhiUQKrbjw4x2w7oJB4UzihV1RkJ7CrGgaNCUXCZk6cjQbmYpZyHueaUouu6waoxOkJtp0VV/Oqkn2wprWJdNs6DQTLxzhAKvEJ9eVW4pR7OC+pDtikyfZK8DKyRcAVkOPp37VV3lWTgPRUm6QvZBVCb5XzyrntJs+CaKCVUG/yaMcv4Qa1pxnVZWvDNjrCKuiawVcVi254e5Qr7mbPFae5emTXPQSVmw2WSuBWtpfUVZ0qGr7cID+KVYp5CfMaEU5pZWJu+2xOqc5GIeVeiOf85AXsUrJN2pAVoxEI2fQSz78TQekAIWCQoUr1ZdwhzuxAzqXlXHiXarDCgUy059kdSGGCk4QXWC/gT8hFhRa7FkO5YGGo17PmGBWKPhtMKykJrBhK1gV7YRFaFaCC+Dm8If/k/Tx+PQ2dkViKH46yQBHz2qZJj6z2FRXXVPusqpQX2EBK3fwH7ov19t2VmJlVHaCqGS9+GDRWZEiQWGSvRuBbv/cPVLzoqy0vJ0+9liRnER5CAEAVqMq1rDoDZYLWZ2lkQoLW5dgyZkrDnd4m6VQb7Id/fjnchn/AZ2QsMIAegwryRzY+RmvcQFW1E2VVrCy5RsjxFm9+o7Dh+BgFrfIeiYmIFQH9rmjTuimPm1WuB0ZDCtJM7EfKg9c4wRY5adNpEZZlvul5az6LaR+VVogIVb8BFGs8T0bFNKQTiQoZNqVZ3FRJ9QYVmqRRDeAFd42HDjpQZaV4dJ046Ot2Ct+gihR95VhQvN1nfApP7bs1SP5UInYLYNhhS+uyrNCCKtOVnShbcdfOl/KasU4+E8AlX+CqMMdwlLo5YYPCplxUEO+QbqAVfXKpS4rHBtnfawI1YG6jBUKLsn+W/GvrCUHg44tGCqt0P8Aw6rCBP8ay6o+QM6SnxW2ZKWlrJAzWhdgJbC2C4aCd2wTe76kTQhY99BBIeO3I/+8VbTVd6/YY4VJVs78rCrOVW+SlUA8CFIu3Xtlxtiu7i0t6FDrHrpSCOPBOo77NCI8Eo44VtJUbvX8rMxV7aop1gcF8gxgreBESSjXFnNAGgiA6mHYoBDmGUw4NqWcAjtgVSvLZTcn0/ASKM0V9kp3RsmwrMLnr2AoiBeyKtxdrLzCELDuYYNCWMhpOhkU92JMjhWZqUBYVbBfRaCpXhLCx0pTKwOHflhWAnlRaktcl/yROeTzu00GTMYKGxTSZCEuDwPHUL2y417ICteYCas6njY06A2HvRtn/hHDqp/HapU9fwKxauU9qTarovdBi3dIQzs/MBR0nQTlgzFaHac2BALsBXmbVQL59jT746dsP5JhlfXmn5l9d7hMOTm63qJ8u+OkVZkBti7x+fYUxyp8fon2LLqIR3m1mIPaEQ+s4Yf7N0A3rxQy8MjZQgGjU9MFQNDwphFrxrBZbE3pRqNgz8aup12Z3rZSIQ2Ed6vBTwp8fif0eA5CQZBnV+5Zo2VHPCAhGG6J/p6u5g3pjCrg1l7s9b8xh7VwxAMSzX/D/CT7WncOOZ8BhIJcv1Lu2CgRGTMwGSvU6qj7PV2fGm79Gqg6+JJ4Cndz1QlyJyzvXZibp/hSPr6quxZoMhDZSQ89h325wq0Gsbzv+f0A3mi1L8FkrDDTR/mFcSazfETCI19h/YVpU+xe6H6fXlxhbssAqqSLlyexExG6D9/0TfBBJMmb9qmTK/ZkyBlprep43p9Uyw/X7hlYYSYVAWO9eGTjEvHSP3rZIYJCruJVkxs2myyZu1iT1IxczWJ6JUPHjSZbUiuGKpUq5J2UNQy0o6bLzSzqf2RHSTeIq16q1e2viCnMgjgQCi7xmJRb9kLBu8CzTPgKfVrWi6S61Rqg/+X7ZCII8uZxtV3GIWBDxhMZcGFiqjlL3wq295lHoFHrqjdt11IdXCGXPs+tywyuEMvCYSi4rDyjfC+7rWPgoJCfJVOU0fXjJtW6slmVUvIoraMPp2YKl0+b8kjHsxSMJvbmjaFRKcq1elVupU2b1VQ+N5uILgqRzo0TeWE2PZC+ArNK0lbSWbHXkrszBV5TyM1Uy8pnqJEMKSsNGWzUJ7XyjYQxZBGrulQvFyVnNxVz0iXVtldoXCjhV+rVlaoOkKGvO6VUEQW+mRoIhlcuPFWWLPAOGBTykxmGsq5pxSvIith20mKkDGpKTVlDKBo2VrtIiFjVScUes6oQczeSs9oAYdJu8r5TC6pu4FQD6F0rYxblc+GtA/yTRBaKW5ev9eUbvCxV97MaQVYDh5UpTyuow/0Mq8BL/cBU6jWxsPKy0GgFmz7KFdR0udHr9U6wac7LGJ3LSpMHhECJZXWOExEmYUX7YA9/cYD6YFRWAfPIsCq4tjslF90SOlClkO+CPbuY15JV1LuGpaFM7FVKL6G3PX2IjQ9gdY5GzbOSOcD2qlzUDbv1IbuunyBbFp1VwE4IFtcGMdMLCmOBkmXc/EfVKQ5WZTSmXZGaMjLPNzg/quLcXrGGfQacis/brFS8vKSIu+wJXoVSwz2xVrT9CRXPrNHA3KTwCrQkB1YFg9xSgPe0sAIEhUluFFSdeE7Fq7o006yXyGrADF5CIekZsvKhRtZV4O1k/YSRyar43hZ4b+SS4o2akSHJ4WzN2VNYgSbfwZpdoGyU4n9gUIBK4Tf/nX1TgKnVsCoYMMup+AK7AEHhI/+VfVOAiiqoCoaYUsUbrbUltv2/UVGApfQgSAtxUw+u1LreunOL6PdRa6dCit5BlDdaa1ysfc0eQ611G+AMg1ArkpQ5Y7TWLP+55U9sH7WmYcFQMPSkRmC01hRVc7F4atW6hgViltCTZUGpdc1UrJjc5nd17euT7ihwuybPaK2JpuJgrbBWj1Cfp55E1t0r8wur02mvu8NIHO4CSbT6N1eoBFjhJ1HMlXWPo5jvvW/lSfweextSjO523/7xhzOu1vX6U9wfbfvhVKxi9qiqn3yW7FrF5YbkjnbZC/3LVvZcgqsJN6B4eOyMIjxzIpIWpuf3XOL3UI2mGKRi/BrvxGTFzljZetvB8wdj+7DG7XtZMfOsoLb5FF6sZJwfWyx+e14hVDEKA/3qRLn1fWhUe1/kWq2O6B0cfx8qvHZ5W6hiFgUu0pa6YfxbFVZnG6NhzJ9FTxXlIRQBUe3pEiUBvf1wuPMSv9TCcj39aCC9eE5pbGWJP5h3nXIHMAByOv2hfjg/HFNFNY7w1IClSn4dVv9z1b3beJJmfiiugl/jzZZ3krPDbFSOHjc3ICavI90XOgayPjbUEeexTsAElDXbwIh4/7ini743rXZUWvPHgzZUrKxTcbuVvP4NvQ+qO3kXMly52aFb9IV6Pr0MiSv3MPlFnY9T+/QlqOlK5j7frF2f745l/Z1dJpIrJzUmE7nr06ff26IYWU+nt5e5RS0smZu/z97Gv8RBCKzu89Pk9GP28PI9R7p8v53dPU7G1hHTUUcF0X8hPGkCTEtL3gAAAABJRU5ErkJggg==" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grafana</title>
     <url>/blog/2021/07/21/Grafana/</url>
     <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
@@ -296,6 +296,214 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Grafana</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL</title>
+    <url>/blog/2021/07/16/MySQL/</url>
+    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
+<span id="more"></span>
+<h2>MySQL 介绍</h2>
+MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
+
+<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
+<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
+<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
+<h2>特性</h2>
+
+<ul>
+<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
+<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
+<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
+<li>支持多线程，充分利用CPU资源，支持多用户。</li>
+<li>优化的SQL查询算法，有效地提高查询速度。</li>
+<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
+<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
+<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
+<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
+<li>可以处理拥有上千万条记录的大型数据库。</li>
+</ul>
+<h2>历史</h2>
+
+<ul>
+<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
+<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
+<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
+<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
+<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
+<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
+<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
+<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
+<li>2008年1月16号 MySQL被Sun公司收购。</li>
+<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
+<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
+</ul>
+<h2>MySQL管理</h2>
+
+<ul>
+<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
+<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
+<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
+<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
+</ul>
+<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
+<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
+<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
+<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
+<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
+<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
+<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
+<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
+</ul>
+<h2>派生版本</h2>
+
+<ul>
+<li>Drizzle</li>
+</ul>
+<p>  ① 介绍</p>
+<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
+<p>  ②特性：</p>
+<blockquote>
+<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
+</blockquote>
+<ol>
+<li>Web 应用。</li>
+<li>云计算组件。</li>
+<li>没有业务逻辑的数据库（又名存储过程）。</li>
+<li>多核架构。</li>
+</ol>
+<ul>
+<li>基于 MySQL 6.0 的源码树</li>
+<li>无附加库</li>
+<li>遵守 POSIX</li>
+<li>微内核设计</li>
+<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
+<li>跨多个节点的 Sharding 技术</li>
+<li>智能代理</li>
+<li>多 CPU/ 多核 CPU</li>
+<li>优化的字段类型</li>
+<li>高效的内存使用</li>
+<li>没有内部 ACL，使用 LDAP/PAM</li>
+<li>没有数据库数据格式化</li>
+<li>整理有序的 Make 系统</li>
+<li>缺省存储引擎为 InnoDB</li>
+<li>移除 Windows 兼容性</li>
+</ul>
+<h2>哲学上更大的差异</h2>
+
+<blockquote>
+<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
+</blockquote>
+<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
+<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
+<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
+<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
+<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
+</ul>
+<h2>版本</h2>
+
+<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
+<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
+<table>
+<thead>
+<tr>
+<th align="center">版本</th>
+<th align="center">原始发布日期</th>
+<th align="center">最新版本</th>
+<th align="center">发布日期</th>
+<th align="center">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5.1</td>
+<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
+<td align="center">5.1.67</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.2</td>
+<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
+<td align="center">5.2.14</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.3</td>
+<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
+<td align="center">5.3.12</td>
+<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">5.5</td>
+<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
+<td align="center">5.5.68</td>
+<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.0</td>
+<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
+<td align="center">10.0.38</td>
+<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.1</td>
+<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
+<td align="center">10.1.48</td>
+<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.2</td>
+<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
+<td align="center">10.2.39</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.3</td>
+<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
+<td align="center">10.3.30</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.4</td>
+<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
+<td align="center">10.4.20</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center">10.5</td>
+<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
+<td align="center">10.5.11</td>
+<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+<tr>
+<td align="center"><strong>10.6</strong></td>
+<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
+<td align="center">10.6.3</td>
+<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
+<td align="center">Stable (GA)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Percona</li>
+<li>Server</li>
+<li>OurDelta</li>
+</ul>
+<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a><br>二、<a href="https://abbott68.github.io/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">二进制安装MySQL</a><br>三、<a href="">通过YUM安装MySQL</a></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -498,7 +706,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#53;&#57;&#46;&#49;&#x33;&#x33;">&#x64;&#x65;&#118;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#53;&#57;&#46;&#49;&#x33;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#x31;&#54;&#46;&#x35;&#x39;&#x2e;&#x31;&#x33;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#x31;&#54;&#46;&#x35;&#x39;&#x2e;&#x31;&#x33;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1200,214 +1408,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
-    <title>MySQL</title>
-    <url>/blog/2021/07/16/MySQL/</url>
-    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
-<span id="more"></span>
-<h2>MySQL 介绍</h2>
-MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
-
-<p>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
-<p>MySQL所使用的 SQL 语言是用于访问<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>的最常用标准化语言。MySQL 软件采用了双授权政策，分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是<a href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E7%A0%81/7176422">开放源码</a>这一特点，一般中小型网站的开发都选择 MySQL 作为网站数据库。</p>
-<p>MySQL是目前最流行的关系型数据库管理系统。它分为社区版和商业版。由于其体积小、速度快、应用成本低、尤其是开发源代码这一特点，使其成为中小型网站开发首选的数据库平台。但是，甲骨文公司收购了MySQL后，又将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险，MariaDB数据库就是MySQL的一个分支。在RHEL 7.0版本之后，系统自带的数据库由MySQL替换为MariaDB数据库，MariaDB主要由开源社区维护，采用GPL授权社区。</p>
-<h2>特性</h2>
-
-<ul>
-<li>使用C和C++编写，并使用了多种编译器进行测试，保证源代码的可移植性。</li>
-<li>支持AIX、BSDi、FreeBSD、HP-UX、Linux、Mac OS、Novell NetWare、NetBSD、OpenBSD、OS/2 Wrap、Solaris、Windows等多种操作系统。</li>
-<li>为多种编程语言提供了API。这些編程语言包括C、C++、C#、VB.NET、Delphi、Eiffel、Java、Perl、PHP、Python、Ruby和Tcl等。</li>
-<li>支持多线程，充分利用CPU资源，支持多用户。</li>
-<li>优化的SQL查询算法，有效地提高查询速度。</li>
-<li>既能够作为一个单独的应用程序在客户端服务器网络环境中运行，也能够作为一个程序库而嵌入到其他的软件中。</li>
-<li>提供多语言支持，常见的编码如中文的GB 2312、BIG5，日文的Shift JIS等都可以用作数据表名和数据列名。</li>
-<li>提供TCP/IP、ODBC和JDBC等多种数据库连接途径。</li>
-<li>提供用于管理、检查、優化数据库操作的管理工具。</li>
-<li>可以处理拥有上千万条记录的大型数据库。</li>
-</ul>
-<h2>历史</h2>
-
-<ul>
-<li>1979年 Monty Widenius 为一个叫TcX的小公司打工，并用BASIC设计了一个报表工具,可以在4M主频和16KB内的计算机上运行，过了不久使用C语言重写，移植到Unix平台，当时，它只是一个很底层的面向报表的存储引擎，这个工具叫做Unireg;</li>
-<li>1985 年，瑞典的几位志同道合小伙子（以David Axmark 为首） 成立了一家公司，这就是MySQL AB 的前身;这个公司最初并不是为了开发数据库产品，而是在实现他们想法的过程中，需要一个数据库。他们希望能够使用开源的产品;</li>
-<li>1990年，TcX的customer 中开始有人要求要为它的API提供SQL支持，当时，有人想到了直接使用商用数据库算了，但是Monty觉得商用数据库的速度难令人满意.于是，他直接借助于mSQL的代码，将它集成到自己的存储引擎中。但不巧的是，效果并不太好。于是,Monty雄心大起，决心自己重写一个SQL支持。</li>
-<li>1996年，MySQL 1.0发布, 在小范围内使用。到了96年10月，MySQL 3.11.1发布了，没有2.x版本。最开始，只提供了Solaris下的二进制版本。一个月后，Linux版本出现了。 此时的MySQL还非常简陋，除了在一个表上做一些Insert，Update，Delete和Select 操作职位，没有其他更多的功能。</li>
-<li>1999-2000年，有一家公司在瑞典成立了，叫MySQL AB。   雇了几个人,与Sleepycat合作，开发出了 Berkeley DB引擎, 因为BDB支持事务处理，所以，MySQL从此开始支持事务处理了。</li>
-<li>2000年，MySQL 公布了自己的源代码，并采用GPL（GNU General Public License）许可协议，正式进入开源世界。</li>
-<li>2001年发布的3.23 版本的时候，该版本已经支持大多数的基本的SQL 操作，而且还集成了MyISAM和InnoDB 存储引擎。MySQL与InnoDB的正式结合版本是4.0。</li>
-<li>2004年10月，发布了经典的4.1版本。 2005年10月，有发布了里程碑的一个版本，MySQL 5.0.  在5.0中加入了游标，存储过程，触发器，视图和事务的支持。在5.0 之后的版本里，MySQL明确地表现出迈向高性能数据库的发展步伐。</li>
-<li>2008年1月16号 MySQL被Sun公司收购。</li>
-<li>2009年04月20日Oracle收购Sun 公司，MySQL 转入Oracle 门下。</li>
-<li>2010年04月22 发布MySQL 5.5, MySQLcluster 7.1.</li>
-</ul>
-<h2>MySQL管理</h2>
-
-<ul>
-<li>可以使用命令行工具管理MySQL数据库（命令mysql和mysqladmin），也可以从MySQL的网站下载图形管理工具MySQL Workbench；</li>
-<li>Navicat是一套专为MySQL设计的强大数据库管理及开发工具。它可以用于任何版本的MySQL数据库，并支持大部分MySQL的功能，包括触发器、索引、查看等；</li>
-<li>phpMyAdmin是由PHP写成的MySQL数据库系统管理程序，让管理者可用Web接口管理MySQL数据库。借由此Web接口可以成为一个简易方式输入繁杂SQL语法的较佳途径，尤其要处理大量资料的导入及导出更为方便。其中一个更大的优势在于由于phpMyAdmin跟其他PHP程序一样在网页服务器上运行，但是您可以在任何地方使用这些程序产生的HTML页面，也就是于远程管理你的MySQL数据库。使用phpMyAdmin您就可以方便的创建、修改、删除数据库及资料表；</li>
-<li>phpMyBackupPro也是由PHP写成的，可以通过Web接口创建和管理数据库。它可以创建伪cronjobs，可以用来自动在某个时间或周期备份MySQL数据库。</li>
-</ul>
-<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2><ul>
-<li>应用程序可通过ODBC或ADO方式，经由使用MyODBC与MySQL数据库连接；</li>
-<li>MS .Net Framework下的程序（例如：C#、VB.NET）可通过ADO.NET的方式，经由使用MySQL.Net（页面存档备份，存于互联网档案馆）与MySQL数据库连接；</li>
-<li>C/C++可使用MySQL++（页面存档备份，存于互联网档案馆）或是直接使用MySQL内置API与MySQL数据库连接；</li>
-<li>PHP可通过PHP的MySQLi与MySQL数据库连接，具备比MySQL模块（页面存档备份，存于互联网档案馆）更好的性能。另外PHP6可使用mysqlnd与MySQL数据库连接；</li>
-<li>JAVA程序可通过JDBC方式与MySQL进行连接，MySQL官方提供了JDBC驱动程序；</li>
-<li>可通过MySQL客户端软件与MySQL进行连接，如mysqlfront、mysqlyog、mysqlbrowser等；</li>
-<li>javascript可以通过使用fibjs的内置mysql模块[2]（页面存档备份，存于互联网档案馆）与MySQL数据库连接。</li>
-</ul>
-<h2>派生版本</h2>
-
-<ul>
-<li>Drizzle</li>
-</ul>
-<p>  ① 介绍</p>
-<p>  Drizzle，一个精简版的MySQL分支，在目前的MySQL代码基本之上，将存储过程、视图、触发器、查询缓存、PREPARE语句等等没什么必要的功能从代码中删掉，简化对数据类型和存储引擎的支持，并且进行大胆的重构。最终要实现的目的是将MySQL的代码大大简化，理顺MySQL的架构，改善MySQL的代码质量，提高系统的稳定性和性能。将更适合 Web应用、云计算组件、没有业务逻辑的数据库（又名存储过程）、多核架构 等业务</p>
-<p>  ②特性：</p>
-<blockquote>
-<p>现在的目标是针对某类应用 / 开发人员，看看对他们是否真的有帮助。举例来说，Drizzle 的目标有：</p>
-</blockquote>
-<ol>
-<li>Web 应用。</li>
-<li>云计算组件。</li>
-<li>没有业务逻辑的数据库（又名存储过程）。</li>
-<li>多核架构。</li>
-</ol>
-<ul>
-<li>基于 MySQL 6.0 的源码树</li>
-<li>无附加库</li>
-<li>遵守 POSIX</li>
-<li>微内核设计</li>
-<li>可插拔架构，适用于视图、存储过程、UDF、存储引擎等</li>
-<li>跨多个节点的 Sharding 技术</li>
-<li>智能代理</li>
-<li>多 CPU/ 多核 CPU</li>
-<li>优化的字段类型</li>
-<li>高效的内存使用</li>
-<li>没有内部 ACL，使用 LDAP/PAM</li>
-<li>没有数据库数据格式化</li>
-<li>整理有序的 Make 系统</li>
-<li>缺省存储引擎为 InnoDB</li>
-<li>移除 Windows 兼容性</li>
-</ul>
-<h2>哲学上更大的差异</h2>
-
-<blockquote>
-<p>采用外部库，采用开源软件的机制编写代码，保持开放式的沟通，消除了内部开发和外部开发之间的界限。本质上讲，做到了我一直倡导的“朴实的开源”。我们主要针对 C99、POSIX、基于自动化工具（Autotools）的系统。我们完全采用了微内核设计，将代码移出核心，通过接口将其推向边缘。我们在模块间采用了类似于 Linux/Apache 的紧耦合设计。</p>
-</blockquote>
-<p> 查看英文原文：<a href="http://www.infoq.com/news/2008/08/drizzle">Drizzle - a new direction for databases</a></p>
-<h2 id="MariaDB"><a href="#MariaDB" class="headerlink" title="MariaDB"></a>MariaDB</h2><ul>
-<li>MariaDB是MySQL关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在GNU GPL下开源。MariaDB的开发是由MySQL的一些原始开发者领导的，他们担心甲骨文公司收购MySQL后会有一些隐患。</li>
-<li>MariaDB打算保持与MySQL的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与MySQL API和命令的精确匹配。MariaDB自带了一个新的存储引擎Aria，它可以替代MyISAM，成为默认的事务和非事务引擎。它最初使用XtraDB作为默认存储引擎， 并从10.2版本切换回InnoDB。</li>
-<li>它的首席开发人员是米卡埃尔·维德纽斯，他是MySQL AB的创始人之一，也是Monty Program AB的创始人。2008年1月16日，MySQL AB 宣布它已经同意被Sun微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB是以Monty的小女儿Maria命名的，就像MySQL是以他另一个女儿My命名的一样。</li>
-</ul>
-<h2>版本</h2>
-
-<p>MariaDB直到5.5版本，均依照MySQL的版本。因此，使用MariaDB5.5的人会从MySQL 5.5中了解到MariaDB的所有功能。</p>
-<p>从2012年11月12日起发布的10.0.0版开始，不再依照MySQL的版号。10.0.x版以5.5版为基础，加上移植自MySQL 5.6版的功能和自行开发的新功能</p>
-<table>
-<thead>
-<tr>
-<th align="center">版本</th>
-<th align="center">原始发布日期</th>
-<th align="center">最新版本</th>
-<th align="center">发布日期</th>
-<th align="center">状态</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">5.1</td>
-<td align="center">2009年10月29日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-11">11]</a></td>
-<td align="center">5.1.67</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-12">12]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.2</td>
-<td align="center">2010年4月10日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-13">13]</a></td>
-<td align="center">5.2.14</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-14">14]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.3</td>
-<td align="center">2011年7月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-15">15]</a></td>
-<td align="center">5.3.12</td>
-<td align="center">2013年1月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-16">16]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">5.5</td>
-<td align="center">2012年2月25日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-17">17]</a></td>
-<td align="center">5.5.68</td>
-<td align="center">2020年5月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-5.5-18">18]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.0</td>
-<td align="center">2012年11月12日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-19">19]</a></td>
-<td align="center">10.0.38</td>
-<td align="center">2019年1月31日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-20">20]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.1</td>
-<td align="center">2014年6月30日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-21">21]</a></td>
-<td align="center">10.1.48</td>
-<td align="center">2020年11月4日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.1-22">22]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.2</td>
-<td align="center">2016年4月18日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-102_initial-23">23]</a></td>
-<td align="center">10.2.39</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.3</td>
-<td align="center">2017年4月16日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-103_initial-25">25]</a></td>
-<td align="center">10.3.30</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.4</td>
-<td align="center">2018年11月9日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-104_initial-26">26]</a></td>
-<td align="center">10.4.20</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center">10.5</td>
-<td align="center">2019年12月3日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-105_initial-27">27]</a></td>
-<td align="center">10.5.11</td>
-<td align="center">2021年6月23日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.2-24">24]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-<tr>
-<td align="center"><strong>10.6</strong></td>
-<td align="center">2021年4月26日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-106_initial-28">28]</a></td>
-<td align="center">10.6.3</td>
-<td align="center">2021年7月6日[<a href="https://zh.wikipedia.org/wiki/MariaDB#cite_note-10.6-29">29]</a></td>
-<td align="center">Stable (GA)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Percona</li>
-<li>Server</li>
-<li>OurDelta</li>
-</ul>
-<h1 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h1><p>一、<a href="https://abbott68.github.io/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/#more">源码安装mysql</a><br>二、<a href="https://abbott68.github.io/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/">二进制安装MySQL</a><br>三、<a href="">通过YUM安装MySQL</a></p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c语言初始</title>
     <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
@@ -1434,6 +1434,56 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       <tags>
         <tag>C语言</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>openstack原理</title>
@@ -1514,56 +1564,6 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       <tags>
         <tag>openstack</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
   </entry>
   <entry>
     <title>prometheus定义</title>
