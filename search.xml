@@ -706,7 +706,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#49;&#64;&#x31;&#x37;&#50;&#46;&#49;&#54;&#46;&#x35;&#x39;&#46;&#49;&#51;&#51;">&#100;&#101;&#118;&#49;&#64;&#x31;&#x37;&#50;&#46;&#49;&#54;&#46;&#x35;&#x39;&#46;&#49;&#51;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#x76;&#x31;&#64;&#49;&#55;&#x32;&#x2e;&#49;&#54;&#46;&#x35;&#x39;&#x2e;&#49;&#51;&#51;">&#100;&#x65;&#x76;&#x31;&#64;&#49;&#55;&#x32;&#x2e;&#49;&#54;&#46;&#x35;&#x39;&#x2e;&#49;&#51;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1146,6 +1146,114 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
+    <title>Python 函数</title>
+    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
+</ul>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
+</blockquote>
+</li>
+</ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
     <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -1289,114 +1397,6 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </tags>
   </entry>
   <entry>
-    <title>Python 函数</title>
-    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
-<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
-<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
-<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
-</ul>
-<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
-<ol>
-<li><p>函数定义基本语法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    函数体
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>def  关键字</p>
-<p>函数体： 函数体为实现函数功能的相关代码段。</p>
-<p>返回值： return 语句后面空一格，跟需要返回的</p>
-</blockquote>
-</li>
-</ol>
-<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
-<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
-<p>Python里不用像C语言里需要先申明函数再使用。</p>
-<p>如下实例调用了<code>printme()</code>函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token comment">#定义函数</span>
-<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-
-printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
-<ul>
-<li>必选参数：<code>fun(name, age)</code></li>
-<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
-<li>可变参数：<code>fun(*args)</code></li>
-<li>关键字参数：<code>fun(name, age, **kw)</code></li>
-<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
-</ul>
-<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
-<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
-#定义函数
-def printme(str):
-    print(str)
-    return;
-printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出 结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span>
-
-<span class="token comment">#调用函数</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
-age <span class="token number">35</span>
-name abott
-age <span class="token number">50</span>
-name abbott
-age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    function_suite
-    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-
-r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python初始</title>
     <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[]]></content>
@@ -1406,56 +1406,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       <tags>
         <tag>Pyhon语言</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
   </entry>
   <entry>
     <title>c语言初始</title>
@@ -1566,6 +1516,93 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       </tags>
   </entry>
   <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -1626,43 +1663,6 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 [root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
       <categories>
         <category>监控系统</category>
       </categories>
