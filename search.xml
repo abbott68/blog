@@ -1,44 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>5.7多实例</title>
     <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
@@ -136,97 +98,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
-    <title>Apache</title>
-    <url>/blog/2021/07/16/Apache/</url>
-    <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg"></p>
-<span id="more"></span>
-<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
-<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
-<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
-<ul>
-<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
-<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
-<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
-</ul>
-<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
-<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
-<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
-</ul>
-<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a href="http://httpd.apache.org/">适合您</a>的版本</p>
-<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
-<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
-# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
-# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
-# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>创建存放文件夹</p>
-<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(2)获取软件包</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
-# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
-# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(3)安装apr</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
-# make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(4)安装apr-util</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
-# tar xf apr-util-* &amp;&amp; cd apr-util-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>(5)安装apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
-# tar xf httpd-* &amp;&amp; cd httpd-*
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
---sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
---with-include-apr \
---disable-userdir \
---enable-headers \
---with-mpm&#x3D;worker \
---enable-modules&#x3D;most \
---enable-so \
---enable-deflate \
---enable-defate&#x3D;shared \
---enable-expires-shared \
---enable-rewrite&#x3D;shared \
---enable-static-support \
---with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
---with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
---with-ssl \
---with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>(6)编译并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># make
-# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>(7)启动服务进程</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（8）添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
-#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（9）启动Apache</p>
-<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（10）查看端口号是否开启 Apache默认端口是80</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a href="http://server-ip/">http://server-ip/</a></p>
-<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
-<ol>
-<li>基于单个IP地址多个socket端口；</li>
-<li>基于多个IP地址一个端口；</li>
-<li>基于单个IP地址一个端口不同域名。</li>
-</ol>
-<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
-<ul>
-<li>修改虚拟主机配置文件</li>
-</ul>
-<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
-]]></content>
-      <categories>
-        <category>web服务</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Grafana</title>
     <url>/blog/2021/07/21/Grafana/</url>
     <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
@@ -278,7 +149,7 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
 <p>添加防火墙规则</p>
 <pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
 # firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg">默认登录用户名（admin）密码（admin）</p>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
 <h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
 <li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
 <li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
@@ -299,9 +170,47 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/blog/2021/07/16/MySQL/</url>
-    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg"></p>
+    <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" class="lazyload placeholder" data-srcset="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <span id="more"></span>
 <h2>MySQL 介绍</h2>
 MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于 [Oracle](https://baike.baidu.com/item/Oracle) 旗下产品。MySQL 是最流行的[关系型数据库管理系统](https://baike.baidu.com/item/关系型数据库管理系统/696511)之一，在 WEB 应用方面，MySQL是最好的 [RDBMS](https://baike.baidu.com/item/RDBMS/1048260) (Relational Database Management System，关系数据库管理系统) 应用软件之一。
@@ -507,6 +416,97 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
+    <title>Apache</title>
+    <url>/blog/2021/07/16/Apache/</url>
+    <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h1 id="Apache-web服务器"><a href="#Apache-web服务器" class="headerlink" title="Apache web服务器"></a>Apache web服务器</h1><h2 id="什么是Web服务器"><a href="#什么是Web服务器" class="headerlink" title="什么是Web服务器"></a>什么是Web服务器</h2><p>&#160; &#160; &#160;万维网(world wide web, WWW)服务器，也成为Web服务器，主要功能是提供网上浏览服务，<br>WWW是internet的多媒体信息查询工具，是Inernet上飞速发展的服务，也是目应用最广泛的服务，正是因为有了WWW软件，才使得近年来internet迅速发展。<br>&#160; &#160; &#160;目前主流的Web服务器软件包括Apache | Nginx | Lighttpd | IIS | Resin | Tomcat |WebLogic|Jetty等。<br>首先先介绍Apache web服务器发展历史、工作模式、虚拟主机、配置文件等内容；</p>
+<h2 id="Apache-web-服务器"><a href="#Apache-web-服务器" class="headerlink" title="Apache web 服务器"></a>Apache web 服务器</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&#160; &#160; &#160;Apache HTTP server是Apache软件基金会的一个开源的网站服务器，可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是目前最流行的Web服务器软件之一<br>。<br>&#160; &#160; &#160;Apache服务器是一个多模块化的服务器，经过多次修改，成为目前世界使用排名第一的Web服务器软件。Apache取自”a patchy server”的读音，即充满补丁的服务器，因为Apache基于GPL发布，大量开发者不断为Apache贡献新的代码、功能、新的特性、修改原来的缺陷。<br>Apache服务器的特点是使用简单、速度快、性能稳定，可以作为负载均衡及代理服务器来使用。</p>
+<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><p>&#160; &#160; &#160; &#160;Apache就向汽车一样都有发动机引擎，不同的引擎，对车子运行效率也不一样，同样Apache也是有类似工作引擎或者处理请求的模块，称之为多路处理模块（multi-proceessing modules,MPM）Apache web服务器有三种处理模块：Profork MPM | Worker MPM | Event MPM 工作模式；</p>
+<ul>
+<li>Event MPM 工作模式：<br>&#160; &#160; &#160;不支持HTTPS方式，所以Event MPM很少使用；</li>
+<li>Profork MPM工作模式：<br>&#160; &#160; &#160; 控制进程master在最初建立“StartServers”个进程后，为了满足MinSpareServers设置的最小空闲进程，所以需创建一个空闲进程，等待一秒钟，继续创建两个，再等待一秒钟，继续创建四个 ，依次按照递增指数级创建进程数，最多每秒 同时创建32个空闲进程，直到满足至少有MinSpareServers设置的值为止。<br>&#160; &#160; &#160; Apache的预派生模式(Prefork),基于预派生模式不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能，不过由于Prefrok MPM引擎是基于多进程方式提供对外服务，每个进程占内存也相对较高。</li>
+<li>Worker MPM工作模式:<br>&#160; &#160; &#160;控制进程master在最初建立“StartServers”个进程，每个进程会创建ThreadsPerChild设置的线程数，多个线程共享该进程内存空间，同时每个进程独立地处理用户的HTTP请求。为了不在请求到来时再生成线程，Worker MPM也可以设置最大最小空闲线程。</li>
+</ul>
+<h4 id="Profork-MPM与Worker-MPM引擎区别如下："><a href="#Profork-MPM与Worker-MPM引擎区别如下：" class="headerlink" title="Profork MPM与Worker MPM引擎区别如下："></a>Profork MPM与Worker MPM引擎区别如下：</h4><ul>
+<li>Profork MPM 模式：使用多个进程，每个进程只有一个线程，每个进程在某个确定的时间只能维持一个连接，优点是稳定，当内存开销较高；</li>
+<li>Worker MPM模式：使用多个进程，每个进程包含多个进程，每个线程在某个确定的时间只能维持一个连接，内存占有量比较小，适合大并发、高流量的Web服务器。Worker MPM缺点是一个线程奔溃，整个进程就会 连同其任何线程一起挂掉。</li>
+</ul>
+<h2 id="Apache-Web服务器搭建"><a href="#Apache-Web服务器搭建" class="headerlink" title="Apache Web服务器搭建"></a>Apache Web服务器搭建</h2><h3 id="Apache官网获取安装"><a href="#Apache官网获取安装" class="headerlink" title="Apache官网获取安装"></a>Apache官网获取安装</h3><p>下载<a href="http://httpd.apache.org/">适合您</a>的版本</p>
+<h4 id="搭建Apache-web服务器"><a href="#搭建Apache-web服务器" class="headerlink" title="搭建Apache web服务器"></a>搭建Apache web服务器</h4><h5 id="一、部署web站点"><a href="#一、部署web站点" class="headerlink" title="一、部署web站点"></a>一、部署web站点</h5><p>(1)安装依赖</p>
+<pre class="line-numbers language-none"><code class="language-none"># yum -y install wget make gcc gcc-c++ pcre openssl openssl-devel zlib unzip  
+# yum -y install cmake ncurses-devel libjpeg libjpeg-devel libpng libpng-devel libxml2
+# yum -y install libxml2-devel curl-devel libtool libtool-ltdl libtool-ltdl-devel libevent libevent-devel
+# yum -y install zlib-static zlib-devel autoconf pcre-devel gd perl  expat-devel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建存放文件夹</p>
+<pre class="line-numbers language-none"><code class="language-none"># mkdir -p &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;&#123;apr,apr-util,http&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2)获取软件包</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-1.7.0.tar.gz
+# wget  https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;&#x2F;apr&#x2F;apr-util-1.6.1.tar.gz
+# wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;apache&#x2F;&#x2F;httpd&#x2F;httpd-2.4.46.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(3)安装apr</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# tar xf apr-1.7.0.tar.gz &amp;&amp; cd apr-1.7.0
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr
+# make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(4)安装apr-util</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr-util
+# tar xf apr-util-* &amp;&amp; cd apr-util-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util  --with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr &amp;&amp; make  &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>(5)安装apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># cd &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http
+# tar xf httpd-* &amp;&amp; cd httpd-*
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http \
+--sysconfdir&#x3D;&#x2F;etc&#x2F;httpd&#x2F; \
+--with-include-apr \
+--disable-userdir \
+--enable-headers \
+--with-mpm&#x3D;worker \
+--enable-modules&#x3D;most \
+--enable-so \
+--enable-deflate \
+--enable-defate&#x3D;shared \
+--enable-expires-shared \
+--enable-rewrite&#x3D;shared \
+--enable-static-support \
+--with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F; \
+--with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apr&#x2F;apr-util \
+--with-ssl \
+--with-z  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(6)编译并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># make
+# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>(7)启动服务进程</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;apache&#x2F;bin&#x2F;apachectl start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（8）添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp --zone&#x3D;public
+#	firewalld-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（9）启动Apache</p>
+<pre class="line-numbers language-none"><code class="language-none"># &#x2F;usr&#x2F;local&#x2F;apache1&#x2F;http&#x2F;bin&#x2F;apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（10）查看端口号是否开启 Apache默认端口是80</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp | grep 80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（11）测试<br>    你现在应该就可以通过浏览器访问 <a href="http://server-ip/">http://server-ip/</a></p>
+<h4 id="Apache虚拟主机应用"><a href="#Apache虚拟主机应用" class="headerlink" title="Apache虚拟主机应用"></a>Apache虚拟主机应用</h4><p>一台web服务器发布单个网站非常浪费资源，所以一台web服务器上会发布多个网站，在一台服务器上发布多个网站，也称之为部署多个虚拟主机，web虚拟主机配置方法有三种：</p>
+<ol>
+<li>基于单个IP地址多个socket端口；</li>
+<li>基于多个IP地址一个端口；</li>
+<li>基于单个IP地址一个端口不同域名。</li>
+</ol>
+<p>启动基于同一端口不同域名的方式在企业中得到广泛应用，以下为基于一个端口不同域名，在一台Apache web服务器上部署多个网站，步骤如下：</p>
+<ul>
+<li>修改虚拟主机配置文件</li>
+</ul>
+<h4 id="Apache常用目录解释"><a href="#Apache常用目录解释" class="headerlink" title="Apache常用目录解释"></a>Apache常用目录解释</h4><p>Apache可以基于源码安装、YUM安装，不同方法安装，所属的路径有所不同，以下为Apache常用路径的功能用途：</p>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL8.0.27版本二进制安装</title>
     <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -706,7 +706,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#x76;&#x31;&#64;&#x31;&#x37;&#50;&#46;&#x31;&#54;&#x2e;&#x35;&#x39;&#46;&#x31;&#51;&#51;">&#x64;&#101;&#x76;&#x31;&#64;&#x31;&#x37;&#50;&#46;&#x31;&#54;&#x2e;&#x35;&#x39;&#46;&#x31;&#51;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#x31;&#x40;&#49;&#x37;&#50;&#46;&#x31;&#54;&#46;&#53;&#x39;&#46;&#x31;&#51;&#51;">&#x64;&#x65;&#118;&#x31;&#x40;&#49;&#x37;&#50;&#46;&#x31;&#54;&#46;&#53;&#x39;&#46;&#x31;&#51;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1002,7 +1002,7 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
     <url>/blog/2021/07/16/Nginx/</url>
     <content><![CDATA[<p>Nginx 初始</p>
 <span id="more"></span>
-<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg"></p>
+<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" class="lazyload placeholder" data-srcset="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
 <h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
 <h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
@@ -1148,7 +1148,7 @@ location &#x2F; &#123;
   <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
-    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png"></p>
+    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <span id="more"></span>
 <h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
@@ -1426,7 +1426,7 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
 <p>但是各个公司对C99的支持所表现出来的兴趣不同。当GCC和其它一些商业编译器支持C99的大部分特性的時候，微软和Borland却似乎对此不感兴趣。</p>
 <p>说明：GCC（GNU Compiler Collection，GNU编译器集合）是一套由GNU工程开发的支持多种编程语言的编译器。</p>
 <p><font size="3" color=red>综上所述，目前广泛使用的C语言版本是 ANSI / ISO C，最经典的C语言教材是《C程序设计语言(The C Programming Language) 第二版》</font></p>
-<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" alt="img"></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" class="lazyload placeholder" data-srcset="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>C</category>
@@ -1495,7 +1495,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 <p>私有云(Private Cloud)</p>
 <p>社区云(Community cloud)</p>
 <p>混合云(Hybrid Cloud)</p>
-<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
+<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
 <p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
 <p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
 <p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
@@ -1525,7 +1525,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 <h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
 <h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
 <h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
-<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" alt="img" style="zoom:60%;" />
+<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
 
 <p>各服务组件的功能如下：</p>
 <ul>
@@ -1541,7 +1541,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 <li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
 <li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
 </ul>
-<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" alt="img" style="zoom:80%;" />
+<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
 
 <h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
 <ul>
@@ -1593,7 +1593,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
 </ul>
 <h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
 <p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png"></p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 ]]></content>
       <categories>
         <category>监控系统</category>
