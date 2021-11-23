@@ -98,6 +98,44 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -186,44 +224,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
       </tags>
   </entry>
   <entry>
@@ -1422,95 +1422,154 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
   <entry>
     <title>Linux系统安装及配置</title>
     <url>/blog/2021/11/23/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="二、Linux-系统安装与基础配置"><a href="#二、Linux-系统安装与基础配置" class="headerlink" title="二、Linux 系统安装与基础配置"></a>二、Linux 系统安装与基础配置</h1><p>​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。</p>
-<h2 id="主机规划"><a href="#主机规划" class="headerlink" title="主机规划"></a>主机规划</h2><p>事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；</p>
-<h2 id="Linux与硬件的搭配"><a href="#Linux与硬件的搭配" class="headerlink" title="Linux与硬件的搭配"></a>Linux与硬件的搭配</h2><p>虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。</p>
-<p>此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；</p>
-<h2 id="认识计算机的硬件配置"><a href="#认识计算机的硬件配置" class="headerlink" title="认识计算机的硬件配置"></a>认识计算机的硬件配置</h2><ul>
-<li>游戏机/工作机的考虑</li>
-<li>性价比的考虑</li>
-<li>支持性的考虑</li>
-</ul>
-<h2 id="选择与Linux搭配的主机配置"><a href="#选择与Linux搭配的主机配置" class="headerlink" title="选择与Linux搭配的主机配置"></a>选择与Linux搭配的主机配置</h2><p>由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。</p>
-<p>不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；</p>
-<p>如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：</p>
-<ul>
-<li>CPU </li>
-<li>RAM </li>
-<li>Hard Disk </li>
-<li>VGA </li>
-<li>Network interface Card </li>
-<li>键盘 鼠标   </li>
-</ul>
-<h2 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h2><p>一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。</p>
-<p>Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，</p>
-<p>Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。</p>
-<h2 id="Linux系统安装方式"><a href="#Linux系统安装方式" class="headerlink" title="Linux系统安装方式"></a>Linux系统安装方式</h2><p>Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；</p>
-<p><strong>硬盘安装</strong></p>
-<p>硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。</p>
-<p><strong>U盘安装</strong></p>
-<p>现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；</p>
-<p><strong>网络安装</strong></p>
-<p>网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。</p>
-<p><strong>光驱安装</strong></p>
-<p>以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。</p>
-<p>**注意:**所有试验都在（VMware）虚拟机上实现</p>
-<p><strong>获取VMware软件</strong>根据自己的操作系统选择适合的版本<a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0">windows</a>  <a href="https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0">MAC</a></p>
-<p><strong>获取镜像地址</strong>：<a href="https://www.centos.org/centos-linux/">CentOS 官网</a></p>
-<p><strong>光驱安装过程</strong></p>
-<p>安装前需准备虚拟化软件和Linux系统</p>
-<p><strong>1. 系统引导</strong></p>
-<p>（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；</p>
-<p>![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)</p>
-<p><strong>解释：</strong></p>
-<blockquote>
-<p>install CentOS 7       安装CentOS 7</p>
-<p>test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 </p>
-<p>Troubleshooting    故障模式</p>
-</blockquote>
-<p>（2）选择install CentOS 7  直接按Enter键，选择图形安装方式</p>
-<p><img src="image-20210119234726275.png" class="lazyload placeholder" data-srcset="image-20210119234726275.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210119234726275"></p>
-<p>鼠标选中DATE&amp;TME (选择时区)</p>
-<p>![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)</p>
-<p>步骤：</p>
-<blockquote>
-<p>1.修改时区</p>
-<p>2.调整时间</p>
-<p>3.Done</p>
-</blockquote>
-<p>![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)</p>
-<p>根据自己需求选择SOFTWARE SELECTION:</p>
-<blockquote>
-<p>图形安装</p>
-<p>字符安装</p>
-</blockquote>
-<p>![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)</p>
-<p><strong>进入磁盘分区阶段点击</strong> INSTALLATION DESTINATION</p>
-<p>在进行分区之前，进行Linux分区的一些必须说明：</p>
-<blockquote>
-<p> Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。</p>
-</blockquote>
-<p>![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)</p>
-<p>解释：</p>
-<blockquote>
-<ol>
-<li>自动分配空间</li>
-<li>手动分配空间</li>
-<li>分区的概念就不在这阐述了</li>
-</ol>
-</blockquote>
-<p>注意：选择自动分配空间—&gt;点击Done</p>
-<p>![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)</p>
-<p>点击Begin installation</p>
-<p>![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)</p>
-<p>选项：根据自己需求点击</p>
-<blockquote>
-<p>ROOT PASSWORD (设置root用户密码)</p>
-<p>USER CREATION（创建普通用户和密码）</p>
-</blockquote>
-<p>至此等待安装完成，重启之后输入用户名和密码</p>
-<p>![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+    <content><![CDATA[<pre><code># 二、Linux 系统安装与基础配置
+
+​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。
+
+## 主机规划
+
+事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；
+
+## Linux与硬件的搭配
+
+虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。
+
+此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；
+
+## 认识计算机的硬件配置
+
+* 游戏机/工作机的考虑
+* 性价比的考虑
+* 支持性的考虑
+
+## 选择与Linux搭配的主机配置
+
+由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。
+
+不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；
+
+如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：
+
+* CPU 
+* RAM 
+* Hard Disk 
+* VGA 
+* Network interface Card 
+* 键盘 鼠标   
+
+## 安装需求
+
+一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。
+
+Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，
+
+Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。
+
+## Linux系统安装方式
+
+Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；
+
+**硬盘安装**
+
+硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。
+
+**U盘安装**
+
+现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；
+
+**网络安装**
+
+网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。
+
+**光驱安装**
+
+以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。
+
+**注意:**所有试验都在（VMware）虚拟机上实现
+
+**获取VMware软件**根据自己的操作系统选择适合的版本[windows](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0)  [MAC](https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0)
+
+**获取镜像地址**：[CentOS 官网]( https://www.centos.org/centos-linux/)
+
+**光驱安装过程**
+
+安装前需准备虚拟化软件和Linux系统
+
+**1. 系统引导**
+
+（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；
+
+![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)
+
+**解释：**
+
+&gt; install CentOS 7       安装CentOS 7
+&gt;
+&gt; test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 
+&gt;
+&gt; Troubleshooting    故障模式
+
+（2）选择install CentOS 7  直接按Enter键，选择图形安装方式
+
+![image-20210119234726275](image-20210119234726275.png)
+
+鼠标选中DATE&amp;TME (选择时区)
+
+![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)
+
+步骤：
+
+&gt; 1.修改时区
+&gt;
+&gt; 2.调整时间
+&gt;
+&gt; 3.Done
+
+![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)
+
+根据自己需求选择SOFTWARE SELECTION:
+
+&gt; 图形安装
+&gt;
+&gt; 字符安装
+
+![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)
+
+**进入磁盘分区阶段点击** INSTALLATION DESTINATION
+
+在进行分区之前，进行Linux分区的一些必须说明：
+
+&gt;  Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。
+
+![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)
+
+解释：
+
+&gt; 1. 自动分配空间
+&gt; 2. 手动分配空间
+&gt; 3. 分区的概念就不在这阐述了
+
+注意：选择自动分配空间---&gt;点击Done
+
+![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)
+
+点击Begin installation
+
+![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)
+
+选项：根据自己需求点击
+
+&gt; ROOT PASSWORD (设置root用户密码)
+&gt;
+&gt; USER CREATION（创建普通用户和密码）
+
+至此等待安装完成，重启之后输入用户名和密码
+
+![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)
+
+### 
+</code></pre>
+]]></content>
       <categories>
         <category>Linux系列</category>
       </categories>
@@ -1926,7 +1985,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#49;&#x40;&#x31;&#x37;&#50;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#x31;&#51;&#51;">&#100;&#x65;&#118;&#49;&#x40;&#x31;&#x37;&#50;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#x31;&#51;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#x31;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#51;">&#100;&#x65;&#118;&#x31;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2656,54 +2715,121 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+    <title>openstack原理</title>
+    <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
+<p><strong>也可以这样理解为：</strong></p>
+<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
+<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
+<p>私有云(Private Cloud)</p>
+<p>社区云(Community cloud)</p>
+<p>混合云(Hybrid Cloud)</p>
+<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
+<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
+<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
+<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
+<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
+<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
+<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
+<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
+<p>4）形成新的云计算产业。</p>
+<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
+<p><strong>2. 对于云计算消费者</strong></p>
+<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
+<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
+<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
+<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
+<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
+<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
+<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
+<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
+<p>9）个人、中小企业和机构也用得起高性能计算。</p>
+<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
+<li>亚马逊AWS.</li>
+<li>微软Azure.</li>
+<li>阿里<strong>云</strong></li>
+<li>UCloud.</li>
+<li>腾讯<strong>云</strong></li>
 </ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
+<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
+<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
+<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
+<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
 
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
+<p>各服务组件的功能如下：</p>
 <ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
+<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
+<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
+<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
+<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
+<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
+<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
+<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
+<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
+<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
+<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
 </ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
+
+<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
+<ul>
+<li>Dashboard （仪表盘）</li>
+<li>Compute （计算）</li>
+<li>Networking (网络）</li>
+<li>ObjectStorage（对象存储） </li>
+<li>Block Storage (块存储)</li>
+<li>Identify （认证）</li>
+<li>Image (镜像）</li>
+<li>Telemetry （计量）</li>
+<li>Orchestration (编排）</li>
+<li>Database (数据库）</li>
+<li>Data Processing Service (数据分析）</li>
+</ul>
+]]></content>
       <categories>
-        <category>数据库</category>
+        <category>云计算</category>
       </categories>
+      <tags>
+        <tag>openstack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
   </entry>
   <entry>
     <title>mysql5.7主从复制-异步</title>
@@ -2892,123 +3018,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>openstack原理</title>
-    <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
-<p><strong>也可以这样理解为：</strong></p>
-<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
-<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
-<p>私有云(Private Cloud)</p>
-<p>社区云(Community cloud)</p>
-<p>混合云(Hybrid Cloud)</p>
-<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
-<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
-<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
-<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
-<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
-<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
-<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
-<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
-<p>4）形成新的云计算产业。</p>
-<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
-<p><strong>2. 对于云计算消费者</strong></p>
-<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
-<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
-<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
-<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
-<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
-<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
-<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
-<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
-<p>9）个人、中小企业和机构也用得起高性能计算。</p>
-<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
-<li>亚马逊AWS.</li>
-<li>微软Azure.</li>
-<li>阿里<strong>云</strong></li>
-<li>UCloud.</li>
-<li>腾讯<strong>云</strong></li>
-</ul>
-<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
-<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
-<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
-<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
-
-<p>各服务组件的功能如下：</p>
-<ul>
-<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
-<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
-<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
-<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
-<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
-<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
-<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
-<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
-<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
-<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
-<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
-</ul>
-<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
-
-<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
-<ul>
-<li>Dashboard （仪表盘）</li>
-<li>Compute （计算）</li>
-<li>Networking (网络）</li>
-<li>ObjectStorage（对象存储） </li>
-<li>Block Storage (块存储)</li>
-<li>Identify （认证）</li>
-<li>Image (镜像）</li>
-<li>Telemetry （计量）</li>
-<li>Orchestration (编排）</li>
-<li>Database (数据库）</li>
-<li>Data Processing Service (数据分析）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>云计算</category>
-      </categories>
-      <tags>
-        <tag>openstack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -3075,5 +3084,55 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>prometheus</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
 </search>

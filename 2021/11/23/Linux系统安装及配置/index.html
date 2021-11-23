@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 5.9k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 4.4k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 4 mins.分钟 |
           </span>
   
           
@@ -717,95 +717,154 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="二、Linux-系统安装与基础配置"><a href="#二、Linux-系统安装与基础配置" class="headerlink" title="二、Linux 系统安装与基础配置"></a>二、Linux 系统安装与基础配置</h1><p>​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。</p>
-<h2 id="主机规划"><a href="#主机规划" class="headerlink" title="主机规划"></a>主机规划</h2><p>事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；</p>
-<h2 id="Linux与硬件的搭配"><a href="#Linux与硬件的搭配" class="headerlink" title="Linux与硬件的搭配"></a>Linux与硬件的搭配</h2><p>虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。</p>
-<p>此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；</p>
-<h2 id="认识计算机的硬件配置"><a href="#认识计算机的硬件配置" class="headerlink" title="认识计算机的硬件配置"></a>认识计算机的硬件配置</h2><ul>
-<li>游戏机/工作机的考虑</li>
-<li>性价比的考虑</li>
-<li>支持性的考虑</li>
-</ul>
-<h2 id="选择与Linux搭配的主机配置"><a href="#选择与Linux搭配的主机配置" class="headerlink" title="选择与Linux搭配的主机配置"></a>选择与Linux搭配的主机配置</h2><p>由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。</p>
-<p>不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；</p>
-<p>如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：</p>
-<ul>
-<li>CPU </li>
-<li>RAM </li>
-<li>Hard Disk </li>
-<li>VGA </li>
-<li>Network interface Card </li>
-<li>键盘 鼠标   </li>
-</ul>
-<h2 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h2><p>一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。</p>
-<p>Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，</p>
-<p>Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。</p>
-<h2 id="Linux系统安装方式"><a href="#Linux系统安装方式" class="headerlink" title="Linux系统安装方式"></a>Linux系统安装方式</h2><p>Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；</p>
-<p><strong>硬盘安装</strong></p>
-<p>硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。</p>
-<p><strong>U盘安装</strong></p>
-<p>现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；</p>
-<p><strong>网络安装</strong></p>
-<p>网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。</p>
-<p><strong>光驱安装</strong></p>
-<p>以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。</p>
-<p>**注意:**所有试验都在（VMware）虚拟机上实现</p>
-<p><strong>获取VMware软件</strong>根据自己的操作系统选择适合的版本<a target="_blank" rel="noopener" href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0">windows</a>  <a target="_blank" rel="noopener" href="https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0">MAC</a></p>
-<p><strong>获取镜像地址</strong>：<a target="_blank" rel="noopener" href="https://www.centos.org/centos-linux/">CentOS 官网</a></p>
-<p><strong>光驱安装过程</strong></p>
-<p>安装前需准备虚拟化软件和Linux系统</p>
-<p><strong>1. 系统引导</strong></p>
-<p>（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；</p>
-<p>![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)</p>
-<p><strong>解释：</strong></p>
-<blockquote>
-<p>install CentOS 7       安装CentOS 7</p>
-<p>test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 </p>
-<p>Troubleshooting    故障模式</p>
-</blockquote>
-<p>（2）选择install CentOS 7  直接按Enter键，选择图形安装方式</p>
-<p><img src="image-20210119234726275.png" class="lazyload placeholder" data-srcset="image-20210119234726275.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210119234726275"></p>
-<p>鼠标选中DATE&amp;TME (选择时区)</p>
-<p>![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)</p>
-<p>步骤：</p>
-<blockquote>
-<p>1.修改时区</p>
-<p>2.调整时间</p>
-<p>3.Done</p>
-</blockquote>
-<p>![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)</p>
-<p>根据自己需求选择SOFTWARE SELECTION:</p>
-<blockquote>
-<p>图形安装</p>
-<p>字符安装</p>
-</blockquote>
-<p>![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)</p>
-<p><strong>进入磁盘分区阶段点击</strong> INSTALLATION DESTINATION</p>
-<p>在进行分区之前，进行Linux分区的一些必须说明：</p>
-<blockquote>
-<p> Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。</p>
-</blockquote>
-<p>![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)</p>
-<p>解释：</p>
-<blockquote>
-<ol>
-<li>自动分配空间</li>
-<li>手动分配空间</li>
-<li>分区的概念就不在这阐述了</li>
-</ol>
-</blockquote>
-<p>注意：选择自动分配空间—&gt;点击Done</p>
-<p>![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)</p>
-<p>点击Begin installation</p>
-<p>![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)</p>
-<p>选项：根据自己需求点击</p>
-<blockquote>
-<p>ROOT PASSWORD (设置root用户密码)</p>
-<p>USER CREATION（创建普通用户和密码）</p>
-</blockquote>
-<p>至此等待安装完成，重启之后输入用户名和密码</p>
-<p>![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+        <pre><code># 二、Linux 系统安装与基础配置
+
+​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。
+
+## 主机规划
+
+事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；
+
+## Linux与硬件的搭配
+
+虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。
+
+此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；
+
+## 认识计算机的硬件配置
+
+* 游戏机/工作机的考虑
+* 性价比的考虑
+* 支持性的考虑
+
+## 选择与Linux搭配的主机配置
+
+由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。
+
+不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；
+
+如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：
+
+* CPU 
+* RAM 
+* Hard Disk 
+* VGA 
+* Network interface Card 
+* 键盘 鼠标   
+
+## 安装需求
+
+一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。
+
+Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，
+
+Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。
+
+## Linux系统安装方式
+
+Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；
+
+**硬盘安装**
+
+硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。
+
+**U盘安装**
+
+现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；
+
+**网络安装**
+
+网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。
+
+**光驱安装**
+
+以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。
+
+**注意:**所有试验都在（VMware）虚拟机上实现
+
+**获取VMware软件**根据自己的操作系统选择适合的版本[windows](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0)  [MAC](https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0)
+
+**获取镜像地址**：[CentOS 官网]( https://www.centos.org/centos-linux/)
+
+**光驱安装过程**
+
+安装前需准备虚拟化软件和Linux系统
+
+**1. 系统引导**
+
+（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；
+
+![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)
+
+**解释：**
+
+&gt; install CentOS 7       安装CentOS 7
+&gt;
+&gt; test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 
+&gt;
+&gt; Troubleshooting    故障模式
+
+（2）选择install CentOS 7  直接按Enter键，选择图形安装方式
+
+![image-20210119234726275](image-20210119234726275.png)
+
+鼠标选中DATE&amp;TME (选择时区)
+
+![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)
+
+步骤：
+
+&gt; 1.修改时区
+&gt;
+&gt; 2.调整时间
+&gt;
+&gt; 3.Done
+
+![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)
+
+根据自己需求选择SOFTWARE SELECTION:
+
+&gt; 图形安装
+&gt;
+&gt; 字符安装
+
+![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)
+
+**进入磁盘分区阶段点击** INSTALLATION DESTINATION
+
+在进行分区之前，进行Linux分区的一些必须说明：
+
+&gt;  Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。
+
+![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)
+
+解释：
+
+&gt; 1. 自动分配空间
+&gt; 2. 手动分配空间
+&gt; 3. 分区的概念就不在这阐述了
+
+注意：选择自动分配空间---&gt;点击Done
+
+![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)
+
+点击Begin installation
+
+![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)
+
+选项：根据自己需求点击
+
+&gt; ROOT PASSWORD (设置root用户密码)
+&gt;
+&gt; USER CREATION（创建普通用户和密码）
+
+至此等待安装完成，重启之后输入用户名和密码
+
+![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)
+
+### 
+</code></pre>
+
       </div>
       <div class="post-tags-categories">
         
