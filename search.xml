@@ -1798,135 +1798,10 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>MySQL优化和运维之道</title>
-    <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
-    <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
-<li>历史</li>
-<li>MySQL优点<ul>
-<li>使用简单</li>
-<li>开源免费</li>
-<li>扩展性好，在一定阶段扩展性好</li>
-<li>社区活跃</li>
-<li>性能可以满足互联网存储和性能需求，离不开硬件的支持</li>
-</ul>
-</li>
-<li>MySQL 存在的问题<ul>
-<li>优化器对复杂的SQL支持不好</li>
-<li>对SQL标准支持不好</li>
-<li>大规模集群方案不成熟，主要指中间件</li>
-<li>ID生成器，全局自增ID</li>
-<li>异步逻辑复制，数据安全性问题</li>
-<li>Online DDL</li>
-<li>HA 方案不完全</li>
-<li>备份和恢复方案还是比较复杂，需要依赖外部组件</li>
-<li>展现给用户的信息过少，排查问题困难</li>
-<li>众多分支，让人难以选择</li>
-</ul>
-</li>
-</ol>
-<h2 id="二、-数据库开发规范"><a href="#二、-数据库开发规范" class="headerlink" title="二、 数据库开发规范"></a>二、 数据库开发规范</h2><p>数据库开发规范定义：</p>
-<ul>
-<li><p>开发规范是针对内部开发的一系列建议或规则，由 OBA 制订(如 果有 OBA 的话)。</p>
-</li>
-<li><p>开发规范本身也包含几部分 : 基本命名 、约束规范、 字段设计规范、索引规范、使用 规范。</p>
-</li>
-</ul>
-<ol>
-<li><p>规范存在的意义</p>
-<ul>
-<li>保证线上数据库scheme 规范；</li>
-<li>减少出问题概率；</li>
-<li>方便自动化管理；</li>
-<li>需要长期坚持规范，这对开发和DBA 来说是双赢；</li>
-</ul>
-</li>
-<li><p>基本命令和约束规范</p>
-<ul>
-<li>表字符集选择UTF8，如果需要存储 emoj 表情，需要使用 UTF8mb4（MySQL 5.5.3 版本以后支持）；</li>
-<li>存储引擎使用InnoDB;</li>
-<li>变长字符串尽量使用 varchar 或 varbinary;</li>
-<li>不在数据库中存储图片、文件等；</li>
-<li>单标数据量控制在1亿以下；</li>
-<li>库名、表名、字段名不适用保留字；</li>
-<li>库名、表名、字段名、索引名使用小写字母，以下划线分割，需要见名知意；</li>
-<li>库表名不要涉及得过长，尽可能用最少的字符表达出表的用途；</li>
-</ul>
-</li>
-<li><p>字段规范</p>
-<ul>
-<li>所有字段均定义为 NOT NULL, 除非你想的想存 NULL；</li>
-<li>字段类型在满足需求条件下越小越好，使用 UNSIGNED 存储非负整数，实际使用时存储负数的场景不多；</li>
-<li>使用 TMESTAMP 存储时间；</li>
-<li>使用 varchar存储变长字符串，当然要注意 varchar CM ) 里的 M 指的是字符数而不是字节数:使用 UNSIGNED INT 存储 1Pv4 地址而不是 CHAR (15)，这种方式只能存储 1Pv4，存储不了 1Pv6。</li>
-<li>使用 DECIMAL存储精确浮点数，用 float 类型可能会存在数据误差；</li>
-<li>少用 blob text；</li>
-</ul>
-<p>关于为什么定义不用NULL 的原因：</p>
-<ul>
-<li>浪费存储空间，应为 InnoDB 需要额外一个字节来存储；</li>
-<li>表内默认值 NULL 过多会影响优化器选择执行计划；</li>
-</ul>
-</li>
-<li><p>索引规范</p>
-<ul>
-<li>单个索引字段不超过5，单表索引数量不超过5，索引设计遵循 B+Tree 索引最左前缀匹配原则。</li>
-<li>选择区分度高的列作为索引；</li>
-<li>建立的索引覆盖80% 主要的查询，不求全，解决问题的主要矛盾就好；</li>
-<li>DML 要和order by、group by 字段建立合适的索引；</li>
-<li>避免索引的隐式转换；</li>
-<li>避免冗余索引；</li>
-</ul>
-</li>
-<li><p>SQL 类规范</p>
-<ul>
-<li>建议尽量不适用存储过程、触发器、函数等，减少维护成本和性能隐患；</li>
-<li>避免适用达标的JOIN， MySQL优化器对JOIN 优化策略过于简单；</li>
-<li>避免在数据库中进行数据运算和其他大量计算任务；</li>
-<li>SQL 合并，主要是DML时 多个value 合并，减少和数据库交互；</li>
-<li>合理分页，尤其大分页；</li>
-<li>如果 UPDATE、DELETE 语句不是 LIMIT,  在Staement 日志格式下容易造成主从不一致； </li>
-</ul>
-</li>
-</ol>
-<h2 id="三、数据库运维规范"><a href="#三、数据库运维规范" class="headerlink" title="三、数据库运维规范"></a>三、数据库运维规范</h2><ol>
-<li><p>运维规范主要内容</p>
-<ul>
-<li>SQL 审核，DDL 审核和操作时间，尤其是 Online DDL；</li>
-<li>高危操作检查，DROP前做好数据备份；</li>
-<li>权限控制和审计；</li>
-<li>日志分析，主要是指的MySQL 慢日志和错误日志；</li>
-<li>高可用方案；</li>
-<li>数据备份方案</li>
-</ul>
-</li>
-<li><p>版本选择</p>
-<ul>
-<li>MySQL 社区版，用户群体最大；</li>
-<li>MySQL 企业版，收费；</li>
-<li>Percona Server 版，新特性多；</li>
-<li>MariaDB 版，国内用户不多；</li>
-</ul>
-</li>
-<li><p>Online DDL 问题</p>
-<p>原生MySQL执行DDL时需要锁表， 且在锁表期间业务无法写入数据，这对服务影响很大， MySQL 对这方面的支持比较差。大表做 DDL 对 DBA 来说是很痛苦的，相信很多 人都经历过。如何做到 Online DDL，这个问题是不是就无解了呢? 当然不是 !</p>
-</li>
-<li><p>可用性</p>
-<p>关于可用性，我们来分享一种无缝切主库方案，如下图所示。可以用于日常切换，使用思 路也比较简单。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>优化</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#57;&#46;&#x31;&#x33;&#51;">&#100;&#101;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#57;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#x32;&#46;&#x31;&#54;&#46;&#53;&#57;&#x2e;&#49;&#51;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#x32;&#46;&#x31;&#54;&#46;&#53;&#57;&#x2e;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2067,6 +1942,131 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
 ]]></content>
       <categories>
         <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL优化和运维之道</title>
+    <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
+    <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
+<li>历史</li>
+<li>MySQL优点<ul>
+<li>使用简单</li>
+<li>开源免费</li>
+<li>扩展性好，在一定阶段扩展性好</li>
+<li>社区活跃</li>
+<li>性能可以满足互联网存储和性能需求，离不开硬件的支持</li>
+</ul>
+</li>
+<li>MySQL 存在的问题<ul>
+<li>优化器对复杂的SQL支持不好</li>
+<li>对SQL标准支持不好</li>
+<li>大规模集群方案不成熟，主要指中间件</li>
+<li>ID生成器，全局自增ID</li>
+<li>异步逻辑复制，数据安全性问题</li>
+<li>Online DDL</li>
+<li>HA 方案不完全</li>
+<li>备份和恢复方案还是比较复杂，需要依赖外部组件</li>
+<li>展现给用户的信息过少，排查问题困难</li>
+<li>众多分支，让人难以选择</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、-数据库开发规范"><a href="#二、-数据库开发规范" class="headerlink" title="二、 数据库开发规范"></a>二、 数据库开发规范</h2><p>数据库开发规范定义：</p>
+<ul>
+<li><p>开发规范是针对内部开发的一系列建议或规则，由 OBA 制订(如 果有 OBA 的话)。</p>
+</li>
+<li><p>开发规范本身也包含几部分 : 基本命名 、约束规范、 字段设计规范、索引规范、使用 规范。</p>
+</li>
+</ul>
+<ol>
+<li><p>规范存在的意义</p>
+<ul>
+<li>保证线上数据库scheme 规范；</li>
+<li>减少出问题概率；</li>
+<li>方便自动化管理；</li>
+<li>需要长期坚持规范，这对开发和DBA 来说是双赢；</li>
+</ul>
+</li>
+<li><p>基本命令和约束规范</p>
+<ul>
+<li>表字符集选择UTF8，如果需要存储 emoj 表情，需要使用 UTF8mb4（MySQL 5.5.3 版本以后支持）；</li>
+<li>存储引擎使用InnoDB;</li>
+<li>变长字符串尽量使用 varchar 或 varbinary;</li>
+<li>不在数据库中存储图片、文件等；</li>
+<li>单标数据量控制在1亿以下；</li>
+<li>库名、表名、字段名不适用保留字；</li>
+<li>库名、表名、字段名、索引名使用小写字母，以下划线分割，需要见名知意；</li>
+<li>库表名不要涉及得过长，尽可能用最少的字符表达出表的用途；</li>
+</ul>
+</li>
+<li><p>字段规范</p>
+<ul>
+<li>所有字段均定义为 NOT NULL, 除非你想的想存 NULL；</li>
+<li>字段类型在满足需求条件下越小越好，使用 UNSIGNED 存储非负整数，实际使用时存储负数的场景不多；</li>
+<li>使用 TMESTAMP 存储时间；</li>
+<li>使用 varchar存储变长字符串，当然要注意 varchar CM ) 里的 M 指的是字符数而不是字节数:使用 UNSIGNED INT 存储 1Pv4 地址而不是 CHAR (15)，这种方式只能存储 1Pv4，存储不了 1Pv6。</li>
+<li>使用 DECIMAL存储精确浮点数，用 float 类型可能会存在数据误差；</li>
+<li>少用 blob text；</li>
+</ul>
+<p>关于为什么定义不用NULL 的原因：</p>
+<ul>
+<li>浪费存储空间，应为 InnoDB 需要额外一个字节来存储；</li>
+<li>表内默认值 NULL 过多会影响优化器选择执行计划；</li>
+</ul>
+</li>
+<li><p>索引规范</p>
+<ul>
+<li>单个索引字段不超过5，单表索引数量不超过5，索引设计遵循 B+Tree 索引最左前缀匹配原则。</li>
+<li>选择区分度高的列作为索引；</li>
+<li>建立的索引覆盖80% 主要的查询，不求全，解决问题的主要矛盾就好；</li>
+<li>DML 要和order by、group by 字段建立合适的索引；</li>
+<li>避免索引的隐式转换；</li>
+<li>避免冗余索引；</li>
+</ul>
+</li>
+<li><p>SQL 类规范</p>
+<ul>
+<li>建议尽量不适用存储过程、触发器、函数等，减少维护成本和性能隐患；</li>
+<li>避免适用达标的JOIN， MySQL优化器对JOIN 优化策略过于简单；</li>
+<li>避免在数据库中进行数据运算和其他大量计算任务；</li>
+<li>SQL 合并，主要是DML时 多个value 合并，减少和数据库交互；</li>
+<li>合理分页，尤其大分页；</li>
+<li>如果 UPDATE、DELETE 语句不是 LIMIT,  在Staement 日志格式下容易造成主从不一致； </li>
+</ul>
+</li>
+</ol>
+<h2 id="三、数据库运维规范"><a href="#三、数据库运维规范" class="headerlink" title="三、数据库运维规范"></a>三、数据库运维规范</h2><ol>
+<li><p>运维规范主要内容</p>
+<ul>
+<li>SQL 审核，DDL 审核和操作时间，尤其是 Online DDL；</li>
+<li>高危操作检查，DROP前做好数据备份；</li>
+<li>权限控制和审计；</li>
+<li>日志分析，主要是指的MySQL 慢日志和错误日志；</li>
+<li>高可用方案；</li>
+<li>数据备份方案</li>
+</ul>
+</li>
+<li><p>版本选择</p>
+<ul>
+<li>MySQL 社区版，用户群体最大；</li>
+<li>MySQL 企业版，收费；</li>
+<li>Percona Server 版，新特性多；</li>
+<li>MariaDB 版，国内用户不多；</li>
+</ul>
+</li>
+<li><p>Online DDL 问题</p>
+<p>原生MySQL执行DDL时需要锁表， 且在锁表期间业务无法写入数据，这对服务影响很大， MySQL 对这方面的支持比较差。大表做 DDL 对 DBA 来说是很痛苦的，相信很多 人都经历过。如何做到 Online DDL，这个问题是不是就无解了呢? 当然不是 !</p>
+</li>
+<li><p>可用性</p>
+<p>关于可用性，我们来分享一种无缝切主库方案，如下图所示。可以用于日常切换，使用思 路也比较简单。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>优化</category>
       </categories>
       <tags>
         <tag>MySQL</tag>
@@ -2218,6 +2218,149 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
       </categories>
   </entry>
   <entry>
+    <title>PSSH</title>
+    <url>/blog/2021/07/16/PSSH/</url>
+    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
+# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装pssh</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>pssh 在多个主机上并行运行命令</li>
+<li>pscp 把文件并行复制到多个主机上</li>
+<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
+<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
+<li>pnuke 并行地在多个远程主机上杀死进程</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
+pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>选项解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
+--help        显示帮助信息          
+-h HOST_FILE, 主机文件列表 格式[user@]host[:port]
+-l USER       用户名 (OPTIONAL)
+-p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
+-o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
+-e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
+-t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
+-O OPTION， --option &#x3D; OPTION   SSH选项（可选）
+-v，--verbose  打开警告和诊断消息（可选）
+-A，-askpass   要求输入密码（可选）
+-x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
+-X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
+-i，--inline  每个服务器的内联内联聚合输出和错误
+--inline-stdout 每个服务器的内联标准输出
+-I，--send-input 从标准输入读取并作为输入发送到ssh
+-P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
+172.16.127.161
+172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2.实现远程控制获取被控主机IP地址</p>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果没有报错的话，应该输出类似实验下面的</p>
+<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
+[2] 22:42:03 [SUCCESS] 172.16.127.161
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果有以下错误</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
+Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
+ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
+Are you sure you want to continue connecting (yes&#x2F;no)?
+Host key verification failed.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
+<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
+# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li>把文件并行复制到多个主机上</li>
+</ul>
+<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.远程将主机文件复制到被控端主机上</p>
+<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
+[1] 23:02:17 [SUCCESS] 172.16.127.161
+[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
+</ul>
+<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>并行地在多个远程主机上杀死进程</li>
+</ul>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
+<ul>
+<li>安装Apache</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>开启Apache web服务</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
+[1] 00:32:33 [SUCCESS] 172.16.127.131
+[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:36:46 [SUCCESS] 172.16.127.161
+COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+[2] 00:36:46 [SUCCESS] 172.16.127.131
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>杀死进程</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
+[1] 00:38:39 [SUCCESS] 172.16.127.131
+[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
+[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<p>三台  关闭firewalld</p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx</title>
     <url>/blog/2021/07/16/Nginx/</url>
     <content><![CDATA[<p>Nginx 初始</p>
@@ -2366,149 +2509,6 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
-    <title>PSSH</title>
-    <url>/blog/2021/07/16/PSSH/</url>
-    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
-# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>安装pssh</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
-<li>pssh 在多个主机上并行运行命令</li>
-<li>pscp 把文件并行复制到多个主机上</li>
-<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
-<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
-<li>pnuke 并行地在多个远程主机上杀死进程</li>
-</ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
-pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>选项解释：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
---help        显示帮助信息          
--h HOST_FILE, 主机文件列表 格式[user@]host[:port]
--l USER       用户名 (OPTIONAL)
--p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
--o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
--e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
--t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
--O OPTION， --option &#x3D; OPTION   SSH选项（可选）
--v，--verbose  打开警告和诊断消息（可选）
--A，-askpass   要求输入密码（可选）
--x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
--X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
--i，--inline  每个服务器的内联内联聚合输出和错误
---inline-stdout 每个服务器的内联标准输出
--I，--send-input 从标准输入读取并作为输入发送到ssh
--P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
-172.16.127.161
-172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>2.实现远程控制获取被控主机IP地址</p>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果没有报错的话，应该输出类似实验下面的</p>
-<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
-[2] 22:42:03 [SUCCESS] 172.16.127.161
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果有以下错误</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
-Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
-ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
-Are you sure you want to continue connecting (yes&#x2F;no)?
-Host key verification failed.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
-<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
-# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
-<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
-<li>把文件并行复制到多个主机上</li>
-</ul>
-<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2.远程将主机文件复制到被控端主机上</p>
-<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
-[1] 23:02:17 [SUCCESS] 172.16.127.161
-[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
-</ul>
-<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>并行地在多个远程主机上杀死进程</li>
-</ul>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
-<ul>
-<li>安装Apache</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>开启Apache web服务</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
-[1] 00:32:33 [SUCCESS] 172.16.127.131
-[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:36:46 [SUCCESS] 172.16.127.161
-COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-[2] 00:36:46 [SUCCESS] 172.16.127.131
-COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>杀死进程</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
-[1] 00:38:39 [SUCCESS] 172.16.127.131
-[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
-[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-<p>三台  关闭firewalld</p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 函数</title>
     <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
@@ -2617,17 +2617,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
-    <title>Python初始</title>
-    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Pyhon语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c语言初始</title>
     <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
@@ -2704,6 +2693,17 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       <categories>
         <category>数据库</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Python初始</title>
+    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Pyhon语言</tag>
+      </tags>
   </entry>
   <entry>
     <title>mysql5.7主从复制-异步</title>
