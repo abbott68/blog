@@ -136,6 +136,78 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -224,78 +296,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -1420,164 +1420,6 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
       </tags>
   </entry>
   <entry>
-    <title>Linux系统安装及配置</title>
-    <url>/blog/2021/11/23/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<pre><code># 二、Linux 系统安装与基础配置
-
-​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。
-
-## 主机规划
-
-事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；
-
-## Linux与硬件的搭配
-
-虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。
-
-此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；
-
-## 认识计算机的硬件配置
-
-* 游戏机/工作机的考虑
-* 性价比的考虑
-* 支持性的考虑
-
-## 选择与Linux搭配的主机配置
-
-由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。
-
-不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；
-
-如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：
-
-* CPU 
-* RAM 
-* Hard Disk 
-* VGA 
-* Network interface Card 
-* 键盘 鼠标   
-
-## 安装需求
-
-一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。
-
-Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，
-
-Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。
-
-## Linux系统安装方式
-
-Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；
-
-**硬盘安装**
-
-硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。
-
-**U盘安装**
-
-现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；
-
-**网络安装**
-
-网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。
-
-**光驱安装**
-
-以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。
-
-**注意:**所有试验都在（VMware）虚拟机上实现
-
-**获取VMware软件**根据自己的操作系统选择适合的版本[windows](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0)  [MAC](https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0)
-
-**获取镜像地址**：[CentOS 官网]( https://www.centos.org/centos-linux/)
-
-**光驱安装过程**
-
-安装前需准备虚拟化软件和Linux系统
-
-**1. 系统引导**
-
-（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；
-
-![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)
-
-**解释：**
-
-&gt; install CentOS 7       安装CentOS 7
-&gt;
-&gt; test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 
-&gt;
-&gt; Troubleshooting    故障模式
-
-（2）选择install CentOS 7  直接按Enter键，选择图形安装方式
-
-![image-20210119234726275](image-20210119234726275.png)
-
-鼠标选中DATE&amp;TME (选择时区)
-
-![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)
-
-步骤：
-
-&gt; 1.修改时区
-&gt;
-&gt; 2.调整时间
-&gt;
-&gt; 3.Done
-
-![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)
-
-根据自己需求选择SOFTWARE SELECTION:
-
-&gt; 图形安装
-&gt;
-&gt; 字符安装
-
-![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)
-
-**进入磁盘分区阶段点击** INSTALLATION DESTINATION
-
-在进行分区之前，进行Linux分区的一些必须说明：
-
-&gt;  Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。
-
-![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)
-
-解释：
-
-&gt; 1. 自动分配空间
-&gt; 2. 手动分配空间
-&gt; 3. 分区的概念就不在这阐述了
-
-注意：选择自动分配空间---&gt;点击Done
-
-![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)
-
-点击Begin installation
-
-![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)
-
-选项：根据自己需求点击
-
-&gt; ROOT PASSWORD (设置root用户密码)
-&gt;
-&gt; USER CREATION（创建普通用户和密码）
-
-至此等待安装完成，重启之后输入用户名和密码
-
-![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)
-
-### 
-</code></pre>
-]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/blog/2021/07/16/MySQL/</url>
     <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" class="lazyload placeholder" data-srcset="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -1985,7 +1827,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#x31;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#51;">&#100;&#x65;&#118;&#x31;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#x31;&#64;&#x31;&#55;&#x32;&#x2e;&#x31;&#54;&#x2e;&#x35;&#57;&#x2e;&#x31;&#51;&#x33;">&#x64;&#x65;&#118;&#x31;&#64;&#x31;&#55;&#x32;&#x2e;&#x31;&#54;&#x2e;&#x35;&#57;&#x2e;&#x31;&#51;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2715,123 +2557,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
-    <title>openstack原理</title>
-    <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
-<p><strong>也可以这样理解为：</strong></p>
-<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
-<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
-<p>私有云(Private Cloud)</p>
-<p>社区云(Community cloud)</p>
-<p>混合云(Hybrid Cloud)</p>
-<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
-<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
-<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
-<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
-<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
-<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
-<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
-<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
-<p>4）形成新的云计算产业。</p>
-<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
-<p><strong>2. 对于云计算消费者</strong></p>
-<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
-<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
-<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
-<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
-<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
-<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
-<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
-<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
-<p>9）个人、中小企业和机构也用得起高性能计算。</p>
-<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
-<li>亚马逊AWS.</li>
-<li>微软Azure.</li>
-<li>阿里<strong>云</strong></li>
-<li>UCloud.</li>
-<li>腾讯<strong>云</strong></li>
-</ul>
-<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
-<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
-<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
-<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
-
-<p>各服务组件的功能如下：</p>
-<ul>
-<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
-<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
-<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
-<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
-<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
-<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
-<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
-<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
-<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
-<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
-<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
-</ul>
-<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
-
-<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
-<ul>
-<li>Dashboard （仪表盘）</li>
-<li>Compute （计算）</li>
-<li>Networking (网络）</li>
-<li>ObjectStorage（对象存储） </li>
-<li>Block Storage (块存储)</li>
-<li>Identify （认证）</li>
-<li>Image (镜像）</li>
-<li>Telemetry （计量）</li>
-<li>Orchestration (编排）</li>
-<li>Database (数据库）</li>
-<li>Data Processing Service (数据分析）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>云计算</category>
-      </categories>
-      <tags>
-        <tag>openstack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql5.7主从复制-异步</title>
     <url>/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/</url>
     <content><![CDATA[<h1 id="Mysql-5-7-架构之主从复制-异步"><a href="#Mysql-5-7-架构之主从复制-异步" class="headerlink" title="Mysql 5.7  架构之主从复制(异步)"></a>Mysql 5.7  架构之主从复制(异步)</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的DDL和DML 操作通过二进制日志传到复制服务器（也就从库）上，然后从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步。</p>
@@ -3018,6 +2743,173 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>openstack原理</title>
+    <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
+<p><strong>也可以这样理解为：</strong></p>
+<p>云计算(Cloud Computing)是网格计算(Grid Computing)、分布式计算(DistributedComputing)、并行计算(ParallelComputing)、效用计算(UtilityComputing) 、网络存储(Network Storage Technologies)、虚拟化(Virtualization) 、负载均衡(Load Balanc)等传统计算机技术和网络技术发展融合的产物。</p>
+<h4 id="1-1-1-云计算模型："><a href="#1-1-1-云计算模型：" class="headerlink" title="1.1.1    云计算模型："></a>1.1.1    云计算模型：</h4><p>公用云(Public Cloud)</p>
+<p>私有云(Private Cloud)</p>
+<p>社区云(Community cloud)</p>
+<p>混合云(Hybrid Cloud)</p>
+<h4 id="1-1-2-云计算服务形式"><a href="#1-1-2-云计算服务形式" class="headerlink" title="1.1.2    云计算服务形式"></a>1.1.2    云计算服务形式</h4><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" class="lazyload placeholder" data-srcset="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/pUm6Hxkd434pJiaNTyEUyfLseRl2ibZIAVHJqcMFqyAf4ibCUXjcZiaic3R43uBM7WdyoIdpibAicmHbkCsKKc13ibTocA/640?wx_fmt=jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="全面讲解OpenStack技术知识_架构师技术联盟-CSDN博客"></p>
+<p>**IaaS(Infrastructure-as-a- Service)**：基础设施即服务。消费者通过Internet可以从完善的计算机基础设施获得服务。</p>
+<p><strong>PaaS(Platform-as-a- Service)：</strong>平台即服务。PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户。</p>
+<p><strong>SaaS(Software-as-a- Service)：</strong>软件即服务。它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。</p>
+<h4 id="1-1-3-云计算的优势"><a href="#1-1-3-云计算的优势" class="headerlink" title="1.1.3     云计算的优势"></a>1.1.3     云计算的优势</h4><p><strong>1. 对于社会</strong></p>
+<p>1）降低全社会的IT能耗，减少排放，真正做到“绿色计算”。</p>
+<p>2）提高全社会的IT设备使用率，并降低电子产品的数量，从而减少因设备淘汰而产生的电子产品垃圾，对于保护环境大有裨益。</p>
+<p>3）信息技术产业进一步合理分工——由资金雄厚、技术过硬、专业人士众多的机构负责建设并管理云端，从而提高了整个社会信息技术处理环境的可靠性。换言之，也就降低了因天灾人祸导致的生命财产损失。</p>
+<p>4）形成新的云计算产业。</p>
+<p>5）有利于全社会共享数据信息，打破信息孤岛。尤其是涉及公民的身份信息、档案信息、信用信息、健康信息及教育工作信息等的全国性公共云平台，带来的社会效益更是巨大的。</p>
+<p><strong>2. 对于云计算消费者</strong></p>
+<p>1）降低了信息技术成本：前期投入和日常使用成本得到大幅度降低，同时也降低了因各种IT事故导致的损失。</p>
+<p>2）提高了数据的安全性，具体介绍见后续章节。</p>
+<p>3）提高了应用系统的可靠性，具体介绍见后续章节。</p>
+<p>4）提高了用户体验：当今网络无处不在，云计算消费者可以随时随地采用任何云终端接入云端并使用云中的计算资源，真正实现移动办公。</p>
+<p>5）大型昂贵软件平民化：诸如可靠性工程软件、ERP 系统、CRM 系统、商业智能系统等云化之后以 SaaS 模式出租，这些以前只有大型企业使用的软件系统，现在广大中小型企业和个人都能用得起。</p>
+<p>6）从复杂的 IT 技术泥潭中摆脱出来，专注于自己的核心业务和市场。</p>
+<p>7）能快速响应消费者对计算资源的弹性需求，从而能及时满足企业的业务变化。在传统 IT 系统下，一项新业务对 IT 资源的扩容要求，往往在数月或者一年后才能得到满足，这使得市场人员和管理层往往难以接受，因为市场是瞬息万变的。</p>
+<p>8）有利于企业之间或者个人之间共享信息，打破信息孤岛。</p>
+<p>9）个人、中小企业和机构也用得起高性能计算。</p>
+<h4 id="1-1-4-云厂商"><a href="#1-1-4-云厂商" class="headerlink" title="1.1.4     云厂商"></a>1.1.4     云厂商</h4><ul>
+<li>亚马逊AWS.</li>
+<li>微软Azure.</li>
+<li>阿里<strong>云</strong></li>
+<li>UCloud.</li>
+<li>腾讯<strong>云</strong></li>
+</ul>
+<h4 id="1-2-OpenStack-发展历史"><a href="#1-2-OpenStack-发展历史" class="headerlink" title="1.2     OpenStack 发展历史"></a>1.2     OpenStack 发展历史</h4><p>Openstack 是在2010年由拖管服务器及云计算提供商RackSpace 和美国航天航空局NASA共同发起的开源项目，愿景是为了数据中心建立一套云操作系统，大幅提升数据中心的运营效率。</p>
+<h4 id="1-2-1-什么是-OpenStack"><a href="#1-2-1-什么是-OpenStack" class="headerlink" title="1.2.1    什么是 OpenStack"></a>1.2.1    什么是 OpenStack</h4><p>OpenStack 是一种云操作系统，可控制整个数据中心内的大量计算、存储和网络资源池，所有这些资源都通过一个仪表板进行管理，该仪表板为管理员提供控制权，同时授权其用户通过 Web 界面配置资源。</p>
+<h4 id="1-3-OpenStack-概念设计"><a href="#1-3-OpenStack-概念设计" class="headerlink" title="1.3    OpenStack 概念设计"></a>1.3    OpenStack 概念设计</h4><p>OpenStack 是一个开源的云计算平台，由来自全世界的开发者创造了OpenStack开源项目，社区活跃度和代码贡献量非常高，主要特点是易实施、大规模弹性扩展和功能丰富。</p>
+<img src="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack_kilo_conceptual_arch.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:60%;" />
+
+<p>各服务组件的功能如下：</p>
+<ul>
+<li><strong>Keystone:</strong>    为各服务组件提供用户认证和权限验证功能；</li>
+<li><strong>Ceilometer:</strong> 为各服务组件提供监控、检索和计量功能；</li>
+<li><strong>Horizon:</strong>   为用户操作 OpenStack 项目中的各服务提供基于Web形式的图形界面；</li>
+<li><strong>Glance:</strong>   为虚拟机实例提供镜像服务，Glance服务中的镜像介质存放在Swift中；</li>
+<li><strong>Neutron:</strong>   为虚拟机实例提供网络连接服务，同时也为lronic 提供PXE网络;</li>
+<li><strong>lronic:</strong> 提供物理机的添加、删除、电源管理和安装部署等功能；</li>
+<li><strong>Nova:</strong>   为虚拟机实例提供计算资源；</li>
+<li><strong>Trove:</strong>  为虚拟机镜像提供注册服务；使用Nova 启动数据库实例；依附虚拟实例，提供数据存储、操作和管理；可以备份数据库实例到Swift 中；</li>
+<li><strong>inder:</strong> 为虚拟机实例提供块设备，同时备份设备数据到Swift 中；</li>
+<li><strong>Sahara:</strong> 通过Heat编排集群配置；在Swift 中保存或二进制文件；将任务分派给虚拟机实例处理；通过Nova 运行数据处理实例；在Glance 中注册Hadoop 镜像;</li>
+<li><strong>Heat:</strong> 可以编排Cinder Neutron Glance和 Nova 各种资源;</li>
+</ul>
+<h4 id="1-4-逻辑架构"><a href="#1-4-逻辑架构" class="headerlink" title="1.4    逻辑架构"></a>1.4    逻辑架构</h4><img src="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" class="lazyload placeholder" data-srcset="https://docs.openstack.org/install-guide/_images/openstack-arch-kilo-logical-v1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:80%;" />
+
+<h4 id="1-4-Openstack-服务组件"><a href="#1-4-Openstack-服务组件" class="headerlink" title="1.4    Openstack 服务组件"></a>1.4    Openstack 服务组件</h4><p>Openstack 项目通过一系列相互关联的内部服务组件提供了基础设施即服务(Infrastructure as a Service laaS)的解决方案，每个内部服务组件都提供了有利于集成的应用程序接口(API)根据实际需要，可以选择安装某几个或全部安装服务组件：</p>
+<ul>
+<li>Dashboard （仪表盘）</li>
+<li>Compute （计算）</li>
+<li>Networking (网络）</li>
+<li>ObjectStorage（对象存储） </li>
+<li>Block Storage (块存储)</li>
+<li>Identify （认证）</li>
+<li>Image (镜像）</li>
+<li>Telemetry （计量）</li>
+<li>Orchestration (编排）</li>
+<li>Database (数据库）</li>
+<li>Data Processing Service (数据分析）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>云计算</category>
+      </categories>
+      <tags>
+        <tag>openstack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -3084,55 +2976,5 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>prometheus</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
   </entry>
 </search>
