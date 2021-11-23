@@ -1,44 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>5.7多实例</title>
     <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
@@ -136,6 +98,44 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -224,6 +224,1298 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux安装软件</title>
+    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
+<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
+<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
+<p><strong>5.2、下载、解压源码</strong></p>
+<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
+<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
+<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
+<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
+<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
+<p>​    1、makefile 文件</p>
+<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
+<p>​    2、make与make install</p>
+<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
+<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
+<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
+<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
+<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
+<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
+<ul>
+<li><p>安装软件包：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>常用选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
+  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
+  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
+                                   被指定未多个软件包，常常会导致错误出现)
+  --badreloc                       对不可重定位的软件包重新分配文件位置
+  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
+  --excludedocs                    不安装程序文档
+  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
+  --force                          --replacepkgs --replacefiles 的缩写
+  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
+  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
+  --ignorearch                     不验证软件包架构
+  --ignoreos                       不验证软件包操作系统
+  --ignoresize                     在安装前不检查磁盘空间
+  -i, --install                    安装软件包
+  --justdb                         更新数据库，但不修改文件系统
+  --nodeps                         不验证软件包依赖
+  --nofiledigest                   不验证文件摘要
+  --nocontexts                     不安装文件的安全上下文
+  --noorder                        不对软件包安装重新排序以满足依赖关系
+  --noscripts                      不执行软件包脚本
+  --notriggers                     不执行本软件包触发的任何脚本
+  --nocollections                  请不要执行任何动作集
+  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
+  --percent                        安装软件包时打印百分比
+  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
+  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
+  --replacefiles                   忽略软件包之间的冲突的文件
+  --replacepkgs                    如果软件包已经有了，重新安装软件包
+  --test                           不真正安装，只是判断下是否能安装
+  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
+  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
+<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
+<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>yum的配置</strong></p>
+<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
+name&#x3D;CentOS-$releasever - cr  
+baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
+gpgcheck&#x3D;1
+gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
+enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>yum的特点与基本用法</strong></p>
+<ol>
+<li><p>yum的特点</p>
+<ul>
+<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
+<li>可以同时配置多个资源库（Repository）</li>
+<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
+<li>保持与RPM数据库的一致性</li>
+</ul>
+</li>
+<li><p>yum的基本用法</p>
+<ul>
+<li><p>如果安装或者删除RPM包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
+[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>检查yum工具更新软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>更新所有的RPM软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>通过yum查询RPM包信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令</title>
+    <url>/blog/2021/11/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="四、Linux常用命令及使用技巧"><a href="#四、Linux常用命令及使用技巧" class="headerlink" title="四、Linux常用命令及使用技巧"></a>四、Linux常用命令及使用技巧</h1><p>本章重点讲述Linux命令的使用，命令是学习Linux必须熟练掌握的一部分，Linux下的命令大概有1000个，而常用的命令只有100个左右，这些常用命令需要灵活掌握。虽然Linux的各个发行版大同小异，但是常用命令基本相同，因此只要掌握了常用的Linux命令，就能融汇贯通各个Linux版本了。</p>
+<h2 id="Linux下的shell简介"><a href="#Linux下的shell简介" class="headerlink" title="Linux下的shell简介"></a>Linux下的shell简介</h2><h3 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h3><p><strong>Unix shell</strong>，一种<a href="https://zh.wikipedia.org/wiki/%E6%AE%BC%E5%B1%A4">壳层</a>与<a href="https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2">命令行界面</a>，是<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>下传统的用户和计算机的交互界面。第一个用户直接输入<a href="https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">命令</a>来执行各种各样的任务。</p>
+<p>普通意义上的shell就是可以接受用户输入命令的程序。它之所以被称作shell是因为它隐藏了操作系统低层的细节。同样的Unix下的图形用户界面<a href="https://zh.wikipedia.org/wiki/GNOME">GNOME</a>和<a href="https://zh.wikipedia.org/wiki/KDE">KDE</a>，有时也被叫做“虚拟shell”或“图形shell”。</p>
+<p>Unix操作系统下的shell既是用户交互的界面，也是控制系统的<a href="https://zh.wikipedia.org/wiki/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80">脚本语言</a>。当然在这点也有别于Windows下的命令行，虽然也提供了很简单的控制语句。在Windows操作系统下，可能有些用户从来都不会直接的使用shell，然而在Unix系列操作系统下，shell仍然是控制系统启动、<a href="https://zh.wikipedia.org/wiki/X_Window">X Window</a>启动和很多其他实用工具的脚本解释程序。</p>
+<h3 id="shell-语法"><a href="#shell-语法" class="headerlink" title="shell 语法"></a>shell 语法</h3><p>Linux下的各种shell的主要区别在于命令行的语法对于一些普通的命令，各个shell版本的语法基本相同，只有在编写一个shell脚本或者使用一些shell高级特性的时候，各个版本shell的差异才会显示出来。</p>
+<p>shell语法分析是指shell对命令的扫描处理过程，也就是，把命令或者用户输入的内容分解成要处理的各个部分的操作，在Linux系统下，shell语法分析包含很多内容，如重定向、文件名扩展和管道等</p>
+<p><strong>shell语法格式</strong></p>
+<p>用户登陆系统后，shell命令行启动。shell遵循一定的语法格式将用户输入的命令进行分析解释并传递给系统内核。shell命令的一般格式为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">command [option] [arguments]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解释：</p>
+<blockquote>
+<ul>
+<li><p>command:表示命令的名称。</p>
+</li>
+<li><p>options: 表示命令的选项。</p>
+</li>
+<li><p>arguments: 表示命令的参数。</p>
+</li>
+</ul>
+</blockquote>
+<p>根据习惯，我们一般把具有以上格式的字符串称为命令行。命令行是用户与shell之间对话的基本单位；</p>
+<p>在命令行中，选项是包含一个或多个字母的代码，主要用户改变命令的执行方式。一般在选项前面有一个“-”符号；</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>shell通配符</strong></p>
+<p>通配符注定要为了方便用户对文件或者目录的描述，例如，当用户需要以“.sh”结尾的文件时，使用通配符就能很方便地实现。各个版本的shell都有通配符，这些通配符是一些特殊字符，用户可以在命令行的参数中使用这些字符，进行文件名或者路径名的匹配。shell将把与命令行中指定的匹配规则符合的所有文件名或者路径名作为命令的参数，然后执行这个命令。</p>
+<p>bash中常见的通配符有“*”、“？”、“[]”。</p>
+<ol>
+<li><p>“*“ 匹配任意一个或多个字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls *.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录所有以”.txt”结尾的文件</p>
+</li>
+<li><p>”?“  匹配任意单一字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls ab?.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录下ab开头，随后的一个字母是任意字符，最后以”.txt”结尾的文件。</p>
+</li>
+<li><p>”[]“ 匹配任何包含在方括号内的单字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls [abc]*.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录下以a、b或c开头，租后以“.txt”结尾的文件。</p>
+</li>
+</ol>
+<p><strong>shell重定向</strong></p>
+<p>Linux下系统打开多个文件，即标准输出、标准输出和标准错误输出。用户的shell将键盘设为默认的标准输入，默认的标准输出和标准错误输出为屏幕。也就是，用户从键盘输入命令，然后偶将结果和错误消息输出到屏幕。</p>
+<p>所谓的重定向，就是不适用系统默认的标准输入/输出，而是重新指定，因此重定向分为输入重定向、输出重定向和错误输出重定向，要实现重定向就需要了解重定向操作符，shell就是根据重定向操作符来决定重定向操作的。</p>
+<ol>
+<li><p>输入重定向</p>
+<p>​     输入重定向用于改变命令的输入源，利用输入重定向，就可以将一个文件的内容作为命令的输入，而不从键盘输入。</p>
+<p>用于输入重定向的操作符有“&lt;”和”&lt;&lt;”</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# wc -l &lt; &#x2F;etc&#x2F;hosts
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>输出重定向</p>
+<p>输出重定向不是将命令的输出结果在屏幕，而是输入到一个指定的文件内。</p>
+<p>用于输出重定向的操作符有“&gt;”和“&gt;&gt;”</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls &gt; a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>结果：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat a.txt 
+anaconda-ks.cfg
+a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>错误重定向</p>
+<p>错误重定向和标准输出重定向一样，可以使用操作符”2&gt;”和”2&gt;&gt;”实现对错误输出的重定向。</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls a.txt b.txt 2&gt; error.txt
+a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt 
+ls: 无法访问b.txt: 没有那个文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>shell的管道</p>
+<p>管道可以把很多的命令连接起来，可以把第一个命令的输入当作第二个命令的输出，第二个命令的输出可以当作第2个命令的输入，以此类推，因此，管道的作用就是把一个命令的输出当作下一个命令的输入，而不经过中间文件。</p>
+<p>通过管道符“|”可以建立管道连接。</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt  | wc -l
+1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>shell中的引用</p>
+<p>在bash中的很多特殊字符，这些字符本身就具有特殊含义，Linux中使用“引用”技术来忽略这些字符的特殊含义，引用技术就是通知shell将这些特殊字符当作普通字符处理。</p>
+<p>shell中用于应用的字符有转义字符“\”、单引号” ‘ “、双引号“ “” ”。</p>
+</li>
+<li><p>shell的自动补全命令</p>
+<p>自动补全命令行是bash一个简单而且使用的功能，自动补全命令行也就是在输入命令时不必把命令全部输入，shell就能智能判断用户所要输入的命令。</p>
+</li>
+</ol>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><h3 id="2-1-system"><a href="#2-1-system" class="headerlink" title="2.1 system"></a>2.1 system</h3><p><strong>uname 命令</strong></p>
+<p>功能描述：</p>
+<p>​    uname命令显示操作系统的相关信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uname [OPTION]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示操作系统全部信息
+-m 显示系统CPU架构
+-s 显示操作系统类型
+-r 显示操作系统内核版本
+-n 显示操作系统的主机名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# uname -a
+Linux localhost.localdomain 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU&#x2F;Linux<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p> <strong>uptime 命令</strong></p>
+<p>功能描述：</p>
+<p>​    uptime命令用来输出系统任务队列信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uptime [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-p, --pretty   显示运行时间
+-h, --help     display this help and exit 
+-s, --since    显示系统时间
+-V, --version  output version information and exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>hostname命令</strong></p>
+<p>功能描述：</p>
+<p>​    hostname 显示系统主机名</p>
+<p>语法格式</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostname [options] &#123;hostname|-F file&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a，别名
+-A，--all-fqdns所有长主机名（FQDN）
+-b，--boot设置默认主机名（如果没有）
+-d，--domain DNS域名
+-f，-fqdn，-long长主机名（FQDN）
+-F，--file从给定文件中读取主机名或NIS域名
+-i，--ip-address主机名的地址
+-I，--all-ip-address主机的所有地址
+-s，--short短主机名
+-y，-yp，-nis NIS &#x2F; YP域名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：<br>i<br>查看系统主机名</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost ~]# hostname
+localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>临时修改主机名</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# hostname test.example.com
+[root@localhost ~]# bash
+[root@test ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>last命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示最近登陆用户的列表</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">last,lastd [options] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看系统重启历史</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# last reboot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><strong>ls命令</strong></p>
+<p>功能说明:</p>
+<p>ls 命令是显示指定工作目录下的内容，列出目录所含的文件及目录。</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls [选项]... [文件]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>ls的选项及其说明如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a  不隐藏任何以. 开始的项目
+-l	使用较长格式列出信息
+-d  只显示目录列表，不显示文件
+-l  除文件名称外，同时将文件或者子目录的权限、使用者和大小等详细信息列出
+-s  在每个文件名后输出的该文件的大小
+-k  以k字节的形式表示文件的大小
+-u  以文件上次被访问的时间排序
+-i  以时间排序
+-O  显示除组信息的详细信息
+-r  对目录反向排序
+-q  用&quot;?&quot;代替不可输出的内容
+-m  横向输出文件名，并以“,”作为分隔符
+-S  以文件大小排序
+-R  列出所有子目录下的文件
+-pF 在每个文件名附上一个字符以说明该文件的类型，“*”表示可执行的普通文件，“&#x2F;”表示目录，“@”表示符号链接，“|”表示FIFO，“&#x3D;”表示套接字（socket）
+-C  按列输出，纵向排序
+-R  列出所有子目录下的文件
+-Q  把输出的文件名用双引号括起来<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>以下命令列出/home目录下文件及其子目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -l 
+总用量 12
+-rw-------. 1 root root 1259 1月  21 00:20 anaconda-ks.cfg
+-rw-r--r--. 1 root root 7411 1月  22 01:28 ls-help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>pwd命令</strong></p>
+<p>功能说明</p>
+<p>显示当前的工作目录，执行pwd指令可立刻得知目前所在的工作目录的绝对路径名称；</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>cd 命令</strong></p>
+<p>功能说明：</p>
+<p>切换当前工作目录</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">cd [dir]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd  [dir]   切换到指定文件夹下，注意：Linux下文件和文件夹是区分大小写的
+cd 或 cd ~   返回当前用户家目录
+cd ~[用户名]  返回指定用户的家目录
+cd .. 或者 cd .&#x2F; 返回上级目录
+cd &#x2F;         放回到根目录下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>切换到/opt 目录下，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cd &#x2F;opt&#x2F;
+[root@localhost opt]# pwd
+&#x2F;opt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>返回root目录，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost opt]# cd 
+[root@localhost ~]# 
+[root@localhost ~]# pwd
+&#x2F;root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>date命令</strong></p>
+<p>功能说明</p>
+<p>显示或者修改系统时间和日期。只有超级用户才能用date命令设置时间，一般用户只能用date命令显示时间。</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">date [选项]... [+格式] 或者
+date [选项] 显示时间格式（以+开头，后面接时间格式）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-s  --set 设置系统时间
+-d  --date 显示描述的日期<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>时间显示格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">%%	一个文字的 %
+%a	当前locale 的星期名缩写(例如： 日，代表星期日)
+%A	当前locale 的星期名全称 (如：星期日)
+%b	当前locale 的月名缩写 (如：一，代表一月)
+%B	当前locale 的月名全称 (如：一月)
+%c	当前locale 的日期和时间 (如：2005年3月3日 星期四 23:05:25)
+%C	世纪；比如 %Y，通常为省略当前年份的后两位数字(例如：20)
+%d	按月计的日期(例如：01)
+%D	按月计的日期；等于%m&#x2F;%d&#x2F;%y
+%e	按月计的日期，添加空格，等于%_d
+%F	完整日期格式，等价于 %Y-%m-%d
+%g	ISO-8601 格式年份的最后两位 (参见%G)
+%G	ISO-8601 格式年份 (参见%V)，一般只和 %V 结合使用
+%h	等于%b
+%H	小时(00-23)
+%I	小时(00-12)
+%j	按年计的日期(001-366)
+%k   hour, space padded ( 0..23); same as %_H
+%l   hour, space padded ( 1..12); same as %_I
+%m   month (01..12)
+%M   minute (00..59)
+%n	换行
+%N	纳秒(000000000-999999999)
+%p	当前locale 下的&quot;上午&quot;或者&quot;下午&quot;，未知时输出为空
+%P	与%p 类似，但是输出小写字母
+%r	当前locale 下的 12 小时时钟时间 (如：11:11:04 下午)
+%R	24 小时时间的时和分，等价于 %H:%M
+%s	自UTC 时间 1970-01-01 00:00:00 以来所经过的秒数
+%S	秒(00-60)
+%t	输出制表符 Tab
+%T	时间，等于%H:%M:%S
+%u	星期，1 代表星期一
+%U	一年中的第几周，以周日为每星期第一天(00-53)
+%V	ISO-8601 格式规范下的一年中第几周，以周一为每星期第一天(01-53)
+%w	一星期中的第几日(0-6)，0 代表周一
+%W	一年中的第几周，以周一为每星期第一天(00-53)
+%x	当前locale 下的日期描述 (如：12&#x2F;31&#x2F;99)
+%X	当前locale 下的时间描述 (如：23:13:48)
+%y	年份最后两位数位 (00-99)
+%Y	年份
+%z +hhmm		数字时区(例如，-0400)
+%:z +hh:mm		数字时区(例如，-04:00)
+%::z +hh:mm:ss	数字时区(例如，-04:00:00)
+%:::z			数字时区带有必要的精度 (例如，-04，+05:30)
+%Z			按字母表排序的时区缩写 (例如，EDT)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p><input disabled="" type="checkbox">  用指定的格式显示时间和日期</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date &#39;+this date now is %x time is now:%X&#39;
+this date now is 2021年01月22日 time is now:02时27分16秒<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><input disabled="" type="checkbox">  修改系统时间</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date
+2021年 01月 22日 星期五 02:27:38 CST
+[root@localhost ~]# date -s 00:10
+2021年 01月 22日 星期五 00:10:00 CST<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>passwd 命令</strong></p>
+<p>功能说明：设置用户密码</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [选项...] &lt;帐号名称&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-k, --keep-tokens       保持身份验证令牌不过期
+-d, --delete            删除已命名帐号的密码(只有根用户才能进行此操作)
+-l, --lock              锁定指名帐户的密码(仅限 root 用户)
+-u, --unlock            解锁指名账户的密码(仅限 root 用户)
+-e, --expire            终止指名帐户的密码(仅限 root 用户)
+-f, --force             强制执行操作
+-x, --maximum&#x3D;DAYS      密码的最长有效时限(只有根用户才能进行此操作)
+-n, --minimum&#x3D;DAYS      密码的最短有效时限(只有根用户才能进行此操作)
+-w, --warning&#x3D;DAYS      在密码过期前多少天开始提醒用户(只有根用户才能进行此操作)
+-i, --inactive&#x3D;DAYS     当密码过期后经过多少天该帐号会被禁用(只有根用户才能进行此操作)
+-S, --status            报告已命名帐号的密码状态(只有根用户才能进行此操作)
+--stdin                 从标准输入读取令牌(只有根用户才能进行此操作)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>普通用户设置用户密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>超级用户root修改某个用户的密码</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [用户名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>su命令</strong></p>
+<p>功能说明：</p>
+<p>su命令主要用于切换用户身份</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">su [选项] [-] [USER [参数]...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, -p, --preserve-environment  不重置环境变量
+-g, --group &lt;组&gt;                 指定主组
+-G, --supp-group &lt;组&gt;           指定一个辅助组
+-, -l, --login                  使 shell 成为登录 shell
+-c, --command &lt;命令&gt;             使用 -c 向 shell 传递一条命令
+--session-command &lt;命令&gt;         使用 -c 向 shell 传递一条命令
+                                而不创建新会话
+-f, --fast                      向shell 传递 -f 选项(csh 或 tcsh)
+-s, --shell &lt;shell&gt;             若 &#x2F;etc&#x2F;shells 允许，则运行 shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>普通用户切换root用户</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[test@localhost root]$ su -
+密码：
+上一次登录：五 1月 22 01:22:53 CST 2021从 gatewaypts&#x2F;0 上
+[root@localhost ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>clear命令</strong></p>
+<p>功能描述：</p>
+<p>​    clear命令用来清除屏幕信息</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">clear<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>man命令</strong></p>
+<p>功能描述：</p>
+<p>​    man命令用来显示指定命令的帮助信息。</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man [OPTION...] [SECTION] PAGE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看man命令的帮助信息，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man man<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>who命令</strong></p>
+<p>功能描述：</p>
+<p>​    who命令显示目前登陆系统的用户</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">who [OPTION]... [file]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 列出所有信息
+-b 列出系统最近启动的日期
+-l 列出所有可登录的终端信息
+-m 仅列出关于当前终端的信息
+-q 列出在本地系统上的用户和用户数的名称
+-r 显示当前系统的运行级别
+-s 仅显示名称、终端和时间字段信息
+-u 显示当前每个用户的用户名，登录终端、登录时间、终端活动和进程标识
+-T或-w 显示tty终端的状态，“+”表示对任何人可写，“-”表示仅对root用户或所有者可写，“?”表示遇到终端故障<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看当前系统处于运行级别</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who -r
+         run-level 3  2021-01-21 17:49<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出的内容：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who
+root     tty1         2021-01-21 17:50
+root     pts&#x2F;0        2021-01-22 01:22 (gateway)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">名称 [状态] 终端 时间 [活动] [进程标识] [主机名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>w命令</strong></p>
+<p>功能描述： </p>
+<p>​    显示登陆到系统的用户信息</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">w [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+ <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-h  不显示输出信息的标题
+-l  用长格式输出
+-s  用短格式输出，显示登陆时间、JCPU和PCPU时间
+—V  显示版本信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# w
+ 01:29:11 up  9:58,  2 users,  load average: 0.00, 0.01, 0.04
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     tty1                      17:50    6:39   1.32s  1.32s -bash
+root     pts&#x2F;0    gateway          01:22     ?     0.22s  0.06s w<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<p>第一行输出信息表示：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">当前的系统时间、系统已运行的时间、登陆系统的用户数、系统平均负载：1分钟、5分钟、15分钟系统负载情况<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第二行输出信息表示：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">user:   表示登陆系统的用户
+TTY:	  用户使用TTY名称
+FROM:   用户从哪里登录进来，一般显示远程登陆主机的IP地址或者主机名
+LOGIN@: 用户登陆的日期和时间
+IDLE:   表示某个程序上次从终端开始执行到现在所持续的时间
+JCPU:   表示该终端上的所有进程及子进程使用系统的时间
+PCPU:   当前活动进程使用的系统时间
+WHAT:   当前用户执行的进程名称和选项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>free命令</strong></p>
+<p>功能说明：</p>
+<p>​    free命令用来显示系统内存状态，具体包括系统物理内存、虚拟内存、共享内存和系统缓存。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">free [option] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b  以字节为单位显示内存使用情况
+-m  以MB为单位显示内存使用情况
+-K  以KB为单位显示内存使用情况
+-t  显示内存总和列
+-s  根据指定的间隔秒数持续显示内存使用情况
+-o  不显示系统缓冲区别<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# free 
+              total        used        free      shared  buff&#x2F;cache   available
+Mem:         995684      169212      688236        7848      138236      682044
+Swap:       2097148           0     2097148<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">total: 总内存
+used:  已使用的内存
+free:  剩余内存
+shared:
+buff&#x2F;cache:
+available:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>ps命令</strong></p>
+<p>功能描述：</p>
+<p>​    ps命令显示系统进程在瞬间的运行状态。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ps [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示所有用户的进程，包含每个程序的完整路径
+-x 显示所有系统内存，包括哪些没有终端的程序
+-u 显示使用者的名称和起始时间
+-f 详细显示程序执行的路径群
+-c 只显示进程的名称，不显示进程的完整路径
+-e 解除内核进程以为所有进程的信息写到标准输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ps 
+   PID TTY          TIME CMD
+ 10356 pts&#x2F;0    00:00:00 bash
+ 10790 pts&#x2F;0    00:00:00 su
+ 10804 pts&#x2F;0    00:00:00 su
+ 10808 pts&#x2F;0    00:00:00 bash
+ 11385 pts&#x2F;0    00:00:00 ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出内存详解：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">PID 表示是进程的标识号；
+TTY 表示进程所属的终端控制台；
+TIME 表示进程所使用的的CPU时间；
+CMD 表示列出正在执行的命令行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>top命令</strong></p>
+<p>​        top命令提供了对系统处理器状态的实时监控，它能够实时显示系统中各个进程的资源占用情况，该命令可以按照对CPU的使用、内存使用和执行时间对系统任务进程进行排序显示，同时top命令还可以通过交互式命令进行设定显示。</p>
+<p>功能描述：</p>
+<p>查看即时活跃的进程，类似于Windows的任务管理器。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d 指定每两次屏幕信息刷新之间的时间间隔
+-i 不显示闲置或者僵死的进程信息
+-c 显示进程的整个命令路径，而不是只显示命令名称
+-s 使top命令在安全模式下运行，此时top的交互式命令被取消，避免潜在危险
+-b 分屏显示输出信息，结合“-n”选项可以将屏幕信息输出到文件；
+-n top输出信息更新的次数，完成后将退出top命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>交互式命令选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">h或？ 显示帮助信息，给出交互式命令的一些说明
+k 终止一个进程，系统将显示用户输入一个需要终止进程的PID
+i 忽略闲置进程和僵死进程，这是一个开关式命令
+s 改变top输出信息两次刷新之间的时间，系统将提示输入新的时间，单位是秒，如果输	入小数，就换算成毫秒，如果输入0，系统输出将不断刷新，默认刷新时间是5秒，需要	注意的是，如果设置太短的时间，可能会引起系统不断刷新，无法看清输出显示情况，而且系统负载也会加大
+o或者O 该表top输出信息中显示项的顺序，按小写的a~z键可以将相应的列向右移动，而按大写的A~Z键可以将相应列向左移动，最后按enter键确定
+f或者F  从当前显示列表中添加或者删除项，按f键之后会显示列的列表，按a~z键即可显示或隐藏对应的列。最后按Enter键确定
+m 切换显示内存信息
+t 切换显示进程和CPU状态信息
+r 重新设置一个进程的优先级，系统提示用户输入需要改变的集成PID以及需要设置的进程优先级值，输入一个正值将使优先级减低，反之则可以使该进程拥有更高的优先权。默认值为0；
+l 切换显示进程和CPU状态信息
+q 退出top显示
+c 切换显示完整命令行和命令名称信息
+M 根据驻留内存大小进行排序输出
+T 根据时间&#x2F;累计时间进行排序输出
+S 切换到累计模式
+W 将当前top设置写入~&#x2F;.toprc文件中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 03:41:01 up 12:10, 2 users, load average: 0.00, 0.01, 0.05
+
+Tasks: **104** total,  **1** running, **103** sleeping,  **0** stopped,  **0** zombie
+
+%Cpu(s): **0.0** us, **0.0** sy, **0.0** ni,**100.0** id, **0.0** wa, **0.0** hi, **0.0** si, **0.0** st
+
+KiB Mem :  **995684** total,  **686920** free,  **169924** used,  **138840** buff&#x2F;cache
+
+KiB Swap: **2097148** total, **2097148** free,    **0** used.  **681016** avail Mem 
+  PID USER   PR NI  VIRT  RES  SHR S %CPU %MEM   TIME+ COMMAND                                  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 09:44:56[当前系统时间],
+days[系统已经运行了16天],
+user[个用户当前登录],
+load average: [系统负载，即任务队列的平均长度]
+Tasks:  total[总进程数],
+running[正在运行的进程数],
+sleeping[睡眠的进程数],
+stopped[停止的进程数],
+zombie[冻结进程数],
+Cpu(s): 99.8%us[用户空间占用CPU百分比],
+0.1%sy[内核空间占用CPU百分比],
+0.0%ni[用户进程空间内改变过优先级的进程占用CPU百分比],
+0.2%id[空闲CPU百分比], 0.0%wa[等待输入输出的CPU时间百分比],
+0.0%hi[服务硬件中断所花费的时间],
+0.0%st[指的是当前VM中的cpu cycle被虚拟化偷走的比例],
+Mem: 4147888k total[物理内存总量],
+2493092k used[使用的物理内存总量],
+1654796k free[空闲内存总量],
+158188k buffers[用作内核缓存的内存量]
+Swap:  5144568k total[交换区总量],
+56k used[使用的交换区总量],
+5144512k free[空闲交换区总量],
+2013180k cached[缓冲的交换区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>whoami命令</strong></p>
+<p>功能描述：</p>
+<p>​    查看以什么身份登陆系统</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">whoami [选项]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>finger user命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示有关用户的信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="硬件命令"><a href="#硬件命令" class="headerlink" title="硬件命令"></a>硬件命令</h5><p><strong>dmesg命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示开机信息，内核会将开机信息存储在系统缓冲区（ring buffer）中，如果开机不及时查看相关信息，可以在开机后利用dmesg命令查看，也可以在/var/log/目录中查看dmesg文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dmesg [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c  显示开机信息后，清楚ring buffer信息
+-s  设置缓冲区大小，默认设置为8192
+-n  设置记录信息的层级<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>查看CPU</strong></p>
+<ul>
+<li><p>lscpu 命令</p>
+<p>功能描述：</p>
+<p>​    查看CPU型号以及详细信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lscpu [选项]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all               同时打印在线和离线 CPU (-e 选项默认值)
+-b, --online            只打印在线 CPU (-p 选项默认值)
+-c, --offline           只打印离线 CPU
+-e, --extended[&#x3D;&lt;列表&gt;] 打印扩展的可读格式
+-p, --parse[&#x3D;&lt;列表&gt;]    打印可解析格式
+-s, --sysroot &lt;目录&gt;    以指定目录作为系统根目录
+-x, --hex               打印十六进制掩码而非 CPU 列表
+-y, --physical          print physical instead of logical IDs
+  
+-h, --help     显示此帮助并退出
+-V, --version  输出版本信息并退出
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# lscpu 
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>lshw命令</strong></p>
+<p>功能描述：</p>
+<p>​    lshw 是一个能把我们出去硬件信息的小工具，它能为我们提供内存配置、固件版本、主板配置信息、CPU版本和速度、cache信息、总线速度等。它能运行在 DMI兼容的 x86、IA-64和一些 PowerPC的平台上。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lshw [-format] [-options ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">format can be
+	-html           将硬件以HTML格式输出
+	-xml            将硬件以xml格式输出
+	-json           将硬件以json对象输出
+	-short          输出硬件路径
+	-businfo        output bus information 输出总线信息
+
+options can be
+	-dump filename  displays output and dump collected information into a file (SQLite database)
+	-class CLASS    only show a certain class of hardware
+	-C CLASS        same as &#39;-class CLASS&#39;
+	-c CLASS        same as &#39;-class CLASS&#39;
+	-disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
+	-enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
+	-quiet          don&#39;t display status
+	-sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
+	-numeric        output numeric IDs (for PCI, USB, etc.)
+	-notime         exclude volatile attributes (timestamps) from output<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>lsblk命令</strong></p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lsblk [选项] [&lt;设备&gt; ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all            打印所有设备
+-b, --bytes          以字节为单位而非易读的格式来打印 SIZE
+-d, --nodeps         不打印从属设备(slave)或占位设备(holder)
+-D, --discard        打印时丢弃能力
+-e, --exclude &lt;列表&gt; 根据主设备号排除设备(默认：内存盘)
+-I, --include &lt;列表&gt; 只显示有指定主设备号的设备
+-f, --fs             输出文件系统信息
+-h, --help           使用信息(此信息)
+-i, --ascii          只使用 ascii 字符
+-m, --perms          输出权限信息
+-l, --list           使用列表格式的输出
+-n, --noheadings     不打印标题
+-o, --output &lt;列表&gt;  输出列
+-p, --paths          打印完整设备路径
+-P, --pairs          使用 key&#x3D;“value” 输出格式
+-r, --raw            使用原生输出格式
+-s, --inverse        反向依赖
+-t, --topology       输出拓扑信息
+-S, --scsi           输出有关 SCSI 设备的信息
+-h, --help     显示此帮助并退出
+-V, --version  输出版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-2-文件管理与编辑"><a href="#2-2-文件管理与编辑" class="headerlink" title="2.2 文件管理与编辑"></a>2.2 文件管理与编辑</h3><p><strong>mkdir 命令</strong></p>
+<p>功能描述：</p>
+<p>​    mkdir命令用于创建文件夹；</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir [OPTION]... DIRECTORY...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, --mode&#x3D;MODE   对文件夹设置权限
+-p, --parents     递归创建文件夹
+-v, --verbose     输出创建文件夹详情<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>创建一个文件夹test</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>批量创建文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir -p &#x2F;opt&#x2F;test&#x2F;test1 -v
+mkdir: created directory ‘&#x2F;opt&#x2F;test’
+mkdir: created directory ‘&#x2F;opt&#x2F;test&#x2F;test1’
+[root@localhost ~]# ls &#x2F;opt&#x2F;
+test <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>touch 命令</strong></p>
+<p>功能描述：</p>
+<p>​    touch命令用于创建文件</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">touch [OPTION]... FILE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a                     change only the access time
+-c, --no-create        do not create any files
+-d, --date&#x3D;STRING      parse STRING and use it instead of current time
+-f                     (ignored)
+-h, --no-dereference   affect each symbolic link instead of any referenced
+                       file (useful only on systems that can change the
+                       timestamps of a symlink)
+-m                     change only the modification time
+-r, --reference&#x3D;FILE   use this file&#39;s times instead of current time
+-t STAMP               use [[CC]YY]MMDDhhmm[.ss] instead of current ti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>创建test文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# touch test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>more命令</strong></p>
+<p>​    如果一个文本比较长，一屏无法显示完毕，就需要使用more命令。more命令读取文本文件时，每次显示一屏，并且在每屏底部显示单词“More”。如果此时按Enter键，more命令就会接着再显示文本的一行，一次类推；如果按空格键，more命令就继续显示文本文件的另一屏信息。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用法：more [选项] 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d        显示帮助，而不是响铃
+-f        统计逻辑行数而不是屏幕行数
+-l        抑制换页(form feed)后的暂停
+-p        不滚屏，清屏并显示文本
+-c        不滚屏，显示文本并清理行尾
+-u        抑制下划线
+-s        将多个空行压缩为一行
+-NUM      指定每屏显示的行数为 NUM
++NUM      从文件第 NUM 行开始显示
++&#x2F;STRING  从匹配搜索字符串 STRING 的文件位置开始显示
+-V        输出版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p>以分页方式显示文件的内容</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>显示以10行文件内容，同时清除屏幕</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more -c -10 top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p><strong>cat命令</strong></p>
+<p>功能描述:</p>
+<p>cat命令用来将文件内容输出到标准输出，类似于DOS下的type命令，同时cat还可以用于连接合并文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat [options] files<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A, --show-all           等于-vET
+-b, --number-nonblank    对非空输出行编号
+-e                       等于-vE
+-E, --show-ends          在每行结束处显示&quot;$&quot;
+-n, --number             对输出的所有行编号
+-s, --squeeze-blank      不输出多行空行
+-t                       与-vT 等价
+-T, --show-tabs          将跳格字符显示为^I
+-u                       (被忽略)
+-v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
+    --help		显示此帮助信息并退出
+    --version		显示版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p>查看网卡的配置文件；</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test network-scripts]# cat ifcfg-ens33 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>以下命令将文件file1.txt和file2.txt的内容合并后输出到file3.txt中。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
+file1.txt  file2.txt  waizhi
+[root@test opt]# cat file1.txt 
+this is file one
+[root@test opt]# cat file2.txt 
+this is file two
+[root@test opt]# cat file1.txt file2.txt &gt; file3.txt
+[root@test opt]# cat file3.txt 
+this is file one
+this is file two
+[root@test opt]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>diff命令</strong></p>
+<p>功能描述：</p>
+<p>​    diff命令用来比较文件的差异。diff以逐行的方式比较文本文件的异同，如果指定比较的是目录，则diff会比价目前中相同文件名的文件，但不会比较其中的子目录。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">diff [选项]... FILES<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c 显示全部内容，并标出不同之处
+-b 忽略行尾的空格，同时字符串的一个或多个空格都将视为相同
+-r 当文件1和文件2为目录时，会比较子目录中的文件
+-s 当两个文件相同时，显示文件的相同信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例:</p>
+<p>比较文件file1.txt和file2.txt的异同</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# diff file1.txt  file2.txt 
+1c1
+&lt; this is file one
+---
+&gt; this is file two
+[root@test opt]# diff -c file1.txt file2.txt 
+*** file1.txt	2021-01-22 07:50:49.586053712 +0800
+--- file2.txt	2021-01-22 07:50:54.322053893 +0800
+***************
+*** 1 ****
+! this is file one
+--- 1 ----
+! this is file two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>grep命令</strong></p>
+<p>功能描述：</p>
+<p>​    grep命令是Linux下的文本过滤工具，grep根据指定的字符串，对文件的每一行进行搜索，如果找到了这个字符串，就输出该行的内容。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">grep [选项]... PATTERN [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<p>grep 命令的选项有很多，这里列出常用的选项说明。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A NUM 除了列出符合条件的行列，同时列出每个符合条件行的后NUM行
+-c 只显示符合条件的行数，二部显示每行的具体信息
+-f file 事先将要搜索的样式写入一个文件中，每行一个样式，然后以这个文件作为条件进行搜索
+-i 搜索时忽略大小写
+-n 在搜索结果中显示行号
+-B 与选项“-A”相反，除了列出符合条件的行外，同时列出每个符合条件的前NUM行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>rm命令</strong></p>
+<p>功能描述：</p>
+<p>​    rm命令用来删除文件或者文件夹及其所有子目录。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm [选项]... 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-r 递归删除文件及文件夹
+-f 强制删除，不做提示
+-i 交互式，确认是否删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>ln命令</strong></p>
+<p>功能描述：</p>
+<p>​    ln命令是创建文件或者文件夹之间创建链接。</p>
+<p>​    Linux系统下的链接有两种方式，一种是硬链接，一种是符号链接。Linux系统下创建链接默认是硬链接。</p>
+<ul>
+<li><p>硬链接</p>
+<p>是指通过文件的inode来进行链接。在Linux的文件系统中，保存在磁盘所有类型文件都会分配一个编号，这个编号成为inode号（Inode Index)。多个文件指向同一个inode在Linux系统中是允许的，这就是所谓的硬链接。</p>
+</li>
+<li><p>符号链接</p>
+<p>符号链接也叫软连接，软链接类似于Windows中的快捷方式，因此软链接是一个指向真正的文件或者目录位置的符号连接。</p>
+</li>
+</ul>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ln [选项]... [-T] 目标 链接名	(第一种格式)
+ln [选项]... 目标		(第二种格式)
+ln [选项]... 目标... 目录	(第三种格式)
+ln [选项]... -t 目录 目标...	(第四种格式)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-f 如果在目标位置存在与链接名相同的文件，这个文件将被删除
+-s 进行软链接
+-d 允许系统管理员硬链接自己的目录
+-b 对将在链接时会被覆盖或者删除的文件进行备份<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>file命令</strong></p>
+<p>功能描述：</p>
+<p>​    file命令用来显示文件类型。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">file [OPTION...] [FILE...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b 显示文件类型结果，不显示对应文件名称
+-L 直接显示符号链接所指向文件的类型
+-z 显示压缩文件的信息
+-i 如果文件不是常规文件，则不进一步对文件类型进行分类<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>cp 命令</strong></p>
+<p>功能描述：</p>
+<p>​    cp 命令用来将给出的文件或者目录复制到另一个文件或者目录中。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp [选项]... [-T] 源文件 目标文件
+cp [选项]... 源文件... 目录
+cp [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 在复制目录时使用，它保留所有的信息，包含文件链接、文件属性，并递归地复制目录
+-r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名
+-d 复制时保留链接，这样不会失去链接文件
+-p 保留文件的修改时间和存取权限
+-i 如果已经有相同文件名的目标文件，则提示用户是否覆盖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>find 命令</strong></p>
+<p>​    find命令用来在指定的路径下查找指定的文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">find  path-name [-options] [-print -exec -ok 命令 &#123;&#125; \;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<ul>
+<li>path-name: find命令查找文件夹目录路径</li>
+<li>-options: find命令的这个选项主要用来控制搜索的方式。</li>
+<li>-print: 将搜索结果输出到标准输出</li>
+<li>-exec：对搜索出符合条件的文件执行所给出的Linux命令，而不询问用户是否需要执行该命令。{}表示shell命令的选项即为所查找的文件。命令的末尾必须以“;”结束</li>
+<li>-ok: 对搜索出符合条件的文件执行所给出的Linux命令。与-exec不同的是，它会询问用户是否需要执行命令；</li>
+</ul>
+<p><strong>mv 命令</strong></p>
+<p>功能描述：</p>
+<p>​    mv 命令用来将文件或目录改名或将文件由一个目录移入另一个文件夹中。如果源类型和目标类型都是文件或者目录，mv将进行目录重命名。如果源类型为文件，而且标类型为目录，mv将进行文件的移动。如果源类型为目录，则目标类型只能是目录，不能是文件，此时完成目录重命名。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv [选项]... [-T] 源文件 目标文件
+mv [选项]... 源文件... 目录
+mv [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>修改源文件名、移动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
+file1.txt  file2.txt  file3.txt  waizhi
+[root@test opt]# mv file4.txt waizhi&#x2F;
+[root@test opt]# ls
+file1.txt  file2.txt  waizhi
+[root@test opt]# ls waizhi&#x2F;
+file4.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>zip/unzip命令</strong></p>
+<p>​    将一般文件或者目录进行压缩或者解压，Windows默认生成以”.zip”为后缀的压缩包。</p>
+<p>注意：在Linux字符版系统默认是没有安装unzip命令，如果需要解压.zip文件，必须安装此命令;</p>
+<p>安装unzip命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# yum -y  install unzip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">unzip [files] 指定文件名需要解压缩的文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>gzip/gunzip 命令</strong></p>
+<p>功能描述：</p>
+<p>​    将一般的文件进行压缩或者解压。压缩文件的扩展名“.gz”。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">gzip [OPTION]... [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>tar 命令</strong></p>
+<p>功能描述：</p>
+<p>​    tar是Linux下常用的归档工具，对文件或者文件夹进行打包归档，归档成一个文件，但不进行压缩；</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar [选项...] [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -cf archive.tar foo bar  # 从文件 foo 和 bar 创建归档文件archive.tar。
+tar -tvf archive.tar         # 详细列举归档文件 archive.tar中的所有文件。
+tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux控制台的使用</title>
+    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
+<p>#Linux 控制台的使用</p>
+<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
+<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
+<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
+<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+<ul>
+<li><p><strong>查看系统PCI信息</strong></p>
+<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看系统内存信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
+<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
+<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
+<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
+<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
+<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
+<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
+<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
+<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看CPU信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
+CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
+<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
+<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
+<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
+<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
+座：                 <span class="token number">1</span>
+NUMA 节点：         <span class="token number">1</span>
+厂商 ID：           <span class="token class-name">GenuineIntel</span>
+CPU 系列：          <span class="token number">6</span>
+型号：              <span class="token number">70</span>
+型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
+步进：              <span class="token number">1</span>
+CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
+<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
+超管理器厂商：  <span class="token class-name">VMware</span>
+虚拟化类型：     完全
+<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
+<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
+L2 缓存：           <span class="token number">256</span>K
+L3 缓存：           <span class="token number">6144</span>K
+L4 缓存：           <span class="token number">131072</span>K
+NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
+<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统安装及配置</title>
+    <url>/blog/2021/11/23/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="二、Linux-系统安装与基础配置"><a href="#二、Linux-系统安装与基础配置" class="headerlink" title="二、Linux 系统安装与基础配置"></a>二、Linux 系统安装与基础配置</h1><p>​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。</p>
+<h2 id="主机规划"><a href="#主机规划" class="headerlink" title="主机规划"></a>主机规划</h2><p>事实上，要安装好一台Linux主机并不是那么简单的事情，你必须要针对distrbutions的特性、服务器软件的能力、未来的升级需求、硬件扩充性需求等来考虑，对于磁盘分区、文件系统、Linux操作较频繁的目录等，都要有一定程度的了解，所以安装Linux并不是那么简单的工作。不过要学习Linux总要有Linux系统存在，所以提前简单安装一台Linux主机作为练习，在开始安装Linux前你应该要先考虑哪些工作，好让你在后续的主机维护轻松愉快；</p>
+<h2 id="Linux与硬件的搭配"><a href="#Linux与硬件的搭配" class="headerlink" title="Linux与硬件的搭配"></a>Linux与硬件的搭配</h2><p>虽然个人计算机各组件的主要接口是大同小异的，但是由于新的技术来得太快，Linux内核针对新硬件所纳入的缺东程序模块比上硬件更新的速度，加上硬件厂商针对Linux所推出的驱动程序较慢，因此你在选购新的个人计算机（或服务器）时，应该要选择已经对安装Linux测试的硬件比较好。</p>
+<p>此外，在安装Linux之前，你最好了解下你对Linux预计是想达成什么任务，这样在选购硬件时才会知道那个组件是最重要的。举例来说，桌面计算机的用户，应该会用到X window系统，此时显卡的优劣与内存的大小可就占有很重要的影响。如果是想要做成文件服务器，那么硬盘或者其他的存储设备，应该就是你最想要的增购的组件。所以说，功课还是需要做的；</p>
+<h2 id="认识计算机的硬件配置"><a href="#认识计算机的硬件配置" class="headerlink" title="认识计算机的硬件配置"></a>认识计算机的硬件配置</h2><ul>
+<li>游戏机/工作机的考虑</li>
+<li>性价比的考虑</li>
+<li>支持性的考虑</li>
+</ul>
+<h2 id="选择与Linux搭配的主机配置"><a href="#选择与Linux搭配的主机配置" class="headerlink" title="选择与Linux搭配的主机配置"></a>选择与Linux搭配的主机配置</h2><p>由于硬件的加速发展与操作系统内核功能的增强，导致较早的计算机已经没有能力在负荷新的操作系统了，而且较早期的硬件配置也可能由于保存的问题或者是电子零件老化的问题，导致这样的计算机系统反而非常容易在运行过程中出现不明的死机情况，因此在利用旧零件拼凑Linux使用的计算机系统时，要特别的留意。</p>
+<p>不过Linux运行所需要的硬件配置实在不需要太高档，如果近期淘汰下来的计算机，可以拿来测试一下，说不定能够作为你日常生活的Linux服务器，或者是备用服务器，都是非常好用的功能；</p>
+<p>如果你的Linux主要是作为小型的服务器使用，并不负责学术方便的大量的运算，而且也没有使用X window 的图形界面，那你的硬件需要只要满足以下：</p>
+<ul>
+<li>CPU </li>
+<li>RAM </li>
+<li>Hard Disk </li>
+<li>VGA </li>
+<li>Network interface Card </li>
+<li>键盘 鼠标   </li>
+</ul>
+<h2 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h2><p>一般每个Linux发行版本都会给出对系统的最低要求及推荐的配置列表，而且不同的安装选项（如图形界面或字符界面）对于系统的要求都不一样。</p>
+<p>Linux对硬件的要求很低，大部分可以运行Windows的机器都可以用来安装Linux，并且运行速度会比Windows快得多，</p>
+<p>Linux安装光盘虽然已经包含大部分硬件驱动程序，但是由于硬件更新很快，因此Linux发行版无法及时更新相应驱动程序的情况也是在所难免的。</p>
+<h2 id="Linux系统安装方式"><a href="#Linux系统安装方式" class="headerlink" title="Linux系统安装方式"></a>Linux系统安装方式</h2><p>Linux系统安装多样，方式灵活，可以根据环境的选择不同的方式进行安装，常见安装有硬盘安装、U盘安装、网络安装和光驱安装等几种方式；</p>
+<p><strong>硬盘安装</strong></p>
+<p>硬盘安装方式一般是在Windows系统的基础上进行的，例如，要安装Windows和Linux共存的双系统或者在系统没有光驱的情况下，都可以硬盘方式来进行安装。</p>
+<p><strong>U盘安装</strong></p>
+<p>现在的服务器一般都不配备光驱了，而且光驱安装速度较慢，批量安装系统时，会浪费很多时间。此时，可通过U盘方式来安装系统，U盘安装是一种快速、廉价、高效的Linux安装方式。 首先U盘价格低廉，并且可以多次使用，其次，所有服务器或PC上基本都配备了USB接口，U盘安装具有普遍性，最后U盘方式安装速度非常快，可节省时间；</p>
+<p><strong>网络安装</strong></p>
+<p>网络安装Linux一般都是大批量的自动化安装过程。最常见的批量安装工具是Kickstart，它是一个无人值守的Linux系统的安装工具。使用kickstart，系统管理人员可以通过创建一个应答文件自动完成Linux系统的安装，它的工作原理是通过典型安装过程中需要人工干预填写的各种参数，进而生成一个ks.cfg应答文件，安装者只需要告诉kickstart安装程序从何处读取ks.cfg文件，然后kickstart会根据此文件的设定自动完成系统的安装。</p>
+<p><strong>光驱安装</strong></p>
+<p>以光驱安装方式Linux系统是最常见的软件安装方式，简单易懂，因此这里选择以光驱安装Linux的方式为本次讲述的重点，前提是计算机一定要有光驱，并且有Linux系统安装光盘。</p>
+<p>**注意:**所有试验都在（VMware）虚拟机上实现</p>
+<p><strong>获取VMware软件</strong>根据自己的操作系统选择适合的版本<a href="https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_pro/16_0">windows</a>  <a href="https://my.vmware.com/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_fusion/12_0">MAC</a></p>
+<p><strong>获取镜像地址</strong>：<a href="https://www.centos.org/centos-linux/">CentOS 官网</a></p>
+<p><strong>光驱安装过程</strong></p>
+<p>安装前需准备虚拟化软件和Linux系统</p>
+<p><strong>1. 系统引导</strong></p>
+<p>（1）安装程序从光盘成功引导后，会显示有几个选项的引导菜单。如果在60秒内没有按任何键，则运行默认引导选项；</p>
+<p>![](/Users/abbott/Library/Application Support/typora-user-images/image-20210119233810204.png)</p>
+<p><strong>解释：</strong></p>
+<blockquote>
+<p>install CentOS 7       安装CentOS 7</p>
+<p>test this media &amp; install CentOS 7 测试安装介质并安装CentOS 7 </p>
+<p>Troubleshooting    故障模式</p>
+</blockquote>
+<p>（2）选择install CentOS 7  直接按Enter键，选择图形安装方式</p>
+<p><img src="image-20210119234726275.png" class="lazyload placeholder" data-srcset="image-20210119234726275.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210119234726275"></p>
+<p>鼠标选中DATE&amp;TME (选择时区)</p>
+<p>![image-20210119234922958](/Users/abbott/Library/Application Support/typora-user-images/image-20210119234922958.png)</p>
+<p>步骤：</p>
+<blockquote>
+<p>1.修改时区</p>
+<p>2.调整时间</p>
+<p>3.Done</p>
+</blockquote>
+<p>![image-20210119235418846](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235418846.png)</p>
+<p>根据自己需求选择SOFTWARE SELECTION:</p>
+<blockquote>
+<p>图形安装</p>
+<p>字符安装</p>
+</blockquote>
+<p>![image-20210119235924436](/Users/abbott/Library/Application Support/typora-user-images/image-20210119235924436.png)</p>
+<p><strong>进入磁盘分区阶段点击</strong> INSTALLATION DESTINATION</p>
+<p>在进行分区之前，进行Linux分区的一些必须说明：</p>
+<blockquote>
+<p> Linux系统下必须的分区为根分区（根分区用“/”标识）和交换分区（标识为swap）swap分区相当于Windows虚拟内存的概念，也就是内存数据与硬盘的交换。关于swap分区的大小，很多资料支出至少要物理内存的2倍，其实不然，基本的一个原则是：如果内存较小（根据经验，物理内存小于4GB）一般设置swap分区大小为内存的2倍；如果物理内存大于4GB而小于16GB，可以试着swap分区大小等于物理内存即可；如果内存大小在16GB以上，就可以设置swap分区为0，swap分区可以设置为0，但是不建议这么做，因为设置一定的大小swap分区还是有一定作用的。</p>
+</blockquote>
+<p>![image-20210120001140366](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001140366.png)</p>
+<p>解释：</p>
+<blockquote>
+<ol>
+<li>自动分配空间</li>
+<li>手动分配空间</li>
+<li>分区的概念就不在这阐述了</li>
+</ol>
+</blockquote>
+<p>注意：选择自动分配空间—&gt;点击Done</p>
+<p>![image-20210120001447209](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001447209.png)</p>
+<p>点击Begin installation</p>
+<p>![image-20210120001550899](/Users/abbott/Library/Application Support/typora-user-images/image-20210120001550899.png)</p>
+<p>选项：根据自己需求点击</p>
+<blockquote>
+<p>ROOT PASSWORD (设置root用户密码)</p>
+<p>USER CREATION（创建普通用户和密码）</p>
+</blockquote>
+<p>至此等待安装完成，重启之后输入用户名和密码</p>
+<p>![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -435,78 +1727,6 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL8.0.27版本二进制安装</title>
     <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -706,7 +1926,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#50;&#46;&#49;&#54;&#46;&#53;&#x39;&#x2e;&#49;&#x33;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#50;&#46;&#49;&#54;&#46;&#53;&#x39;&#x2e;&#49;&#x33;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#57;&#46;&#x31;&#x33;&#51;">&#100;&#101;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#57;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -851,6 +2071,151 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>MySQL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+<span id="more"></span>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>Nginx</title>
@@ -1001,114 +2366,6 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
-    <title>Python 函数</title>
-    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
-<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
-<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
-<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
-</ul>
-<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
-<ol>
-<li><p>函数定义基本语法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    函数体
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>def  关键字</p>
-<p>函数体： 函数体为实现函数功能的相关代码段。</p>
-<p>返回值： return 语句后面空一格，跟需要返回的</p>
-</blockquote>
-</li>
-</ol>
-<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
-<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
-<p>Python里不用像C语言里需要先申明函数再使用。</p>
-<p>如下实例调用了<code>printme()</code>函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token comment">#定义函数</span>
-<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-
-printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
-<ul>
-<li>必选参数：<code>fun(name, age)</code></li>
-<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
-<li>可变参数：<code>fun(*args)</code></li>
-<li>关键字参数：<code>fun(name, age, **kw)</code></li>
-<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
-</ul>
-<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
-<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
-#定义函数
-def printme(str):
-    print(str)
-    return;
-printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出 结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span>
-
-<span class="token comment">#调用函数</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
-age <span class="token number">35</span>
-name abott
-age <span class="token number">50</span>
-name abbott
-age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    function_suite
-    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-
-r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
     <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -1252,6 +2509,114 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </tags>
   </entry>
   <entry>
+    <title>Python 函数</title>
+    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
+</ul>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
+</blockquote>
+</li>
+</ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python初始</title>
     <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[]]></content>
@@ -1289,6 +2654,56 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       <tags>
         <tag>C语言</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>mysql5.7主从复制-异步</title>
@@ -1557,6 +2972,43 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -1617,238 +3069,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
 [root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（源码编译）</title>
-    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
-<span id="more"></span>
-<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
-<li>centos 8.3</li>
-<li>数据库版本：MySQL-8.0.25</li>
-<li>gcc版本：<ul>
-<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
-<li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font size="4" color="red" >报错:</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
-  You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
-二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
-  packages:
-
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
-三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装依赖：</p>
-<p>注意： rpcgen源没有需下载</p>
-<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动失败（报错）</p>
-<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
-
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
-affiliates. Other names may be trademarks of their respective
-owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
       <categories>
         <category>监控系统</category>
       </categories>

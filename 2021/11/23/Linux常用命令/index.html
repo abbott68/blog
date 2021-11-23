@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>Linux常用命令 | abbott Blog</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/blog/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/blog/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/blog/js/jquery3.5.1.js"></script>
+  <script src="/blog/js/vue2.6.11.js"></script>
+  
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/blog/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/blog/medias/logo.png" class="lazyload placeholder" data-srcset="/blog/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">abbott Blog</h3>
+      <h5 class="drawer-box-head_desc">人生，生命不息，奋斗不止</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">Home</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">Archives</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">Tags</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">Categories</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">About</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/friends" class="drawer-menu-item-link">
+                  
+                  <span class="name">Friends</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-link"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/blog/gallery">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/blog/huoban">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>友情连接</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://baidu.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/blog/medias/logo.png" class="lazyload placeholder" data-srcset="/blog/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/blog/" class="logo">abbott Blog</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/" class="menu-item-link" title="Home">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">Home</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/archives" class="menu-item-link" title="Archives">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">Archives</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/tags" class="menu-item-link" title="Tags">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">Tags</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/categories" class="menu-item-link" title="Categories">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">Categories</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/about" class="menu-item-link" title="About">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">About</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/friends" class="menu-item-link" title="Friends">
+                  
+                  <span class="name">Friends</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-link"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/blog/gallery">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/blog/huoban">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>友情连接</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://baidu.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/blog/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/blog/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/blog/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/blog/js/swiper/swiper.min.js"></script>
+<script src="/blog/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/blog/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/blog/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/blog/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/8.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Linux常用命令
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-11-23 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/Linux%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              Linux系列
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 51k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 46 mins.分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="四、Linux常用命令及使用技巧"><a href="#四、Linux常用命令及使用技巧" class="headerlink" title="四、Linux常用命令及使用技巧"></a>四、Linux常用命令及使用技巧</h1><p>本章重点讲述Linux命令的使用，命令是学习Linux必须熟练掌握的一部分，Linux下的命令大概有1000个，而常用的命令只有100个左右，这些常用命令需要灵活掌握。虽然Linux的各个发行版大同小异，但是常用命令基本相同，因此只要掌握了常用的Linux命令，就能融汇贯通各个Linux版本了。</p>
+<h2 id="Linux下的shell简介"><a href="#Linux下的shell简介" class="headerlink" title="Linux下的shell简介"></a>Linux下的shell简介</h2><h3 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h3><p><strong>Unix shell</strong>，一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%AE%BC%E5%B1%A4">壳层</a>与<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2">命令行界面</a>，是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>下传统的用户和计算机的交互界面。第一个用户直接输入<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">命令</a>来执行各种各样的任务。</p>
+<p>普通意义上的shell就是可以接受用户输入命令的程序。它之所以被称作shell是因为它隐藏了操作系统低层的细节。同样的Unix下的图形用户界面<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/GNOME">GNOME</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/KDE">KDE</a>，有时也被叫做“虚拟shell”或“图形shell”。</p>
+<p>Unix操作系统下的shell既是用户交互的界面，也是控制系统的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80">脚本语言</a>。当然在这点也有别于Windows下的命令行，虽然也提供了很简单的控制语句。在Windows操作系统下，可能有些用户从来都不会直接的使用shell，然而在Unix系列操作系统下，shell仍然是控制系统启动、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X_Window">X Window</a>启动和很多其他实用工具的脚本解释程序。</p>
+<h3 id="shell-语法"><a href="#shell-语法" class="headerlink" title="shell 语法"></a>shell 语法</h3><p>Linux下的各种shell的主要区别在于命令行的语法对于一些普通的命令，各个shell版本的语法基本相同，只有在编写一个shell脚本或者使用一些shell高级特性的时候，各个版本shell的差异才会显示出来。</p>
+<p>shell语法分析是指shell对命令的扫描处理过程，也就是，把命令或者用户输入的内容分解成要处理的各个部分的操作，在Linux系统下，shell语法分析包含很多内容，如重定向、文件名扩展和管道等</p>
+<p><strong>shell语法格式</strong></p>
+<p>用户登陆系统后，shell命令行启动。shell遵循一定的语法格式将用户输入的命令进行分析解释并传递给系统内核。shell命令的一般格式为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">command [option] [arguments]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解释：</p>
+<blockquote>
+<ul>
+<li><p>command:表示命令的名称。</p>
+</li>
+<li><p>options: 表示命令的选项。</p>
+</li>
+<li><p>arguments: 表示命令的参数。</p>
+</li>
+</ul>
+</blockquote>
+<p>根据习惯，我们一般把具有以上格式的字符串称为命令行。命令行是用户与shell之间对话的基本单位；</p>
+<p>在命令行中，选项是包含一个或多个字母的代码，主要用户改变命令的执行方式。一般在选项前面有一个“-”符号；</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>shell通配符</strong></p>
+<p>通配符注定要为了方便用户对文件或者目录的描述，例如，当用户需要以“.sh”结尾的文件时，使用通配符就能很方便地实现。各个版本的shell都有通配符，这些通配符是一些特殊字符，用户可以在命令行的参数中使用这些字符，进行文件名或者路径名的匹配。shell将把与命令行中指定的匹配规则符合的所有文件名或者路径名作为命令的参数，然后执行这个命令。</p>
+<p>bash中常见的通配符有“*”、“？”、“[]”。</p>
+<ol>
+<li><p>“*“ 匹配任意一个或多个字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls *.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录所有以”.txt”结尾的文件</p>
+</li>
+<li><p>”?“  匹配任意单一字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls ab?.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录下ab开头，随后的一个字母是任意字符，最后以”.txt”结尾的文件。</p>
+</li>
+<li><p>”[]“ 匹配任何包含在方括号内的单字符</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls [abc]*.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>列出当前目录下以a、b或c开头，租后以“.txt”结尾的文件。</p>
+</li>
+</ol>
+<p><strong>shell重定向</strong></p>
+<p>Linux下系统打开多个文件，即标准输出、标准输出和标准错误输出。用户的shell将键盘设为默认的标准输入，默认的标准输出和标准错误输出为屏幕。也就是，用户从键盘输入命令，然后偶将结果和错误消息输出到屏幕。</p>
+<p>所谓的重定向，就是不适用系统默认的标准输入/输出，而是重新指定，因此重定向分为输入重定向、输出重定向和错误输出重定向，要实现重定向就需要了解重定向操作符，shell就是根据重定向操作符来决定重定向操作的。</p>
+<ol>
+<li><p>输入重定向</p>
+<p>​     输入重定向用于改变命令的输入源，利用输入重定向，就可以将一个文件的内容作为命令的输入，而不从键盘输入。</p>
+<p>用于输入重定向的操作符有“&lt;”和”&lt;&lt;”</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# wc -l &lt; &#x2F;etc&#x2F;hosts
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>输出重定向</p>
+<p>输出重定向不是将命令的输出结果在屏幕，而是输入到一个指定的文件内。</p>
+<p>用于输出重定向的操作符有“&gt;”和“&gt;&gt;”</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls &gt; a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>结果：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat a.txt 
+anaconda-ks.cfg
+a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>错误重定向</p>
+<p>错误重定向和标准输出重定向一样，可以使用操作符”2&gt;”和”2&gt;&gt;”实现对错误输出的重定向。</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls a.txt b.txt 2&gt; error.txt
+a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt 
+ls: 无法访问b.txt: 没有那个文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>shell的管道</p>
+<p>管道可以把很多的命令连接起来，可以把第一个命令的输入当作第二个命令的输出，第二个命令的输出可以当作第2个命令的输入，以此类推，因此，管道的作用就是把一个命令的输出当作下一个命令的输入，而不经过中间文件。</p>
+<p>通过管道符“|”可以建立管道连接。</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt  | wc -l
+1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>shell中的引用</p>
+<p>在bash中的很多特殊字符，这些字符本身就具有特殊含义，Linux中使用“引用”技术来忽略这些字符的特殊含义，引用技术就是通知shell将这些特殊字符当作普通字符处理。</p>
+<p>shell中用于应用的字符有转义字符“\”、单引号” ‘ “、双引号“ “” ”。</p>
+</li>
+<li><p>shell的自动补全命令</p>
+<p>自动补全命令行是bash一个简单而且使用的功能，自动补全命令行也就是在输入命令时不必把命令全部输入，shell就能智能判断用户所要输入的命令。</p>
+</li>
+</ol>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><h3 id="2-1-system"><a href="#2-1-system" class="headerlink" title="2.1 system"></a>2.1 system</h3><p><strong>uname 命令</strong></p>
+<p>功能描述：</p>
+<p>​    uname命令显示操作系统的相关信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uname [OPTION]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示操作系统全部信息
+-m 显示系统CPU架构
+-s 显示操作系统类型
+-r 显示操作系统内核版本
+-n 显示操作系统的主机名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# uname -a
+Linux localhost.localdomain 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU&#x2F;Linux<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p> <strong>uptime 命令</strong></p>
+<p>功能描述：</p>
+<p>​    uptime命令用来输出系统任务队列信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uptime [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-p, --pretty   显示运行时间
+-h, --help     display this help and exit 
+-s, --since    显示系统时间
+-V, --version  output version information and exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>hostname命令</strong></p>
+<p>功能描述：</p>
+<p>​    hostname 显示系统主机名</p>
+<p>语法格式</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostname [options] &#123;hostname|-F file&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a，别名
+-A，--all-fqdns所有长主机名（FQDN）
+-b，--boot设置默认主机名（如果没有）
+-d，--domain DNS域名
+-f，-fqdn，-long长主机名（FQDN）
+-F，--file从给定文件中读取主机名或NIS域名
+-i，--ip-address主机名的地址
+-I，--all-ip-address主机的所有地址
+-s，--short短主机名
+-y，-yp，-nis NIS &#x2F; YP域名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：<br>i<br>查看系统主机名</p>
+<pre class="line-numbers language-none"><code class="language-none">[root@localhost ~]# hostname
+localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>临时修改主机名</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# hostname test.example.com
+[root@localhost ~]# bash
+[root@test ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>last命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示最近登陆用户的列表</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">last,lastd [options] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看系统重启历史</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# last reboot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p><strong>ls命令</strong></p>
+<p>功能说明:</p>
+<p>ls 命令是显示指定工作目录下的内容，列出目录所含的文件及目录。</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls [选项]... [文件]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>ls的选项及其说明如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a  不隐藏任何以. 开始的项目
+-l	使用较长格式列出信息
+-d  只显示目录列表，不显示文件
+-l  除文件名称外，同时将文件或者子目录的权限、使用者和大小等详细信息列出
+-s  在每个文件名后输出的该文件的大小
+-k  以k字节的形式表示文件的大小
+-u  以文件上次被访问的时间排序
+-i  以时间排序
+-O  显示除组信息的详细信息
+-r  对目录反向排序
+-q  用&quot;?&quot;代替不可输出的内容
+-m  横向输出文件名，并以“,”作为分隔符
+-S  以文件大小排序
+-R  列出所有子目录下的文件
+-pF 在每个文件名附上一个字符以说明该文件的类型，“*”表示可执行的普通文件，“&#x2F;”表示目录，“@”表示符号链接，“|”表示FIFO，“&#x3D;”表示套接字（socket）
+-C  按列输出，纵向排序
+-R  列出所有子目录下的文件
+-Q  把输出的文件名用双引号括起来<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>以下命令列出/home目录下文件及其子目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -l 
+总用量 12
+-rw-------. 1 root root 1259 1月  21 00:20 anaconda-ks.cfg
+-rw-r--r--. 1 root root 7411 1月  22 01:28 ls-help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>pwd命令</strong></p>
+<p>功能说明</p>
+<p>显示当前的工作目录，执行pwd指令可立刻得知目前所在的工作目录的绝对路径名称；</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>cd 命令</strong></p>
+<p>功能说明：</p>
+<p>切换当前工作目录</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">cd [dir]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd  [dir]   切换到指定文件夹下，注意：Linux下文件和文件夹是区分大小写的
+cd 或 cd ~   返回当前用户家目录
+cd ~[用户名]  返回指定用户的家目录
+cd .. 或者 cd .&#x2F; 返回上级目录
+cd &#x2F;         放回到根目录下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>切换到/opt 目录下，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cd &#x2F;opt&#x2F;
+[root@localhost opt]# pwd
+&#x2F;opt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>返回root目录，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost opt]# cd 
+[root@localhost ~]# 
+[root@localhost ~]# pwd
+&#x2F;root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>date命令</strong></p>
+<p>功能说明</p>
+<p>显示或者修改系统时间和日期。只有超级用户才能用date命令设置时间，一般用户只能用date命令显示时间。</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">date [选项]... [+格式] 或者
+date [选项] 显示时间格式（以+开头，后面接时间格式）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-s  --set 设置系统时间
+-d  --date 显示描述的日期<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>时间显示格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">%%	一个文字的 %
+%a	当前locale 的星期名缩写(例如： 日，代表星期日)
+%A	当前locale 的星期名全称 (如：星期日)
+%b	当前locale 的月名缩写 (如：一，代表一月)
+%B	当前locale 的月名全称 (如：一月)
+%c	当前locale 的日期和时间 (如：2005年3月3日 星期四 23:05:25)
+%C	世纪；比如 %Y，通常为省略当前年份的后两位数字(例如：20)
+%d	按月计的日期(例如：01)
+%D	按月计的日期；等于%m&#x2F;%d&#x2F;%y
+%e	按月计的日期，添加空格，等于%_d
+%F	完整日期格式，等价于 %Y-%m-%d
+%g	ISO-8601 格式年份的最后两位 (参见%G)
+%G	ISO-8601 格式年份 (参见%V)，一般只和 %V 结合使用
+%h	等于%b
+%H	小时(00-23)
+%I	小时(00-12)
+%j	按年计的日期(001-366)
+%k   hour, space padded ( 0..23); same as %_H
+%l   hour, space padded ( 1..12); same as %_I
+%m   month (01..12)
+%M   minute (00..59)
+%n	换行
+%N	纳秒(000000000-999999999)
+%p	当前locale 下的&quot;上午&quot;或者&quot;下午&quot;，未知时输出为空
+%P	与%p 类似，但是输出小写字母
+%r	当前locale 下的 12 小时时钟时间 (如：11:11:04 下午)
+%R	24 小时时间的时和分，等价于 %H:%M
+%s	自UTC 时间 1970-01-01 00:00:00 以来所经过的秒数
+%S	秒(00-60)
+%t	输出制表符 Tab
+%T	时间，等于%H:%M:%S
+%u	星期，1 代表星期一
+%U	一年中的第几周，以周日为每星期第一天(00-53)
+%V	ISO-8601 格式规范下的一年中第几周，以周一为每星期第一天(01-53)
+%w	一星期中的第几日(0-6)，0 代表周一
+%W	一年中的第几周，以周一为每星期第一天(00-53)
+%x	当前locale 下的日期描述 (如：12&#x2F;31&#x2F;99)
+%X	当前locale 下的时间描述 (如：23:13:48)
+%y	年份最后两位数位 (00-99)
+%Y	年份
+%z +hhmm		数字时区(例如，-0400)
+%:z +hh:mm		数字时区(例如，-04:00)
+%::z +hh:mm:ss	数字时区(例如，-04:00:00)
+%:::z			数字时区带有必要的精度 (例如，-04，+05:30)
+%Z			按字母表排序的时区缩写 (例如，EDT)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p><input disabled="" type="checkbox">  用指定的格式显示时间和日期</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date &#39;+this date now is %x time is now:%X&#39;
+this date now is 2021年01月22日 time is now:02时27分16秒<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><input disabled="" type="checkbox">  修改系统时间</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date
+2021年 01月 22日 星期五 02:27:38 CST
+[root@localhost ~]# date -s 00:10
+2021年 01月 22日 星期五 00:10:00 CST<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>passwd 命令</strong></p>
+<p>功能说明：设置用户密码</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [选项...] &lt;帐号名称&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-k, --keep-tokens       保持身份验证令牌不过期
+-d, --delete            删除已命名帐号的密码(只有根用户才能进行此操作)
+-l, --lock              锁定指名帐户的密码(仅限 root 用户)
+-u, --unlock            解锁指名账户的密码(仅限 root 用户)
+-e, --expire            终止指名帐户的密码(仅限 root 用户)
+-f, --force             强制执行操作
+-x, --maximum&#x3D;DAYS      密码的最长有效时限(只有根用户才能进行此操作)
+-n, --minimum&#x3D;DAYS      密码的最短有效时限(只有根用户才能进行此操作)
+-w, --warning&#x3D;DAYS      在密码过期前多少天开始提醒用户(只有根用户才能进行此操作)
+-i, --inactive&#x3D;DAYS     当密码过期后经过多少天该帐号会被禁用(只有根用户才能进行此操作)
+-S, --status            报告已命名帐号的密码状态(只有根用户才能进行此操作)
+--stdin                 从标准输入读取令牌(只有根用户才能进行此操作)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>普通用户设置用户密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>超级用户root修改某个用户的密码</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [用户名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>su命令</strong></p>
+<p>功能说明：</p>
+<p>su命令主要用于切换用户身份</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">su [选项] [-] [USER [参数]...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, -p, --preserve-environment  不重置环境变量
+-g, --group &lt;组&gt;                 指定主组
+-G, --supp-group &lt;组&gt;           指定一个辅助组
+-, -l, --login                  使 shell 成为登录 shell
+-c, --command &lt;命令&gt;             使用 -c 向 shell 传递一条命令
+--session-command &lt;命令&gt;         使用 -c 向 shell 传递一条命令
+                                而不创建新会话
+-f, --fast                      向shell 传递 -f 选项(csh 或 tcsh)
+-s, --shell &lt;shell&gt;             若 &#x2F;etc&#x2F;shells 允许，则运行 shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>普通用户切换root用户</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[test@localhost root]$ su -
+密码：
+上一次登录：五 1月 22 01:22:53 CST 2021从 gatewaypts&#x2F;0 上
+[root@localhost ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>clear命令</strong></p>
+<p>功能描述：</p>
+<p>​    clear命令用来清除屏幕信息</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">clear<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>man命令</strong></p>
+<p>功能描述：</p>
+<p>​    man命令用来显示指定命令的帮助信息。</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man [OPTION...] [SECTION] PAGE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看man命令的帮助信息，命令如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man man<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>who命令</strong></p>
+<p>功能描述：</p>
+<p>​    who命令显示目前登陆系统的用户</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">who [OPTION]... [file]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 列出所有信息
+-b 列出系统最近启动的日期
+-l 列出所有可登录的终端信息
+-m 仅列出关于当前终端的信息
+-q 列出在本地系统上的用户和用户数的名称
+-r 显示当前系统的运行级别
+-s 仅显示名称、终端和时间字段信息
+-u 显示当前每个用户的用户名，登录终端、登录时间、终端活动和进程标识
+-T或-w 显示tty终端的状态，“+”表示对任何人可写，“-”表示仅对root用户或所有者可写，“?”表示遇到终端故障<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>查看当前系统处于运行级别</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who -r
+         run-level 3  2021-01-21 17:49<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>输出的内容：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who
+root     tty1         2021-01-21 17:50
+root     pts&#x2F;0        2021-01-22 01:22 (gateway)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">名称 [状态] 终端 时间 [活动] [进程标识] [主机名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>w命令</strong></p>
+<p>功能描述： </p>
+<p>​    显示登陆到系统的用户信息</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">w [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+ <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-h  不显示输出信息的标题
+-l  用长格式输出
+-s  用短格式输出，显示登陆时间、JCPU和PCPU时间
+—V  显示版本信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# w
+ 01:29:11 up  9:58,  2 users,  load average: 0.00, 0.01, 0.04
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     tty1                      17:50    6:39   1.32s  1.32s -bash
+root     pts&#x2F;0    gateway          01:22     ?     0.22s  0.06s w<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<p>第一行输出信息表示：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">当前的系统时间、系统已运行的时间、登陆系统的用户数、系统平均负载：1分钟、5分钟、15分钟系统负载情况<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第二行输出信息表示：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">user:   表示登陆系统的用户
+TTY:	  用户使用TTY名称
+FROM:   用户从哪里登录进来，一般显示远程登陆主机的IP地址或者主机名
+LOGIN@: 用户登陆的日期和时间
+IDLE:   表示某个程序上次从终端开始执行到现在所持续的时间
+JCPU:   表示该终端上的所有进程及子进程使用系统的时间
+PCPU:   当前活动进程使用的系统时间
+WHAT:   当前用户执行的进程名称和选项<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>free命令</strong></p>
+<p>功能说明：</p>
+<p>​    free命令用来显示系统内存状态，具体包括系统物理内存、虚拟内存、共享内存和系统缓存。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">free [option] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b  以字节为单位显示内存使用情况
+-m  以MB为单位显示内存使用情况
+-K  以KB为单位显示内存使用情况
+-t  显示内存总和列
+-s  根据指定的间隔秒数持续显示内存使用情况
+-o  不显示系统缓冲区别<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# free 
+              total        used        free      shared  buff&#x2F;cache   available
+Mem:         995684      169212      688236        7848      138236      682044
+Swap:       2097148           0     2097148<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">total: 总内存
+used:  已使用的内存
+free:  剩余内存
+shared:
+buff&#x2F;cache:
+available:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>ps命令</strong></p>
+<p>功能描述：</p>
+<p>​    ps命令显示系统进程在瞬间的运行状态。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ps [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示所有用户的进程，包含每个程序的完整路径
+-x 显示所有系统内存，包括哪些没有终端的程序
+-u 显示使用者的名称和起始时间
+-f 详细显示程序执行的路径群
+-c 只显示进程的名称，不显示进程的完整路径
+-e 解除内核进程以为所有进程的信息写到标准输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ps 
+   PID TTY          TIME CMD
+ 10356 pts&#x2F;0    00:00:00 bash
+ 10790 pts&#x2F;0    00:00:00 su
+ 10804 pts&#x2F;0    00:00:00 su
+ 10808 pts&#x2F;0    00:00:00 bash
+ 11385 pts&#x2F;0    00:00:00 ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出内存详解：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">PID 表示是进程的标识号；
+TTY 表示进程所属的终端控制台；
+TIME 表示进程所使用的的CPU时间；
+CMD 表示列出正在执行的命令行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>top命令</strong></p>
+<p>​        top命令提供了对系统处理器状态的实时监控，它能够实时显示系统中各个进程的资源占用情况，该命令可以按照对CPU的使用、内存使用和执行时间对系统任务进程进行排序显示，同时top命令还可以通过交互式命令进行设定显示。</p>
+<p>功能描述：</p>
+<p>查看即时活跃的进程，类似于Windows的任务管理器。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d 指定每两次屏幕信息刷新之间的时间间隔
+-i 不显示闲置或者僵死的进程信息
+-c 显示进程的整个命令路径，而不是只显示命令名称
+-s 使top命令在安全模式下运行，此时top的交互式命令被取消，避免潜在危险
+-b 分屏显示输出信息，结合“-n”选项可以将屏幕信息输出到文件；
+-n top输出信息更新的次数，完成后将退出top命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>交互式命令选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">h或？ 显示帮助信息，给出交互式命令的一些说明
+k 终止一个进程，系统将显示用户输入一个需要终止进程的PID
+i 忽略闲置进程和僵死进程，这是一个开关式命令
+s 改变top输出信息两次刷新之间的时间，系统将提示输入新的时间，单位是秒，如果输	入小数，就换算成毫秒，如果输入0，系统输出将不断刷新，默认刷新时间是5秒，需要	注意的是，如果设置太短的时间，可能会引起系统不断刷新，无法看清输出显示情况，而且系统负载也会加大
+o或者O 该表top输出信息中显示项的顺序，按小写的a~z键可以将相应的列向右移动，而按大写的A~Z键可以将相应列向左移动，最后按enter键确定
+f或者F  从当前显示列表中添加或者删除项，按f键之后会显示列的列表，按a~z键即可显示或隐藏对应的列。最后按Enter键确定
+m 切换显示内存信息
+t 切换显示进程和CPU状态信息
+r 重新设置一个进程的优先级，系统提示用户输入需要改变的集成PID以及需要设置的进程优先级值，输入一个正值将使优先级减低，反之则可以使该进程拥有更高的优先权。默认值为0；
+l 切换显示进程和CPU状态信息
+q 退出top显示
+c 切换显示完整命令行和命令名称信息
+M 根据驻留内存大小进行排序输出
+T 根据时间&#x2F;累计时间进行排序输出
+S 切换到累计模式
+W 将当前top设置写入~&#x2F;.toprc文件中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 03:41:01 up 12:10, 2 users, load average: 0.00, 0.01, 0.05
+
+Tasks: **104** total,  **1** running, **103** sleeping,  **0** stopped,  **0** zombie
+
+%Cpu(s): **0.0** us, **0.0** sy, **0.0** ni,**100.0** id, **0.0** wa, **0.0** hi, **0.0** si, **0.0** st
+
+KiB Mem :  **995684** total,  **686920** free,  **169924** used,  **138840** buff&#x2F;cache
+
+KiB Swap: **2097148** total, **2097148** free,    **0** used.  **681016** avail Mem 
+  PID USER   PR NI  VIRT  RES  SHR S %CPU %MEM   TIME+ COMMAND                                  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 09:44:56[当前系统时间],
+days[系统已经运行了16天],
+user[个用户当前登录],
+load average: [系统负载，即任务队列的平均长度]
+Tasks:  total[总进程数],
+running[正在运行的进程数],
+sleeping[睡眠的进程数],
+stopped[停止的进程数],
+zombie[冻结进程数],
+Cpu(s): 99.8%us[用户空间占用CPU百分比],
+0.1%sy[内核空间占用CPU百分比],
+0.0%ni[用户进程空间内改变过优先级的进程占用CPU百分比],
+0.2%id[空闲CPU百分比], 0.0%wa[等待输入输出的CPU时间百分比],
+0.0%hi[服务硬件中断所花费的时间],
+0.0%st[指的是当前VM中的cpu cycle被虚拟化偷走的比例],
+Mem: 4147888k total[物理内存总量],
+2493092k used[使用的物理内存总量],
+1654796k free[空闲内存总量],
+158188k buffers[用作内核缓存的内存量]
+Swap:  5144568k total[交换区总量],
+56k used[使用的交换区总量],
+5144512k free[空闲交换区总量],
+2013180k cached[缓冲的交换区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>whoami命令</strong></p>
+<p>功能描述：</p>
+<p>​    查看以什么身份登陆系统</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">whoami [选项]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>finger user命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示有关用户的信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h5 id="硬件命令"><a href="#硬件命令" class="headerlink" title="硬件命令"></a>硬件命令</h5><p><strong>dmesg命令</strong></p>
+<p>功能描述：</p>
+<p>​    显示开机信息，内核会将开机信息存储在系统缓冲区（ring buffer）中，如果开机不及时查看相关信息，可以在开机后利用dmesg命令查看，也可以在/var/log/目录中查看dmesg文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dmesg [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c  显示开机信息后，清楚ring buffer信息
+-s  设置缓冲区大小，默认设置为8192
+-n  设置记录信息的层级<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>查看CPU</strong></p>
+<ul>
+<li><p>lscpu 命令</p>
+<p>功能描述：</p>
+<p>​    查看CPU型号以及详细信息</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lscpu [选项]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all               同时打印在线和离线 CPU (-e 选项默认值)
+-b, --online            只打印在线 CPU (-p 选项默认值)
+-c, --offline           只打印离线 CPU
+-e, --extended[&#x3D;&lt;列表&gt;] 打印扩展的可读格式
+-p, --parse[&#x3D;&lt;列表&gt;]    打印可解析格式
+-s, --sysroot &lt;目录&gt;    以指定目录作为系统根目录
+-x, --hex               打印十六进制掩码而非 CPU 列表
+-y, --physical          print physical instead of logical IDs
+  
+-h, --help     显示此帮助并退出
+-V, --version  输出版本信息并退出
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# lscpu 
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>lshw命令</strong></p>
+<p>功能描述：</p>
+<p>​    lshw 是一个能把我们出去硬件信息的小工具，它能为我们提供内存配置、固件版本、主板配置信息、CPU版本和速度、cache信息、总线速度等。它能运行在 DMI兼容的 x86、IA-64和一些 PowerPC的平台上。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lshw [-format] [-options ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">format can be
+	-html           将硬件以HTML格式输出
+	-xml            将硬件以xml格式输出
+	-json           将硬件以json对象输出
+	-short          输出硬件路径
+	-businfo        output bus information 输出总线信息
+
+options can be
+	-dump filename  displays output and dump collected information into a file (SQLite database)
+	-class CLASS    only show a certain class of hardware
+	-C CLASS        same as &#39;-class CLASS&#39;
+	-c CLASS        same as &#39;-class CLASS&#39;
+	-disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
+	-enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
+	-quiet          don&#39;t display status
+	-sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
+	-numeric        output numeric IDs (for PCI, USB, etc.)
+	-notime         exclude volatile attributes (timestamps) from output<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>lsblk命令</strong></p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lsblk [选项] [&lt;设备&gt; ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all            打印所有设备
+-b, --bytes          以字节为单位而非易读的格式来打印 SIZE
+-d, --nodeps         不打印从属设备(slave)或占位设备(holder)
+-D, --discard        打印时丢弃能力
+-e, --exclude &lt;列表&gt; 根据主设备号排除设备(默认：内存盘)
+-I, --include &lt;列表&gt; 只显示有指定主设备号的设备
+-f, --fs             输出文件系统信息
+-h, --help           使用信息(此信息)
+-i, --ascii          只使用 ascii 字符
+-m, --perms          输出权限信息
+-l, --list           使用列表格式的输出
+-n, --noheadings     不打印标题
+-o, --output &lt;列表&gt;  输出列
+-p, --paths          打印完整设备路径
+-P, --pairs          使用 key&#x3D;“value” 输出格式
+-r, --raw            使用原生输出格式
+-s, --inverse        反向依赖
+-t, --topology       输出拓扑信息
+-S, --scsi           输出有关 SCSI 设备的信息
+-h, --help     显示此帮助并退出
+-V, --version  输出版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-2-文件管理与编辑"><a href="#2-2-文件管理与编辑" class="headerlink" title="2.2 文件管理与编辑"></a>2.2 文件管理与编辑</h3><p><strong>mkdir 命令</strong></p>
+<p>功能描述：</p>
+<p>​    mkdir命令用于创建文件夹；</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir [OPTION]... DIRECTORY...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, --mode&#x3D;MODE   对文件夹设置权限
+-p, --parents     递归创建文件夹
+-v, --verbose     输出创建文件夹详情<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>创建一个文件夹test</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>批量创建文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir -p &#x2F;opt&#x2F;test&#x2F;test1 -v
+mkdir: created directory ‘&#x2F;opt&#x2F;test’
+mkdir: created directory ‘&#x2F;opt&#x2F;test&#x2F;test1’
+[root@localhost ~]# ls &#x2F;opt&#x2F;
+test <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>touch 命令</strong></p>
+<p>功能描述：</p>
+<p>​    touch命令用于创建文件</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">touch [OPTION]... FILE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a                     change only the access time
+-c, --no-create        do not create any files
+-d, --date&#x3D;STRING      parse STRING and use it instead of current time
+-f                     (ignored)
+-h, --no-dereference   affect each symbolic link instead of any referenced
+                       file (useful only on systems that can change the
+                       timestamps of a symlink)
+-m                     change only the modification time
+-r, --reference&#x3D;FILE   use this file&#39;s times instead of current time
+-t STAMP               use [[CC]YY]MMDDhhmm[.ss] instead of current ti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>创建test文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# touch test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>more命令</strong></p>
+<p>​    如果一个文本比较长，一屏无法显示完毕，就需要使用more命令。more命令读取文本文件时，每次显示一屏，并且在每屏底部显示单词“More”。如果此时按Enter键，more命令就会接着再显示文本的一行，一次类推；如果按空格键，more命令就继续显示文本文件的另一屏信息。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用法：more [选项] 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d        显示帮助，而不是响铃
+-f        统计逻辑行数而不是屏幕行数
+-l        抑制换页(form feed)后的暂停
+-p        不滚屏，清屏并显示文本
+-c        不滚屏，显示文本并清理行尾
+-u        抑制下划线
+-s        将多个空行压缩为一行
+-NUM      指定每屏显示的行数为 NUM
++NUM      从文件第 NUM 行开始显示
++&#x2F;STRING  从匹配搜索字符串 STRING 的文件位置开始显示
+-V        输出版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p>以分页方式显示文件的内容</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>显示以10行文件内容，同时清除屏幕</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more -c -10 top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p><strong>cat命令</strong></p>
+<p>功能描述:</p>
+<p>cat命令用来将文件内容输出到标准输出，类似于DOS下的type命令，同时cat还可以用于连接合并文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat [options] files<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A, --show-all           等于-vET
+-b, --number-nonblank    对非空输出行编号
+-e                       等于-vE
+-E, --show-ends          在每行结束处显示&quot;$&quot;
+-n, --number             对输出的所有行编号
+-s, --squeeze-blank      不输出多行空行
+-t                       与-vT 等价
+-T, --show-tabs          将跳格字符显示为^I
+-u                       (被忽略)
+-v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
+    --help		显示此帮助信息并退出
+    --version		显示版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<ul>
+<li><p>查看网卡的配置文件；</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test network-scripts]# cat ifcfg-ens33 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>以下命令将文件file1.txt和file2.txt的内容合并后输出到file3.txt中。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
+file1.txt  file2.txt  waizhi
+[root@test opt]# cat file1.txt 
+this is file one
+[root@test opt]# cat file2.txt 
+this is file two
+[root@test opt]# cat file1.txt file2.txt &gt; file3.txt
+[root@test opt]# cat file3.txt 
+this is file one
+this is file two
+[root@test opt]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p><strong>diff命令</strong></p>
+<p>功能描述：</p>
+<p>​    diff命令用来比较文件的差异。diff以逐行的方式比较文本文件的异同，如果指定比较的是目录，则diff会比价目前中相同文件名的文件，但不会比较其中的子目录。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">diff [选项]... FILES<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c 显示全部内容，并标出不同之处
+-b 忽略行尾的空格，同时字符串的一个或多个空格都将视为相同
+-r 当文件1和文件2为目录时，会比较子目录中的文件
+-s 当两个文件相同时，显示文件的相同信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例:</p>
+<p>比较文件file1.txt和file2.txt的异同</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# diff file1.txt  file2.txt 
+1c1
+&lt; this is file one
+---
+&gt; this is file two
+[root@test opt]# diff -c file1.txt file2.txt 
+*** file1.txt	2021-01-22 07:50:49.586053712 +0800
+--- file2.txt	2021-01-22 07:50:54.322053893 +0800
+***************
+*** 1 ****
+! this is file one
+--- 1 ----
+! this is file two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>grep命令</strong></p>
+<p>功能描述：</p>
+<p>​    grep命令是Linux下的文本过滤工具，grep根据指定的字符串，对文件的每一行进行搜索，如果找到了这个字符串，就输出该行的内容。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">grep [选项]... PATTERN [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<p>grep 命令的选项有很多，这里列出常用的选项说明。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A NUM 除了列出符合条件的行列，同时列出每个符合条件行的后NUM行
+-c 只显示符合条件的行数，二部显示每行的具体信息
+-f file 事先将要搜索的样式写入一个文件中，每行一个样式，然后以这个文件作为条件进行搜索
+-i 搜索时忽略大小写
+-n 在搜索结果中显示行号
+-B 与选项“-A”相反，除了列出符合条件的行外，同时列出每个符合条件的前NUM行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>rm命令</strong></p>
+<p>功能描述：</p>
+<p>​    rm命令用来删除文件或者文件夹及其所有子目录。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm [选项]... 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-r 递归删除文件及文件夹
+-f 强制删除，不做提示
+-i 交互式，确认是否删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>ln命令</strong></p>
+<p>功能描述：</p>
+<p>​    ln命令是创建文件或者文件夹之间创建链接。</p>
+<p>​    Linux系统下的链接有两种方式，一种是硬链接，一种是符号链接。Linux系统下创建链接默认是硬链接。</p>
+<ul>
+<li><p>硬链接</p>
+<p>是指通过文件的inode来进行链接。在Linux的文件系统中，保存在磁盘所有类型文件都会分配一个编号，这个编号成为inode号（Inode Index)。多个文件指向同一个inode在Linux系统中是允许的，这就是所谓的硬链接。</p>
+</li>
+<li><p>符号链接</p>
+<p>符号链接也叫软连接，软链接类似于Windows中的快捷方式，因此软链接是一个指向真正的文件或者目录位置的符号连接。</p>
+</li>
+</ul>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ln [选项]... [-T] 目标 链接名	(第一种格式)
+ln [选项]... 目标		(第二种格式)
+ln [选项]... 目标... 目录	(第三种格式)
+ln [选项]... -t 目录 目标...	(第四种格式)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-f 如果在目标位置存在与链接名相同的文件，这个文件将被删除
+-s 进行软链接
+-d 允许系统管理员硬链接自己的目录
+-b 对将在链接时会被覆盖或者删除的文件进行备份<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>file命令</strong></p>
+<p>功能描述：</p>
+<p>​    file命令用来显示文件类型。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">file [OPTION...] [FILE...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b 显示文件类型结果，不显示对应文件名称
+-L 直接显示符号链接所指向文件的类型
+-z 显示压缩文件的信息
+-i 如果文件不是常规文件，则不进一步对文件类型进行分类<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>cp 命令</strong></p>
+<p>功能描述：</p>
+<p>​    cp 命令用来将给出的文件或者目录复制到另一个文件或者目录中。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp [选项]... [-T] 源文件 目标文件
+cp [选项]... 源文件... 目录
+cp [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 在复制目录时使用，它保留所有的信息，包含文件链接、文件属性，并递归地复制目录
+-r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名
+-d 复制时保留链接，这样不会失去链接文件
+-p 保留文件的修改时间和存取权限
+-i 如果已经有相同文件名的目标文件，则提示用户是否覆盖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>find 命令</strong></p>
+<p>​    find命令用来在指定的路径下查找指定的文件。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">find  path-name [-options] [-print -exec -ok 命令 &#123;&#125; \;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<ul>
+<li>path-name: find命令查找文件夹目录路径</li>
+<li>-options: find命令的这个选项主要用来控制搜索的方式。</li>
+<li>-print: 将搜索结果输出到标准输出</li>
+<li>-exec：对搜索出符合条件的文件执行所给出的Linux命令，而不询问用户是否需要执行该命令。{}表示shell命令的选项即为所查找的文件。命令的末尾必须以“;”结束</li>
+<li>-ok: 对搜索出符合条件的文件执行所给出的Linux命令。与-exec不同的是，它会询问用户是否需要执行命令；</li>
+</ul>
+<p><strong>mv 命令</strong></p>
+<p>功能描述：</p>
+<p>​    mv 命令用来将文件或目录改名或将文件由一个目录移入另一个文件夹中。如果源类型和目标类型都是文件或者目录，mv将进行目录重命名。如果源类型为文件，而且标类型为目录，mv将进行文件的移动。如果源类型为目录，则目标类型只能是目录，不能是文件，此时完成目录重命名。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv [选项]... [-T] 源文件 目标文件
+mv [选项]... 源文件... 目录
+mv [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<p>修改源文件名、移动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
+file1.txt  file2.txt  file3.txt  waizhi
+[root@test opt]# mv file4.txt waizhi&#x2F;
+[root@test opt]# ls
+file1.txt  file2.txt  waizhi
+[root@test opt]# ls waizhi&#x2F;
+file4.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>zip/unzip命令</strong></p>
+<p>​    将一般文件或者目录进行压缩或者解压，Windows默认生成以”.zip”为后缀的压缩包。</p>
+<p>注意：在Linux字符版系统默认是没有安装unzip命令，如果需要解压.zip文件，必须安装此命令;</p>
+<p>安装unzip命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# yum -y  install unzip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">unzip [files] 指定文件名需要解压缩的文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>gzip/gunzip 命令</strong></p>
+<p>功能描述：</p>
+<p>​    将一般的文件进行压缩或者解压。压缩文件的扩展名“.gz”。</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">gzip [OPTION]... [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>tar 命令</strong></p>
+<p>功能描述：</p>
+<p>​    tar是Linux下常用的归档工具，对文件或者文件夹进行打包归档，归档成一个文件，但不进行压缩；</p>
+<p>语法如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar [选项...] [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -cf archive.tar foo bar  # 从文件 foo 和 bar 创建归档文件archive.tar。
+tar -tvf archive.tar         # 详细列举归档文件 archive.tar中的所有文件。
+tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/Linux/" class="">
+              Linux
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2021/11/23/Linux常用命令/" target="_blank" title="Linux常用命令">https://abbott68.github.io/blog/2021/11/23/Linux常用命令/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/10.jpg" class="lazyload placeholder" data-srcset="/blog/medias/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">Linux安装软件</div>
+      </div>
+      
+      <!-- <div class="content">
+        五、Linux安装及管理软件​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/1.jpg" class="lazyload placeholder" data-srcset="/blog/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Linux控制台的使用</div>
+      </div>
+      <!-- <div class="content">
+        三、Linux系统基本结构本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/blog/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/blog/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="tencent"
+  type="playlist"
+  id="8062553743"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/blog/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/blog/js/ribbon.min.js"></script>
+    
+
+    <script src="/blog/js/utils/index.js"></script>
+    <script src="/blog/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/blog/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/blog/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/blog/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/blog/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/blog/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script src="/blog/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/blog/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
