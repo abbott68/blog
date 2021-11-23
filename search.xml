@@ -405,81 +405,6 @@ enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><s
       </tags>
   </entry>
   <entry>
-    <title>Linux控制台的使用</title>
-    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
-<p>#Linux 控制台的使用</p>
-<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
-<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
-<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
-<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
-<ul>
-<li><p><strong>查看系统PCI信息</strong></p>
-<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看系统内存信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
-<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
-<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
-<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
-<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
-<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
-<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
-<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
-<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看CPU信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
-CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
-<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
-<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
-<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
-<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
-<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
-座：                 <span class="token number">1</span>
-NUMA 节点：         <span class="token number">1</span>
-厂商 ID：           <span class="token class-name">GenuineIntel</span>
-CPU 系列：          <span class="token number">6</span>
-型号：              <span class="token number">70</span>
-型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
-步进：              <span class="token number">1</span>
-CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
-<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
-超管理器厂商：  <span class="token class-name">VMware</span>
-虚拟化类型：     完全
-<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
-<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
-L2 缓存：           <span class="token number">256</span>K
-L3 缓存：           <span class="token number">6144</span>K
-L4 缓存：           <span class="token number">131072</span>K
-NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
-<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux常用命令</title>
     <url>/blog/2021/11/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="四、Linux常用命令及使用技巧"><a href="#四、Linux常用命令及使用技巧" class="headerlink" title="四、Linux常用命令及使用技巧"></a>四、Linux常用命令及使用技巧</h1><p>本章重点讲述Linux命令的使用，命令是学习Linux必须熟练掌握的一部分，Linux下的命令大概有1000个，而常用的命令只有100个左右，这些常用命令需要灵活掌握。虽然Linux的各个发行版大同小异，但是常用命令基本相同，因此只要掌握了常用的Linux命令，就能融汇贯通各个Linux版本了。</p>
@@ -1420,6 +1345,81 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </tags>
   </entry>
   <entry>
+    <title>Linux控制台的使用</title>
+    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
+<p>#Linux 控制台的使用</p>
+<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
+<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
+<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
+<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+<ul>
+<li><p><strong>查看系统PCI信息</strong></p>
+<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看系统内存信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
+<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
+<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
+<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
+<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
+<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
+<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
+<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
+<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看CPU信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
+CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
+<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
+<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
+<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
+<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
+座：                 <span class="token number">1</span>
+NUMA 节点：         <span class="token number">1</span>
+厂商 ID：           <span class="token class-name">GenuineIntel</span>
+CPU 系列：          <span class="token number">6</span>
+型号：              <span class="token number">70</span>
+型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
+步进：              <span class="token number">1</span>
+CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
+<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
+超管理器厂商：  <span class="token class-name">VMware</span>
+虚拟化类型：     完全
+<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
+<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
+L2 缓存：           <span class="token number">256</span>K
+L3 缓存：           <span class="token number">6144</span>K
+L4 缓存：           <span class="token number">131072</span>K
+NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
+<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux系统安装及配置</title>
     <url>/blog/2021/11/23/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="二、Linux-系统安装与基础配置"><a href="#二、Linux-系统安装与基础配置" class="headerlink" title="二、Linux 系统安装与基础配置"></a>二、Linux 系统安装与基础配置</h1><p>​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。</p>
@@ -1926,7 +1926,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#49;&#x40;&#x31;&#x37;&#50;&#x2e;&#49;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;">&#x64;&#x65;&#118;&#49;&#x40;&#x31;&#x37;&#50;&#x2e;&#49;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#54;&#46;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;">&#100;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#54;&#46;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2366,114 +2366,6 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
-    <title>Python 函数</title>
-    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
-<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
-<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
-<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
-</ul>
-<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
-<ol>
-<li><p>函数定义基本语法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    函数体
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>def  关键字</p>
-<p>函数体： 函数体为实现函数功能的相关代码段。</p>
-<p>返回值： return 语句后面空一格，跟需要返回的</p>
-</blockquote>
-</li>
-</ol>
-<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
-<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
-<p>Python里不用像C语言里需要先申明函数再使用。</p>
-<p>如下实例调用了<code>printme()</code>函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token comment">#定义函数</span>
-<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-
-printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
-<ul>
-<li>必选参数：<code>fun(name, age)</code></li>
-<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
-<li>可变参数：<code>fun(*args)</code></li>
-<li>关键字参数：<code>fun(name, age, **kw)</code></li>
-<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
-</ul>
-<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
-<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
-#定义函数
-def printme(str):
-    print(str)
-    return;
-printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出 结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span>
-
-<span class="token comment">#调用函数</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
-age <span class="token number">35</span>
-name abott
-age <span class="token number">50</span>
-name abbott
-age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    function_suite
-    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-
-r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
     <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -2614,6 +2506,114 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </categories>
       <tags>
         <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 函数</title>
+    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
+</ul>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
+</blockquote>
+</li>
+</ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
       </tags>
   </entry>
   <entry>
