@@ -1345,81 +1345,6 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </tags>
   </entry>
   <entry>
-    <title>Linux控制台的使用</title>
-    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
-<p>#Linux 控制台的使用</p>
-<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
-<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
-<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
-<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
-<ul>
-<li><p><strong>查看系统PCI信息</strong></p>
-<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看系统内存信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
-<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
-<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
-<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
-<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
-<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
-<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
-<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
-<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看CPU信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
-CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
-<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
-<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
-<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
-<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
-<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
-座：                 <span class="token number">1</span>
-NUMA 节点：         <span class="token number">1</span>
-厂商 ID：           <span class="token class-name">GenuineIntel</span>
-CPU 系列：          <span class="token number">6</span>
-型号：              <span class="token number">70</span>
-型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
-步进：              <span class="token number">1</span>
-CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
-<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
-超管理器厂商：  <span class="token class-name">VMware</span>
-虚拟化类型：     完全
-<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
-<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
-L2 缓存：           <span class="token number">256</span>K
-L3 缓存：           <span class="token number">6144</span>K
-L4 缓存：           <span class="token number">131072</span>K
-NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
-<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux系统安装及配置</title>
     <url>/blog/2021/11/23/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="二、Linux-系统安装与基础配置"><a href="#二、Linux-系统安装与基础配置" class="headerlink" title="二、Linux 系统安装与基础配置"></a>二、Linux 系统安装与基础配置</h1><p>​      在学习Linux的各种操作前，先要安装Linux系统，与Windows系统安装相比，Linux系统的安装有很多需要注意的地方，比如，选择合适的安装方式、确定分区命名方案等。</p>
@@ -1511,6 +1436,81 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
 <p>至此等待安装完成，重启之后输入用户名和密码</p>
 <p>![image-20210120002437222](/Users/abbott/Library/Application Support/typora-user-images/image-20210120002437222.png)</p>
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux控制台的使用</title>
+    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
+<p>#Linux 控制台的使用</p>
+<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
+<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
+<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
+<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+<ul>
+<li><p><strong>查看系统PCI信息</strong></p>
+<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看系统内存信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
+<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
+<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
+<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
+<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
+<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
+<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
+<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
+<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看CPU信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
+CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
+<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
+<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
+<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
+<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
+座：                 <span class="token number">1</span>
+NUMA 节点：         <span class="token number">1</span>
+厂商 ID：           <span class="token class-name">GenuineIntel</span>
+CPU 系列：          <span class="token number">6</span>
+型号：              <span class="token number">70</span>
+型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
+步进：              <span class="token number">1</span>
+CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
+<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
+超管理器厂商：  <span class="token class-name">VMware</span>
+虚拟化类型：     完全
+<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
+<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
+L2 缓存：           <span class="token number">256</span>K
+L3 缓存：           <span class="token number">6144</span>K
+L4 缓存：           <span class="token number">131072</span>K
+NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
+<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
       <categories>
         <category>Linux系列</category>
       </categories>
@@ -1801,7 +1801,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#x32;&#46;&#x31;&#54;&#46;&#53;&#57;&#x2e;&#49;&#51;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#49;&#55;&#x32;&#46;&#x31;&#54;&#46;&#53;&#57;&#x2e;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#x31;&#64;&#49;&#55;&#x32;&#x2e;&#x31;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;">&#x64;&#x65;&#118;&#x31;&#64;&#49;&#55;&#x32;&#x2e;&#x31;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2218,149 +2218,6 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
       </categories>
   </entry>
   <entry>
-    <title>PSSH</title>
-    <url>/blog/2021/07/16/PSSH/</url>
-    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
-# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>安装pssh</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
-<li>pssh 在多个主机上并行运行命令</li>
-<li>pscp 把文件并行复制到多个主机上</li>
-<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
-<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
-<li>pnuke 并行地在多个远程主机上杀死进程</li>
-</ul>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
-pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>选项解释：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
---help        显示帮助信息          
--h HOST_FILE, 主机文件列表 格式[user@]host[:port]
--l USER       用户名 (OPTIONAL)
--p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
--o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
--e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
--t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
--O OPTION， --option &#x3D; OPTION   SSH选项（可选）
--v，--verbose  打开警告和诊断消息（可选）
--A，-askpass   要求输入密码（可选）
--x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
--X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
--i，--inline  每个服务器的内联内联聚合输出和错误
---inline-stdout 每个服务器的内联标准输出
--I，--send-input 从标准输入读取并作为输入发送到ssh
--P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
-172.16.127.161
-172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>2.实现远程控制获取被控主机IP地址</p>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果没有报错的话，应该输出类似实验下面的</p>
-<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
-[2] 22:42:03 [SUCCESS] 172.16.127.161
-2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果有以下错误</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
-Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
-ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
-Are you sure you want to continue connecting (yes&#x2F;no)?
-Host key verification failed.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
-<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
-# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
-<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
-<li>把文件并行复制到多个主机上</li>
-</ul>
-<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
-<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2.远程将主机文件复制到被控端主机上</p>
-<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
-[1] 23:02:17 [SUCCESS] 172.16.127.161
-[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
-</ul>
-<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
-<p>作用：</p>
-<ul>
-<li>并行地在多个远程主机上杀死进程</li>
-</ul>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
-<ul>
-<li>安装Apache</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>开启Apache web服务</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
-[1] 00:32:33 [SUCCESS] 172.16.127.131
-[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:36:46 [SUCCESS] 172.16.127.161
-COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
-[2] 00:36:46 [SUCCESS] 172.16.127.131
-COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
-httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
-httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>杀死进程</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
-[1] 00:38:39 [SUCCESS] 172.16.127.131
-[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>查看进程(验证)</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
-[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
-[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-<p>三台  关闭firewalld</p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nginx</title>
     <url>/blog/2021/07/16/Nginx/</url>
     <content><![CDATA[<p>Nginx 初始</p>
@@ -2617,6 +2474,160 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
+    <title>PSSH</title>
+    <url>/blog/2021/07/16/PSSH/</url>
+    <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
+# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装pssh</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>pssh 在多个主机上并行运行命令</li>
+<li>pscp 把文件并行复制到多个主机上</li>
+<li>prsync 通过rsync协议把文件高效并行复制到多个主机上</li>
+<li>pslurp 把文件并行地从多个远程主机复制到中心主机上</li>
+<li>pnuke 并行地在多个远程主机上杀死进程</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
+pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>选项解释：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
+--help        显示帮助信息          
+-h HOST_FILE, 主机文件列表 格式[user@]host[:port]
+-l USER       用户名 (OPTIONAL)
+-p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
+-o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
+-e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
+-t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
+-O OPTION， --option &#x3D; OPTION   SSH选项（可选）
+-v，--verbose  打开警告和诊断消息（可选）
+-A，-askpass   要求输入密码（可选）
+-x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
+-X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
+-i，--inline  每个服务器的内联内联聚合输出和错误
+--inline-stdout 每个服务器的内联标准输出
+-I，--send-input 从标准输入读取并作为输入发送到ssh
+-P，--print 打印输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h3><p>1.在控制端主机上建立一个主机文件hosts.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># cat hosts.txt
+172.16.127.161
+172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2.实现远程控制获取被控主机IP地址</p>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt  -i &#39;ip addr show| grep ens33&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果没有报错的话，应该输出类似实验下面的</p>
+<pre class="line-numbers language-none"><code class="language-none">[1] 22:42:03 [SUCCESS] 172.16.127.131
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.131&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33
+[2] 22:42:03 [SUCCESS] 172.16.127.161
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果有以下错误</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
+Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
+ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
+Are you sure you want to continue connecting (yes&#x2F;no)?
+Host key verification failed.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>
+<pre class="line-numbers language-none"><code class="language-none"># ssh-keygen  创建私钥和公钥
+# ssh-copy-id 把公钥copy给每台被控主机<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="pscp-示例及验证："><a href="#pscp-示例及验证：" class="headerlink" title="pscp 示例及验证："></a>pscp 示例及验证：</h5><hr>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li>把文件并行复制到多个主机上</li>
+</ul>
+<h3 id="实验：-1"><a href="#实验：-1" class="headerlink" title="实验："></a>实验：</h3><p>1.创建一个测试文件text.txt</p>
+<pre class="line-numbers language-none"><code class="language-none"># echo &quot;nihao&quot; &gt; text.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.远程将主机文件复制到被控端主机上</p>
+<pre class="line-numbers language-none"><code class="language-none"># pscp.pssh -h hosts.txt text.txt &#x2F;opt&#x2F;text.txt
+[1] 23:02:17 [SUCCESS] 172.16.127.161
+[2] 23:02:18 [SUCCESS] 172.16.127.131<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="prsync-示例："><a href="#prsync-示例：" class="headerlink" title="prsync 示例："></a>prsync 示例：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>通过rsync协议协议将文件或目录从本地主机同步到远程多个主机上</li>
+</ul>
+<h4 id="pnuke-示例及验证："><a href="#pnuke-示例及验证：" class="headerlink" title="pnuke 示例及验证："></a>pnuke 示例及验证：</h4><hr>
+<p>作用：</p>
+<ul>
+<li>并行地在多个远程主机上杀死进程</li>
+</ul>
+<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><p>杀死进程</p>
+<ul>
+<li>安装Apache</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;yum -y install httpd&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>开启Apache web服务</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;systemctl start httpd&quot;
+[1] 00:32:33 [SUCCESS] 172.16.127.131
+[2] 00:32:33 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:36:46 [SUCCESS] 172.16.127.161
+COMMAND   PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   11710   root    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11711 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11712 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11713 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11714 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+httpd   11715 apache    4u  IPv6  37706      0t0  TCP *:http (LISTEN)
+[2] 00:36:46 [SUCCESS] 172.16.127.131
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE&#x2F;OFF NODE NAME
+httpd   9307   root    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9308 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9309 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9310 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9312 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)
+httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>杀死进程</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pnuke -h hosts.txt httpd
+[1] 00:38:39 [SUCCESS] 172.16.127.131
+[2] 00:38:39 [SUCCESS] 172.16.127.161<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查看进程(验证)</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># pssh -h hosts.txt -i &quot;lsof -i:80&quot;
+[1] 00:39:55 [FAILURE] 172.16.127.161 Exited with error code 1
+[2] 00:39:55 [FAILURE] 172.16.127.131 Exited with error code 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<p>三台  关闭firewalld</p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python初始</title>
+    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Pyhon语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>c语言初始</title>
     <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
@@ -2642,67 +2653,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </categories>
       <tags>
         <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（Yum安装)</title>
-    <url>/blog/2021/10/10/install.mysql/</url>
-    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
-<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
-<li><p>Redhat6/CentOS6版本</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>Redhat7/CentOS7版本以上</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>启动数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
-<li>默认MySQL数据库是没有密码</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 2
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>为了数据库的安装我们需要初始化以及设置密码</p>
-</blockquote>
-<ul>
-<li><p>初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 11
-Server version: 5.5.68-MariaDB MariaDB Server
-
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
-
-Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-
-MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Python初始</title>
-    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Pyhon语言</tag>
       </tags>
   </entry>
   <entry>
@@ -2890,6 +2840,56 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>MySQL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（Yum安装)</title>
+    <url>/blog/2021/10/10/install.mysql/</url>
+    <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
+<h4 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h4><ul>
+<li><p>Redhat6/CentOS6版本</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mysql mysql-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>Redhat7/CentOS7版本以上</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# yum -y install mariadb mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>启动数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-server ~]# systemctl start mariadb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h4 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h4><h4 id="登陆数据库"><a href="#登陆数据库" class="headerlink" title="登陆数据库"></a>登陆数据库</h4><ul>
+<li>默认MySQL数据库是没有密码</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>为了数据库的安装我们需要初始化以及设置密码</p>
+</blockquote>
+<ul>
+<li><p>初始化数据库</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>初始化完成再次登陆   (需要 用户+ 密码 )</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@web-server &#x2F;]# mysql -uroot -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="连接数据库方式"><a href="#连接数据库方式" class="headerlink" title="连接数据库方式"></a>连接数据库方式</h4>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>openstack原理</title>
