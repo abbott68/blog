@@ -333,78 +333,6 @@ enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><s
       </tags>
   </entry>
   <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux常用命令</title>
     <url>/blog/2021/11/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="四、Linux常用命令及使用技巧"><a href="#四、Linux常用命令及使用技巧" class="headerlink" title="四、Linux常用命令及使用技巧"></a>四、Linux常用命令及使用技巧</h1><p>本章重点讲述Linux命令的使用，命令是学习Linux必须熟练掌握的一部分，Linux下的命令大概有1000个，而常用的命令只有100个左右，这些常用命令需要灵活掌握。虽然Linux的各个发行版大同小异，但是常用命令基本相同，因此只要掌握了常用的Linux命令，就能融汇贯通各个Linux版本了。</p>
@@ -1827,7 +1755,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#x31;&#64;&#49;&#55;&#x32;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#x33;">&#100;&#101;&#118;&#x31;&#64;&#49;&#55;&#x32;&#46;&#49;&#x36;&#x2e;&#x35;&#x39;&#46;&#x31;&#x33;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#x39;&#46;&#49;&#x33;&#51;">&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#x39;&#46;&#49;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2529,6 +2457,34 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </tags>
   </entry>
   <entry>
+    <title>c语言初始</title>
+    <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
+<p>C语言具有高效、灵活、功能丰富、表达力强和较高的<a href="https://zh.wikipedia.org/wiki/%E7%A7%BB%E6%A4%8D_(%E8%BB%9F%E9%AB%94)">可移植性</a>等特点，在<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>中备受青睐，成为最近25年使用最为广泛的编程语言[<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#cite_note-AutoTX-3-2">2]</a>。目前，C语言<a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E5%99%A8">编译器</a>普遍存在于各种不同的<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>中，例如<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X">macOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Unix">Unix</a>等。C语言的设计影响了众多后来的编程语言，例如<a href="https://zh.wikipedia.org/wiki/C%2B%2B">C++</a>、<a href="https://zh.wikipedia.org/wiki/Objective-C">Objective-C</a>、<a href="https://zh.wikipedia.org/wiki/Java">Java</a>、<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF">C#</a>等。</p>
+<p>二十世纪八十年代，为了避免各开发厂商用的C语言的语法产生差异，由<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E5%9C%8B%E5%AE%B6%E6%A8%99%E6%BA%96%E5%B1%80">美国国家标准局</a>为C语言订定了一套完整的国际标准语法，称为<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>，作为C语言的标准。二十世纪八十年代至今的有关程序开发工具，一般都支持符合<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>的语法。</p>
+<h3 id="K-amp-R-C"><a href="#K-amp-R-C" class="headerlink" title="K&amp;R C"></a>K&amp;R C</h3><p>1978年，丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)出版了一本书，名叫《The C Programming Language》（中文译名为《C程序设计语言》）。这本书被C语言开发者们称为“K&amp;R”，很多年来被当作C语言的非正式的标准说明。人们称这个版本的C语言为“K&amp;R C”。</p>
+<p>1988年丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)修改此书，出版了《The C Programming Language》第二版，第二版涵盖了ANSI C语言标准。第二版从此成为大学计算机教育有关C语言的经典教材，多年后也没再出现过更好的版本。</p>
+<h3 id="ANSI-C-和-ISO-C"><a href="#ANSI-C-和-ISO-C" class="headerlink" title="ANSI C 和 ISO C"></a>ANSI C 和 ISO C</h3><p>1970到80年代，C语言被广泛应用，从大型主机到小型微机，也衍生了C语言的很多不同版本。</p>
+<p>为统一C语言版本，1983年美国国家标准局（American National Standards Institute，简称ANSI）成立了一个委员会，来制定C语言标准。1989年C语言标准被批准，被称为ANSI X3.159-1989 “Programming Language C”。这个版本的C语言标准通常被称为ANSI C。又由于这个版本是 89 年完成制定的，因此也被称为 C89。</p>
+<p>后来 ANSI 把这个标准提交到 ISO（国际化标准组织），1990年被 ISO 采纳为国际标准，称为 ISO C。又因为这个版本是1990年发布的，因此也被称为C90。</p>
+<p>ANSI C(C89) 与 ISO C(C90)内容基本相同，主要是格式组织不一样。</p>
+<p>因为 ANSI 与 ISO 的C标准内容基本相同，所以对于C标准，可以称为ANSI C，也可以说是ISO C，或者 ANSI / ISO C。</p>
+<p>注意：以后大家看到 ANSI C、ISO C、C89、C90，要知道这些标准的内容都是一样的。</p>
+<p>目前，几乎所有的开发工具都支持 ANSI / ISO C 标准。是C语言用得最广泛的一个标准版本。</p>
+<h3 id="C99"><a href="#C99" class="headerlink" title="C99"></a>C99</h3><p>在ANSI C标准确立之后，C语言的规范在很长一段时间内都没有大的变动。1995年C程序设计语言工作组对 C语言进行了一些修改，成为后来的1999年发布的 ISO/IEC 9899:1999标准，通常被成为C99。</p>
+<p>但是各个公司对C99的支持所表现出来的兴趣不同。当GCC和其它一些商业编译器支持C99的大部分特性的時候，微软和Borland却似乎对此不感兴趣。</p>
+<p>说明：GCC（GNU Compiler Collection，GNU编译器集合）是一套由GNU工程开发的支持多种编程语言的编译器。</p>
+<p><font size="3" color=red>综上所述，目前广泛使用的C语言版本是 ANSI / ISO C，最经典的C语言教材是《C程序设计语言(The C Programming Language) 第二版》</font></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" class="lazyload placeholder" data-srcset="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL部署（Yum安装)</title>
     <url>/blog/2021/10/10/install.mysql/</url>
     <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
@@ -2577,34 +2533,6 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       <categories>
         <category>数据库</category>
       </categories>
-  </entry>
-  <entry>
-    <title>c语言初始</title>
-    <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
-<p>C语言具有高效、灵活、功能丰富、表达力强和较高的<a href="https://zh.wikipedia.org/wiki/%E7%A7%BB%E6%A4%8D_(%E8%BB%9F%E9%AB%94)">可移植性</a>等特点，在<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>中备受青睐，成为最近25年使用最为广泛的编程语言[<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#cite_note-AutoTX-3-2">2]</a>。目前，C语言<a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E5%99%A8">编译器</a>普遍存在于各种不同的<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>中，例如<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X">macOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Unix">Unix</a>等。C语言的设计影响了众多后来的编程语言，例如<a href="https://zh.wikipedia.org/wiki/C%2B%2B">C++</a>、<a href="https://zh.wikipedia.org/wiki/Objective-C">Objective-C</a>、<a href="https://zh.wikipedia.org/wiki/Java">Java</a>、<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF">C#</a>等。</p>
-<p>二十世纪八十年代，为了避免各开发厂商用的C语言的语法产生差异，由<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E5%9C%8B%E5%AE%B6%E6%A8%99%E6%BA%96%E5%B1%80">美国国家标准局</a>为C语言订定了一套完整的国际标准语法，称为<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>，作为C语言的标准。二十世纪八十年代至今的有关程序开发工具，一般都支持符合<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>的语法。</p>
-<h3 id="K-amp-R-C"><a href="#K-amp-R-C" class="headerlink" title="K&amp;R C"></a>K&amp;R C</h3><p>1978年，丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)出版了一本书，名叫《The C Programming Language》（中文译名为《C程序设计语言》）。这本书被C语言开发者们称为“K&amp;R”，很多年来被当作C语言的非正式的标准说明。人们称这个版本的C语言为“K&amp;R C”。</p>
-<p>1988年丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)修改此书，出版了《The C Programming Language》第二版，第二版涵盖了ANSI C语言标准。第二版从此成为大学计算机教育有关C语言的经典教材，多年后也没再出现过更好的版本。</p>
-<h3 id="ANSI-C-和-ISO-C"><a href="#ANSI-C-和-ISO-C" class="headerlink" title="ANSI C 和 ISO C"></a>ANSI C 和 ISO C</h3><p>1970到80年代，C语言被广泛应用，从大型主机到小型微机，也衍生了C语言的很多不同版本。</p>
-<p>为统一C语言版本，1983年美国国家标准局（American National Standards Institute，简称ANSI）成立了一个委员会，来制定C语言标准。1989年C语言标准被批准，被称为ANSI X3.159-1989 “Programming Language C”。这个版本的C语言标准通常被称为ANSI C。又由于这个版本是 89 年完成制定的，因此也被称为 C89。</p>
-<p>后来 ANSI 把这个标准提交到 ISO（国际化标准组织），1990年被 ISO 采纳为国际标准，称为 ISO C。又因为这个版本是1990年发布的，因此也被称为C90。</p>
-<p>ANSI C(C89) 与 ISO C(C90)内容基本相同，主要是格式组织不一样。</p>
-<p>因为 ANSI 与 ISO 的C标准内容基本相同，所以对于C标准，可以称为ANSI C，也可以说是ISO C，或者 ANSI / ISO C。</p>
-<p>注意：以后大家看到 ANSI C、ISO C、C89、C90，要知道这些标准的内容都是一样的。</p>
-<p>目前，几乎所有的开发工具都支持 ANSI / ISO C 标准。是C语言用得最广泛的一个标准版本。</p>
-<h3 id="C99"><a href="#C99" class="headerlink" title="C99"></a>C99</h3><p>在ANSI C标准确立之后，C语言的规范在很长一段时间内都没有大的变动。1995年C程序设计语言工作组对 C语言进行了一些修改，成为后来的1999年发布的 ISO/IEC 9899:1999标准，通常被成为C99。</p>
-<p>但是各个公司对C99的支持所表现出来的兴趣不同。当GCC和其它一些商业编译器支持C99的大部分特性的時候，微软和Borland却似乎对此不感兴趣。</p>
-<p>说明：GCC（GNU Compiler Collection，GNU编译器集合）是一套由GNU工程开发的支持多种编程语言的编译器。</p>
-<p><font size="3" color=red>综上所述，目前广泛使用的C语言版本是 ANSI / ISO C，最经典的C语言教材是《C程序设计语言(The C Programming Language) 第二版》</font></p>
-<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" class="lazyload placeholder" data-srcset="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
   </entry>
   <entry>
     <title>mysql5.7主从复制-异步</title>
@@ -2873,43 +2801,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -2975,6 +2866,198 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </categories>
       <tags>
         <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>认识Kubernetes</title>
+    <url>/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/</url>
+    <content><![CDATA[<h2 id="一、Kubernetes-基础"><a href="#一、Kubernetes-基础" class="headerlink" title="一、Kubernetes 基础"></a>一、Kubernetes 基础</h2><h3 id="1-1-Kubernetes-概述"><a href="#1-1-Kubernetes-概述" class="headerlink" title="1.1 Kubernetes 概述"></a>1.1 Kubernetes 概述</h3><p><strong>Kubernetes 是什么</strong></p>
+<p>Kubernetes(k8s)是Google开源由CNCF基金会管理的容器集群管理系统。为容器化的应用提供部署运行、资源调度、服务发现和动态伸缩等一系列完整功能。Kubernetes 被称为现在化的数据中心操作系统，大家都知道，操作系统是用来管理硬件资源比如 CPU、内存、磁盘、输入输出设备等资源的，并完成对这些资源的调度。而 Kubernetes 是将数据中心里的物理节点作为管理对象，并对物理节点上的资源进行调度完成编排任务。操作系统的另一个特性就是容易扩展，比如，当 GPU 这种硬件出现后，操作系统应该很容扩展去管理这种资源，Kubernetes 作为数据中心操作系统同样也有这样的特性，它也非常容易扩展。</p>
+<h3 id="1-2-Kubernetes-架构"><a href="#1-2-Kubernetes-架构" class="headerlink" title="1.2 Kubernetes 架构"></a>1.2 Kubernetes 架构</h3><p>Kubernetes 的架构从宏观层面的来讲分为两个平面，即控制平面和计算平面，控制平面又称为 Master 节点，Master 节点是整个集群的大脑，负责控制、调度集群资源；计算平面又称为 Node 节点，Node 节点负责运行工作负载，是 Master 节点调度的对象。kubectl 作为 Kubernetes 客户端通过和 Master 节点直接进行通信来控制 Kubernetes 集群。</p>
+<p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 架构"></p>
+<h4 id="控制节点"><a href="#控制节点" class="headerlink" title="控制节点"></a><strong>控制节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Master"></p>
+<ul>
+<li>kube-apiserver 对外暴露 Kubernetes API，所有对集群的操作都是通过这组API完成，包括客户端下达应用编排命令给 Kubernetes 集群；kubelet 上报集群资源使用情况；以及各个组件之间的交互都是通过这套 API 完成的。</li>
+<li>kube-controller-manager 负责整个 Kubernetes 的管理工作，保证集群中各种资源处于期望状态，当监控到集群中某个资源状态与期望状态不符时，controller-manager 会触发调度操作。</li>
+<li>kube-scheduler 调度器负责 Kubernetes 集群的具体调度工作，接收来自于controller-manager 触发的调度操作请求，然后根据请求规格、调度约束、整体资源情况进行调度计算，最后将任务发送到目标节点由的kubelet组件执行。</li>
+<li>etcd 是一个高效KV存储系统。在Kubernetes环境中主要用于存储所有需要持久化的数据。</li>
+</ul>
+<h4 id="计算节点"><a href="#计算节点" class="headerlink" title="计算节点"></a><strong>计算节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Node"></p>
+<ul>
+<li><p>kubelet 是 Node 节点上核心组件，负责与 docker daemon 进行交互运行 docker 容器；配置网络和数据卷；监控并上报节点资源使用情况。</p>
+</li>
+<li><p>kube-proxy 主要负责 Service Endpoint 到 POD 实例的请求转发及负载均衡的规则管理。</p>
+</li>
+</ul>
+<h3 id="1-3-Kubernetes-解决了什么问题"><a href="#1-3-Kubernetes-解决了什么问题" class="headerlink" title="1.3 Kubernetes 解决了什么问题"></a>1.3 Kubernetes 解决了什么问题</h3><p>Kubernetes 项目最主要的设计思想是，从更宏观的角度，以统一的方式来定义任务之间的各种关系，更甚至我们可以运用 Kubernetes 扩展能力灵活的自定义任务之间的关系。</p>
+<p>比如，Kubernetes 项目对容器间的交互关系进行了分类，首先总结出了一类非常常见的“紧密交互”的关系，即：这些应用之间需要直接通过本地文件进行信息交换。</p>
+<p>在常规环境下，这些应用往往会被直接部署在同一台机器上，通过 Localhost 通信，通过本地磁盘上的文件进行交互。而在 Kubernetes 项目中，这些容器则会被划分为一个“Pod”，Pod 里的容器共享同一个 Network Namespace、同一组数据卷，从而达到高效率交换信息的目的。</p>
+<p>Pod 是 Kubernetes 项目中最基础的一个对象，下一章中我会重中想你介绍 Pod。</p>
+<p>而对于另外一种更为常见的需求，比如 Web 应用与数据库之间的访问关系，Kubernetes 项目则提供了一种叫作“Service”的服务。像这样的两个应用，往往故意不部署在同一台机器上，这样即使 Web 应用所在的机器宕机了，数据库也完全不受影响。可是，我们知道，对于一个容器来说，它的 IP 地址等信息不是固定的，那么 Web 应用又怎么找到数据库容器的 Pod 呢？</p>
+<p>所以，Kubernetes 项目的做法是给 Pod 绑定一个 Service 服务，而 Service 服务声明的 IP 地址等信息是“终生不变”的。这个Service 服务的主要作用，就是作为 Pod 的代理入口，从而代替 Pod 对外暴露一个固定的网络地址。</p>
+<p>除了 Pod、Service 这些基本资源外，Kubernetes 还为我们提供了 Deployment、StatefulSet、Job 等扩展资源，有了这些资源我们就可以轻松的编排我们的服务了，通过这些资源，Kubernetes 为我们提供了应用的水平扩展、滚动升级、自动扩缩容能力，为服务提供了负责均衡、服务监控、服务发现能力。通过这些高级功能以及其灵活的扩展能力使 Kubernetes 逐渐成为了容器编排领域的翘楚。</p>
+<h4 id="Kubernetes-组件"><a href="#Kubernetes-组件" class="headerlink" title="Kubernetes 组件"></a><strong>Kubernetes 组件</strong></h4><p>当你部署完 Kubernetes, 即拥有了一个完整的集群。</p>
+<p>一个 Kubernetes 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。集群具有至少一个工作节点。</p>
+<p>工作节点托管作为应用负载的组件的 Pod 。控制平面管理集群中的工作节点和 Pod 。 为集群提供故障转移和高可用性，这些控制平面一般跨多主机运行，集群跨多个节点运行。</p>
+<p>本文档概述了交付正常运行的 Kubernetes 集群所需的各种组件。</p>
+<p>这张图表展示了包含所有相互关联组件的 Kubernetes 集群。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" class="lazyload placeholder" data-srcset="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 组件"></p>
+<h3 id="1-4-Kubernetes-集群搭建"><a href="#1-4-Kubernetes-集群搭建" class="headerlink" title="1.4 Kubernetes 集群搭建"></a>1.4 Kubernetes 集群搭建</h3><h4 id="1-4-1-使用-Docker-CE-自带的-Kubernetes"><a href="#1-4-1-使用-Docker-CE-自带的-Kubernetes" class="headerlink" title="1.4.1 使用 Docker CE 自带的 Kubernetes"></a>1.4.1 使用 Docker CE 自带的 Kubernetes</h4><p>安装 Docker 参考：<a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a></p>
+<ul>
+<li>Install Docker for Mac</li>
+<li>Install Docker for Windows</li>
+</ul>
+<h4 id="1-4-2-使用-minikube"><a href="#1-4-2-使用-minikube" class="headerlink" title="1.4.2 使用 minikube"></a>1.4.2 使用 minikube</h4><h5 id="MacOS-安装-minikube"><a href="#MacOS-安装-minikube" class="headerlink" title="MacOS 安装 minikube"></a><strong>MacOS 安装 minikube</strong></h5><ul>
+<li><p><strong>安装minikube</strong></p>
+<p>brew cask install minikube</p>
+</li>
+<li><p><strong>安装vm驱动</strong></p>
+<p>curl -LO <a href="https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit">https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit</a> \n&amp;&amp; sudo install -o root -g wheel -m 4755 docker-machine-driver-hyperkit /usr/local/bin/</p>
+</li>
+<li><p>启动 minikube(minikube会安装kubernetes需要的组件，这些组件的镜像存储在google的常客中，所有需要能够翻墙才能够安装成功)</p>
+<p>minikube start —vm-driver=hyperkit —memory=4096 —insecure-registry=”hub.example.com” —registry-mirror=”<a href="https://m9sl8pb5.mirror.aliyuncs.com/">https://m9sl8pb5.mirror.aliyuncs.com</a>“ —docker-opt=”bip=172.87.0.1/16”</p>
+<p>参数介绍: —vm-driver 使用的虚拟机驱动 —memory 给虚拟机的内存大小 —cpu 给虚拟机的cpu核数，默认是2核 —insecure-registry 指定私有仓库地址 —registry-mirror 指定镜像缓存地址，加快镜像下载速度 —docker-opt 指定docker的启动参数，bip 指定 docker 网桥使用的网段</p>
+</li>
+<li><p><strong>停止 minikube</strong></p>
+<p>minikube stop</p>
+</li>
+<li><p><strong>删除集群</strong></p>
+<p>minikube delete</p>
+</li>
+<li><p><strong>登录虚拟机</strong></p>
+<p>minikube ssh</p>
+</li>
+</ul>
+<h5 id="Windows-安装-minikube"><a href="#Windows-安装-minikube" class="headerlink" title="Windows 安装 minikube"></a><strong>Windows 安装 minikube</strong></h5><p>Windows 安装minikube，需要Windows系统支持Hyper-V，目前 Windows 10 Enterprise, Windows 10 Professional, and Windows 10 Education 支持Hyper-V。安装minikube时，最好命令行使用powershell，并且以管理员身份打开并执行。</p>
+<h6 id="安装方法-1："><a href="#安装方法-1：" class="headerlink" title="安装方法 1："></a>安装方法 1：</h6><ul>
+<li>安装 <a href="https://chocolatey.org/">https://chocolatey.org/</a></li>
+<li>choco install minikube kubernetes-cli</li>
+</ul>
+<h6 id="安装方法-2："><a href="#安装方法-2：" class="headerlink" title="安装方法 2："></a>安装方法 2：</h6><p>下载 minikube-installer.exe （<a href="https://github.com/kubernetes/minikube/releases/latest%EF%BC%89%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/kubernetes/minikube/releases/latest）并进行安装。</a></p>
+<p>启动前准备(重要)</p>
+<ul>
+<li>配置 MINIKUBE_HOME 环境变量及创建目录</li>
+<li>在 Hyper-V 中为minikube添加虚拟交换机</li>
+<li>用 chocolatey 安装 OpenSSH（choco install openssh）</li>
+</ul>
+<h6 id="启动-minikube"><a href="#启动-minikube" class="headerlink" title="启动 minikube"></a>启动 minikube</h6><pre class="line-numbers language-none"><code class="language-none">minikube start --vm-driver&#x3D;hyperv --hyperv-virtual-switch&#x3D;minikube --memory&#x3D;4096 --insecure-registry&#x3D;&quot;hub.example.com&quot; --registry-mirror&#x3D;&quot;https:&#x2F;&#x2F;m9sl8pb5.mirror.aliyuncs.com&quot; --docker-opt&#x3D;&quot;bip&#x3D;172.87.0.1&#x2F;16&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>1.5 访问Kubernetes</p>
+]]></content>
+      <categories>
+        <category>kubernetes系列</category>
+      </categories>
+      <tags>
+        <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
       </tags>
   </entry>
 </search>
