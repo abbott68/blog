@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MacbookPor-m1 | abbott Blog</title>
+  <title>初始监控系统及软件 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -657,21 +657,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/4.jpg')">
+  background-position: center center;position: relative;background-image:url('/blog/medias/3.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        MacbookPor-m1
+        初始监控系统及软件
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-12-02 |
+          <i class="fas fa-calendar"></i> 发表于：2021-12-04 |
         </span>
       
 
@@ -679,8 +679,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/blog/categories/MAC-M1/" class="post-detail-header_category">
-              MAC M1
+            <a href="/blog/categories/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="post-detail-header_category">
+              监控系统
             </a>
           
         </span>
@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.9k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 2 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
           </span>
   
           
@@ -717,32 +717,113 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
-<li>下载地址：<a target="_blank" rel="noopener" href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
+        <h1 id="监控系统简介"><a href="#监控系统简介" class="headerlink" title="监控系统简介"></a>监控系统简介</h1><hr>
+<p><strong>为何需要监控</strong></p>
+<p>​    在一个IT环境中会存在各种各样的设备，例如：硬件设备、软件设备系统的构成也是非常复杂的。</p>
+<p>​    多种应用构成复杂的IT业务系统，保证这些资源的正常运转，是一个公司IT部门的职责，而要让这些应用能够正常地运行，则需要专业IT人员进行设计、架构、维护和调优。在这个过程中，为了及时掌控基础环境和业务应用系统的可用性，需要获取各个组件的运行状态，如CPU的利用率、系统负载、服务的运行、端口的连通、带宽流量、网站访问状态码等信息。而这一切都离不开监控系统。</p>
+<p><strong>监控系统的实现</strong></p>
+<p>一个监控系统的组成大体可以分为两部分：数据采集部分（客户端）和数据存储分析告警展示部分（服务端）</p>
+<p><strong>数据采集：</strong>工作模式可以分为被动模式和主动模式</p>
+<ul>
+<li><p>被动模式：服务端到客户端采集数据</p>
+</li>
+<li><p>主动模式：客户端主动上报数据到服务端</p>
+</li>
 </ul>
-<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
-<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
-</ul>
-<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
-<li>地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
-</ul>
-<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>百度云地址：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
-</ul>
-<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a target="_blank" rel="noopener" href="https://youtu.be/s_Mv0HgdeYo">https://youtu.be/s_Mv0HgdeYo</a></p>
+<p><strong>数据采集方式：</strong>专用客户端采集和共用协议采集 </p>
+<h1 id="监控系统的软件"><a href="#监控系统的软件" class="headerlink" title="监控系统的软件"></a>监控系统的软件</h1><hr>
+<p>在监控软件中，开源的解决方案有流量监控（MRTG、Cati、SmokePing、Craphite等）和性能告警（Nagios、Zabbix、Zenoss Core、Ganglia、OpenTSDB等）可供选择，并且每种软件都有自己的特点和功能，各自的侧重点和目标不完全相同，在设计理念和实现方法上也大同小异，但都具有共同特征，例如：采集数据、分析展示、告警以及简单的故障自动处理。</p>
+<p><strong>MRTG</strong></p>
+<hr>
+<p>MRTG（Multi Router Traffic Grapher）是一套可用来绘制流量图的软件，由瑞士奥尔滕的Tobias Oetiker与Dave Rand所开发，以GPL授权。</p>
+<p>MRTG最早的版本是在1995年推出的，用Perl语言写成，可夸平台使用，数据采集用SNMP协议，MRTG将收集到的数据通过Web页面以GIF或PNG格式绘制出图像，并以日、周、月为单位分别绘出，可以查询最大值和最小值。</p>
+<p>现在出了各种插件，因此也可以监控服务器的硬盘使用量、CPU的负载等</p>
+<p><img src="https://cdn.pcwdld.com/wp-content/uploads/gui-screenshot.jpg" class="lazyload placeholder" data-srcset="https://cdn.pcwdld.com/wp-content/uploads/gui-screenshot.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Best MRTG Alternatives for Network Monitoring &amp; Traffic Graphing 2021"></p>
+<p><strong>Cacti</strong></p>
+<hr>
+<p>Cacti(英文含义为仙人掌)是一套基于PHP、MySQL、SNMP和RRDtool开发的网络流量监测图形分析工具，</p>
+<p><img src="https://www.linuxidc.com/upload/2012_09/120921143047331.jpg" class="lazyload placeholder" data-srcset="https://www.linuxidc.com/upload/2012_09/120921143047331.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Cacti监控H3C交换机不显示端口解决办法"></p>
+<p><strong>SmokePing</strong></p>
+<hr>
+<p>SmokePing主要用于监控网络性能，包括常规的ping、www服务器性能DNS查询性能、SSH性能等，底层也用RRDtool做支持，特点是绘制的图非常漂亮，网络丢吧和延迟用颜色和阴影来表示，支持将多张叠放在一起.</p>
+<p><img src="https://oss.oetiker.ch/smokeping/doc/reading_multihost.png" class="lazyload placeholder" data-srcset="https://oss.oetiker.ch/smokeping/doc/reading_multihost.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="示例多主机图"></p>
+<p><strong>Graphite</strong></p>
+<hr>
+<p>Graphite 是一个用于采集网站实时信息进行统计的开源项目。Graphite服务支持平均每分钟4800次更新操作，采用简单文本协议，具有绘图功能，其即插即用的功能可方便地用于任何需要监控的系统上。</p>
+<p>Graphite本身并不收集具体的数据，这些数据收集的工作通常由第三方工具或插件完成，因此，可以说Graphite是一个绘图工具。</p>
+<p><strong>Nagios</strong></p>
+<hr>
+<p>Nagios 是一个企业级的监控系统，可监控服务的运行状态和网络信息等，并能监视所有指定的本地或远程主机参数以及服务，同时提供异常告警通知功能等；</p>
+<p>Nagios可运行在Linux和Unix平台上，同时提供一个可选的基于浏览器的web界面，以方便管理人员的可用性，能及时根据触发条件告警。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/ScalableGridEngineNagios2.png" class="lazyload placeholder" data-srcset="https://upload.wikimedia.org/wikipedia/commons/4/48/ScalableGridEngineNagios2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><strong>Zenoss Core</strong></p>
+<hr>
+<p>Zenoss Core (简称：Zenoss)是开源企业级IT管理软件，它允许IT管理依靠单一的web控制台来监控网络架构的状态和监控度。</p>
+<p><strong>Ganglia</strong></p>
+<hr>
+<p>Ganglia 是一个跨平台的、可扩展的、高性能的分布式监控系统，如集群和网络。它基于分层设计，使用广泛的技术，用RRDtool存储数据，具有可视化界面，适合于对集群系统的自动化监控。其精心设计的数据结构和算法使得监控端到被监控端的连接开销非常低。目前已经有成千上万的集群正在使用这个监控系统，可以轻松地处理2000个节点的集群环境。</p>
+<p><strong>OpenTSDB</strong></p>
+<hr>
+<p>开源监控系统openTSDB用HBase存储所有时序（无需采样）的数据，来构建一个分布式、可伸缩的时间序列数据库。它支持秒级数据采集，支持永久存储，可以做容量规划，并很容易地接入到现有的告警系统里，OpenTSDB可以从大规模的集群（包括集群中的网络设备、操作系统、应用程序）中获取相应的采集指标，并进行存储、索引和服务，从而使这些数据更容易让人理解，如WEB化、图形化等</p>
+<p><strong>Zabbix</strong></p>
+<hr>
+<p>Zabbix 是一个分布式监控系统，支持多种采集方式和采集客户端，有专用的Agent（代理），也可以支持SNMP、IPMI、JMX、等多种协议，它将采集的数据存放到数据库，然后对其进行分析整理，达到条件触发告警。</p>
+<p><strong>监控系统的原理</strong></p>
+<hr>
+<p><strong>监控的诞生</strong></p>
+<p>对出现的故障，能及时通知告警和故障的自动修复，对运维人员响应处理故障的速度会大大加快，甚至在异常严重的故障情况下，对及时采用应急预案，有不可或缺的作用，如果没有监控，故障的反馈往往来自用户的报告，然后才由运维人员处理。</p>
+<p><strong>监控系统的实现</strong></p>
+<p>监控系统往往需要对物理硬件和应用软件的性能和参数进行数据汇集，实现集中管理和同一分析。</p>
+<p>在一个监控系统中，构成要素为监控服务器端程序、数据存储、被采集节点等相关模块，其告警分析和自动故障处理功能由服务器执行。</p>
+<p>监控系统需要提供一个API，方便其他功能系统对监控数据进行管理，这在业务系统精密的情况下显得特别重要，通常对外提供API功能的软件；</p>
+<p><strong>监控系统性能指标</strong></p>
+<table>
+<thead>
+<tr>
+<th>监控项目</th>
+<th>详细内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主机监控</td>
+<td>CPU、内存、磁盘的剩余空间/利用率/I/O SWAP使用率、系统UP时间、进程数、负载</td>
+</tr>
+<tr>
+<td>网卡监控</td>
+<td>ping的往返时间及包成功率、网卡流量，包括流入/流出量和错误的数据包数</td>
+</tr>
+<tr>
+<td>文件监控</td>
+<td>监控文件大小，Hash值，匹配查询、字符串存在与否</td>
+</tr>
+<tr>
+<td>URL监控</td>
+<td>监测指定URL访问过程中的返回码、下载时间及文件大小、支持内容匹配</td>
+</tr>
+<tr>
+<td>应用程序</td>
+<td>端口和内存使用率、CPU使用率、服务状态、请求数、并发连接数、消息队列的字节数、<br />Client事务处理数、service状态等</td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>监控数据库中指定的表空间、数据库的游标数、Session数、事务数、死锁数、缓冲池命中率、<br />库Cache命中率、当前连接数、进程的内存利用率等性能参数</td>
+</tr>
+<tr>
+<td>日志</td>
+<td>错误日志匹配、特定字符串匹配</td>
+</tr>
+<tr>
+<td>硬件</td>
+<td>温度、风扇转速、电压等</td>
+</tr>
+</tbody></table>
+<p><strong>监控系统对时间的要求</strong></p>
+<p>监控系统需要根据实际应用的需求，实时/非实时地采集和展示数据。另外，包括历史趋势数据的展示和分析，以及容量报表、可用性报告的生成。</p>
+<p><strong>监控系统的告警需要</strong></p>
+<p>支持多种方式，如短信、邮件、IM和其他接口，具备可定制化功能，对第三方告警介质提供可编程接口。</p>
 
       </div>
       <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/blog/tags/VMware-fuison/" class="">
-              VMware fuison
-            </a>
-          
-        </div>
         
       </div>
       
@@ -753,7 +834,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/blog/2021/12/02/MacbookPor-m1/" target="_blank" title="MacbookPor-m1">https://abbott68.github.io/blog/2021/12/02/MacbookPor-m1/</a>
+    <a href="/blog/2021/12/04/初始监控系统及软件/" target="_blank" title="初始监控系统及软件">https://abbott68.github.io/blog/2021/12/04/初始监控系统及软件/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -771,40 +852,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/5.jpg" class="lazyload placeholder" data-srcset="/blog/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Docker初始</div>
-      </div>
-      
-      <!-- <div class="content">
-        Docker简介docker 对外宣称的作用是”Build,Ship and Run Any App,Anywhere“
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/5.jpg" class="lazyload placeholder" data-srcset="/blog/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/6.jpg" class="lazyload placeholder" data-srcset="/blog/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/" class="post-nav-link">
+    <a href="/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">认识Kubernetes</div>
+        <div class="title-text">Zabbix分布式监控</div>
       </div>
       <!-- <div class="content">
-        一、Kubernetes 基础1.1 Kubernetes 概述Kubernetes 是什么
-Kubernetes(k8
+        Zabbix简介
+Zabbix 由 Alexei Vladishev 创建，目前由其成立的公司—— Zabbix SIA
       </div> -->
     </a>
   </div>

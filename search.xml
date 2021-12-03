@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>5.7多实例</title>
     <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
@@ -95,44 +133,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
       </tags>
   </entry>
   <entry>
@@ -280,259 +280,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux安装软件</title>
-    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
-<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
-<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
-<p><strong>5.2、下载、解压源码</strong></p>
-<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
-<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
-<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
-<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
-<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
-<p>​    1、makefile 文件</p>
-<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
-<p>​    2、make与make install</p>
-<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
-<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
-<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
-<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
-<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
-<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
-<ul>
-<li><p>安装软件包：</p>
-<p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>常用选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
-  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
-  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
-                                   被指定未多个软件包，常常会导致错误出现)
-  --badreloc                       对不可重定位的软件包重新分配文件位置
-  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
-  --excludedocs                    不安装程序文档
-  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
-  --force                          --replacepkgs --replacefiles 的缩写
-  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
-  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
-  --ignorearch                     不验证软件包架构
-  --ignoreos                       不验证软件包操作系统
-  --ignoresize                     在安装前不检查磁盘空间
-  -i, --install                    安装软件包
-  --justdb                         更新数据库，但不修改文件系统
-  --nodeps                         不验证软件包依赖
-  --nofiledigest                   不验证文件摘要
-  --nocontexts                     不安装文件的安全上下文
-  --noorder                        不对软件包安装重新排序以满足依赖关系
-  --noscripts                      不执行软件包脚本
-  --notriggers                     不执行本软件包触发的任何脚本
-  --nocollections                  请不要执行任何动作集
-  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
-  --percent                        安装软件包时打印百分比
-  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
-  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
-  --replacefiles                   忽略软件包之间的冲突的文件
-  --replacepkgs                    如果软件包已经有了，重新安装软件包
-  --test                           不真正安装，只是判断下是否能安装
-  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
-  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
-<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
-<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>yum的配置</strong></p>
-<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
-name&#x3D;CentOS-$releasever - cr  
-baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
-gpgcheck&#x3D;1
-gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
-enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>yum的特点与基本用法</strong></p>
-<ol>
-<li><p>yum的特点</p>
-<ul>
-<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
-<li>可以同时配置多个资源库（Repository）</li>
-<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
-<li>保持与RPM数据库的一致性</li>
-</ul>
-</li>
-<li><p>yum的基本用法</p>
-<ul>
-<li><p>如果安装或者删除RPM包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
-[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>检查yum工具更新软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>更新所有的RPM软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>通过yum查询RPM包信息</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux控制台的使用</title>
-    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
-<p>#Linux 控制台的使用</p>
-<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
-<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
-<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
-<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
-<ul>
-<li><p><strong>查看系统PCI信息</strong></p>
-<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看系统内存信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
-<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
-<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
-<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
-<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
-<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
-<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
-<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
-<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看CPU信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
-CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
-<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
-<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
-<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
-<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
-<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
-座：                 <span class="token number">1</span>
-NUMA 节点：         <span class="token number">1</span>
-厂商 ID：           <span class="token class-name">GenuineIntel</span>
-CPU 系列：          <span class="token number">6</span>
-型号：              <span class="token number">70</span>
-型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
-步进：              <span class="token number">1</span>
-CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
-<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
-超管理器厂商：  <span class="token class-name">VMware</span>
-虚拟化类型：     完全
-<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
-<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
-L2 缓存：           <span class="token number">256</span>K
-L3 缓存：           <span class="token number">6144</span>K
-L4 缓存：           <span class="token number">131072</span>K
-NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
-<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1476,6 +1223,184 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </tags>
   </entry>
   <entry>
+    <title>Linux安装软件</title>
+    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
+<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
+<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
+<p><strong>5.2、下载、解压源码</strong></p>
+<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
+<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
+<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
+<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
+<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
+<p>​    1、makefile 文件</p>
+<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
+<p>​    2、make与make install</p>
+<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
+<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
+<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
+<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
+<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
+<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
+<ul>
+<li><p>安装软件包：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>常用选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
+  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
+  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
+                                   被指定未多个软件包，常常会导致错误出现)
+  --badreloc                       对不可重定位的软件包重新分配文件位置
+  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
+  --excludedocs                    不安装程序文档
+  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
+  --force                          --replacepkgs --replacefiles 的缩写
+  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
+  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
+  --ignorearch                     不验证软件包架构
+  --ignoreos                       不验证软件包操作系统
+  --ignoresize                     在安装前不检查磁盘空间
+  -i, --install                    安装软件包
+  --justdb                         更新数据库，但不修改文件系统
+  --nodeps                         不验证软件包依赖
+  --nofiledigest                   不验证文件摘要
+  --nocontexts                     不安装文件的安全上下文
+  --noorder                        不对软件包安装重新排序以满足依赖关系
+  --noscripts                      不执行软件包脚本
+  --notriggers                     不执行本软件包触发的任何脚本
+  --nocollections                  请不要执行任何动作集
+  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
+  --percent                        安装软件包时打印百分比
+  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
+  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
+  --replacefiles                   忽略软件包之间的冲突的文件
+  --replacepkgs                    如果软件包已经有了，重新安装软件包
+  --test                           不真正安装，只是判断下是否能安装
+  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
+  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
+<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
+<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>yum的配置</strong></p>
+<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
+name&#x3D;CentOS-$releasever - cr  
+baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
+gpgcheck&#x3D;1
+gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
+enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>yum的特点与基本用法</strong></p>
+<ol>
+<li><p>yum的特点</p>
+<ul>
+<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
+<li>可以同时配置多个资源库（Repository）</li>
+<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
+<li>保持与RPM数据库的一致性</li>
+</ul>
+</li>
+<li><p>yum的基本用法</p>
+<ul>
+<li><p>如果安装或者删除RPM包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
+[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>检查yum工具更新软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>更新所有的RPM软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>通过yum查询RPM包信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacbookPor-m1</title>
     <url>/blog/2021/12/02/MacbookPor-m1/</url>
     <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
@@ -1490,14 +1415,161 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
 <li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
 </ul>
 <h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m<h3 id="ubuntu、kali-官方都支持arm架构下载即可安装"><a href="#ubuntu、kali-官方都支持arm架构下载即可安装" class="headerlink" title="ubuntu、kali 官方都支持arm架构下载即可安装"></a>ubuntu、kali 官方都支持arm架构下载即可安装</h3><h1 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h1><a href="https://youtu.be/4asztjZXV3o">https://youtu.be/4asztjZXV3o</a></li>
+<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
 </ul>
+<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/s_Mv0HgdeYo">https://youtu.be/s_Mv0HgdeYo</a></p>
 ]]></content>
       <categories>
         <category>MAC M1</category>
       </categories>
       <tags>
         <tag>VMware fuison</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL8.0.27版本二进制安装</title>
+    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>官方推荐：</p>
+<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
+<p>初始化的时候没有密码：–initialize-insecure </p>
+</blockquote>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux控制台的使用</title>
+    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
+<p>#Linux 控制台的使用</p>
+<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
+<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
+<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
+<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+<ul>
+<li><p><strong>查看系统PCI信息</strong></p>
+<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看系统内存信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
+<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
+<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
+<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
+<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
+<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
+<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
+<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
+<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看CPU信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
+CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
+<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
+<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
+<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
+<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
+座：                 <span class="token number">1</span>
+NUMA 节点：         <span class="token number">1</span>
+厂商 ID：           <span class="token class-name">GenuineIntel</span>
+CPU 系列：          <span class="token number">6</span>
+型号：              <span class="token number">70</span>
+型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
+步进：              <span class="token number">1</span>
+CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
+<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
+超管理器厂商：  <span class="token class-name">VMware</span>
+虚拟化类型：     完全
+<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
+<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
+L2 缓存：           <span class="token number">256</span>K
+L3 缓存：           <span class="token number">6144</span>K
+L4 缓存：           <span class="token number">131072</span>K
+NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
+<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1834,81 +1906,10 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
-    <title>MySQL8.0.27版本二进制安装</title>
-    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
-soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
-[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
-[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
-[root@docker mysql827]# ls
-bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
-[mysqld]
-# 选择默认存储引擎为InnoDB
-default-storage-engine&#x3D;InnoDB
-# 用户
-user &#x3D; mysql
-# 监听端口
-port &#x3D; 3306
-#socket通信设置
-socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
-# 安装目录
-basedir&#x3D;&#x2F;app&#x2F;mysql827
-# 数据文件位置
-datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
-# 允许最大连接数 
-max_connections&#x3D;512
-# 等待关闭连接时间
-wait_timeout&#x3D;600
-# 服务端字符集
-character-set-server&#x3D;utf8mb4
-# 错误日志
-log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
-# 默认使用“mysql_native_password”插件认证
-default_authentication_plugin&#x3D;mysql_native_password
-#server-id&#x3D;10
-log_bin&#x3D;gh
-## 兼容sql_mode
-sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>官方推荐：</p>
-<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
-<p>初始化的时候没有密码：–initialize-insecure </p>
-</blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
-[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
-export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#x76;&#49;&#64;&#x31;&#55;&#50;&#46;&#49;&#54;&#x2e;&#x35;&#57;&#x2e;&#49;&#51;&#x33;">&#x64;&#101;&#x76;&#49;&#64;&#x31;&#55;&#50;&#46;&#49;&#54;&#x2e;&#x35;&#57;&#x2e;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#x33;&#51;">&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2954,6 +2955,184 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>Zabbix分布式监控</title>
+    <url>/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/</url>
+    <content><![CDATA[<h1 id="Zabbix简介"><a href="#Zabbix简介" class="headerlink" title="Zabbix简介"></a>Zabbix简介</h1><hr>
+<p>Zabbix 由 Alexei Vladishev 创建，目前由其成立的公司—— Zabbix SIA 积极的持续开发更新维护， 并为用户提供技术支持服务。</p>
+<p>Zabbix 是一个企业级分布式开源监控解决方案。</p>
+<p>Zabbix 软件能够监控众多网络参数和服务器的健康度、完整性。Zabbix 使用灵活的告警机制，允许用户为几乎任何事件配置基于邮件的告警。这样用户可以快速响应服务器问题。Zabbix 基于存储的数据提供出色的报表和数据可视化功能。这些功能使得 Zabbix 成为容量规划的理想选择。</p>
+<p>Zabbix 支持主动轮询（polling）和被动捕获（trapping）。Zabbix所有的报表、统计数据和配置参数都可以通过基于 Web 的前端页面进行访问。基于 Web 的前端页面确保您可以在任何地方访问您监控的网络状态和服务器健康状况。适当的配置后，Zabbix 可以在监控 IT 基础设施方面发挥重要作用。无论是对于有少量服务器的小型组织，还是拥有大量服务器的大企业而言，同样适用。</p>
+<p>Zabbix 是免费的。Zabbix 是根据 GPL 通用公共许可证的第二版编写和发布的。这意味着产品源代码是免费发布的，可供公共使用。</p>
+<h1 id="Zabbix架构"><a href="#Zabbix架构" class="headerlink" title="Zabbix架构"></a><strong>Zabbix架构</strong></h1><hr>
+<p>Zabbix的通用架构是Client/Server架构，分布式架构为Client/Proxy/Server或Client/Node/Server,Zabbix-Server将采集到的数据持久地存储在数据中，用前端UI友好展示给用户。</p>
+<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="点击查看源网页"></p>
+<h1 id="Zabbix-的功能特性"><a href="#Zabbix-的功能特性" class="headerlink" title="Zabbix 的功能特性"></a>Zabbix 的功能特性</h1><hr>
+<p>zabbix有常见的商业监控软件所具备的功能，如主机的性能监控、网络设备、性能监控、数据库监控、FTP等通用协议监控、多种告警方式、详细的报表图表绘制、分布式、可扩展能力、API等。</p>
+<p>Zabbix 是一个高度成熟完善的网络监控解决方案，一个的软件包中包含了多种功能。</p>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/items">数据采集</a></strong></p>
+<ul>
+<li>可用性和性能检查；</li>
+<li>支持 SNMP（包括主动轮询和被动捕获）、IPMI、JMX、VMware 监控；</li>
+<li>自定义检查；</li>
+<li>按照自定义的时间间隔采集需要的数据；</li>
+<li>通过 Server/Proxy 和 Agents 来执行数据采集。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/triggers">灵活的阈值定义</a></strong></p>
+<ul>
+<li>您可以参考后端数据库定义非常灵活的告警阈值，即触发器</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/notifications">高度可配置化的告警</a></strong></p>
+<ul>
+<li>可以根据递增计划、接收者、媒介类型自定义发送告警通知；</li>
+<li>使用宏变量可以使告警通知变得更加高效有用；</li>
+<li>自动操作包含远程执行命令。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization/graphs/simple">实时图形</a></strong></p>
+<ul>
+<li>使用内置图形功能可以将监控项实时绘制成图形。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_monitoring">Web 监控功能</a></strong></p>
+<ul>
+<li>Zabbix可以追踪模拟鼠标在 Web 网站上的点击操作，来检查 Web 网站的功能和响应时间。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization">丰富的可视化选项</a></strong></p>
+<ul>
+<li>可以组合多个监控项到单个视图中，创建自定义图表；</li>
+<li>网络拓扑图；</li>
+<li>以仪表盘样式展示自定义聚合图形和幻灯片演示；</li>
+<li>报表；</li>
+<li>监控资源的更高层次展示视图（业务视图）。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/installation/requirements#database_size">历史数据存储</a></strong></p>
+<ul>
+<li>存储在数据库中的数据；</li>
+<li>历史配置；</li>
+<li>内置数据管理机制（housekeeping）。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/hosts">配置简单</a></strong></p>
+<ul>
+<li>将被监控设备添加为主机；</li>
+<li>主机一旦添加到数据库中，就会采集数据用于监控；</li>
+<li>将模板用于监控设备。</li>
+</ul>
+<p><strong>使用<a href="https://www.zabbix.com/documentation/4.0/manual/config/templates">模板</a></strong></p>
+<ul>
+<li>模板中分组检查；</li>
+<li>模板可以关联模板，继承已关联模板的属性。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/discovery">网络发现</a></strong></p>
+<ul>
+<li>自动发现网络设备；</li>
+<li>Zabbix Agent 发现设备后自动注册；</li>
+<li>自动发现文件系统、网络接口和 SNMP OIDs 值。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_interface">快捷的 Web 界面</a></strong></p>
+<ul>
+<li>基于 PHP 的 Web 前端；</li>
+<li>可以从任何地方访问；</li>
+<li>您可以定制自己的操作方式；</li>
+<li>您可以通过审计日志来查看你的操作。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/api">Zabbix API</a></strong></p>
+<ul>
+<li>Zabbix API 为 Zabbix 提供可编程接口，用于批量操作、第三方软件集成和其他用途。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/users_and_usergroups">权限管理系统</a></strong></p>
+<ul>
+<li>安全的用户身份验证；</li>
+<li>指定的用户只能查看指定的权限范围内的视图。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/agent">功能强大且易于扩展的 Zabbix Agent</a></strong></p>
+<ul>
+<li>部署于被监控对象上；</li>
+<li>支持 Linux 和 Windows ；</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/server">二进制守护进程</a></strong></p>
+<ul>
+<li>为了更好的性能和更少的内存占用，采用 C 语言编写；</li>
+<li>便于移植。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/distributed_monitoring">适应更复杂的环境</a></strong></p>
+<ul>
+<li>使用 Zabbix Proxy 代理，可以轻松实现分布式远程监控。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Zabbix</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>promethues安装之二进制</title>
+    <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+    <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
+<li><p><a href=""><strong>使用预编译的二进制文件</strong></a></p>
+</li>
+<li><p><a href=""><strong>源码安装</strong></a></p>
+</li>
+<li><p><a href=""><strong>docker 安装</strong></a></p>
+</li>
+</ul>
+<h2 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h2><h6 id="2-1-下载并运行-Prometheus"><a href="#2-1-下载并运行-Prometheus" class="headerlink" title="2.1   下载并运行 Prometheus"></a><strong>2.1   下载并运行 Prometheus</strong></h6><p>如何安装、配置和使用一个简单的 Prometheus 实例。您将在本地下载并运行 Prometheus，将其配置为抓取自身和示例应用程序，然后处理查询、规则和图形以使用收集的时间序列数据。</p>
+<p>为您的平台<a href="https://prometheus.io/download">下载最新版本</a>的 Prometheus，然后解压并运行它：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott ~]# wget https:&#x2F;&#x2F;github.com&#x2F;prometheus&#x2F;prometheus&#x2F;releases&#x2F;download&#x2F;v2.29.2&#x2F;prometheus-2.29.2.linux-amd64.tar.gz
+[root@abbott ~]# tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C &#x2F;usr&#x2F;local&#x2F;
+[root@abbott ~]# mv prometheus-2.29.2.linux-amd64 prometheus2.29.2
+[root@abbott ~]# ln -s prometheus2.29.2 prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>2.2  在启动 Prometheus 之前，让我们查看下住配置文件</strong></p>
+<h6 id="配置-Prometheus-监控自身"><a href="#配置-Prometheus-监控自身" class="headerlink" title="配置 Prometheus 监控自身"></a>配置 Prometheus 监控自身</h6><p>Prometheus通过抓取指标 HTTP 端点从<em>目标</em>收集指标。由于 Prometheus 以与自身相同的方式公开数据，因此它还可以抓取和监控自身的健康状况。</p>
+<p>虽然仅收集有关自身数据的 Prometheus 服务器不是很有用，但它是一个很好的入门示例。将以下基本 Prometheus 配置保存为名为 的文件<code>prometheus.yml</code>：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@abbott local<span class="token punctuation">]</span><span class="token comment"># vim prometheus/prometheus.yml</span>
+<span class="token comment"># my global config</span>
+<span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">scrape_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
+  <span class="token key atrule">evaluation_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
+  <span class="token comment"># scrape_timeout is set to the global default (10s).</span>
+<span class="token comment"># Alertmanager configuration</span>
+<span class="token key atrule">alerting</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alertmanagers</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+          <span class="token comment"># - alertmanager:9093</span>
+
+<span class="token comment"># Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
+<span class="token key atrule">rule_files</span><span class="token punctuation">:</span>
+  <span class="token comment"># - "first_rules.yml"</span>
+  <span class="token comment"># - "second_rules.yml"</span>
+
+<span class="token comment"># A scrape configuration containing exactly one endpoint to scrape:</span>
+<span class="token comment"># Here it's Prometheus itself.</span>
+<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
+  <span class="token comment"># The job name is added as a label `job=&lt;job_name>` to any timeseries scraped from this config.</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">"prometheus"</span>
+
+    <span class="token comment"># metrics_path defaults to '/metrics'</span>
+    <span class="token comment"># scheme defaults to 'http'.</span>
+
+    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"localhost:9090"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>2.3 启动普罗米修斯</strong></p>
+<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">[root@abbott prometheus]# .&#x2F;prometheus  &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>普罗米修斯应该启动。您还应该能够在<a href="http://localhost:9090/">localhost:9090</a>浏览到关于它自己的状态页面。给它几秒钟从它自己的 HTTP 指标端点收集关于它自己的数据。</p>
+<p>您还可以通过导航到其指标端点来验证 Prometheus 是否正在提供有关其自身的指标： localhost:9090/metrics</p>
+<p><strong>2.4 同步时间</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott prometheus]# yum install  -y  ntpdate
+[root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>prometheus定义</title>
     <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
     <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
@@ -3051,74 +3230,6 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </tags>
   </entry>
   <entry>
-    <title>promethues安装之二进制</title>
-    <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
-    <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
-<li><p><a href=""><strong>使用预编译的二进制文件</strong></a></p>
-</li>
-<li><p><a href=""><strong>源码安装</strong></a></p>
-</li>
-<li><p><a href=""><strong>docker 安装</strong></a></p>
-</li>
-</ul>
-<h2 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h2><h6 id="2-1-下载并运行-Prometheus"><a href="#2-1-下载并运行-Prometheus" class="headerlink" title="2.1   下载并运行 Prometheus"></a><strong>2.1   下载并运行 Prometheus</strong></h6><p>如何安装、配置和使用一个简单的 Prometheus 实例。您将在本地下载并运行 Prometheus，将其配置为抓取自身和示例应用程序，然后处理查询、规则和图形以使用收集的时间序列数据。</p>
-<p>为您的平台<a href="https://prometheus.io/download">下载最新版本</a>的 Prometheus，然后解压并运行它：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott ~]# wget https:&#x2F;&#x2F;github.com&#x2F;prometheus&#x2F;prometheus&#x2F;releases&#x2F;download&#x2F;v2.29.2&#x2F;prometheus-2.29.2.linux-amd64.tar.gz
-[root@abbott ~]# tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C &#x2F;usr&#x2F;local&#x2F;
-[root@abbott ~]# mv prometheus-2.29.2.linux-amd64 prometheus2.29.2
-[root@abbott ~]# ln -s prometheus2.29.2 prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>2.2  在启动 Prometheus 之前，让我们查看下住配置文件</strong></p>
-<h6 id="配置-Prometheus-监控自身"><a href="#配置-Prometheus-监控自身" class="headerlink" title="配置 Prometheus 监控自身"></a>配置 Prometheus 监控自身</h6><p>Prometheus通过抓取指标 HTTP 端点从<em>目标</em>收集指标。由于 Prometheus 以与自身相同的方式公开数据，因此它还可以抓取和监控自身的健康状况。</p>
-<p>虽然仅收集有关自身数据的 Prometheus 服务器不是很有用，但它是一个很好的入门示例。将以下基本 Prometheus 配置保存为名为 的文件<code>prometheus.yml</code>：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@abbott local<span class="token punctuation">]</span><span class="token comment"># vim prometheus/prometheus.yml</span>
-<span class="token comment"># my global config</span>
-<span class="token key atrule">global</span><span class="token punctuation">:</span>
-  <span class="token key atrule">scrape_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
-  <span class="token key atrule">evaluation_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
-  <span class="token comment"># scrape_timeout is set to the global default (10s).</span>
-<span class="token comment"># Alertmanager configuration</span>
-<span class="token key atrule">alerting</span><span class="token punctuation">:</span>
-  <span class="token key atrule">alertmanagers</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
-          <span class="token comment"># - alertmanager:9093</span>
-
-<span class="token comment"># Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
-<span class="token key atrule">rule_files</span><span class="token punctuation">:</span>
-  <span class="token comment"># - "first_rules.yml"</span>
-  <span class="token comment"># - "second_rules.yml"</span>
-
-<span class="token comment"># A scrape configuration containing exactly one endpoint to scrape:</span>
-<span class="token comment"># Here it's Prometheus itself.</span>
-<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
-  <span class="token comment"># The job name is added as a label `job=&lt;job_name>` to any timeseries scraped from this config.</span>
-  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">"prometheus"</span>
-
-    <span class="token comment"># metrics_path defaults to '/metrics'</span>
-    <span class="token comment"># scheme defaults to 'http'.</span>
-
-    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"localhost:9090"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>2.3 启动普罗米修斯</strong></p>
-<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">[root@abbott prometheus]# .&#x2F;prometheus  &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>普罗米修斯应该启动。您还应该能够在<a href="http://localhost:9090/">localhost:9090</a>浏览到关于它自己的状态页面。给它几秒钟从它自己的 HTTP 指标端点收集关于它自己的数据。</p>
-<p>您还可以通过导航到其指标端点来验证 Prometheus 是否正在提供有关其自身的指标： localhost:9090/metrics</p>
-<p><strong>2.4 同步时间</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott prometheus]# yum install  -y  ntpdate
-[root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>认识Kubernetes</title>
     <url>/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/</url>
     <content><![CDATA[<h2 id="一、Kubernetes-基础"><a href="#一、Kubernetes-基础" class="headerlink" title="一、Kubernetes 基础"></a>一、Kubernetes 基础</h2><h3 id="1-1-Kubernetes-概述"><a href="#1-1-Kubernetes-概述" class="headerlink" title="1.1 Kubernetes 概述"></a>1.1 Kubernetes 概述</h3><p><strong>Kubernetes 是什么</strong></p>
@@ -3200,5 +3311,117 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       <tags>
         <tag>kubernetes</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>初始监控系统及软件</title>
+    <url>/blog/2021/12/04/%E5%88%9D%E5%A7%8B%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%8F%8A%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="监控系统简介"><a href="#监控系统简介" class="headerlink" title="监控系统简介"></a>监控系统简介</h1><hr>
+<p><strong>为何需要监控</strong></p>
+<p>​    在一个IT环境中会存在各种各样的设备，例如：硬件设备、软件设备系统的构成也是非常复杂的。</p>
+<p>​    多种应用构成复杂的IT业务系统，保证这些资源的正常运转，是一个公司IT部门的职责，而要让这些应用能够正常地运行，则需要专业IT人员进行设计、架构、维护和调优。在这个过程中，为了及时掌控基础环境和业务应用系统的可用性，需要获取各个组件的运行状态，如CPU的利用率、系统负载、服务的运行、端口的连通、带宽流量、网站访问状态码等信息。而这一切都离不开监控系统。</p>
+<p><strong>监控系统的实现</strong></p>
+<p>一个监控系统的组成大体可以分为两部分：数据采集部分（客户端）和数据存储分析告警展示部分（服务端）</p>
+<p><strong>数据采集：</strong>工作模式可以分为被动模式和主动模式</p>
+<ul>
+<li><p>被动模式：服务端到客户端采集数据</p>
+</li>
+<li><p>主动模式：客户端主动上报数据到服务端</p>
+</li>
+</ul>
+<p><strong>数据采集方式：</strong>专用客户端采集和共用协议采集 </p>
+<h1 id="监控系统的软件"><a href="#监控系统的软件" class="headerlink" title="监控系统的软件"></a>监控系统的软件</h1><hr>
+<p>在监控软件中，开源的解决方案有流量监控（MRTG、Cati、SmokePing、Craphite等）和性能告警（Nagios、Zabbix、Zenoss Core、Ganglia、OpenTSDB等）可供选择，并且每种软件都有自己的特点和功能，各自的侧重点和目标不完全相同，在设计理念和实现方法上也大同小异，但都具有共同特征，例如：采集数据、分析展示、告警以及简单的故障自动处理。</p>
+<p><strong>MRTG</strong></p>
+<hr>
+<p>MRTG（Multi Router Traffic Grapher）是一套可用来绘制流量图的软件，由瑞士奥尔滕的Tobias Oetiker与Dave Rand所开发，以GPL授权。</p>
+<p>MRTG最早的版本是在1995年推出的，用Perl语言写成，可夸平台使用，数据采集用SNMP协议，MRTG将收集到的数据通过Web页面以GIF或PNG格式绘制出图像，并以日、周、月为单位分别绘出，可以查询最大值和最小值。</p>
+<p>现在出了各种插件，因此也可以监控服务器的硬盘使用量、CPU的负载等</p>
+<p><img src="https://cdn.pcwdld.com/wp-content/uploads/gui-screenshot.jpg" class="lazyload placeholder" data-srcset="https://cdn.pcwdld.com/wp-content/uploads/gui-screenshot.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Best MRTG Alternatives for Network Monitoring &amp; Traffic Graphing 2021"></p>
+<p><strong>Cacti</strong></p>
+<hr>
+<p>Cacti(英文含义为仙人掌)是一套基于PHP、MySQL、SNMP和RRDtool开发的网络流量监测图形分析工具，</p>
+<p><img src="https://www.linuxidc.com/upload/2012_09/120921143047331.jpg" class="lazyload placeholder" data-srcset="https://www.linuxidc.com/upload/2012_09/120921143047331.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Cacti监控H3C交换机不显示端口解决办法"></p>
+<p><strong>SmokePing</strong></p>
+<hr>
+<p>SmokePing主要用于监控网络性能，包括常规的ping、www服务器性能DNS查询性能、SSH性能等，底层也用RRDtool做支持，特点是绘制的图非常漂亮，网络丢吧和延迟用颜色和阴影来表示，支持将多张叠放在一起.</p>
+<p><img src="https://oss.oetiker.ch/smokeping/doc/reading_multihost.png" class="lazyload placeholder" data-srcset="https://oss.oetiker.ch/smokeping/doc/reading_multihost.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="示例多主机图"></p>
+<p><strong>Graphite</strong></p>
+<hr>
+<p>Graphite 是一个用于采集网站实时信息进行统计的开源项目。Graphite服务支持平均每分钟4800次更新操作，采用简单文本协议，具有绘图功能，其即插即用的功能可方便地用于任何需要监控的系统上。</p>
+<p>Graphite本身并不收集具体的数据，这些数据收集的工作通常由第三方工具或插件完成，因此，可以说Graphite是一个绘图工具。</p>
+<p><strong>Nagios</strong></p>
+<hr>
+<p>Nagios 是一个企业级的监控系统，可监控服务的运行状态和网络信息等，并能监视所有指定的本地或远程主机参数以及服务，同时提供异常告警通知功能等；</p>
+<p>Nagios可运行在Linux和Unix平台上，同时提供一个可选的基于浏览器的web界面，以方便管理人员的可用性，能及时根据触发条件告警。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/ScalableGridEngineNagios2.png" class="lazyload placeholder" data-srcset="https://upload.wikimedia.org/wikipedia/commons/4/48/ScalableGridEngineNagios2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><strong>Zenoss Core</strong></p>
+<hr>
+<p>Zenoss Core (简称：Zenoss)是开源企业级IT管理软件，它允许IT管理依靠单一的web控制台来监控网络架构的状态和监控度。</p>
+<p><strong>Ganglia</strong></p>
+<hr>
+<p>Ganglia 是一个跨平台的、可扩展的、高性能的分布式监控系统，如集群和网络。它基于分层设计，使用广泛的技术，用RRDtool存储数据，具有可视化界面，适合于对集群系统的自动化监控。其精心设计的数据结构和算法使得监控端到被监控端的连接开销非常低。目前已经有成千上万的集群正在使用这个监控系统，可以轻松地处理2000个节点的集群环境。</p>
+<p><strong>OpenTSDB</strong></p>
+<hr>
+<p>开源监控系统openTSDB用HBase存储所有时序（无需采样）的数据，来构建一个分布式、可伸缩的时间序列数据库。它支持秒级数据采集，支持永久存储，可以做容量规划，并很容易地接入到现有的告警系统里，OpenTSDB可以从大规模的集群（包括集群中的网络设备、操作系统、应用程序）中获取相应的采集指标，并进行存储、索引和服务，从而使这些数据更容易让人理解，如WEB化、图形化等</p>
+<p><strong>Zabbix</strong></p>
+<hr>
+<p>Zabbix 是一个分布式监控系统，支持多种采集方式和采集客户端，有专用的Agent（代理），也可以支持SNMP、IPMI、JMX、等多种协议，它将采集的数据存放到数据库，然后对其进行分析整理，达到条件触发告警。</p>
+<p><strong>监控系统的原理</strong></p>
+<hr>
+<p><strong>监控的诞生</strong></p>
+<p>对出现的故障，能及时通知告警和故障的自动修复，对运维人员响应处理故障的速度会大大加快，甚至在异常严重的故障情况下，对及时采用应急预案，有不可或缺的作用，如果没有监控，故障的反馈往往来自用户的报告，然后才由运维人员处理。</p>
+<p><strong>监控系统的实现</strong></p>
+<p>监控系统往往需要对物理硬件和应用软件的性能和参数进行数据汇集，实现集中管理和同一分析。</p>
+<p>在一个监控系统中，构成要素为监控服务器端程序、数据存储、被采集节点等相关模块，其告警分析和自动故障处理功能由服务器执行。</p>
+<p>监控系统需要提供一个API，方便其他功能系统对监控数据进行管理，这在业务系统精密的情况下显得特别重要，通常对外提供API功能的软件；</p>
+<p><strong>监控系统性能指标</strong></p>
+<table>
+<thead>
+<tr>
+<th>监控项目</th>
+<th>详细内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主机监控</td>
+<td>CPU、内存、磁盘的剩余空间/利用率/I/O SWAP使用率、系统UP时间、进程数、负载</td>
+</tr>
+<tr>
+<td>网卡监控</td>
+<td>ping的往返时间及包成功率、网卡流量，包括流入/流出量和错误的数据包数</td>
+</tr>
+<tr>
+<td>文件监控</td>
+<td>监控文件大小，Hash值，匹配查询、字符串存在与否</td>
+</tr>
+<tr>
+<td>URL监控</td>
+<td>监测指定URL访问过程中的返回码、下载时间及文件大小、支持内容匹配</td>
+</tr>
+<tr>
+<td>应用程序</td>
+<td>端口和内存使用率、CPU使用率、服务状态、请求数、并发连接数、消息队列的字节数、<br />Client事务处理数、service状态等</td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>监控数据库中指定的表空间、数据库的游标数、Session数、事务数、死锁数、缓冲池命中率、<br />库Cache命中率、当前连接数、进程的内存利用率等性能参数</td>
+</tr>
+<tr>
+<td>日志</td>
+<td>错误日志匹配、特定字符串匹配</td>
+</tr>
+<tr>
+<td>硬件</td>
+<td>温度、风扇转速、电压等</td>
+</tr>
+</tbody></table>
+<p><strong>监控系统对时间的要求</strong></p>
+<p>监控系统需要根据实际应用的需求，实时/非实时地采集和展示数据。另外，包括历史趋势数据的展示和分析，以及容量报表、可用性报告的生成。</p>
+<p><strong>监控系统的告警需要</strong></p>
+<p>支持多种方式，如短信、邮件、IM和其他接口，具备可定制化功能，对第三方告警介质提供可编程接口。</p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
   </entry>
 </search>
