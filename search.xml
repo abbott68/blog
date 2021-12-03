@@ -1,44 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>5.7多实例</title>
     <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
@@ -133,6 +95,44 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
       </tags>
   </entry>
   <entry>
@@ -280,6 +280,184 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux安装软件</title>
+    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
+<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
+<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
+<p><strong>5.2、下载、解压源码</strong></p>
+<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
+<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
+<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
+<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
+<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
+<p>​    1、makefile 文件</p>
+<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
+<p>​    2、make与make install</p>
+<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
+<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
+<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
+<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
+<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
+<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
+<ul>
+<li><p>安装软件包：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>常用选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
+  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
+  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
+                                   被指定未多个软件包，常常会导致错误出现)
+  --badreloc                       对不可重定位的软件包重新分配文件位置
+  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
+  --excludedocs                    不安装程序文档
+  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
+  --force                          --replacepkgs --replacefiles 的缩写
+  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
+  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
+  --ignorearch                     不验证软件包架构
+  --ignoreos                       不验证软件包操作系统
+  --ignoresize                     在安装前不检查磁盘空间
+  -i, --install                    安装软件包
+  --justdb                         更新数据库，但不修改文件系统
+  --nodeps                         不验证软件包依赖
+  --nofiledigest                   不验证文件摘要
+  --nocontexts                     不安装文件的安全上下文
+  --noorder                        不对软件包安装重新排序以满足依赖关系
+  --noscripts                      不执行软件包脚本
+  --notriggers                     不执行本软件包触发的任何脚本
+  --nocollections                  请不要执行任何动作集
+  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
+  --percent                        安装软件包时打印百分比
+  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
+  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
+  --replacefiles                   忽略软件包之间的冲突的文件
+  --replacepkgs                    如果软件包已经有了，重新安装软件包
+  --test                           不真正安装，只是判断下是否能安装
+  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
+  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
+<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
+<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>yum的配置</strong></p>
+<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
+name&#x3D;CentOS-$releasever - cr  
+baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
+gpgcheck&#x3D;1
+gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
+enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>yum的特点与基本用法</strong></p>
+<ol>
+<li><p>yum的特点</p>
+<ul>
+<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
+<li>可以同时配置多个资源库（Repository）</li>
+<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
+<li>保持与RPM数据库的一致性</li>
+</ul>
+</li>
+<li><p>yum的基本用法</p>
+<ul>
+<li><p>如果安装或者删除RPM包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
+[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>检查yum工具更新软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>更新所有的RPM软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>通过yum查询RPM包信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -1223,281 +1401,6 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </tags>
   </entry>
   <entry>
-    <title>Linux安装软件</title>
-    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
-<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
-<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
-<p><strong>5.2、下载、解压源码</strong></p>
-<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
-<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
-<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
-<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
-<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
-<p>​    1、makefile 文件</p>
-<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
-<p>​    2、make与make install</p>
-<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
-<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
-<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
-<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
-<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
-<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
-<ul>
-<li><p>安装软件包：</p>
-<p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>常用选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
-  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
-  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
-                                   被指定未多个软件包，常常会导致错误出现)
-  --badreloc                       对不可重定位的软件包重新分配文件位置
-  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
-  --excludedocs                    不安装程序文档
-  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
-  --force                          --replacepkgs --replacefiles 的缩写
-  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
-  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
-  --ignorearch                     不验证软件包架构
-  --ignoreos                       不验证软件包操作系统
-  --ignoresize                     在安装前不检查磁盘空间
-  -i, --install                    安装软件包
-  --justdb                         更新数据库，但不修改文件系统
-  --nodeps                         不验证软件包依赖
-  --nofiledigest                   不验证文件摘要
-  --nocontexts                     不安装文件的安全上下文
-  --noorder                        不对软件包安装重新排序以满足依赖关系
-  --noscripts                      不执行软件包脚本
-  --notriggers                     不执行本软件包触发的任何脚本
-  --nocollections                  请不要执行任何动作集
-  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
-  --percent                        安装软件包时打印百分比
-  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
-  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
-  --replacefiles                   忽略软件包之间的冲突的文件
-  --replacepkgs                    如果软件包已经有了，重新安装软件包
-  --test                           不真正安装，只是判断下是否能安装
-  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
-  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
-<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
-<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>yum的配置</strong></p>
-<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
-name&#x3D;CentOS-$releasever - cr  
-baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
-gpgcheck&#x3D;1
-gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
-enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>yum的特点与基本用法</strong></p>
-<ol>
-<li><p>yum的特点</p>
-<ul>
-<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
-<li>可以同时配置多个资源库（Repository）</li>
-<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
-<li>保持与RPM数据库的一致性</li>
-</ul>
-</li>
-<li><p>yum的基本用法</p>
-<ul>
-<li><p>如果安装或者删除RPM包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
-[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>检查yum工具更新软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>更新所有的RPM软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>通过yum查询RPM包信息</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacbookPor-m1</title>
-    <url>/blog/2021/12/02/MacbookPor-m1/</url>
-    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
-<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
-</ul>
-<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
-<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
-</ul>
-<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
-<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
-</ul>
-<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
-</ul>
-<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/s_Mv0HgdeYo">https://youtu.be/s_Mv0HgdeYo</a></p>
-]]></content>
-      <categories>
-        <category>MAC M1</category>
-      </categories>
-      <tags>
-        <tag>VMware fuison</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL8.0.27版本二进制安装</title>
-    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
-soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
-[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
-[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
-[root@docker mysql827]# ls
-bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
-[mysqld]
-# 选择默认存储引擎为InnoDB
-default-storage-engine&#x3D;InnoDB
-# 用户
-user &#x3D; mysql
-# 监听端口
-port &#x3D; 3306
-#socket通信设置
-socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
-# 安装目录
-basedir&#x3D;&#x2F;app&#x2F;mysql827
-# 数据文件位置
-datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
-# 允许最大连接数 
-max_connections&#x3D;512
-# 等待关闭连接时间
-wait_timeout&#x3D;600
-# 服务端字符集
-character-set-server&#x3D;utf8mb4
-# 错误日志
-log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
-# 默认使用“mysql_native_password”插件认证
-default_authentication_plugin&#x3D;mysql_native_password
-#server-id&#x3D;10
-log_bin&#x3D;gh
-## 兼容sql_mode
-sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>官方推荐：</p>
-<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
-<p>初始化的时候没有密码：–initialize-insecure </p>
-</blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
-[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
-export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux控制台的使用</title>
     <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
@@ -1570,6 +1473,32 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacbookPor-m1</title>
+    <url>/blog/2021/12/02/MacbookPor-m1/</url>
+    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
+<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
+</ul>
+<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
+<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
+</ul>
+<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
+<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
+</ul>
+<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
+</ul>
+<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/s_Mv0HgdeYo">https://youtu.be/s_Mv0HgdeYo</a></p>
+]]></content>
+      <categories>
+        <category>MAC M1</category>
+      </categories>
+      <tags>
+        <tag>VMware fuison</tag>
       </tags>
   </entry>
   <entry>
@@ -1781,6 +1710,77 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
+    <title>MySQL8.0.27版本二进制安装</title>
+    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>官方推荐：</p>
+<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
+<p>初始化的时候没有密码：–initialize-insecure </p>
+</blockquote>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL优化和运维之道</title>
     <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
     <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
@@ -1909,7 +1909,7 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#x33;&#51;">&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#46;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#118;&#x31;&#x40;&#x31;&#55;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#46;&#x31;&#x33;&#x33;">&#x64;&#x65;&#118;&#x31;&#x40;&#x31;&#55;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#46;&#x31;&#x33;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2349,6 +2349,114 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
+    <title>Python 函数</title>
+    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
+</ul>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
+</blockquote>
+</li>
+</ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
     <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -2492,114 +2600,6 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </tags>
   </entry>
   <entry>
-    <title>Python 函数</title>
-    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
-<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
-<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
-<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
-</ul>
-<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
-<ol>
-<li><p>函数定义基本语法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    函数体
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>def  关键字</p>
-<p>函数体： 函数体为实现函数功能的相关代码段。</p>
-<p>返回值： return 语句后面空一格，跟需要返回的</p>
-</blockquote>
-</li>
-</ol>
-<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
-<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
-<p>Python里不用像C语言里需要先申明函数再使用。</p>
-<p>如下实例调用了<code>printme()</code>函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token comment">#定义函数</span>
-<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-
-printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
-<ul>
-<li>必选参数：<code>fun(name, age)</code></li>
-<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
-<li>可变参数：<code>fun(*args)</code></li>
-<li>关键字参数：<code>fun(name, age, **kw)</code></li>
-<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
-</ul>
-<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
-<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
-#定义函数
-def printme(str):
-    print(str)
-    return;
-printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出 结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span>
-
-<span class="token comment">#调用函数</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
-age <span class="token number">35</span>
-name abott
-age <span class="token number">50</span>
-name abbott
-age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    function_suite
-    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-
-r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python初始</title>
     <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[]]></content>
@@ -2608,6 +2608,116 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
       </categories>
       <tags>
         <tag>Pyhon语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zabbix分布式监控</title>
+    <url>/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/</url>
+    <content><![CDATA[<h1 id="Zabbix简介"><a href="#Zabbix简介" class="headerlink" title="Zabbix简介"></a>Zabbix简介</h1><hr>
+<p>Zabbix 由 Alexei Vladishev 创建，目前由其成立的公司—— Zabbix SIA 积极的持续开发更新维护， 并为用户提供技术支持服务。</p>
+<p>Zabbix 是一个企业级分布式开源监控解决方案。</p>
+<p>Zabbix 软件能够监控众多网络参数和服务器的健康度、完整性。Zabbix 使用灵活的告警机制，允许用户为几乎任何事件配置基于邮件的告警。这样用户可以快速响应服务器问题。Zabbix 基于存储的数据提供出色的报表和数据可视化功能。这些功能使得 Zabbix 成为容量规划的理想选择。</p>
+<p>Zabbix 支持主动轮询（polling）和被动捕获（trapping）。Zabbix所有的报表、统计数据和配置参数都可以通过基于 Web 的前端页面进行访问。基于 Web 的前端页面确保您可以在任何地方访问您监控的网络状态和服务器健康状况。适当的配置后，Zabbix 可以在监控 IT 基础设施方面发挥重要作用。无论是对于有少量服务器的小型组织，还是拥有大量服务器的大企业而言，同样适用。</p>
+<p>Zabbix 是免费的。Zabbix 是根据 GPL 通用公共许可证的第二版编写和发布的。这意味着产品源代码是免费发布的，可供公共使用。</p>
+<h1 id="Zabbix架构"><a href="#Zabbix架构" class="headerlink" title="Zabbix架构"></a><strong>Zabbix架构</strong></h1><hr>
+<p>Zabbix的通用架构是Client/Server架构，分布式架构为Client/Proxy/Server或Client/Node/Server,Zabbix-Server将采集到的数据持久地存储在数据中，用前端UI友好展示给用户。</p>
+<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="点击查看源网页"></p>
+<h1 id="Zabbix-的功能特性"><a href="#Zabbix-的功能特性" class="headerlink" title="Zabbix 的功能特性"></a>Zabbix 的功能特性</h1><hr>
+<p>zabbix有常见的商业监控软件所具备的功能，如主机的性能监控、网络设备、性能监控、数据库监控、FTP等通用协议监控、多种告警方式、详细的报表图表绘制、分布式、可扩展能力、API等。</p>
+<p>Zabbix 是一个高度成熟完善的网络监控解决方案，一个的软件包中包含了多种功能。</p>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/items">数据采集</a></strong></p>
+<ul>
+<li>可用性和性能检查；</li>
+<li>支持 SNMP（包括主动轮询和被动捕获）、IPMI、JMX、VMware 监控；</li>
+<li>自定义检查；</li>
+<li>按照自定义的时间间隔采集需要的数据；</li>
+<li>通过 Server/Proxy 和 Agents 来执行数据采集。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/triggers">灵活的阈值定义</a></strong></p>
+<ul>
+<li>您可以参考后端数据库定义非常灵活的告警阈值，即触发器</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/notifications">高度可配置化的告警</a></strong></p>
+<ul>
+<li>可以根据递增计划、接收者、媒介类型自定义发送告警通知；</li>
+<li>使用宏变量可以使告警通知变得更加高效有用；</li>
+<li>自动操作包含远程执行命令。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization/graphs/simple">实时图形</a></strong></p>
+<ul>
+<li>使用内置图形功能可以将监控项实时绘制成图形。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_monitoring">Web 监控功能</a></strong></p>
+<ul>
+<li>Zabbix可以追踪模拟鼠标在 Web 网站上的点击操作，来检查 Web 网站的功能和响应时间。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization">丰富的可视化选项</a></strong></p>
+<ul>
+<li>可以组合多个监控项到单个视图中，创建自定义图表；</li>
+<li>网络拓扑图；</li>
+<li>以仪表盘样式展示自定义聚合图形和幻灯片演示；</li>
+<li>报表；</li>
+<li>监控资源的更高层次展示视图（业务视图）。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/installation/requirements#database_size">历史数据存储</a></strong></p>
+<ul>
+<li>存储在数据库中的数据；</li>
+<li>历史配置；</li>
+<li>内置数据管理机制（housekeeping）。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/hosts">配置简单</a></strong></p>
+<ul>
+<li>将被监控设备添加为主机；</li>
+<li>主机一旦添加到数据库中，就会采集数据用于监控；</li>
+<li>将模板用于监控设备。</li>
+</ul>
+<p><strong>使用<a href="https://www.zabbix.com/documentation/4.0/manual/config/templates">模板</a></strong></p>
+<ul>
+<li>模板中分组检查；</li>
+<li>模板可以关联模板，继承已关联模板的属性。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/discovery">网络发现</a></strong></p>
+<ul>
+<li>自动发现网络设备；</li>
+<li>Zabbix Agent 发现设备后自动注册；</li>
+<li>自动发现文件系统、网络接口和 SNMP OIDs 值。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_interface">快捷的 Web 界面</a></strong></p>
+<ul>
+<li>基于 PHP 的 Web 前端；</li>
+<li>可以从任何地方访问；</li>
+<li>您可以定制自己的操作方式；</li>
+<li>您可以通过审计日志来查看你的操作。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/api">Zabbix API</a></strong></p>
+<ul>
+<li>Zabbix API 为 Zabbix 提供可编程接口，用于批量操作、第三方软件集成和其他用途。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/users_and_usergroups">权限管理系统</a></strong></p>
+<ul>
+<li>安全的用户身份验证；</li>
+<li>指定的用户只能查看指定的权限范围内的视图。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/agent">功能强大且易于扩展的 Zabbix Agent</a></strong></p>
+<ul>
+<li>部署于被监控对象上；</li>
+<li>支持 Linux 和 Windows ；</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/server">二进制守护进程</a></strong></p>
+<ul>
+<li>为了更好的性能和更少的内存占用，采用 C 语言编写；</li>
+<li>便于移植。</li>
+</ul>
+<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/distributed_monitoring">适应更复杂的环境</a></strong></p>
+<ul>
+<li>使用 Zabbix Proxy 代理，可以轻松实现分布式远程监控。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Zabbix</tag>
       </tags>
   </entry>
   <entry>
@@ -2955,113 +3065,40 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>Zabbix分布式监控</title>
-    <url>/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/</url>
-    <content><![CDATA[<h1 id="Zabbix简介"><a href="#Zabbix简介" class="headerlink" title="Zabbix简介"></a>Zabbix简介</h1><hr>
-<p>Zabbix 由 Alexei Vladishev 创建，目前由其成立的公司—— Zabbix SIA 积极的持续开发更新维护， 并为用户提供技术支持服务。</p>
-<p>Zabbix 是一个企业级分布式开源监控解决方案。</p>
-<p>Zabbix 软件能够监控众多网络参数和服务器的健康度、完整性。Zabbix 使用灵活的告警机制，允许用户为几乎任何事件配置基于邮件的告警。这样用户可以快速响应服务器问题。Zabbix 基于存储的数据提供出色的报表和数据可视化功能。这些功能使得 Zabbix 成为容量规划的理想选择。</p>
-<p>Zabbix 支持主动轮询（polling）和被动捕获（trapping）。Zabbix所有的报表、统计数据和配置参数都可以通过基于 Web 的前端页面进行访问。基于 Web 的前端页面确保您可以在任何地方访问您监控的网络状态和服务器健康状况。适当的配置后，Zabbix 可以在监控 IT 基础设施方面发挥重要作用。无论是对于有少量服务器的小型组织，还是拥有大量服务器的大企业而言，同样适用。</p>
-<p>Zabbix 是免费的。Zabbix 是根据 GPL 通用公共许可证的第二版编写和发布的。这意味着产品源代码是免费发布的，可供公共使用。</p>
-<h1 id="Zabbix架构"><a href="#Zabbix架构" class="headerlink" title="Zabbix架构"></a><strong>Zabbix架构</strong></h1><hr>
-<p>Zabbix的通用架构是Client/Server架构，分布式架构为Client/Proxy/Server或Client/Node/Server,Zabbix-Server将采集到的数据持久地存储在数据中，用前端UI友好展示给用户。</p>
-<p><img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" class="lazyload placeholder" data-srcset="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2371460695,4125660326&fm=26&gp=0.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="点击查看源网页"></p>
-<h1 id="Zabbix-的功能特性"><a href="#Zabbix-的功能特性" class="headerlink" title="Zabbix 的功能特性"></a>Zabbix 的功能特性</h1><hr>
-<p>zabbix有常见的商业监控软件所具备的功能，如主机的性能监控、网络设备、性能监控、数据库监控、FTP等通用协议监控、多种告警方式、详细的报表图表绘制、分布式、可扩展能力、API等。</p>
-<p>Zabbix 是一个高度成熟完善的网络监控解决方案，一个的软件包中包含了多种功能。</p>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/items">数据采集</a></strong></p>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
 <ul>
-<li>可用性和性能检查；</li>
-<li>支持 SNMP（包括主动轮询和被动捕获）、IPMI、JMX、VMware 监控；</li>
-<li>自定义检查；</li>
-<li>按照自定义的时间间隔采集需要的数据；</li>
-<li>通过 Server/Proxy 和 Agents 来执行数据采集。</li>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
 </ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/triggers">灵活的阈值定义</a></strong></p>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
 <ul>
-<li>您可以参考后端数据库定义非常灵活的告警阈值，即触发器</li>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
 </ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/notifications">高度可配置化的告警</a></strong></p>
-<ul>
-<li>可以根据递增计划、接收者、媒介类型自定义发送告警通知；</li>
-<li>使用宏变量可以使告警通知变得更加高效有用；</li>
-<li>自动操作包含远程执行命令。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization/graphs/simple">实时图形</a></strong></p>
-<ul>
-<li>使用内置图形功能可以将监控项实时绘制成图形。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_monitoring">Web 监控功能</a></strong></p>
-<ul>
-<li>Zabbix可以追踪模拟鼠标在 Web 网站上的点击操作，来检查 Web 网站的功能和响应时间。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/visualization">丰富的可视化选项</a></strong></p>
-<ul>
-<li>可以组合多个监控项到单个视图中，创建自定义图表；</li>
-<li>网络拓扑图；</li>
-<li>以仪表盘样式展示自定义聚合图形和幻灯片演示；</li>
-<li>报表；</li>
-<li>监控资源的更高层次展示视图（业务视图）。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/installation/requirements#database_size">历史数据存储</a></strong></p>
-<ul>
-<li>存储在数据库中的数据；</li>
-<li>历史配置；</li>
-<li>内置数据管理机制（housekeeping）。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/hosts">配置简单</a></strong></p>
-<ul>
-<li>将被监控设备添加为主机；</li>
-<li>主机一旦添加到数据库中，就会采集数据用于监控；</li>
-<li>将模板用于监控设备。</li>
-</ul>
-<p><strong>使用<a href="https://www.zabbix.com/documentation/4.0/manual/config/templates">模板</a></strong></p>
-<ul>
-<li>模板中分组检查；</li>
-<li>模板可以关联模板，继承已关联模板的属性。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/discovery">网络发现</a></strong></p>
-<ul>
-<li>自动发现网络设备；</li>
-<li>Zabbix Agent 发现设备后自动注册；</li>
-<li>自动发现文件系统、网络接口和 SNMP OIDs 值。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/web_interface">快捷的 Web 界面</a></strong></p>
-<ul>
-<li>基于 PHP 的 Web 前端；</li>
-<li>可以从任何地方访问；</li>
-<li>您可以定制自己的操作方式；</li>
-<li>您可以通过审计日志来查看你的操作。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/api">Zabbix API</a></strong></p>
-<ul>
-<li>Zabbix API 为 Zabbix 提供可编程接口，用于批量操作、第三方软件集成和其他用途。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/config/users_and_usergroups">权限管理系统</a></strong></p>
-<ul>
-<li>安全的用户身份验证；</li>
-<li>指定的用户只能查看指定的权限范围内的视图。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/agent">功能强大且易于扩展的 Zabbix Agent</a></strong></p>
-<ul>
-<li>部署于被监控对象上；</li>
-<li>支持 Linux 和 Windows ；</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/concepts/server">二进制守护进程</a></strong></p>
-<ul>
-<li>为了更好的性能和更少的内存占用，采用 C 语言编写；</li>
-<li>便于移植。</li>
-</ul>
-<p><strong><a href="https://www.zabbix.com/documentation/4.0/manual/distributed_monitoring">适应更复杂的环境</a></strong></p>
-<ul>
-<li>使用 Zabbix Proxy 代理，可以轻松实现分布式远程监控。</li>
-</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 ]]></content>
       <categories>
         <category>监控系统</category>
       </categories>
       <tags>
-        <tag>Zabbix</tag>
+        <tag>prometheus</tag>
       </tags>
   </entry>
   <entry>
@@ -3130,186 +3167,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </categories>
       <tags>
         <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装Docker</title>
-    <url>/blog/2021/12/04/%E5%AE%89%E8%A3%85Docker/</url>
-    <content><![CDATA[<h1 id="安装引擎"><a href="#安装引擎" class="headerlink" title="安装引擎"></a><strong>安装引擎</strong></h1><p>docker 引擎是使用docker容器的核心组件，可以在主流的操作系统和云平台上使用。</p>
-<p>docker 可以安装Linux操作系统 MacOS Windows系统之上以及云平台之上。</p>
-<h2 id="Centos-环境下安装docker"><a href="#Centos-环境下安装docker" class="headerlink" title="Centos 环境下安装docker"></a>Centos 环境下安装docker</h2><p>  安装<code>yum-utils</code>软件包（提供<code>yum-config-manager</code> 实用程序）并设置<strong>稳定的</strong>存储库。</p>
-  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# yum install -y yum-utils
-[root@docker ~]# yum-config-manager \
-     --add-repo \
-    https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="安装最新版本Docker-Engine"><a href="#安装最新版本Docker-Engine" class="headerlink" title="安装最新版本Docker Engine"></a>安装最新版本Docker Engine</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker]# yum install docker-ce docker-ce-cli containerd.io -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# docker version   #查看版本信息
-[root@docker ~]# docker info			#查看docker详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="ubunt-环境下安装docker"><a href="#ubunt-环境下安装docker" class="headerlink" title="ubunt 环境下安装docker"></a>ubunt 环境下安装docker</h2>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">@buntu:~$ sudo apt-get install \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     gnupg \
-     lsb-release
-@buntu:~$  echo   &quot;deb [arch&#x3D;amd64 signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg] https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu \
-  $(lsb_release -cs) stable&quot; | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list &gt; &#x2F;dev&#x2F;null
-     
-@ubuntu:~$  curl -fsSL https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu&#x2F;gpg | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg
-@buntu:~$  sudo apt-get update
-@buntu:~$  sudo apt-get install docker-ce docker-ce-cli containerd.io
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="开启路由转发"><a href="#开启路由转发" class="headerlink" title="开启路由转发"></a><strong>开启路由转发</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#查看路由转发是否开启，1 开发 0 未开启
-[root@docker ~]# sysctl -a | grep -w net.ipv4.ip_forward
-net.ipv4.ip_forward &#x3D; 1
-#开启路由转发功能
-[root@docker ~]# cat &gt; &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf &lt;&lt; EOF
-net.ipv4.ip_forward &#x3D; 1
-net.bridge.bridge-nf-call-ip6tables &#x3D; 1
-net.bridge.bridge-nf-call-iptables &#x3D; 1
-EOF
-#加载并生效（不用重新启动服务器）
-[root@docker ~]# sysctl -p &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="配置docker加速器"><a href="#配置docker加速器" class="headerlink" title="配置docker加速器"></a><strong>配置docker加速器</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">阿里docker镜像加速器地址
-https:&#x2F;&#x2F;cr.console.aliyun.com&#x2F;cn-hangzhou&#x2F;instances&#x2F;mirrors 
-配置docker镜像加速器文件地址
-vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;0pnfs8l6.mirror.aliyuncs.com&quot;]
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="docker-命令解释"><a href="#docker-命令解释" class="headerlink" title="docker 命令解释"></a><strong>docker 命令解释</strong></h1><p><img src="https://oss.coydone.com/md/linux/20201027083323.png/change01" class="lazyload placeholder" data-srcset="https://oss.coydone.com/md/linux/20201027083323.png/change01" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Docker命令、镜像及容器卷- coydone的技术小站"></p>
-]]></content>
-      <categories>
-        <category>Container</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>认识Kubernetes</title>
-    <url>/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/</url>
-    <content><![CDATA[<h2 id="一、Kubernetes-基础"><a href="#一、Kubernetes-基础" class="headerlink" title="一、Kubernetes 基础"></a>一、Kubernetes 基础</h2><h3 id="1-1-Kubernetes-概述"><a href="#1-1-Kubernetes-概述" class="headerlink" title="1.1 Kubernetes 概述"></a>1.1 Kubernetes 概述</h3><p><strong>Kubernetes 是什么</strong></p>
-<p>Kubernetes(k8s)是Google开源由CNCF基金会管理的容器集群管理系统。为容器化的应用提供部署运行、资源调度、服务发现和动态伸缩等一系列完整功能。Kubernetes 被称为现在化的数据中心操作系统，大家都知道，操作系统是用来管理硬件资源比如 CPU、内存、磁盘、输入输出设备等资源的，并完成对这些资源的调度。而 Kubernetes 是将数据中心里的物理节点作为管理对象，并对物理节点上的资源进行调度完成编排任务。操作系统的另一个特性就是容易扩展，比如，当 GPU 这种硬件出现后，操作系统应该很容扩展去管理这种资源，Kubernetes 作为数据中心操作系统同样也有这样的特性，它也非常容易扩展。</p>
-<h3 id="1-2-Kubernetes-架构"><a href="#1-2-Kubernetes-架构" class="headerlink" title="1.2 Kubernetes 架构"></a>1.2 Kubernetes 架构</h3><p>Kubernetes 的架构从宏观层面的来讲分为两个平面，即控制平面和计算平面，控制平面又称为 Master 节点，Master 节点是整个集群的大脑，负责控制、调度集群资源；计算平面又称为 Node 节点，Node 节点负责运行工作负载，是 Master 节点调度的对象。kubectl 作为 Kubernetes 客户端通过和 Master 节点直接进行通信来控制 Kubernetes 集群。</p>
-<p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 架构"></p>
-<h4 id="控制节点"><a href="#控制节点" class="headerlink" title="控制节点"></a><strong>控制节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Master"></p>
-<ul>
-<li>kube-apiserver 对外暴露 Kubernetes API，所有对集群的操作都是通过这组API完成，包括客户端下达应用编排命令给 Kubernetes 集群；kubelet 上报集群资源使用情况；以及各个组件之间的交互都是通过这套 API 完成的。</li>
-<li>kube-controller-manager 负责整个 Kubernetes 的管理工作，保证集群中各种资源处于期望状态，当监控到集群中某个资源状态与期望状态不符时，controller-manager 会触发调度操作。</li>
-<li>kube-scheduler 调度器负责 Kubernetes 集群的具体调度工作，接收来自于controller-manager 触发的调度操作请求，然后根据请求规格、调度约束、整体资源情况进行调度计算，最后将任务发送到目标节点由的kubelet组件执行。</li>
-<li>etcd 是一个高效KV存储系统。在Kubernetes环境中主要用于存储所有需要持久化的数据。</li>
-</ul>
-<h4 id="计算节点"><a href="#计算节点" class="headerlink" title="计算节点"></a><strong>计算节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Node"></p>
-<ul>
-<li><p>kubelet 是 Node 节点上核心组件，负责与 docker daemon 进行交互运行 docker 容器；配置网络和数据卷；监控并上报节点资源使用情况。</p>
-</li>
-<li><p>kube-proxy 主要负责 Service Endpoint 到 POD 实例的请求转发及负载均衡的规则管理。</p>
-</li>
-</ul>
-<h3 id="1-3-Kubernetes-解决了什么问题"><a href="#1-3-Kubernetes-解决了什么问题" class="headerlink" title="1.3 Kubernetes 解决了什么问题"></a>1.3 Kubernetes 解决了什么问题</h3><p>Kubernetes 项目最主要的设计思想是，从更宏观的角度，以统一的方式来定义任务之间的各种关系，更甚至我们可以运用 Kubernetes 扩展能力灵活的自定义任务之间的关系。</p>
-<p>比如，Kubernetes 项目对容器间的交互关系进行了分类，首先总结出了一类非常常见的“紧密交互”的关系，即：这些应用之间需要直接通过本地文件进行信息交换。</p>
-<p>在常规环境下，这些应用往往会被直接部署在同一台机器上，通过 Localhost 通信，通过本地磁盘上的文件进行交互。而在 Kubernetes 项目中，这些容器则会被划分为一个“Pod”，Pod 里的容器共享同一个 Network Namespace、同一组数据卷，从而达到高效率交换信息的目的。</p>
-<p>Pod 是 Kubernetes 项目中最基础的一个对象，下一章中我会重中想你介绍 Pod。</p>
-<p>而对于另外一种更为常见的需求，比如 Web 应用与数据库之间的访问关系，Kubernetes 项目则提供了一种叫作“Service”的服务。像这样的两个应用，往往故意不部署在同一台机器上，这样即使 Web 应用所在的机器宕机了，数据库也完全不受影响。可是，我们知道，对于一个容器来说，它的 IP 地址等信息不是固定的，那么 Web 应用又怎么找到数据库容器的 Pod 呢？</p>
-<p>所以，Kubernetes 项目的做法是给 Pod 绑定一个 Service 服务，而 Service 服务声明的 IP 地址等信息是“终生不变”的。这个Service 服务的主要作用，就是作为 Pod 的代理入口，从而代替 Pod 对外暴露一个固定的网络地址。</p>
-<p>除了 Pod、Service 这些基本资源外，Kubernetes 还为我们提供了 Deployment、StatefulSet、Job 等扩展资源，有了这些资源我们就可以轻松的编排我们的服务了，通过这些资源，Kubernetes 为我们提供了应用的水平扩展、滚动升级、自动扩缩容能力，为服务提供了负责均衡、服务监控、服务发现能力。通过这些高级功能以及其灵活的扩展能力使 Kubernetes 逐渐成为了容器编排领域的翘楚。</p>
-<h4 id="Kubernetes-组件"><a href="#Kubernetes-组件" class="headerlink" title="Kubernetes 组件"></a><strong>Kubernetes 组件</strong></h4><p>当你部署完 Kubernetes, 即拥有了一个完整的集群。</p>
-<p>一个 Kubernetes 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。集群具有至少一个工作节点。</p>
-<p>工作节点托管作为应用负载的组件的 Pod 。控制平面管理集群中的工作节点和 Pod 。 为集群提供故障转移和高可用性，这些控制平面一般跨多主机运行，集群跨多个节点运行。</p>
-<p>本文档概述了交付正常运行的 Kubernetes 集群所需的各种组件。</p>
-<p>这张图表展示了包含所有相互关联组件的 Kubernetes 集群。</p>
-<p><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" class="lazyload placeholder" data-srcset="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 组件"></p>
-<h3 id="1-4-Kubernetes-集群搭建"><a href="#1-4-Kubernetes-集群搭建" class="headerlink" title="1.4 Kubernetes 集群搭建"></a>1.4 Kubernetes 集群搭建</h3><h4 id="1-4-1-使用-Docker-CE-自带的-Kubernetes"><a href="#1-4-1-使用-Docker-CE-自带的-Kubernetes" class="headerlink" title="1.4.1 使用 Docker CE 自带的 Kubernetes"></a>1.4.1 使用 Docker CE 自带的 Kubernetes</h4><p>安装 Docker 参考：<a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a></p>
-<ul>
-<li>Install Docker for Mac</li>
-<li>Install Docker for Windows</li>
-</ul>
-<h4 id="1-4-2-使用-minikube"><a href="#1-4-2-使用-minikube" class="headerlink" title="1.4.2 使用 minikube"></a>1.4.2 使用 minikube</h4><h5 id="MacOS-安装-minikube"><a href="#MacOS-安装-minikube" class="headerlink" title="MacOS 安装 minikube"></a><strong>MacOS 安装 minikube</strong></h5><ul>
-<li><p><strong>安装minikube</strong></p>
-<p>brew cask install minikube</p>
-</li>
-<li><p><strong>安装vm驱动</strong></p>
-<p>curl -LO <a href="https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit">https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit</a> \n&amp;&amp; sudo install -o root -g wheel -m 4755 docker-machine-driver-hyperkit /usr/local/bin/</p>
-</li>
-<li><p>启动 minikube(minikube会安装kubernetes需要的组件，这些组件的镜像存储在google的常客中，所有需要能够翻墙才能够安装成功)</p>
-<p>minikube start —vm-driver=hyperkit —memory=4096 —insecure-registry=”hub.example.com” —registry-mirror=”<a href="https://m9sl8pb5.mirror.aliyuncs.com/">https://m9sl8pb5.mirror.aliyuncs.com</a>“ —docker-opt=”bip=172.87.0.1/16”</p>
-<p>参数介绍: —vm-driver 使用的虚拟机驱动 —memory 给虚拟机的内存大小 —cpu 给虚拟机的cpu核数，默认是2核 —insecure-registry 指定私有仓库地址 —registry-mirror 指定镜像缓存地址，加快镜像下载速度 —docker-opt 指定docker的启动参数，bip 指定 docker 网桥使用的网段</p>
-</li>
-<li><p><strong>停止 minikube</strong></p>
-<p>minikube stop</p>
-</li>
-<li><p><strong>删除集群</strong></p>
-<p>minikube delete</p>
-</li>
-<li><p><strong>登录虚拟机</strong></p>
-<p>minikube ssh</p>
-</li>
-</ul>
-<h5 id="Windows-安装-minikube"><a href="#Windows-安装-minikube" class="headerlink" title="Windows 安装 minikube"></a><strong>Windows 安装 minikube</strong></h5><p>Windows 安装minikube，需要Windows系统支持Hyper-V，目前 Windows 10 Enterprise, Windows 10 Professional, and Windows 10 Education 支持Hyper-V。安装minikube时，最好命令行使用powershell，并且以管理员身份打开并执行。</p>
-<h6 id="安装方法-1："><a href="#安装方法-1：" class="headerlink" title="安装方法 1："></a>安装方法 1：</h6><ul>
-<li>安装 <a href="https://chocolatey.org/">https://chocolatey.org/</a></li>
-<li>choco install minikube kubernetes-cli</li>
-</ul>
-<h6 id="安装方法-2："><a href="#安装方法-2：" class="headerlink" title="安装方法 2："></a>安装方法 2：</h6><p>下载 minikube-installer.exe （<a href="https://github.com/kubernetes/minikube/releases/latest%EF%BC%89%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/kubernetes/minikube/releases/latest）并进行安装。</a></p>
-<p>启动前准备(重要)</p>
-<ul>
-<li>配置 MINIKUBE_HOME 环境变量及创建目录</li>
-<li>在 Hyper-V 中为minikube添加虚拟交换机</li>
-<li>用 chocolatey 安装 OpenSSH（choco install openssh）</li>
-</ul>
-<h6 id="启动-minikube"><a href="#启动-minikube" class="headerlink" title="启动 minikube"></a>启动 minikube</h6><pre class="line-numbers language-none"><code class="language-none">minikube start --vm-driver&#x3D;hyperv --hyperv-virtual-switch&#x3D;minikube --memory&#x3D;4096 --insecure-registry&#x3D;&quot;hub.example.com&quot; --registry-mirror&#x3D;&quot;https:&#x2F;&#x2F;m9sl8pb5.mirror.aliyuncs.com&quot; --docker-opt&#x3D;&quot;bip&#x3D;172.87.0.1&#x2F;16&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>1.5 访问Kubernetes</p>
-]]></content>
-      <categories>
-        <category>kubernetes系列</category>
-      </categories>
-      <tags>
-        <tag>kubernetes</tag>
       </tags>
   </entry>
   <entry>
@@ -3423,5 +3280,148 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       <categories>
         <category>监控系统</category>
       </categories>
+  </entry>
+  <entry>
+    <title>认识Kubernetes</title>
+    <url>/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/</url>
+    <content><![CDATA[<h2 id="一、Kubernetes-基础"><a href="#一、Kubernetes-基础" class="headerlink" title="一、Kubernetes 基础"></a>一、Kubernetes 基础</h2><h3 id="1-1-Kubernetes-概述"><a href="#1-1-Kubernetes-概述" class="headerlink" title="1.1 Kubernetes 概述"></a>1.1 Kubernetes 概述</h3><p><strong>Kubernetes 是什么</strong></p>
+<p>Kubernetes(k8s)是Google开源由CNCF基金会管理的容器集群管理系统。为容器化的应用提供部署运行、资源调度、服务发现和动态伸缩等一系列完整功能。Kubernetes 被称为现在化的数据中心操作系统，大家都知道，操作系统是用来管理硬件资源比如 CPU、内存、磁盘、输入输出设备等资源的，并完成对这些资源的调度。而 Kubernetes 是将数据中心里的物理节点作为管理对象，并对物理节点上的资源进行调度完成编排任务。操作系统的另一个特性就是容易扩展，比如，当 GPU 这种硬件出现后，操作系统应该很容扩展去管理这种资源，Kubernetes 作为数据中心操作系统同样也有这样的特性，它也非常容易扩展。</p>
+<h3 id="1-2-Kubernetes-架构"><a href="#1-2-Kubernetes-架构" class="headerlink" title="1.2 Kubernetes 架构"></a>1.2 Kubernetes 架构</h3><p>Kubernetes 的架构从宏观层面的来讲分为两个平面，即控制平面和计算平面，控制平面又称为 Master 节点，Master 节点是整个集群的大脑，负责控制、调度集群资源；计算平面又称为 Node 节点，Node 节点负责运行工作负载，是 Master 节点调度的对象。kubectl 作为 Kubernetes 客户端通过和 Master 节点直接进行通信来控制 Kubernetes 集群。</p>
+<p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/ff848a52a7f77f9f4497ad60b889bc47.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 架构"></p>
+<h4 id="控制节点"><a href="#控制节点" class="headerlink" title="控制节点"></a><strong>控制节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/107314fa7aada6337a4308e493a9c371.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Master"></p>
+<ul>
+<li>kube-apiserver 对外暴露 Kubernetes API，所有对集群的操作都是通过这组API完成，包括客户端下达应用编排命令给 Kubernetes 集群；kubelet 上报集群资源使用情况；以及各个组件之间的交互都是通过这套 API 完成的。</li>
+<li>kube-controller-manager 负责整个 Kubernetes 的管理工作，保证集群中各种资源处于期望状态，当监控到集群中某个资源状态与期望状态不符时，controller-manager 会触发调度操作。</li>
+<li>kube-scheduler 调度器负责 Kubernetes 集群的具体调度工作，接收来自于controller-manager 触发的调度操作请求，然后根据请求规格、调度约束、整体资源情况进行调度计算，最后将任务发送到目标节点由的kubelet组件执行。</li>
+<li>etcd 是一个高效KV存储系统。在Kubernetes环境中主要用于存储所有需要持久化的数据。</li>
+</ul>
+<h4 id="计算节点"><a href="#计算节点" class="headerlink" title="计算节点"></a><strong>计算节点</strong></h4><p><img src="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" class="lazyload placeholder" data-srcset="https://static.sitestack.cn/projects/findsec-cn-k101/1166470bbbf8663f9d9e01f8af0334ff.jpeg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes Node"></p>
+<ul>
+<li><p>kubelet 是 Node 节点上核心组件，负责与 docker daemon 进行交互运行 docker 容器；配置网络和数据卷；监控并上报节点资源使用情况。</p>
+</li>
+<li><p>kube-proxy 主要负责 Service Endpoint 到 POD 实例的请求转发及负载均衡的规则管理。</p>
+</li>
+</ul>
+<h3 id="1-3-Kubernetes-解决了什么问题"><a href="#1-3-Kubernetes-解决了什么问题" class="headerlink" title="1.3 Kubernetes 解决了什么问题"></a>1.3 Kubernetes 解决了什么问题</h3><p>Kubernetes 项目最主要的设计思想是，从更宏观的角度，以统一的方式来定义任务之间的各种关系，更甚至我们可以运用 Kubernetes 扩展能力灵活的自定义任务之间的关系。</p>
+<p>比如，Kubernetes 项目对容器间的交互关系进行了分类，首先总结出了一类非常常见的“紧密交互”的关系，即：这些应用之间需要直接通过本地文件进行信息交换。</p>
+<p>在常规环境下，这些应用往往会被直接部署在同一台机器上，通过 Localhost 通信，通过本地磁盘上的文件进行交互。而在 Kubernetes 项目中，这些容器则会被划分为一个“Pod”，Pod 里的容器共享同一个 Network Namespace、同一组数据卷，从而达到高效率交换信息的目的。</p>
+<p>Pod 是 Kubernetes 项目中最基础的一个对象，下一章中我会重中想你介绍 Pod。</p>
+<p>而对于另外一种更为常见的需求，比如 Web 应用与数据库之间的访问关系，Kubernetes 项目则提供了一种叫作“Service”的服务。像这样的两个应用，往往故意不部署在同一台机器上，这样即使 Web 应用所在的机器宕机了，数据库也完全不受影响。可是，我们知道，对于一个容器来说，它的 IP 地址等信息不是固定的，那么 Web 应用又怎么找到数据库容器的 Pod 呢？</p>
+<p>所以，Kubernetes 项目的做法是给 Pod 绑定一个 Service 服务，而 Service 服务声明的 IP 地址等信息是“终生不变”的。这个Service 服务的主要作用，就是作为 Pod 的代理入口，从而代替 Pod 对外暴露一个固定的网络地址。</p>
+<p>除了 Pod、Service 这些基本资源外，Kubernetes 还为我们提供了 Deployment、StatefulSet、Job 等扩展资源，有了这些资源我们就可以轻松的编排我们的服务了，通过这些资源，Kubernetes 为我们提供了应用的水平扩展、滚动升级、自动扩缩容能力，为服务提供了负责均衡、服务监控、服务发现能力。通过这些高级功能以及其灵活的扩展能力使 Kubernetes 逐渐成为了容器编排领域的翘楚。</p>
+<h4 id="Kubernetes-组件"><a href="#Kubernetes-组件" class="headerlink" title="Kubernetes 组件"></a><strong>Kubernetes 组件</strong></h4><p>当你部署完 Kubernetes, 即拥有了一个完整的集群。</p>
+<p>一个 Kubernetes 集群由一组被称作节点的机器组成。这些节点上运行 Kubernetes 所管理的容器化应用。集群具有至少一个工作节点。</p>
+<p>工作节点托管作为应用负载的组件的 Pod 。控制平面管理集群中的工作节点和 Pod 。 为集群提供故障转移和高可用性，这些控制平面一般跨多主机运行，集群跨多个节点运行。</p>
+<p>本文档概述了交付正常运行的 Kubernetes 集群所需的各种组件。</p>
+<p>这张图表展示了包含所有相互关联组件的 Kubernetes 集群。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" class="lazyload placeholder" data-srcset="https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Kubernetes 组件"></p>
+<h3 id="1-4-Kubernetes-集群搭建"><a href="#1-4-Kubernetes-集群搭建" class="headerlink" title="1.4 Kubernetes 集群搭建"></a>1.4 Kubernetes 集群搭建</h3><h4 id="1-4-1-使用-Docker-CE-自带的-Kubernetes"><a href="#1-4-1-使用-Docker-CE-自带的-Kubernetes" class="headerlink" title="1.4.1 使用 Docker CE 自带的 Kubernetes"></a>1.4.1 使用 Docker CE 自带的 Kubernetes</h4><p>安装 Docker 参考：<a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a></p>
+<ul>
+<li>Install Docker for Mac</li>
+<li>Install Docker for Windows</li>
+</ul>
+<h4 id="1-4-2-使用-minikube"><a href="#1-4-2-使用-minikube" class="headerlink" title="1.4.2 使用 minikube"></a>1.4.2 使用 minikube</h4><h5 id="MacOS-安装-minikube"><a href="#MacOS-安装-minikube" class="headerlink" title="MacOS 安装 minikube"></a><strong>MacOS 安装 minikube</strong></h5><ul>
+<li><p><strong>安装minikube</strong></p>
+<p>brew cask install minikube</p>
+</li>
+<li><p><strong>安装vm驱动</strong></p>
+<p>curl -LO <a href="https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit">https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit</a> \n&amp;&amp; sudo install -o root -g wheel -m 4755 docker-machine-driver-hyperkit /usr/local/bin/</p>
+</li>
+<li><p>启动 minikube(minikube会安装kubernetes需要的组件，这些组件的镜像存储在google的常客中，所有需要能够翻墙才能够安装成功)</p>
+<p>minikube start —vm-driver=hyperkit —memory=4096 —insecure-registry=”hub.example.com” —registry-mirror=”<a href="https://m9sl8pb5.mirror.aliyuncs.com/">https://m9sl8pb5.mirror.aliyuncs.com</a>“ —docker-opt=”bip=172.87.0.1/16”</p>
+<p>参数介绍: —vm-driver 使用的虚拟机驱动 —memory 给虚拟机的内存大小 —cpu 给虚拟机的cpu核数，默认是2核 —insecure-registry 指定私有仓库地址 —registry-mirror 指定镜像缓存地址，加快镜像下载速度 —docker-opt 指定docker的启动参数，bip 指定 docker 网桥使用的网段</p>
+</li>
+<li><p><strong>停止 minikube</strong></p>
+<p>minikube stop</p>
+</li>
+<li><p><strong>删除集群</strong></p>
+<p>minikube delete</p>
+</li>
+<li><p><strong>登录虚拟机</strong></p>
+<p>minikube ssh</p>
+</li>
+</ul>
+<h5 id="Windows-安装-minikube"><a href="#Windows-安装-minikube" class="headerlink" title="Windows 安装 minikube"></a><strong>Windows 安装 minikube</strong></h5><p>Windows 安装minikube，需要Windows系统支持Hyper-V，目前 Windows 10 Enterprise, Windows 10 Professional, and Windows 10 Education 支持Hyper-V。安装minikube时，最好命令行使用powershell，并且以管理员身份打开并执行。</p>
+<h6 id="安装方法-1："><a href="#安装方法-1：" class="headerlink" title="安装方法 1："></a>安装方法 1：</h6><ul>
+<li>安装 <a href="https://chocolatey.org/">https://chocolatey.org/</a></li>
+<li>choco install minikube kubernetes-cli</li>
+</ul>
+<h6 id="安装方法-2："><a href="#安装方法-2：" class="headerlink" title="安装方法 2："></a>安装方法 2：</h6><p>下载 minikube-installer.exe （<a href="https://github.com/kubernetes/minikube/releases/latest%EF%BC%89%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82">https://github.com/kubernetes/minikube/releases/latest）并进行安装。</a></p>
+<p>启动前准备(重要)</p>
+<ul>
+<li>配置 MINIKUBE_HOME 环境变量及创建目录</li>
+<li>在 Hyper-V 中为minikube添加虚拟交换机</li>
+<li>用 chocolatey 安装 OpenSSH（choco install openssh）</li>
+</ul>
+<h6 id="启动-minikube"><a href="#启动-minikube" class="headerlink" title="启动 minikube"></a>启动 minikube</h6><pre class="line-numbers language-none"><code class="language-none">minikube start --vm-driver&#x3D;hyperv --hyperv-virtual-switch&#x3D;minikube --memory&#x3D;4096 --insecure-registry&#x3D;&quot;hub.example.com&quot; --registry-mirror&#x3D;&quot;https:&#x2F;&#x2F;m9sl8pb5.mirror.aliyuncs.com&quot; --docker-opt&#x3D;&quot;bip&#x3D;172.87.0.1&#x2F;16&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>1.5 访问Kubernetes</p>
+]]></content>
+      <categories>
+        <category>kubernetes系列</category>
+      </categories>
+      <tags>
+        <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Docker</title>
+    <url>/blog/2021/12/04/%E5%AE%89%E8%A3%85Docker/</url>
+    <content><![CDATA[<h1 id="安装引擎"><a href="#安装引擎" class="headerlink" title="安装引擎"></a><strong>安装引擎</strong></h1><p>docker 引擎是使用docker容器的核心组件，可以在主流的操作系统和云平台上使用。</p>
+<p>docker 可以安装Linux操作系统 MacOS Windows系统之上以及云平台之上。</p>
+<h2 id="Centos-环境下安装docker"><a href="#Centos-环境下安装docker" class="headerlink" title="Centos 环境下安装docker"></a>Centos 环境下安装docker</h2><p>  安装<code>yum-utils</code>软件包（提供<code>yum-config-manager</code> 实用程序）并设置<strong>稳定的</strong>存储库。</p>
+  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# yum install -y yum-utils
+[root@docker ~]# yum-config-manager \
+     --add-repo \
+    https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安装最新版本Docker-Engine"><a href="#安装最新版本Docker-Engine" class="headerlink" title="安装最新版本Docker Engine"></a>安装最新版本Docker Engine</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker]# yum install docker-ce docker-ce-cli containerd.io -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# docker version   #查看版本信息
+[root@docker ~]# docker info			#查看docker详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="ubunt-环境下安装docker"><a href="#ubunt-环境下安装docker" class="headerlink" title="ubunt 环境下安装docker"></a>ubunt 环境下安装docker</h2>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">@buntu:~$ sudo apt-get install \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg \
+     lsb-release
+@buntu:~$  echo   &quot;deb [arch&#x3D;amd64 signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg] https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu \
+  $(lsb_release -cs) stable&quot; | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list &gt; &#x2F;dev&#x2F;null
+     
+@ubuntu:~$  curl -fsSL https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu&#x2F;gpg | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg
+@buntu:~$  sudo apt-get update
+@buntu:~$  sudo apt-get install docker-ce docker-ce-cli containerd.io
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="开启路由转发"><a href="#开启路由转发" class="headerlink" title="开启路由转发"></a><strong>开启路由转发</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#查看路由转发是否开启，1 开发 0 未开启
+[root@docker ~]# sysctl -a | grep -w net.ipv4.ip_forward
+net.ipv4.ip_forward &#x3D; 1
+#开启路由转发功能
+[root@docker ~]# cat &gt; &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf &lt;&lt; EOF
+net.ipv4.ip_forward &#x3D; 1
+net.bridge.bridge-nf-call-ip6tables &#x3D; 1
+net.bridge.bridge-nf-call-iptables &#x3D; 1
+EOF
+#加载并生效（不用重新启动服务器）
+[root@docker ~]# sysctl -p &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="配置docker加速器"><a href="#配置docker加速器" class="headerlink" title="配置docker加速器"></a><strong>配置docker加速器</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">阿里docker镜像加速器地址
+https:&#x2F;&#x2F;cr.console.aliyun.com&#x2F;cn-hangzhou&#x2F;instances&#x2F;mirrors 
+配置docker镜像加速器文件地址
+vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;0pnfs8l6.mirror.aliyuncs.com&quot;]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="docker-命令解释"><a href="#docker-命令解释" class="headerlink" title="docker 命令解释"></a><strong>docker 命令解释</strong></h1><p><img src="https://oss.coydone.com/md/linux/20201027083323.png/change01" class="lazyload placeholder" data-srcset="https://oss.coydone.com/md/linux/20201027083323.png/change01" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Docker命令、镜像及容器卷- coydone的技术小站"></p>
+]]></content>
+      <categories>
+        <category>Container</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
   </entry>
 </search>
