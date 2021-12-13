@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 9.2k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 10k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 8 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 9 mins.分钟 |
           </span>
   
           
@@ -721,10 +721,10 @@
 <span id="more"></span>
 <h1 id="批量管理服务器PSSH"><a href="#批量管理服务器PSSH" class="headerlink" title="批量管理服务器PSSH"></a>批量管理服务器PSSH</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PSSH提供OpenSSH和相关工具的并行版本。包括pssh，pscp，prsync，pnuke和pslurp。该项目包括psshlib，可以在自定义应用程序中使用。 pssh是python编写，可以并发在多台机器上批量执行命令的工具，用法可以媲美ansible的一些简单用法，执行起来速度比ansible快，支持文件并行复制，远程命令。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装之前首先获取epel源</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># wget -O &#x2F;etc&#x2F;yum.repos.d&#x2F;epel.repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;repo&#x2F;epel-7.repo
-# yum repolist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo</span>
+<span class="token comment"># yum repolist</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>安装pssh</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># yum -y install pssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># yum -y install pssh</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
 <li>pssh 在多个主机上并行运行命令</li>
 <li>pscp 把文件并行复制到多个主机上</li>
@@ -733,22 +733,22 @@
 <li>pnuke 并行地在多个远程主机上杀死进程</li>
 </ul>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h5 id="PSSH示例及验证："><a href="#PSSH示例及验证：" class="headerlink" title="PSSH示例及验证："></a>PSSH示例及验证：</h5><hr>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o &#x2F;tmp&#x2F;foo uptime
-pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pssh -h hosts.txt -l irb2 -o /tmp/foo <span class="token function">uptime</span>
+pssh -h hosts.txt <span class="token string">"hostnamectl"</span>   hosts 主机IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>选项解释：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">--version     版本显示程序的版本号和退出
 --help        显示帮助信息          
--h HOST_FILE, 主机文件列表 格式[user@]host[:port]
--l USER       用户名 (OPTIONAL)
--p PAR，--par &#x3D; PAR并行线程的最大数量（可选）
--o OUTDIR， --outdir &#x3D; OUTDIR 标准输出文件的输出目录（可选）
--e ERRDIR， --errdir &#x3D; ERRDIR  stderr文件的输出目录（可选）
--t TIMEOUT，--timeout &#x3D;超时  每个主机的超时时间（秒）（0 &#x3D;无超时）（可选）
--O OPTION， --option &#x3D; OPTION   SSH选项（可选）
+-h HOST_FILE, 主机文件列表 格式<span class="token punctuation">[</span>user@<span class="token punctuation">]</span>host<span class="token punctuation">[</span>:port<span class="token punctuation">]</span>
+-l <span class="token environment constant">USER</span>       用户名 <span class="token punctuation">(</span>OPTIONAL<span class="token punctuation">)</span>
+-p PAR，--par <span class="token operator">=</span> PAR并行线程的最大数量（可选）
+-o OUTDIR， --outdir <span class="token operator">=</span> OUTDIR 标准输出文件的输出目录（可选）
+-e ERRDIR， --errdir <span class="token operator">=</span> ERRDIR  stderr文件的输出目录（可选）
+-t TIMEOUT，--timeout <span class="token operator">=</span>超时  每个主机的超时时间（秒）（0 <span class="token operator">=</span>无超时）（可选）
+-O OPTION， --option <span class="token operator">=</span> OPTION   SSH选项（可选）
 -v，--verbose  打开警告和诊断消息（可选）
 -A，-askpass   要求输入密码（可选）
--x ARGS，--extra-args &#x3D; ARGS 额外的命令行参数，处理空格，引号和反斜杠
--X ARG， --extra-arg &#x3D; ARG  额外的命令行参数
+-x ARGS，--extra-args <span class="token operator">=</span> ARGS 额外的命令行参数，处理空格，引号和反斜杠
+-X ARG， --extra-arg <span class="token operator">=</span> ARG  额外的命令行参数
 -i，--inline  每个服务器的内联内联聚合输出和错误
 --inline-stdout 每个服务器的内联标准输出
 -I，--send-input 从标准输入读取并作为输入发送到ssh
@@ -767,11 +767,11 @@ pssh -h hosts.txt &quot;hostnamectl&quot;   hosts 主机IP<span aria-hidden="tru
 2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     inet 172.16.127.161&#x2F;24 brd 172.16.127.255 scope global noprefixroute dynamic ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果有以下错误</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[1] 22:40:24 [FAILURE] 172.16.127.131 Exited with error code 255
-Stderr: The authenticity of host &#39;172.16.127.131 (172.16.127.131)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:TikjI&#x2F;UUYTvpaoAt&#x2F;CsGWH5Tjj&#x2F;tlSRIMUFHwjydpBY.
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">22</span>:40:24 <span class="token punctuation">[</span>FAILURE<span class="token punctuation">]</span> <span class="token number">172.16</span>.127.131 Exited with error code <span class="token number">255</span>
+Stderr: The authenticity of <span class="token function">host</span> <span class="token string">'172.16.127.131 (172.16.127.131)'</span> can't be established.
+ECDSA key fingerprint is SHA256:TikjI/UUYTvpaoAt/CsGWH5Tjj/tlSRIMUFHwjydpBY.
 ECDSA key fingerprint is MD5:03:f9:94:2d:8b:a7:16:1b:a4:91:e4:9b:d6:1b:0d:4d.
-Are you sure you want to continue connecting (yes&#x2F;no)?
+Are you sure you want to <span class="token builtin class-name">continue</span> connecting <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>?
 Host key verification failed.
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>原因是因为不能远程连接被控主机上，所以我们需要做免密认证，</p>

@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 11k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 21k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 10 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 19 mins.分钟 |
           </span>
   
           
@@ -729,131 +729,131 @@
 </ul>
 </li>
 </ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># dnf -y install cmake3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># cmake . \</span>
+-DCMAKE_INSTALL_PREFIX<span class="token operator">=</span>/usr/local/mysql/ <span class="token punctuation">\</span>
+-DDEFAULT_CHARSET<span class="token operator">=</span>utf8 <span class="token punctuation">\</span>
+-DDEFAULT_COLLATION<span class="token operator">=</span>utf8_general_ci <span class="token punctuation">\</span>
+-DENABLED_LOCAL_INFILE<span class="token operator">=</span>ON <span class="token punctuation">\</span>
+-DWITH_INNODB_MEMCACHED<span class="token operator">=</span>ON <span class="token punctuation">\</span>
+-DWITH_SSL<span class="token operator">=</span>system <span class="token punctuation">\</span>
+-DWITH_INNOBASE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_FEDERATED_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_BLACKHOLE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_ARCHIVE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_PERFSCHEMA_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DCOMPILATION_COMMENT<span class="token operator">=</span><span class="token string">"zsd edition"</span> <span class="token punctuation">\</span>
+-DWITH_BOOST<span class="token operator">=</span>/usr/local/mysql/mysql-8.0.25/boost/boost_1_73_0/ <span class="token punctuation">\</span>
+-DMYSQL_UNIX_ADDR<span class="token operator">=</span>/usr/local/mysql/3306/mysql.sock <span class="token punctuation">\</span>
+-DSYSCONFDIR<span class="token operator">=</span>/usr/local/mysql/data/3306  <span class="token punctuation">\</span>
+-DFORCE_INSOURCE_BUILD<span class="token operator">=</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><font size="4" color="red" >报错:</font></p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+CMake Error at CMakeLists.txt:382 <span class="token punctuation">(</span>MESSAGE<span class="token punctuation">)</span>:
+  Please <span class="token keyword">do</span> not build in-source.  Out-of <span class="token builtin class-name">source</span> builds are highly
+  recommended: you can have multiple builds <span class="token keyword">for</span> the same source, and there is
+  an easy way to <span class="token keyword">do</span> cleanup, simply remove the build directory <span class="token punctuation">(</span>note that
+  <span class="token string">'make clean'</span> or <span class="token string">'make distclean'</span> does *not* work<span class="token punctuation">)</span>
   You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
+  -DFORCE_INSOURCE_BUILD<span class="token operator">=</span><span class="token number">1</span>
 二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
+①  CMake Error at cmake/ssl.cmake:61 <span class="token punctuation">(</span>MESSAGE<span class="token punctuation">)</span>:
+  PleaseCMake Error at cmake/readline.cmake:71 <span class="token punctuation">(</span>MESSAGE<span class="token punctuation">)</span>:
+②  Curses library not found.  Please <span class="token function">install</span> appropriate package, <span class="token function">install</span> the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian/Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake/rpc.cmake:40 <span class="token punctuation">(</span>MESSAGE<span class="token punctuation">)</span>:
+  Cannot <span class="token function">find</span> RPC development libraries.  You need to <span class="token function">install</span> the required
   packages:
 
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
+    Debian/Ubuntu:              <span class="token function">apt</span> <span class="token function">install</span> libtirpc-dev
+    RedHat/Fedora/Oracle Linux: yum <span class="token function">install</span> libtirpc-devel
+    SuSE:                       <span class="token function">zypper</span> <span class="token function">install</span> glibc-devel
 三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>安装依赖：</p>
 <p>注意： rpcgen源没有需下载</p>
 <p><a target="_blank" rel="noopener" href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># dnf -y install openssl-devel</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># dnf -y install ncurses-devel</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># rm -rf CMakeCache.txt</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># yum -y install libtirpc-devel</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># wget http://mirror.centos.org/centos/8/PowerTools/aarch64/os/Packages/rpcgen-1.3.1-4.el8.aarch64.rpm</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># dnf --enablerepo=powertools install rpcgen</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># cmake . \</span>
+-DCMAKE_INSTALL_PREFIX<span class="token operator">=</span>/usr/local/mysql/ <span class="token punctuation">\</span>
+-DDEFAULT_CHARSET<span class="token operator">=</span>utf8 <span class="token punctuation">\</span>
+-DDEFAULT_COLLATION<span class="token operator">=</span>utf8_general_ci <span class="token punctuation">\</span>
+-DENABLED_LOCAL_INFILE<span class="token operator">=</span>ON <span class="token punctuation">\</span>
+-DWITH_INNODB_MEMCACHED<span class="token operator">=</span>ON <span class="token punctuation">\</span>
+-DWITH_SSL<span class="token operator">=</span>system <span class="token punctuation">\</span>
+-DWITH_INNOBASE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_FEDERATED_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_BLACKHOLE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_ARCHIVE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DWITH_PERFSCHEMA_STORAGE_ENGINE<span class="token operator">=</span><span class="token number">1</span> <span class="token punctuation">\</span>
+-DCOMPILATION_COMMENT<span class="token operator">=</span><span class="token string">"zsd edition"</span> <span class="token punctuation">\</span>
+-DWITH_BOOST<span class="token operator">=</span>/usr/local/mysql/mysql-8.0.25/boost/boost_1_73_0/ <span class="token punctuation">\</span>
+-DMYSQL_UNIX_ADDR<span class="token operator">=</span>/usr/local/mysql/3306/mysql.sock <span class="token punctuation">\</span>
+-DSYSCONFDIR<span class="token operator">=</span>/usr/local/mysql/data/3306 <span class="token punctuation">\</span>
+-DFORCE_INSOURCE_BUILD<span class="token operator">=</span><span class="token number">1</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># make -j4</span>
+<span class="token punctuation">[</span>root@test mysql-8.0.25<span class="token punctuation">]</span><span class="token comment"># make install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># groupadd mysql</span>
+<span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># useradd  -r -g mysql  -s /bin/false mysql</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># chown -R mysql .</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># bin/mysqld --initialize --user=mysql</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">2021</span>-07-18T13:02:48.598005Z <span class="token number">0</span> <span class="token punctuation">[</span>System<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-013169<span class="token punctuation">]</span> <span class="token punctuation">[</span>Server<span class="token punctuation">]</span> /usr/local/mysql/bin/mysqld <span class="token punctuation">(</span>mysqld <span class="token number">8.0</span>.25<span class="token punctuation">)</span> initializing of server <span class="token keyword">in</span> progress as process <span class="token number">87376</span>
+<span class="token number">2021</span>-07-18T13:02:48.621612Z <span class="token number">0</span> <span class="token punctuation">[</span>Warning<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-013242<span class="token punctuation">]</span> <span class="token punctuation">[</span>Server<span class="token punctuation">]</span> --character-set-server: <span class="token string">'utf8'</span> is currently an <span class="token builtin class-name">alias</span> <span class="token keyword">for</span> the character <span class="token builtin class-name">set</span> UTF8MB3, but will be an <span class="token builtin class-name">alias</span> <span class="token keyword">for</span> <span class="token for-or-select variable">UTF8MB4</span> <span class="token keyword">in</span> a future release. Please consider using UTF8MB4 <span class="token keyword">in</span> order to be unambiguous.
+<span class="token number">2021</span>-07-18T13:02:48.621622Z <span class="token number">0</span> <span class="token punctuation">[</span>Warning<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-013244<span class="token punctuation">]</span> <span class="token punctuation">[</span>Server<span class="token punctuation">]</span> --collation-server: <span class="token string">'utf8_general_ci'</span> is a collation of the deprecated character <span class="token builtin class-name">set</span> UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+<span class="token number">2021</span>-07-18T13:02:48.632207Z <span class="token number">1</span> <span class="token punctuation">[</span>System<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-013576<span class="token punctuation">]</span> <span class="token punctuation">[</span>InnoDB<span class="token punctuation">]</span> InnoDB initialization has started.
+<span class="token number">2021</span>-07-18T13:02:49.645548Z <span class="token number">1</span> <span class="token punctuation">[</span>System<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-013577<span class="token punctuation">]</span> <span class="token punctuation">[</span>InnoDB<span class="token punctuation">]</span> InnoDB initialization has ended.
+<span class="token number">2021</span>-07-18T13:02:51.981723Z <span class="token number">6</span> <span class="token punctuation">[</span>Note<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-010454<span class="token punctuation">]</span> <span class="token punctuation">[</span>Server<span class="token punctuation">]</span> A temporary password is generated <span class="token keyword">for</span> root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># cp support-files/mysql.server /etc/init.d/mysqld</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动失败（报错）</p>
 <p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># /etc/init.d/mysqld start</span>
+Starting MySQL.Logging to <span class="token string">'/usr/local/mysql/data/test.err'</span><span class="token builtin class-name">.</span>
+<span class="token number">2021</span>-07-18T15:13:37.356447Z mysqld_safe Directory <span class="token string">'/usr/local/mysql/3306'</span> <span class="token keyword">for</span> UNIX socket <span class="token function">file</span> don't exists.
+The server quit without updating PID <span class="token function">file</span> <span class="token punctuation">(</span>/usr/local/mysql<span class="token punctuation">[</span>失败<span class="token punctuation">]</span>test.pid<span class="token punctuation">)</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># mkdir 3306</span>
+<span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># chown mysql:mysql 3306/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># bin/mysqld_safe --user=mysql &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test bin<span class="token punctuation">]</span><span class="token comment"># ln  -s /usr/local/mysql/bin/mysql /usr/local/bin/mysql</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test mysql<span class="token punctuation">]</span><span class="token comment"># bin/mysql -uroot -p</span>
 Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
+Welcome to the MySQL monitor.  Commands end with <span class="token punctuation">;</span> or <span class="token punctuation">\</span>g.
+Your MySQL connection <span class="token function">id</span> is <span class="token number">10</span>
+Server version: <span class="token number">8.0</span>.25
 
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+Copyright <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token number">2000</span>, <span class="token number">2021</span>, Oracle and/or its affiliates.
 
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
 owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+mysql<span class="token operator">></span> show databases<span class="token punctuation">;</span>
+ERROR <span class="token number">1820</span> <span class="token punctuation">(</span>HY000<span class="token punctuation">)</span>: You must reset your password using ALTER <span class="token environment constant">USER</span> statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql<span class="token operator">></span> alter user <span class="token string">'root'</span>@<span class="token string">'localhost'</span> identified with mysql_native_password by <span class="token string">'123456'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
       </div>
       <div class="post-tags-categories">

@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 6.4k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 9.7k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 6 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 9 mins.分钟 |
           </span>
   
           
@@ -718,35 +718,35 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#  wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解压并做超链接</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz  &#x2F;app&#x2F;soft&#x2F;
-[root@localhost soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@localhost soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz  /app/soft/</span>
+<span class="token punctuation">[</span>root@localhost soft<span class="token punctuation">]</span><span class="token comment"># tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost soft<span class="token punctuation">]</span><span class="token comment"># ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>创建数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost soft]#  mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost soft<span class="token punctuation">]</span><span class="token comment">#  mkdir -p /data/mysql5_data/&#123;data,logs&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>创建 主配置 文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3308
-socket&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5_data<span class="token punctuation">]</span><span class="token comment"># vim my.cnf </span>
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+user <span class="token operator">=</span> mysql
+port <span class="token operator">=</span> <span class="token number">3308</span>
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/data/mysql5_data/mysql.sock
+<span class="token assign-left variable">basedir</span><span class="token operator">=</span>/app/soft/mysql5/
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql5_data/data
+log-error<span class="token operator">=</span>/data/mysql5_data/logs/error.log
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\\">\\</span>u@<span class="token entity" title="\\">\\</span>d*<span class="token entity" title="\\">\\</span>h <span class="token entity" title="\\">\\</span>R:<span class="token entity" title="\\">\\</span>m:<span class="token entity" title="\\">\\</span>s >"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>创建用户，修改存放数据目录的权限及安装目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@localhost mysql5_data]# chown mysql:mysql -R &#x2F;my_data&#x2F;
-[root@localhost mysql5_data]# chown mysql:mysql -R mysql5&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5_data<span class="token punctuation">]</span><span class="token comment"># useradd mysql -s /sbin/nologin</span>
+<span class="token punctuation">[</span>root@localhost mysql5_data<span class="token punctuation">]</span><span class="token comment"># chown mysql:mysql -R /my_data/</span>
+<span class="token punctuation">[</span>root@localhost mysql5_data<span class="token punctuation">]</span><span class="token comment"># chown mysql:mysql -R mysql5/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>初始化：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysqld --user=mysql --basedir=/app/soft/mysql5 --datadir=/data/mysql5_data/data --initialize</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><font color=red>注意：</font></p>
 <blockquote>
@@ -757,9 +757,9 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
 <p>启动数据库：（两种方式）</p>
 <ul>
 <li><p>使用mysqld 启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# &#x2F;bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># /bin/mysqld --defaults-file=/data/mysql5_data/my.cnf --user=mysql &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>使用mysqld_safe</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld_safe --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysqld_safe --defaults-file=/data/mysql5_data/my.cnf --user=mysql &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解释：</p>
 <blockquote>
@@ -770,37 +770,37 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
 </li>
 </ul>
 <p>连接数据库 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock -P 3308 -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysql -S /data/mysql5_data/mysql.sock -P 3308 -u root -p</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p> 密码会在初始化的时候随机生成；第一次登录需要，登录之后在修改密码</p>
 </blockquote>
 <h2 id="安装第二个-实例"><a href="#安装第二个-实例" class="headerlink" title="安装第二个 实例"></a>安装第二个 实例</h2><p>创建 数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost data]# mkdir -p my_data2&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost data<span class="token punctuation">]</span><span class="token comment"># mkdir -p my_data2/&#123;data,logs&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>修改权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost data]#  chown -R mysql:mysql my_data2&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost data<span class="token punctuation">]</span><span class="token comment">#  chown -R mysql:mysql my_data2/</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>创建my.cnf或者修改原有的配置（添加一下修改一下标签就好）</p>
 <p>注意： 我的my.cnf是独立使用的</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data2]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3307
-socket&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5_data2<span class="token punctuation">]</span><span class="token comment"># vim my.cnf </span>
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+user <span class="token operator">=</span> mysql
+port <span class="token operator">=</span> <span class="token number">3307</span>
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/data/mysql5_data2/mysql.sock
+<span class="token assign-left variable">basedir</span><span class="token operator">=</span>/app/soft/mysql5/
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql5_data2/data
+log-error<span class="token operator">=</span>/data/mysql5_data2/logs/error.log
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+prompt <span class="token operator">=</span> <span class="token string">"<span class="token entity" title="\\">\\</span>u@<span class="token entity" title="\\">\\</span>d*<span class="token entity" title="\\">\\</span>h <span class="token entity" title="\\">\\</span>R:<span class="token entity" title="\\">\\</span>m:<span class="token entity" title="\\">\\</span>s >"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>初始化 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysqld --user=mysql --basedir=/app/soft/mysql5 --datadir=/data/mysql5_data2/data --initialize</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动第二个实例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysqld bin/mysqld --defaults-file=/data/mysql5_data2/my.cnf --user=mysql &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>测试：连接3307端口实例</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock -P3307 -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost mysql5<span class="token punctuation">]</span><span class="token comment"># bin/mysql -S /data/mysql5_data2/mysql.sock -P3307 -uroot -p</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>好了现在多实例就创建完成了</p>
 
@@ -856,7 +856,7 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       
       <!-- <div class="content">
         [mysql]
-prompt=\U [\d]&gt;  显示的效果为 &#100;&#x65;&#x76;&#49;&#
+prompt=\U [\d]&gt;  显示的效果为 &#x64;&#x65;&#x76;&#49;&#
       </div> -->
     </a>
   </div>

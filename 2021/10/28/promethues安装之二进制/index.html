@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 6.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 6 mins.分钟 |
           </span>
   
           
@@ -727,10 +727,10 @@
 </ul>
 <h2 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h2><h6 id="2-1-下载并运行-Prometheus"><a href="#2-1-下载并运行-Prometheus" class="headerlink" title="2.1   下载并运行 Prometheus"></a><strong>2.1   下载并运行 Prometheus</strong></h6><p>如何安装、配置和使用一个简单的 Prometheus 实例。您将在本地下载并运行 Prometheus，将其配置为抓取自身和示例应用程序，然后处理查询、规则和图形以使用收集的时间序列数据。</p>
 <p>为您的平台<a target="_blank" rel="noopener" href="https://prometheus.io/download">下载最新版本</a>的 Prometheus，然后解压并运行它：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott ~]# wget https:&#x2F;&#x2F;github.com&#x2F;prometheus&#x2F;prometheus&#x2F;releases&#x2F;download&#x2F;v2.29.2&#x2F;prometheus-2.29.2.linux-amd64.tar.gz
-[root@abbott ~]# tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C &#x2F;usr&#x2F;local&#x2F;
-[root@abbott ~]# mv prometheus-2.29.2.linux-amd64 prometheus2.29.2
-[root@abbott ~]# ln -s prometheus2.29.2 prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@abbott ~<span class="token punctuation">]</span><span class="token comment"># wget https://github.com/prometheus/prometheus/releases/download/v2.29.2/prometheus-2.29.2.linux-amd64.tar.gz</span>
+<span class="token punctuation">[</span>root@abbott ~<span class="token punctuation">]</span><span class="token comment"># tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C /usr/local/</span>
+<span class="token punctuation">[</span>root@abbott ~<span class="token punctuation">]</span><span class="token comment"># mv prometheus-2.29.2.linux-amd64 prometheus2.29.2</span>
+<span class="token punctuation">[</span>root@abbott ~<span class="token punctuation">]</span><span class="token comment"># ln -s prometheus2.29.2 prometheus</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>2.2  在启动 Prometheus 之前，让我们查看下住配置文件</strong></p>
 <h6 id="配置-Prometheus-监控自身"><a href="#配置-Prometheus-监控自身" class="headerlink" title="配置 Prometheus 监控自身"></a>配置 Prometheus 监控自身</h6><p>Prometheus通过抓取指标 HTTP 端点从<em>目标</em>收集指标。由于 Prometheus 以与自身相同的方式公开数据，因此它还可以抓取和监控自身的健康状况。</p>
@@ -771,8 +771,8 @@
 <p>普罗米修斯应该启动。您还应该能够在<a target="_blank" rel="noopener" href="http://localhost:9090/">localhost:9090</a>浏览到关于它自己的状态页面。给它几秒钟从它自己的 HTTP 指标端点收集关于它自己的数据。</p>
 <p>您还可以通过导航到其指标端点来验证 Prometheus 是否正在提供有关其自身的指标： localhost:9090/metrics</p>
 <p><strong>2.4 同步时间</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott prometheus]# yum install  -y  ntpdate
-[root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@abbott prometheus<span class="token punctuation">]</span><span class="token comment"># yum install  -y  ntpdate</span>
+<span class="token punctuation">[</span>root@abbott prometheus<span class="token punctuation">]</span><span class="token comment"># ntpdate  ntp.aliyun.com</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5>
       </div>

@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 13k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 14k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 12 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 13 mins.分钟 |
           </span>
   
           
@@ -776,20 +776,20 @@
 </tbody></table>
 <h2 id="五、流程架构图："><a href="#五、流程架构图：" class="headerlink" title="五、流程架构图："></a>五、流程架构图：</h2><img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105232550510" style="zoom:50%;" />
 
-<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave01 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave02 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@mysql-master ~<span class="token punctuation">]</span><span class="token comment">#  wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz</span>
+<span class="token punctuation">[</span>root@mysql-slave01 ~<span class="token punctuation">]</span><span class="token comment"># wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz</span>
+<span class="token punctuation">[</span>root@mysql-slave02 ~<span class="token punctuation">]</span><span class="token comment"># wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# mkdir -p &#x2F;app&#x2F;soft
-[root@mysql-master ~]# mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;logs
-[root@mysql-master ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz &#x2F;app&#x2F;soft
-[root@mysql-master soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz 
-[root@mysql-master soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@mysql-master ~<span class="token punctuation">]</span><span class="token comment"># mkdir -p /app/soft</span>
+<span class="token punctuation">[</span>root@mysql-master ~<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/mysql5_data/logs</span>
+<span class="token punctuation">[</span>root@mysql-master ~<span class="token punctuation">]</span><span class="token comment"># mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz /app/soft</span>
+<span class="token punctuation">[</span>root@mysql-master soft<span class="token punctuation">]</span><span class="token comment"># tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz </span>
+<span class="token punctuation">[</span>root@mysql-master soft<span class="token punctuation">]</span><span class="token comment"># ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# useradd  mysql -s &#x2F;sbin&#x2F;nologin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@mysql-master ~<span class="token punctuation">]</span><span class="token comment"># useradd  mysql -s /sbin/nologin </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master data]# chown mysql:mysql -R mysql5_data&#x2F;
-[root@mysql-master soft]# chown mysql:mysql -R mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@mysql-master data<span class="token punctuation">]</span><span class="token comment"># chown mysql:mysql -R mysql5_data/</span>
+<span class="token punctuation">[</span>root@mysql-master soft<span class="token punctuation">]</span><span class="token comment"># chown mysql:mysql -R mysql5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="6-5-创建my-cnf"><a href="#6-5-创建my-cnf" class="headerlink" title="6.5 创建my.cnf"></a>6.5 创建my.cnf</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[root@mysql-master ~]# vim  &#x2F;data&#x2F;mysql5_data&#x2F;my.cnf
 [mysqld]
@@ -823,13 +823,13 @@ innodb_log_file_size &#x3D; 32M<span aria-hidden="true" class="line-numbers-rows
 <blockquote>
 <p>slave 的server_id 要比主server_id 要大</p>
 </blockquote>
-<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F; --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~<span class="token punctuation">]</span><span class="token comment"># bin/mysqld --user=mysql --basedir=/app/soft/mysql5/ --datadir=/data/mysql5_data/data --initialize</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>初始化密码：会随机打印到屏幕上</p>
 </blockquote>
-<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf  --user&#x3D;mysql &amp;
-~]# mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~<span class="token punctuation">]</span><span class="token comment"># bin/mysqld --defaults-file=/data/mysql5_data/my.cnf  --user=mysql &amp;</span>
+~<span class="token punctuation">]</span><span class="token comment"># mysql -S /data/mysql5_data/mysql3306.sock -uroot -p</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><font color=red>注意：</font></p>
 <blockquote>
@@ -964,7 +964,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </div>
       <!-- <div class="content">
         [mysql]
-prompt=\U [\d]&gt;  显示的效果为 &#100;&#x65;&#x76;&#49;&#
+prompt=\U [\d]&gt;  显示的效果为 &#x64;&#x65;&#x76;&#49;&#
       </div> -->
     </a>
   </div>
