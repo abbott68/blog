@@ -676,15 +676,24 @@
       
 
       
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/Python/" class="post-detail-header_category">
+              Python
+            </a>
+          
+        </span>
+      
 
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 2k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 2 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
           </span>
   
           
@@ -761,6 +770,44 @@
 </blockquote>
 <h1 id="1-3-下载并安装-Python-3-最新版本"><a href="#1-3-下载并安装-Python-3-最新版本" class="headerlink" title="1.3  下载并安装 Python 3 最新版本"></a>1.3  下载并安装 Python 3 最新版本</h1><p>如何下载和安装 Python 3 最新版本？在本文中，您将获得与在 Windows/Linux/macOS 上安装 Python 相关的所有问题的答案。Python 是由 Guido van Rossum 于 1990 年代初期开发的，其最新版本是 3.9，我们可以简称为 Python3。</p>
 <p>要了解如何安装 Python，您需要知道<em>Python 是什么</em>以及它实际安装在系统中的位置。</p>
+<h3 id="1-4-Python3基础知识"><a href="#1-4-Python3基础知识" class="headerlink" title="1.4    Python3基础知识"></a>1.4    Python3基础知识</h3><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/python-tutorial-learn-python-3-with-examples/">Python</a>是由 Guido van Rossum 于 1990 年代初期开发的，其最新版本是 3.7.1，我们可以简称为 Python3。Python 3.0 于 2008 年发布。它是解释性语言，即它没有被编译，解释器将逐行检查代码。这篇文章可以用来学习非常基础的<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/python-programming-language/">Python 编程语言</a>。</p>
+<p>所以在继续之前……让我们做最流行的“HelloWorld，因此将 Python 的语法与 C、C++、Java 进行比较（我选择了这 3 种语言，因为它们是最著名和最常用的语言)。</p>
+<h4 id="1-4-1-介绍与设置"><a href="#1-4-1-介绍与设置" class="headerlink" title="1.4.1    介绍与设置"></a>1.4.1    介绍与设置</h4><p><strong>1 、Windows 平台</strong></p>
+<p>如果您使用的是<strong>Windows 操作系统</strong>，请<a target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">单击此处</a>下载 Python，然后从设置中安装并在开始菜单中输入 IDLE.IDLE，您可以将其视为 Python 的 IDE 来运行 Python 脚本。</p>
+<p>它会以某种方式看起来像这样：</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Python_console.png" class="lazyload placeholder" data-srcset="https://media.geeksforgeeks.org/wp-content/uploads/Python_console.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="灯箱"></p>
+<p><strong>2、 Linux/Unix 平台</strong></p>
+<p>如果您使用的是<strong>类似 Linux/Unix 的系统，</strong>只需打开终端，并且在 99% 的 linux 操作系统上，Python 预装了操作系统。只需在终端中输入“python3”，您就可以开始使用了。<br>它看起来像这样：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">]# python3
+Python 3.6.8 (default, Aug 24 2020, 17:57:11) 
+[GCC 8.3.1 20191121 (Red Hat 8.3.1-5)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="1-5-变量和数据结构"><a href="#1-5-变量和数据结构" class="headerlink" title="1.5    变量和数据结构"></a>1.5    变量和数据结构</h3><p>在 C、C++ 和 Java 等其他编程语言中，您需要声明变量的类型，但在 Python 中则不需要这样做。只需输入变量，当将给它值时，它就会自动知道给定的值是 int、float、char 还是 String。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&gt;&gt;&gt; myNuber &#x3D; 3
+&gt;&gt;&gt; print(myNuber)
+3
+&gt;&gt;&gt; myNuber2 &#x3D; 4.5
+&gt;&gt;&gt; print(myNuber2)
+4.5
+&gt;&gt;&gt; myNuber3 &#x3D; &quot;hell world&quot;
+&gt;&gt;&gt; print(myNuber3)
+hell world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>看，它有多简单，只需创建一个变量并为其分配任何您想要的值，然后使用打印功能将其打印出来。Python 有 4 种类型的内置数据结构，即<strong>List</strong>、<strong>Dictionary</strong>、<strong>Tuple</strong>和 <strong>Set</strong>。</p>
+</blockquote>
+<p>**列表:**是python中最基本的数据结构。列表是一种可变数据结构，即可以在创建列表后将项目添加到中。这就像您要去当地市场购物并列出一些商品，然后您可以将越来越多的商品添加到列表中。<br>append() 函数用于向列表中添加数据。</p>
+<pre><code class="python">&gt;&gt;&gt; nums = []
+&gt;&gt;&gt; nums.append(21)
+&gt;&gt;&gt; nums.append(40.5)
+&gt;&gt;&gt; nums.append(&quot;String&quot;)
+&gt;&gt;&gt; print(nums)
+[21, 40.5, &#39;String&#39;]
+</code></pre>
 
       </div>
       <div class="post-tags-categories">

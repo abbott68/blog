@@ -98,6 +98,44 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -186,150 +224,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux安装软件</title>
-    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
-<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
-<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
-<p><strong>5.2、下载、解压源码</strong></p>
-<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
-<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
-<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
-<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
-<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
-<p>​    1、makefile 文件</p>
-<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
-<p>​    2、make与make install</p>
-<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
-<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
-<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
-<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
-<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
-<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
-<ul>
-<li><p>安装软件包：</p>
-<p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>常用选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
-  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
-  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
-                                   被指定未多个软件包，常常会导致错误出现)
-  --badreloc                       对不可重定位的软件包重新分配文件位置
-  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
-  --excludedocs                    不安装程序文档
-  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
-  --force                          --replacepkgs --replacefiles 的缩写
-  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
-  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
-  --ignorearch                     不验证软件包架构
-  --ignoreos                       不验证软件包操作系统
-  --ignoresize                     在安装前不检查磁盘空间
-  -i, --install                    安装软件包
-  --justdb                         更新数据库，但不修改文件系统
-  --nodeps                         不验证软件包依赖
-  --nofiledigest                   不验证文件摘要
-  --nocontexts                     不安装文件的安全上下文
-  --noorder                        不对软件包安装重新排序以满足依赖关系
-  --noscripts                      不执行软件包脚本
-  --notriggers                     不执行本软件包触发的任何脚本
-  --nocollections                  请不要执行任何动作集
-  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
-  --percent                        安装软件包时打印百分比
-  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
-  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
-  --replacefiles                   忽略软件包之间的冲突的文件
-  --replacepkgs                    如果软件包已经有了，重新安装软件包
-  --test                           不真正安装，只是判断下是否能安装
-  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
-  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
-<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
-<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><strong>yum的配置</strong></p>
-<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
-name&#x3D;CentOS-$releasever - cr  
-baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
-gpgcheck&#x3D;1
-gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
-enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>yum的特点与基本用法</strong></p>
-<ol>
-<li><p>yum的特点</p>
-<ul>
-<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
-<li>可以同时配置多个资源库（Repository）</li>
-<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
-<li>保持与RPM数据库的一致性</li>
-</ul>
-</li>
-<li><p>yum的基本用法</p>
-<ul>
-<li><p>如果安装或者删除RPM包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
-[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>检查yum工具更新软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>更新所有的RPM软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>通过yum查询RPM包信息</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -461,73 +355,104 @@ enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><s
       </tags>
   </entry>
   <entry>
-    <title>Linux控制台的使用</title>
-    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
-<p>#Linux 控制台的使用</p>
-<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
-<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
-<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
-<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+    <title>Linux安装软件</title>
+    <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
+<h2 id="5-1、源码安装方式"><a href="#5-1、源码安装方式" class="headerlink" title="5.1、源码安装方式"></a>5.1、源码安装方式</h2><p>由于Linux操作系统开放源代码，因而在其上安装的软件大部分也都是开源软件，例如Apache、Tomcat、PHP等软件，开源软件基本都是提供源码下载、源码安装的方式；源码安装的好处是用户可以定制软件功能，安装需要的模块，不需要的功能可以不用安装，此外用户还可以自己选择安装路径，方便管理，卸载软件也很方便，只需要删除对应的安装目录即可。</p>
+<p>源码安装软件一般有以下几个步骤：下载解压源码、分析安装平台环境（configure）、编译安装软件（make、make install）</p>
+<p><strong>5.2、下载、解压源码</strong></p>
+<p>Linux下软件的源码一般都是C或者C++语言编写的，并且都会在软件的官网上提供源码包下载，我们可以从官网下载源码文件，然后再传到所在的Linux系统下，如果你的Linux系统处于联网状态下，也可以直接在系统内通过wget之类的下载命令将源码包直接下载到Linux系统下。</p>
+<p>下载完成，把相应的软件包解压即可，针对下载的软件包的不同，使用不同方法进行解压，解压完成后进入解压生成的目录中。在这个目录下，一般都在一个REDAME文件。这个文件非常重要，它详细介绍了这个软件所能完成的功能、授权许可、安装需求、安装注意事项、安装方式等。</p>
+<h4 id="5-3、分析安装平台环境"><a href="#5-3、分析安装平台环境" class="headerlink" title="5.3、分析安装平台环境"></a>5.3、分析安装平台环境</h4><p>在软件包解压完成之后，源码目录中，一般都会存在configure和README这两个文件，Linux下软件的安装受到操作系统安装环境的影响，比如某些软件在安装或者运行过程中需要调用操作系统本省的库文件，或者需要运行系统的摸个工具等。</p>
+<h4 id="5-4、编译、安装软件"><a href="#5-4、编译、安装软件" class="headerlink" title="5.4、编译、安装软件"></a>5.4、编译、安装软件</h4><p>在验证软件安装环境后正式进入软件的编译步骤，在进行编译前，首先了解下关于编译的一些基础知识.</p>
+<p>​    在Linux系统下，make是经常用到的编译命令，无论是安装软件还是项目开发，都会经常用到编译、安装命令，也就是make和make install。对于一个包含很多源文件的应用程序，使用make和Makefile工具可以简单快速地解决各个源文件之间复杂的依赖关系，同时，make工具可以自动完成所有源码文件的编译工作，并且可以只对上次编译后修改过的文件进行增量编译，因此，熟练掌握了make和Makefile工具之后，源码安装软件就变得像Windows下安装软件一样简单。</p>
+<p>​    1、makefile 文件</p>
+<p>​    make工具最主要的功能就是通过makefile文件来实现的，makefile文件时按照某种语法来进行编写的，文件中定义了各个源文件之间的依赖关系，说明了如果编译源文件并生成可执行文件，它通过描述各个源程序之间的关系make工具自动完成编译工具，</p>
+<p>​    2、make与make install</p>
+<p>​    在了解Makefile文件结构，我们就可以控制编译的选项，定制自己所需的软件功能，接下来，我嗯只须在命令行输入make命令，即可进入编译阶段，根据软件源程序的大小和系统的硬件配置，编译时间不定，编译完成，会在当前目录以及子目录下生成相应的可执行文件，之后就可以进入安装软件，在命令行输入make install命令，在开始安装软件，安装进程会首先创建安装目录，如果没有指定安装目录安装程序默认会在系统的/usr/local目录下创建安装目录，然后将相应的文件和可执行程序从源码目录复制到安装目录下，这样安装就完成了。</p>
+<h4 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h4><h5 id="RPM介绍"><a href="#RPM介绍" class="headerlink" title="RPM介绍"></a><strong>RPM介绍</strong></h5><p>RPM是Red Hat Package Manager的缩写，本意是Red Hat软件包管理，是最先由Redhat公司开发出来的Linux下软件包管理工具，由于这种软件管理非常方便，逐渐被其他Linux发行商所借用，现在已经成为Linux平台下通用的软件包安装方式。</p>
+<p>RPM包管理方式的优点是：安装简单、方便，因为软件已经编译完成且打包完成，安装只是个验证环境和解压的过程，此外通过RPM方式安装的软件RPM工具都会记录软件的安装信息，这样方便了软件日后的查询、升级和卸载。</p>
+<p>RPM包管理方式的缺点是对操作系统环境的依赖很大，它要求RPM包的那幢环境必须与PRM包封装时的环境和一致或相当，还需啊满足安装时与系统某些软件包的依赖关系。</p>
+<h5 id="RPM包的种类和组成"><a href="#RPM包的种类和组成" class="headerlink" title="RPM包的种类和组成"></a><strong>RPM包的种类和组成</strong></h5><p>RPM包的封装格式一般有两种，分别是RPM和SRPM，SRPM包也是一种RPM，但是它包含了编译时的源文件和一些编译指定的参数文件，因而在使用的时候需要重新进行编译，通常SRPM对应的RPM文件类似于“xxx.src.rpm”格式。</p>
+<h5 id="RPM工具描述："><a href="#RPM工具描述：" class="headerlink" title="RPM工具描述："></a><strong>RPM工具描述：</strong></h5><p>RPM工具的使用分为安装、查询、验证、更新、删除等操作。</p>
 <ul>
-<li><p><strong>查看系统PCI信息</strong></p>
-<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><p>安装软件包：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>输出结果：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
-<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看系统内存信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
-<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
-<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
-<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
-<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
-<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
-<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
-<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
-<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p><strong>查看CPU信息</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
-CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
-<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
-<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
-<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
-<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
-<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
-座：                 <span class="token number">1</span>
-NUMA 节点：         <span class="token number">1</span>
-厂商 ID：           <span class="token class-name">GenuineIntel</span>
-CPU 系列：          <span class="token number">6</span>
-型号：              <span class="token number">70</span>
-型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
-步进：              <span class="token number">1</span>
-CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
-<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
-超管理器厂商：  <span class="token class-name">VMware</span>
-虚拟化类型：     完全
-<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
-<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
-L2 缓存：           <span class="token number">256</span>K
-L3 缓存：           <span class="token number">6144</span>K
-L4 缓存：           <span class="token number">131072</span>K
-NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
-<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<p>常用选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
+  --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
+  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
+                                   被指定未多个软件包，常常会导致错误出现)
+  --badreloc                       对不可重定位的软件包重新分配文件位置
+  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
+  --excludedocs                    不安装程序文档
+  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
+  --force                          --replacepkgs --replacefiles 的缩写
+  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
+  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
+  --ignorearch                     不验证软件包架构
+  --ignoreos                       不验证软件包操作系统
+  --ignoresize                     在安装前不检查磁盘空间
+  -i, --install                    安装软件包
+  --justdb                         更新数据库，但不修改文件系统
+  --nodeps                         不验证软件包依赖
+  --nofiledigest                   不验证文件摘要
+  --nocontexts                     不安装文件的安全上下文
+  --noorder                        不对软件包安装重新排序以满足依赖关系
+  --noscripts                      不执行软件包脚本
+  --notriggers                     不执行本软件包触发的任何脚本
+  --nocollections                  请不要执行任何动作集
+  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
+  --percent                        安装软件包时打印百分比
+  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
+  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
+  --replacefiles                   忽略软件包之间的冲突的文件
+  --replacepkgs                    如果软件包已经有了，重新安装软件包
+  --test                           不真正安装，只是判断下是否能安装
+  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
+  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-]]></content>
+<h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
+<h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
+<p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>yum的配置</strong></p>
+<p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
+name&#x3D;CentOS-$releasever - cr  
+baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
+gpgcheck&#x3D;1
+gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
+enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>yum的特点与基本用法</strong></p>
+<ol>
+<li><p>yum的特点</p>
+<ul>
+<li>安装方便，自动解决添加或删除RPM包时遇到的依赖性问题。</li>
+<li>可以同时配置多个资源库（Repository）</li>
+<li>配置文件简单明了（/etc/yum.conf,  /etc/yum.repos.d/）</li>
+<li>保持与RPM数据库的一致性</li>
+</ul>
+</li>
+<li><p>yum的基本用法</p>
+<ul>
+<li><p>如果安装或者删除RPM包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
+[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>检查yum工具更新软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>更新所有的RPM软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>通过yum查询RPM包信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
       <categories>
         <category>Linux系列</category>
       </categories>
@@ -1476,6 +1401,81 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </tags>
   </entry>
   <entry>
+    <title>Linux控制台的使用</title>
+    <url>/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="三、Linux系统基本结构"><a href="#三、Linux系统基本结构" class="headerlink" title="三、Linux系统基本结构"></a>三、Linux系统基本结构</h1><p>本章主要从整体上讲述Linux系统的基本结构，主要包括Linux控制台的概念和使用、Linux系统与硬件的关系、系统的目录结构、系统运行概念、系统内核的组成和运行原理、系统服务管理与系统关闭过程等；</p>
+<p>#Linux 控制台的使用</p>
+<p>Linux系统由桌面控制台和字符控制台组成，桌面系统其实就是我们安装软件包时的X-Window视窗，而X-Window的实质是在命令行下的一个应用程序。字符控制台是Linux系统的核心，大部分操作都是在字符界面下完成的。</p>
+<p>默认Linux下有6个字符控制台，每个控制台可以独立作业，互不影响，这真正体现了Linux系统的“多用户、多任务”的特性。在图形界面下要切换到字符界面时，只需按Ctrl+alt+F1~F6组合键中的任何一个，即可进入字符界面。如果想要在字符界面切换图形的话输入命令“startx”或者输入“init 5” 即可；</p>
+<p>接下来的工作是登陆系统，Linux系统的默认管理员用户是root，root用户可以操作系统的任何文件和设备，拥有最好权限。输入登陆的用户名root，然后输入对应的密码，即可登陆Linux系统了，登陆成功后，会出现一个Linux命令行，请不要因此而泄气，因为从这里开始，我们才真正踏入Linux学习之旅；</p>
+<h2 id="Linux硬件资源管理"><a href="#Linux硬件资源管理" class="headerlink" title="Linux硬件资源管理"></a>Linux硬件资源管理</h2><p>Linux新手可能觉得查看系统的硬件信息很难，没有Windows那么直观，可事实正好相反，应该说，Linux下的命令可以把硬件信息显示更加清楚，下面通过几个相关的Linux命令查看系统硬件信息</p>
+<ul>
+<li><p><strong>查看系统PCI信息</strong></p>
+<p>lspci命令可以列出所有的PCI设备，不如主板、显卡、声卡等，也会把USB接口设备列出来</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lspci <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">00</span><span class="token operator">:</span><span class="token number">00.0</span> Host bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> Host <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">01.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">440</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token operator">-</span> <span class="token number">82443</span>BX<span class="token operator">/</span><span class="token constant">ZX</span><span class="token operator">/</span><span class="token constant">DX</span> <span class="token constant">AGP</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.0</span> <span class="token constant">ISA</span> bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ISA</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.1</span> <span class="token constant">IDE</span> <span class="token keyword">interface</span><span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">IDE</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.3</span> Bridge<span class="token operator">:</span> Intel Corporation <span class="token number">82371</span>AB<span class="token operator">/</span><span class="token constant">EB</span><span class="token operator">/</span><span class="token constant">MB</span> <span class="token constant">PIIX4</span> <span class="token constant">ACPI</span> <span class="token punctuation">(</span>rev <span class="token number">08</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">07.7</span> System peripheral<span class="token operator">:</span> VMware Virtual Machine Communication <span class="token function">Interface</span> <span class="token punctuation">(</span>rev <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">0</span>f<span class="token punctuation">.</span><span class="token number">0</span> <span class="token constant">VGA</span> compatible controller<span class="token operator">:</span> VMware <span class="token constant">SVGA</span> <span class="token constant">II</span> Adapter
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">10.0</span> <span class="token constant">SCSI</span> storage controller<span class="token operator">:</span> Broadcom <span class="token operator">/</span> <span class="token constant">LSI</span> <span class="token number">53</span>c1030 <span class="token constant">PCI</span><span class="token operator">-</span><span class="token constant">X</span> Fusion<span class="token operator">-</span><span class="token constant">MPT</span> Dual Ultra320 <span class="token constant">SCSI</span> <span class="token punctuation">(</span>rev <span class="token number">01</span><span class="token punctuation">)</span>
+<span class="token number">00</span><span class="token operator">:</span><span class="token number">11.0</span> <span class="token constant">PCI</span> bridge<span class="token operator">:</span> VMware <span class="token constant">PCI</span> <span class="token function">bridge</span> <span class="token punctuation">(</span>rev <span class="token number">02</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看系统内存信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lsmem <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">ANGE                 SIZE STATE REMOVABLE BLOCK
+<span class="token number">0x0000000000000000</span><span class="token operator">-</span><span class="token number">0x0000000007ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">0</span>
+<span class="token number">0x0000000008000000</span><span class="token operator">-</span><span class="token number">0x000000000fffffff</span> <span class="token number">128</span>M online    是   <span class="token number">1</span>
+<span class="token number">0x0000000010000000</span><span class="token operator">-</span><span class="token number">0x0000000017ffffff</span> <span class="token number">128</span>M online    否   <span class="token number">2</span>
+<span class="token number">0x0000000018000000</span><span class="token operator">-</span><span class="token number">0x0000000027ffffff</span> <span class="token number">256</span>M online    是  <span class="token number">3</span><span class="token operator">-</span><span class="token number">4</span>
+<span class="token number">0x0000000028000000</span><span class="token operator">-</span><span class="token number">0x000000003fffffff</span> <span class="token number">384</span>M online    否  <span class="token number">5</span><span class="token operator">-</span><span class="token number">7</span>
+<span class="token class-name">Memory</span> block size<span class="token operator">:</span>    <span class="token number">128</span>M
+<span class="token class-name">Total</span> online memory<span class="token operator">:</span>    <span class="token number">1</span>G
+<span class="token class-name">Total</span> offline memory<span class="token operator">:</span>   <span class="token number">0</span>B<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><strong>查看CPU信息</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lscpu <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Architecture</span><span class="token operator">:</span>          x86_64
+CPU op<span class="token operator">-</span><span class="token function">mode</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>        <span class="token number">32</span><span class="token operator">-</span>bit<span class="token punctuation">,</span> <span class="token number">64</span><span class="token operator">-</span>bit
+<span class="token class-name">Byte</span> <span class="token class-name">Order</span><span class="token operator">:</span>            <span class="token class-name">Little</span> <span class="token class-name">Endian</span>
+<span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">:</span>                <span class="token number">1</span>
+<span class="token class-name">On</span><span class="token operator">-</span>line <span class="token function">CPU</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> list<span class="token operator">:</span>   <span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per core<span class="token operator">:</span>    <span class="token number">1</span>
+<span class="token class-name">Core</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> per socket<span class="token operator">:</span>    <span class="token number">1</span>
+座：                 <span class="token number">1</span>
+NUMA 节点：         <span class="token number">1</span>
+厂商 ID：           <span class="token class-name">GenuineIntel</span>
+CPU 系列：          <span class="token number">6</span>
+型号：              <span class="token number">70</span>
+型号名称：        <span class="token class-name">Intel</span><span class="token punctuation">(</span><span class="token class-name">R</span><span class="token punctuation">)</span> <span class="token class-name">Core</span><span class="token punctuation">(</span>TM<span class="token punctuation">)</span> i7<span class="token operator">-</span><span class="token number">4870</span>HQ CPU @ <span class="token number">2.50</span>GHz
+步进：              <span class="token number">1</span>
+CPU <span class="token class-name">MHz</span>：             <span class="token number">2494.226</span>
+<span class="token class-name">BogoMIPS</span>：            <span class="token number">4988.45</span>
+超管理器厂商：  <span class="token class-name">VMware</span>
+虚拟化类型：     完全
+<span class="token class-name">L1d</span> 缓存：          <span class="token number">32</span>K
+<span class="token class-name">L1i</span> 缓存：          <span class="token number">32</span>K
+L2 缓存：           <span class="token number">256</span>K
+L3 缓存：           <span class="token number">6144</span>K
+L4 缓存：           <span class="token number">131072</span>K
+NUMA 节点<span class="token number">0</span> CPU：    <span class="token number">0</span>
+<span class="token class-name">Flags</span><span class="token operator">:</span>                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt arat md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacbookPor-m1</title>
     <url>/blog/2021/12/02/MacbookPor-m1/</url>
     <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
@@ -1499,77 +1499,6 @@ tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件�
       </categories>
       <tags>
         <tag>VMware fuison</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL8.0.27版本二进制安装</title>
-    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
-soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
-[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
-[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
-[root@docker mysql827]# ls
-bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
-[mysqld]
-# 选择默认存储引擎为InnoDB
-default-storage-engine&#x3D;InnoDB
-# 用户
-user &#x3D; mysql
-# 监听端口
-port &#x3D; 3306
-#socket通信设置
-socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
-# 安装目录
-basedir&#x3D;&#x2F;app&#x2F;mysql827
-# 数据文件位置
-datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
-# 允许最大连接数 
-max_connections&#x3D;512
-# 等待关闭连接时间
-wait_timeout&#x3D;600
-# 服务端字符集
-character-set-server&#x3D;utf8mb4
-# 错误日志
-log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
-# 默认使用“mysql_native_password”插件认证
-default_authentication_plugin&#x3D;mysql_native_password
-#server-id&#x3D;10
-log_bin&#x3D;gh
-## 兼容sql_mode
-sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>官方推荐：</p>
-<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
-<p>初始化的时候没有密码：–initialize-insecure </p>
-</blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
-[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
-export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1781,6 +1710,77 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
+    <title>MySQL8.0.27版本二进制安装</title>
+    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>官方推荐：</p>
+<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
+<p>初始化的时候没有密码：–initialize-insecure </p>
+</blockquote>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL优化和运维之道</title>
     <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
     <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
@@ -1909,7 +1909,7 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#49;&#64;&#x31;&#x37;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#x33;">&#100;&#x65;&#118;&#49;&#64;&#x31;&#x37;&#x32;&#46;&#49;&#54;&#x2e;&#53;&#x39;&#x2e;&#x31;&#x33;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#118;&#49;&#64;&#49;&#55;&#50;&#x2e;&#49;&#54;&#x2e;&#x35;&#x39;&#x2e;&#x31;&#51;&#51;">&#x64;&#101;&#118;&#49;&#64;&#49;&#55;&#50;&#x2e;&#49;&#54;&#x2e;&#x35;&#x39;&#x2e;&#x31;&#51;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2502,6 +2502,9 @@ ValueError<span class="token punctuation">:</span> <span class="token keyword">n
 <p>原因是：输入的值不是期望的值，输入的俩个值的不能换行</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
 Enter a two value<span class="token punctuation">:</span><span class="token number">10</span> <span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>Python 语言</tag>
       </tags>
@@ -2638,6 +2641,9 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>Python 语言</tag>
       </tags>
@@ -2698,7 +2704,48 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
 </blockquote>
 <h1 id="1-3-下载并安装-Python-3-最新版本"><a href="#1-3-下载并安装-Python-3-最新版本" class="headerlink" title="1.3  下载并安装 Python 3 最新版本"></a>1.3  下载并安装 Python 3 最新版本</h1><p>如何下载和安装 Python 3 最新版本？在本文中，您将获得与在 Windows/Linux/macOS 上安装 Python 相关的所有问题的答案。Python 是由 Guido van Rossum 于 1990 年代初期开发的，其最新版本是 3.9，我们可以简称为 Python3。</p>
 <p>要了解如何安装 Python，您需要知道<em>Python 是什么</em>以及它实际安装在系统中的位置。</p>
+<h3 id="1-4-Python3基础知识"><a href="#1-4-Python3基础知识" class="headerlink" title="1.4    Python3基础知识"></a>1.4    Python3基础知识</h3><p><a href="https://www.geeksforgeeks.org/python-tutorial-learn-python-3-with-examples/">Python</a>是由 Guido van Rossum 于 1990 年代初期开发的，其最新版本是 3.7.1，我们可以简称为 Python3。Python 3.0 于 2008 年发布。它是解释性语言，即它没有被编译，解释器将逐行检查代码。这篇文章可以用来学习非常基础的<a href="https://www.geeksforgeeks.org/python-programming-language/">Python 编程语言</a>。</p>
+<p>所以在继续之前……让我们做最流行的“HelloWorld，因此将 Python 的语法与 C、C++、Java 进行比较（我选择了这 3 种语言，因为它们是最著名和最常用的语言)。</p>
+<h4 id="1-4-1-介绍与设置"><a href="#1-4-1-介绍与设置" class="headerlink" title="1.4.1    介绍与设置"></a>1.4.1    介绍与设置</h4><p><strong>1 、Windows 平台</strong></p>
+<p>如果您使用的是<strong>Windows 操作系统</strong>，请<a href="https://www.python.org/downloads/windows/">单击此处</a>下载 Python，然后从设置中安装并在开始菜单中输入 IDLE.IDLE，您可以将其视为 Python 的 IDE 来运行 Python 脚本。</p>
+<p>它会以某种方式看起来像这样：</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Python_console.png" class="lazyload placeholder" data-srcset="https://media.geeksforgeeks.org/wp-content/uploads/Python_console.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="灯箱"></p>
+<p><strong>2、 Linux/Unix 平台</strong></p>
+<p>如果您使用的是<strong>类似 Linux/Unix 的系统，</strong>只需打开终端，并且在 99% 的 linux 操作系统上，Python 预装了操作系统。只需在终端中输入“python3”，您就可以开始使用了。<br>它看起来像这样：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">]# python3
+Python 3.6.8 (default, Aug 24 2020, 17:57:11) 
+[GCC 8.3.1 20191121 (Red Hat 8.3.1-5)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="1-5-变量和数据结构"><a href="#1-5-变量和数据结构" class="headerlink" title="1.5    变量和数据结构"></a>1.5    变量和数据结构</h3><p>在 C、C++ 和 Java 等其他编程语言中，您需要声明变量的类型，但在 Python 中则不需要这样做。只需输入变量，当将给它值时，它就会自动知道给定的值是 int、float、char 还是 String。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&gt;&gt;&gt; myNuber &#x3D; 3
+&gt;&gt;&gt; print(myNuber)
+3
+&gt;&gt;&gt; myNuber2 &#x3D; 4.5
+&gt;&gt;&gt; print(myNuber2)
+4.5
+&gt;&gt;&gt; myNuber3 &#x3D; &quot;hell world&quot;
+&gt;&gt;&gt; print(myNuber3)
+hell world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>看，它有多简单，只需创建一个变量并为其分配任何您想要的值，然后使用打印功能将其打印出来。Python 有 4 种类型的内置数据结构，即<strong>List</strong>、<strong>Dictionary</strong>、<strong>Tuple</strong>和 <strong>Set</strong>。</p>
+</blockquote>
+<p>**列表:**是python中最基本的数据结构。列表是一种可变数据结构，即可以在创建列表后将项目添加到中。这就像您要去当地市场购物并列出一些商品，然后您可以将越来越多的商品添加到列表中。<br>append() 函数用于向列表中添加数据。</p>
+<pre><code class="python">&gt;&gt;&gt; nums = []
+&gt;&gt;&gt; nums.append(21)
+&gt;&gt;&gt; nums.append(40.5)
+&gt;&gt;&gt; nums.append(&quot;String&quot;)
+&gt;&gt;&gt; print(nums)
+[21, 40.5, &#39;String&#39;]
+</code></pre>
 ]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>Python 语言</tag>
       </tags>
