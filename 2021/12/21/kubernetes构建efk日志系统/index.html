@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>kubernetes构建efk日志系统 | abbott Blog</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet">
+
+  
+    <script>
+        var themeModelId = '';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script>
+        var live2dOpen = eval('true') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/blog/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/blog/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  <script src="/blog/js/jquery3.5.1.js"></script>
+  <script src="/blog/js/vue2.6.11.js"></script>
+  
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/blog/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 头部导航等 -->
+    
+<header class="header " id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/blog/medias/logo.png" class="lazyload placeholder" data-srcset="/blog/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">abbott Blog</h3>
+      <h5 class="drawer-box-head_desc">人生，生命不息，奋斗不止</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">Home</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">Archives</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">Tags</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">Categories</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">About</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/blog/friends" class="drawer-menu-item-link">
+                  
+                  <span class="name">Friends</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-link"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/blog/gallery">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/blog/huoban">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>友情连接</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://baidu.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/blog/medias/logo.png" class="lazyload placeholder" data-srcset="/blog/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+        </div>
+      
+      <a href="/blog/" class="logo">abbott Blog</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/" class="menu-item-link" title="Home">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">Home</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/archives" class="menu-item-link" title="Archives">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">Archives</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/tags" class="menu-item-link" title="Tags">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">Tags</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/categories" class="menu-item-link" title="Categories">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">Categories</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/about" class="menu-item-link" title="About">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">About</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/blog/friends" class="menu-item-link" title="Friends">
+                  
+                  <span class="name">Friends</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                    <i class="fas fa-link"></i>
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/blog/gallery">
+                      
+                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/blog/huoban">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>友情连接</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="http://baidu.com">
+                      
+                      <i class="fas fa-film" style="margin-top: -20px;"></i>
+                      
+                      <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/blog/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/blog/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    
+      <script src="/blog/js/header/index.js" data-pjax></script>
+    
+</header>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/blog/js/swiper/swiper.min.js"></script>
+<script src="/blog/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/blog/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+
+  <script src="/blog/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/blog/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+    <!-- 内容区域 -->
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="margin-top: 0;">
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/5.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        kubernetes构建efk日志系统
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-12-21 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/kubernetes%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              kubernetes系列
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 99k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 1:30分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="kubernetes-1-23集群-构建efk-日志系统"><a href="#kubernetes-1-23集群-构建efk-日志系统" class="headerlink" title="kubernetes-1.23集群 构建efk 日志系统"></a>kubernetes-1.23集群 构建efk 日志系统</h1><h2 id="一、EFK-简介"><a href="#一、EFK-简介" class="headerlink" title="一、EFK 简介"></a>一、EFK 简介</h2><p><strong>ElasticSearch：分布式存储检索引擎，用来搜索、存储日志</strong></p>
+<p><strong>Fluentd：日志采集</strong></p>
+<p><strong>Kibana：读取es中数据进行可视化web界面展示</strong></p>
+<h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>1、 创建namespace 空间</p>
+<ul>
+<li><p>创建yaml文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat create-logging-namespace.yaml </span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+ <span class="token key atrule">name</span><span class="token punctuation">:</span> logging
+ <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+   <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> logging
+   <span class="token key atrule">kubernetes.io/cluster-service</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
+   <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建logging空间</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl create -f create-logging-namespace.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>2、 创建es</p>
+<ul>
+<li><p>创建es-service.yaml文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat es-service.yaml </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">kubernetes.io/cluster-service</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+    <span class="token key atrule">kubernetes.io/name</span><span class="token punctuation">:</span> <span class="token string">"Elasticsearch"</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">clusterIP</span><span class="token punctuation">:</span> None
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> db
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+      <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> transport
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9300</span>
+      <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">9300</span>
+  <span class="token key atrule">publishNotReadyAddresses</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">sessionAffinity</span><span class="token punctuation">:</span> None
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> ClusterIP
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建es-statefulset.yaml 文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat es-statefulset.yaml </span>
+<span class="token comment"># BAC authn and authz</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token punctuation">---</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">""</span>
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"services"</span>
+      <span class="token punctuation">-</span> <span class="token string">"namespaces"</span>
+      <span class="token punctuation">-</span> <span class="token string">"endpoints"</span>
+    <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"get"</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRoleBinding
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">subjects</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+    <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token key atrule">roleRef</span><span class="token punctuation">:</span>
+  <span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token punctuation">---</span>
+<span class="token comment">#Elasticsearch deployment itself</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> StatefulSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v7.10.2
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v7.10.2
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v7.10.2
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> quay.io/fluentd_elasticsearch/elasticsearch<span class="token punctuation">:</span>v7.10.2
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+          <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> Always
+          <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+           <span class="token comment"># need more cpu upon initialization, therefore burstable class</span>
+            <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+              <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 1000m
+              <span class="token key atrule">memory</span><span class="token punctuation">:</span> 3Gi
+            <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+              <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 100m
+              <span class="token key atrule">memory</span><span class="token punctuation">:</span> 3Gi
+          <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9200</span>
+              <span class="token key atrule">name</span><span class="token punctuation">:</span> db
+              <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+            <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9300</span>
+              <span class="token key atrule">name</span><span class="token punctuation">:</span> transport
+              <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+          <span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+            <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>
+              <span class="token key atrule">port</span><span class="token punctuation">:</span> transport
+            <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+            <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+          <span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+            <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>
+              <span class="token key atrule">port</span><span class="token punctuation">:</span> transport
+            <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+            <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+          <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+              <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /data
+          <span class="token key atrule">env</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"NAMESPACE"</span>
+              <span class="token key atrule">valueFrom</span><span class="token punctuation">:</span>
+                <span class="token key atrule">fieldRef</span><span class="token punctuation">:</span>
+                  <span class="token key atrule">fieldPath</span><span class="token punctuation">:</span> metadata.namespace
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">"MINIMUM_MASTER_NODES"</span>
+              <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"1"</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging
+          <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+      <span class="token comment">#lasticsearch requires vm.max_map_count to be at least 262144.</span>
+      <span class="token comment">#f your OS already sets up this number to a higher value, feel free</span>
+      <span class="token comment">#o remove this init container.</span>
+      <span class="token key atrule">initContainers</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> alpine<span class="token punctuation">:</span><span class="token number">3.6</span>
+          <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"/sbin/sysctl"</span><span class="token punctuation">,</span> <span class="token string">"-w"</span><span class="token punctuation">,</span> <span class="token string">"vm.max_map_count=262144"</span><span class="token punctuation">]</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> elasticsearch<span class="token punctuation">-</span>logging<span class="token punctuation">-</span>init
+          <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+            <span class="token key atrule">privileged</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建es-service</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># kubectl create -f es-service.yaml </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建es-statefulset集群</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl create -f es-statefulset.yaml <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>3、 查看pod</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl get pod -n logging
+NAME                              READY   STATUS    RESTARTS   AGE
+elasticsearch-logging-0           1&#x2F;1     Running   0          91m
+elasticsearch-logging-1           1&#x2F;1     Running   0          89m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4、 安装kibana</p>
+<ul>
+<li><p>创建kibana-service.yaml文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat kibana-service.yaml </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+    <span class="token key atrule">kubernetes.io/cluster-service</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+    <span class="token key atrule">kubernetes.io/name</span><span class="token punctuation">:</span> <span class="token string">"Kibana"</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5601</span>
+    <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30333</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> ui
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建kibana-deployment.yaml</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat kibana-service.yaml </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+    <span class="token key atrule">kubernetes.io/cluster-service</span><span class="token punctuation">:</span> <span class="token string">"true"</span>
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+    <span class="token key atrule">kubernetes.io/name</span><span class="token punctuation">:</span> <span class="token string">"Kibana"</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5601</span>
+    <span class="token key atrule">nodePort</span><span class="token punctuation">:</span> <span class="token number">30333</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> ui
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+<span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat kibana-deployment.yaml </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+        <span class="token key atrule">seccompProfile</span><span class="token punctuation">:</span>
+          <span class="token key atrule">type</span><span class="token punctuation">:</span> RuntimeDefault
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+          <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/kibana/kibana<span class="token punctuation">-</span>oss<span class="token punctuation">:</span>7.10.2
+          <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+           <span class="token comment"># need more cpu upon initialization, therefore burstable class</span>
+            <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+              <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 1000m
+            <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+              <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 100m
+          <span class="token key atrule">env</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> ELASTICSEARCH_HOSTS
+              <span class="token key atrule">value</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//elasticsearch<span class="token punctuation">-</span>logging<span class="token punctuation">:</span><span class="token number">9200</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> SERVER_NAME
+              <span class="token key atrule">value</span><span class="token punctuation">:</span> kibana<span class="token punctuation">-</span>logging
+            <span class="token comment">#- name: SERVER_BASEPATH</span>
+            <span class="token comment">#  value: /api/v1/namespaces/logging/services/kibana-logging/proxy</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> SERVER_REWRITEBASEPATH
+              <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"false"</span>
+          <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">5601</span>
+              <span class="token key atrule">name</span><span class="token punctuation">:</span> ui
+              <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+          <span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+            <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
+              <span class="token key atrule">path</span><span class="token punctuation">:</span> /api/status
+              <span class="token key atrule">port</span><span class="token punctuation">:</span> ui
+            <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+            <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+          <span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+            <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
+              <span class="token key atrule">path</span><span class="token punctuation">:</span> /api/status
+              <span class="token key atrule">port</span><span class="token punctuation">:</span> ui
+            <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+            <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建kibana-service</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl create -f kibana-service.yaml <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建kibana-deployment</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl create -f kibana-deployment.yaml <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>5、 查看kibana服务</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl get svc -n logging
+NAME                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+elasticsearch-logging   ClusterIP   None             &lt;none&gt;        9200&#x2F;TCP,9300&#x2F;TCP   113m
+kibana-logging          NodePort    10.103.223.219   &lt;none&gt;        5601:30333&#x2F;TCP      89m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>type: NodePort</p>
+<p>暴露端口为：30333 </p>
+</blockquote>
+<p>6、安装fluentd</p>
+<ul>
+<li><p>创建 fluentd-es-configmap.yaml</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat fluentd-es-configmap.yaml </span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ConfigMap
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es<span class="token punctuation">-</span>config<span class="token punctuation">-</span>v0.2.1
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">data</span><span class="token punctuation">:</span>
+  <span class="token key atrule">system.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    &lt;system<span class="token punctuation">></span>
+      root_dir /tmp/fluentd<span class="token punctuation">-</span>buffers/
+    &lt;/system<span class="token punctuation">></span>
+
+  <span class="token key atrule">containers.input.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token comment"># This configuration file for Fluentd / td-agent is used</span>
+    <span class="token comment"># to watch changes to Docker log files. The kubelet creates symlinks that</span>
+    <span class="token comment"># capture the pod name, namespace, container name &amp; Docker container ID</span>
+    <span class="token comment"># to the docker logs for pods in the /var/log/containers directory on the host.</span>
+    <span class="token comment"># If running this fluentd configuration in a Docker container, the /var/log</span>
+    <span class="token comment"># directory should be mounted in the container.</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># These logs are then submitted to Elasticsearch which assumes the</span>
+    <span class="token comment"># installation of the fluent-plugin-elasticsearch &amp; the</span>
+    <span class="token comment"># fluent-plugin-kubernetes_metadata_filter plugins.</span>
+    <span class="token comment"># See https://github.com/uken/fluent-plugin-elasticsearch &amp;</span>
+    <span class="token comment"># https://github.com/fabric8io/fluent-plugin-kubernetes_metadata_filter for</span>
+    <span class="token comment"># more information about the plugins.</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># Example</span>
+    <span class="token comment"># =======</span>
+    <span class="token comment"># A line in the Docker log file might look like this JSON:</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># &#123;"log":"2014/09/25 21:15:03 Got request with path wombat\n",</span>
+    <span class="token comment">#  "stream":"stderr",</span>
+    <span class="token comment">#   "time":"2014-09-25T21:15:03.499185026Z"&#125;</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># The time_format specification below makes sure we properly</span>
+    <span class="token comment"># parse the time format produced by Docker. This will be</span>
+    <span class="token comment"># submitted to Elasticsearch and should appear like:</span>
+    <span class="token comment"># $ curl 'http://elasticsearch-logging:9200/_search?pretty'</span>
+    <span class="token comment"># ...</span>
+    <span class="token comment"># &#123;</span>
+    <span class="token comment">#      "_index" : "logstash-2014.09.25",</span>
+    <span class="token comment">#      "_type" : "fluentd",</span>
+    <span class="token comment">#      "_id" : "VBrbor2QTuGpsQyTCdfzqA",</span>
+    <span class="token comment">#      "_score" : 1.0,</span>
+    <span class="token comment">#      "_source":&#123;"log":"2014/09/25 22:45:50 Got request with path wombat\n",</span>
+    <span class="token comment">#                 "stream":"stderr","tag":"docker.container.all",</span>
+    <span class="token comment">#                 "@timestamp":"2014-09-25T22:45:50+00:00"&#125;</span>
+    <span class="token comment">#    &#125;,</span>
+    <span class="token comment"># ...</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># The Kubernetes fluentd plugin is used to write the Kubernetes metadata to the log</span>
+    <span class="token comment"># record &amp; add labels to the log record if properly configured. This enables users</span>
+    <span class="token comment"># to filter &amp; search logs on any metadata.</span>
+    <span class="token comment"># For example a Docker container's logs might be in the directory:</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#  /var/lib/docker/containers/997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># and in the file:</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#  997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b-json.log</span>
+    <span class="token comment">#</span>
+    <span class="token comment"># where 997599971ee6... is the Docker ID of the running container.</span>
+    <span class="token comment"># The Kubernetes kubelet makes a symbolic link to this file on the host machine</span>
+    <span class="token comment"># in the /var/log/containers directory which includes the pod name and the Kubernetes</span>
+    <span class="token comment"># container name:</span>
+    <span class="token comment">#</span>
+    <span class="token comment">#    synthetic-logger-0.25lps-pod_default_synth-lgr-997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b.log</span>
+    <span class="token comment">#    -></span><span class="token scalar string">
+    #    /var/lib/docker/containers/997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b/997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b-json.log
+    #
+    # The /var/log directory on the host is mapped to the /var/log directory in the container
+    # running this instance of Fluentd and we end up collecting the file:
+    #
+    #   /var/log/containers/synthetic-logger-0.25lps-pod_default_synth-lgr-997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b.log
+    #
+    # This results in the tag:
+    #
+    #  var.log.containers.synthetic-logger-0.25lps-pod_default_synth-lgr-997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b.log
+    #
+    # The Kubernetes fluentd plugin is used to extract the namespace, pod name &amp; container name
+    # which are added to the log message as a kubernetes field object &amp; the Docker container ID
+    # is also added under the docker field object.
+    # The final tag is:
+    #
+    #   kubernetes.var.log.containers.synthetic-logger-0.25lps-pod_default_synth-lgr-997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b.log
+    #
+    # And the final log record look like:
+    #
+    # &#123;
+    #   "log":"2014/09/25 21:15:03 Got request with path wombat\n",
+    #   "stream":"stderr",
+    #   "time":"2014-09-25T21:15:03.499185026Z",
+    #   "kubernetes": &#123;
+    #     "namespace": "default",
+    #     "pod_name": "synthetic-logger-0.25lps-pod",
+    #     "container_name": "synth-lgr"
+    #   &#125;,
+    #   "docker": &#123;
+    #     "container_id": "997599971ee6366d4a5920d25b79286ad45ff37a74494f262e3bc98d909d0a7b"
+    #   &#125;
+    # &#125;
+    #
+    # This makes it easier for users to search for logs by pod name or by
+    # the name of the Kubernetes container regardless of how many times the
+    # Kubernetes pod has been restarted (resulting in a several Docker container IDs).</span>
+
+    <span class="token comment"># Json Log Example:</span>
+    <span class="token comment"># &#123;"log":"[info:2016-02-16T16:04:05.930-08:00] Some log text here\n","stream":"stdout","time":"2016-02-17T00:04:05.931087621Z"&#125;</span>
+    <span class="token comment"># CRI Log Example:</span>
+    <span class="token comment"># 2016-02-17T00:04:05.931087621Z stdout F [info:2016-02-16T16:04:05.930-08:00] Some log text here</span>
+    &lt;source<span class="token punctuation">></span>
+      @id fluentd<span class="token punctuation">-</span>containers.log
+      @type tail
+      path /var/log/containers/<span class="token important">*.log</span>
+      pos_file /var/log/es<span class="token punctuation">-</span>containers.log.pos
+      tag raw.kubernetes.*
+      read_from_head true
+      &lt;parse<span class="token punctuation">></span>
+        @type multi_format
+        &lt;pattern<span class="token punctuation">></span>
+          format json
+          time_key time
+          time_format %Y<span class="token punctuation">-</span>%m<span class="token punctuation">-</span>%dT%H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%NZ
+        &lt;/pattern<span class="token punctuation">></span>
+        &lt;pattern<span class="token punctuation">></span>
+          format /^(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>.+) (<span class="token punctuation">?</span>&lt;stream<span class="token punctuation">></span>stdout<span class="token punctuation">|</span>stderr) <span class="token punctuation">[</span>^ <span class="token punctuation">]</span>* (<span class="token punctuation">?</span>&lt;log<span class="token punctuation">></span>.<span class="token important">*)$/</span>
+          time_format %Y<span class="token punctuation">-</span>%m<span class="token punctuation">-</span>%dT%H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N%<span class="token punctuation">:</span>z
+        &lt;/pattern<span class="token punctuation">></span>
+      &lt;/parse<span class="token punctuation">></span>
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Detect exceptions in the log output and forward them as one log entry.</span>
+    &lt;match raw.kubernetes.<span class="token important">**></span>
+      @id raw.kubernetes
+      @type detect_exceptions
+      remove_tag_prefix raw
+      message log
+      stream stream
+      multiline_flush_interval 5
+      max_bytes 500000
+      max_lines 1000
+    &lt;/match<span class="token punctuation">></span>
+
+    <span class="token comment"># Concatenate multi-line logs</span>
+    &lt;filter <span class="token important">**></span>
+      @id filter_concat
+      @type concat
+      key message
+      multiline_end_regexp /\n$/
+      separator ""
+    &lt;/filter<span class="token punctuation">></span>
+
+    <span class="token comment"># Enriches records with Kubernetes metadata</span>
+    &lt;filter kubernetes.<span class="token important">**></span>
+      @id filter_kubernetes_metadata
+      @type kubernetes_metadata
+    &lt;/filter<span class="token punctuation">></span>
+
+    <span class="token comment"># Fixes json fields in Elasticsearch</span>
+    &lt;filter kubernetes.<span class="token important">**></span>
+      @id filter_parser
+      @type parser
+      key_name log
+      reserve_data true
+      remove_key_name_field true
+      &lt;parse<span class="token punctuation">></span>
+        @type multi_format
+        &lt;pattern<span class="token punctuation">></span>
+          format json
+        &lt;/pattern<span class="token punctuation">></span>
+        &lt;pattern<span class="token punctuation">></span>
+          format none
+        &lt;/pattern<span class="token punctuation">></span>
+      &lt;/parse<span class="token punctuation">></span>
+    &lt;/filter<span class="token punctuation">></span>
+
+  <span class="token key atrule">system.input.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># 2015-12-21 23:17:22,066 [salt.state       ][INFO    ] Completed state [net.ipv4.ip_forward] at time 23:17:22.066081</span>
+    &lt;source<span class="token punctuation">></span>
+      @id minion
+      @type tail
+      format /^(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span><span class="token punctuation">[</span>^ <span class="token punctuation">]</span>* <span class="token punctuation">[</span>^ <span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token important">*)</span><span class="token punctuation">[</span>^\<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token important">*\</span><span class="token punctuation">[</span><span class="token punctuation">[</span>^\<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token important">*\</span><span class="token punctuation">]</span>\<span class="token punctuation">[</span>(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token important">*)</span> <span class="token important">*\</span><span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)$/</span>
+      time_format %Y<span class="token punctuation">-</span>%m<span class="token punctuation">-</span>%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S
+      path /var/log/salt/minion
+      pos_file /var/log/salt.pos
+      tag salt
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># Dec 21 23:17:22 gke-foo-1-1-4b5cbd14-node-4eoj startupscript: Finished running startup script /var/run/google.startup.script</span>
+    &lt;source<span class="token punctuation">></span>
+      @id startupscript.log
+      @type tail
+      format syslog
+      path /var/log/startupscript.log
+      pos_file /var/log/es<span class="token punctuation">-</span>startupscript.log.pos
+      tag startupscript
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Examples:</span>
+    <span class="token comment"># time="2016-02-04T06:51:03.053580605Z" level=info msg="GET /containers/json"</span>
+    <span class="token comment"># time="2016-02-04T07:53:57.505612354Z" level=error msg="HTTP Error" err="No such image: -f" statusCode=404</span>
+    <span class="token comment"># TODO(random-liu): Remove this after cri container runtime rolls out.</span>
+    &lt;source<span class="token punctuation">></span>
+      @id docker.log
+      @type tail
+      format /^time="(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span><span class="token punctuation">[</span>^"<span class="token punctuation">]</span><span class="token important">*)"</span> level=(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span><span class="token punctuation">[</span>^ <span class="token punctuation">]</span><span class="token important">*)</span> msg="(<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span><span class="token punctuation">[</span>^"<span class="token punctuation">]</span><span class="token important">*)"(</span> err="(<span class="token punctuation">?</span>&lt;error<span class="token punctuation">></span><span class="token punctuation">[</span>^"<span class="token punctuation">]</span><span class="token important">*)")?(</span> statusCode=($&lt;status_code<span class="token punctuation">></span>\d+))<span class="token punctuation">?</span>/
+      path /var/log/docker.log
+      pos_file /var/log/es<span class="token punctuation">-</span>docker.log.pos
+      tag docker
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># 2016/02/04 06:52:38 filePurge: successfully removed file /var/etcd/data/member/wal/00000000000006d0-00000000010a23d1.wal</span>
+    &lt;source<span class="token punctuation">></span>
+      @id etcd.log
+      @type tail
+      <span class="token comment"># Not parsing this, because it doesn't have anything particularly useful to</span>
+      <span class="token comment"># parse out of it (like severities).</span>
+      format none
+      path /var/log/etcd.log
+      pos_file /var/log/es<span class="token punctuation">-</span>etcd.log.pos
+      tag etcd
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Multi-line parsing is required for all the kube logs because very large log</span>
+    <span class="token comment"># statements, such as those that include entire object bodies, get split into</span>
+    <span class="token comment"># multiple lines by glog.</span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I0204 07:32:30.020537    3368 server.go:1048] POST /stats/container/: (13.972191ms) 200 [[Go-http-client/1.1] 10.244.1.3:40537]</span>
+    &lt;source<span class="token punctuation">></span>
+      @id kubelet.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/kubelet.log
+      pos_file /var/log/es<span class="token punctuation">-</span>kubelet.log.pos
+      tag kubelet
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I1118 21:26:53.975789       6 proxier.go:1096] Port "nodePort for kube-system/default-http-backend:http" (:31429/tcp) was open before and is still needed</span>
+    &lt;source<span class="token punctuation">></span>
+      @id kube<span class="token punctuation">-</span>proxy.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/kube<span class="token punctuation">-</span>proxy.log
+      pos_file /var/log/es<span class="token punctuation">-</span>kube<span class="token punctuation">-</span>proxy.log.pos
+      tag kube<span class="token punctuation">-</span>proxy
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I0204 07:00:19.604280       5 handlers.go:131] GET /api/v1/nodes: (1.624207ms) 200 [[kube-controller-manager/v1.1.3 (linux/amd64) kubernetes/6a81b50] 127.0.0.1:38266]</span>
+    &lt;source<span class="token punctuation">></span>
+      @id kube<span class="token punctuation">-</span>apiserver.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/kube<span class="token punctuation">-</span>apiserver.log
+      pos_file /var/log/es<span class="token punctuation">-</span>kube<span class="token punctuation">-</span>apiserver.log.pos
+      tag kube<span class="token punctuation">-</span>apiserver
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I0204 06:55:31.872680       5 servicecontroller.go:277] LB already exists and doesn't need update for service kube-system/kube-ui</span>
+    &lt;source<span class="token punctuation">></span>
+      @id kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager.log
+      pos_file /var/log/es<span class="token punctuation">-</span>kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager.log.pos
+      tag kube<span class="token punctuation">-</span>controller<span class="token punctuation">-</span>manager
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># W0204 06:49:18.239674       7 reflector.go:245] pkg/scheduler/factory/factory.go:193: watch of *api.Service ended with: 401: The event in requested index is outdated and cleared (the requested history has been cleared [2578313/2577886]) [2579312]</span>
+    &lt;source<span class="token punctuation">></span>
+      @id kube<span class="token punctuation">-</span>scheduler.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/kube<span class="token punctuation">-</span>scheduler.log
+      pos_file /var/log/es<span class="token punctuation">-</span>kube<span class="token punctuation">-</span>scheduler.log.pos
+      tag kube<span class="token punctuation">-</span>scheduler
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I0603 15:31:05.793605       6 cluster_manager.go:230] Reading config from path /etc/gce.conf</span>
+    &lt;source<span class="token punctuation">></span>
+      @id glbc.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/glbc.log
+      pos_file /var/log/es<span class="token punctuation">-</span>glbc.log.pos
+      tag glbc
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Example:</span>
+    <span class="token comment"># I0603 15:31:05.793605       6 cluster_manager.go:230] Reading config from path /etc/gce.conf</span>
+    &lt;source<span class="token punctuation">></span>
+      @id cluster<span class="token punctuation">-</span>autoscaler.log
+      @type tail
+      format multiline
+      multiline_flush_interval 5s
+      format_firstline /^\w\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span>/
+      format1 /^(<span class="token punctuation">?</span>&lt;severity<span class="token punctuation">></span>\w)(<span class="token punctuation">?</span>&lt;time<span class="token punctuation">></span>\d<span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">&#125;</span> <span class="token punctuation">[</span>^\s<span class="token punctuation">]</span><span class="token important">*)\s+(?&lt;pid>\d+)\s+(?&lt;source></span><span class="token punctuation">[</span>^ \<span class="token punctuation">]</span><span class="token punctuation">]</span>+)\<span class="token punctuation">]</span> (<span class="token punctuation">?</span>&lt;message<span class="token punctuation">></span>.<span class="token important">*)/</span>
+      time_format %m%d %H<span class="token punctuation">:</span>%M<span class="token punctuation">:</span>%S.%N
+      path /var/log/cluster<span class="token punctuation">-</span>autoscaler.log
+      pos_file /var/log/es<span class="token punctuation">-</span>cluster<span class="token punctuation">-</span>autoscaler.log.pos
+      tag cluster<span class="token punctuation">-</span>autoscaler
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># Logs from systemd-journal for interesting services.</span>
+    <span class="token comment"># TODO(random-liu): Remove this after cri container runtime rolls out.</span>
+    &lt;source<span class="token punctuation">></span>
+      @id journald<span class="token punctuation">-</span>docker
+      @type systemd
+      matches <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token key atrule">"_SYSTEMD_UNIT"</span><span class="token punctuation">:</span> <span class="token string">"docker.service"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      &lt;storage<span class="token punctuation">></span>
+        @type local
+        persistent true
+        path /var/log/journald<span class="token punctuation">-</span>docker.pos
+      &lt;/storage<span class="token punctuation">></span>
+      read_from_head true
+      tag docker
+    &lt;/source<span class="token punctuation">></span>
+
+    &lt;source<span class="token punctuation">></span>
+      @id journald<span class="token punctuation">-</span>container<span class="token punctuation">-</span>runtime
+      @type systemd
+      matches <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token key atrule">"_SYSTEMD_UNIT"</span><span class="token punctuation">:</span> <span class="token string">"&#123;&#123; fluentd_container_runtime_service &#125;&#125;.service"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      &lt;storage<span class="token punctuation">></span>
+        @type local
+        persistent true
+        path /var/log/journald<span class="token punctuation">-</span>container<span class="token punctuation">-</span>runtime.pos
+      &lt;/storage<span class="token punctuation">></span>
+      read_from_head true
+      tag container<span class="token punctuation">-</span>runtime
+    &lt;/source<span class="token punctuation">></span>
+
+    &lt;source<span class="token punctuation">></span>
+      @id journald<span class="token punctuation">-</span>kubelet
+      @type systemd
+      matches <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token key atrule">"_SYSTEMD_UNIT"</span><span class="token punctuation">:</span> <span class="token string">"kubelet.service"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      &lt;storage<span class="token punctuation">></span>
+        @type local
+        persistent true
+        path /var/log/journald<span class="token punctuation">-</span>kubelet.pos
+      &lt;/storage<span class="token punctuation">></span>
+      read_from_head true
+      tag kubelet
+    &lt;/source<span class="token punctuation">></span>
+
+    &lt;source<span class="token punctuation">></span>
+      @id journald<span class="token punctuation">-</span>node<span class="token punctuation">-</span>problem<span class="token punctuation">-</span>detector
+      @type systemd
+      matches <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token key atrule">"_SYSTEMD_UNIT"</span><span class="token punctuation">:</span> <span class="token string">"node-problem-detector.service"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      &lt;storage<span class="token punctuation">></span>
+        @type local
+        persistent true
+        path /var/log/journald<span class="token punctuation">-</span>node<span class="token punctuation">-</span>problem<span class="token punctuation">-</span>detector.pos
+      &lt;/storage<span class="token punctuation">></span>
+      read_from_head true
+      tag node<span class="token punctuation">-</span>problem<span class="token punctuation">-</span>detector
+    &lt;/source<span class="token punctuation">></span>
+
+    &lt;source<span class="token punctuation">></span>
+      @id kernel
+      @type systemd
+      matches <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token key atrule">"_TRANSPORT"</span><span class="token punctuation">:</span> <span class="token string">"kernel"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      &lt;storage<span class="token punctuation">></span>
+        @type local
+        persistent true
+        path /var/log/kernel.pos
+      &lt;/storage<span class="token punctuation">></span>
+      &lt;entry<span class="token punctuation">></span>
+        fields_strip_underscores true
+        fields_lowercase true
+      &lt;/entry<span class="token punctuation">></span>
+      read_from_head true
+      tag kernel
+    &lt;/source<span class="token punctuation">></span>
+
+  <span class="token key atrule">forward.input.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token comment"># Takes the messages sent over TCP</span>
+    &lt;source<span class="token punctuation">></span>
+      @id forward
+      @type forward
+    &lt;/source<span class="token punctuation">></span>
+
+  <span class="token key atrule">monitoring.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    <span class="token comment"># Prometheus Exporter Plugin</span>
+    <span class="token comment"># input plugin that exports metrics</span>
+    &lt;source<span class="token punctuation">></span>
+      @id prometheus
+      @type prometheus
+    &lt;/source<span class="token punctuation">></span>
+
+    &lt;source<span class="token punctuation">></span>
+      @id monitor_agent
+      @type monitor_agent
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># input plugin that collects metrics from MonitorAgent</span>
+    &lt;source<span class="token punctuation">></span>
+      @id prometheus_monitor
+      @type prometheus_monitor
+      &lt;labels<span class="token punctuation">></span>
+        host $<span class="token punctuation">&#123;</span>hostname<span class="token punctuation">&#125;</span>
+      &lt;/labels<span class="token punctuation">></span>
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># input plugin that collects metrics for output plugin</span>
+    &lt;source<span class="token punctuation">></span>
+      @id prometheus_output_monitor
+      @type prometheus_output_monitor
+      &lt;labels<span class="token punctuation">></span>
+        host $<span class="token punctuation">&#123;</span>hostname<span class="token punctuation">&#125;</span>
+      &lt;/labels<span class="token punctuation">></span>
+    &lt;/source<span class="token punctuation">></span>
+
+    <span class="token comment"># input plugin that collects metrics for in_tail plugin</span>
+    &lt;source<span class="token punctuation">></span>
+      @id prometheus_tail_monitor
+      @type prometheus_tail_monitor
+      &lt;labels<span class="token punctuation">></span>
+        host $<span class="token punctuation">&#123;</span>hostname<span class="token punctuation">&#125;</span>
+      &lt;/labels<span class="token punctuation">></span>
+    &lt;/source<span class="token punctuation">></span>
+
+  <span class="token key atrule">output.conf</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token punctuation">-</span>
+    &lt;match <span class="token important">**></span>
+      @id elasticsearch
+      @type elasticsearch
+      @log_level info
+      type_name _doc
+      include_tag_key true
+      host elasticsearch<span class="token punctuation">-</span>logging
+      port 9200
+      logstash_format true
+      &lt;buffer<span class="token punctuation">></span>
+        @type file
+        path /var/log/fluentd<span class="token punctuation">-</span>buffers/kubernetes.system.buffer
+        flush_mode interval
+        retry_type exponential_backoff
+        flush_thread_count 2
+        flush_interval 5s
+        retry_forever
+        retry_max_interval 30
+        chunk_limit_size 2M
+        total_limit_size 500M
+        overflow_action block
+      &lt;/buffer<span class="token punctuation">></span>
+    &lt;/match<span class="token punctuation">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建 fluentd-es-ds.yaml</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@k8s<span class="token punctuation">-</span>master efk<span class="token punctuation">]</span><span class="token comment"># cat fluentd-es-ds.yaml </span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token punctuation">---</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">apiGroups</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">""</span>
+  <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"namespaces"</span>
+  <span class="token punctuation">-</span> <span class="token string">"pods"</span>
+  <span class="token key atrule">verbs</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"get"</span>
+  <span class="token punctuation">-</span> <span class="token string">"watch"</span>
+  <span class="token punctuation">-</span> <span class="token string">"list"</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRoleBinding
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> rbac.authorization.k8s.io/v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">subjects</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">kind</span><span class="token punctuation">:</span> ServiceAccount
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token key atrule">roleRef</span><span class="token punctuation">:</span>
+  <span class="token key atrule">kind</span><span class="token punctuation">:</span> ClusterRole
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+  <span class="token key atrule">apiGroup</span><span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> DaemonSet
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es<span class="token punctuation">-</span>v3.1.1
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> logging
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+    <span class="token key atrule">version</span><span class="token punctuation">:</span> v3.1.1
+    <span class="token key atrule">addonmanager.kubernetes.io/mode</span><span class="token punctuation">:</span> Reconcile
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+      <span class="token key atrule">version</span><span class="token punctuation">:</span> v3.1.1
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">k8s-app</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+        <span class="token key atrule">version</span><span class="token punctuation">:</span> v3.1.1
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+        <span class="token key atrule">seccompProfile</span><span class="token punctuation">:</span>
+          <span class="token key atrule">type</span><span class="token punctuation">:</span> RuntimeDefault
+      <span class="token key atrule">priorityClassName</span><span class="token punctuation">:</span> system<span class="token punctuation">-</span>node<span class="token punctuation">-</span>critical
+      <span class="token key atrule">serviceAccountName</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> quay.io/fluentd_elasticsearch/fluentd<span class="token punctuation">:</span>v3.1.0
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> FLUENTD_ARGS
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>supervisor <span class="token punctuation">-</span>q
+        <span class="token key atrule">resources</span><span class="token punctuation">:</span>
+          <span class="token key atrule">limits</span><span class="token punctuation">:</span>
+            <span class="token key atrule">memory</span><span class="token punctuation">:</span> 500Mi
+          <span class="token key atrule">requests</span><span class="token punctuation">:</span>
+            <span class="token key atrule">cpu</span><span class="token punctuation">:</span> 100m
+            <span class="token key atrule">memory</span><span class="token punctuation">:</span> 200Mi
+        <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> varlog
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/log
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> varlibdockercontainers
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /var/lib/docker/containers
+          <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> config<span class="token punctuation">-</span>volume
+          <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> /etc/fluent/config.d
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">24231</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> prometheus
+          <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+        <span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>
+          <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>
+            <span class="token key atrule">port</span><span class="token punctuation">:</span> prometheus
+          <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+          <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+        <span class="token key atrule">readinessProbe</span><span class="token punctuation">:</span>
+          <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>
+            <span class="token key atrule">port</span><span class="token punctuation">:</span> prometheus
+          <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">5</span>
+          <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
+      <span class="token key atrule">terminationGracePeriodSeconds</span><span class="token punctuation">:</span> <span class="token number">30</span>
+      <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> varlog
+        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> /var/log
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> varlibdockercontainers
+        <span class="token key atrule">hostPath</span><span class="token punctuation">:</span>
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> /var/lib/docker/containers
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> config<span class="token punctuation">-</span>volume
+        <span class="token key atrule">configMap</span><span class="token punctuation">:</span>
+          <span class="token key atrule">name</span><span class="token punctuation">:</span> fluentd<span class="token punctuation">-</span>es<span class="token punctuation">-</span>config<span class="token punctuation">-</span>v0.2.1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建fluentd服务</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl create fluentd-es-configmap.yaml -f fluentd-es-ds.yaml <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>7、查看pod状态</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@k8s-master efk]# kubectl get pod -n logging
+NAME                              READY   STATUS    RESTARTS   AGE
+elasticsearch-logging-0           1&#x2F;1     Running   0          103m
+elasticsearch-logging-1           1&#x2F;1     Running   0          101m
+fluentd-es-v3.1.1-tt7hj           1&#x2F;1     Running   0          76m
+fluentd-es-v3.1.1-vrj8h           1&#x2F;1     Running   0          76m
+kibana-logging-647576567c-zdl4w   1&#x2F;1     Running   0          42m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、使用"><a href="#三、使用" class="headerlink" title="三、使用"></a>三、使用</h2><p>1、 访问kibana  <a target="_blank" rel="noopener" href="http://serverip:30333/">http://serverIP:30333/</a>  </p>
+<p>2、 需注意： 需要释放端口：30333</p>
+<h2 id="四、-报错"><a href="#四、-报错" class="headerlink" title="四、 报错"></a>四、 报错</h2><blockquote>
+<p><strong>修复bug</strong></p>
+<p>我们打开浏览器，访问<a target="_blank" rel="noopener" href="http://serverip:30333/">http://serverIP:30333/</a> ，我们得到了如下结果：</p>
+<p>{“statusCode”:404,”error”:”Not Found”,”message”:”Not Found”}</p>
+<p>这是因为将/api/v1/namespaces/kube-system/services/kibana-logging/proxy/app/kibana这个url path也传递给后面的kibana了，导致kibana却无法处理。 这是由于我们错误配置的env，其实我已经在kibana-deployment.yaml 修改完成了</p>
+</blockquote>
+<p>- </p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/kubernetes/" class="">
+              kubernetes
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2021/12/21/kubernetes构建efk日志系统/" target="_blank" title="kubernetes构建efk日志系统">https://abbott68.github.io/blog/2021/12/21/kubernetes构建efk日志系统/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/11.jpg" class="lazyload placeholder" data-srcset="/blog/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/blog/2021/12/13/Python%E5%9F%BA%E7%A1%80/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Python基础</div>
+      </div>
+      <!-- <div class="content">
+        1.1    Python 语言介绍Python是一种广泛使用的通用高级编程语言。它由 Guido van Rossum
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/blog/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/blog/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="tencent"
+  type="playlist"
+  id="8062553743"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/blog/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/blog/js/ribbon.min.js"></script>
+    
+
+    <script src="/blog/js/utils/index.js"></script>
+    <script src="/blog/js/app.js" data-pjax></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/blog/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/blog/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/blog/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/blog/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/blog/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script src="/blog/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/blog/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>

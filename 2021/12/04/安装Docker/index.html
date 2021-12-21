@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 7.4k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 7 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
           </span>
   
           
@@ -720,50 +720,50 @@
         <h1 id="安装引擎"><a href="#安装引擎" class="headerlink" title="安装引擎"></a><strong>安装引擎</strong></h1><p>docker 引擎是使用docker容器的核心组件，可以在主流的操作系统和云平台上使用。</p>
 <p>docker 可以安装Linux操作系统 MacOS Windows系统之上以及云平台之上。</p>
 <h2 id="Centos-环境下安装docker"><a href="#Centos-环境下安装docker" class="headerlink" title="Centos 环境下安装docker"></a>Centos 环境下安装docker</h2><p>  安装<code>yum-utils</code>软件包（提供<code>yum-config-manager</code> 实用程序）并设置<strong>稳定的</strong>存储库。</p>
-  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># yum install -y yum-utils</span>
-<span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># yum-config-manager \</span>
-     --add-repo <span class="token punctuation">\</span>
-    https://download.docker.com/linux/centos/docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# yum install -y yum-utils
+[root@docker ~]# yum-config-manager \
+     --add-repo \
+    https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="安装最新版本Docker-Engine"><a href="#安装最新版本Docker-Engine" class="headerlink" title="安装最新版本Docker Engine"></a>安装最新版本Docker Engine</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker<span class="token punctuation">]</span><span class="token comment"># yum install docker-ce docker-ce-cli containerd.io -y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="安装最新版本Docker-Engine"><a href="#安装最新版本Docker-Engine" class="headerlink" title="安装最新版本Docker Engine"></a>安装最新版本Docker Engine</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker]# yum install docker-ce docker-ce-cli containerd.io -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># systemctl start docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># docker version   #查看版本信息</span>
-<span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># docker info			#查看docker详细信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h3>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker ~]# docker version   #查看版本信息
+[root@docker ~]# docker info			#查看docker详细信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="ubunt-环境下安装docker"><a href="#ubunt-环境下安装docker" class="headerlink" title="ubunt 环境下安装docker"></a>ubunt 环境下安装docker</h2>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">@buntu:~$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
-     apt-transport-https <span class="token punctuation">\</span>
-     ca-certificates <span class="token punctuation">\</span>
-     <span class="token function">curl</span> <span class="token punctuation">\</span>
-     gnupg <span class="token punctuation">\</span>
+<h2 id="ubunt-环境下安装docker"><a href="#ubunt-环境下安装docker" class="headerlink" title="ubunt 环境下安装docker"></a>ubunt 环境下安装docker</h2>  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">@buntu:~$ sudo apt-get install \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg \
      lsb-release
-@buntu:~$  <span class="token builtin class-name">echo</span>   <span class="token string">"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> stable"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">></span> /dev/null
+@buntu:~$  echo   &quot;deb [arch&#x3D;amd64 signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg] https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu \
+  $(lsb_release -cs) stable&quot; | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list &gt; &#x2F;dev&#x2F;null
      
-@ubuntu:~$  <span class="token function">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-@buntu:~$  <span class="token function">sudo</span> <span class="token function">apt-get</span> update
-@buntu:~$  <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
+@ubuntu:~$  curl -fsSL https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu&#x2F;gpg | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg
+@buntu:~$  sudo apt-get update
+@buntu:~$  sudo apt-get install docker-ce docker-ce-cli containerd.io
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="开启路由转发"><a href="#开启路由转发" class="headerlink" title="开启路由转发"></a><strong>开启路由转发</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#查看路由转发是否开启，1 开发 0 未开启</span>
-<span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># sysctl -a | grep -w net.ipv4.ip_forward</span>
-net.ipv4.ip_forward <span class="token operator">=</span> <span class="token number">1</span>
-<span class="token comment">#开启路由转发功能</span>
-<span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># cat > /etc/sysctl.d/docker.conf &lt;&lt; EOF</span>
-net.ipv4.ip_forward <span class="token operator">=</span> <span class="token number">1</span>
-net.bridge.bridge-nf-call-ip6tables <span class="token operator">=</span> <span class="token number">1</span>
-net.bridge.bridge-nf-call-iptables <span class="token operator">=</span> <span class="token number">1</span>
+<h1 id="开启路由转发"><a href="#开启路由转发" class="headerlink" title="开启路由转发"></a><strong>开启路由转发</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#查看路由转发是否开启，1 开发 0 未开启
+[root@docker ~]# sysctl -a | grep -w net.ipv4.ip_forward
+net.ipv4.ip_forward &#x3D; 1
+#开启路由转发功能
+[root@docker ~]# cat &gt; &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf &lt;&lt; EOF
+net.ipv4.ip_forward &#x3D; 1
+net.bridge.bridge-nf-call-ip6tables &#x3D; 1
+net.bridge.bridge-nf-call-iptables &#x3D; 1
 EOF
-<span class="token comment">#加载并生效（不用重新启动服务器）</span>
-<span class="token punctuation">[</span>root@docker ~<span class="token punctuation">]</span><span class="token comment"># sysctl -p /etc/sysctl.d/docker.conf </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+#加载并生效（不用重新启动服务器）
+[root@docker ~]# sysctl -p &#x2F;etc&#x2F;sysctl.d&#x2F;docker.conf <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="配置docker加速器"><a href="#配置docker加速器" class="headerlink" title="配置docker加速器"></a><strong>配置docker加速器</strong></h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">阿里docker镜像加速器地址
-https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors 
+https:&#x2F;&#x2F;cr.console.aliyun.com&#x2F;cn-hangzhou&#x2F;instances&#x2F;mirrors 
 配置docker镜像加速器文件地址
-<span class="token function">vim</span> /etc/docker/daemon.json
-<span class="token punctuation">&#123;</span>
-  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://0pnfs8l6.mirror.aliyuncs.com"</span><span class="token punctuation">]</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;0pnfs8l6.mirror.aliyuncs.com&quot;]
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="docker-命令解释"><a href="#docker-命令解释" class="headerlink" title="docker 命令解释"></a><strong>docker 命令解释</strong></h1><p><img src="https://oss.coydone.com/md/linux/20201027083323.png/change01" class="lazyload placeholder" data-srcset="https://oss.coydone.com/md/linux/20201027083323.png/change01" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Docker命令、镜像及容器卷- coydone的技术小站"></p>
 

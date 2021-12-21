@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 8.5k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 8 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
           </span>
   
           
@@ -717,62 +717,62 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~<span class="token punctuation">]</span><span class="token comment"># wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827<span class="token punctuation">]</span><span class="token comment"># mkdir &#123;data,log&#125;</span>
-soft<span class="token punctuation">]</span><span class="token comment"># tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar</span>
-<span class="token punctuation">[</span>root@docker soft<span class="token punctuation">]</span><span class="token comment"># mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  /app/mysql827</span>
-<span class="token punctuation">[</span>root@docker soft<span class="token punctuation">]</span><span class="token comment"># cd /app/mysql827/</span>
-<span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># ls</span>
-bin  docs  include  lib  LICENSE  <span class="token function">man</span>  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># vim /etc/my.cnf</span>
-<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
-<span class="token comment"># 选择默认存储引擎为InnoDB</span>
-default-storage-engine<span class="token operator">=</span>InnoDB
-<span class="token comment"># 用户</span>
-user <span class="token operator">=</span> mysql
-<span class="token comment"># 监听端口</span>
-port <span class="token operator">=</span> <span class="token number">3306</span>
-<span class="token comment">#socket通信设置</span>
-<span class="token assign-left variable">socket</span><span class="token operator">=</span>/tmp/mysql.sock
-<span class="token comment"># 安装目录</span>
-<span class="token assign-left variable">basedir</span><span class="token operator">=</span>/app/mysql827
-<span class="token comment"># 数据文件位置</span>
-<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/app/mysql827/data
-<span class="token comment"># 允许最大连接数 </span>
-<span class="token assign-left variable">max_connections</span><span class="token operator">=</span><span class="token number">512</span>
-<span class="token comment"># 等待关闭连接时间</span>
-<span class="token assign-left variable">wait_timeout</span><span class="token operator">=</span><span class="token number">600</span>
-<span class="token comment"># 服务端字符集</span>
-character-set-server<span class="token operator">=</span>utf8mb4
-<span class="token comment"># 错误日志</span>
-log-error<span class="token operator">=</span>/app/mysql827/log/error.log
-<span class="token comment"># 默认使用“mysql_native_password”插件认证</span>
-<span class="token assign-left variable">default_authentication_plugin</span><span class="token operator">=</span>mysql_native_password
-<span class="token comment">#server-id=10</span>
-<span class="token assign-left variable">log_bin</span><span class="token operator">=</span>gh
-<span class="token comment">## 兼容sql_mode</span>
-<span class="token assign-left variable">sql_mode</span><span class="token operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker app<span class="token punctuation">]</span><span class="token comment"># useradd mysql -s /sbin/nologin</span>
-<span class="token punctuation">[</span>root@docker app<span class="token punctuation">]</span><span class="token comment"># chown -R mysql:mysql mysql827/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># /app/mysql827/bin/mysqld --user=mysql --basedir=/app/mysql827 --datadir=/app/mysql827/data --initialize</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>官方推荐：</p>
 <p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
 <p>初始化的时候没有密码：–initialize-insecure </p>
 </blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># cp /app/mysql827/support-files/mysql.server /etc/init.d/mysql </span>
-<span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># /etc/init.d/mysql start  | stop </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># vim /etc/profile</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/app/mysql827/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@docker mysql827<span class="token punctuation">]</span><span class="token comment"># mysql -uroot -p   # 密码error.log（初始密码）</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
 Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>

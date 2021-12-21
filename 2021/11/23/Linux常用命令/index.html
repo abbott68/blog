@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 80k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 51k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1:13分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 46 mins.分钟 |
           </span>
   
           
@@ -725,7 +725,7 @@
 <p>shell语法分析是指shell对命令的扫描处理过程，也就是，把命令或者用户输入的内容分解成要处理的各个部分的操作，在Linux系统下，shell语法分析包含很多内容，如重定向、文件名扩展和管道等</p>
 <p><strong>shell语法格式</strong></p>
 <p>用户登陆系统后，shell命令行启动。shell遵循一定的语法格式将用户输入的命令进行分析解释并传递给系统内核。shell命令的一般格式为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">command</span> <span class="token punctuation">[</span>option<span class="token punctuation">]</span> <span class="token punctuation">[</span>arguments<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">command [option] [arguments]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解释：</p>
 <blockquote>
@@ -740,26 +740,26 @@
 </blockquote>
 <p>根据习惯，我们一般把具有以上格式的字符串称为命令行。命令行是用户与shell之间对话的基本单位；</p>
 <p>在命令行中，选项是包含一个或多个字母的代码，主要用户改变命令的执行方式。一般在选项前面有一个“-”符号；</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -a</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>shell通配符</strong></p>
 <p>通配符注定要为了方便用户对文件或者目录的描述，例如，当用户需要以“.sh”结尾的文件时，使用通配符就能很方便地实现。各个版本的shell都有通配符，这些通配符是一些特殊字符，用户可以在命令行的参数中使用这些字符，进行文件名或者路径名的匹配。shell将把与命令行中指定的匹配规则符合的所有文件名或者路径名作为命令的参数，然后执行这个命令。</p>
 <p>bash中常见的通配符有“*”、“？”、“[]”。</p>
 <ol>
 <li><p>“*“ 匹配任意一个或多个字符</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls *.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls *.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>解释：</strong></p>
 <p>列出当前目录所有以”.txt”结尾的文件</p>
 </li>
 <li><p>”?“  匹配任意单一字符</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls ab?.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls ab?.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>解释：</strong></p>
 <p>列出当前目录下ab开头，随后的一个字母是任意字符，最后以”.txt”结尾的文件。</p>
 </li>
 <li><p>”[]“ 匹配任何包含在方括号内的单字符</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls [abc]*.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls [abc]*.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>解释：</strong></p>
 <p>列出当前目录下以a、b或c开头，租后以“.txt”结尾的文件。</p>
@@ -773,33 +773,33 @@
 <p>​     输入重定向用于改变命令的输入源，利用输入重定向，就可以将一个文件的内容作为命令的输入，而不从键盘输入。</p>
 <p>用于输入重定向的操作符有“&lt;”和”&lt;&lt;”</p>
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># wc -l &lt; /etc/hosts</span>
-<span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# wc -l &lt; &#x2F;etc&#x2F;hosts
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>输出重定向</p>
 <p>输出重定向不是将命令的输出结果在屏幕，而是输入到一个指定的文件内。</p>
 <p>用于输出重定向的操作符有“&gt;”和“&gt;&gt;”</p>
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls > a.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls &gt; a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>结果：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cat a.txt </span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat a.txt 
 anaconda-ks.cfg
 a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>错误重定向</p>
 <p>错误重定向和标准输出重定向一样，可以使用操作符”2&gt;”和”2&gt;&gt;”实现对错误输出的重定向。</p>
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls a.txt b.txt 2> error.txt</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls a.txt b.txt 2&gt; error.txt
 a.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>输出结果：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cat error.txt </span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt 
 ls: 无法访问b.txt: 没有那个文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>shell的管道</p>
 <p>管道可以把很多的命令连接起来，可以把第一个命令的输入当作第二个命令的输出，第二个命令的输出可以当作第2个命令的输入，以此类推，因此，管道的作用就是把一个命令的输出当作下一个命令的输入，而不经过中间文件。</p>
 <p>通过管道符“|”可以建立管道连接。</p>
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cat error.txt  | wc -l</span>
-<span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat error.txt  | wc -l
+1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>shell中的引用</p>
 <p>在bash中的很多特殊字符，这些字符本身就具有特殊含义，Linux中使用“引用”技术来忽略这些字符的特殊含义，引用技术就是通知shell将这些特殊字符当作普通字符处理。</p>
 <p>shell中用于应用的字符有转义字符“\”、单引号” ‘ “、双引号“ “” ”。</p>
@@ -812,7 +812,7 @@ ls: 无法访问b.txt: 没有那个文件或目录<span aria-hidden="true" class
 <p>功能描述：</p>
 <p>​    uname命令显示操作系统的相关信息</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">uname</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uname [OPTION]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示操作系统全部信息
@@ -822,25 +822,25 @@ ls: 无法访问b.txt: 没有那个文件或目录<span aria-hidden="true" class
 -n 显示操作系统的主机名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># uname -a</span>
-Linux localhost.localdomain <span class="token number">3.10</span>.0-1127.el7.x86_64 <span class="token comment">#1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# uname -a
+Linux localhost.localdomain 3.10.0-1127.el7.x86_64 #1 SMP Tue Mar 31 23:36:51 UTC 2020 x86_64 x86_64 x86_64 GNU&#x2F;Linux<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p> <strong>uptime 命令</strong></p>
 <p>功能描述：</p>
 <p>​    uptime命令用来输出系统任务队列信息</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">uptime</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">uptime [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-p, --pretty   显示运行时间
--h, --help     display this <span class="token builtin class-name">help</span> and <span class="token builtin class-name">exit</span> 
+-h, --help     display this help and exit 
 -s, --since    显示系统时间
--V, --version  output version information and <span class="token builtin class-name">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+-V, --version  output version information and exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>hostname命令</strong></p>
 <p>功能描述：</p>
 <p>​    hostname 显示系统主机名</p>
 <p>语法格式</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">hostname</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">&#123;</span>hostname<span class="token operator">|</span>-F file<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hostname [options] &#123;hostname|-F file&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a，别名
@@ -852,26 +852,26 @@ Linux localhost.localdomain <span class="token number">3.10</span>.0-1127.el7.x8
 -i，--ip-address主机名的地址
 -I，--all-ip-address主机的所有地址
 -s，--short短主机名
--y，-yp，-nis NIS / YP域名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+-y，-yp，-nis NIS &#x2F; YP域名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：<br>i<br>查看系统主机名</p>
 <pre class="line-numbers language-none"><code class="language-none">[root@localhost ~]# hostname
 localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>临时修改主机名</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># hostname test.example.com</span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># bash</span>
-<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# hostname test.example.com
+[root@localhost ~]# bash
+[root@test ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>last命令</strong></p>
 <p>功能描述：</p>
 <p>​    显示最近登陆用户的列表</p>
 <p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">last,lastd <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">last,lastd [options] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>查看系统重启历史</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># last reboot</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# last reboot<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -879,7 +879,7 @@ localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></
 <p>功能说明:</p>
 <p>ls 命令是显示指定工作目录下的内容，列出目录所含的文件及目录。</p>
 <p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ls</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>文件<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls [选项]... [文件]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>ls的选项及其说明如下：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a  不隐藏任何以. 开始的项目
@@ -892,27 +892,27 @@ localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></
 -i  以时间排序
 -O  显示除组信息的详细信息
 -r  对目录反向排序
--q  用<span class="token string">"?"</span>代替不可输出的内容
+-q  用&quot;?&quot;代替不可输出的内容
 -m  横向输出文件名，并以“,”作为分隔符
 -S  以文件大小排序
 -R  列出所有子目录下的文件
--pF 在每个文件名附上一个字符以说明该文件的类型，“*”表示可执行的普通文件，“/”表示目录，“@”表示符号链接，“<span class="token operator">|</span>”表示FIFO，“<span class="token operator">=</span>”表示套接字（socket）
+-pF 在每个文件名附上一个字符以说明该文件的类型，“*”表示可执行的普通文件，“&#x2F;”表示目录，“@”表示符号链接，“|”表示FIFO，“&#x3D;”表示套接字（socket）
 -C  按列输出，纵向排序
 -R  列出所有子目录下的文件
 -Q  把输出的文件名用双引号括起来<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>以下命令列出/home目录下文件及其子目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -l </span>
-总用量 <span class="token number">12</span>
--rw-------. <span class="token number">1</span> root root <span class="token number">1259</span> <span class="token number">1</span>月  <span class="token number">21</span> 00:20 anaconda-ks.cfg
--rw-r--r--. <span class="token number">1</span> root root <span class="token number">7411</span> <span class="token number">1</span>月  <span class="token number">22</span> 01:28 ls-help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ls -l 
+总用量 12
+-rw-------. 1 root root 1259 1月  21 00:20 anaconda-ks.cfg
+-rw-r--r--. 1 root root 7411 1月  22 01:28 ls-help.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>pwd命令</strong></p>
 <p>功能说明</p>
 <p>显示当前的工作目录，执行pwd指令可立刻得知目前所在的工作目录的绝对路径名称；</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">pwd</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>cd 命令</strong></p>
 <p>功能说明：</p>
@@ -921,30 +921,30 @@ localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></
 <pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">cd [dir]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span>  <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>   切换到指定文件夹下，注意：Linux下文件和文件夹是区分大小写的
-<span class="token builtin class-name">cd</span> 或 <span class="token builtin class-name">cd</span> ~   返回当前用户家目录
-<span class="token builtin class-name">cd</span> ~<span class="token punctuation">[</span>用户名<span class="token punctuation">]</span>  返回指定用户的家目录
-<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span> 或者 <span class="token builtin class-name">cd</span> ./ 返回上级目录
-<span class="token builtin class-name">cd</span> /         放回到根目录下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd  [dir]   切换到指定文件夹下，注意：Linux下文件和文件夹是区分大小写的
+cd 或 cd ~   返回当前用户家目录
+cd ~[用户名]  返回指定用户的家目录
+cd .. 或者 cd .&#x2F; 返回上级目录
+cd &#x2F;         放回到根目录下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>切换到/opt 目录下，命令如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cd /opt/</span>
-<span class="token punctuation">[</span>root@localhost opt<span class="token punctuation">]</span><span class="token comment"># pwd</span>
-/opt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cd &#x2F;opt&#x2F;
+[root@localhost opt]# pwd
+&#x2F;opt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>返回root目录，命令如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost opt<span class="token punctuation">]</span><span class="token comment"># cd </span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pwd</span>
-/root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost opt]# cd 
+[root@localhost ~]# 
+[root@localhost ~]# pwd
+&#x2F;root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>date命令</strong></p>
 <p>功能说明</p>
 <p>显示或者修改系统时间和日期。只有超级用户才能用date命令设置时间，一般用户只能用date命令显示时间。</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">date</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>+格式<span class="token punctuation">]</span> 或者
-<span class="token function">date</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 显示时间格式（以+开头，后面接时间格式）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">date [选项]... [+格式] 或者
+date [选项] 显示时间格式（以+开头，后面接时间格式）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-s  --set 设置系统时间
@@ -952,133 +952,133 @@ localhost.localdomain<span aria-hidden="true" class="line-numbers-rows"><span></
 
 <p>时间显示格式：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">%%	一个文字的 %
-%a	当前locale 的星期名缩写<span class="token punctuation">(</span>例如： 日，代表星期日<span class="token punctuation">)</span>
-%A	当前locale 的星期名全称 <span class="token punctuation">(</span>如：星期日<span class="token punctuation">)</span>
-%b	当前locale 的月名缩写 <span class="token punctuation">(</span>如：一，代表一月<span class="token punctuation">)</span>
-%B	当前locale 的月名全称 <span class="token punctuation">(</span>如：一月<span class="token punctuation">)</span>
-%c	当前locale 的日期和时间 <span class="token punctuation">(</span>如：2005年3月3日 星期四 <span class="token number">23</span>:05:25<span class="token punctuation">)</span>
-%C	世纪；比如 %Y，通常为省略当前年份的后两位数字<span class="token punctuation">(</span>例如：20<span class="token punctuation">)</span>
-%d	按月计的日期<span class="token punctuation">(</span>例如：01<span class="token punctuation">)</span>
-%D	按月计的日期；等于%m/%d/%y
+%a	当前locale 的星期名缩写(例如： 日，代表星期日)
+%A	当前locale 的星期名全称 (如：星期日)
+%b	当前locale 的月名缩写 (如：一，代表一月)
+%B	当前locale 的月名全称 (如：一月)
+%c	当前locale 的日期和时间 (如：2005年3月3日 星期四 23:05:25)
+%C	世纪；比如 %Y，通常为省略当前年份的后两位数字(例如：20)
+%d	按月计的日期(例如：01)
+%D	按月计的日期；等于%m&#x2F;%d&#x2F;%y
 %e	按月计的日期，添加空格，等于%_d
 %F	完整日期格式，等价于 %Y-%m-%d
-%g	ISO-8601 格式年份的最后两位 <span class="token punctuation">(</span>参见%G<span class="token punctuation">)</span>
-%G	ISO-8601 格式年份 <span class="token punctuation">(</span>参见%V<span class="token punctuation">)</span>，一般只和 %V 结合使用
+%g	ISO-8601 格式年份的最后两位 (参见%G)
+%G	ISO-8601 格式年份 (参见%V)，一般只和 %V 结合使用
 %h	等于%b
-%H	小时<span class="token punctuation">(</span>00-23<span class="token punctuation">)</span>
-%I	小时<span class="token punctuation">(</span>00-12<span class="token punctuation">)</span>
-%j	按年计的日期<span class="token punctuation">(</span>001-366<span class="token punctuation">)</span>
-%k   hour, space padded <span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">..</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span> same as %_H
-%l   hour, space padded <span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">..</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span> same as %_I
-%m   month <span class="token punctuation">(</span>01<span class="token punctuation">..</span><span class="token number">12</span><span class="token punctuation">)</span>
-%M   minute <span class="token punctuation">(</span>00<span class="token punctuation">..</span><span class="token number">59</span><span class="token punctuation">)</span>
+%H	小时(00-23)
+%I	小时(00-12)
+%j	按年计的日期(001-366)
+%k   hour, space padded ( 0..23); same as %_H
+%l   hour, space padded ( 1..12); same as %_I
+%m   month (01..12)
+%M   minute (00..59)
 %n	换行
-%N	纳秒<span class="token punctuation">(</span>000000000-999999999<span class="token punctuation">)</span>
-%p	当前locale 下的<span class="token string">"上午"</span>或者<span class="token string">"下午"</span>，未知时输出为空
+%N	纳秒(000000000-999999999)
+%p	当前locale 下的&quot;上午&quot;或者&quot;下午&quot;，未知时输出为空
 %P	与%p 类似，但是输出小写字母
-%r	当前locale 下的 <span class="token number">12</span> 小时时钟时间 <span class="token punctuation">(</span>如：11:11:04 下午<span class="token punctuation">)</span>
-%R	<span class="token number">24</span> 小时时间的时和分，等价于 %H:%M
-%s	自UTC 时间 <span class="token number">1970</span>-01-01 00:00:00 以来所经过的秒数
-%S	秒<span class="token punctuation">(</span>00-60<span class="token punctuation">)</span>
+%r	当前locale 下的 12 小时时钟时间 (如：11:11:04 下午)
+%R	24 小时时间的时和分，等价于 %H:%M
+%s	自UTC 时间 1970-01-01 00:00:00 以来所经过的秒数
+%S	秒(00-60)
 %t	输出制表符 Tab
 %T	时间，等于%H:%M:%S
 %u	星期，1 代表星期一
-%U	一年中的第几周，以周日为每星期第一天<span class="token punctuation">(</span>00-53<span class="token punctuation">)</span>
-%V	ISO-8601 格式规范下的一年中第几周，以周一为每星期第一天<span class="token punctuation">(</span>01-53<span class="token punctuation">)</span>
-%w	一星期中的第几日<span class="token punctuation">(</span><span class="token number">0</span>-6<span class="token punctuation">)</span>，0 代表周一
-%W	一年中的第几周，以周一为每星期第一天<span class="token punctuation">(</span>00-53<span class="token punctuation">)</span>
-%x	当前locale 下的日期描述 <span class="token punctuation">(</span>如：12/31/99<span class="token punctuation">)</span>
-%X	当前locale 下的时间描述 <span class="token punctuation">(</span>如：23:13:48<span class="token punctuation">)</span>
-%y	年份最后两位数位 <span class="token punctuation">(</span>00-99<span class="token punctuation">)</span>
+%U	一年中的第几周，以周日为每星期第一天(00-53)
+%V	ISO-8601 格式规范下的一年中第几周，以周一为每星期第一天(01-53)
+%w	一星期中的第几日(0-6)，0 代表周一
+%W	一年中的第几周，以周一为每星期第一天(00-53)
+%x	当前locale 下的日期描述 (如：12&#x2F;31&#x2F;99)
+%X	当前locale 下的时间描述 (如：23:13:48)
+%y	年份最后两位数位 (00-99)
 %Y	年份
-%z +hhmm		数字时区<span class="token punctuation">(</span>例如，-0400<span class="token punctuation">)</span>
-%:z +hh:mm		数字时区<span class="token punctuation">(</span>例如，-04:00<span class="token punctuation">)</span>
-%::z +hh:mm:ss	数字时区<span class="token punctuation">(</span>例如，-04:00:00<span class="token punctuation">)</span>
-%:::z			数字时区带有必要的精度 <span class="token punctuation">(</span>例如，-04，+05:30<span class="token punctuation">)</span>
-%Z			按字母表排序的时区缩写 <span class="token punctuation">(</span>例如，EDT<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+%z +hhmm		数字时区(例如，-0400)
+%:z +hh:mm		数字时区(例如，-04:00)
+%::z +hh:mm:ss	数字时区(例如，-04:00:00)
+%:::z			数字时区带有必要的精度 (例如，-04，+05:30)
+%Z			按字母表排序的时区缩写 (例如，EDT)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <ul>
 <li><p><input disabled="" type="checkbox">  用指定的格式显示时间和日期</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># date '+this date now is %x time is now:%X'</span>
-this <span class="token function">date</span> now is <span class="token number">2021</span>年01月22日 <span class="token function">time</span> is now:02时27分16秒<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date &#39;+this date now is %x time is now:%X&#39;
+this date now is 2021年01月22日 time is now:02时27分16秒<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p><input disabled="" type="checkbox">  修改系统时间</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># date</span>
-<span class="token number">2021</span>年 01月 <span class="token number">22</span>日 星期五 02:27:38 CST
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># date -s 00:10</span>
-<span class="token number">2021</span>年 01月 <span class="token number">22</span>日 星期五 00:10:00 CST<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# date
+2021年 01月 22日 星期五 02:27:38 CST
+[root@localhost ~]# date -s 00:10
+2021年 01月 22日 星期五 00:10:00 CST<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p><strong>passwd 命令</strong></p>
 <p>功能说明：设置用户密码</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> <span class="token punctuation">[</span>选项<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token operator">&lt;</span>帐号名称<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [选项...] &lt;帐号名称&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-k, --keep-tokens       保持身份验证令牌不过期
--d, --delete            删除已命名帐号的密码<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
--l, --lock              锁定指名帐户的密码<span class="token punctuation">(</span>仅限 root 用户<span class="token punctuation">)</span>
--u, --unlock            解锁指名账户的密码<span class="token punctuation">(</span>仅限 root 用户<span class="token punctuation">)</span>
--e, --expire            终止指名帐户的密码<span class="token punctuation">(</span>仅限 root 用户<span class="token punctuation">)</span>
+-d, --delete            删除已命名帐号的密码(只有根用户才能进行此操作)
+-l, --lock              锁定指名帐户的密码(仅限 root 用户)
+-u, --unlock            解锁指名账户的密码(仅限 root 用户)
+-e, --expire            终止指名帐户的密码(仅限 root 用户)
 -f, --force             强制执行操作
--x, --maximum<span class="token operator">=</span>DAYS      密码的最长有效时限<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
--n, --minimum<span class="token operator">=</span>DAYS      密码的最短有效时限<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
--w, --warning<span class="token operator">=</span>DAYS      在密码过期前多少天开始提醒用户<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
--i, --inactive<span class="token operator">=</span>DAYS     当密码过期后经过多少天该帐号会被禁用<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
--S, --status            报告已命名帐号的密码状态<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span>
---stdin                 从标准输入读取令牌<span class="token punctuation">(</span>只有根用户才能进行此操作<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+-x, --maximum&#x3D;DAYS      密码的最长有效时限(只有根用户才能进行此操作)
+-n, --minimum&#x3D;DAYS      密码的最短有效时限(只有根用户才能进行此操作)
+-w, --warning&#x3D;DAYS      在密码过期前多少天开始提醒用户(只有根用户才能进行此操作)
+-i, --inactive&#x3D;DAYS     当密码过期后经过多少天该帐号会被禁用(只有根用户才能进行此操作)
+-S, --status            报告已命名帐号的密码状态(只有根用户才能进行此操作)
+--stdin                 从标准输入读取令牌(只有根用户才能进行此操作)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>普通用户设置用户密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>超级用户root修改某个用户的密码</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd [用户名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>su命令</strong></p>
 <p>功能说明：</p>
 <p>su命令主要用于切换用户身份</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">su</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>-<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token environment constant">USER</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">su [选项] [-] [USER [参数]...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, -p, --preserve-environment  不重置环境变量
--g, --group <span class="token operator">&lt;</span>组<span class="token operator">></span>                 指定主组
--G, --supp-group <span class="token operator">&lt;</span>组<span class="token operator">></span>           指定一个辅助组
+-g, --group &lt;组&gt;                 指定主组
+-G, --supp-group &lt;组&gt;           指定一个辅助组
 -, -l, --login                  使 shell 成为登录 shell
--c, --command <span class="token operator">&lt;</span>命令<span class="token operator">></span>             使用 -c 向 shell 传递一条命令
---session-command <span class="token operator">&lt;</span>命令<span class="token operator">></span>         使用 -c 向 shell 传递一条命令
+-c, --command &lt;命令&gt;             使用 -c 向 shell 传递一条命令
+--session-command &lt;命令&gt;         使用 -c 向 shell 传递一条命令
                                 而不创建新会话
--f, --fast                      向shell 传递 -f 选项<span class="token punctuation">(</span>csh 或 tcsh<span class="token punctuation">)</span>
--s, --shell <span class="token operator">&lt;</span>shell<span class="token operator">></span>             若 /etc/shells 允许，则运行 shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+-f, --fast                      向shell 传递 -f 选项(csh 或 tcsh)
+-s, --shell &lt;shell&gt;             若 &#x2F;etc&#x2F;shells 允许，则运行 shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>普通用户切换root用户</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>test@localhost root<span class="token punctuation">]</span>$ <span class="token function">su</span> -
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[test@localhost root]$ su -
 密码：
-上一次登录：五 <span class="token number">1</span>月 <span class="token number">22</span> 01:22:53 CST <span class="token number">2021</span>从 gatewaypts/0 上
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+上一次登录：五 1月 22 01:22:53 CST 2021从 gatewaypts&#x2F;0 上
+[root@localhost ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>clear命令</strong></p>
 <p>功能描述：</p>
 <p>​    clear命令用来清除屏幕信息</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">clear</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">clear<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>man命令</strong></p>
 <p>功能描述：</p>
 <p>​    man命令用来显示指定命令的帮助信息。</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">man</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>SECTION<span class="token punctuation">]</span> PAGE<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man [OPTION...] [SECTION] PAGE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>查看man命令的帮助信息，命令如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">man</span> <span class="token function">man</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">man man<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>who命令</strong></p>
 <p>功能描述：</p>
 <p>​    who命令显示目前登陆系统的用户</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">who</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>file<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">who [OPTION]... [file]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 列出所有信息
@@ -1093,22 +1093,22 @@ this <span class="token function">date</span> now is <span class="token number">
 
 <p>示例：</p>
 <p>查看当前系统处于运行级别</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who -r</span>
-         run-level <span class="token number">3</span>  <span class="token number">2021</span>-01-21 <span class="token number">17</span>:49<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who -r
+         run-level 3  2021-01-21 17:49<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>输出的内容：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who</span>
-root     tty1         <span class="token number">2021</span>-01-21 <span class="token number">17</span>:50
-root     pts/0        <span class="token number">2021</span>-01-22 01:22 <span class="token punctuation">(</span>gateway<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# who
+root     tty1         2021-01-21 17:50
+root     pts&#x2F;0        2021-01-22 01:22 (gateway)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>解释：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">名称 <span class="token punctuation">[</span>状态<span class="token punctuation">]</span> 终端 时间 <span class="token punctuation">[</span>活动<span class="token punctuation">]</span> <span class="token punctuation">[</span>进程标识<span class="token punctuation">]</span> <span class="token punctuation">[</span>主机名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">名称 [状态] 终端 时间 [活动] [进程标识] [主机名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>w命令</strong></p>
 <p>功能描述： </p>
 <p>​    显示登陆到系统的用户信息</p>
 <p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">w <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">w [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-h  不显示输出信息的标题
@@ -1117,11 +1117,11 @@ root     pts/0        <span class="token number">2021</span>-01-22 01:22 <span c
 —V  显示版本信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># w</span>
- 01:29:11 up  <span class="token number">9</span>:58,  <span class="token number">2</span> users,  load average: <span class="token number">0.00</span>, <span class="token number">0.01</span>, <span class="token number">0.04</span>
-<span class="token environment constant">USER</span>     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-root     tty1                      <span class="token number">17</span>:50    <span class="token number">6</span>:39   <span class="token number">1</span>.32s  <span class="token number">1</span>.32s -bash
-root     pts/0    gateway          01:22     ?     <span class="token number">0</span>.22s  <span class="token number">0</span>.06s w<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# w
+ 01:29:11 up  9:58,  2 users,  load average: 0.00, 0.01, 0.04
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     tty1                      17:50    6:39   1.32s  1.32s -bash
+root     pts&#x2F;0    gateway          01:22     ?     0.22s  0.06s w<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解释：</p>
 <p>第一行输出信息表示：</p>
@@ -1141,7 +1141,7 @@ WHAT:   当前用户执行的进程名称和选项<span aria-hidden="true" class
 <p>功能说明：</p>
 <p>​    free命令用来显示系统内存状态，具体包括系统物理内存、虚拟内存、共享内存和系统缓存。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">free</span> <span class="token punctuation">[</span>option<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">free [option] <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b  以字节为单位显示内存使用情况
@@ -1152,17 +1152,17 @@ WHAT:   当前用户执行的进程名称和选项<span aria-hidden="true" class
 -o  不显示系统缓冲区别<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># free </span>
-              total        used        <span class="token function">free</span>      shared  buff/cache   available
-Mem:         <span class="token number">995684</span>      <span class="token number">169212</span>      <span class="token number">688236</span>        <span class="token number">7848</span>      <span class="token number">138236</span>      <span class="token number">682044</span>
-Swap:       <span class="token number">2097148</span>           <span class="token number">0</span>     <span class="token number">2097148</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# free 
+              total        used        free      shared  buff&#x2F;cache   available
+Mem:         995684      169212      688236        7848      138236      682044
+Swap:       2097148           0     2097148<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解释：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">total: 总内存
 used:  已使用的内存
 free:  剩余内存
 shared:
-buff/cache:
+buff&#x2F;cache:
 available:
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -1170,7 +1170,7 @@ available:
 <p>功能描述：</p>
 <p>​    ps命令显示系统进程在瞬间的运行状态。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ps</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ps [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 显示所有用户的进程，包含每个程序的完整路径
@@ -1181,13 +1181,13 @@ available:
 -e 解除内核进程以为所有进程的信息写到标准输出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ps </span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# ps 
    PID TTY          TIME CMD
- <span class="token number">10356</span> pts/0    00:00:00 <span class="token function">bash</span>
- <span class="token number">10790</span> pts/0    00:00:00 <span class="token function">su</span>
- <span class="token number">10804</span> pts/0    00:00:00 <span class="token function">su</span>
- <span class="token number">10808</span> pts/0    00:00:00 <span class="token function">bash</span>
- <span class="token number">11385</span> pts/0    00:00:00 <span class="token function">ps</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ 10356 pts&#x2F;0    00:00:00 bash
+ 10790 pts&#x2F;0    00:00:00 su
+ 10804 pts&#x2F;0    00:00:00 su
+ 10808 pts&#x2F;0    00:00:00 bash
+ 11385 pts&#x2F;0    00:00:00 ps<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>输出内存详解：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">PID 表示是进程的标识号；
@@ -1200,7 +1200,7 @@ CMD 表示列出正在执行的命令行<span aria-hidden="true" class="line-num
 <p>功能描述：</p>
 <p>查看即时活跃的进程，类似于Windows的任务管理器。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">top</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d 指定每两次屏幕信息刷新之间的时间间隔
@@ -1224,52 +1224,52 @@ l 切换显示进程和CPU状态信息
 q 退出top显示
 c 切换显示完整命令行和命令名称信息
 M 根据驻留内存大小进行排序输出
-T 根据时间/累计时间进行排序输出
+T 根据时间&#x2F;累计时间进行排序输出
 S 切换到累计模式
-W 将当前top设置写入~/.toprc文件中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+W 将当前top设置写入~&#x2F;.toprc文件中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">top</span> - 03:41:01 up <span class="token number">12</span>:10, <span class="token number">2</span> users, load average: <span class="token number">0.00</span>, <span class="token number">0.01</span>, <span class="token number">0.05</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 03:41:01 up 12:10, 2 users, load average: 0.00, 0.01, 0.05
 
 Tasks: **104** total,  **1** running, **103** sleeping,  **0** stopped,  **0** zombie
 
-%Cpu<span class="token punctuation">(</span>s<span class="token punctuation">)</span>: **0.0** us, **0.0** sy, **0.0** ni,**100.0** id, **0.0** wa, **0.0** hi, **0.0** si, **0.0** st
+%Cpu(s): **0.0** us, **0.0** sy, **0.0** ni,**100.0** id, **0.0** wa, **0.0** hi, **0.0** si, **0.0** st
 
-KiB Mem <span class="token builtin class-name">:</span>  **995684** total,  **686920** free,  **169924** used,  **138840** buff/cache
+KiB Mem :  **995684** total,  **686920** free,  **169924** used,  **138840** buff&#x2F;cache
 
 KiB Swap: **2097148** total, **2097148** free,    **0** used.  **681016** avail Mem 
-  PID <span class="token environment constant">USER</span>   PR NI  VIRT  RES  SHR S %CPU %MEM   TIME+ COMMAND                                  
+  PID USER   PR NI  VIRT  RES  SHR S %CPU %MEM   TIME+ COMMAND                                  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">top</span> - 09:44:56<span class="token punctuation">[</span>当前系统时间<span class="token punctuation">]</span>,
-days<span class="token punctuation">[</span>系统已经运行了16天<span class="token punctuation">]</span>,
-user<span class="token punctuation">[</span>个用户当前登录<span class="token punctuation">]</span>,
-load average: <span class="token punctuation">[</span>系统负载，即任务队列的平均长度<span class="token punctuation">]</span>
-Tasks:  total<span class="token punctuation">[</span>总进程数<span class="token punctuation">]</span>,
-running<span class="token punctuation">[</span>正在运行的进程数<span class="token punctuation">]</span>,
-sleeping<span class="token punctuation">[</span>睡眠的进程数<span class="token punctuation">]</span>,
-stopped<span class="token punctuation">[</span>停止的进程数<span class="token punctuation">]</span>,
-zombie<span class="token punctuation">[</span>冻结进程数<span class="token punctuation">]</span>,
-Cpu<span class="token punctuation">(</span>s<span class="token punctuation">)</span>: <span class="token number">99.8</span>%us<span class="token punctuation">[</span>用户空间占用CPU百分比<span class="token punctuation">]</span>,
-<span class="token number">0.1</span>%sy<span class="token punctuation">[</span>内核空间占用CPU百分比<span class="token punctuation">]</span>,
-<span class="token number">0.0</span>%ni<span class="token punctuation">[</span>用户进程空间内改变过优先级的进程占用CPU百分比<span class="token punctuation">]</span>,
-<span class="token number">0.2</span>%id<span class="token punctuation">[</span>空闲CPU百分比<span class="token punctuation">]</span>, <span class="token number">0.0</span>%wa<span class="token punctuation">[</span>等待输入输出的CPU时间百分比<span class="token punctuation">]</span>,
-<span class="token number">0.0</span>%hi<span class="token punctuation">[</span>服务硬件中断所花费的时间<span class="token punctuation">]</span>,
-<span class="token number">0.0</span>%st<span class="token punctuation">[</span>指的是当前VM中的cpu cycle被虚拟化偷走的比例<span class="token punctuation">]</span>,
-Mem: 4147888k total<span class="token punctuation">[</span>物理内存总量<span class="token punctuation">]</span>,
-2493092k used<span class="token punctuation">[</span>使用的物理内存总量<span class="token punctuation">]</span>,
-1654796k free<span class="token punctuation">[</span>空闲内存总量<span class="token punctuation">]</span>,
-158188k buffers<span class="token punctuation">[</span>用作内核缓存的内存量<span class="token punctuation">]</span>
-Swap:  5144568k total<span class="token punctuation">[</span>交换区总量<span class="token punctuation">]</span>,
-56k used<span class="token punctuation">[</span>使用的交换区总量<span class="token punctuation">]</span>,
-5144512k free<span class="token punctuation">[</span>空闲交换区总量<span class="token punctuation">]</span>,
-2013180k cached<span class="token punctuation">[</span>缓冲的交换区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">top - 09:44:56[当前系统时间],
+days[系统已经运行了16天],
+user[个用户当前登录],
+load average: [系统负载，即任务队列的平均长度]
+Tasks:  total[总进程数],
+running[正在运行的进程数],
+sleeping[睡眠的进程数],
+stopped[停止的进程数],
+zombie[冻结进程数],
+Cpu(s): 99.8%us[用户空间占用CPU百分比],
+0.1%sy[内核空间占用CPU百分比],
+0.0%ni[用户进程空间内改变过优先级的进程占用CPU百分比],
+0.2%id[空闲CPU百分比], 0.0%wa[等待输入输出的CPU时间百分比],
+0.0%hi[服务硬件中断所花费的时间],
+0.0%st[指的是当前VM中的cpu cycle被虚拟化偷走的比例],
+Mem: 4147888k total[物理内存总量],
+2493092k used[使用的物理内存总量],
+1654796k free[空闲内存总量],
+158188k buffers[用作内核缓存的内存量]
+Swap:  5144568k total[交换区总量],
+56k used[使用的交换区总量],
+5144512k free[空闲交换区总量],
+2013180k cached[缓冲的交换区<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>whoami命令</strong></p>
 <p>功能描述：</p>
 <p>​    查看以什么身份登陆系统</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">whoami</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">whoami [选项]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>finger user命令</strong></p>
 <p>功能描述：</p>
@@ -1280,7 +1280,7 @@ Swap:  5144568k total<span class="token punctuation">[</span>交换区总量<spa
 <p>功能描述：</p>
 <p>​    显示开机信息，内核会将开机信息存储在系统缓冲区（ring buffer）中，如果开机不及时查看相关信息，可以在开机后利用dmesg命令查看，也可以在/var/log/目录中查看dmesg文件。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">dmesg</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dmesg [options]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c  显示开机信息后，清楚ring buffer信息
@@ -1293,15 +1293,15 @@ Swap:  5144568k total<span class="token punctuation">[</span>交换区总量<spa
 <p>功能描述：</p>
 <p>​    查看CPU型号以及详细信息</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lscpu <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lscpu [选项]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all               同时打印在线和离线 CPU <span class="token punctuation">(</span>-e 选项默认值<span class="token punctuation">)</span>
--b, --online            只打印在线 CPU <span class="token punctuation">(</span>-p 选项默认值<span class="token punctuation">)</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all               同时打印在线和离线 CPU (-e 选项默认值)
+-b, --online            只打印在线 CPU (-p 选项默认值)
 -c, --offline           只打印离线 CPU
--e, --extended<span class="token punctuation">[</span><span class="token operator">=</span><span class="token operator">&lt;</span>列表<span class="token operator">></span><span class="token punctuation">]</span> 打印扩展的可读格式
--p, --parse<span class="token punctuation">[</span><span class="token operator">=</span><span class="token operator">&lt;</span>列表<span class="token operator">></span><span class="token punctuation">]</span>    打印可解析格式
--s, --sysroot <span class="token operator">&lt;</span>目录<span class="token operator">></span>    以指定目录作为系统根目录
+-e, --extended[&#x3D;&lt;列表&gt;] 打印扩展的可读格式
+-p, --parse[&#x3D;&lt;列表&gt;]    打印可解析格式
+-s, --sysroot &lt;目录&gt;    以指定目录作为系统根目录
 -x, --hex               打印十六进制掩码而非 CPU 列表
 -y, --physical          print physical instead of logical IDs
   
@@ -1310,9 +1310,9 @@ Swap:  5144568k total<span class="token punctuation">[</span>交换区总量<spa
   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># lscpu </span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# lscpu 
 Architecture:          x86_64
-CPU op-mode<span class="token punctuation">(</span>s<span class="token punctuation">)</span>:        <span class="token number">32</span>-bit, <span class="token number">64</span>-bit
+CPU op-mode(s):        32-bit, 64-bit
 Byte Order:            Little Endian
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
@@ -1320,10 +1320,10 @@ Byte Order:            Little Endian
 <p>功能描述：</p>
 <p>​    lshw 是一个能把我们出去硬件信息的小工具，它能为我们提供内存配置、固件版本、主板配置信息、CPU版本和速度、cache信息、总线速度等。它能运行在 DMI兼容的 x86、IA-64和一些 PowerPC的平台上。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lshw <span class="token punctuation">[</span>-format<span class="token punctuation">]</span> <span class="token punctuation">[</span>-options <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lshw [-format] [-options ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">format</span> can be
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">format can be
 	-html           将硬件以HTML格式输出
 	-xml            将硬件以xml格式输出
 	-json           将硬件以json对象输出
@@ -1331,37 +1331,37 @@ Byte Order:            Little Endian
 	-businfo        output bus information 输出总线信息
 
 options can be
-	-dump filename  displays output and dump collected information into a <span class="token function">file</span> <span class="token punctuation">(</span>SQLite database<span class="token punctuation">)</span>
+	-dump filename  displays output and dump collected information into a file (SQLite database)
 	-class CLASS    only show a certain class of hardware
-	-C CLASS        same as <span class="token string">'-class CLASS'</span>
-	-c CLASS        same as <span class="token string">'-class CLASS'</span>
-	-disable TEST   disable a <span class="token builtin class-name">test</span> <span class="token punctuation">(</span>like pci, isapnp, cpuid, etc. <span class="token punctuation">)</span>
-	-enable TEST    <span class="token builtin class-name">enable</span> a <span class="token builtin class-name">test</span> <span class="token punctuation">(</span>like pci, isapnp, cpuid, etc. <span class="token punctuation">)</span>
-	-quiet          don't display status
-	-sanitize       sanitize output <span class="token punctuation">(</span>remove sensitive information like serial numbers, etc.<span class="token punctuation">)</span>
-	-numeric        output numeric IDs <span class="token punctuation">(</span>for PCI, USB, etc.<span class="token punctuation">)</span>
-	-notime         exclude volatile attributes <span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span> from output<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	-C CLASS        same as &#39;-class CLASS&#39;
+	-c CLASS        same as &#39;-class CLASS&#39;
+	-disable TEST   disable a test (like pci, isapnp, cpuid, etc. )
+	-enable TEST    enable a test (like pci, isapnp, cpuid, etc. )
+	-quiet          don&#39;t display status
+	-sanitize       sanitize output (remove sensitive information like serial numbers, etc.)
+	-numeric        output numeric IDs (for PCI, USB, etc.)
+	-notime         exclude volatile attributes (timestamps) from output<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>lsblk命令</strong></p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lsblk <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>设备<span class="token operator">></span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lsblk [选项] [&lt;设备&gt; ...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a, --all            打印所有设备
 -b, --bytes          以字节为单位而非易读的格式来打印 SIZE
--d, --nodeps         不打印从属设备<span class="token punctuation">(</span>slave<span class="token punctuation">)</span>或占位设备<span class="token punctuation">(</span>holder<span class="token punctuation">)</span>
+-d, --nodeps         不打印从属设备(slave)或占位设备(holder)
 -D, --discard        打印时丢弃能力
--e, --exclude <span class="token operator">&lt;</span>列表<span class="token operator">></span> 根据主设备号排除设备<span class="token punctuation">(</span>默认：内存盘<span class="token punctuation">)</span>
--I, --include <span class="token operator">&lt;</span>列表<span class="token operator">></span> 只显示有指定主设备号的设备
+-e, --exclude &lt;列表&gt; 根据主设备号排除设备(默认：内存盘)
+-I, --include &lt;列表&gt; 只显示有指定主设备号的设备
 -f, --fs             输出文件系统信息
--h, --help           使用信息<span class="token punctuation">(</span>此信息<span class="token punctuation">)</span>
+-h, --help           使用信息(此信息)
 -i, --ascii          只使用 ascii 字符
 -m, --perms          输出权限信息
 -l, --list           使用列表格式的输出
 -n, --noheadings     不打印标题
--o, --output <span class="token operator">&lt;</span>列表<span class="token operator">></span>  输出列
+-o, --output &lt;列表&gt;  输出列
 -p, --paths          打印完整设备路径
--P, --pairs          使用 <span class="token assign-left variable">key</span><span class="token operator">=</span>“value” 输出格式
+-P, --pairs          使用 key&#x3D;“value” 输出格式
 -r, --raw            使用原生输出格式
 -s, --inverse        反向依赖
 -t, --topology       输出拓扑信息
@@ -1375,91 +1375,91 @@ options can be
 <p>功能描述：</p>
 <p>​    mkdir命令用于创建文件夹；</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">mkdir</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. DIRECTORY<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir [OPTION]... DIRECTORY...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, --mode<span class="token operator">=</span>MODE   对文件夹设置权限
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-m, --mode&#x3D;MODE   对文件夹设置权限
 -p, --parents     递归创建文件夹
 -v, --verbose     输出创建文件夹详情<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>创建一个文件夹test</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir test</span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls</span>
-anaconda-ks.cfg  <span class="token builtin class-name">test</span>  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>批量创建文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/test/test1 -v</span>
-mkdir: created directory ‘/opt/test’
-mkdir: created directory ‘/opt/test/test1’
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls /opt/</span>
-<span class="token builtin class-name">test</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir -p &#x2F;opt&#x2F;test&#x2F;test1 -v
+mkdir: created directory ‘&#x2F;opt&#x2F;test’
+mkdir: created directory ‘&#x2F;opt&#x2F;test&#x2F;test1’
+[root@localhost ~]# ls &#x2F;opt&#x2F;
+test <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>touch 命令</strong></p>
 <p>功能描述：</p>
 <p>​    touch命令用于创建文件</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">touch</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. FILE<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">touch [OPTION]... FILE...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a                     change only the access <span class="token function">time</span>
--c, --no-create        <span class="token keyword">do</span> not create any files
--d, --date<span class="token operator">=</span>STRING      parse STRING and use it instead of current <span class="token function">time</span>
--f                     <span class="token punctuation">(</span>ignored<span class="token punctuation">)</span>
--h, --no-dereference   affect each symbolic <span class="token function">link</span> instead of any referenced
-                       <span class="token function">file</span> <span class="token punctuation">(</span>useful only on systems that can change the
-                       timestamps of a symlink<span class="token punctuation">)</span>
--m                     change only the modification <span class="token function">time</span>
--r, --reference<span class="token operator">=</span>FILE   use this file's <span class="token builtin class-name">times</span> instead of current <span class="token function">time</span>
--t STAMP               use <span class="token punctuation">[</span><span class="token punctuation">[</span>CC<span class="token punctuation">]</span>YY<span class="token punctuation">]</span>MMDDhhmm<span class="token punctuation">[</span>.ss<span class="token punctuation">]</span> instead of current ti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a                     change only the access time
+-c, --no-create        do not create any files
+-d, --date&#x3D;STRING      parse STRING and use it instead of current time
+-f                     (ignored)
+-h, --no-dereference   affect each symbolic link instead of any referenced
+                       file (useful only on systems that can change the
+                       timestamps of a symlink)
+-m                     change only the modification time
+-r, --reference&#x3D;FILE   use this file&#39;s times instead of current time
+-t STAMP               use [[CC]YY]MMDDhhmm[.ss] instead of current ti<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>创建test文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># touch test</span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls</span>
-anaconda-ks.cfg  <span class="token builtin class-name">test</span>  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# touch test
+[root@localhost ~]# ls
+anaconda-ks.cfg  test  top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>more命令</strong></p>
 <p>​    如果一个文本比较长，一屏无法显示完毕，就需要使用more命令。more命令读取文本文件时，每次显示一屏，并且在每屏底部显示单词“More”。如果此时按Enter键，more命令就会接着再显示文本的一行，一次类推；如果按空格键，more命令就继续显示文本文件的另一屏信息。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用法：more <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 文件<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用法：more [选项] 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-d        显示帮助，而不是响铃
 -f        统计逻辑行数而不是屏幕行数
--l        抑制换页<span class="token punctuation">(</span>form feed<span class="token punctuation">)</span>后的暂停
+-l        抑制换页(form feed)后的暂停
 -p        不滚屏，清屏并显示文本
 -c        不滚屏，显示文本并清理行尾
 -u        抑制下划线
 -s        将多个空行压缩为一行
 -NUM      指定每屏显示的行数为 NUM
 +NUM      从文件第 NUM 行开始显示
-+/STRING  从匹配搜索字符串 STRING 的文件位置开始显示
++&#x2F;STRING  从匹配搜索字符串 STRING 的文件位置开始显示
 -V        输出版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <ul>
 <li><p>以分页方式显示文件的内容</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># more top.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>显示以10行文件内容，同时清除屏幕</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># more -c -10 top.txt</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# more -c -10 top.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <p><strong>cat命令</strong></p>
 <p>功能描述:</p>
 <p>cat命令用来将文件内容输出到标准输出，类似于DOS下的type命令，同时cat还可以用于连接合并文件。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">cat</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> files<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat [options] files<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A, --show-all           等于-vET
 -b, --number-nonblank    对非空输出行编号
 -e                       等于-vE
--E, --show-ends          在每行结束处显示<span class="token string">"$"</span>
+-E, --show-ends          在每行结束处显示&quot;$&quot;
 -n, --number             对输出的所有行编号
 -s, --squeeze-blank      不输出多行空行
 -t                       与-vT 等价
 -T, --show-tabs          将跳格字符显示为^I
--u                       <span class="token punctuation">(</span>被忽略<span class="token punctuation">)</span>
+-u                       (被忽略)
 -v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
     --help		显示此帮助信息并退出
     --version		显示版本信息并退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1467,25 +1467,25 @@ anaconda-ks.cfg  <span class="token builtin class-name">test</span>  top.txt<spa
 <p>示例：</p>
 <ul>
 <li><p>查看网卡的配置文件；</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test network-scripts<span class="token punctuation">]</span><span class="token comment"># cat ifcfg-ens33 </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test network-scripts]# cat ifcfg-ens33 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>以下命令将文件file1.txt和file2.txt的内容合并后输出到file3.txt中。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># ls</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
 file1.txt  file2.txt  waizhi
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># cat file1.txt </span>
-this is <span class="token function">file</span> one
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># cat file2.txt </span>
-this is <span class="token function">file</span> two
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># cat file1.txt file2.txt > file3.txt</span>
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># cat file3.txt </span>
-this is <span class="token function">file</span> one
-this is <span class="token function">file</span> two
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+[root@test opt]# cat file1.txt 
+this is file one
+[root@test opt]# cat file2.txt 
+this is file two
+[root@test opt]# cat file1.txt file2.txt &gt; file3.txt
+[root@test opt]# cat file3.txt 
+this is file one
+this is file two
+[root@test opt]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p><strong>diff命令</strong></p>
 <p>功能描述：</p>
 <p>​    diff命令用来比较文件的差异。diff以逐行的方式比较文本文件的异同，如果指定比较的是目录，则diff会比价目前中相同文件名的文件，但不会比较其中的子目录。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">diff</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. FILES<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">diff [选项]... FILES<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c 显示全部内容，并标出不同之处
@@ -1495,31 +1495,31 @@ this is <span class="token function">file</span> two
 
 <p>示例:</p>
 <p>比较文件file1.txt和file2.txt的异同</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># diff file1.txt  file2.txt </span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# diff file1.txt  file2.txt 
 1c1
-<span class="token operator">&lt;</span> this is <span class="token function">file</span> one
+&lt; this is file one
 ---
-<span class="token operator">></span> this is <span class="token function">file</span> two
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># diff -c file1.txt file2.txt </span>
-*** file1.txt	<span class="token number">2021</span>-01-22 07:50:49.586053712 +0800
---- file2.txt	<span class="token number">2021</span>-01-22 07:50:54.322053893 +0800
+&gt; this is file two
+[root@test opt]# diff -c file1.txt file2.txt 
+*** file1.txt	2021-01-22 07:50:49.586053712 +0800
+--- file2.txt	2021-01-22 07:50:54.322053893 +0800
 ***************
-*** <span class="token number">1</span> ****
-<span class="token operator">!</span> this is <span class="token function">file</span> one
---- <span class="token number">1</span> ----
-<span class="token operator">!</span> this is <span class="token function">file</span> two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+*** 1 ****
+! this is file one
+--- 1 ----
+! this is file two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>grep命令</strong></p>
 <p>功能描述：</p>
 <p>​    grep命令是Linux下的文本过滤工具，grep根据指定的字符串，对文件的每一行进行搜索，如果找到了这个字符串，就输出该行的内容。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">grep</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. PATTERN <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">grep [选项]... PATTERN [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <p>grep 命令的选项有很多，这里列出常用的选项说明。</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-A NUM 除了列出符合条件的行列，同时列出每个符合条件行的后NUM行
 -c 只显示符合条件的行数，二部显示每行的具体信息
--f <span class="token function">file</span> 事先将要搜索的样式写入一个文件中，每行一个样式，然后以这个文件作为条件进行搜索
+-f file 事先将要搜索的样式写入一个文件中，每行一个样式，然后以这个文件作为条件进行搜索
 -i 搜索时忽略大小写
 -n 在搜索结果中显示行号
 -B 与选项“-A”相反，除了列出符合条件的行外，同时列出每个符合条件的前NUM行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1528,7 +1528,7 @@ this is <span class="token function">file</span> two
 <p>功能描述：</p>
 <p>​    rm命令用来删除文件或者文件夹及其所有子目录。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">rm</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. 文件<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm [选项]... 文件...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-r 递归删除文件及文件夹
@@ -1548,10 +1548,10 @@ this is <span class="token function">file</span> two
 </li>
 </ul>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ln</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-T<span class="token punctuation">]</span> 目标 链接名	<span class="token punctuation">(</span>第一种格式<span class="token punctuation">)</span>
-<span class="token function">ln</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. 目标		<span class="token punctuation">(</span>第二种格式<span class="token punctuation">)</span>
-<span class="token function">ln</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. 目标<span class="token punctuation">..</span>. 目录	<span class="token punctuation">(</span>第三种格式<span class="token punctuation">)</span>
-<span class="token function">ln</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. -t 目录 目标<span class="token punctuation">..</span>.	<span class="token punctuation">(</span>第四种格式<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ln [选项]... [-T] 目标 链接名	(第一种格式)
+ln [选项]... 目标		(第二种格式)
+ln [选项]... 目标... 目录	(第三种格式)
+ln [选项]... -t 目录 目标...	(第四种格式)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-f 如果在目标位置存在与链接名相同的文件，这个文件将被删除
@@ -1563,7 +1563,7 @@ this is <span class="token function">file</span> two
 <p>功能描述：</p>
 <p>​    file命令用来显示文件类型。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">file</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">file [OPTION...] [FILE...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-b 显示文件类型结果，不显示对应文件名称
@@ -1575,9 +1575,9 @@ this is <span class="token function">file</span> two
 <p>功能描述：</p>
 <p>​    cp 命令用来将给出的文件或者目录复制到另一个文件或者目录中。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">cp</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-T<span class="token punctuation">]</span> 源文件 目标文件
-<span class="token function">cp</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. 源文件<span class="token punctuation">..</span>. 目录
-<span class="token function">cp</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. -t 目录 源文件<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp [选项]... [-T] 源文件 目标文件
+cp [选项]... 源文件... 目录
+cp [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a 在复制目录时使用，它保留所有的信息，包含文件链接、文件属性，并递归地复制目录
@@ -1589,7 +1589,7 @@ this is <span class="token function">file</span> two
 <p><strong>find 命令</strong></p>
 <p>​    find命令用来在指定的路径下查找指定的文件。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">find</span>  path-name <span class="token punctuation">[</span>-options<span class="token punctuation">]</span> <span class="token punctuation">[</span>-print -exec -ok 命令 <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token punctuation">\</span><span class="token punctuation">;</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">find  path-name [-options] [-print -exec -ok 命令 &#123;&#125; \;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <ul>
@@ -1603,48 +1603,48 @@ this is <span class="token function">file</span> two
 <p>功能描述：</p>
 <p>​    mv 命令用来将文件或目录改名或将文件由一个目录移入另一个文件夹中。如果源类型和目标类型都是文件或者目录，mv将进行目录重命名。如果源类型为文件，而且标类型为目录，mv将进行文件的移动。如果源类型为目录，则目标类型只能是目录，不能是文件，此时完成目录重命名。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">mv</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>-T<span class="token punctuation">]</span> 源文件 目标文件
-<span class="token function">mv</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. 源文件<span class="token punctuation">..</span>. 目录
-<span class="token function">mv</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span><span class="token punctuation">..</span>. -t 目录 源文件<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv [选项]... [-T] 源文件 目标文件
+mv [选项]... 源文件... 目录
+mv [选项]... -t 目录 源文件...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>示例：</p>
 <p>修改源文件名、移动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># ls</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test opt]# ls
 file1.txt  file2.txt  file3.txt  waizhi
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># mv file4.txt waizhi/</span>
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># ls</span>
+[root@test opt]# mv file4.txt waizhi&#x2F;
+[root@test opt]# ls
 file1.txt  file2.txt  waizhi
-<span class="token punctuation">[</span>root@test opt<span class="token punctuation">]</span><span class="token comment"># ls waizhi/</span>
+[root@test opt]# ls waizhi&#x2F;
 file4.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>zip/unzip命令</strong></p>
 <p>​    将一般文件或者目录进行压缩或者解压，Windows默认生成以”.zip”为后缀的压缩包。</p>
 <p>注意：在Linux字符版系统默认是没有安装unzip命令，如果需要解压.zip文件，必须安装此命令;</p>
 <p>安装unzip命令：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment"># yum -y  install unzip</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test ~]# yum -y  install unzip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">unzip</span> <span class="token punctuation">[</span>files<span class="token punctuation">]</span> 指定文件名需要解压缩的文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">unzip [files] 指定文件名需要解压缩的文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>gzip/gunzip 命令</strong></p>
 <p>功能描述：</p>
 <p>​    将一般的文件进行压缩或者解压。压缩文件的扩展名“.gz”。</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">gzip</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">gzip [OPTION]... [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>tar 命令</strong></p>
 <p>功能描述：</p>
 <p>​    tar是Linux下常用的归档工具，对文件或者文件夹进行打包归档，归档成一个文件，但不进行压缩；</p>
 <p>语法如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">tar</span> <span class="token punctuation">[</span>选项<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar [选项...] [FILE]...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>示例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">tar</span> -cf archive.tar foo bar  <span class="token comment"># 从文件 foo 和 bar 创建归档文件archive.tar。</span>
-<span class="token function">tar</span> -tvf archive.tar         <span class="token comment"># 详细列举归档文件 archive.tar中的所有文件。</span>
-<span class="token function">tar</span> -xf archive.tar          <span class="token comment"># 展开归档文件 archive.tar中的所有文件。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tar -cf archive.tar foo bar  # 从文件 foo 和 bar 创建归档文件archive.tar。
+tar -tvf archive.tar         # 详细列举归档文件 archive.tar中的所有文件。
+tar -xf archive.tar          # 展开归档文件 archive.tar中的所有文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
       </div>

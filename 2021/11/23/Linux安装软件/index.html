@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 11k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 8.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 10 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 7 mins.分钟 |
           </span>
   
           
@@ -738,20 +738,20 @@
 <ul>
 <li><p>安装软件包：</p>
 <p>语法格式：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">rpm</span> <span class="token punctuation">[</span>选项<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rpm [选项...]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>常用选项：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装/升级/擦除选项：
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">安装&#x2F;升级&#x2F;擦除选项：
   --allfiles                       安装全部文件，包含配置文件，否则配置文件会被跳过。
-  --allmatches                     移除所有符合 <span class="token operator">&lt;</span>package<span class="token operator">></span> 的软件包<span class="token punctuation">(</span>如果 <span class="token operator">&lt;</span>package<span class="token operator">></span>
-                                   被指定未多个软件包，常常会导致错误出现<span class="token punctuation">)</span>
+  --allmatches                     移除所有符合 &lt;package&gt; 的软件包(如果 &lt;package&gt;
+                                   被指定未多个软件包，常常会导致错误出现)
   --badreloc                       对不可重定位的软件包重新分配文件位置
-  -e, --erase<span class="token operator">=</span><span class="token operator">&lt;</span>package<span class="token operator">></span>+           清除 <span class="token punctuation">(</span>卸载<span class="token punctuation">)</span> 软件包
+  -e, --erase&#x3D;&lt;package&gt;+           清除 (卸载) 软件包
   --excludedocs                    不安装程序文档
-  --excludepath<span class="token operator">=</span><span class="token operator">&lt;</span>path<span class="token operator">></span>             略过以 <span class="token operator">&lt;</span>path<span class="token operator">></span> 开头的文件
+  --excludepath&#x3D;&lt;path&gt;             略过以 &lt;path&gt; 开头的文件
   --force                          --replacepkgs --replacefiles 的缩写
-  -F, --freshen<span class="token operator">=</span><span class="token operator">&lt;</span>packagefile<span class="token operator">></span>+     如果软件包已经安装，升级软件包
-  -h, --hash                       软件包安装的时候列出哈希标记 <span class="token punctuation">(</span>和 -v 一起使用效果更好<span class="token punctuation">)</span>
+  -F, --freshen&#x3D;&lt;packagefile&gt;+     如果软件包已经安装，升级软件包
+  -h, --hash                       软件包安装的时候列出哈希标记 (和 -v 一起使用效果更好)
   --ignorearch                     不验证软件包架构
   --ignoreos                       不验证软件包操作系统
   --ignoresize                     在安装前不检查磁盘空间
@@ -764,29 +764,29 @@
   --noscripts                      不执行软件包脚本
   --notriggers                     不执行本软件包触发的任何脚本
   --nocollections                  请不要执行任何动作集
-  --oldpackage                     更新到软件包的旧版本<span class="token punctuation">(</span>带 --force 自动完成这一功能<span class="token punctuation">)</span>
+  --oldpackage                     更新到软件包的旧版本(带 --force 自动完成这一功能)
   --percent                        安装软件包时打印百分比
-  --prefix<span class="token operator">=</span><span class="token operator">&lt;</span>dir<span class="token operator">></span>                   如果可重定位，便把软件包重定位到 <span class="token operator">&lt;</span>dir<span class="token operator">></span>
-  --relocate<span class="token operator">=</span><span class="token operator">&lt;</span>old<span class="token operator">>=</span><span class="token operator">&lt;</span>new<span class="token operator">></span>           将文件从 <span class="token operator">&lt;</span>old<span class="token operator">></span> 重定位到 <span class="token operator">&lt;</span>new<span class="token operator">></span>
+  --prefix&#x3D;&lt;dir&gt;                   如果可重定位，便把软件包重定位到 &lt;dir&gt;
+  --relocate&#x3D;&lt;old&gt;&#x3D;&lt;new&gt;           将文件从 &lt;old&gt; 重定位到 &lt;new&gt;
   --replacefiles                   忽略软件包之间的冲突的文件
   --replacepkgs                    如果软件包已经有了，重新安装软件包
   --test                           不真正安装，只是判断下是否能安装
-  -U, --upgrade<span class="token operator">=</span><span class="token operator">&lt;</span>packagefile<span class="token operator">></span>+     升级软件包
-  --reinstall<span class="token operator">=</span><span class="token operator">&lt;</span>packagefile<span class="token operator">></span>+       reinstall package<span class="token punctuation">(</span>s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+  -U, --upgrade&#x3D;&lt;packagefile&gt;+     升级软件包
+  --reinstall&#x3D;&lt;packagefile&gt;+       reinstall package(s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="yum安装方式"><a href="#yum安装方式" class="headerlink" title="yum安装方式"></a>yum安装方式</h4><p>yum是yellowdog update modified 的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Red Hat公司是将这种升级技术利用到自己的发行版上就形成了现在的yum,yum是进行Linux系统下软件安装和升级常用的一个工具，通过Linux工具配合互联网即可实现软件的便捷安装和自动升级。</p>
 <h5 id="yum-安装及配置"><a href="#yum-安装及配置" class="headerlink" title="yum 安装及配置"></a>yum 安装及配置</h5><p><strong>yum的安装</strong></p>
 <p>以CentOS 7 为例，要检查yum是否已经安装，基本系统默认会自动安装yum工具</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># rpm -qa |grep yum</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# rpm -qa |grep yum<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>yum的配置</strong></p>
 <p>yum的配置文件有主要配置文件/etc/yum.conf,资源库配置目录/etc/yum.repos.d。 yum 安装后，默认的一些资源库配置可能无法使用，因此需要进行修改，修改配置文件为：/etc/yum.repos.d/</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>cr<span class="token punctuation">]</span>
-<span class="token assign-left variable">name</span><span class="token operator">=</span>CentOS-<span class="token variable">$releasever</span> - cr  
-<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://mirror.centos.org/centos/<span class="token variable">$releasever</span>/cr/<span class="token variable">$basearch</span>/
-<span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">1</span>
-<span class="token assign-left variable">gpgkey</span><span class="token operator">=</span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-<span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[cr]
+name&#x3D;CentOS-$releasever - cr  
+baseurl&#x3D;http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;$releasever&#x2F;cr&#x2F;$basearch&#x2F;
+gpgcheck&#x3D;1
+gpgkey&#x3D;file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-CentOS-7
+enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>yum的特点与基本用法</strong></p>
 <ol>
@@ -801,14 +801,14 @@
 <li><p>yum的基本用法</p>
 <ul>
 <li><p>如果安装或者删除RPM包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum -y install *.rpm</span>
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum -y remove *.rpm</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum -y install *.rpm
+[root@localhost ~]# yum -y remove *.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>检查yum工具更新软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum check-update</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum check-update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>更新所有的RPM软件包</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum update -y </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum update -y <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>通过yum查询RPM包信息</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum info </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# yum info <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 </li>
 </ol>
