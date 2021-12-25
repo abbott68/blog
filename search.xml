@@ -283,78 +283,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux安装软件</title>
     <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
@@ -1476,32 +1404,6 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
       </tags>
   </entry>
   <entry>
-    <title>MacbookPor-m1</title>
-    <url>/blog/2021/12/02/MacbookPor-m1/</url>
-    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
-<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
-</ul>
-<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
-<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
-</ul>
-<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
-<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
-</ul>
-<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
-</ul>
-<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/Y15ZXUoaZVU">https://youtu.be/Y15ZXUoaZVU</a></p>
-]]></content>
-      <categories>
-        <category>MAC M1</category>
-      </categories>
-      <tags>
-        <tag>VMware fuison</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL</title>
     <url>/blog/2021/07/16/MySQL/</url>
     <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" class="lazyload placeholder" data-srcset="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -1710,6 +1612,32 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
+    <title>MacbookPor-m1</title>
+    <url>/blog/2021/12/02/MacbookPor-m1/</url>
+    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
+<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
+</ul>
+<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
+<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
+</ul>
+<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
+<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
+</ul>
+<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
+</ul>
+<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/Y15ZXUoaZVU">https://youtu.be/Y15ZXUoaZVU</a></p>
+]]></content>
+      <categories>
+        <category>MAC M1</category>
+      </categories>
+      <tags>
+        <tag>VMware fuison</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL8.0.27版本二进制安装</title>
     <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1781,10 +1709,135 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>MySQL优化和运维之道</title>
+    <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
+    <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
+<li>历史</li>
+<li>MySQL优点<ul>
+<li>使用简单</li>
+<li>开源免费</li>
+<li>扩展性好，在一定阶段扩展性好</li>
+<li>社区活跃</li>
+<li>性能可以满足互联网存储和性能需求，离不开硬件的支持</li>
+</ul>
+</li>
+<li>MySQL 存在的问题<ul>
+<li>优化器对复杂的SQL支持不好</li>
+<li>对SQL标准支持不好</li>
+<li>大规模集群方案不成熟，主要指中间件</li>
+<li>ID生成器，全局自增ID</li>
+<li>异步逻辑复制，数据安全性问题</li>
+<li>Online DDL</li>
+<li>HA 方案不完全</li>
+<li>备份和恢复方案还是比较复杂，需要依赖外部组件</li>
+<li>展现给用户的信息过少，排查问题困难</li>
+<li>众多分支，让人难以选择</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、-数据库开发规范"><a href="#二、-数据库开发规范" class="headerlink" title="二、 数据库开发规范"></a>二、 数据库开发规范</h2><p>数据库开发规范定义：</p>
+<ul>
+<li><p>开发规范是针对内部开发的一系列建议或规则，由 OBA 制订(如 果有 OBA 的话)。</p>
+</li>
+<li><p>开发规范本身也包含几部分 : 基本命名 、约束规范、 字段设计规范、索引规范、使用 规范。</p>
+</li>
+</ul>
+<ol>
+<li><p>规范存在的意义</p>
+<ul>
+<li>保证线上数据库scheme 规范；</li>
+<li>减少出问题概率；</li>
+<li>方便自动化管理；</li>
+<li>需要长期坚持规范，这对开发和DBA 来说是双赢；</li>
+</ul>
+</li>
+<li><p>基本命令和约束规范</p>
+<ul>
+<li>表字符集选择UTF8，如果需要存储 emoj 表情，需要使用 UTF8mb4（MySQL 5.5.3 版本以后支持）；</li>
+<li>存储引擎使用InnoDB;</li>
+<li>变长字符串尽量使用 varchar 或 varbinary;</li>
+<li>不在数据库中存储图片、文件等；</li>
+<li>单标数据量控制在1亿以下；</li>
+<li>库名、表名、字段名不适用保留字；</li>
+<li>库名、表名、字段名、索引名使用小写字母，以下划线分割，需要见名知意；</li>
+<li>库表名不要涉及得过长，尽可能用最少的字符表达出表的用途；</li>
+</ul>
+</li>
+<li><p>字段规范</p>
+<ul>
+<li>所有字段均定义为 NOT NULL, 除非你想的想存 NULL；</li>
+<li>字段类型在满足需求条件下越小越好，使用 UNSIGNED 存储非负整数，实际使用时存储负数的场景不多；</li>
+<li>使用 TMESTAMP 存储时间；</li>
+<li>使用 varchar存储变长字符串，当然要注意 varchar CM ) 里的 M 指的是字符数而不是字节数:使用 UNSIGNED INT 存储 1Pv4 地址而不是 CHAR (15)，这种方式只能存储 1Pv4，存储不了 1Pv6。</li>
+<li>使用 DECIMAL存储精确浮点数，用 float 类型可能会存在数据误差；</li>
+<li>少用 blob text；</li>
+</ul>
+<p>关于为什么定义不用NULL 的原因：</p>
+<ul>
+<li>浪费存储空间，应为 InnoDB 需要额外一个字节来存储；</li>
+<li>表内默认值 NULL 过多会影响优化器选择执行计划；</li>
+</ul>
+</li>
+<li><p>索引规范</p>
+<ul>
+<li>单个索引字段不超过5，单表索引数量不超过5，索引设计遵循 B+Tree 索引最左前缀匹配原则。</li>
+<li>选择区分度高的列作为索引；</li>
+<li>建立的索引覆盖80% 主要的查询，不求全，解决问题的主要矛盾就好；</li>
+<li>DML 要和order by、group by 字段建立合适的索引；</li>
+<li>避免索引的隐式转换；</li>
+<li>避免冗余索引；</li>
+</ul>
+</li>
+<li><p>SQL 类规范</p>
+<ul>
+<li>建议尽量不适用存储过程、触发器、函数等，减少维护成本和性能隐患；</li>
+<li>避免适用达标的JOIN， MySQL优化器对JOIN 优化策略过于简单；</li>
+<li>避免在数据库中进行数据运算和其他大量计算任务；</li>
+<li>SQL 合并，主要是DML时 多个value 合并，减少和数据库交互；</li>
+<li>合理分页，尤其大分页；</li>
+<li>如果 UPDATE、DELETE 语句不是 LIMIT,  在Staement 日志格式下容易造成主从不一致； </li>
+</ul>
+</li>
+</ol>
+<h2 id="三、数据库运维规范"><a href="#三、数据库运维规范" class="headerlink" title="三、数据库运维规范"></a>三、数据库运维规范</h2><ol>
+<li><p>运维规范主要内容</p>
+<ul>
+<li>SQL 审核，DDL 审核和操作时间，尤其是 Online DDL；</li>
+<li>高危操作检查，DROP前做好数据备份；</li>
+<li>权限控制和审计；</li>
+<li>日志分析，主要是指的MySQL 慢日志和错误日志；</li>
+<li>高可用方案；</li>
+<li>数据备份方案</li>
+</ul>
+</li>
+<li><p>版本选择</p>
+<ul>
+<li>MySQL 社区版，用户群体最大；</li>
+<li>MySQL 企业版，收费；</li>
+<li>Percona Server 版，新特性多；</li>
+<li>MariaDB 版，国内用户不多；</li>
+</ul>
+</li>
+<li><p>Online DDL 问题</p>
+<p>原生MySQL执行DDL时需要锁表， 且在锁表期间业务无法写入数据，这对服务影响很大， MySQL 对这方面的支持比较差。大表做 DDL 对 DBA 来说是很痛苦的，相信很多 人都经历过。如何做到 Online DDL，这个问题是不是就无解了呢? 当然不是 !</p>
+</li>
+<li><p>可用性</p>
+<p>关于可用性，我们来分享一种无缝切主库方案，如下图所示。可以用于日常切换，使用思 路也比较简单。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>优化</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#x31;&#64;&#x31;&#x37;&#50;&#46;&#x31;&#54;&#46;&#x35;&#57;&#46;&#49;&#51;&#51;">&#100;&#x65;&#118;&#x31;&#64;&#x31;&#x37;&#50;&#46;&#x31;&#54;&#46;&#x35;&#57;&#46;&#49;&#51;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#51;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1929,151 +1982,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>MySQL</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（源码编译）</title>
-    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
-<span id="more"></span>
-<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
-<li>centos 8.3</li>
-<li>数据库版本：MySQL-8.0.25</li>
-<li>gcc版本：<ul>
-<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
-<li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font size="4" color="red" >报错:</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
-  You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
-二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
-  packages:
-
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
-三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装依赖：</p>
-<p>注意： rpcgen源没有需下载</p>
-<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动失败（报错）</p>
-<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
-
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
-affiliates. Other names may be trademarks of their respective
-owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
   </entry>
   <entry>
     <title>Nginx</title>
@@ -2224,129 +2132,149 @@ location &#x2F; &#123;
       </tags>
   </entry>
   <entry>
-    <title>MySQL优化和运维之道</title>
-    <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
-    <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
-<li>历史</li>
-<li>MySQL优点<ul>
-<li>使用简单</li>
-<li>开源免费</li>
-<li>扩展性好，在一定阶段扩展性好</li>
-<li>社区活跃</li>
-<li>性能可以满足互联网存储和性能需求，离不开硬件的支持</li>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+<span id="more"></span>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
 </ul>
 </li>
-<li>MySQL 存在的问题<ul>
-<li>优化器对复杂的SQL支持不好</li>
-<li>对SQL标准支持不好</li>
-<li>大规模集群方案不成熟，主要指中间件</li>
-<li>ID生成器，全局自增ID</li>
-<li>异步逻辑复制，数据安全性问题</li>
-<li>Online DDL</li>
-<li>HA 方案不完全</li>
-<li>备份和恢复方案还是比较复杂，需要依赖外部组件</li>
-<li>展现给用户的信息过少，排查问题困难</li>
-<li>众多分支，让人难以选择</li>
 </ul>
-</li>
-</ol>
-<h2 id="二、-数据库开发规范"><a href="#二、-数据库开发规范" class="headerlink" title="二、 数据库开发规范"></a>二、 数据库开发规范</h2><p>数据库开发规范定义：</p>
-<ul>
-<li><p>开发规范是针对内部开发的一系列建议或规则，由 OBA 制订(如 果有 OBA 的话)。</p>
-</li>
-<li><p>开发规范本身也包含几部分 : 基本命名 、约束规范、 字段设计规范、索引规范、使用 规范。</p>
-</li>
-</ul>
-<ol>
-<li><p>规范存在的意义</p>
-<ul>
-<li>保证线上数据库scheme 规范；</li>
-<li>减少出问题概率；</li>
-<li>方便自动化管理；</li>
-<li>需要长期坚持规范，这对开发和DBA 来说是双赢；</li>
-</ul>
-</li>
-<li><p>基本命令和约束规范</p>
-<ul>
-<li>表字符集选择UTF8，如果需要存储 emoj 表情，需要使用 UTF8mb4（MySQL 5.5.3 版本以后支持）；</li>
-<li>存储引擎使用InnoDB;</li>
-<li>变长字符串尽量使用 varchar 或 varbinary;</li>
-<li>不在数据库中存储图片、文件等；</li>
-<li>单标数据量控制在1亿以下；</li>
-<li>库名、表名、字段名不适用保留字；</li>
-<li>库名、表名、字段名、索引名使用小写字母，以下划线分割，需要见名知意；</li>
-<li>库表名不要涉及得过长，尽可能用最少的字符表达出表的用途；</li>
-</ul>
-</li>
-<li><p>字段规范</p>
-<ul>
-<li>所有字段均定义为 NOT NULL, 除非你想的想存 NULL；</li>
-<li>字段类型在满足需求条件下越小越好，使用 UNSIGNED 存储非负整数，实际使用时存储负数的场景不多；</li>
-<li>使用 TMESTAMP 存储时间；</li>
-<li>使用 varchar存储变长字符串，当然要注意 varchar CM ) 里的 M 指的是字符数而不是字节数:使用 UNSIGNED INT 存储 1Pv4 地址而不是 CHAR (15)，这种方式只能存储 1Pv4，存储不了 1Pv6。</li>
-<li>使用 DECIMAL存储精确浮点数，用 float 类型可能会存在数据误差；</li>
-<li>少用 blob text；</li>
-</ul>
-<p>关于为什么定义不用NULL 的原因：</p>
-<ul>
-<li>浪费存储空间，应为 InnoDB 需要额外一个字节来存储；</li>
-<li>表内默认值 NULL 过多会影响优化器选择执行计划；</li>
-</ul>
-</li>
-<li><p>索引规范</p>
-<ul>
-<li>单个索引字段不超过5，单表索引数量不超过5，索引设计遵循 B+Tree 索引最左前缀匹配原则。</li>
-<li>选择区分度高的列作为索引；</li>
-<li>建立的索引覆盖80% 主要的查询，不求全，解决问题的主要矛盾就好；</li>
-<li>DML 要和order by、group by 字段建立合适的索引；</li>
-<li>避免索引的隐式转换；</li>
-<li>避免冗余索引；</li>
-</ul>
-</li>
-<li><p>SQL 类规范</p>
-<ul>
-<li>建议尽量不适用存储过程、触发器、函数等，减少维护成本和性能隐患；</li>
-<li>避免适用达标的JOIN， MySQL优化器对JOIN 优化策略过于简单；</li>
-<li>避免在数据库中进行数据运算和其他大量计算任务；</li>
-<li>SQL 合并，主要是DML时 多个value 合并，减少和数据库交互；</li>
-<li>合理分页，尤其大分页；</li>
-<li>如果 UPDATE、DELETE 语句不是 LIMIT,  在Staement 日志格式下容易造成主从不一致； </li>
-</ul>
-</li>
-</ol>
-<h2 id="三、数据库运维规范"><a href="#三、数据库运维规范" class="headerlink" title="三、数据库运维规范"></a>三、数据库运维规范</h2><ol>
-<li><p>运维规范主要内容</p>
-<ul>
-<li>SQL 审核，DDL 审核和操作时间，尤其是 Online DDL；</li>
-<li>高危操作检查，DROP前做好数据备份；</li>
-<li>权限控制和审计；</li>
-<li>日志分析，主要是指的MySQL 慢日志和错误日志；</li>
-<li>高可用方案；</li>
-<li>数据备份方案</li>
-</ul>
-</li>
-<li><p>版本选择</p>
-<ul>
-<li>MySQL 社区版，用户群体最大；</li>
-<li>MySQL 企业版，收费；</li>
-<li>Percona Server 版，新特性多；</li>
-<li>MariaDB 版，国内用户不多；</li>
-</ul>
-</li>
-<li><p>Online DDL 问题</p>
-<p>原生MySQL执行DDL时需要锁表， 且在锁表期间业务无法写入数据，这对服务影响很大， MySQL 对这方面的支持比较差。大表做 DDL 对 DBA 来说是很痛苦的，相信很多 人都经历过。如何做到 Online DDL，这个问题是不是就无解了呢? 当然不是 !</p>
-</li>
-<li><p>可用性</p>
-<p>关于可用性，我们来分享一种无缝切主库方案，如下图所示。可以用于日常切换，使用思 路也比较简单。</p>
-</li>
-</ol>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
-        <category>优化</category>
+        <category>数据库</category>
       </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
   </entry>
   <entry>
     <title>PSSH</title>
@@ -2492,6 +2420,24 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </tags>
   </entry>
   <entry>
+    <title>PythonValueError</title>
+    <url>/blog/2021/12/13/PythonValueError/</url>
+    <content><![CDATA[<h1 id="ValueError-not-enough-values-to-unpack-expected-2-got-1"><a href="#ValueError-not-enough-values-to-unpack-expected-2-got-1" class="headerlink" title="ValueError: not enough values to unpack (expected 2, got 1)"></a>ValueError: not enough values to unpack (expected 2, got 1)</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Enter a two value<span class="token punctuation">:</span><span class="token number">10</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;stdin>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+ValueError<span class="token punctuation">:</span> <span class="token keyword">not</span> enough values to unpack <span class="token punctuation">(</span>expected <span class="token number">2</span><span class="token punctuation">,</span> got <span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是：输入的值不是期望的值，输入的俩个值的不能换行</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Enter a two value<span class="token punctuation">:</span><span class="token number">10</span> <span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 函数</title>
     <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
@@ -2592,24 +2538,6 @@ r <span class="token operator">=</span> calc<span class="token punctuation">(</s
 
 <p>输出结果：</p>
 <pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PythonValueError</title>
-    <url>/blog/2021/12/13/PythonValueError/</url>
-    <content><![CDATA[<h1 id="ValueError-not-enough-values-to-unpack-expected-2-got-1"><a href="#ValueError-not-enough-values-to-unpack-expected-2-got-1" class="headerlink" title="ValueError: not enough values to unpack (expected 2, got 1)"></a>ValueError: not enough values to unpack (expected 2, got 1)</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Enter a two value<span class="token punctuation">:</span><span class="token number">10</span>
-Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"&lt;stdin>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-ValueError<span class="token punctuation">:</span> <span class="token keyword">not</span> enough values to unpack <span class="token punctuation">(</span>expected <span class="token number">2</span><span class="token punctuation">,</span> got <span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>原因是：输入的值不是期望的值，输入的俩个值的不能换行</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Enter a two value<span class="token punctuation">:</span><span class="token number">10</span> <span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -2861,6 +2789,34 @@ hell world<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
       </tags>
   </entry>
   <entry>
+    <title>c语言初始</title>
+    <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
+<p>C语言具有高效、灵活、功能丰富、表达力强和较高的<a href="https://zh.wikipedia.org/wiki/%E7%A7%BB%E6%A4%8D_(%E8%BB%9F%E9%AB%94)">可移植性</a>等特点，在<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>中备受青睐，成为最近25年使用最为广泛的编程语言[<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#cite_note-AutoTX-3-2">2]</a>。目前，C语言<a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E5%99%A8">编译器</a>普遍存在于各种不同的<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>中，例如<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X">macOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Unix">Unix</a>等。C语言的设计影响了众多后来的编程语言，例如<a href="https://zh.wikipedia.org/wiki/C%2B%2B">C++</a>、<a href="https://zh.wikipedia.org/wiki/Objective-C">Objective-C</a>、<a href="https://zh.wikipedia.org/wiki/Java">Java</a>、<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF">C#</a>等。</p>
+<p>二十世纪八十年代，为了避免各开发厂商用的C语言的语法产生差异，由<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E5%9C%8B%E5%AE%B6%E6%A8%99%E6%BA%96%E5%B1%80">美国国家标准局</a>为C语言订定了一套完整的国际标准语法，称为<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>，作为C语言的标准。二十世纪八十年代至今的有关程序开发工具，一般都支持符合<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>的语法。</p>
+<h3 id="K-amp-R-C"><a href="#K-amp-R-C" class="headerlink" title="K&amp;R C"></a>K&amp;R C</h3><p>1978年，丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)出版了一本书，名叫《The C Programming Language》（中文译名为《C程序设计语言》）。这本书被C语言开发者们称为“K&amp;R”，很多年来被当作C语言的非正式的标准说明。人们称这个版本的C语言为“K&amp;R C”。</p>
+<p>1988年丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)修改此书，出版了《The C Programming Language》第二版，第二版涵盖了ANSI C语言标准。第二版从此成为大学计算机教育有关C语言的经典教材，多年后也没再出现过更好的版本。</p>
+<h3 id="ANSI-C-和-ISO-C"><a href="#ANSI-C-和-ISO-C" class="headerlink" title="ANSI C 和 ISO C"></a>ANSI C 和 ISO C</h3><p>1970到80年代，C语言被广泛应用，从大型主机到小型微机，也衍生了C语言的很多不同版本。</p>
+<p>为统一C语言版本，1983年美国国家标准局（American National Standards Institute，简称ANSI）成立了一个委员会，来制定C语言标准。1989年C语言标准被批准，被称为ANSI X3.159-1989 “Programming Language C”。这个版本的C语言标准通常被称为ANSI C。又由于这个版本是 89 年完成制定的，因此也被称为 C89。</p>
+<p>后来 ANSI 把这个标准提交到 ISO（国际化标准组织），1990年被 ISO 采纳为国际标准，称为 ISO C。又因为这个版本是1990年发布的，因此也被称为C90。</p>
+<p>ANSI C(C89) 与 ISO C(C90)内容基本相同，主要是格式组织不一样。</p>
+<p>因为 ANSI 与 ISO 的C标准内容基本相同，所以对于C标准，可以称为ANSI C，也可以说是ISO C，或者 ANSI / ISO C。</p>
+<p>注意：以后大家看到 ANSI C、ISO C、C89、C90，要知道这些标准的内容都是一样的。</p>
+<p>目前，几乎所有的开发工具都支持 ANSI / ISO C 标准。是C语言用得最广泛的一个标准版本。</p>
+<h3 id="C99"><a href="#C99" class="headerlink" title="C99"></a>C99</h3><p>在ANSI C标准确立之后，C语言的规范在很长一段时间内都没有大的变动。1995年C程序设计语言工作组对 C语言进行了一些修改，成为后来的1999年发布的 ISO/IEC 9899:1999标准，通常被成为C99。</p>
+<p>但是各个公司对C99的支持所表现出来的兴趣不同。当GCC和其它一些商业编译器支持C99的大部分特性的時候，微软和Borland却似乎对此不感兴趣。</p>
+<p>说明：GCC（GNU Compiler Collection，GNU编译器集合）是一套由GNU工程开发的支持多种编程语言的编译器。</p>
+<p><font size="3" color=red>综上所述，目前广泛使用的C语言版本是 ANSI / ISO C，最经典的C语言教材是《C程序设计语言(The C Programming Language) 第二版》</font></p>
+<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" class="lazyload placeholder" data-srcset="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL部署（Yum安装)</title>
     <url>/blog/2021/12/09/install.mysql/</url>
     <content><![CDATA[<h1 id="Yum源安装-MySQL"><a href="#Yum源安装-MySQL" class="headerlink" title="Yum源安装 MySQL"></a>Yum源安装 MySQL</h1><span id="more"></span>
@@ -2911,35 +2867,7 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       </categories>
   </entry>
   <entry>
-    <title>c语言初始</title>
-    <url>/blog/2021/10/24/c%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p><strong>C</strong>是一种通用的<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80">编程语言</a>，广泛用于<a href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6">系统软件</a>与<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E8%BD%AF%E4%BB%B6">应用软件</a>的开发。于1969年至1973年间，为了移植与开发<a href="https://zh.wikipedia.org/wiki/UNIX">UNIX</a><a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87">丹尼斯·里奇</a>与<a href="https://zh.wikipedia.org/wiki/%E8%82%AF%C2%B7%E6%B1%A4%E6%99%AE%E9%80%8A">肯·汤普逊</a>，以<a href="https://zh.wikipedia.org/wiki/B%E8%AF%AD%E8%A8%80">B语言</a>为基础，在<a href="https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4">贝尔实验室</a>设计、开发出来。</p>
-<p>C语言具有高效、灵活、功能丰富、表达力强和较高的<a href="https://zh.wikipedia.org/wiki/%E7%A7%BB%E6%A4%8D_(%E8%BB%9F%E9%AB%94)">可移植性</a>等特点，在<a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">程序设计</a>中备受青睐，成为最近25年使用最为广泛的编程语言[<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#cite_note-AutoTX-3-2">2]</a>。目前，C语言<a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E5%99%A8">编译器</a>普遍存在于各种不同的<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>中，例如<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Microsoft Windows</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X">macOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Unix">Unix</a>等。C语言的设计影响了众多后来的编程语言，例如<a href="https://zh.wikipedia.org/wiki/C%2B%2B">C++</a>、<a href="https://zh.wikipedia.org/wiki/Objective-C">Objective-C</a>、<a href="https://zh.wikipedia.org/wiki/Java">Java</a>、<a href="https://zh.wikipedia.org/wiki/C%E2%99%AF">C#</a>等。</p>
-<p>二十世纪八十年代，为了避免各开发厂商用的C语言的语法产生差异，由<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E5%9C%8B%E5%AE%B6%E6%A8%99%E6%BA%96%E5%B1%80">美国国家标准局</a>为C语言订定了一套完整的国际标准语法，称为<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>，作为C语言的标准。二十世纪八十年代至今的有关程序开发工具，一般都支持符合<a href="https://zh.wikipedia.org/wiki/ANSI_C">ANSI C</a>的语法。</p>
-<h3 id="K-amp-R-C"><a href="#K-amp-R-C" class="headerlink" title="K&amp;R C"></a>K&amp;R C</h3><p>1978年，丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)出版了一本书，名叫《The C Programming Language》（中文译名为《C程序设计语言》）。这本书被C语言开发者们称为“K&amp;R”，很多年来被当作C语言的非正式的标准说明。人们称这个版本的C语言为“K&amp;R C”。</p>
-<p>1988年丹尼斯·里奇(Dennis Ritchie)和布莱恩·科尔尼干(Brian Kernighan)修改此书，出版了《The C Programming Language》第二版，第二版涵盖了ANSI C语言标准。第二版从此成为大学计算机教育有关C语言的经典教材，多年后也没再出现过更好的版本。</p>
-<h3 id="ANSI-C-和-ISO-C"><a href="#ANSI-C-和-ISO-C" class="headerlink" title="ANSI C 和 ISO C"></a>ANSI C 和 ISO C</h3><p>1970到80年代，C语言被广泛应用，从大型主机到小型微机，也衍生了C语言的很多不同版本。</p>
-<p>为统一C语言版本，1983年美国国家标准局（American National Standards Institute，简称ANSI）成立了一个委员会，来制定C语言标准。1989年C语言标准被批准，被称为ANSI X3.159-1989 “Programming Language C”。这个版本的C语言标准通常被称为ANSI C。又由于这个版本是 89 年完成制定的，因此也被称为 C89。</p>
-<p>后来 ANSI 把这个标准提交到 ISO（国际化标准组织），1990年被 ISO 采纳为国际标准，称为 ISO C。又因为这个版本是1990年发布的，因此也被称为C90。</p>
-<p>ANSI C(C89) 与 ISO C(C90)内容基本相同，主要是格式组织不一样。</p>
-<p>因为 ANSI 与 ISO 的C标准内容基本相同，所以对于C标准，可以称为ANSI C，也可以说是ISO C，或者 ANSI / ISO C。</p>
-<p>注意：以后大家看到 ANSI C、ISO C、C89、C90，要知道这些标准的内容都是一样的。</p>
-<p>目前，几乎所有的开发工具都支持 ANSI / ISO C 标准。是C语言用得最广泛的一个标准版本。</p>
-<h3 id="C99"><a href="#C99" class="headerlink" title="C99"></a>C99</h3><p>在ANSI C标准确立之后，C语言的规范在很长一段时间内都没有大的变动。1995年C程序设计语言工作组对 C语言进行了一些修改，成为后来的1999年发布的 ISO/IEC 9899:1999标准，通常被成为C99。</p>
-<p>但是各个公司对C99的支持所表现出来的兴趣不同。当GCC和其它一些商业编译器支持C99的大部分特性的時候，微软和Borland却似乎对此不感兴趣。</p>
-<p>说明：GCC（GNU Compiler Collection，GNU编译器集合）是一套由GNU工程开发的支持多种编程语言的编译器。</p>
-<p><font size="3" color=red>综上所述，目前广泛使用的C语言版本是 ANSI / ISO C，最经典的C语言教材是《C程序设计语言(The C Programming Language) 第二版》</font></p>
-<p><img src="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" class="lazyload placeholder" data-srcset="http://c.biancheng.net/cpp/uploads/allimg/150301/1-15030119511M02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-      <tags>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>k8s1.23重置</title>
+    <title>kubernetes1.23版 重置</title>
     <url>/blog/2021/12/25/kubernetes1.23%E7%89%88%E6%9C%AC%E9%87%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="kubernetes-重置"><a href="#kubernetes-重置" class="headerlink" title="kubernetes 重置"></a>kubernetes 重置</h1><ul>
 <li>为什么需要初始化</li>
@@ -2998,7 +2926,7 @@ k8s-master   Ready    control-plane,master   18h   v1.23.0
 k8s-node01   Ready    &lt;none&gt;                 22m   v1.23.0
 k8s-node02   Ready    &lt;none&gt;                 22m   v1.23.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="部署heapster监控插件安装"><a href="#部署heapster监控插件安装" class="headerlink" title="部署heapster监控插件安装"></a>部署heapster监控插件安装</h2>]]></content>
+]]></content>
       <categories>
         <category>kubernetes系列</category>
       </categories>
@@ -4123,40 +4051,75 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
 <ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
 </ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
 <ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
 </ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
 ]]></content>
       <categories>
         <category>监控系统</category>
       </categories>
       <tags>
-        <tag>prometheus</tag>
+        <tag>Grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -4237,6 +4200,74 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </categories>
       <tags>
         <tag>openstack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>promethues安装之二进制</title>
+    <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+    <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
+<li><p><a href=""><strong>使用预编译的二进制文件</strong></a></p>
+</li>
+<li><p><a href=""><strong>源码安装</strong></a></p>
+</li>
+<li><p><a href=""><strong>docker 安装</strong></a></p>
+</li>
+</ul>
+<h2 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h2><h6 id="2-1-下载并运行-Prometheus"><a href="#2-1-下载并运行-Prometheus" class="headerlink" title="2.1   下载并运行 Prometheus"></a><strong>2.1   下载并运行 Prometheus</strong></h6><p>如何安装、配置和使用一个简单的 Prometheus 实例。您将在本地下载并运行 Prometheus，将其配置为抓取自身和示例应用程序，然后处理查询、规则和图形以使用收集的时间序列数据。</p>
+<p>为您的平台<a href="https://prometheus.io/download">下载最新版本</a>的 Prometheus，然后解压并运行它：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott ~]# wget https:&#x2F;&#x2F;github.com&#x2F;prometheus&#x2F;prometheus&#x2F;releases&#x2F;download&#x2F;v2.29.2&#x2F;prometheus-2.29.2.linux-amd64.tar.gz
+[root@abbott ~]# tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C &#x2F;usr&#x2F;local&#x2F;
+[root@abbott ~]# mv prometheus-2.29.2.linux-amd64 prometheus2.29.2
+[root@abbott ~]# ln -s prometheus2.29.2 prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>2.2  在启动 Prometheus 之前，让我们查看下住配置文件</strong></p>
+<h6 id="配置-Prometheus-监控自身"><a href="#配置-Prometheus-监控自身" class="headerlink" title="配置 Prometheus 监控自身"></a>配置 Prometheus 监控自身</h6><p>Prometheus通过抓取指标 HTTP 端点从<em>目标</em>收集指标。由于 Prometheus 以与自身相同的方式公开数据，因此它还可以抓取和监控自身的健康状况。</p>
+<p>虽然仅收集有关自身数据的 Prometheus 服务器不是很有用，但它是一个很好的入门示例。将以下基本 Prometheus 配置保存为名为 的文件<code>prometheus.yml</code>：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@abbott local<span class="token punctuation">]</span><span class="token comment"># vim prometheus/prometheus.yml</span>
+<span class="token comment"># my global config</span>
+<span class="token key atrule">global</span><span class="token punctuation">:</span>
+  <span class="token key atrule">scrape_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
+  <span class="token key atrule">evaluation_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
+  <span class="token comment"># scrape_timeout is set to the global default (10s).</span>
+<span class="token comment"># Alertmanager configuration</span>
+<span class="token key atrule">alerting</span><span class="token punctuation">:</span>
+  <span class="token key atrule">alertmanagers</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
+          <span class="token comment"># - alertmanager:9093</span>
+
+<span class="token comment"># Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
+<span class="token key atrule">rule_files</span><span class="token punctuation">:</span>
+  <span class="token comment"># - "first_rules.yml"</span>
+  <span class="token comment"># - "second_rules.yml"</span>
+
+<span class="token comment"># A scrape configuration containing exactly one endpoint to scrape:</span>
+<span class="token comment"># Here it's Prometheus itself.</span>
+<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
+  <span class="token comment"># The job name is added as a label `job=&lt;job_name>` to any timeseries scraped from this config.</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">"prometheus"</span>
+
+    <span class="token comment"># metrics_path defaults to '/metrics'</span>
+    <span class="token comment"># scheme defaults to 'http'.</span>
+
+    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"localhost:9090"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>2.3 启动普罗米修斯</strong></p>
+<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">[root@abbott prometheus]# .&#x2F;prometheus  &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>普罗米修斯应该启动。您还应该能够在<a href="http://localhost:9090/">localhost:9090</a>浏览到关于它自己的状态页面。给它几秒钟从它自己的 HTTP 指标端点收集关于它自己的数据。</p>
+<p>您还可以通过导航到其指标端点来验证 Prometheus 是否正在提供有关其自身的指标： localhost:9090/metrics</p>
+<p><strong>2.4 同步时间</strong></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott prometheus]# yum install  -y  ntpdate
+[root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
       </tags>
   </entry>
   <entry>
@@ -4350,74 +4381,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <categories>
         <category>监控系统</category>
       </categories>
-  </entry>
-  <entry>
-    <title>promethues安装之二进制</title>
-    <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
-    <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
-<li><p><a href=""><strong>使用预编译的二进制文件</strong></a></p>
-</li>
-<li><p><a href=""><strong>源码安装</strong></a></p>
-</li>
-<li><p><a href=""><strong>docker 安装</strong></a></p>
-</li>
-</ul>
-<h2 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h2><h6 id="2-1-下载并运行-Prometheus"><a href="#2-1-下载并运行-Prometheus" class="headerlink" title="2.1   下载并运行 Prometheus"></a><strong>2.1   下载并运行 Prometheus</strong></h6><p>如何安装、配置和使用一个简单的 Prometheus 实例。您将在本地下载并运行 Prometheus，将其配置为抓取自身和示例应用程序，然后处理查询、规则和图形以使用收集的时间序列数据。</p>
-<p>为您的平台<a href="https://prometheus.io/download">下载最新版本</a>的 Prometheus，然后解压并运行它：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott ~]# wget https:&#x2F;&#x2F;github.com&#x2F;prometheus&#x2F;prometheus&#x2F;releases&#x2F;download&#x2F;v2.29.2&#x2F;prometheus-2.29.2.linux-amd64.tar.gz
-[root@abbott ~]# tar xf prometheus-2.29.2.linux-amd64.tar.gz  -C &#x2F;usr&#x2F;local&#x2F;
-[root@abbott ~]# mv prometheus-2.29.2.linux-amd64 prometheus2.29.2
-[root@abbott ~]# ln -s prometheus2.29.2 prometheus<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>2.2  在启动 Prometheus 之前，让我们查看下住配置文件</strong></p>
-<h6 id="配置-Prometheus-监控自身"><a href="#配置-Prometheus-监控自身" class="headerlink" title="配置 Prometheus 监控自身"></a>配置 Prometheus 监控自身</h6><p>Prometheus通过抓取指标 HTTP 端点从<em>目标</em>收集指标。由于 Prometheus 以与自身相同的方式公开数据，因此它还可以抓取和监控自身的健康状况。</p>
-<p>虽然仅收集有关自身数据的 Prometheus 服务器不是很有用，但它是一个很好的入门示例。将以下基本 Prometheus 配置保存为名为 的文件<code>prometheus.yml</code>：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">[</span>root@abbott local<span class="token punctuation">]</span><span class="token comment"># vim prometheus/prometheus.yml</span>
-<span class="token comment"># my global config</span>
-<span class="token key atrule">global</span><span class="token punctuation">:</span>
-  <span class="token key atrule">scrape_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Set the scrape interval to every 15 seconds. Default is every 1 minute.</span>
-  <span class="token key atrule">evaluation_interval</span><span class="token punctuation">:</span> 15s <span class="token comment"># Evaluate rules every 15 seconds. The default is every 1 minute.</span>
-  <span class="token comment"># scrape_timeout is set to the global default (10s).</span>
-<span class="token comment"># Alertmanager configuration</span>
-<span class="token key atrule">alerting</span><span class="token punctuation">:</span>
-  <span class="token key atrule">alertmanagers</span><span class="token punctuation">:</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
-        <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span>
-          <span class="token comment"># - alertmanager:9093</span>
-
-<span class="token comment"># Load rules once and periodically evaluate them according to the global 'evaluation_interval'.</span>
-<span class="token key atrule">rule_files</span><span class="token punctuation">:</span>
-  <span class="token comment"># - "first_rules.yml"</span>
-  <span class="token comment"># - "second_rules.yml"</span>
-
-<span class="token comment"># A scrape configuration containing exactly one endpoint to scrape:</span>
-<span class="token comment"># Here it's Prometheus itself.</span>
-<span class="token key atrule">scrape_configs</span><span class="token punctuation">:</span>
-  <span class="token comment"># The job name is added as a label `job=&lt;job_name>` to any timeseries scraped from this config.</span>
-  <span class="token punctuation">-</span> <span class="token key atrule">job_name</span><span class="token punctuation">:</span> <span class="token string">"prometheus"</span>
-
-    <span class="token comment"># metrics_path defaults to '/metrics'</span>
-    <span class="token comment"># scheme defaults to 'http'.</span>
-
-    <span class="token key atrule">static_configs</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">targets</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"localhost:9090"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>2.3 启动普罗米修斯</strong></p>
-<pre class="line-numbers language-sehll" data-language="sehll"><code class="language-sehll">[root@abbott prometheus]# .&#x2F;prometheus  &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>普罗米修斯应该启动。您还应该能够在<a href="http://localhost:9090/">localhost:9090</a>浏览到关于它自己的状态页面。给它几秒钟从它自己的 HTTP 指标端点收集关于它自己的数据。</p>
-<p>您还可以通过导航到其指标端点来验证 Prometheus 是否正在提供有关其自身的指标： localhost:9090/metrics</p>
-<p><strong>2.4 同步时间</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@abbott prometheus]# yum install  -y  ntpdate
-[root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
   </entry>
   <entry>
     <title>安装Docker</title>
@@ -4560,6 +4523,43 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </categories>
       <tags>
         <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
       </tags>
   </entry>
 </search>

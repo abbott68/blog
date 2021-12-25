@@ -375,13 +375,6 @@
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/tags/Grafana/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://abbott68.github.io/blog/tags/Linux/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -424,7 +417,7 @@
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/tags/prometheus/</loc>
+    <loc>https://abbott68.github.io/blog/tags/Grafana/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -432,6 +425,13 @@
   
   <url>
     <loc>https://abbott68.github.io/blog/tags/openstack/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://abbott68.github.io/blog/tags/prometheus/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -468,13 +468,6 @@
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/categories/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2021-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://abbott68.github.io/blog/categories/Linux%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -497,6 +490,13 @@
   
   <url>
     <loc>https://abbott68.github.io/blog/categories/Python/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://abbott68.github.io/blog/categories/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
