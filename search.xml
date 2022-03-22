@@ -227,6 +227,62 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Docker初始</title>
+    <url>/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[<h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>docker 对外宣称的作用是”Build,Ship and Run Any App,Anywhere“,即通过对应的封装（Packaging)、分发(Distribution)、部署(Deployment)、运行(Runtime)生命周期进行管理，达到应用组件级别的”一次封装，到处运行“。这里的组件，既可以是一个web应用、一个编译环境，也可以是一台数据库平台服务，甚至是一个操作系统或集群。</p>
+<p>基于Linux平台上的多项开源技术，docker提供了高效、敏捷和轻量级的容器方案，并支持部署到本地环境和多种主流云平台。可以说docker首次为应用的开发、运行和部署提供了”一站式“的实用解决方案。</p>
+<img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" class="lazyload placeholder" data-srcset="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:33%;" />
+
+<h2 id="Container-发展历史"><a href="#Container-发展历史" class="headerlink" title="Container 发展历史"></a><strong>Container 发展历史</strong></h2><p>LXC(Linux Containers)</p>
+<ul>
+<li><input disabled="" type="checkbox"> 1979 年，Unix v7 系统支持 chroot，为应用构建一个独立的虚拟文件系统视图。</li>
+<li><input disabled="" type="checkbox"> 1999 年，FreeBSD 4.0 支持 jail，第一个商用化的 OS 虚拟化技术。</li>
+<li><input disabled="" type="checkbox"> 2004 年，Solaris 10 支持 Solaris Zone，第二个商用化的 OS 虚拟化技术。</li>
+<li><input disabled="" type="checkbox"> 2005 年，OpenVZ 发布，非常重要的 Linux OS 虚拟化技术先行者。</li>
+<li><input disabled="" type="checkbox"> 2004 年 ~ 2007 年，Google 内部大规模使用 Cgroups 等的 OS 虚拟化技术。</li>
+<li><input disabled="" type="checkbox"> 2006 年，Google 开源内部使用的 process container 技术，后续更名为 cgroup。</li>
+<li><input disabled="" type="checkbox"> 2008 年，Cgroups 进入了 Linux 内核主线。</li>
+<li><input disabled="" type="checkbox"> 2008 年，LXC（Linux Container）项目具备了 Linux 容器的雏型。</li>
+<li><input disabled="" type="checkbox"> 2011 年，CloudFoundry 开发 Warden 系统，一个完整的容器管理系统雏型。</li>
+<li><input disabled="" type="checkbox"> 2013 年，Google 通过 Let Me Contain That For You (LMCTFY) 开源内部容器系统。</li>
+<li><input disabled="" type="checkbox"> 2013 年，Docker 项目正式发布，让 Linux 容器技术逐步席卷天下。</li>
+<li><input disabled="" type="checkbox"> 2014 年，Kubernetes 项目正式发布，容器技术开始和编排系统起头并进。</li>
+<li><input disabled="" type="checkbox"> 2015 年，由 Google，Redhat、Microsoft 及一些大型云厂商共同创立了 CNCF，云原生浪潮启动。</li>
+<li><input disabled="" type="checkbox"> 2016 年 - 2017 年，容器生态开始模块化、规范化。CNCF 接受 Containerd、rkt项目，OCI 发布 1.0，CRI/CNI 得到广泛支持。</li>
+<li><input disabled="" type="checkbox"> 2017 年 - 2018 年，容器服务商业化。AWS ECS，Google EKS，Alibaba ACK/ASK/ECI，华为 CCI，Oracle Container Engine for Kubernetes；VMware，Redhat 和 Rancher 开始提供基于 Kubernetes 的商业服务产品。</li>
+<li><input disabled="" type="checkbox"> 2017 年 - 2019 年，容器引擎技术飞速发展，新技术不断涌现。2017 年底 Kata Containers 社区成立，2018 年 5 月 Google 开源 gVisor 代码，2018 年 11 月 AWS 开源 firecracker，阿里云发布安全沙箱 1.0。</li>
+<li><input disabled="" type="checkbox"> 2020 年 - 202x 年，容器引擎技术升级，Kata Containers 开始 2.0 架构，阿里云发布沙箱容器 2.0….</li>
+</ul>
+<h2 id="docker优点"><a href="#docker优点" class="headerlink" title="docker优点"></a><strong>docker优点</strong></h2><p>Docker 是开发人员和系统管理员使用容器开发，部署和运行应用程序的平台。使用Linux容器部署应用程序称为容器化。<br>容器化越来越受欢迎，因为容器是：<br>    1、灵活：即使是最复杂的应用也可以集装箱化<br>    2、轻量级：容器利用并共享主机内核<br>    3、可互换：您可以即时部署更新和升级<br>    4、便携带：您可以在本地构建，部署到云，并在任何地方运行。<br>    5、可扩展：您可以增加并自动分发容器副本<br>    6、可堆叠：您可以垂直和即时堆叠服务</p>
+<h2 id="docker架构"><a href="#docker架构" class="headerlink" title="docker架构"></a><strong>docker架构</strong></h2><p><img src="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" class="lazyload placeholder" data-srcset="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="架构">)</p>
+<p>Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器。Docker 容器通过 Docker 镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。<br>Docker采用 C/S架构 Docker daemon 作为服务端接受来自客户的请求，并处理这些请求（创建、运行、分发容器）。 客户端和服务端既可以运行在一个机器上，也可通过 socket 或者RESTful API 来进行通信。<br>Docker daemon 一般在宿主主机后台运行，等待接收来自客户端的消息。 Docker 客户端则为用户提供一系列可执行命令，用户用这些命令实现跟 Docker daemon 交互。</p>
+<h2 id="docker-核心概念"><a href="#docker-核心概念" class="headerlink" title="docker 核心概念"></a>docker 核心概念</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a><strong>核心概念</strong></h3><p>docker大部分的操作围绕着三个概念：镜像、容器和仓库。</p>
+<ul>
+<li><p>镜像</p>
+<p>docker 镜像类似于虚拟机镜像，可以将他理解为一个制度模板。</p>
+</li>
+<li><p>容器</p>
+<p>docker 容器类似于一个轻量级的沙箱，docker利用容器来运行和隔离应用。</p>
+</li>
+<li><p>仓库</p>
+<p>docker 仓库类似于代码仓库，是docker集中存放镜像文件的场所。</p>
+<ul>
+<li><p>公开仓库（public）</p>
+</li>
+<li><p>私有仓库（Private）</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Container</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Grafana</title>
     <url>/blog/2021/07/21/Grafana/</url>
     <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
@@ -296,62 +352,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker初始</title>
-    <url>/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[<h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>docker 对外宣称的作用是”Build,Ship and Run Any App,Anywhere“,即通过对应的封装（Packaging)、分发(Distribution)、部署(Deployment)、运行(Runtime)生命周期进行管理，达到应用组件级别的”一次封装，到处运行“。这里的组件，既可以是一个web应用、一个编译环境，也可以是一台数据库平台服务，甚至是一个操作系统或集群。</p>
-<p>基于Linux平台上的多项开源技术，docker提供了高效、敏捷和轻量级的容器方案，并支持部署到本地环境和多种主流云平台。可以说docker首次为应用的开发、运行和部署提供了”一站式“的实用解决方案。</p>
-<img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" class="lazyload placeholder" data-srcset="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:33%;" />
-
-<h2 id="Container-发展历史"><a href="#Container-发展历史" class="headerlink" title="Container 发展历史"></a><strong>Container 发展历史</strong></h2><p>LXC(Linux Containers)</p>
-<ul>
-<li><input disabled="" type="checkbox"> 1979 年，Unix v7 系统支持 chroot，为应用构建一个独立的虚拟文件系统视图。</li>
-<li><input disabled="" type="checkbox"> 1999 年，FreeBSD 4.0 支持 jail，第一个商用化的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2004 年，Solaris 10 支持 Solaris Zone，第二个商用化的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2005 年，OpenVZ 发布，非常重要的 Linux OS 虚拟化技术先行者。</li>
-<li><input disabled="" type="checkbox"> 2004 年 ~ 2007 年，Google 内部大规模使用 Cgroups 等的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2006 年，Google 开源内部使用的 process container 技术，后续更名为 cgroup。</li>
-<li><input disabled="" type="checkbox"> 2008 年，Cgroups 进入了 Linux 内核主线。</li>
-<li><input disabled="" type="checkbox"> 2008 年，LXC（Linux Container）项目具备了 Linux 容器的雏型。</li>
-<li><input disabled="" type="checkbox"> 2011 年，CloudFoundry 开发 Warden 系统，一个完整的容器管理系统雏型。</li>
-<li><input disabled="" type="checkbox"> 2013 年，Google 通过 Let Me Contain That For You (LMCTFY) 开源内部容器系统。</li>
-<li><input disabled="" type="checkbox"> 2013 年，Docker 项目正式发布，让 Linux 容器技术逐步席卷天下。</li>
-<li><input disabled="" type="checkbox"> 2014 年，Kubernetes 项目正式发布，容器技术开始和编排系统起头并进。</li>
-<li><input disabled="" type="checkbox"> 2015 年，由 Google，Redhat、Microsoft 及一些大型云厂商共同创立了 CNCF，云原生浪潮启动。</li>
-<li><input disabled="" type="checkbox"> 2016 年 - 2017 年，容器生态开始模块化、规范化。CNCF 接受 Containerd、rkt项目，OCI 发布 1.0，CRI/CNI 得到广泛支持。</li>
-<li><input disabled="" type="checkbox"> 2017 年 - 2018 年，容器服务商业化。AWS ECS，Google EKS，Alibaba ACK/ASK/ECI，华为 CCI，Oracle Container Engine for Kubernetes；VMware，Redhat 和 Rancher 开始提供基于 Kubernetes 的商业服务产品。</li>
-<li><input disabled="" type="checkbox"> 2017 年 - 2019 年，容器引擎技术飞速发展，新技术不断涌现。2017 年底 Kata Containers 社区成立，2018 年 5 月 Google 开源 gVisor 代码，2018 年 11 月 AWS 开源 firecracker，阿里云发布安全沙箱 1.0。</li>
-<li><input disabled="" type="checkbox"> 2020 年 - 202x 年，容器引擎技术升级，Kata Containers 开始 2.0 架构，阿里云发布沙箱容器 2.0….</li>
-</ul>
-<h2 id="docker优点"><a href="#docker优点" class="headerlink" title="docker优点"></a><strong>docker优点</strong></h2><p>Docker 是开发人员和系统管理员使用容器开发，部署和运行应用程序的平台。使用Linux容器部署应用程序称为容器化。<br>容器化越来越受欢迎，因为容器是：<br>    1、灵活：即使是最复杂的应用也可以集装箱化<br>    2、轻量级：容器利用并共享主机内核<br>    3、可互换：您可以即时部署更新和升级<br>    4、便携带：您可以在本地构建，部署到云，并在任何地方运行。<br>    5、可扩展：您可以增加并自动分发容器副本<br>    6、可堆叠：您可以垂直和即时堆叠服务</p>
-<h2 id="docker架构"><a href="#docker架构" class="headerlink" title="docker架构"></a><strong>docker架构</strong></h2><p><img src="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" class="lazyload placeholder" data-srcset="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="架构">)</p>
-<p>Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器。Docker 容器通过 Docker 镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。<br>Docker采用 C/S架构 Docker daemon 作为服务端接受来自客户的请求，并处理这些请求（创建、运行、分发容器）。 客户端和服务端既可以运行在一个机器上，也可通过 socket 或者RESTful API 来进行通信。<br>Docker daemon 一般在宿主主机后台运行，等待接收来自客户端的消息。 Docker 客户端则为用户提供一系列可执行命令，用户用这些命令实现跟 Docker daemon 交互。</p>
-<h2 id="docker-核心概念"><a href="#docker-核心概念" class="headerlink" title="docker 核心概念"></a>docker 核心概念</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a><strong>核心概念</strong></h3><p>docker大部分的操作围绕着三个概念：镜像、容器和仓库。</p>
-<ul>
-<li><p>镜像</p>
-<p>docker 镜像类似于虚拟机镜像，可以将他理解为一个制度模板。</p>
-</li>
-<li><p>容器</p>
-<p>docker 容器类似于一个轻量级的沙箱，docker利用容器来运行和隔离应用。</p>
-</li>
-<li><p>仓库</p>
-<p>docker 仓库类似于代码仓库，是docker集中存放镜像文件的场所。</p>
-<ul>
-<li><p>公开仓库（public）</p>
-</li>
-<li><p>私有仓库（Private）</p>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Container</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -1991,7 +1991,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#49;&#x40;&#49;&#x37;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#x2e;&#49;&#x33;&#51;">&#100;&#x65;&#118;&#49;&#x40;&#49;&#x37;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#x2e;&#49;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#46;&#x31;&#x36;&#x2e;&#x35;&#x39;&#x2e;&#49;&#51;&#x33;">&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#46;&#x31;&#x36;&#x2e;&#x35;&#x39;&#x2e;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2281,154 +2281,6 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
       <categories>
         <category>数据库</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Nginx</title>
-    <url>/blog/2021/07/16/Nginx/</url>
-    <content><![CDATA[<p>Nginx 初始</p>
-<span id="more"></span>
-<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" class="lazyload placeholder" data-srcset="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
-<h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
-<h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
-<li>更快<br>这表现在两个方面:一方面,在正常情况下,单次请求会得到更快的响应;另一方面,在高峰期(如有数以万计的并发请求),Nginx可以比其他Web服务器更快地响应请求；</li>
-<li>高扩展性<br>Nginx的设计极具扩展性,它完全是由多个不同功能、不同层次、不同类型且耦合度极低的模块组成；</li>
-<li>高可靠性<br>高可靠性是我们选择Nginx的最基本条件,因为Nginx的可靠性是大家有目共睹的,很多家高流量网站都在核心服务器上大规模使用Nginx；</li>
-<li>低内存消耗<br>一般情况下,10000个非活跃的HTTP Keep-Alive连接在Nginx中仅消耗2.5MB的内存,这是Nginx支持高并发连接的基础；</li>
-<li>单机支持10万以上的并发连接<br>这是一个非常重要的特性!随着互联网的迅猛发展和互联网用户数量的成倍增长,各大公司、网站都需要应付海量并发请求,一个能够在峰值期顶住10万以上并发请求的Server,无疑会得到大家的青睐；</li>
-<li>热部署<br>master管理进程与worker工作进程的分离设计,使得Nginx能够提供热部署功能,即可以在7×24小时不间断服务的前提下,升级Nginx的可执行文件；</li>
-<li>最自由的BSD许可协议<br>这是Nginx可以快速发展的强大动力。BSD许可协议不只是允许用户免费使用Nginx,它还允许用户在自己的项目中直接使用或修改Nginx源码,然后发布；</li>
-<li>Apache拥有丰富的模块组件支持，稳定性强，BUG少，动态内容处理强。</li>
-<li>Nginx轻量级，占用资源少，负载均衡，高并发处理强，静态内容处理高效</li>
-</ul>
-<h2 id="部署Nginx服务"><a href="#部署Nginx服务" class="headerlink" title="部署Nginx服务"></a>部署Nginx服务</h2><h4 id="官网获取软件包"><a href="#官网获取软件包" class="headerlink" title="官网获取软件包"></a>官网获取软件包</h4><p>下载<a href="http://nginx.org/en/download.html">适合您</a>的版本<br>以下是做测试用的版本</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.15.5.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果您的主机上没有wget命令请安装<br>Centos RedHat 版本:</p>
-<pre class="line-numbers language-none"><code class="language-none"># sudo yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>ubuntu Depin系列:</p>
-<pre class="line-numbers language-none"><code class="language-none"># sudo apt install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx
-# mv nginx-1.15.5.tar.gz  &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# tar xf nginx-1.15.5.tar.gz
-# cd nginx-1.15.5
-# yum -y install gcc gcc-c++ pcre-devel   zlib-devel
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>选项</p>
-<pre class="line-numbers language-none"><code class="language-none">nginx -s stop|quit|raload|reopen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>解释</p>
-<blockquote>
-<p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
-</blockquote>
-<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
-# echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
-# echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
-<pre class="line-numbers language-none"><code class="language-none">server &#123;
-    listen       8080;
-   # listen       somename:8080;
-    server_name  www.gongtongxuexi.com;
-    location &#x2F; &#123;
-        root   html&#x2F;gtxi;
-        index  index.html index.htm;
-    &#125;
-   &#125;
-server &#123;
-    listen       8081;
-   # listen       somename:8080;
-    server_name  www.gongtongjinbu.com;
-
-    location &#x2F; &#123;
-        root   html&#x2F;gtjb;
-        index  index.html index.htm;
-    &#125;
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="重新加载配置文件："><a href="#重新加载配置文件：" class="headerlink" title="重新加载配置文件："></a>重新加载配置文件：</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s raload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h4><p>打开浏览器访问 http//iP地址   </p>
-<h4 id="配置文件解释："><a href="#配置文件解释：" class="headerlink" title="配置文件解释："></a>配置文件解释：</h4><pre class="line-numbers language-none"><code class="language-none">keepalive_timeout  65;          # 设置连接超时时间
-# 使用server定义虚拟主机
-  server &#123;
-    listen       80;            # 监听端口
-    server_name  localhost;     # 访问域名
-
-    #charset koi8-r;            # 编码格式
-
-    # 设置虚拟主机的访问日志
-    #access_log  logs&#x2F;host.access.log  main;  
-
-    # 对URL进行匹配
-    location &#x2F; &#123;
-    # 设置网页根路径
-        root   html;
-    # 先找html文件，如果没有则htm
-        index  index.html index.htm;
-    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p> HTTPS server<br> <pre class="line-numbers language-none"><code class="language-none">#
-#server &#123;
-#    listen       443 ssl;         监听端口
-#    server_name  localhost;       访问域名
-	指定证书文件，使用相对路径证书需要在与Nginx.conf同目录下
-#    ssl_certificate      cert.pem;
-#    ssl_certificate_key  cert.key;
-		指定会话缓存
-#    ssl_session_cache    shared:SSL:1m;
-#    ssl_session_timeout  5m;
-
-#    ssl_ciphers  HIGH:!aNULL:!MD5;
-#    ssl_prefer_server_ciphers  on;
-
-#    location &#x2F; &#123;
-#        root   html;
-#        index  index.html index.htm;
-#    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
-<h3 id="网站的错误代码："><a href="#网站的错误代码：" class="headerlink" title="网站的错误代码："></a><font color=#A52A2A>网站的错误代码：</Font></h3><blockquote>
-<p>1xx: 代表提示信息<br>  2xx: 代表成功信息<br>  3xx: 代表重定向<br>  4xx：代表客户端错误信息<br>  5xx: 代表服务器错误信息</p>
-</blockquote>
-<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
-<h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
-<p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
-<p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>
-<p>2、反向代理有哪些主要应用？</p>
-<p>现在许多大型web网站都用到反向代理。除了可以防止外网对内网服务器的恶性攻击、缓存以减少服务器的压力和访问安全控制之外，还可以进行负载均衡，将用户请求分配给多个服务器。</p>
-<pre class="line-numbers language-none"><code class="language-none"> upstream web1.com&#123;
-           server 192.168.122.206;
-   &#125;
- upstream web2.com&#123;
-           server 192.168.122.84;
-   &#125;
-
-server &#123;
-    listen       80;
-  # listen       someme:8080;
-   server_name www.web1.com;
-location &#x2F; &#123;
-      proxy_pass  http:&#x2F;&#x2F;web1.com;
-      index  index.html index.htm;
-    &#125;
-  &#125;
-
- server &#123;
-     listen       80;
-   # listen       somename:8080;
-     server_name  www.web2.com;
-
-  location &#x2F; &#123;
-     proxy_pass   http:&#x2F;&#x2F;web2.com;
-     index  index.html index.htm;
-      &#125;
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>web服务</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
   </entry>
   <entry>
     <title>PSSH</title>
@@ -4285,6 +4137,43 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>promethues安装之二进制</title>
     <url>/blog/2021/10/28/promethues%E5%AE%89%E8%A3%85%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="安装方式："><a href="#安装方式：" class="headerlink" title="安装方式："></a><strong>安装方式：</strong></h2><ul>
@@ -4345,43 +4234,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
 [root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
       <categories>
         <category>监控系统</category>
       </categories>
@@ -4642,6 +4494,154 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </categories>
       <tags>
         <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx</title>
+    <url>/blog/2021/07/16/Nginx/</url>
+    <content><![CDATA[<p>Nginx 初始</p>
+<span id="more"></span>
+<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" class="lazyload placeholder" data-srcset="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
+<h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
+<h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
+<li>更快<br>这表现在两个方面:一方面,在正常情况下,单次请求会得到更快的响应;另一方面,在高峰期(如有数以万计的并发请求),Nginx可以比其他Web服务器更快地响应请求；</li>
+<li>高扩展性<br>Nginx的设计极具扩展性,它完全是由多个不同功能、不同层次、不同类型且耦合度极低的模块组成；</li>
+<li>高可靠性<br>高可靠性是我们选择Nginx的最基本条件,因为Nginx的可靠性是大家有目共睹的,很多家高流量网站都在核心服务器上大规模使用Nginx；</li>
+<li>低内存消耗<br>一般情况下,10000个非活跃的HTTP Keep-Alive连接在Nginx中仅消耗2.5MB的内存,这是Nginx支持高并发连接的基础；</li>
+<li>单机支持10万以上的并发连接<br>这是一个非常重要的特性!随着互联网的迅猛发展和互联网用户数量的成倍增长,各大公司、网站都需要应付海量并发请求,一个能够在峰值期顶住10万以上并发请求的Server,无疑会得到大家的青睐；</li>
+<li>热部署<br>master管理进程与worker工作进程的分离设计,使得Nginx能够提供热部署功能,即可以在7×24小时不间断服务的前提下,升级Nginx的可执行文件；</li>
+<li>最自由的BSD许可协议<br>这是Nginx可以快速发展的强大动力。BSD许可协议不只是允许用户免费使用Nginx,它还允许用户在自己的项目中直接使用或修改Nginx源码,然后发布；</li>
+<li>Apache拥有丰富的模块组件支持，稳定性强，BUG少，动态内容处理强。</li>
+<li>Nginx轻量级，占用资源少，负载均衡，高并发处理强，静态内容处理高效</li>
+</ul>
+<h2 id="部署Nginx服务"><a href="#部署Nginx服务" class="headerlink" title="部署Nginx服务"></a>部署Nginx服务</h2><h4 id="官网获取软件包"><a href="#官网获取软件包" class="headerlink" title="官网获取软件包"></a>官网获取软件包</h4><p>下载<a href="http://nginx.org/en/download.html">适合您</a>的版本<br>以下是做测试用的版本</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.15.5.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果您的主机上没有wget命令请安装<br>Centos RedHat 版本:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>ubuntu Depin系列:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo apt install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx
+# mv nginx-1.15.5.tar.gz  &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# tar xf nginx-1.15.5.tar.gz
+# cd nginx-1.15.5
+# yum -y install gcc gcc-c++ pcre-devel   zlib-devel
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>选项</p>
+<pre class="line-numbers language-none"><code class="language-none">nginx -s stop|quit|raload|reopen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>解释</p>
+<blockquote>
+<p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
+</blockquote>
+<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
+# echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
+# echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
+<pre class="line-numbers language-none"><code class="language-none">server &#123;
+    listen       8080;
+   # listen       somename:8080;
+    server_name  www.gongtongxuexi.com;
+    location &#x2F; &#123;
+        root   html&#x2F;gtxi;
+        index  index.html index.htm;
+    &#125;
+   &#125;
+server &#123;
+    listen       8081;
+   # listen       somename:8080;
+    server_name  www.gongtongjinbu.com;
+
+    location &#x2F; &#123;
+        root   html&#x2F;gtjb;
+        index  index.html index.htm;
+    &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="重新加载配置文件："><a href="#重新加载配置文件：" class="headerlink" title="重新加载配置文件："></a>重新加载配置文件：</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s raload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h4><p>打开浏览器访问 http//iP地址   </p>
+<h4 id="配置文件解释："><a href="#配置文件解释：" class="headerlink" title="配置文件解释："></a>配置文件解释：</h4><pre class="line-numbers language-none"><code class="language-none">keepalive_timeout  65;          # 设置连接超时时间
+# 使用server定义虚拟主机
+  server &#123;
+    listen       80;            # 监听端口
+    server_name  localhost;     # 访问域名
+
+    #charset koi8-r;            # 编码格式
+
+    # 设置虚拟主机的访问日志
+    #access_log  logs&#x2F;host.access.log  main;  
+
+    # 对URL进行匹配
+    location &#x2F; &#123;
+    # 设置网页根路径
+        root   html;
+    # 先找html文件，如果没有则htm
+        index  index.html index.htm;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> HTTPS server<br> <pre class="line-numbers language-none"><code class="language-none">#
+#server &#123;
+#    listen       443 ssl;         监听端口
+#    server_name  localhost;       访问域名
+	指定证书文件，使用相对路径证书需要在与Nginx.conf同目录下
+#    ssl_certificate      cert.pem;
+#    ssl_certificate_key  cert.key;
+		指定会话缓存
+#    ssl_session_cache    shared:SSL:1m;
+#    ssl_session_timeout  5m;
+
+#    ssl_ciphers  HIGH:!aNULL:!MD5;
+#    ssl_prefer_server_ciphers  on;
+
+#    location &#x2F; &#123;
+#        root   html;
+#        index  index.html index.htm;
+#    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="网站的错误代码："><a href="#网站的错误代码：" class="headerlink" title="网站的错误代码："></a><font color=#A52A2A>网站的错误代码：</Font></h3><blockquote>
+<p>1xx: 代表提示信息<br>  2xx: 代表成功信息<br>  3xx: 代表重定向<br>  4xx：代表客户端错误信息<br>  5xx: 代表服务器错误信息</p>
+</blockquote>
+<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
+<h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
+<p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
+<p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>
+<p>2、反向代理有哪些主要应用？</p>
+<p>现在许多大型web网站都用到反向代理。除了可以防止外网对内网服务器的恶性攻击、缓存以减少服务器的压力和访问安全控制之外，还可以进行负载均衡，将用户请求分配给多个服务器。</p>
+<pre class="line-numbers language-none"><code class="language-none"> upstream web1.com&#123;
+           server 192.168.122.206;
+   &#125;
+ upstream web2.com&#123;
+           server 192.168.122.84;
+   &#125;
+
+server &#123;
+    listen       80;
+  # listen       someme:8080;
+   server_name www.web1.com;
+location &#x2F; &#123;
+      proxy_pass  http:&#x2F;&#x2F;web1.com;
+      index  index.html index.htm;
+    &#125;
+  &#125;
+
+ server &#123;
+     listen       80;
+   # listen       somename:8080;
+     server_name  www.web2.com;
+
+  location &#x2F; &#123;
+     proxy_pass   http:&#x2F;&#x2F;web2.com;
+     index  index.html index.htm;
+      &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
 </search>
