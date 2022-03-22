@@ -227,6 +227,78 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Grafana</title>
+    <url>/blog/2021/07/21/Grafana/</url>
+    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
+<span id="more"></span>
+
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
+<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
+<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
+<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
+<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
+<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
+<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
+<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
+<ul>
+<li>Debian/Ubuntu</li>
+<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
+<li>苹果系统</li>
+<li>Windows</li>
+</ul>
+<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
+<ul>
+<li>服务器端图像渲染</li>
+<li>报警</li>
+<li>数据源代理</li>
+</ul>
+<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
+<li>chrome/Chromium</li>
+<li>Firefox</li>
+<li>Safari</li>
+<li>Microsofr Edge</li>
+<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
+</ul>
+<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
+<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
+<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
+# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>启动服务并开机自启</p>
+<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看服务服务是否正常运行，端口号默认3000</p>
+<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
+# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>添加防火墙规则</p>
+<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
+# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
+<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
+<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
+<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
+</ul>
+<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
+<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
+<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
+<li>输入您的旧密码以授权更改。</li>
+<li>输入新密码，然后确认密码。</li>
+<li>点击更改密码。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>Grafana</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker初始</title>
     <url>/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/</url>
     <content><![CDATA[<h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>docker 对外宣称的作用是”Build,Ship and Run Any App,Anywhere“,即通过对应的封装（Packaging)、分发(Distribution)、部署(Deployment)、运行(Runtime)生命周期进行管理，达到应用组件级别的”一次封装，到处运行“。这里的组件，既可以是一个web应用、一个编译环境，也可以是一台数据库平台服务，甚至是一个操作系统或集群。</p>
@@ -280,6 +352,88 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux发展历史</title>
+    <url>/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/</url>
+    <content><![CDATA[<h3 id="一、Linux发展及历史"><a href="#一、Linux发展及历史" class="headerlink" title="一、Linux发展及历史"></a>一、Linux发展及历史</h3><h4 id="Linux与开源软件"><a href="#Linux与开源软件" class="headerlink" title="Linux与开源软件"></a>Linux与开源软件</h4><p>Linux 是一种自由和开放源代码的类UNIX操作系统，该操作系统由（林纳斯.托瓦兹）在1991年首次发布，再加上用户空间的应用程序，就成为Linux操作系统。Linux只是操作系统内核本身，但通常采用Linux内核 来表示，Linux完整操作系统包括GUI组件和许多其他实用工具。<br>GNU通用公共许可协议（GNU Grneral Public License,GNU GPL或GPL），是一个广泛使用的自由软件许可协议条款，最初由理查德.斯托曼为GNU计划而拟写，GPL给出了计算机程序自由软件的定义，任何基于GPL软件开发衍生的产品在发布时必须采用GPL许可证方式，且必须公开源代码。<br>Linux 是自由软件和开放源代码软件中最著名的例子，只要遵循GNU  GPL，任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布，随着Linux操作系统飞速发展，因此Linux也成为开源软件的代名词</p>
+<h4 id="Linux在服务领域的发展"><a href="#Linux在服务领域的发展" class="headerlink" title="Linux在服务领域的发展"></a>Linux在服务领域的发展</h4><p>Linux服务器操作系统在整个服务器操作系统市场格局中占据了越来越多的市场份额，已经形成了大规模市场应用的局面，并保持着快速的增长率，尤其在政府、金融、农业、交通、电信等国家关键领域。<br>据权威部门统计，目前Linux在服务器行业领域已经占据99%的市场份额。</p>
+<p>![image-20210119230838160](/Users/abbott/Library/Application Support/typora-user-images/image-20210119230838160.png)</p>
+<h4 id="Linux在桌面领域的发展"><a href="#Linux在桌面领域的发展" class="headerlink" title="Linux在桌面领域的发展"></a>Linux在桌面领域的发展</h4><p>​     Linux 桌面操作系统的发展趋势非常迅猛，国内如：中标麒麟Linux、红旗Linux、深度Linux等系统厂商都推出的Linux桌面操作系统，目前已经在政府、企业、OEM等领域得到了广泛应用。 SUSE、Ubuntu也相继推出了基于Linux的桌面系统，特别是Ubuntu Linux，已经积累了大量社区用户，但是，，从系统的整体功能性能来看，Linux桌面系统与Windows系列相比还有一定的差距，主要表现系统易用性、系统管理、软硬件兼容性、软件的丰富程度等方面，</p>
+<h4 id="Linux在云计算-大数据的发展"><a href="#Linux在云计算-大数据的发展" class="headerlink" title="Linux在云计算/大数据的发展"></a>Linux在云计算/大数据的发展</h4><p>互联网产业的迅速发展，促使云计算、大数据产业的形成并快速发展，云计算、大数据作为一个基于开源软件的平台，Linux占据了核心优势。目前Linux已开始取代UNIX成为最受青睐的云计算、大数据平台操作系统</p>
+<h4 id="Linux在移动嵌入式领域的发展"><a href="#Linux在移动嵌入式领域的发展" class="headerlink" title="Linux在移动嵌入式领域的发展"></a>Linux在移动嵌入式领域的发展</h4><p>Linux的成本、强大定制功能以及良好的可移植性，使得Linux在嵌入式系统方面得到广泛应用，目前Linux已广泛应用于手机、平板电脑、路由器、电视和电子游戏机等领域；</p>
+<p>此外，思科公司在网络防火墙和路由器中也使用了定制的Linux，阿里云也开发了一套基于Linux的操作系统能够“YunOS”,可用于智能手机、平板电脑和网络电视，常见的数字视频、录像机、舞台灯光控制系统等都在逐步采用定制版本的Linux来实现，而这一切均归于Linux与开源的力量。</p>
+<h4 id="选择适合自己的Linux发行版"><a href="#选择适合自己的Linux发行版" class="headerlink" title="选择适合自己的Linux发行版"></a>选择适合自己的Linux发行版</h4><p>Linux的发行版本太多了，以至于谁也不可能给出一个准确的数字，但是有一点可以肯定，Linux正在变得越来越流行。面对这么多的Linux发行版，打算从其他系统转到Linux系统来的初学者可能会感到困惑，即便是忠实的Linux用户也没有时间和精力去挨个尝试。因此，初学者在学习Linux之前，需要有一个明确的方向，选择一个适合自己的Linux系统至关重要。下面介绍Linux发行版</p>
+<h5 id="常见的Linux发行版"><a href="#常见的Linux发行版" class="headerlink" title="==常见的Linux发行版=="></a>==常见的Linux发行版==</h5><p><strong>1、Redhat Linux</strong></p>
+<p>目前Red Hat分为两个系统：由Red Hat公司提供收费技术支持和更新的Red Hat Enterprise Linux 版。以及由社区开发的免费的Fedora Core.  rhel</p>
+<p><strong>2、Fedora Core</strong>    称之为 pc </p>
+<p>Fedora Core（FC）被Redhat公司定位为新技术的测试平台，许多新技术都会在FC中检验。如果这些新技术稳定，Redhat公司会考虑加入到Redhat Enterprise Linux中。</p>
+<p>3、Red Hat Enterprise Linux(RHEL,Redhat的企业版Linux)Redhat现在主要做服务器版的Linux开发，在版本上注重性能和稳定性，以及对硬件的支持，由于企业版操作系统的开发周期较长，注重性能、稳定性和服务端软件支持，因此版本更新相对较缓慢。</p>
+<p><strong>4、CentOS</strong>  </p>
+<p>CentOS全名为“社区企业操作系统”（community Enterprise Operating System）它由来自于RHEL依照开放源代码规定发布的源代码编译而成，由于RHEL是商业产品，因此必须将Redhat的所有logo改成自己的CentOS标识，这就产生了CentOS操作系统。两者的不同在于CentOS并不包含封闭源代码软件。因此CentOS不但可以自由使用，而且能享受CentOS提供的长期免费升级和更新服务。</p>
+<p><strong>5、SUSE Linux</strong></p>
+<p>SUSE 是德国最著名的Linux发行版，也享有很高的声誉，不过命运相当坎坷。2003年11月4日，Novell公司对外宣布收购SUSE。2004年1月，该收购顺利完成，Novell同时将SUSE Linux改为openSUSE社区项目。2010年Attachmate公司收购了Novell公司，在被收购后SUSE Linux发展受阻，而就在3年后，SUSE官方宣布并开源为SUSE的发展之本，仍将持续贡献开源，SUSE仍将全力支持openSUSE。</p>
+<p><strong>6、Ubuntu Linux</strong></p>
+<p>Ubuntu 是一个以桌面应用为主的Linux操作系统，基于Debian GNU/linux，Ubuntu旨在为一般用户提供一个主要自由软件构建而成的最新的同时又相当稳定的操作系统。Ubuntu具有庞大的社区力量，用户可以方便地从社区获得帮助。</p>
+<h4 id="用第三方软件技术帮助学习Linux"><a href="#用第三方软件技术帮助学习Linux" class="headerlink" title="用第三方软件技术帮助学习Linux"></a>用第三方软件技术帮助学习Linux</h4><h5 id="虚拟机技术"><a href="#虚拟机技术" class="headerlink" title="虚拟机技术"></a>虚拟机技术</h5><p>虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离中的完整计算机系统。</p>
+<p>虚拟机会生成现有操作系统的全新的独立虚拟镜像，它与真实系统具有完全一样的功能，进入虚拟机后，所有操作豆子啊这个全新的独立虚拟系统里面进行，可以独立安装、运行软件，保存数据，拥有自己的独立桌面，还不会对真实的系统产生任何影响，而且能够在现有系统与虚拟机之间灵活切换。</p>
+<h5 id="使用虚拟技术的好处"><a href="#使用虚拟技术的好处" class="headerlink" title="使用虚拟技术的好处"></a>使用虚拟技术的好处</h5><p>使用虚拟技术的好处有以下3个：</p>
+<ul>
+<li><p>节省成本</p>
+<p>​    如果要在一台计算机安装Linux和Windows系统，而不用虚拟机，有两个办法，一是安装多个硬盘，每个硬盘安装一个操作系统；这个方法缺点是费用比较昂贵。而是一个硬盘上安装双系统，这个方法是不够安全，因为系统盘的MBR是操作系统的必争之地，Windows更是霸道，每次重新安装系统都要重写系统的MBR，这样，几个操作系统可能会同时崩溃，而使用虚拟机软件即省钱又安全，因此对于新手来说，利用虚拟机学习Linux简直再好不过了。</p>
+</li>
+<li><p>安全便捷</p>
+<p>​    在虚拟机上安装Linux系统，不同担心会格式化掉自己的硬盘，甚至可以随意对虚拟机系统进行任何设置和更改操作，可以格式化虚拟机系统的任何操作都是对软件的操作。</p>
+</li>
+<li><p>简单高效</p>
+<p>​    利用虚拟机模拟出来的Linux系统和真实的Linux系统是一模一样，现在各个公司专门的Linux服务器是不会让新手随意操作的，而共测试的Linux服务器一般又很紧缺，如果在自己的电脑上安装虚拟Linux系统，就可以随意地学习测试，而不受任何环境影响。</p>
+</li>
+</ul>
+<h4 id="虚拟软件的运行环境和硬件需求"><a href="#虚拟软件的运行环境和硬件需求" class="headerlink" title="虚拟软件的运行环境和硬件需求"></a>虚拟软件的运行环境和硬件需求</h4><p><strong>1、运行环境</strong></p>
+<p>​    流行的虚拟机软件有VMware、VirtualBox，他们都有Windows和Linux两个版本，也就是说，他们可以安装在Windows和Linux两个平台下，在Windows平台下可以虚拟出Windows、Linux、Unix等多个操作系统，同理，在Linux平台上也可以虚拟出Windows、Linux、Unix等多个计算机。</p>
+<p><strong>2、硬件需求</strong></p>
+<p>   虚拟软件是将两台以上计算机的任务集成到一台计算机上，因此对硬件的要求比较高，主要涉及的是内存、硬盘和CPU。内存要足够大，因为每个虚拟机都会占用一定的内存资源，内存的大小等于各个虚拟系统的总和，可喜的是，现在内存已经很便宜，因此就不是问题了。同样，硬盘空间也是每个虚拟机都要占用的，CPU现在都发展到了一个多核阶段，硬盘也不是问题。</p>
+<h5 id="虚拟软件的安装及介绍"><a href="#虚拟软件的安装及介绍" class="headerlink" title="虚拟软件的安装及介绍"></a>虚拟软件的安装及介绍</h5><ol>
+<li><p>VirtualBox虚拟机概述</p>
+<p><strong>Oracle VirtualBox</strong>是由<a href="https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%9C%8B">德国</a>InnoTek软件公司出品的<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a><a href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，现在则由<a href="https://zh.wikipedia.org/wiki/%E7%94%B2%E9%AA%A8%E6%96%87%E5%85%AC%E5%8F%B8">甲骨文公司</a>进行开发，是甲骨文公司xVM<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96">虚拟化</a>平台技术的一部分。它提供用户在<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D%E5%85%83">32位</a>或<a href="https://zh.wikipedia.org/wiki/64%E4%BD%8D%E5%85%83">64位</a>的<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>及<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> <a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>上虚拟其它<a href="https://zh.wikipedia.org/wiki/X86">x86</a>的操作系统。用户可以在VirtualBox上安装并且运行<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/DOS">DOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/OS/2">OS/2 Warp</a>、<a href="https://zh.wikipedia.org/wiki/OpenBSD">OpenBSD</a>及<a href="https://zh.wikipedia.org/wiki/FreeBSD">FreeBSD</a>等系统作为客户端操作系统与同性质的<a href="https://zh.wikipedia.org/wiki/VMware_Workstation">VMware</a>及<a href="https://zh.wikipedia.org/wiki/Microsoft_Virtual_PC">Virtual PC</a>比较下，VirtualBox独到之处包括<a href="https://zh.wikipedia.org/wiki/%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E5%8D%94%E5%AE%9A">远程桌面协议</a>（RDP）、<a href="https://zh.wikipedia.org/wiki/ISCSI">iSCSI</a>及<a href="https://zh.wikipedia.org/wiki/USB">USB</a>的支持，VirtualBox在客户机操作系统上已可以支持<a href="https://zh.wikipedia.org/wiki/USB_3.0">USB 3.0</a>的硬件设备，不过要安装Virtualbox Extension Pack。</p>
+<p><strong>硬件支持：</strong></p>
+<ul>
+<li>VirtualBox支持<a href="https://zh.wikipedia.org/wiki/Intel">Intel</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">VT-x</a>与<a href="https://zh.wikipedia.org/wiki/AMD">AMD</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">AMD-V</a>硬件虚拟化技术。</li>
+<li>硬盘被模拟在一个称为虚拟磁盘映像档（Virtual Disk Images）的特殊容器，目前此格式不兼容于其它虚拟机平台运行，通常作为一个系统档存放在主机端操作系统（扩展名.vdi[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-4">4]</a>)。VirtualBox能够链接iSCSI，且能在虚拟硬盘上运作，此外VirtualBox可以读写VMware <a href="https://zh.wikipedia.org/wiki/VMDK">VMDK</a>档与VirtualPC <a href="https://zh.wikipedia.org/w/index.php?title=VHD&action=edit&redlink=1">VHD</a>档。</li>
+<li>ISO映像档可以被挂载成CD/DVD设备，例如下载的Linux发行版DVD映像档可以直接使用在VirtualBox，而不需刻录在光盘上，亦可直接在虚拟机上挂载实体光盘驱动器。</li>
+<li>默认上VirtualBox提供了一个支持<a href="https://zh.wikipedia.org/wiki/VESA%E5%8C%AF%E6%B5%81%E6%8E%92">VESA</a>兼容的虚拟显卡，与一个供Windows、Linux、Solaris、OS/2客户端系统额外的驱动程序（guest addition），可以提供更好的性能与功能，如当虚拟机的视窗被缩放时，会动态的调整分辨率。在4.1更支持<a href="https://zh.wikipedia.org/wiki/WDDM">WDDM</a>兼容的虚拟显卡，令<a href="https://zh.wikipedia.org/wiki/Windows_Vista">Windows Vista</a>及<a href="https://zh.wikipedia.org/wiki/Windows_7">Windows 7</a>可以使用<a href="https://zh.wikipedia.org/wiki/Windows_Aero">Windows Aero</a>。</li>
+<li>在声卡方面，VirtualBox虚拟一个Intel ICH <a href="https://zh.wikipedia.org/wiki/AC97">AC97</a>声卡与SoundBlaster 16 <a href="https://zh.wikipedia.org/wiki/%E8%81%B2%E9%9C%B8%E5%8D%A1">声霸卡</a>。</li>
+<li>在<a href="https://zh.wikipedia.org/wiki/%E4%BB%A5%E5%A4%AA%E7%BD%91">以太网</a>接口卡方面，VirtualBox虚拟了数张<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%8D%A1">网卡</a>：AMD PCnet PCI II、AMD PCnet-Fast III、Intel Pro/1000 MT Desktop、Intel Pro/1000 MT Server、Intel Pro/1000 T Server。</li>
+<li>VirtualBox亦可模拟<a href="https://zh.wikipedia.org/wiki/UEFI">UEFI</a>固件，但是，该UEFI固件不支持部分版本的Windows系统。</li>
+</ul>
+<p><strong>优点：</strong> </p>
+<ul>
+<li>支持64位客户端操作系统，即使主机使用<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D">32位</a><a href="https://zh.wikipedia.org/wiki/CPU">CPU</a> (6.0版后主机仅支持64位操作系统)[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-5">5]</a></li>
+<li>支持<a href="https://zh.wikipedia.org/wiki/SATA">SATA</a>硬盘<a href="https://zh.wikipedia.org/wiki/NCQ">NCQ</a>技术</li>
+<li>虚拟硬盘快照</li>
+<li>无缝视窗模式（须安装客户端驱动程序）</li>
+<li>能够在主机端与客户端共享剪贴板（须安装客户端驱动）</li>
+<li>在主机端与客户端间创建共享文件夹（须安装客户端驱动）</li>
+<li>内置远程桌面服务器</li>
+<li>支持VMware VMDK磁盘档及Virtual PC VHD磁盘档格式</li>
+<li>3D虚拟化技术支持OpenGL（2.1版后支持）、Direct3D（3.0版后支持）、WDDM（4.1版后支持）</li>
+<li>最多虚拟32颗<a href="https://zh.wikipedia.org/wiki/CPU">CPU</a>（3.0版后支持）</li>
+<li>支持VT-x与AMD-V硬件虚拟化技术</li>
+<li>iSCSI支持</li>
+<li>USB与USB2.0支持</li>
+</ul>
+</li>
+<li><p>VMware workstations </p>
+<p><strong>VMware Workstation Pro</strong>（曾用名<strong>VMware Workstation</strong>）是<a href="https://zh.wikipedia.org/wiki/VMware">VMware</a>公司推出的一款桌面虚拟计算软件，具有<a href="https://zh.wikipedia.org/wiki/Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> 版本。此软件可以提供<a href="https://zh.wikipedia.org/wiki/%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a>功能，使计算机可以同时运行多个不同<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>。2015年，VMware Workstation发表12版，<a href="https://zh.wikipedia.org/wiki/VMware_Player">VMware Player</a>转型为VMware Workstation的免费版并改名为<a href="https://zh.wikipedia.org/wiki/VMware_Workstation_Player">VMware Workstation Player</a>，VMware Workstation的付费版定名为VMware Workstation Pro。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1404,6 +1558,32 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
       </tags>
   </entry>
   <entry>
+    <title>MacbookPor-m1</title>
+    <url>/blog/2021/12/02/MacbookPor-m1/</url>
+    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
+<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
+</ul>
+<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
+<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
+</ul>
+<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
+<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
+</ul>
+<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
+<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
+</ul>
+<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/Y15ZXUoaZVU">https://youtu.be/Y15ZXUoaZVU</a></p>
+]]></content>
+      <categories>
+        <category>MAC M1</category>
+      </categories>
+      <tags>
+        <tag>VMware fuison</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/blog/2021/07/16/MySQL/</url>
     <content><![CDATA[<p><img src="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" class="lazyload placeholder" data-srcset="https://itsilesia.com/wp-content/uploads/2018/11/mysql-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -1612,32 +1792,6 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
-    <title>MacbookPor-m1</title>
-    <url>/blog/2021/12/02/MacbookPor-m1/</url>
-    <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
-<li>下载地址：<a href="https://vmware.com/go/get-fusion-m1">https://vmware.com/go/get-fusion-m1</a></li>
-</ul>
-<h2 id="安装Linux-CentOS-系统"><a href="#安装Linux-CentOS-系统" class="headerlink" title="安装Linux CentOS 系统"></a>安装Linux CentOS 系统</h2><p>普通x86_64版本的系统！是不支持m1芯片，因为CPU的架构是arm架构，普通inter架构是不支持arm架构，如果想要实现安装，必须是arm架构系统，才能被支持！</p>
-<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>问题根源在于pagesize的支持，M1上面的pagesize是16K，而centos的默认内核是使用的64K的pagesize，当然就不支持了，并且ubuntu，fedora都是4K的所以不存在问题</p>
-<h3 id="Centos-7"><a href="#Centos-7" class="headerlink" title="Centos 7"></a>Centos 7</h3><h4 id="获取地址："><a href="#获取地址：" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>链接: <a href="https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA">https://pan.baidu.com/s/1xWRr-o8VFLbpMXhkgzU6KA</a> 提取码: 9sst</li>
-</ul>
-<h3 id="Centos-8"><a href="#Centos-8" class="headerlink" title="Centos 8"></a>Centos 8</h3><h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><ul>
-<li>地址：<a href="https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501">https://blog.csdn.net/zphj1987/article/details/119173539?spm=1001.2014.3001.5501</a></li>
-</ul>
-<h4 id="获取地址：-1"><a href="#获取地址：-1" class="headerlink" title="获取地址："></a>获取地址：</h4><ul>
-<li>百度云地址：链接: <a href="https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ">https://pan.baidu.com/s/1Ntbp0MGaB5MwfbdvvxVQIQ</a> 提取码: 014m</li>
-</ul>
-<h2 id="视频链接地址："><a href="#视频链接地址：" class="headerlink" title="视频链接地址："></a>视频链接地址：</h2><p><a href="https://youtu.be/Y15ZXUoaZVU">https://youtu.be/Y15ZXUoaZVU</a></p>
-]]></content>
-      <categories>
-        <category>MAC M1</category>
-      </categories>
-      <tags>
-        <tag>VMware fuison</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL8.0.27版本二进制安装</title>
     <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1837,7 +1991,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#51;&#x33;">&#x64;&#x65;&#x76;&#49;&#64;&#x31;&#55;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#46;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#118;&#49;&#x40;&#49;&#x37;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#x2e;&#49;&#x33;&#51;">&#100;&#x65;&#118;&#49;&#x40;&#49;&#x37;&#x32;&#x2e;&#49;&#x36;&#x2e;&#53;&#x39;&#x2e;&#49;&#x33;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -1982,6 +2136,151 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       <tags>
         <tag>MySQL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL部署（源码编译）</title>
+    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+<span id="more"></span>
+<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
+<li>centos 8.3</li>
+<li>数据库版本：MySQL-8.0.25</li>
+<li>gcc版本：<ul>
+<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
+<li>8系列版本的系统不需要升级GCC</li>
+<li>如果需要如何升级 <a href="">点这</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
+-DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font size="4" color="red" >报错:</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
+CMake Error at CMakeLists.txt:382 (MESSAGE):
+  Please do not build in-source.  Out-of source builds are highly
+  recommended: you can have multiple builds for the same source, and there is
+  an easy way to do cleanup, simply remove the build directory (note that
+  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
+  You *can* force in-source build by invoking cmake with
+  -DFORCE_INSOURCE_BUILD&#x3D;1
+二、缺少依赖
+①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
+  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
+②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
+remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
+③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
+  Cannot find RPC development libraries.  You need to install the required
+  packages:
+
+    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
+    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
+    SuSE:                       zypper install glibc-devel
+三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>安装依赖：</p>
+<p>注意： rpcgen源没有需下载</p>
+<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
+[root@test mysql-8.0.25]# dnf -y install ncurses-devel
+[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
+[root@test mysql-8.0.25]# yum -y install libtirpc-devel
+[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
+[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再次构建：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
+-DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
+-DDEFAULT_CHARSET&#x3D;utf8 \
+-DDEFAULT_COLLATION&#x3D;utf8_general_ci \
+-DENABLED_LOCAL_INFILE&#x3D;ON \
+-DWITH_INNODB_MEMCACHED&#x3D;ON \
+-DWITH_SSL&#x3D;system \
+-DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
+-DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
+-DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
+-DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
+-DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
+-DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
+-DFORCE_INSOURCE_BUILD&#x3D;1
+[root@test mysql-8.0.25]# make -j4
+[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
+[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>② 初始化数据目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
+2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
+2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
+2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>复制启动脚本、启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动失败（报错）</p>
+<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
+Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
+2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
+The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
+[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>重新启动：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>登陆数据库：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.25
+
+Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
+affiliates. Other names may be trademarks of their respective
+owners.
+mysql&gt; show databases;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
   <entry>
     <title>Nginx</title>
@@ -2130,151 +2429,6 @@ location &#x2F; &#123;
       <tags>
         <tag>Web</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>MySQL部署（源码编译）</title>
-    <url>/blog/2021/07/18/MySQL%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
-<span id="more"></span>
-<h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
-<li>centos 8.3</li>
-<li>数据库版本：MySQL-8.0.25</li>
-<li>gcc版本：<ul>
-<li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
-<li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="安装cmake工具"><a href="#安装cmake工具" class="headerlink" title="安装cmake工具"></a>安装cmake工具</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install cmake3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
--DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font size="4" color="red" >报错:</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
-CMake Error at CMakeLists.txt:382 (MESSAGE):
-  Please do not build in-source.  Out-of source builds are highly
-  recommended: you can have multiple builds for the same source, and there is
-  an easy way to do cleanup, simply remove the build directory (note that
-  &#39;make clean&#39; or &#39;make distclean&#39; does *not* work)
-  You *can* force in-source build by invoking cmake with
-  -DFORCE_INSOURCE_BUILD&#x3D;1
-二、缺少依赖
-①  CMake Error at cmake&#x2F;ssl.cmake:61 (MESSAGE):
-  PleaseCMake Error at cmake&#x2F;readline.cmake:71 (MESSAGE):
-②  Curses library not found.  Please install appropriate package, install the appropriate openssl developer package.
-remove CMakeCache.txt and rerun cmake.On Debian&#x2F;Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
-③ CMake Warning at cmake&#x2F;rpc.cmake:40 (MESSAGE):
-  Cannot find RPC development libraries.  You need to install the required
-  packages:
-
-    Debian&#x2F;Ubuntu:              apt install libtirpc-dev
-    RedHat&#x2F;Fedora&#x2F;Oracle Linux: yum install libtirpc-devel
-    SuSE:                       zypper install glibc-devel
-三、依赖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>安装依赖：</p>
-<p>注意： rpcgen源没有需下载</p>
-<p><a href="https://centos.pkgs.org/8/centos-powertools-x86_64/">下载地址</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# dnf -y install openssl-devel
-[root@test mysql-8.0.25]# dnf -y install ncurses-devel
-[root@test mysql-8.0.25]# rm -rf CMakeCache.txt
-[root@test mysql-8.0.25]# yum -y install libtirpc-devel
-[root@test mysql-8.0.25]# wget http:&#x2F;&#x2F;mirror.centos.org&#x2F;centos&#x2F;8&#x2F;PowerTools&#x2F;aarch64&#x2F;os&#x2F;Packages&#x2F;rpcgen-1.3.1-4.el8.aarch64.rpm
-[root@test mysql-8.0.25]# dnf --enablerepo&#x3D;powertools install rpcgen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>再次构建：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql-8.0.25]# cmake . \
--DCMAKE_INSTALL_PREFIX&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F; \
--DDEFAULT_CHARSET&#x3D;utf8 \
--DDEFAULT_COLLATION&#x3D;utf8_general_ci \
--DENABLED_LOCAL_INFILE&#x3D;ON \
--DWITH_INNODB_MEMCACHED&#x3D;ON \
--DWITH_SSL&#x3D;system \
--DWITH_INNOBASE_STORAGE_ENGINE&#x3D;1 \
--DWITH_FEDERATED_STORAGE_ENGINE&#x3D;1 \
--DWITH_BLACKHOLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_ARCHIVE_STORAGE_ENGINE&#x3D;1 \
--DWITHOUT_EXAMPLE_STORAGE_ENGINE&#x3D;1 \
--DWITH_PERFSCHEMA_STORAGE_ENGINE&#x3D;1 \
--DCOMPILATION_COMMENT&#x3D;&quot;zsd edition&quot; \
--DWITH_BOOST&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;mysql-8.0.25&#x2F;boost&#x2F;boost_1_73_0&#x2F; \
--DMYSQL_UNIX_ADDR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#x2F;mysql.sock \
--DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306 \
--DFORCE_INSOURCE_BUILD&#x3D;1
-[root@test mysql-8.0.25]# make -j4
-[root@test mysql-8.0.25]# make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="配置用户"><a href="#配置用户" class="headerlink" title="配置用户"></a>配置用户</h2><p>创建MySQL用户和用户组</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# groupadd mysql
-[root@test mysql]# useradd  -r -g mysql  -s &#x2F;bin&#x2F;false mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="初始化数据目录"><a href="#初始化数据目录" class="headerlink" title="初始化数据目录"></a>初始化数据目录</h2><p>① 修改目录权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# chown -R mysql .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>② 初始化数据目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld --initialize --user&#x3D;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>通过<code>mysqld</code>初始化<code>data</code>目录时，如果使用<code>--initialize</code>选项，则会为<code>&#39;root&#39;@&#39;localhost&#39;</code>用户创建一个随机密码。该密码会打印在控制台，如下所示行中末尾就是临时密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">2021-07-18T13:02:48.598005Z 0 [System] [MY-013169] [Server] &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysqld (mysqld 8.0.25) initializing of server in progress as process 87376
-2021-07-18T13:02:48.621612Z 0 [Warning] [MY-013242] [Server] --character-set-server: &#39;utf8&#39; is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.
-2021-07-18T13:02:48.621622Z 0 [Warning] [MY-013244] [Server] --collation-server: &#39;utf8_general_ci&#39; is a collation of the deprecated character set UTF8MB3. Please consider using UTF8MB4 with an appropriate collation instead.
-2021-07-18T13:02:48.632207Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2021-07-18T13:02:49.645548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2021-07-18T13:02:51.981723Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: e2%TeUjfTg0N<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>复制启动脚本、启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# cp support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动失败（报错）</p>
-<p><font size="4" color="red">原因：启动时候没有找到对应3306目录</font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# &#x2F;etc&#x2F;init.d&#x2F;mysqld start
-Starting MySQL.Logging to &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;test.err&#39;.
-2021-07-18T15:13:37.356447Z mysqld_safe Directory &#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;3306&#39; for UNIX socket file don&#39;t exists.
-The server quit without updating PID file (&#x2F;usr&#x2F;local&#x2F;mysql[失败]test.pid).<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>解决方法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# mkdir 3306
-[root@test mysql]# chown mysql:mysql 3306&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>重新启动：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysqld_safe --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>MySQL命令软连接到/usr/local/bin/mysql用户可以方便使用MySQL命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test bin]# ln  -s &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;bin&#x2F;mysql &#x2F;usr&#x2F;local&#x2F;bin&#x2F;mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>登陆数据库：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@test mysql]# bin&#x2F;mysql -uroot -p
-Enter password:
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.25
-
-Copyright (c) 2000, 2021, Oracle and&#x2F;or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and&#x2F;or its
-affiliates. Other names may be trademarks of their respective
-owners.
-mysql&gt; show databases;
-ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
   </entry>
   <entry>
     <title>PSSH</title>
@@ -4051,78 +4205,6 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
-    <title>Grafana</title>
-    <url>/blog/2021/07/21/Grafana/</url>
-    <content><![CDATA[<p><font size = 6 color = "green">Grafana</font></p>
-<span id="more"></span>
-
-<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p><font size=4 color=Crimson>官方帮助手册 <a href="https://grafana.com/docs/grafana/latest/installation/rpm/">这儿</a></font></p>
-<h3 id="什么是Grafana"><a href="#什么是Grafana" class="headerlink" title="什么是Grafana"></a>什么是Grafana</h3><p>Grafana是开源的可视化和分析软件。它使您可以查询，可视化，警报和浏览指标，无论它们存储在哪里。用简单的英语，它为您提供了将时间序列数据库（TSDB）数据转换为精美的图形和可视化效果的工具。</p>
-<h3 id="检索指标和日志"><a href="#检索指标和日志" class="headerlink" title="检索指标和日志"></a>检索指标和日志</h3><p>通过临时查询和动态明细浏览数据。拆分视图并排比较不同的时间范围，查询和数据源</p>
-<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>如果您正在使用Grafana警报，则可以通过许多不同的警报通知程序发送警报，包括电子邮件、SMS等方式；<br>警报挂钩可让您通过一些代码来创建不同的通知程序，以可视方式定义最重要指标的警报规则。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>使用来自不同数据源的丰富事件注释图形。将鼠标悬停在事件上可以常看完整的事件元数据和标签。</p>
-<h3 id="仪表盘变量"><a href="#仪表盘变量" class="headerlink" title="仪表盘变量"></a>仪表盘变量</h3><p>模板变量允许您创建仪表板，这些仪表板可用于许多不同的用例，值不是用这些模板硬编码的，因此例如，如果您有生产服务器和测试服务器，则可以为这两者使用相同的仪表板。</p>
-<h3 id="配置Grafana"><a href="#配置Grafana" class="headerlink" title="配置Grafana"></a>配置Grafana</h3><p>配置涵盖配置文件和环境变量，您可以设置默认端口，日志记录级别，电子邮件IP地址，安全性等；</p>
-<h3 id="导入仪表板和插件"><a href="#导入仪表板和插件" class="headerlink" title="导入仪表板和插件"></a>导入仪表板和插件</h3><p>在官方库中里有数百个仪表板和插件，由于社区成员的热情和动力，每周都会增加新成员。</p>
-<h2 id="安装Grafana"><a href="#安装Grafana" class="headerlink" title="安装Grafana"></a>安装Grafana</h2><h3 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h3><p>Grafana的最低硬件和软件（配置）<br>要运行Grafana,您必须具有受支持的操作系统，满足或大于最低要求的硬件，受支持的数据库和受支持的浏览器。</p>
-<h4 id="支持的操作系统"><a href="#支持的操作系统" class="headerlink" title="支持的操作系统"></a>支持的操作系统</h4><p>Grafana安装支持一下操作系统：</p>
-<ul>
-<li>Debian/Ubuntu</li>
-<li>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）</li>
-<li>苹果系统</li>
-<li>Windows</li>
-</ul>
-<h4 id="硬件的要求"><a href="#硬件的要求" class="headerlink" title="硬件的要求"></a>硬件的要求</h4><p>Grafana不会使用大量资源，并且字使用内存和CPU时非常轻巧。<br>建议最小内存：255MB 建议最小CPU：1<br>某些功能可以能需要更多的内存或者CPU。功能需要跟多资源，包括</p>
-<ul>
-<li>服务器端图像渲染</li>
-<li>报警</li>
-<li>数据源代理</li>
-</ul>
-<h4 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h4><p>Grafana需要一个数据库来存储其配置数据，例如用户，数据源和仪表板，确切的要求取决于Grafana安装的大小和使用的功能<br>Grafana支持以下数据库：</p>
-<ul>
-<li>SQLite</li>
-<li>MySQL</li>
-<li>PostgreSQL<br>默认情况下，Grafana随SQLite一起安装并使用SQLite，SQLite是存储Grafana安装位置中的嵌入式数据库。<h4 id="支持的浏览器"><a href="#支持的浏览器" class="headerlink" title="支持的浏览器"></a>支持的浏览器</h4></li>
-<li>chrome/Chromium</li>
-<li>Firefox</li>
-<li>Safari</li>
-<li>Microsofr Edge</li>
-<li>Internet Explorer 11 is only fully supported in Grafana versions prior v6.0.</li>
-</ul>
-<h2 id="基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装"><a href="#基于RPM的Linux（CentOS-Fedora-OpenSuse-RedHat）安装" class="headerlink" title="基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装"></a>基于RPM的Linux（CentOS,Fedora,OpenSuse,RedHat）安装</h2><h3 id="现在并安装"><a href="#现在并安装" class="headerlink" title="现在并安装"></a>现在并安装</h3><p>您可以使用YUM仓库中安装Grafana，可以手动使用YUM，手动使用RPM或者下载二进制.tar.gz文件。</p>
-<h3 id="使用YUM手动安装"><a href="#使用YUM手动安装" class="headerlink" title="使用YUM手动安装"></a><font size=4>使用YUM手动安装</font></h3><p>如果使用YUM手动安装，则需要为每个新版本手动更新Grafana。要为您的Grafana安装启用自动更新，请按照以下说明通过我们的YUM存储库进行安装。</br></p>
-<h3 id="点击这儿官网下载适合您的平台"><a href="#点击这儿官网下载适合您的平台" class="headerlink" title="点击这儿官网下载适合您的平台"></a><font size=4 color=Crimson>点击<a href="https://grafana.com/grafana/download">这儿官网</a>下载适合您的平台</font></h3><p>下载软件包并安装</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget https:&#x2F;&#x2F;dl.grafana.com&#x2F;oss&#x2F;release&#x2F;grafana-7.3.6-1.x86_64.rpm
-# sudo yum install grafana-7.3.6-1.x86_64.rpm -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>启动服务并开机自启</p>
-<pre class="line-numbers language-none"><code class="language-none"># systemctl enable grafana-server  --now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看服务服务是否正常运行，端口号默认3000</p>
-<pre class="line-numbers language-none"><code class="language-none"># ss -luntp| grep grafana
-# systemctl status grafana-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>添加防火墙规则</p>
-<pre class="line-numbers language-none"><code class="language-none"># firewall-cmd --permanent --add-port&#x3D;3000&#x2F;tcp
-# firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>Grafana应该就可以开始访问了。您还应该能够在http：//server-ip:3000上浏览到有关其自身的状态页面<br><img src="media/16080440023584/16086214757835.jpg" class="lazyload placeholder" data-srcset="media/16080440023584/16086214757835.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg">默认登录用户名（admin）密码（admin）</p>
-<h2 id="选择您的配置选项"><a href="#选择您的配置选项" class="headerlink" title="选择您的配置选项"></a>选择您的配置选项</h2><ul>
-<li>Grafana后端在其配置文件（通常在Linux系统上位于/etc/grafana/grafana.ini中)<br>在此配置文件中，您可以更改默认管理员密码，http端口，grafana数据库（sqlite3，mysql，postgres），身份验证选项（google，github，ldap，auth proxy）以及许多其他选项。</li>
-<li>启动您的grafana服务器。用您的管理员用户登录（默认为admin / admin）。打开侧面菜单（单击顶部菜单中的Grafana图标），转到数据源，然后添加数据源。</li>
-</ul>
-<h3 id="更改Grafana密码"><a href="#更改Grafana密码" class="headerlink" title="更改Grafana密码"></a><font color=Crimson>更改Grafana密码</font></h3><ul>
-<li>将鼠标悬停在屏幕左下角的用户图标上。</li>
-<li>点击更改密码。Grafana将打开“更改密码”选项卡。</li>
-<li>输入您的旧密码以授权更改。</li>
-<li>输入新密码，然后确认密码。</li>
-<li>点击更改密码。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>Grafana</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>openstack原理</title>
     <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
@@ -4263,6 +4345,43 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
 [root@abbott prometheus]# ntpdate  ntp.aliyun.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
+      <categories>
+        <category>监控系统</category>
+      </categories>
+      <tags>
+        <tag>prometheus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>prometheus定义</title>
+    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
+<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
+<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
+<ul>
+<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
+<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
+<li>不依赖分布式存储；单服务器节点是自治的；</li>
+<li>时间序列收集通过HTTP上的拉模型进行；</li>
+<li>通过中间网关支持推送时间序列；</li>
+<li>通过服务发现或静态配置发现目标；</li>
+<li>多种图形和仪表板支持模式；</li>
+<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
+<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
+</ul>
+<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
+<ul>
+<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
+<li>客户端库，用于检测应用程序代码</li>
+<li>一个支持短期工作的推送网关</li>
+<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
+<li>一个alertmanager处理警报</li>
+<li>各种支持工具</li>
+</ul>
+<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
+<p>Prometheus 整体架构图 </p>
+<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
       <categories>
         <category>监控系统</category>
       </categories>
@@ -4523,43 +4642,6 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </categories>
       <tags>
         <tag>kubernetes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>prometheus定义</title>
-    <url>/blog/2021/10/28/prometheus%E5%AE%9A%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="prometheus"><a href="#prometheus" class="headerlink" title="prometheus"></a><font size = 6 color = "green">prometheus</font></h1><p><a href="https://prometheus.io/docs/introduction/overview/"><font color= red>官方帮助手册</font></a></p>
-<h2 id="一、Prometheus-定义"><a href="#一、Prometheus-定义" class="headerlink" title="一、Prometheus 定义"></a>一、Prometheus 定义</h2><h3 id="1、简介："><a href="#1、简介：" class="headerlink" title="1、简介："></a><strong>1、简介：</strong></h3><p>Prometheus是最初在SoundCiloud上构建的开源系统监视和警报工具包 。自2012年成立以来，许多公司和组织都采用了Prometheus，该项目拥有非常活跃的开发人员和用户社区。现在，它是一个独立的开源项目，并且独立于任何公司进行维护。为了强调这一点并阐明项目的治理结构，Prometheus在2016年加入了 Cloud Native Computing Foundation，这是继Kubernetes之后的第二个托管项目。Prometheus 在开源社区也十分活跃，在GitHub上拥有两万多star，并且每隔一两周就会有一个小版本的更新。</p>
-<h3 id="2、-特征："><a href="#2、-特征：" class="headerlink" title="2、 特征："></a><strong>2、 特征：</strong></h3><p>普罗米修斯的主要特点是：</p>
-<ul>
-<li>一个多维数据模型，其中包含通过度量标准名称和键/值对标识的时间序列数据；</li>
-<li>PromQL，一种灵活的查询语言 ，可利用此维度 ；</li>
-<li>不依赖分布式存储；单服务器节点是自治的；</li>
-<li>时间序列收集通过HTTP上的拉模型进行；</li>
-<li>通过中间网关支持推送时间序列；</li>
-<li>通过服务发现或静态配置发现目标；</li>
-<li>多种图形和仪表板支持模式；</li>
-<li>易于维护，可以通过二进制文件直接启动，并且提供了容器化部署镜像；</li>
-<li>支持数据的分区采样和联邦部署，支持大规模集群监控；</li>
-</ul>
-<h4 id="3、-组件："><a href="#3、-组件：" class="headerlink" title="3、 组件："></a><strong>3、 组件</strong>：</h4><p>Prometheus生态系统包含多个组件，其中许多是可选的：</p>
-<ul>
-<li>Prometheus主服务器，它会刮取并存储时间序列数据</li>
-<li>客户端库，用于检测应用程序代码</li>
-<li>一个支持短期工作的推送网关</li>
-<li>诸如HAProxy，StatsD，Graphite等服务的专用出口商</li>
-<li>一个alertmanager处理警报</li>
-<li>各种支持工具</li>
-</ul>
-<h4 id="4、-架构："><a href="#4、-架构：" class="headerlink" title="4、 架构："></a><strong>4、 架构</strong>：</h4><p>Prometheus 的基本原则是通过HTTP周期性抓取被监控组件的状态，任意组件只要提供对应的HTTP接口并且符合Prometheus 定义的数据格式，就可以接入Prometheus 监控；</p>
-<p>Prometheus 整体架构图 </p>
-<p><img src="https://prometheus.io/assets/architecture.png" class="lazyload placeholder" data-srcset="https://prometheus.io/assets/architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>监控系统</category>
-      </categories>
-      <tags>
-        <tag>prometheus</tag>
       </tags>
   </entry>
 </search>
