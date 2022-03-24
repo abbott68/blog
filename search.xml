@@ -1,103 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>5.7多实例</title>
-    <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>解压并做超链接</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz  &#x2F;app&#x2F;soft&#x2F;
-[root@localhost soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@localhost soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>创建数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost soft]#  mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>创建 主配置 文件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3308
-socket&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>创建用户，修改存放数据目录的权限及安装目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@localhost mysql5_data]# chown mysql:mysql -R &#x2F;my_data&#x2F;
-[root@localhost mysql5_data]# chown mysql:mysql -R mysql5&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>初始化：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><font color=red>注意：</font></p>
-<blockquote>
-<p>如果初始化成功之后再进行下一步；如果不确定执行是否成功 ；可以使用echo $? </p>
-<p>0  为执行成功；</p>
-<p>非0 为执行不成功；需要重新初始化执行；</p>
-</blockquote>
-<p>启动数据库：（两种方式）</p>
-<ul>
-<li><p>使用mysqld 启动</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# &#x2F;bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>使用mysqld_safe</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld_safe --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>解释：</p>
-<blockquote>
-<p>mysqld  开启 之后只有一个进程；</p>
-<p>mysqld_safe：开启之后有两个进程；</p>
-<p>他们之间的关系是mysqld_safe是mysqld 守护进程。 </p>
-</blockquote>
-</li>
-</ul>
-<p>连接数据库 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock -P 3308 -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<blockquote>
-<p> 密码会在初始化的时候随机生成；第一次登录需要，登录之后在修改密码</p>
-</blockquote>
-<h2 id="安装第二个-实例"><a href="#安装第二个-实例" class="headerlink" title="安装第二个 实例"></a>安装第二个 实例</h2><p>创建 数据存储目录</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost data]# mkdir -p my_data2&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>修改权限</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost data]#  chown -R mysql:mysql my_data2&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>创建my.cnf或者修改原有的配置（添加一下修改一下标签就好）</p>
-<p>注意： 我的my.cnf是独立使用的</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data2]# vim my.cnf 
-[mysqld]
-user &#x3D; mysql
-port &#x3D; 3307
-socket&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock
-basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
-datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data
-log-error&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;logs&#x2F;error.log
-[mysql]
-prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>初始化 ：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>启动第二个实例：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>测试：连接3307端口实例</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock -P3307 -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>好了现在多实例就创建完成了</p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ansible</title>
     <url>/blog/2021/07/18/Ansible/</url>
     <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -280,6 +183,103 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>5.7多实例</title>
+    <url>/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h1 id="多实例安装（基于5-7版本-）"><a href="#多实例安装（基于5-7版本-）" class="headerlink" title="多实例安装（基于5.7版本 ）"></a>多实例安装（基于5.7版本 ）</h1><p>获取软件包:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解压并做超链接</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz  &#x2F;app&#x2F;soft&#x2F;
+[root@localhost soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
+[root@localhost soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>创建数据存储目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost soft]#  mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建 主配置 文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# vim my.cnf 
+[mysqld]
+user &#x3D; mysql
+port &#x3D; 3308
+socket&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock
+basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
+datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data
+log-error&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
+[mysql]
+prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建用户，修改存放数据目录的权限及安装目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@localhost mysql5_data]# chown mysql:mysql -R &#x2F;my_data&#x2F;
+[root@localhost mysql5_data]# chown mysql:mysql -R mysql5&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>初始化：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><font color=red>注意：</font></p>
+<blockquote>
+<p>如果初始化成功之后再进行下一步；如果不确定执行是否成功 ；可以使用echo $? </p>
+<p>0  为执行成功；</p>
+<p>非0 为执行不成功；需要重新初始化执行；</p>
+</blockquote>
+<p>启动数据库：（两种方式）</p>
+<ul>
+<li><p>使用mysqld 启动</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# &#x2F;bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>使用mysqld_safe</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld_safe --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>解释：</p>
+<blockquote>
+<p>mysqld  开启 之后只有一个进程；</p>
+<p>mysqld_safe：开启之后有两个进程；</p>
+<p>他们之间的关系是mysqld_safe是mysqld 守护进程。 </p>
+</blockquote>
+</li>
+</ul>
+<p>连接数据库 ：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql.sock -P 3308 -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p> 密码会在初始化的时候随机生成；第一次登录需要，登录之后在修改密码</p>
+</blockquote>
+<h2 id="安装第二个-实例"><a href="#安装第二个-实例" class="headerlink" title="安装第二个 实例"></a>安装第二个 实例</h2><p>创建 数据存储目录</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost data]# mkdir -p my_data2&#x2F;&#123;data,logs&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>修改权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost data]#  chown -R mysql:mysql my_data2&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>创建my.cnf或者修改原有的配置（添加一下修改一下标签就好）</p>
+<p>注意： 我的my.cnf是独立使用的</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5_data2]# vim my.cnf 
+[mysqld]
+user &#x3D; mysql
+port &#x3D; 3307
+socket&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock
+basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F;
+datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data
+log-error&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;logs&#x2F;error.log
+[mysql]
+prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>初始化 ：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5 --datadir&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>启动第二个实例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysqld bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data2&#x2F;my.cnf --user&#x3D;mysql &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>测试：连接3307端口实例</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost mysql5]# bin&#x2F;mysql -S &#x2F;data&#x2F;mysql5_data2&#x2F;mysql.sock -P3307 -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>好了现在多实例就创建完成了</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1558,6 +1558,142 @@ NUMA 节点<span class="token number">0</span> CPU：    <span class="token numb
       </tags>
   </entry>
   <entry>
+    <title>Linux网络配置</title>
+    <url>/blog/2022/03/24/Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="linux-服务器网络配置"><a href="#linux-服务器网络配置" class="headerlink" title="linux 服务器网络配置"></a>linux 服务器网络配置</h1><p>​    本章主要讲解Linux系统下关于网络的一些基础知识和系统出现网络问题时的应对策略，详细讲述了Linux系统下网卡的安装与配置方法；以及常见网卡故障的排除思路和解决方案</p>
+<h2 id="网卡驱动的安装"><a href="#网卡驱动的安装" class="headerlink" title="网卡驱动的安装"></a>网卡驱动的安装</h2><p>Linux操作系统作为服务器在使用过程中，出现问题最多的就是网络问题，而与网络对应的就是操作系统中网卡安装、配置的问题。</p>
+<p><strong>网卡驱动安装的一般思路</strong></p>
+<p>我们在安装Linux系统的时候，如果出现网卡配置的界面，一般说明系统识别到了网卡，或者说系统光盘中含有网卡的驱动程序。不同的版本，不同的系统内核，所含的网卡驱动程序不尽相同，自从最新内核3.10版本以后，Linux自带的网卡驱动陈旭已经很完善了，许多著名厂商（如 inter Realtek VIA等）都默认支持网卡芯片。但是由于Linux发行版很多，硬件更新又很快，可能仍有部分较新的网卡芯片在Linux下不被支持，此时就需要手动安装网卡驱动程序。</p>
+<p>对于网卡安装和使用过程中出现的故障，我们需要有一套完整的故障排除思路和解决方法</p>
+<pre><code>1. 首先从硬件入手，检查网卡本身故障
+2. 检查网卡芯片型号
+3. 查看系统是否包含对应型号的网卡驱动
+4. 检查网卡驱动是否加载
+</code></pre>
+<h2 id="配置linux网络"><a href="#配置linux网络" class="headerlink" title="配置linux网络"></a>配置linux网络</h2><p><strong>不同Linux发行版的网络配置文件</strong></p>
+<p>网卡通过驱动程序激活后，接下来就要配置网络信息。网络的配置文件一般都在/etc 目录下，但是不同发行版的Linux，网络配置文件路径略有不同。</p>
+<p>RHEL/Centos Linux下网络的配置文件路径为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-interfacename (interfacename 根据网卡类型和排序不同)
+&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-lo # 网卡回环地址
+&#x2F;etc&#x2F;sysconfig&#x2F;network  # 主机名和网关配置文件
+&#x2F;etc&#x2F;resolv.conf       #DNS 配置文件
+&#x2F;etc&#x2F;hosts             #设置主机和IP绑定信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Debin/Ubuntu Linux下网络配置文件路径为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;etc&#x2F;network&#x2F;interfaces # IP 地址、子网掩码等配置文件
+&#x2F;etc&#x2F;resolv.conf        #DNS配置文件
+&#x2F;etc&#x2F;hostname						#全局主机名配置文件
+&#x2F;etc&#x2F;hosts							#设置主机和IP绑定信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="开启Linux代理转发功能"><a href="#开启Linux代理转发功能" class="headerlink" title="开启Linux代理转发功能"></a><strong>开启Linux代理转发功能</strong></h2><ol>
+<li><p>修改/proc下内核参数</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward
+0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>0：表示静止IP转发</p>
+<p>1：开启IP转发功能</p>
+</blockquote>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# echo &quot;1&quot; &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>修改/etc/sysctl.conf文件</p>
+<p>默认sysctl.conf文件中有一个变量是：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">net.ipv4.ip_forward &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将后面的值改为1，然后保存文件。因为每次系统启动时初始化脚本/etc/rc.d/rc.sysint会读取/etc/sysctl.conf文件的内容，所以修改此文件后每次系统重启时都会开启IP转发功能，但只是修改sysctl文件不会马上生效，如果要修改的马上生效的话，可以执行此命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="路由的概念与配置"><a href="#路由的概念与配置" class="headerlink" title="路由的概念与配置"></a>路由的概念与配置</h3><ol>
+<li><p><strong>路由的概念</strong></p>
+<p>计算机与计算机之间的数据传输必须经由路由网络，而网络可以通过直接连接两台计算机的方式，或者由一个或一个以上的节点来构成。数据传输到另一网络节点，另一个网络节点再将数据传输到下个节点，依次类推，最终把数据传输到目标主机。这就是数据传送的一个完整过程，而每个网络几点就是一个路由，”约定“就是路由规则，数据传输就是根据路由规则依次传输下去的。</p>
+</li>
+<li><p><strong>路由的分类</strong></p>
+<p>路由分为静态路由和动态路由。</p>
+<p>静态路由：</p>
+<p>​      Linux上配置的路由都属于静态路由。静态路由的产生，是由于系统管理员使用route命令所加入的静态路由规则，也就是由手动输入的方式来加入的路由规则。</p>
+<p>动态路由:</p>
+<p>​        动态路由就是无需手动输入路由规则，其路由规则是本机与不同及其彼此经路由程序（routing daemon）相互交换路由规则而来的。如果网络发生了变化，路由软件就重新计算路由并发出新的路由更新信息。这些信息更新到网络，是路由器重新计算并对路由表做相应的改变。</p>
+</li>
+<li><p><strong>路由的配置</strong></p>
+<p>在Linux下可以通过route命令配置静态路由信息</p>
+<p><strong>(1) route 命令</strong></p>
+<p>功能描述：</p>
+<p>​    配置系统静态路由：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">route [-n | ee]
+route add [-net|-host] [网络或主机] \ netmask [mask] [gw|dev]
+route del [-net|-host] [网络或主机] \ netmask [mask] [gw|dev]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-n  不适用通信协议或主机名，直接使用IP地址
+-ee 显示更详细的路由信息
+add 表示添加路由信息
+del 表示删除路由信息
+-net 表示添加一个网络，也就是后面接的是一个网络号地址
+-host 表示后面接的为连接到单独主机的路由
+netmask 表示后面接的是子网掩码信息，子网掩码可以限制网络的大小
+gw   网关IP信息，gateway的缩写
+dev  指定由那个网络设备联机出去，后面接网络设备名。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.16.59.1     0.0.0.0         UG    100    0        0 ens33
+172.16.59.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33
+[root@localhost ~]# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    100    0        0 ens33
+172.16.59.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2) route 命令输出的含义：</p>
+<blockquote>
+<ul>
+<li><p>Destination：</p>
+<p>表示网络号，也就是network的意思</p>
+</li>
+<li><p>Gateway:</p>
+<p>连出网关地址，也就是说，该网络是通过这个IP地址连接出去的。如果显示0:0:0:0，则表示该路由直接由本机传送出去。如果有IP显示，表示本条路由必须经过这个IP的转接才能连接出去。</p>
+</li>
+<li><p>Genmask:</p>
+<p>表示子网掩码地址，也就是netmask。Destination和Genmask组合成一个完整的网络</p>
+</li>
+<li><p>Flags：</p>
+<p>路由标记信息，有几种不同的标记：</p>
+<ul>
+<li>U(route is up):表示路由是启动的。</li>
+<li>H(target is a host):目标路由是一部主机（IP）而非网络</li>
+<li>R(reinstate route for daemon or redirect):使用动态路由时，恢复路由信息标记。</li>
+<li>G(use gateway): 表示需要通过外部的主机（gateway）来转接、转递数据。</li>
+<li>M(modified from routing daemon or redirect): 表示路由已经被修改了。</li>
+<li>D(dynamically installed by daemon or redirect):已经由服务设定为动态路由。</li>
+<li>!(reject route)：这个路由将不会被接受（用来抵挡不安全的网络）。</li>
+</ul>
+</li>
+<li><p>Metric:</p>
+<p>需要经过几个网络节点（hop）才能到达路由的目标网络地址。</p>
+</li>
+<li><p>Ref：</p>
+<p>参考到此路由规则的数目。</p>
+</li>
+<li><p>Use:</p>
+<p>有几个转送数据包参考到此路由规则。</p>
+</li>
+<li><p>Iface:</p>
+<p>路由对应的网络设备接口。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+  </entry>
+  <entry>
     <title>MacbookPor-m1</title>
     <url>/blog/2021/12/02/MacbookPor-m1/</url>
     <content><![CDATA[<h1 id="Macbook-Pro-m1-install-vmware"><a href="#Macbook-Pro-m1-install-vmware" class="headerlink" title="Macbook Pro m1 install vmware"></a>Macbook Pro m1 install vmware</h1><h2 id="获取下载vmware-（开发测试版本）"><a href="#获取下载vmware-（开发测试版本）" class="headerlink" title="获取下载vmware （开发测试版本）"></a>获取下载vmware （开发测试版本）</h2><ul>
@@ -1792,77 +1928,6 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
-    <title>MySQL8.0.27版本二进制安装</title>
-    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
-soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
-[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
-[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
-[root@docker mysql827]# ls
-bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
-[mysqld]
-# 选择默认存储引擎为InnoDB
-default-storage-engine&#x3D;InnoDB
-# 用户
-user &#x3D; mysql
-# 监听端口
-port &#x3D; 3306
-#socket通信设置
-socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
-# 安装目录
-basedir&#x3D;&#x2F;app&#x2F;mysql827
-# 数据文件位置
-datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
-# 允许最大连接数 
-max_connections&#x3D;512
-# 等待关闭连接时间
-wait_timeout&#x3D;600
-# 服务端字符集
-character-set-server&#x3D;utf8mb4
-# 错误日志
-log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
-# 默认使用“mysql_native_password”插件认证
-default_authentication_plugin&#x3D;mysql_native_password
-#server-id&#x3D;10
-log_bin&#x3D;gh
-## 兼容sql_mode
-sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>官方推荐：</p>
-<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
-<p>初始化的时候没有密码：–initialize-insecure </p>
-</blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
-[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
-export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL优化和运维之道</title>
     <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
     <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
@@ -1991,7 +2056,7 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#46;&#x31;&#x36;&#x2e;&#x35;&#x39;&#x2e;&#49;&#51;&#x33;">&#100;&#101;&#118;&#x31;&#x40;&#49;&#55;&#50;&#46;&#x31;&#x36;&#x2e;&#x35;&#x39;&#x2e;&#49;&#51;&#x33;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#x2e;&#49;&#51;&#51;">&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#x2e;&#49;&#51;&#51;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -2283,6 +2348,333 @@ ERROR 1820 (HY000): You must reset your password using ALTER USER statement befo
       </categories>
   </entry>
   <entry>
+    <title>Nginx</title>
+    <url>/blog/2021/07/16/Nginx/</url>
+    <content><![CDATA[<p>Nginx 初始</p>
+<span id="more"></span>
+<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" class="lazyload placeholder" data-srcset="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
+<h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
+<h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
+<li>更快<br>这表现在两个方面:一方面,在正常情况下,单次请求会得到更快的响应;另一方面,在高峰期(如有数以万计的并发请求),Nginx可以比其他Web服务器更快地响应请求；</li>
+<li>高扩展性<br>Nginx的设计极具扩展性,它完全是由多个不同功能、不同层次、不同类型且耦合度极低的模块组成；</li>
+<li>高可靠性<br>高可靠性是我们选择Nginx的最基本条件,因为Nginx的可靠性是大家有目共睹的,很多家高流量网站都在核心服务器上大规模使用Nginx；</li>
+<li>低内存消耗<br>一般情况下,10000个非活跃的HTTP Keep-Alive连接在Nginx中仅消耗2.5MB的内存,这是Nginx支持高并发连接的基础；</li>
+<li>单机支持10万以上的并发连接<br>这是一个非常重要的特性!随着互联网的迅猛发展和互联网用户数量的成倍增长,各大公司、网站都需要应付海量并发请求,一个能够在峰值期顶住10万以上并发请求的Server,无疑会得到大家的青睐；</li>
+<li>热部署<br>master管理进程与worker工作进程的分离设计,使得Nginx能够提供热部署功能,即可以在7×24小时不间断服务的前提下,升级Nginx的可执行文件；</li>
+<li>最自由的BSD许可协议<br>这是Nginx可以快速发展的强大动力。BSD许可协议不只是允许用户免费使用Nginx,它还允许用户在自己的项目中直接使用或修改Nginx源码,然后发布；</li>
+<li>Apache拥有丰富的模块组件支持，稳定性强，BUG少，动态内容处理强。</li>
+<li>Nginx轻量级，占用资源少，负载均衡，高并发处理强，静态内容处理高效</li>
+</ul>
+<h2 id="部署Nginx服务"><a href="#部署Nginx服务" class="headerlink" title="部署Nginx服务"></a>部署Nginx服务</h2><h4 id="官网获取软件包"><a href="#官网获取软件包" class="headerlink" title="官网获取软件包"></a>官网获取软件包</h4><p>下载<a href="http://nginx.org/en/download.html">适合您</a>的版本<br>以下是做测试用的版本</p>
+<pre class="line-numbers language-none"><code class="language-none"># wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.15.5.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果您的主机上没有wget命令请安装<br>Centos RedHat 版本:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>ubuntu Depin系列:</p>
+<pre class="line-numbers language-none"><code class="language-none"># sudo apt install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx
+# mv nginx-1.15.5.tar.gz  &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# tar xf nginx-1.15.5.tar.gz
+# cd nginx-1.15.5
+# yum -y install gcc gcc-c++ pcre-devel   zlib-devel
+# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
+# make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>选项</p>
+<pre class="line-numbers language-none"><code class="language-none">nginx -s stop|quit|raload|reopen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>解释</p>
+<blockquote>
+<p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
+</blockquote>
+<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
+# echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
+# echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
+<pre class="line-numbers language-none"><code class="language-none">server &#123;
+    listen       8080;
+   # listen       somename:8080;
+    server_name  www.gongtongxuexi.com;
+    location &#x2F; &#123;
+        root   html&#x2F;gtxi;
+        index  index.html index.htm;
+    &#125;
+   &#125;
+server &#123;
+    listen       8081;
+   # listen       somename:8080;
+    server_name  www.gongtongjinbu.com;
+
+    location &#x2F; &#123;
+        root   html&#x2F;gtjb;
+        index  index.html index.htm;
+    &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="重新加载配置文件："><a href="#重新加载配置文件：" class="headerlink" title="重新加载配置文件："></a>重新加载配置文件：</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s raload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h4><p>打开浏览器访问 http//iP地址   </p>
+<h4 id="配置文件解释："><a href="#配置文件解释：" class="headerlink" title="配置文件解释："></a>配置文件解释：</h4><pre class="line-numbers language-none"><code class="language-none">keepalive_timeout  65;          # 设置连接超时时间
+# 使用server定义虚拟主机
+  server &#123;
+    listen       80;            # 监听端口
+    server_name  localhost;     # 访问域名
+
+    #charset koi8-r;            # 编码格式
+
+    # 设置虚拟主机的访问日志
+    #access_log  logs&#x2F;host.access.log  main;  
+
+    # 对URL进行匹配
+    location &#x2F; &#123;
+    # 设置网页根路径
+        root   html;
+    # 先找html文件，如果没有则htm
+        index  index.html index.htm;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> HTTPS server<br> <pre class="line-numbers language-none"><code class="language-none">#
+#server &#123;
+#    listen       443 ssl;         监听端口
+#    server_name  localhost;       访问域名
+	指定证书文件，使用相对路径证书需要在与Nginx.conf同目录下
+#    ssl_certificate      cert.pem;
+#    ssl_certificate_key  cert.key;
+		指定会话缓存
+#    ssl_session_cache    shared:SSL:1m;
+#    ssl_session_timeout  5m;
+
+#    ssl_ciphers  HIGH:!aNULL:!MD5;
+#    ssl_prefer_server_ciphers  on;
+
+#    location &#x2F; &#123;
+#        root   html;
+#        index  index.html index.htm;
+#    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="网站的错误代码："><a href="#网站的错误代码：" class="headerlink" title="网站的错误代码："></a><font color=#A52A2A>网站的错误代码：</Font></h3><blockquote>
+<p>1xx: 代表提示信息<br>  2xx: 代表成功信息<br>  3xx: 代表重定向<br>  4xx：代表客户端错误信息<br>  5xx: 代表服务器错误信息</p>
+</blockquote>
+<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
+<h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
+<p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
+<p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>
+<p>2、反向代理有哪些主要应用？</p>
+<p>现在许多大型web网站都用到反向代理。除了可以防止外网对内网服务器的恶性攻击、缓存以减少服务器的压力和访问安全控制之外，还可以进行负载均衡，将用户请求分配给多个服务器。</p>
+<pre class="line-numbers language-none"><code class="language-none"> upstream web1.com&#123;
+           server 192.168.122.206;
+   &#125;
+ upstream web2.com&#123;
+           server 192.168.122.84;
+   &#125;
+
+server &#123;
+    listen       80;
+  # listen       someme:8080;
+   server_name www.web1.com;
+location &#x2F; &#123;
+      proxy_pass  http:&#x2F;&#x2F;web1.com;
+      index  index.html index.htm;
+    &#125;
+  &#125;
+
+ server &#123;
+     listen       80;
+   # listen       somename:8080;
+     server_name  www.web2.com;
+
+  location &#x2F; &#123;
+     proxy_pass   http:&#x2F;&#x2F;web2.com;
+     index  index.html index.htm;
+      &#125;
+   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>web服务</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL8.0.27版本二进制安装</title>
+    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>官方推荐：</p>
+<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
+<p>初始化的时候没有密码：–initialize-insecure </p>
+</blockquote>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 函数</title>
+    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
+<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
+<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
+<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
+<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
+</ul>
+<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
+<ol>
+<li><p>函数定义基本语法：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    函数体
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>def  关键字</p>
+<p>函数体： 函数体为实现函数功能的相关代码段。</p>
+<p>返回值： return 语句后面空一格，跟需要返回的</p>
+</blockquote>
+</li>
+</ol>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
+<p>Python里不用像C语言里需要先申明函数再使用。</p>
+<p>如下实例调用了<code>printme()</code>函数：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
+<span class="token comment">#定义函数</span>
+<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必选参数：<code>fun(name, age)</code></li>
+<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
+<li>可变参数：<code>fun(*args)</code></li>
+<li>关键字参数：<code>fun(name, age, **kw)</code></li>
+<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
+</ul>
+<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
+<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
+#定义函数
+def printme(str):
+    print(str)
+    return;
+printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出 结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span>
+
+<span class="token comment">#调用函数</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
+printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
+printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
+age <span class="token number">35</span>
+name abott
+age <span class="token number">50</span>
+name abbott
+age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    function_suite
+    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
+        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
+    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
+
+r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PSSH</title>
     <url>/blog/2021/07/16/PSSH/</url>
     <content><![CDATA[<p><img src="https://www.abbreviations.com/images/1396650_pssh.png" class="lazyload placeholder" data-srcset="https://www.abbreviations.com/images/1396650_pssh.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -2423,163 +2815,6 @@ httpd   9313 apache    4u  IPv6  34309      0t0  TCP *:http (LISTEN)<span aria-h
       </categories>
       <tags>
         <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PythonValueError</title>
-    <url>/blog/2021/12/13/PythonValueError/</url>
-    <content><![CDATA[<h1 id="ValueError-not-enough-values-to-unpack-expected-2-got-1"><a href="#ValueError-not-enough-values-to-unpack-expected-2-got-1" class="headerlink" title="ValueError: not enough values to unpack (expected 2, got 1)"></a>ValueError: not enough values to unpack (expected 2, got 1)</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Enter a two value<span class="token punctuation">:</span><span class="token number">10</span>
-Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"&lt;stdin>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-ValueError<span class="token punctuation">:</span> <span class="token keyword">not</span> enough values to unpack <span class="token punctuation">(</span>expected <span class="token number">2</span><span class="token punctuation">,</span> got <span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>原因是：输入的值不是期望的值，输入的俩个值的不能换行</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Enter a two value<span class="token punctuation">:</span><span class="token number">10</span> <span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 函数</title>
-    <url>/blog/2021/10/24/Python%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="Python-函数"><a href="#Python-函数" class="headerlink" title="Python 函数"></a>Python 函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。我们已经知道Python提供了许多内建函数，比如<code>print()</code>。但我们也可以自己创建函数，这被叫做用户自定义函数。</p>
-<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>我们可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<ul>
-<li>函数代码块以<code>def</code>关键词开头，后接<code>函数标识符名称</code>和<code>圆括号()</code>。</li>
-<li>任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于<code>定义参数</code>。</li>
-<li>函数的<code>第一行语句</code>可以选择性地使用文档字符串—用于存放<code>函数说明</code>。</li>
-<li>函数内容以<code>冒号</code>起始，并且缩进。</li>
-<li><code>Return[expression]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 <code>None</code>。</li>
-</ul>
-<h2 id="函数基本定义"><a href="#函数基本定义" class="headerlink" title="函数基本定义"></a>函数基本定义</h2><p>函数（Function）指通过专门的代码组织，用来实现特定功能代码段，具有相对独立性，可供其他代码重复调用。</p>
-<ol>
-<li><p>函数定义基本语法：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token keyword">def</span> 函数名<span class="token punctuation">(</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-    函数体
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>返回值<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>def  关键字</p>
-<p>函数体： 函数体为实现函数功能的相关代码段。</p>
-<p>返回值： return 语句后面空一格，跟需要返回的</p>
-</blockquote>
-</li>
-</ol>
-<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
-<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python提示符执行。</p>
-<p>Python里不用像C语言里需要先申明函数再使用。</p>
-<p>如下实例调用了<code>printme()</code>函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#!/usr/bin/python3</span>
-<span class="token comment">#定义函数</span>
-<span class="token keyword">def</span> <span class="token function">printme</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">;</span>
-
-printme<span class="token punctuation">(</span><span class="token string">"我要调用用户自定义函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-printme<span class="token punctuation">(</span><span class="token string">"在次调用同一函数！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>以下是调用函数时可使用的正式参数类型：</p>
-<ul>
-<li>必选参数：<code>fun(name, age)</code></li>
-<li>默认参数：<code>fun(name=&#39;yjc&#39;, age=18)</code></li>
-<li>可变参数：<code>fun(*args)</code></li>
-<li>关键字参数：<code>fun(name, age, **kw)</code></li>
-<li>命名关键字参数：<code>fun(name, age, *, city)</code></li>
-</ul>
-<h5 id="1-必须参数"><a href="#1-必须参数" class="headerlink" title="1. 必须参数"></a>1. 必须参数</h5><p>必选参数也称<strong>位置参数</strong>。必选参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。<br>调用<code>printme()</code>函数，你必须传入一个参数，不然会出现语法错误：</p>
-<pre class="line-numbers language-PYTHON" data-language="PYTHON"><code class="language-PYTHON">#!&#x2F;usr&#x2F;bin&#x2F;python3
-#定义函数
-def printme(str):
-    print(str)
-    return;
-printme()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出 结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  File <span class="token string">"/Users/abbott/work list/pyproject/pydome/函数/def1.py"</span><span class="token punctuation">,</span> line <span class="token number">6</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
-    printme<span class="token punctuation">(</span><span class="token punctuation">)</span>
-TypeError<span class="token punctuation">:</span> printme<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> '<span class="token builtin">str</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="2-默认参数"><a href="#2-默认参数" class="headerlink" title="2. 默认参数"></a>2. 默认参数</h5><p>调用函数时，默认参数的值如果没有传入，则被认为是默认值。下例会打印默认的age，如果age没有被传入：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">printinfo</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span>
-
-<span class="token comment">#调用函数</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abbott"</span><span class="token punctuation">)</span>
-printinfo<span class="token punctuation">(</span><span class="token string">"abott"</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
-<span class="token comment"># 当不按顺序提供部分默认参数时，需要把参数名写上</span>
-printinfo<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"abbott"</span><span class="token punctuation">,</span>age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">name abbott
-age <span class="token number">35</span>
-name abott
-age <span class="token number">50</span>
-name abbott
-age <span class="token number">30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="3-可变参数"><a href="#3-可变参数" class="headerlink" title="3. 可变参数"></a>3. 可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。基本语法如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">functionname</span><span class="token punctuation">(</span><span class="token operator">*</span>var_args_tuple<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    function_suite
-    <span class="token keyword">return</span><span class="token punctuation">[</span>expression<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>加*号的变量名会存放所有未命名的变量参数。如以下实例：</p>
-</blockquote>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token operator">*</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token number">0</span> 
-    <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-        <span class="token builtin">sum</span> <span class="token operator">=</span> <span class="token builtin">sum</span>  <span class="token operator">+</span> n <span class="token operator">*</span> n 
-    <span class="token keyword">return</span> <span class="token builtin">sum</span> 
-
-r <span class="token operator">=</span> calc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出结果：</p>
-<pre class="line-numbers language-none"><code class="language-none">5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python初始</title>
-    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
-    <content><![CDATA[<h1 id="Python-编程语言"><a href="#Python-编程语言" class="headerlink" title="Python 编程语言"></a>Python 编程语言</h1><p>Python 是一种高级、通用且非常流行的编程语言。Python 编程语言（最新的 Python 3）正被用于 Web 开发、机器学习应用程序以及软件行业的所有尖端技术。Python 编程语言非常适合初学者，也适合使用 C++ 和 Java 等其他编程语言的有经验的程序员。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>以下是关于Python编程语言的应用领域</p>
-<ol>
-<li>Python 是目前使用最广泛的多用途、高级编程语言。</li>
-<li>Python 允许在面向对象和过程范式中进行编程。</li>
-<li>Python 程序通常比 Java 等其他编程语言小。程序员必须相对较少的类型和语言的缩进要求，使它们始终可读。</li>
-<li>几乎所有的科技巨头都在使用 Python 语言，比如谷歌、亚马逊、Facebook、Instagram、Dropbox、优步等。</li>
-<li>Python 的最大优势是庞大的标准库集合，可用于以下方面：<ul>
-<li><a href="https://www.geeksforgeeks.org/machine-learning/">机器学习</a></li>
-<li>GUI 应用程序（如<a href="https://www.geeksforgeeks.org/kivy-tutorial/">Kivy</a>、Tkinter、PyQt 等）</li>
-<li><a href="https://www.geeksforgeeks.org/django-tutorial/">Django</a>等网络框架（YouTube、Instagram、Dropbox 使用）</li>
-<li>图像处理（如<a href="https://www.geeksforgeeks.org/opencv-python-tutorial/">OpenCV</a>、Pillow）</li>
-<li>网页抓取（如 Scrapy、BeautifulSoup、Selenium）</li>
-<li>测试框架</li>
-<li>多媒体</li>
-<li>科学计算</li>
-<li>文本处理等等..</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python 语言</tag>
       </tags>
   </entry>
   <entry>
@@ -2873,6 +3108,37 @@ MariaDB [(none)]&gt; <span aria-hidden="true" class="line-numbers-rows"><span></
       </categories>
   </entry>
   <entry>
+    <title>Python初始</title>
+    <url>/blog/2021/10/24/Python%E5%88%9D%E5%A7%8B/</url>
+    <content><![CDATA[<h1 id="Python-编程语言"><a href="#Python-编程语言" class="headerlink" title="Python 编程语言"></a>Python 编程语言</h1><p>Python 是一种高级、通用且非常流行的编程语言。Python 编程语言（最新的 Python 3）正被用于 Web 开发、机器学习应用程序以及软件行业的所有尖端技术。Python 编程语言非常适合初学者，也适合使用 C++ 和 Java 等其他编程语言的有经验的程序员。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>以下是关于Python编程语言的应用领域</p>
+<ol>
+<li>Python 是目前使用最广泛的多用途、高级编程语言。</li>
+<li>Python 允许在面向对象和过程范式中进行编程。</li>
+<li>Python 程序通常比 Java 等其他编程语言小。程序员必须相对较少的类型和语言的缩进要求，使它们始终可读。</li>
+<li>几乎所有的科技巨头都在使用 Python 语言，比如谷歌、亚马逊、Facebook、Instagram、Dropbox、优步等。</li>
+<li>Python 的最大优势是庞大的标准库集合，可用于以下方面：<ul>
+<li><a href="https://www.geeksforgeeks.org/machine-learning/">机器学习</a></li>
+<li>GUI 应用程序（如<a href="https://www.geeksforgeeks.org/kivy-tutorial/">Kivy</a>、Tkinter、PyQt 等）</li>
+<li><a href="https://www.geeksforgeeks.org/django-tutorial/">Django</a>等网络框架（YouTube、Instagram、Dropbox 使用）</li>
+<li>图像处理（如<a href="https://www.geeksforgeeks.org/opencv-python-tutorial/">OpenCV</a>、Pillow）</li>
+<li>网页抓取（如 Scrapy、BeautifulSoup、Selenium）</li>
+<li>测试框架</li>
+<li>多媒体</li>
+<li>科学计算</li>
+<li>文本处理等等..</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python 语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kubernetes1.23版 重置</title>
     <url>/blog/2021/12/25/kubernetes1.23%E7%89%88%E6%9C%AC%E9%87%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="kubernetes-重置"><a href="#kubernetes-重置" class="headerlink" title="kubernetes 重置"></a>kubernetes 重置</h1><ul>
@@ -2938,6 +3204,192 @@ k8s-node02   Ready    &lt;none&gt;                 22m   v1.23.0<span aria-hidde
       </categories>
       <tags>
         <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql5.7主从复制-异步</title>
+    <url>/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Mysql-5-7-架构之主从复制-异步"><a href="#Mysql-5-7-架构之主从复制-异步" class="headerlink" title="Mysql 5.7  架构之主从复制(异步)"></a>Mysql 5.7  架构之主从复制(异步)</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的DDL和DML 操作通过二进制日志传到复制服务器（也就从库）上，然后从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步。</p>
+<p>MySQL 支持两种复制方式： 基于行的复制和基于语句的复制。基于语句的复制（也称为逻辑复制）早在MySQL3.23 版本总就存在，而基于行的复制方式在5.1版本中才被加进来。这两种方式都是通过主主库上记录二进制日志、在备库重放日志的方式来实现异步的数据复制。这意味着，在同一时间点备库上的数据可能与主库存在不一致，并且无法保证主备之间的延迟。一些大的语句可能导致备库产生几秒、几分钟甚至几个小时的延迟。</p>
+<p><font color=red>注意：</font></p>
+<blockquote>
+<p>由于MySQL 实现的是异步的复制，所以主从库之间存在一定的差距，在从库上进行的查询操作需要考虑到这些数据的差异、一般只有更新不频繁的数据或者对实时要求不高的数据可以通过从库查询，实时性要求高的数据仍需要从主数据库获取</p>
+</blockquote>
+<h2 id="二、复制解决的问题"><a href="#二、复制解决的问题" class="headerlink" title="二、复制解决的问题"></a>二、复制解决的问题</h2><ul>
+<li>数据分布</li>
+<li>负载均衡</li>
+<li>备份</li>
+<li>高可用和故障切换</li>
+<li>MySQL 升级测试</li>
+</ul>
+<h2 id="三、MySQL-复制是如何工作"><a href="#三、MySQL-复制是如何工作" class="headerlink" title="三、MySQL 复制是如何工作"></a>三、MySQL 复制是如何工作</h2><p>MySQL 的复制原理大致如下：</p>
+<p>mysql主从复制需要三个线程，master（binlog dump thread）、slave（I/O thread 、SQL thread）。</p>
+<ol>
+<li>首先，MySQL 主库在事务提交时会把数据变更作为事件Events 记录在二进制日志文件Binlog中；MySQL 主库上的sync_binlog 参数控制Binlog 日志刷新磁盘。</li>
+<li>主库推送二进制日志文件Binlog 中的事件到从库的中继日志 Relay Log 重做数据变更操作，通过逻辑复制以此达到主库和从库的数据一致。</li>
+</ol>
+<p>MySQL 通过3个线程来完成主从库间的数据复制： 其中 Binlog Dump 线程跑在主库上， I/O 线程和SQL线程跑在从库上。当在从库上启动复制（START SLAVE)时，首先创建I/O线程连接主库，主库随后创建Binlog Dump 线程读取数据库事件并发送I/O 线程，I/O线程获 取到</p>
+<ul>
+<li>开启binlog日志</li>
+<li>创建I/O 线程连接主库；</li>
+<li>主库创建Binlog Dump线程读取数据事件并发送给I/O线程；</li>
+<li>I/O 线程获取到事件数据后更新到从库的中继日志 Relay Log 中；</li>
+<li>从库上的SQL 线程读取中继日志Relay Log 中更新数据事件并应用</li>
+</ul>
+<img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211103000318590" style="zoom:50%;" />
+
+<h2 id="四、环境介绍"><a href="#四、环境介绍" class="headerlink" title="四、环境介绍"></a>四、环境介绍</h2><table>
+<thead>
+<tr>
+<th>IP地址</th>
+<th>角色</th>
+<th>OS</th>
+<th>软件版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>172.16.59.141</td>
+<td>master</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+<tr>
+<td>172.16.59.142</td>
+<td>slave01</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+<tr>
+<td>172.16.59.143</td>
+<td>slave02</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+</tbody></table>
+<h2 id="五、流程架构图："><a href="#五、流程架构图：" class="headerlink" title="五、流程架构图："></a>五、流程架构图：</h2><img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105232550510" style="zoom:50%;" />
+
+<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
+[root@mysql-slave01 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
+[root@mysql-slave02 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# mkdir -p &#x2F;app&#x2F;soft
+[root@mysql-master ~]# mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;logs
+[root@mysql-master ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz &#x2F;app&#x2F;soft
+[root@mysql-master soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz 
+[root@mysql-master soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# useradd  mysql -s &#x2F;sbin&#x2F;nologin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master data]# chown mysql:mysql -R mysql5_data&#x2F;
+[root@mysql-master soft]# chown mysql:mysql -R mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="6-5-创建my-cnf"><a href="#6-5-创建my-cnf" class="headerlink" title="6.5 创建my.cnf"></a>6.5 创建my.cnf</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[root@mysql-master ~]# vim  &#x2F;data&#x2F;mysql5_data&#x2F;my.cnf
+[mysqld]
+basedir &#x3D; &#x2F;app&#x2F;soft&#x2F;mysql5
+datadir &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;data
+socket &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock
+port &#x3D; 3306
+server-id &#x3D; 1    # server_id 是唯一
+
+#log setting
+log_error &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
+slow_query_log &#x3D; 1
+long_query_time &#x3D; 1
+slow-query_log_file &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;slow_query.log
+log_queries_not_using_indexes &#x3D; 1
+log_throttle_queries_not_using_indexes &#x3D; 5
+min_examined_row_limit &#x3D; 100
+expire_logs_days &#x3D; 5
+
+#Master-from-set
+log-bin &#x3D; mysql-bin
+binlog_format &#x3D; ROW
+
+#innodb setting
+innodb_buffer_pool_size &#x3D; 64M
+innodb_log_buffer_size &#x3D; 2M
+innodb_lock_wait_timeout &#x3D; 120
+innodb_log_file_size &#x3D; 32M<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font color=red>注意：</font></p>
+<blockquote>
+<p>slave 的server_id 要比主server_id 要大</p>
+</blockquote>
+<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F; --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>初始化密码：会随机打印到屏幕上</p>
+</blockquote>
+<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf  --user&#x3D;mysql &amp;
+~]# mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><font color=red>注意：</font></p>
+<blockquote>
+<p>第一次登陆mysql需要修改密码：set password=password(‘123456’);</p>
+</blockquote>
+<p><font color=red>至此master就安装完成，两台 slave 一样执行，唯独my.cnf文件不一样；</font></p>
+<h3 id="七、在主库上创建用户并授权用于复制使用的"><a href="#七、在主库上创建用户并授权用于复制使用的" class="headerlink" title="七、在主库上创建用户并授权用于复制使用的"></a>七、在主库上创建用户并授权用于复制使用的</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  create user slave@&#39;%&#39; identified by &#39;slave123&#39;;
+root@localhost: [ (none) ]&gt;  grant replication slave on &#39;slave&#39;@&#39;%&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="八、查看master-库上日志文件名及偏移量"><a href="#八、查看master-库上日志文件名及偏移量" class="headerlink" title="八、查看master 库上日志文件名及偏移量"></a>八、查看master 库上日志文件名及偏移量</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show master status \G
+*************************** 1. row ***************************
+             File: mysql-bin.000003
+         Position: 841
+     Binlog_Do_DB: 
+ Binlog_Ignore_DB: 
+Executed_Gtid_Set: 
+1 row in set (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>九、在两个从库上执行</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  change master to 
+master_host&#x3D;&#39;172.16.59.141&#39;,          # 表示实现复制的主机的IP地址
+master_port&#x3D;3306, 										# 表示实现复制的主机的端口号
+master_user&#x3D;&#39;slave&#39;, 									# 表示实现复制远程登陆主机的用户命
+master_password&#x3D;&#39;slave123&#39;,					  # 表示实现复制远程登录主机用户的密码
+master_log_file&#x3D;&#39;mysql-bin.000003&#39;,   # 表示实现复制的binlog 日志文件名
+master_log_pos&#x3D;841;                   # 表示实现复制的binlog 日志文件的偏移量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>十、在从库上开启slave进程</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  start slave;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、验证："><a href="#七、验证：" class="headerlink" title="七、验证："></a>七、验证：</h2><p>一、主库上查看是否有slave进程</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show processlist;
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
+| Id | User  | Host                | db   | Command     | Time | State                                                         | Info             |
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
+|  3 | root  | localhost           | NULL | Query       |    0 | starting                                                      | show processlist |
+|  4 | slave | 172.16.59.143:41676 | NULL | Binlog Dump |   72 | Master has sent all binlog to slave; waiting for more updates | NULL             |
+|  5 | slave | 172.16.59.142:45184 | NULL | Binlog Dump |   59 | Master has sent all binlog to slave; waiting for more updates | NULL             |
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、从库上查看状态</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show slave status \G
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 172.16.59.141
+                  Master_User: slave
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.000003
+          Read_Master_Log_Pos: 841
+               Relay_Log_File: mysql-slave01-relay-bin.000002
+                Relay_Log_Pos: 320
+        Relay_Master_Log_File: mysql-bin.000003
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font color=red>注意观察：</font></p>
+<blockquote>
+<p>I/O 线程 和SQL线程的状态是yes, 两个线程必须为也开启状态</p>
+<p>Slave_IO_Running: Yes<br>Slave_SQL_Running: Yes</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -3871,192 +4323,6 @@ kibana-logging-647576567c-zdl4w   1&#x2F;1     Running   0          42m<span ari
       </tags>
   </entry>
   <entry>
-    <title>mysql5.7主从复制-异步</title>
-    <url>/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="Mysql-5-7-架构之主从复制-异步"><a href="#Mysql-5-7-架构之主从复制-异步" class="headerlink" title="Mysql 5.7  架构之主从复制(异步)"></a>Mysql 5.7  架构之主从复制(异步)</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的DDL和DML 操作通过二进制日志传到复制服务器（也就从库）上，然后从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步。</p>
-<p>MySQL 支持两种复制方式： 基于行的复制和基于语句的复制。基于语句的复制（也称为逻辑复制）早在MySQL3.23 版本总就存在，而基于行的复制方式在5.1版本中才被加进来。这两种方式都是通过主主库上记录二进制日志、在备库重放日志的方式来实现异步的数据复制。这意味着，在同一时间点备库上的数据可能与主库存在不一致，并且无法保证主备之间的延迟。一些大的语句可能导致备库产生几秒、几分钟甚至几个小时的延迟。</p>
-<p><font color=red>注意：</font></p>
-<blockquote>
-<p>由于MySQL 实现的是异步的复制，所以主从库之间存在一定的差距，在从库上进行的查询操作需要考虑到这些数据的差异、一般只有更新不频繁的数据或者对实时要求不高的数据可以通过从库查询，实时性要求高的数据仍需要从主数据库获取</p>
-</blockquote>
-<h2 id="二、复制解决的问题"><a href="#二、复制解决的问题" class="headerlink" title="二、复制解决的问题"></a>二、复制解决的问题</h2><ul>
-<li>数据分布</li>
-<li>负载均衡</li>
-<li>备份</li>
-<li>高可用和故障切换</li>
-<li>MySQL 升级测试</li>
-</ul>
-<h2 id="三、MySQL-复制是如何工作"><a href="#三、MySQL-复制是如何工作" class="headerlink" title="三、MySQL 复制是如何工作"></a>三、MySQL 复制是如何工作</h2><p>MySQL 的复制原理大致如下：</p>
-<p>mysql主从复制需要三个线程，master（binlog dump thread）、slave（I/O thread 、SQL thread）。</p>
-<ol>
-<li>首先，MySQL 主库在事务提交时会把数据变更作为事件Events 记录在二进制日志文件Binlog中；MySQL 主库上的sync_binlog 参数控制Binlog 日志刷新磁盘。</li>
-<li>主库推送二进制日志文件Binlog 中的事件到从库的中继日志 Relay Log 重做数据变更操作，通过逻辑复制以此达到主库和从库的数据一致。</li>
-</ol>
-<p>MySQL 通过3个线程来完成主从库间的数据复制： 其中 Binlog Dump 线程跑在主库上， I/O 线程和SQL线程跑在从库上。当在从库上启动复制（START SLAVE)时，首先创建I/O线程连接主库，主库随后创建Binlog Dump 线程读取数据库事件并发送I/O 线程，I/O线程获 取到</p>
-<ul>
-<li>开启binlog日志</li>
-<li>创建I/O 线程连接主库；</li>
-<li>主库创建Binlog Dump线程读取数据事件并发送给I/O线程；</li>
-<li>I/O 线程获取到事件数据后更新到从库的中继日志 Relay Log 中；</li>
-<li>从库上的SQL 线程读取中继日志Relay Log 中更新数据事件并应用</li>
-</ul>
-<img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211103000318590" style="zoom:50%;" />
-
-<h2 id="四、环境介绍"><a href="#四、环境介绍" class="headerlink" title="四、环境介绍"></a>四、环境介绍</h2><table>
-<thead>
-<tr>
-<th>IP地址</th>
-<th>角色</th>
-<th>OS</th>
-<th>软件版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>172.16.59.141</td>
-<td>master</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-<tr>
-<td>172.16.59.142</td>
-<td>slave01</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-<tr>
-<td>172.16.59.143</td>
-<td>slave02</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-</tbody></table>
-<h2 id="五、流程架构图："><a href="#五、流程架构图：" class="headerlink" title="五、流程架构图："></a>五、流程架构图：</h2><img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105232550510" style="zoom:50%;" />
-
-<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave01 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave02 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# mkdir -p &#x2F;app&#x2F;soft
-[root@mysql-master ~]# mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;logs
-[root@mysql-master ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz &#x2F;app&#x2F;soft
-[root@mysql-master soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz 
-[root@mysql-master soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# useradd  mysql -s &#x2F;sbin&#x2F;nologin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master data]# chown mysql:mysql -R mysql5_data&#x2F;
-[root@mysql-master soft]# chown mysql:mysql -R mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="6-5-创建my-cnf"><a href="#6-5-创建my-cnf" class="headerlink" title="6.5 创建my.cnf"></a>6.5 创建my.cnf</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[root@mysql-master ~]# vim  &#x2F;data&#x2F;mysql5_data&#x2F;my.cnf
-[mysqld]
-basedir &#x3D; &#x2F;app&#x2F;soft&#x2F;mysql5
-datadir &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;data
-socket &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock
-port &#x3D; 3306
-server-id &#x3D; 1    # server_id 是唯一
-
-#log setting
-log_error &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
-slow_query_log &#x3D; 1
-long_query_time &#x3D; 1
-slow-query_log_file &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;slow_query.log
-log_queries_not_using_indexes &#x3D; 1
-log_throttle_queries_not_using_indexes &#x3D; 5
-min_examined_row_limit &#x3D; 100
-expire_logs_days &#x3D; 5
-
-#Master-from-set
-log-bin &#x3D; mysql-bin
-binlog_format &#x3D; ROW
-
-#innodb setting
-innodb_buffer_pool_size &#x3D; 64M
-innodb_log_buffer_size &#x3D; 2M
-innodb_lock_wait_timeout &#x3D; 120
-innodb_log_file_size &#x3D; 32M<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font color=red>注意：</font></p>
-<blockquote>
-<p>slave 的server_id 要比主server_id 要大</p>
-</blockquote>
-<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F; --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>初始化密码：会随机打印到屏幕上</p>
-</blockquote>
-<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf  --user&#x3D;mysql &amp;
-~]# mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><font color=red>注意：</font></p>
-<blockquote>
-<p>第一次登陆mysql需要修改密码：set password=password(‘123456’);</p>
-</blockquote>
-<p><font color=red>至此master就安装完成，两台 slave 一样执行，唯独my.cnf文件不一样；</font></p>
-<h3 id="七、在主库上创建用户并授权用于复制使用的"><a href="#七、在主库上创建用户并授权用于复制使用的" class="headerlink" title="七、在主库上创建用户并授权用于复制使用的"></a>七、在主库上创建用户并授权用于复制使用的</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  create user slave@&#39;%&#39; identified by &#39;slave123&#39;;
-root@localhost: [ (none) ]&gt;  grant replication slave on &#39;slave&#39;@&#39;%&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="八、查看master-库上日志文件名及偏移量"><a href="#八、查看master-库上日志文件名及偏移量" class="headerlink" title="八、查看master 库上日志文件名及偏移量"></a>八、查看master 库上日志文件名及偏移量</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show master status \G
-*************************** 1. row ***************************
-             File: mysql-bin.000003
-         Position: 841
-     Binlog_Do_DB: 
- Binlog_Ignore_DB: 
-Executed_Gtid_Set: 
-1 row in set (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>九、在两个从库上执行</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  change master to 
-master_host&#x3D;&#39;172.16.59.141&#39;,          # 表示实现复制的主机的IP地址
-master_port&#x3D;3306, 										# 表示实现复制的主机的端口号
-master_user&#x3D;&#39;slave&#39;, 									# 表示实现复制远程登陆主机的用户命
-master_password&#x3D;&#39;slave123&#39;,					  # 表示实现复制远程登录主机用户的密码
-master_log_file&#x3D;&#39;mysql-bin.000003&#39;,   # 表示实现复制的binlog 日志文件名
-master_log_pos&#x3D;841;                   # 表示实现复制的binlog 日志文件的偏移量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>十、在从库上开启slave进程</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  start slave;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、验证："><a href="#七、验证：" class="headerlink" title="七、验证："></a>七、验证：</h2><p>一、主库上查看是否有slave进程</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show processlist;
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
-| Id | User  | Host                | db   | Command     | Time | State                                                         | Info             |
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
-|  3 | root  | localhost           | NULL | Query       |    0 | starting                                                      | show processlist |
-|  4 | slave | 172.16.59.143:41676 | NULL | Binlog Dump |   72 | Master has sent all binlog to slave; waiting for more updates | NULL             |
-|  5 | slave | 172.16.59.142:45184 | NULL | Binlog Dump |   59 | Master has sent all binlog to slave; waiting for more updates | NULL             |
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>二、从库上查看状态</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show slave status \G
-*************************** 1. row ***************************
-               Slave_IO_State: Waiting for master to send event
-                  Master_Host: 172.16.59.141
-                  Master_User: slave
-                  Master_Port: 3306
-                Connect_Retry: 60
-              Master_Log_File: mysql-bin.000003
-          Read_Master_Log_Pos: 841
-               Relay_Log_File: mysql-slave01-relay-bin.000002
-                Relay_Log_Pos: 320
-        Relay_Master_Log_File: mysql-bin.000003
-             Slave_IO_Running: Yes
-            Slave_SQL_Running: Yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font color=red>注意观察：</font></p>
-<blockquote>
-<p>I/O 线程 和SQL线程的状态是yes, 两个线程必须为也开启状态</p>
-<p>Slave_IO_Running: Yes<br>Slave_SQL_Running: Yes</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>openstack原理</title>
     <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
@@ -4497,151 +4763,21 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </tags>
   </entry>
   <entry>
-    <title>Nginx</title>
-    <url>/blog/2021/07/16/Nginx/</url>
-    <content><![CDATA[<p>Nginx 初始</p>
-<span id="more"></span>
-<p><img src="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" class="lazyload placeholder" data-srcset="https://www.linuxadictos.com/wp-content/uploads/nginx-1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h2 id="nginx是什么"><a href="#nginx是什么" class="headerlink" title="nginx是什么"></a>nginx是什么</h2><p>&#160; &#160; &#160;我们在学习Nginx时也采用同样的方式,先来看看Nginx的竞争对手——Apache、Lighttpd、Tomcat、Jetty、IIS,它们都是Web服务器,或者叫做WWW(World Wide Web)服务器,相应地也都具备Web服务器的基本功能:基于REST架构风格 [1] ,以统一资源描述符(Uniform Resource Identifier,URI)或者统一资源定位符(Uniform Resource Locator,URL)作为沟通依据,通过HTTP为浏览器等客户端程序提供各种网络服务。<br>&#160; &#160; &#160;Tomcat和Jetty面向Java语言,先天就是重量级的Web服务器,它的性能与Nginx没有可比性。</p>
-<h2 id="apache的特点"><a href="#apache的特点" class="headerlink" title="apache的特点"></a>apache的特点</h2><p>&#160; &#160; &#160;Apache有许多优点,如稳定、开源、跨平台等,但它出现的时间太长了,在它兴起的年代,互联网的产业规模远远比不上今天,所以它被设计成了一个重量级的、不支持高并发的Web服务器。</p>
-<h2 id="为什么选择Nginx"><a href="#为什么选择Nginx" class="headerlink" title="为什么选择Nginx"></a>为什么选择Nginx</h2><ul>
-<li>更快<br>这表现在两个方面:一方面,在正常情况下,单次请求会得到更快的响应;另一方面,在高峰期(如有数以万计的并发请求),Nginx可以比其他Web服务器更快地响应请求；</li>
-<li>高扩展性<br>Nginx的设计极具扩展性,它完全是由多个不同功能、不同层次、不同类型且耦合度极低的模块组成；</li>
-<li>高可靠性<br>高可靠性是我们选择Nginx的最基本条件,因为Nginx的可靠性是大家有目共睹的,很多家高流量网站都在核心服务器上大规模使用Nginx；</li>
-<li>低内存消耗<br>一般情况下,10000个非活跃的HTTP Keep-Alive连接在Nginx中仅消耗2.5MB的内存,这是Nginx支持高并发连接的基础；</li>
-<li>单机支持10万以上的并发连接<br>这是一个非常重要的特性!随着互联网的迅猛发展和互联网用户数量的成倍增长,各大公司、网站都需要应付海量并发请求,一个能够在峰值期顶住10万以上并发请求的Server,无疑会得到大家的青睐；</li>
-<li>热部署<br>master管理进程与worker工作进程的分离设计,使得Nginx能够提供热部署功能,即可以在7×24小时不间断服务的前提下,升级Nginx的可执行文件；</li>
-<li>最自由的BSD许可协议<br>这是Nginx可以快速发展的强大动力。BSD许可协议不只是允许用户免费使用Nginx,它还允许用户在自己的项目中直接使用或修改Nginx源码,然后发布；</li>
-<li>Apache拥有丰富的模块组件支持，稳定性强，BUG少，动态内容处理强。</li>
-<li>Nginx轻量级，占用资源少，负载均衡，高并发处理强，静态内容处理高效</li>
-</ul>
-<h2 id="部署Nginx服务"><a href="#部署Nginx服务" class="headerlink" title="部署Nginx服务"></a>部署Nginx服务</h2><h4 id="官网获取软件包"><a href="#官网获取软件包" class="headerlink" title="官网获取软件包"></a>官网获取软件包</h4><p>下载<a href="http://nginx.org/en/download.html">适合您</a>的版本<br>以下是做测试用的版本</p>
-<pre class="line-numbers language-none"><code class="language-none"># wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.15.5.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果您的主机上没有wget命令请安装<br>Centos RedHat 版本:</p>
-<pre class="line-numbers language-none"><code class="language-none"># sudo yum -y install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>ubuntu Depin系列:</p>
-<pre class="line-numbers language-none"><code class="language-none"># sudo apt install wget<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx
-# mv nginx-1.15.5.tar.gz  &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# tar xf nginx-1.15.5.tar.gz
-# cd nginx-1.15.5
-# yum -y install gcc gcc-c++ pcre-devel   zlib-devel
-# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;
-# make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>选项</p>
-<pre class="line-numbers language-none"><code class="language-none">nginx -s stop|quit|raload|reopen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>解释</p>
-<blockquote>
-<p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
-</blockquote>
-<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
-# echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
-# echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
-<pre class="line-numbers language-none"><code class="language-none">server &#123;
-    listen       8080;
-   # listen       somename:8080;
-    server_name  www.gongtongxuexi.com;
-    location &#x2F; &#123;
-        root   html&#x2F;gtxi;
-        index  index.html index.htm;
-    &#125;
-   &#125;
-server &#123;
-    listen       8081;
-   # listen       somename:8080;
-    server_name  www.gongtongjinbu.com;
-
-    location &#x2F; &#123;
-        root   html&#x2F;gtjb;
-        index  index.html index.htm;
-    &#125;
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="重新加载配置文件："><a href="#重新加载配置文件：" class="headerlink" title="重新加载配置文件："></a>重新加载配置文件：</h4><pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s raload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="验证："><a href="#验证：" class="headerlink" title="验证："></a>验证：</h4><p>打开浏览器访问 http//iP地址   </p>
-<h4 id="配置文件解释："><a href="#配置文件解释：" class="headerlink" title="配置文件解释："></a>配置文件解释：</h4><pre class="line-numbers language-none"><code class="language-none">keepalive_timeout  65;          # 设置连接超时时间
-# 使用server定义虚拟主机
-  server &#123;
-    listen       80;            # 监听端口
-    server_name  localhost;     # 访问域名
-
-    #charset koi8-r;            # 编码格式
-
-    # 设置虚拟主机的访问日志
-    #access_log  logs&#x2F;host.access.log  main;  
-
-    # 对URL进行匹配
-    location &#x2F; &#123;
-    # 设置网页根路径
-        root   html;
-    # 先找html文件，如果没有则htm
-        index  index.html index.htm;
-    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p> HTTPS server<br> <pre class="line-numbers language-none"><code class="language-none">#
-#server &#123;
-#    listen       443 ssl;         监听端口
-#    server_name  localhost;       访问域名
-	指定证书文件，使用相对路径证书需要在与Nginx.conf同目录下
-#    ssl_certificate      cert.pem;
-#    ssl_certificate_key  cert.key;
-		指定会话缓存
-#    ssl_session_cache    shared:SSL:1m;
-#    ssl_session_timeout  5m;
-
-#    ssl_ciphers  HIGH:!aNULL:!MD5;
-#    ssl_prefer_server_ciphers  on;
-
-#    location &#x2F; &#123;
-#        root   html;
-#        index  index.html index.htm;
-#    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
-<h3 id="网站的错误代码："><a href="#网站的错误代码：" class="headerlink" title="网站的错误代码："></a><font color=#A52A2A>网站的错误代码：</Font></h3><blockquote>
-<p>1xx: 代表提示信息<br>  2xx: 代表成功信息<br>  3xx: 代表重定向<br>  4xx：代表客户端错误信息<br>  5xx: 代表服务器错误信息</p>
-</blockquote>
-<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
-<h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
-<p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
-<p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>
-<p>2、反向代理有哪些主要应用？</p>
-<p>现在许多大型web网站都用到反向代理。除了可以防止外网对内网服务器的恶性攻击、缓存以减少服务器的压力和访问安全控制之外，还可以进行负载均衡，将用户请求分配给多个服务器。</p>
-<pre class="line-numbers language-none"><code class="language-none"> upstream web1.com&#123;
-           server 192.168.122.206;
-   &#125;
- upstream web2.com&#123;
-           server 192.168.122.84;
-   &#125;
-
-server &#123;
-    listen       80;
-  # listen       someme:8080;
-   server_name www.web1.com;
-location &#x2F; &#123;
-      proxy_pass  http:&#x2F;&#x2F;web1.com;
-      index  index.html index.htm;
-    &#125;
-  &#125;
-
- server &#123;
-     listen       80;
-   # listen       somename:8080;
-     server_name  www.web2.com;
-
-  location &#x2F; &#123;
-     proxy_pass   http:&#x2F;&#x2F;web2.com;
-     index  index.html index.htm;
-      &#125;
-   &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
+    <title>PythonValueError</title>
+    <url>/blog/2021/12/13/PythonValueError/</url>
+    <content><![CDATA[<h1 id="ValueError-not-enough-values-to-unpack-expected-2-got-1"><a href="#ValueError-not-enough-values-to-unpack-expected-2-got-1" class="headerlink" title="ValueError: not enough values to unpack (expected 2, got 1)"></a>ValueError: not enough values to unpack (expected 2, got 1)</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Enter a two value<span class="token punctuation">:</span><span class="token number">10</span>
+Traceback <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"&lt;stdin>"</span><span class="token punctuation">,</span> line <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token operator">&lt;</span>module<span class="token operator">></span>
+ValueError<span class="token punctuation">:</span> <span class="token keyword">not</span> enough values to unpack <span class="token punctuation">(</span>expected <span class="token number">2</span><span class="token punctuation">,</span> got <span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>原因是：输入的值不是期望的值，输入的俩个值的不能换行</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x<span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter a two value:"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Enter a two value<span class="token punctuation">:</span><span class="token number">10</span> <span class="token number">20</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
       <categories>
-        <category>web服务</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Web</tag>
+        <tag>Python 语言</tag>
       </tags>
   </entry>
 </search>

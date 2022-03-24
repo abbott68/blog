@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MySQL数据库客户端配置prompt参数 | abbott Blog</title>
+  <title>Linux网络配置 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -657,21 +657,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/blog/medias/4.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        MySQL数据库客户端配置prompt参数
+        Linux网络配置
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-01 |
+          <i class="fas fa-calendar"></i> 发表于：2022-03-24 |
         </span>
       
 
@@ -679,8 +679,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-detail-header_category">
-              数据库
+            <a href="/blog/categories/Linux%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              Linux系列
             </a>
           
         </span>
@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3.8k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 6.9k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 3 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 6 mins.分钟 |
           </span>
   
           
@@ -717,156 +717,137 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#x2e;&#49;&#51;&#51;">&#x64;&#101;&#118;&#49;&#64;&#49;&#x37;&#50;&#x2e;&#49;&#x36;&#46;&#53;&#57;&#x2e;&#49;&#51;&#51;</a> [mysql]&gt;</p>
-<p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
-<p>默认的 mysql 提示很简单：</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <h1 id="linux-服务器网络配置"><a href="#linux-服务器网络配置" class="headerlink" title="linux 服务器网络配置"></a>linux 服务器网络配置</h1><p>​    本章主要讲解Linux系统下关于网络的一些基础知识和系统出现网络问题时的应对策略，详细讲述了Linux系统下网卡的安装与配置方法；以及常见网卡故障的排除思路和解决方案</p>
+<h2 id="网卡驱动的安装"><a href="#网卡驱动的安装" class="headerlink" title="网卡驱动的安装"></a>网卡驱动的安装</h2><p>Linux操作系统作为服务器在使用过程中，出现问题最多的就是网络问题，而与网络对应的就是操作系统中网卡安装、配置的问题。</p>
+<p><strong>网卡驱动安装的一般思路</strong></p>
+<p>我们在安装Linux系统的时候，如果出现网卡配置的界面，一般说明系统识别到了网卡，或者说系统光盘中含有网卡的驱动程序。不同的版本，不同的系统内核，所含的网卡驱动程序不尽相同，自从最新内核3.10版本以后，Linux自带的网卡驱动陈旭已经很完善了，许多著名厂商（如 inter Realtek VIA等）都默认支持网卡芯片。但是由于Linux发行版很多，硬件更新又很快，可能仍有部分较新的网卡芯片在Linux下不被支持，此时就需要手动安装网卡驱动程序。</p>
+<p>对于网卡安装和使用过程中出现的故障，我们需要有一套完整的故障排除思路和解决方法</p>
+<pre><code>1. 首先从硬件入手，检查网卡本身故障
+2. 检查网卡芯片型号
+3. 查看系统是否包含对应型号的网卡驱动
+4. 检查网卡驱动是否加载
+</code></pre>
+<h2 id="配置linux网络"><a href="#配置linux网络" class="headerlink" title="配置linux网络"></a>配置linux网络</h2><p><strong>不同Linux发行版的网络配置文件</strong></p>
+<p>网卡通过驱动程序激活后，接下来就要配置网络信息。网络的配置文件一般都在/etc 目录下，但是不同发行版的Linux，网络配置文件路径略有不同。</p>
+<p>RHEL/Centos Linux下网络的配置文件路径为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-interfacename (interfacename 根据网卡类型和排序不同)
+&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-lo # 网卡回环地址
+&#x2F;etc&#x2F;sysconfig&#x2F;network  # 主机名和网关配置文件
+&#x2F;etc&#x2F;resolv.conf       #DNS 配置文件
+&#x2F;etc&#x2F;hosts             #设置主机和IP绑定信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>很好很简单，但是如果您打开了多个 mysql 客户端窗口，则可能很难知道哪个窗口连接到哪个用户和数据库。更改显示数据库和用户的提示可以更容易地快速判断哪个窗口连接到哪个客户端和数据库。</p>
-<h4 id="更改-mysql-提示"><a href="#更改-mysql-提示" class="headerlink" title="更改 mysql 提示"></a>更改 mysql 提示</h4><blockquote>
-<p>要更改提示，请打开您的 MySQL <strong>my.cnf</strong>（或<strong>my.ini，</strong>如果您使用的是 Windows）并在 [mysql] 部分添加以下行。如果该文件没有，请通过添加以下行来创建它。</p>
+<p>Debin/Ubuntu Linux下网络配置文件路径为：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#x2F;etc&#x2F;network&#x2F;interfaces # IP 地址、子网掩码等配置文件
+&#x2F;etc&#x2F;resolv.conf        #DNS配置文件
+&#x2F;etc&#x2F;hostname						#全局主机名配置文件
+&#x2F;etc&#x2F;hosts							#设置主机和IP绑定信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="开启Linux代理转发功能"><a href="#开启Linux代理转发功能" class="headerlink" title="开启Linux代理转发功能"></a><strong>开启Linux代理转发功能</strong></h2><ol>
+<li><p>修改/proc下内核参数</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# cat &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward
+0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>0：表示静止IP转发</p>
+<p>1：开启IP转发功能</p>
 </blockquote>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[ mysql ]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# echo &quot;1&quot; &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>修改/etc/sysctl.conf文件</p>
+<p>默认sysctl.conf文件中有一个变量是：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">net.ipv4.ip_forward &#x3D; 0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>在上述行之后添加以下选项。</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">prompt&#x3D;\u@\h: [ \d ]&gt; \_<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将后面的值改为1，然后保存文件。因为每次系统启动时初始化脚本/etc/rc.d/rc.sysint会读取/etc/sysctl.conf文件的内容，所以修改此文件后每次系统重启时都会开启IP转发功能，但只是修改sysctl文件不会马上生效，如果要修改的马上生效的话，可以执行此命令</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# sysctl -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>‘\u’ 和 ‘\h’ 分别显示用户名和主机名。’\d’ 显示选择的默认数据库。重启客户端会显示修改后的提示，下面是我机器上的样子。’wordpress’ 是我的默认数据库。</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">codediesel@localhost: [ wordpress ]&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="路由的概念与配置"><a href="#路由的概念与配置" class="headerlink" title="路由的概念与配置"></a>路由的概念与配置</h3><ol>
+<li><p><strong>路由的概念</strong></p>
+<p>计算机与计算机之间的数据传输必须经由路由网络，而网络可以通过直接连接两台计算机的方式，或者由一个或一个以上的节点来构成。数据传输到另一网络节点，另一个网络节点再将数据传输到下个节点，依次类推，最终把数据传输到目标主机。这就是数据传送的一个完整过程，而每个网络几点就是一个路由，”约定“就是路由规则，数据传输就是根据路由规则依次传输下去的。</p>
+</li>
+<li><p><strong>路由的分类</strong></p>
+<p>路由分为静态路由和动态路由。</p>
+<p>静态路由：</p>
+<p>​      Linux上配置的路由都属于静态路由。静态路由的产生，是由于系统管理员使用route命令所加入的静态路由规则，也就是由手动输入的方式来加入的路由规则。</p>
+<p>动态路由:</p>
+<p>​        动态路由就是无需手动输入路由规则，其路由规则是本机与不同及其彼此经路由程序（routing daemon）相互交换路由规则而来的。如果网络发生了变化，路由软件就重新计算路由并发出新的路由更新信息。这些信息更新到网络，是路由器重新计算并对路由表做相应的改变。</p>
+</li>
+<li><p><strong>路由的配置</strong></p>
+<p>在Linux下可以通过route命令配置静态路由信息</p>
+<p><strong>(1) route 命令</strong></p>
+<p>功能描述：</p>
+<p>​    配置系统静态路由：</p>
+<p>语法格式：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">route [-n | ee]
+route add [-net|-host] [网络或主机] \ netmask [mask] [gw|dev]
+route del [-net|-host] [网络或主机] \ netmask [mask] [gw|dev]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>如果您不想更改<strong>my.ini</strong>文件或无法更改，您还可以如下所示以交互方式更改提示。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">shell &gt; mysql --prompt&#x3D; &quot;\u@\h:[\d]&gt;\_&quot; -uUSERNAME -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-n  不适用通信协议或主机名，直接使用IP地址
+-ee 显示更详细的路由信息
+add 表示添加路由信息
+del 表示删除路由信息
+-net 表示添加一个网络，也就是后面接的是一个网络号地址
+-host 表示后面接的为连接到单独主机的路由
+netmask 表示后面接的是子网掩码信息，子网掩码可以限制网络的大小
+gw   网关IP信息，gateway的缩写
+dev  指定由那个网络设备联机出去，后面接网络设备名。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>下列出prompt参数的完整选项清单：</p>
-<h4 id="选项列表"><a href="#选项列表" class="headerlink" title="选项列表"></a>选项列表</h4><p>‘prompt’ 参数支持多种选项，完整列表如下表所示。</p>
-<table>
-<thead>
-<tr>
-<th><code>\c</code></th>
-<th>为您发出的每个语句递增的计数器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\D</code></td>
-<td>完整的当前日期</td>
-</tr>
-<tr>
-<td><code>\d</code></td>
-<td>默认数据库</td>
-</tr>
-<tr>
-<td><code>\h</code></td>
-<td>服务器主机</td>
-</tr>
-<tr>
-<td><code>\l</code></td>
-<td>当前分隔符（5.0.25 中的新增功能）</td>
-</tr>
-<tr>
-<td><code>\m</code></td>
-<td>当前时间的分钟</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>换行符</td>
-</tr>
-<tr>
-<td><code>\O</code></td>
-<td>三字母格式的当前月份（一月，二月，…）</td>
-</tr>
-<tr>
-<td><code>\o</code></td>
-<td>数字格式的当前月份</td>
-</tr>
-<tr>
-<td><code>\P</code></td>
-<td>上午下午</td>
-</tr>
-<tr>
-<td><code>\p</code></td>
-<td>当前 TCP/IP 端口或套接字文件</td>
-</tr>
-<tr>
-<td><code>\R</code></td>
-<td>当前时间，采用 24 小时军用时间 (0–23)</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>当前时间，标准 12 小时制 (1-12)</td>
-</tr>
-<tr>
-<td><code>\S</code></td>
-<td>分号</td>
-</tr>
-<tr>
-<td><code>\s</code></td>
-<td>当前时间的秒数</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>一个制表符</td>
-</tr>
-<tr>
-<td><code>\U</code></td>
-<td>您的完整 user_name@host_name 帐户名称</td>
-</tr>
-<tr>
-<td><code>\u</code></td>
-<td>您的用户名</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>服务器版本</td>
-</tr>
-<tr>
-<td><code>\w</code></td>
-<td>以三字母格式表示的当前日期（周一、周二、…）</td>
-</tr>
-<tr>
-<td><code>\Y</code></td>
-<td>当前年份，四位数</td>
-</tr>
-<tr>
-<td><code>\y</code></td>
-<td>当前年份，两位数</td>
-</tr>
-<tr>
-<td><code>\_</code></td>
-<td>空间</td>
-</tr>
-<tr>
-<td><code>\</code></td>
-<td>一个空格（反斜杠后面有一个空格）</td>
-</tr>
-<tr>
-<td><code>\&#39;</code></td>
-<td>单引号</td>
-</tr>
-<tr>
-<td><code>\&quot;</code></td>
-<td>双引号</td>
-</tr>
-<tr>
-<td><code>\\</code></td>
-<td>文字“ <code>\</code>”反斜杠字符</td>
-</tr>
-<tr>
-<td><code>\*</code>x<code>*</code></td>
-<td>x，对于上面未列出的任何“x”</td>
-</tr>
-</tbody></table>
+<p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.16.59.1     0.0.0.0         UG    100    0        0 ens33
+172.16.59.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33
+[root@localhost ~]# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    100    0        0 ens33
+172.16.59.0     0.0.0.0         255.255.255.0   U     100    0        0 ens33<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(2) route 命令输出的含义：</p>
+<blockquote>
+<ul>
+<li><p>Destination：</p>
+<p>表示网络号，也就是network的意思</p>
+</li>
+<li><p>Gateway:</p>
+<p>连出网关地址，也就是说，该网络是通过这个IP地址连接出去的。如果显示0:0:0:0，则表示该路由直接由本机传送出去。如果有IP显示，表示本条路由必须经过这个IP的转接才能连接出去。</p>
+</li>
+<li><p>Genmask:</p>
+<p>表示子网掩码地址，也就是netmask。Destination和Genmask组合成一个完整的网络</p>
+</li>
+<li><p>Flags：</p>
+<p>路由标记信息，有几种不同的标记：</p>
+<ul>
+<li>U(route is up):表示路由是启动的。</li>
+<li>H(target is a host):目标路由是一部主机（IP）而非网络</li>
+<li>R(reinstate route for daemon or redirect):使用动态路由时，恢复路由信息标记。</li>
+<li>G(use gateway): 表示需要通过外部的主机（gateway）来转接、转递数据。</li>
+<li>M(modified from routing daemon or redirect): 表示路由已经被修改了。</li>
+<li>D(dynamically installed by daemon or redirect):已经由服务设定为动态路由。</li>
+<li>!(reject route)：这个路由将不会被接受（用来抵挡不安全的网络）。</li>
+</ul>
+</li>
+<li><p>Metric:</p>
+<p>需要经过几个网络节点（hop）才能到达路由的目标网络地址。</p>
+</li>
+<li><p>Ref：</p>
+<p>参考到此路由规则的数目。</p>
+</li>
+<li><p>Use:</p>
+<p>有几个转送数据包参考到此路由规则。</p>
+</li>
+<li><p>Iface:</p>
+<p>路由对应的网络设备接口。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
 
       </div>
       <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/blog/tags/MySQL/" class="">
-              MySQL
-            </a>
-          
-        </div>
         
       </div>
       
@@ -877,7 +858,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/blog/2021/11/01/MySQL数据库客户端配置prompt参数/" target="_blank" title="MySQL数据库客户端配置prompt参数">https://abbott68.github.io/blog/2021/11/01/MySQL数据库客户端配置prompt参数/</a>
+    <a href="/blog/2022/03/24/Linux网络配置/" target="_blank" title="Linux网络配置">https://abbott68.github.io/blog/2022/03/24/Linux网络配置/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -895,24 +876,6 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">mysql5.7主从复制-异步</div>
-      </div>
-      
-      <!-- <div class="content">
-        Mysql 5.7  架构之主从复制(异步)一、概述MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的D
-      </div> -->
-    </a>
-  </div>
-
 
 
   
@@ -921,14 +884,13 @@
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="/blog/medias/2.jpg" class="lazyload placeholder" data-srcset="/blog/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/" class="post-nav-link">
+    <a href="/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">5.7多实例</div>
+        <div class="title-text">Linux发展历史</div>
       </div>
       <!-- <div class="content">
-        多实例安装（基于5.7版本 ）获取软件包:
-[root@localhost ~]#  wget https:&#x2F;
+        一、Linux发展及历史Linux与开源软件Linux 是一种自由和开放源代码的类UNIX操作系统，该操作系统由（林纳斯
       </div> -->
     </a>
   </div>
