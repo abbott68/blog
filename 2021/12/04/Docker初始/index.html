@@ -719,27 +719,27 @@
       <div class="post-content">
         <h1 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h1><p>docker 对外宣称的作用是”Build,Ship and Run Any App,Anywhere“,即通过对应的封装（Packaging)、分发(Distribution)、部署(Deployment)、运行(Runtime)生命周期进行管理，达到应用组件级别的”一次封装，到处运行“。这里的组件，既可以是一个web应用、一个编译环境，也可以是一台数据库平台服务，甚至是一个操作系统或集群。</p>
 <p>基于Linux平台上的多项开源技术，docker提供了高效、敏捷和轻量级的容器方案，并支持部署到本地环境和多种主流云平台。可以说docker首次为应用的开发、运行和部署提供了”一站式“的实用解决方案。</p>
-<img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" class="lazyload placeholder" data-srcset="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:33%;" />
+<img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" class="lazyload placeholder" data-srcset="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img" style="zoom:33%;">
 
 <h2 id="Container-发展历史"><a href="#Container-发展历史" class="headerlink" title="Container 发展历史"></a><strong>Container 发展历史</strong></h2><p>LXC(Linux Containers)</p>
 <ul>
-<li><input disabled="" type="checkbox"> 1979 年，Unix v7 系统支持 chroot，为应用构建一个独立的虚拟文件系统视图。</li>
-<li><input disabled="" type="checkbox"> 1999 年，FreeBSD 4.0 支持 jail，第一个商用化的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2004 年，Solaris 10 支持 Solaris Zone，第二个商用化的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2005 年，OpenVZ 发布，非常重要的 Linux OS 虚拟化技术先行者。</li>
-<li><input disabled="" type="checkbox"> 2004 年 ~ 2007 年，Google 内部大规模使用 Cgroups 等的 OS 虚拟化技术。</li>
-<li><input disabled="" type="checkbox"> 2006 年，Google 开源内部使用的 process container 技术，后续更名为 cgroup。</li>
-<li><input disabled="" type="checkbox"> 2008 年，Cgroups 进入了 Linux 内核主线。</li>
-<li><input disabled="" type="checkbox"> 2008 年，LXC（Linux Container）项目具备了 Linux 容器的雏型。</li>
-<li><input disabled="" type="checkbox"> 2011 年，CloudFoundry 开发 Warden 系统，一个完整的容器管理系统雏型。</li>
-<li><input disabled="" type="checkbox"> 2013 年，Google 通过 Let Me Contain That For You (LMCTFY) 开源内部容器系统。</li>
-<li><input disabled="" type="checkbox"> 2013 年，Docker 项目正式发布，让 Linux 容器技术逐步席卷天下。</li>
-<li><input disabled="" type="checkbox"> 2014 年，Kubernetes 项目正式发布，容器技术开始和编排系统起头并进。</li>
-<li><input disabled="" type="checkbox"> 2015 年，由 Google，Redhat、Microsoft 及一些大型云厂商共同创立了 CNCF，云原生浪潮启动。</li>
-<li><input disabled="" type="checkbox"> 2016 年 - 2017 年，容器生态开始模块化、规范化。CNCF 接受 Containerd、rkt项目，OCI 发布 1.0，CRI/CNI 得到广泛支持。</li>
-<li><input disabled="" type="checkbox"> 2017 年 - 2018 年，容器服务商业化。AWS ECS，Google EKS，Alibaba ACK/ASK/ECI，华为 CCI，Oracle Container Engine for Kubernetes；VMware，Redhat 和 Rancher 开始提供基于 Kubernetes 的商业服务产品。</li>
-<li><input disabled="" type="checkbox"> 2017 年 - 2019 年，容器引擎技术飞速发展，新技术不断涌现。2017 年底 Kata Containers 社区成立，2018 年 5 月 Google 开源 gVisor 代码，2018 年 11 月 AWS 开源 firecracker，阿里云发布安全沙箱 1.0。</li>
-<li><input disabled="" type="checkbox"> 2020 年 - 202x 年，容器引擎技术升级，Kata Containers 开始 2.0 架构，阿里云发布沙箱容器 2.0….</li>
+<li><input disabled type="checkbox"> 1979 年，Unix v7 系统支持 chroot，为应用构建一个独立的虚拟文件系统视图。</li>
+<li><input disabled type="checkbox"> 1999 年，FreeBSD 4.0 支持 jail，第一个商用化的 OS 虚拟化技术。</li>
+<li><input disabled type="checkbox"> 2004 年，Solaris 10 支持 Solaris Zone，第二个商用化的 OS 虚拟化技术。</li>
+<li><input disabled type="checkbox"> 2005 年，OpenVZ 发布，非常重要的 Linux OS 虚拟化技术先行者。</li>
+<li><input disabled type="checkbox"> 2004 年 ~ 2007 年，Google 内部大规模使用 Cgroups 等的 OS 虚拟化技术。</li>
+<li><input disabled type="checkbox"> 2006 年，Google 开源内部使用的 process container 技术，后续更名为 cgroup。</li>
+<li><input disabled type="checkbox"> 2008 年，Cgroups 进入了 Linux 内核主线。</li>
+<li><input disabled type="checkbox"> 2008 年，LXC（Linux Container）项目具备了 Linux 容器的雏型。</li>
+<li><input disabled type="checkbox"> 2011 年，CloudFoundry 开发 Warden 系统，一个完整的容器管理系统雏型。</li>
+<li><input disabled type="checkbox"> 2013 年，Google 通过 Let Me Contain That For You (LMCTFY) 开源内部容器系统。</li>
+<li><input disabled type="checkbox"> 2013 年，Docker 项目正式发布，让 Linux 容器技术逐步席卷天下。</li>
+<li><input disabled type="checkbox"> 2014 年，Kubernetes 项目正式发布，容器技术开始和编排系统起头并进。</li>
+<li><input disabled type="checkbox"> 2015 年，由 Google，Redhat、Microsoft 及一些大型云厂商共同创立了 CNCF，云原生浪潮启动。</li>
+<li><input disabled type="checkbox"> 2016 年 - 2017 年，容器生态开始模块化、规范化。CNCF 接受 Containerd、rkt项目，OCI 发布 1.0，CRI/CNI 得到广泛支持。</li>
+<li><input disabled type="checkbox"> 2017 年 - 2018 年，容器服务商业化。AWS ECS，Google EKS，Alibaba ACK/ASK/ECI，华为 CCI，Oracle Container Engine for Kubernetes；VMware，Redhat 和 Rancher 开始提供基于 Kubernetes 的商业服务产品。</li>
+<li><input disabled type="checkbox"> 2017 年 - 2019 年，容器引擎技术飞速发展，新技术不断涌现。2017 年底 Kata Containers 社区成立，2018 年 5 月 Google 开源 gVisor 代码，2018 年 11 月 AWS 开源 firecracker，阿里云发布安全沙箱 1.0。</li>
+<li><input disabled type="checkbox"> 2020 年 - 202x 年，容器引擎技术升级，Kata Containers 开始 2.0 架构，阿里云发布沙箱容器 2.0….</li>
 </ul>
 <h2 id="docker优点"><a href="#docker优点" class="headerlink" title="docker优点"></a><strong>docker优点</strong></h2><p>Docker 是开发人员和系统管理员使用容器开发，部署和运行应用程序的平台。使用Linux容器部署应用程序称为容器化。<br>容器化越来越受欢迎，因为容器是：<br>    1、灵活：即使是最复杂的应用也可以集装箱化<br>    2、轻量级：容器利用并共享主机内核<br>    3、可互换：您可以即时部署更新和升级<br>    4、便携带：您可以在本地构建，部署到云，并在任何地方运行。<br>    5、可扩展：您可以增加并自动分发容器副本<br>    6、可堆叠：您可以垂直和即时堆叠服务</p>
 <h2 id="docker架构"><a href="#docker架构" class="headerlink" title="docker架构"></a><strong>docker架构</strong></h2><p><img src="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" class="lazyload placeholder" data-srcset="https://lh3.googleusercontent.com/proxy/VkcBhgL489Gb-86DtTKhEDUuOE0YzTuut7K5jv2Emnkb8tBeiennaQUIdnFwfPLQo7v2u-WEV6Qy06hWstYizYgIFkDgir0dc5K7o0rYeOUWthBllodY5Sag_iW0VNvyp5s" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="架构">)</p>

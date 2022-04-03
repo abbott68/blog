@@ -717,7 +717,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p><font size= "5" color= green >MySQL8.0.25 源码编译部署</Font></p>
+        <p><font size="5" color="green">MySQL8.0.25 源码编译部署</font></p>
 <span id="more"></span>
 <h1 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h1><ul>
 <li>centos 8.3</li>
@@ -725,7 +725,7 @@
 <li>gcc版本：<ul>
 <li>7系列系统默认GCC版本低不支持安装MySQL8以上版本的数据，需要升级GCC版本，</li>
 <li>8系列版本的系统不需要升级GCC</li>
-<li>如果需要如何升级 <a href="">点这</a></li>
+<li>如果需要如何升级 <a href>点这</a></li>
 </ul>
 </li>
 </ul>
@@ -750,7 +750,7 @@
 -DSYSCONFDIR&#x3D;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;3306  \
 -DFORCE_INSOURCE_BUILD&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><font size="4" color="red" >报错:</font></p>
+<p><font size="4" color="red">报错:</font></p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">一、警告不要在源码中构建
 CMake Error at CMakeLists.txt:382 (MESSAGE):
   Please do not build in-source.  Out-of source builds are highly
@@ -852,7 +852,7 @@ affiliates. Other names may be trademarks of their respective
 owners.
 mysql&gt; show databases;
 ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font size="3" color='red'>ERROR报错:{需要重置密码}</Font></p>
+<p><font size="3" color="red">ERROR报错:{需要重置密码}</font></p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;123456&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
       </div>

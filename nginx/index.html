@@ -680,7 +680,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 9.7k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 9.8k |
           </span>
   
           <span class="min2read">
@@ -744,8 +744,8 @@
 <blockquote>
 <p>   stop — fast shutdown  &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;# 快速关机<br>   quit — graceful shutdown    &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; &#160;#  优雅关机<br>    reload — reloading the configuration file  &#160; &#160; # 重新加载配置文件<br>    reopen — reopening the log files &#160; &#160; &#160;&#160; &#160; &#160;&#160; &#160; # 重新代开日志文件</p>
 </blockquote>
-<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color=#A52A2A>查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color=#A52A2A>搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
+<h4 id="查看服务-默认是80端口"><a href="#查看服务-默认是80端口" class="headerlink" title="查看服务:默认是80端口"></a><font color="#A52A2A">查看服务:默认是80端口</font></h4><pre class="line-numbers language-none"><code class="language-none">ps -ax | grep nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="搭建虚拟主机"><a href="#搭建虚拟主机" class="headerlink" title="搭建虚拟主机"></a><font color="#A52A2A">搭建虚拟主机</font></h2><h4 id="创建虚拟主机配置文件"><a href="#创建虚拟主机配置文件" class="headerlink" title="创建虚拟主机配置文件"></a>创建虚拟主机配置文件</h4><pre class="line-numbers language-none"><code class="language-none"># mkdir &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;&#123;gtxi,gtjb&#125;
 # echo &quot;gongtongxuexi.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtxi&#x2F;index.html
 # echo &quot;gongtongjinbu.com&quot; &gt; &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;gtjb&#x2F;index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h4 id="编辑配置文件："><a href="#编辑配置文件：" class="headerlink" title="编辑配置文件："></a>编辑配置文件：</h4><p>配置文件所在位置 /usr/local/nginx/conf/nginx.conf<br>在配置文件定义虚拟主机加入:</p>
@@ -817,7 +817,7 @@ server &#123;
  4XX：代表客户端错误信息
  5xx:代表服务器错误信息
 </code></pre>
-<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color=#A52A2A>Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
+<h2 id="Nginx实现反向代理"><a href="#Nginx实现反向代理" class="headerlink" title="Nginx实现反向代理"></a><font color="#A52A2A">Nginx实现反向代理</font></h2><h3 id="代理服务器"><a href="#代理服务器" class="headerlink" title="代理服务器"></a>代理服务器</h3><p>1、什么是代理服务器<br>代理服务器，客户机在发送请求时，不会直接发送给目的主机，而是先发送给代理服务器，代理服务接受客户机请求之后，再向主机发出，并接收目的主机返回的数据，存放在代理服务器的硬盘中，再发送给客户机。<br>2、为什么要使用代理服务器<br>1）提高访问速度<br>由于目标主机返回的数据会存放在代理服务器的硬盘中，因此下一次客户再访问相同的站点数据时，会直接从代理服务器的硬盘中读取，起到了缓存的作用，尤其对于热门站点能明显提高请求速度。<br>2）防火墙作用<br>    由于所有的客户机请求都必须通过代理服务器访问远程站点，因此可在代理服务器上设限，过滤某些不安全信息。<br>3）通过代理服务器访问不能访问的目标站点<br>    互联网上有许多开发的代理服务器，客户机在访问受限时，可通过不受限的代理服务器访问目标站点，通俗说，我们使用的翻墙浏览器就是利用了代理服务器，虽然不能出国，但也可直接访问外网。</p>
 <h3 id="反向代理-VS-正向代理"><a href="#反向代理-VS-正向代理" class="headerlink" title="反向代理 VS 正向代理"></a>反向代理 VS 正向代理</h3><p>1、什么是正向代理？什么是反向代理？</p>
 <p>   正向代理，架设在客户机与目标主机之间，只用于代理内部网络对Internet的连接请求，客户机必须指定代理服务器,并将本来要直接发送到Web服务器上的http请求发送到代理服务器中。</p>
 <p>  反向代理服务器架设在服务器端，通过缓冲经常被请求的页面来缓解服务器的工作量，将客户机请求转发给内部网络上的目标服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器与目标主机一起对外表现为一个服务器。</p>

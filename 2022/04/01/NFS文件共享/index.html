@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | abbott Blog</title>
+  <title>NFS文件共享 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -629,280 +629,573 @@
     <!-- 内容区域 -->
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   
-  <span class="title" id="archive-header-desc"></span>
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/14.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        NFS文件共享
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-04-01 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/Linux%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              Linux系列
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 5.7k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 5 mins.分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="NFS-文件共享"><a href="#NFS-文件共享" class="headerlink" title="NFS 文件共享"></a>NFS 文件共享</h1><hr>
+<h2 id="NFS介绍"><a href="#NFS介绍" class="headerlink" title="NFS介绍"></a><strong>NFS介绍</strong></h2><ul>
+<li>NFS（Network File System，网络文件系统）是当前主流异构平台共享文件系统之一。主要应用在UNIX环境下。最早是由Sun Microsystems开发，现在能够支持在不同类型的系统之间通过网络进行文件共享，广泛应用在FreeBSD、SCO、Solaris等异构操作系统平台，允许一个系统在网络上与他人共享目录和文件。通过使用NFS，用户和程序可以像访问本地文件一样访问远端系统上的文件，使得每个计算机的节点能够像使用本地资源一样方便地使用网上资源。换言之，NFS可用于不同类型计算机、操作系统、网络架构和传输协议运行环境中的网络文件远程访问和共享。</li>
+<li>网络文件系统（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/NFS/812203">NFS</a>）从1984 年问世以来持续演变，并已成为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/1250388">分布式文件系统</a>的基础;</li>
+</ul>
+<p><img src="/images/NFS.jpg" class="lazyload placeholder" data-srcset="/images/NFS.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="NFS"></p>
+<h2 id="NFS-实现原理"><a href="#NFS-实现原理" class="headerlink" title="NFS 实现原理"></a>NFS 实现原理</h2><p>NFS服务器启动后，都会开启对客户端连接对应的端口号，端口号的范围是1~1024，但每次启动NFS服务器，相应服务器端口号都各不相同。为了确保客户端每次都能正确的连接到NFS服务器上，NFS通过一个远程过程调用（Remote  Procedure Call ,RPC ）的协议来协助NFS 服务器完成连接，程序可以通过使用这种协议向网络中另一台计算机上的程序请求服务，在NFS中，RPC最主要的功能就是指定并监听NFS守护进程对应的端口号，并将端口信息通知给客户端，让客户端可以连接到正确端口上来，因此也可以说，NFS是一个RPC服务器。需要注意的是，远程挂载NFS服务器的本地主机也需要同步启动RPC协议。</p>
+<p>要使用NFS服务器，需要在NFS服务端至少启用两个系统守护进程（daemons）,分别是rpc.nfsd 和rpc.mountd。</p>
+<h2 id="NFS-服务搭建"><a href="#NFS-服务搭建" class="headerlink" title="NFS 服务搭建"></a><strong>NFS 服务搭建</strong></h2><ul>
+<li><p>安装NFS软件包</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@nfs ~]# yum -y install nfs-uils rpcbind<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建共享目录，并设置足够的权限</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@nfs ~]# mkdir  &#x2F;opt&#x2F;nfsfile
+[root@nfs ~]# chmod -Rf 777 &#x2F;opt&#x2F;nfsfile&#x2F;
+[root@nfs ~]# echo &quot;welcome to linux&quot; &gt; &#x2F;opt&#x2F;nfsfile&#x2F;README<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>修改NFS主配置文件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@nfs ~]# vim &#x2F;etc&#x2F;exports
+&#x2F;opt&#x2F;nfsfile 172.16.59.*(rw,sync,roo_squash)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>共享资源路径：就是要共享出来的目录或者磁盘分区。</p>
+<p>主机地址：设置允许使用NFS服务器共享资源的客户端主机地址，主机地址可以是主机名、域名、IP地址等，支持匹配</p>
+<p>选项：下面是各个选项的含义。</p>
+<ul>
+<li>ro: 既 read only也就是客户端主机对共享咨询仅有读权限。</li>
+<li>rw: 即 read  write， 也就是可短短主机对共享资源有读、写权限。</li>
+<li>no_root_squash: 信任客户端，根据用户UID进行判断，如果登陆NFS主机的用户是ROOT，那么次用就拥有对共享资源的最高权限。此参数不安全，建议不要使用。</li>
+<li>root_squash: 不管登陆NFS主机的是什么用户，都会将共享文件的UID和GID 隐射到匿名用户 nfsnobody.</li>
+<li>no_all_squash: 系统预设值，保留共享文件的UID和GID默认权限。</li>
+<li>anonuid: 将登入NFS主机的用户都设定成指定的UID，此UID必须在于NFS服务端/etc/passwd中。</li>
+<li>anongid: 与anonuid 含义类似，但是编程GIDle，即用户组ID 。</li>
+<li>sync：资料同步写入磁盘中，默认选择</li>
+<li>aync: 资料会先暂时存放在内存中，不会直接写入硬盘。</li>
+</ul>
+</blockquote>
+</li>
+<li><p>启动服务</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@nfs ~]# systemctl start nfs rpcbind
+[root@nfs ~]# systemctl enable nfs rpcbind<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="客户端访问"><a href="#客户端访问" class="headerlink" title="客户端访问"></a>客户端访问</h2><p> Linux客户端</p>
+<p>  发现服务器上共享信息</p>
+  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@promethues ~]# showmount -e 172.16.59.191
+Export list for 172.16.59.191:
+&#x2F;opt&#x2F;nfsfile 172.16.59.196<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>挂载并使用</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@promethues ~]# mount 172.16.59.191:&#x2F;opt&#x2F;nfsfile &#x2F;opt&#x2F;nfs191&#x2F;
+[root@promethues ~]# df -h
+文件系统                    容量  已用  可用 已用% 挂载点
+172.16.59.191:&#x2F;opt&#x2F;nfsfile   18G  1.7G   17G   10% &#x2F;opt&#x2F;nfs191
+[root@promethues ~]# cd &#x2F;opt&#x2F;nfs191&#x2F;
+[root@promethues nfs191]# ls
+README
+[root@promethues nfs191]# touch  abc
+[root@promethues nfs191]# ll
+总用量 4
+-rw-r--r--. 1 root root  0 3月  30 22:56 abc
+-rw-r--r--. 1 root root 17 3月  30 22:22 README<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>windows 客户端</p>
+<blockquote>
+<p>打开 控制面板 —&gt; 程序 —&gt; 启用或关闭Windows功能 </p>
+<p>或者</p>
+<p>也可以用【Win+R】运行，复制输入以下命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OptionalFeatures<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<img src="/Users/abbott/Library/Application Support/typora-user-images/image-20220330231532283.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20220330231532283.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330231532283" style="zoom:50%;">
+
+<blockquote>
+<p>mount IP:/nfsroot X:    (IP为NFS服务器得IP，/nfsroot为你挂载得目录路径)</p>
+</blockquote>
+<img src="~/work list/blog/source/images/g" class="lazyload placeholder" data-srcset="~/work list/blog/source/images/g" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330234439410" style="zoom:50%;">
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/" class="">
+              文件共享
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2022/04/01/NFS文件共享/" target="_blank" title="NFS文件共享">https://abbott68.github.io/blog/2022/04/01/NFS文件共享/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/blog/2022/04/01/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">磁盘管理</div>
+      </div>
+      
+      <!-- <div class="content">
+        Linux磁盘基本管理在Linux系统中，如何有效地对磁盘存储空间加以使用和管理，是一项非常重要的技术，本章节从四个方面
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/blog/2022/03/24/Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Linux网络配置</div>
+      </div>
+      <!-- <div class="content">
+        linux 服务器网络配置​    本章主要讲解Linux系统下关于网络的一些基础知识和系统出现网络问题时的应对策略，详
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
   <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
 </script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/blog/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
 </script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/blog/archives/2021">2021</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/6.jpg" class="lazyload placeholder" data-srcset="/blog/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-04</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/04/Zabbix%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7/">Zabbix分布式监控</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/04/%E5%AE%89%E8%A3%85Docker/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/15.jpg" class="lazyload placeholder" data-srcset="/blog/medias/15.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-04</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/04/%E5%AE%89%E8%A3%85Docker/">安装Docker</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/5.jpg" class="lazyload placeholder" data-srcset="/blog/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-04</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/04/Docker%E5%88%9D%E5%A7%8B/">Docker初始</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/02/MacbookPor-m1/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-02</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/02/MacbookPor-m1/">MacbookPor-m1</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/5.jpg" class="lazyload placeholder" data-srcset="/blog/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-24</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/24/%E8%AE%A4%E8%AF%86Kubernetes/">认识Kubernetes</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/10.jpg" class="lazyload placeholder" data-srcset="/blog/medias/10.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-23</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">Linux安装软件</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/8.jpg" class="lazyload placeholder" data-srcset="/blog/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-23</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Linux常用命令</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/1.jpg" class="lazyload placeholder" data-srcset="/blog/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-23</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/23/Linux%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BD%BF%E7%94%A8/">Linux控制台的使用</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-06</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/">mysql5.7主从复制-异步</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/6.jpg" class="lazyload placeholder" data-srcset="/blog/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-01</span>
-              </div>
-              <a class="post-title" href="/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/">MySQL数据库客户端配置prompt参数</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/blog/archives/">上一页</a><a class="page-number" href="/blog/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/archives/page/3/">3</a><a class="page-number" href="/blog/archives/page/4/">4</a><a class="extend next" rel="next" href="/blog/archives/page/3/">下一页</a>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/blog/archives/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">2 / 4</div>
-    </div>
-    
-      <a href="/blog/archives/page/3/"
-         class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
-
-  </div>
-</div>
 
       </main>
     </div>
