@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://abbott68.github.io/blog/2022/04/03/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/</loc>
+    
+    <lastmod>2022-04-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://abbott68.github.io/blog/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/index.html</loc>
+    
+    <lastmod>2022-04-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://abbott68.github.io/blog/2022/04/01/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/</loc>
     
     <lastmod>2022-04-01</lastmod>
@@ -382,14 +396,14 @@
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
+    <loc>https://abbott68.github.io/blog/tags/Web/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/tags/Web/</loc>
+    <loc>https://abbott68.github.io/blog/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -489,14 +503,14 @@
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
+    <loc>https://abbott68.github.io/blog/categories/web%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://abbott68.github.io/blog/categories/web%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://abbott68.github.io/blog/categories/%E8%87%AA%E5%8A%A8%E5%8C%96/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

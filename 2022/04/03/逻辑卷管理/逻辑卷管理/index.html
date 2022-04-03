@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MySQL数据库客户端配置prompt参数 | abbott Blog</title>
+  <title>逻辑卷管理 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -657,21 +657,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/blog/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/blog/medias/12.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        MySQL数据库客户端配置prompt参数
+        逻辑卷管理
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-01 |
+          <i class="fas fa-calendar"></i> 发表于：2022-04-03 |
         </span>
       
 
@@ -679,8 +679,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-detail-header_category">
-              数据库
+            <a href="/blog/categories/Linux%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              Linux系列
             </a>
           
         </span>
@@ -689,11 +689,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3.8k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 20k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 3 mins.分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 18 mins.分钟 |
           </span>
   
           
@@ -717,153 +717,418 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#49;&#x37;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#x35;&#57;&#46;&#x31;&#x33;&#51;">&#x64;&#x65;&#x76;&#49;&#64;&#49;&#x37;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#x35;&#57;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
-<p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
-<p>默认的 mysql 提示很简单：</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <h1 id="逻辑卷管理"><a href="#逻辑卷管理" class="headerlink" title="逻辑卷管理"></a><strong>逻辑卷管理</strong></h1><h2 id="LVM"><a href="#LVM" class="headerlink" title="LVM"></a>LVM</h2><h2 id="一、-LVM-的基本概念"><a href="#一、-LVM-的基本概念" class="headerlink" title="一、 LVM 的基本概念"></a>一、 LVM 的基本概念</h2><p>在对磁盘进行分区大小规划时，有时往往不能确定这个分区要使用的总空间大小，而用fdisk对磁盘分区后，每个分区的大小已经固定了，如果分区设置得过大，就白白浪费了磁盘空间，而分区设置得过小，就会导致空间不够用的情形。此时最常见的方法是重新规划磁盘分区，或者通过软链接的方式将此分区的目录链接到另一个分区，虽然这能临时解决问题，但是给管理带来了麻烦。如何解决这写问题呢？LVM是一个错的方法。</p>
+<p>LVM（Logical Volume Manager,逻辑卷管理器）是Linux下对磁盘分区进行管理的一种机制。LVM建立在磁盘分区和文件系统之间的一个逻辑层，管理员利用LVM可以在磁盘不用重新分区的情况下动态调整分区的大小。如果系统新增一块硬盘。通过LVM就可以将新增的硬盘空间直接扩展到原来的磁盘分区上。</p>
+<h2 id="二、LVM中的术语"><a href="#二、LVM中的术语" class="headerlink" title="二、LVM中的术语"></a>二、LVM中的术语</h2><p>通过LVM，屏蔽了磁盘分区的底层差异，在逻辑上给文件系统提供了一个卷的概念，然后再这些卷上建立相应的文件系统。在认识LVM之前，先熟悉LVM中几个常用的术语，即在LVM中涉及的几个概念。</p>
+<ul>
+<li>物理存储设备（physical media）: 指系统的存储设备文件，如/dev/sda、/dev/hdb等；</li>
+<li>物理卷（Physical Volume, PV ）：指硬盘分区或者从逻辑上看和硬盘分区类似的设备（如：RAID设备）</li>
+<li>卷组（Volume Group， VG）：类似于非LVM 系统中的物理硬盘，一个LVM卷组由一个或多个物理卷组成。</li>
+<li>逻辑卷（Logical Volume，LV1）：类似于LVM系统中的硬盘分区，LV建立在VG上，可以在LV上创建文件系统。</li>
+<li>PE （Physical Extent ,PE )：PV中可以分配的最小存储单元称为PE。PE的大小是可以指定的，默认为4MB。</li>
+<li>LE （Logical Extent， LE）：LV 中可以分配的最小单元称为LE。在同一卷组中，LE的大小和PE是一样的，且一一对应。</li>
+</ul>
+<p>下面是LVM各个组成部分之间的对应关系</p>
+<p><img src="/source/_posts/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/images/LVM.jpg" class="lazyload placeholder" data-srcset="/source/_posts/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/images/LVM.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="LVM"></p>
+<h2 id="三、LVM的创建与管理"><a href="#三、LVM的创建与管理" class="headerlink" title="三、LVM的创建与管理"></a>三、LVM的创建与管理</h2><p>1、创建物理分区</p>
+<p>在使用LVM之前，需要首先划分磁盘分区，也就是用fdisk命令划分磁盘分区，划分的方法在之前已经讲解过，稍微不同的是，在创建分区的时候，需要指定分区类型为 Linux LVM，对应的ID为8e（其实LVM也能识别Linux默认的分区类型83）。分区如下。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>很好很简单，但是如果您打开了多个 mysql 客户端窗口，则可能很难知道哪个窗口连接到哪个用户和数据库。更改显示数据库和用户的提示可以更容易地快速判断哪个窗口连接到哪个客户端和数据库。</p>
-<h4 id="更改-mysql-提示"><a href="#更改-mysql-提示" class="headerlink" title="更改 mysql 提示"></a>更改 mysql 提示</h4><blockquote>
-<p>要更改提示，请打开您的 MySQL <strong>my.cnf</strong>（或<strong>my.ini，</strong>如果您使用的是 Windows）并在 [mysql] 部分添加以下行。如果该文件没有，请通过添加以下行来创建它。</p>
+<p>2、创建物理卷</p>
+<p>创建物理卷（PV）的命令是pvcreate</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pvcreate 磁盘分区或整个磁盘<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例：将划分的所有磁盘分区创建为物理卷</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pvcreate &#x2F;dev&#x2F;sdb1 &#x2F;dev&#x2F;sdb2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3、创建卷组</p>
+<p>创建卷组（VG）的命令是vgcreate</p>
+<p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgcreate myvgl &#x2F;dev&#x2F;sdb1 &#x2F;dev&#x2F;sdb2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4、激活卷组</p>
+<p>卷组（VG）创建完毕后，可以通过vgchange命令激活卷组，而无线重启系统。</p>
+<ul>
+<li><p>命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgchange<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgchange -a y 卷组名   #激活卷组
+vgchange -a n 卷组名   #停用卷组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>激活卷组myvg1</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgchang -a y myvg1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>5、显示卷组、物理卷属性信息</p>
+<p>vgdisplay 用户显示创建的卷组信息，同理pvdisplay 命令用户显示物理卷组信息。</p>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgdisplay 卷组名
+pvdisplay 物理卷名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>示例：查看创建的卷组</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgdisplay myvg1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>6、创建逻辑卷</p>
+<p>创建逻辑卷（LV）命令是lvcreate</p>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lvcreate [-L 逻辑卷大小 | -l PE数] -n 逻辑卷名称   所属的卷组名
+
+-L 后面接逻辑卷的大小，可以用K、M、G表示。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>示例：在myvg1下创建两个逻辑卷mylv1 和mylv2</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lvcreate -L 4G -n mylv1 myvgl
+#检查卷组myvg1 中可用的卷组空间
+vgdisplay myvg1 | grep &quot;Free PE&quot;   
+#再次分<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>7、格式化逻辑卷，创建文件系统</p>
+<p>文件系统是创建在逻辑卷上的。这里假定使用linux默认的xfs文件系统。</p>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkfs.xfs &#x2F;dev&#x2F;myvg1&#x2F;mylv1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>8、添加新的物理卷到卷组</p>
+<p>添加新的物理卷到卷组的命令为vgextend.</p>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">vgextend 卷组名 新加入的物理卷<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pvcreate &#x2F;dev&#x2F;sd3    #先将分区转换为物理卷
+vgextend   myvg1 &#x2F;dev&#x2F;sdb3           #将新增物理卷添加到卷组中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li></li>
+</ul>
+<p>9、修改逻辑卷的大小</p>
+<p>LVM 最主要的功能就是能动态调整分区的大小，其实也就是修改逻辑卷的大小。</p>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lvextend     #扩展逻辑卷
+lvreduce     #缩减逻辑卷
+ext2resize   #修改文件系统大小
+
+#语法
+lvextend [-L (+size) -l [+PE数]] 逻辑卷名称
+lvreduce [-L (-size) -l [-PE数]] 逻辑卷名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>修改逻辑卷分为扩充逻辑卷大小和减少逻辑卷大小两种情况。</p>
 </blockquote>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[ mysql ]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-l:与-L 用法相同，不同的是 -l 选项用PE数来表示逻辑卷的大小<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>示例1：以文件系统是ext2/ext3/ext4，可以通过resize2fs来扩充文件系统</p>
+<ol>
+<li><p>扩充逻辑卷 </p>
+<ul>
+<li><p>命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">利用扩展逻辑卷命令lvextend扩展逻辑空间
+利用resize2fs命令扩展文件系统<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lvextend  -L +2G &#x2F;dev&#x2F;myvg1&#x2F;myvg
+resiza2fs &#x2F;dev&#x2F;myvg1&#x2F;myvg  #更新逻辑卷大小<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>验证:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">df -h<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>减少逻辑卷</p>
+<blockquote>
+<ol>
+<li>卸载已经挂载的逻辑卷分区</li>
+<li>利用resize2fs指令修改文件系统大小以实现空间缩减。</li>
+<li>利用减少逻辑卷命令lvreduce减少逻辑卷空间。</li>
+<li>挂载缩减后的逻辑分区。</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">resize2fs &#x2F;dev&#x2F;myvg1&#x2F;myvg 5G    #缩减逻辑卷大小
+e2fsck -f &#x2F;dev&#x2F;myvg1&#x2F;myvg       #检查逻辑卷
+resize2fs &#x2F;dev&#x2F;myvg1&#x2F;myvg 5G    #再次执行缩减命令
+lvreduce -L -2G  &#x2F;dev&#x2F;myvg1&#x2F;myvg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>示例2：以xfs 文件系统为例</p>
+<ol>
+<li><p>扩充逻辑卷空间</p>
+<blockquote>
+<p>利用扩展逻辑卷命令lvextend扩展逻辑卷空间</p>
+<p>利用xfs_growfs指令修改xfs文件系统大小以实现空间扩充</p>
+</blockquote>
+<ul>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">lvextend -l +1023 &#x2F;dev&#x2F;myvg1&#x2F;myvg     # -l:选项是扩充PE数， 或者使用 -L 选项 +4G
+xfs_growfs &#x2F;myvg      #执行xfs_growfs命令，是扩充的大小生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>10、如何删除物理卷、卷组和逻辑卷</p>
+<ul>
+<li><p>删除物理卷</p>
+<p>命令：pvremove</p>
+</li>
+<li><p>将物理卷从卷组移出</p>
+<p>命令：vgreduce</p>
+</li>
+<li><p>删除卷组</p>
+<p>命令：vgremove</p>
+</li>
+<li><p>删除逻辑卷</p>
+<p>命令： lvremove </p>
+</li>
+</ul>
+<p>删除的步骤：</p>
+<blockquote>
+<p>卸载逻辑卷分区—&gt; 删除卷组上所有的逻辑卷—&gt;删除卷组</p>
+</blockquote>
+<p>命令语法：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">umount     #卸载逻辑卷对应的分区
+lvremove   &#x2F;dev&#x2F;myvg1&#x2F;myvg   #删除逻辑卷
+vgreduce   myvg1 &#x2F;dev&#x2F;sdb1   #从卷组中移出一个物理卷
+pvgremove  &#x2F;dev&#x2F;sdb1         #删除物理卷
+vgremove   myvg1 #删除卷组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>在上述行之后添加以下选项。</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">prompt&#x3D;\u@\h: [ \d ]&gt; \_<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>‘\u’ 和 ‘\h’ 分别显示用户名和主机名。’\d’ 显示选择的默认数据库。重启客户端会显示修改后的提示，下面是我机器上的样子。’wordpress’ 是我的默认数据库。</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">codediesel@localhost: [ wordpress ]&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>如果您不想更改<strong>my.ini</strong>文件或无法更改，您还可以如下所示以交互方式更改提示。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">shell &gt; mysql --prompt&#x3D; &quot;\u@\h:[\d]&gt;\_&quot; -uUSERNAME -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>下列出prompt参数的完整选项清单：</p>
-<h4 id="选项列表"><a href="#选项列表" class="headerlink" title="选项列表"></a>选项列表</h4><p>‘prompt’ 参数支持多种选项，完整列表如下表所示。</p>
-<table>
-<thead>
-<tr>
-<th><code>\c</code></th>
-<th>为您发出的每个语句递增的计数器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>\D</code></td>
-<td>完整的当前日期</td>
-</tr>
-<tr>
-<td><code>\d</code></td>
-<td>默认数据库</td>
-</tr>
-<tr>
-<td><code>\h</code></td>
-<td>服务器主机</td>
-</tr>
-<tr>
-<td><code>\l</code></td>
-<td>当前分隔符（5.0.25 中的新增功能）</td>
-</tr>
-<tr>
-<td><code>\m</code></td>
-<td>当前时间的分钟</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>换行符</td>
-</tr>
-<tr>
-<td><code>\O</code></td>
-<td>三字母格式的当前月份（一月，二月，…）</td>
-</tr>
-<tr>
-<td><code>\o</code></td>
-<td>数字格式的当前月份</td>
-</tr>
-<tr>
-<td><code>\P</code></td>
-<td>上午下午</td>
-</tr>
-<tr>
-<td><code>\p</code></td>
-<td>当前 TCP/IP 端口或套接字文件</td>
-</tr>
-<tr>
-<td><code>\R</code></td>
-<td>当前时间，采用 24 小时军用时间 (0–23)</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>当前时间，标准 12 小时制 (1-12)</td>
-</tr>
-<tr>
-<td><code>\S</code></td>
-<td>分号</td>
-</tr>
-<tr>
-<td><code>\s</code></td>
-<td>当前时间的秒数</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>一个制表符</td>
-</tr>
-<tr>
-<td><code>\U</code></td>
-<td>您的完整 user_name@host_name 帐户名称</td>
-</tr>
-<tr>
-<td><code>\u</code></td>
-<td>您的用户名</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>服务器版本</td>
-</tr>
-<tr>
-<td><code>\w</code></td>
-<td>以三字母格式表示的当前日期（周一、周二、…）</td>
-</tr>
-<tr>
-<td><code>\Y</code></td>
-<td>当前年份，四位数</td>
-</tr>
-<tr>
-<td><code>\y</code></td>
-<td>当前年份，两位数</td>
-</tr>
-<tr>
-<td><code>\_</code></td>
-<td>空间</td>
-</tr>
-<tr>
-<td><code>\</code></td>
-<td>一个空格（反斜杠后面有一个空格）</td>
-</tr>
-<tr>
-<td><code>\&#39;</code></td>
-<td>单引号</td>
-</tr>
-<tr>
-<td><code>\&quot;</code></td>
-<td>双引号</td>
-</tr>
-<tr>
-<td><code>\\</code></td>
-<td>文字“ <code>\</code>”反斜杠字符</td>
-</tr>
-<tr>
-<td><code>\*</code>x<code>*</code></td>
-<td>x，对于上面未列出的任何“x”</td>
-</tr>
-</tbody></table>
+
+<h1 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h1><p>创建LVM  （新添加两块磁盘）</p>
+<p>1、 分区修改为linux lvm </p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# fdisk &#x2F;dev&#x2F;sdc 
+欢迎使用 fdisk (util-linux 2.23.2)。
+&#96;&#96;&#96;略过。。。。
+#修改为LVM
+命令(输入 m 获取帮助)：t 
+分区号 (1-3，默认 3)：
+Hex 代码(输入 L 列出所有代码)：8e
+已将分区“Linux”的类型更改为“Linux LVM”
+#查看磁盘分区详细信息
+命令(输入 m 获取帮助)：p
+
+磁盘 &#x2F;dev&#x2F;sdc：21.5 GB, 21474836480 字节，41943040 个扇区
+Units &#x3D; 扇区 of 1 * 512 &#x3D; 512 bytes
+扇区大小(逻辑&#x2F;物理)：512 字节 &#x2F; 512 字节
+I&#x2F;O 大小(最小&#x2F;最佳)：512 字节 &#x2F; 512 字节
+磁盘标签类型：dos
+磁盘标识符：0xdbe8ffae
+
+   设备 Boot      Start         End      Blocks   Id  System
+&#x2F;dev&#x2F;sdc1            2048    10487807     5242880   8e  Linux LVM
+&#x2F;dev&#x2F;sdc2        10487808    20973567     5242880   8e  Linux LVM
+&#x2F;dev&#x2F;sdc3        20973568    31459327     5242880   8e  Linux LVM
+
+命令(输入 m 获取帮助)：w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+正在同步磁盘。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2、创建物理卷</p>
+<ul>
+<li>命令：pvcreate</li>
+<li>语法:  pvcreate  物理分区或者整个磁盘</li>
+</ul>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# pvcreate &#x2F;dev&#x2F;sdb1 &#x2F;dev&#x2F;sdb2 &#x2F;dev&#x2F;sdb3 &#x2F;dev&#x2F;sdc1 &#x2F;dev&#x2F;sdc2 &#x2F;dev&#x2F;sdc3
+  Physical volume &quot;&#x2F;dev&#x2F;sdb1&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdb2&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdb3&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdc1&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdc2&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdc3&quot; successfully created.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>3、创建卷组</p>
+<ul>
+<li><p>命令：vgcreate </p>
+</li>
+<li><p>语法： <strong>vgcreate</strong> <strong>myvg</strong> <strong>/dev/sdk1</strong> <strong>/dev/sdl1</strong></p>
+</li>
+<li><p>示例：创建两个VG 组名myvg1| myvg2</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# vgcreate myvg1 &#x2F;dev&#x2F;sdb1 &#x2F;dev&#x2F;sdb2 &#x2F;dev&#x2F;sdc1
+  Volume group &quot;myvg1&quot; successfully created
+[root@localhost ~]# vgcreate myvg2 &#x2F;dev&#x2F;sdb3 &#x2F;dev&#x2F;sdc2 &#x2F;dev&#x2F;sdc3
+  Volume group &quot;myvg2&quot; successfully created<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>4、激活卷组</p>
+<ul>
+<li><p>命令：vgchange </p>
+</li>
+<li><p>语法：<strong>vgchange -a y</strong></p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# vgchange -a y myvg1
+  0 logical volume(s) in volume group &quot;myvg1&quot; now active
+[root@localhost ~]# vgchange -a y myvg2
+  0 logical volume(s) in volume group &quot;myvg2&quot; now active
+[root@localhost ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>5、查看卷组及物理卷信息</p>
+<ul>
+<li><p>命令：  vgdisplay  #查看卷组的信息   pvdisplay #显示物理卷的信息</p>
+</li>
+<li><p>语法：  vgdisplay   卷组的名称         pvdisplay   物理卷的名称</p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# vgdisplay myvg1
+[root@localhost ~]# vgdisplay myvg2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>查看物理卷信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# pvdisplay &#x2F;dev&#x2F;sdb1  &#x2F;dev&#x2F;sdb2 &#x2F;dev&#x2F;sdb3
+  --- Physical volume ---
+  PV Name               &#x2F;dev&#x2F;sdb3   
+  VG Name               myvg2
+  PV Size               5.00 GiB &#x2F; not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1279
+  Free PE               1279
+  Allocated PE          0
+  PV UUID               aCuebD-0oDi-zxrA-2qvg-dCTX-NHWX-SiiEY4
+   
+  --- Physical volume ---
+  PV Name               &#x2F;dev&#x2F;sdb1
+  VG Name               myvg1
+  PV Size               5.00 GiB &#x2F; not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1279
+  Free PE               1279
+  Allocated PE          0
+  PV UUID               lvPyQG-SVeg-AhXx-El9W-txHQ-2DbT-7v9gBm
+   
+  --- Physical volume ---
+  PV Name               &#x2F;dev&#x2F;sdb2
+  VG Name               myvg1
+  PV Size               5.00 GiB &#x2F; not usable 4.00 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              1279
+  Free PE               1279
+  Allocated PE          0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>6、创建逻辑卷</p>
+<ul>
+<li><p>命令    lvcreate </p>
+</li>
+<li><p>语法：lvcreate [-L 逻辑卷大小 | -l PE数] -n  逻辑卷名称  所属的卷组名 </p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lvcreate -L 4G -n myvg myvg1
+  Logical volume &quot;myvg&quot; created.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<p>7、初始化文件系统</p>
+<ul>
+<li><p>命令：mkfs.ext4  xfs </p>
+</li>
+<li><p>语法：mkfs.ext4   逻辑卷名称</p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkfs.ext4 &#x2F;dev&#x2F;myvg1&#x2F;myvg <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>8、挂载并使用</p>
+<ul>
+<li><p>命令：mount </p>
+</li>
+<li><p>语法： mount      设备文件</p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkdir &#x2F;testlvm
+[root@localhost ~]# mount &#x2F;dev&#x2F;myvg1&#x2F;myvg &#x2F;testlvm&#x2F;
+[root@localhost ~]# df -h
+文件系统                 容量  已用  可用 已用% 挂载点
+&#x2F;dev&#x2F;mapper&#x2F;myvg1-myvg   3.9G   16M  3.6G    1% &#x2F;testlvm
+#验证
+[root@localhost ~]# cd &#x2F;testlvm&#x2F;
+[root@localhost testlvm]# ls
+lost+found
+[root@localhost testlvm]# touch  gblw
+[root@localhost testlvm]# ls
+gblw  lost+found
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>9、填加新物理卷到卷组</p>
+<ul>
+<li><p>命令： vgextend</p>
+</li>
+<li><p>语法： vgextend   卷组名     物理卷</p>
+</li>
+<li><p>步骤：</p>
+<blockquote>
+<p>1、分区 fdisk </p>
+<p>2、创建物理卷</p>
+<p>3、把物理卷加入卷组</p>
+</blockquote>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# pvcreate &#x2F;dev&#x2F;sdd1 &#x2F;dev&#x2F;sdd2   
+  Physical volume &quot;&#x2F;dev&#x2F;sdd1&quot; successfully created.
+  Physical volume &quot;&#x2F;dev&#x2F;sdd2&quot; successfully created.
+[root@localhost ~]# vgdisplay myvg1  | grep &quot;VG Size&quot;
+  VG Size               14.98 GiB
+[root@localhost ~]# vgextend myvg1 &#x2F;dev&#x2F;sdd1 
+  Volume group &quot;myvg1&quot; successfully extended
+[root@localhost ~]# vgdisplay myvg1  | grep &quot;VG Size&quot;
+  VG Size               16.98 GiB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>10、对逻辑卷的扩容</p>
+<ul>
+<li><p>命令： lvextend</p>
+</li>
+<li><p>语法：lvextend [-L +size   | -l PE数]   逻辑卷名称</p>
+</li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# lvdisplay myvg1
+[root@localhost ~]# lvextend -L +2G &#x2F;dev&#x2F;myvg1&#x2F;myvg 
+#e2fsck  检查逻辑卷
+[root@localhost ~]# e2fsck -f &#x2F;dev&#x2F;myvg1&#x2F;myvg 
+#刷新逻辑卷
+[root@localhost ~]# resize2fs &#x2F;dev&#x2F;myvg1&#x2F;myvg <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>11、 删除lvm</p>
+<ul>
+<li><p>步骤：</p>
+<blockquote>
+<p>![image-20220330105821101](/Users/abbott/Library/Application Support/typora-user-images/image-20220330105821101.png)</p>
+</blockquote>
+</li>
+<li><p>命令语法：</p>
+<pre class="line-numbers language-shll" data-language="shll"><code class="language-shll">umount 
+lvremove
+vgreduce 
+pvremove 
+vgremove <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>示例：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#卸载已经挂载逻辑卷 LV
+[root@localhost ~]# umount &#x2F;dev&#x2F;myvg1&#x2F;myvg
+#删除逻辑卷
+[root@localhost ~]# lvremove &#x2F;dev&#x2F;myvg1&#x2F;myvg 
+Do you really want to remove active logical volume myvg1&#x2F;myvg? [y&#x2F;n]: y
+  Logical volume &quot;myvg&quot; successfully removed
+#把卷组里面的物理卷移除
+[root@localhost ~]# vgreduce -a myvg1
+  Removed &quot;&#x2F;dev&#x2F;sdb1&quot; from volume group &quot;myvg1&quot;
+  Removed &quot;&#x2F;dev&#x2F;sdb2&quot; from volume group &quot;myvg1&quot;
+  Removed &quot;&#x2F;dev&#x2F;sdc1&quot; from volume group &quot;myvg1&quot;
+  Can&#39;t remove final physical volume &quot;&#x2F;dev&#x2F;sdd1&quot; from volume group &quot;myvg1&quot;
+  
+#删除卷组  
+[root@localhost ~]# vgremove myvg1
+  Volume group &quot;myvg1&quot; successfully removed
+  
+#查看所有卷组 
+vgdisplay 
+#查看所有逻辑卷
+lvdisplay <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/blog/tags/MySQL/" class="">
-              MySQL
+            <a href="/blog/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="">
+              磁盘管理
             </a>
           
         </div>
@@ -877,7 +1142,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/blog/2021/11/01/MySQL数据库客户端配置prompt参数/" target="_blank" title="MySQL数据库客户端配置prompt参数">https://abbott68.github.io/blog/2021/11/01/MySQL数据库客户端配置prompt参数/</a>
+    <a href="/blog/2022/04/03/逻辑卷管理/逻辑卷管理/" target="_blank" title="逻辑卷管理">https://abbott68.github.io/blog/2022/04/03/逻辑卷管理/逻辑卷管理/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -895,40 +1160,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">mysql5.7主从复制-异步</div>
-      </div>
-      
-      <!-- <div class="content">
-        Mysql 5.7  架构之主从复制(异步)一、概述MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的D
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/blog/medias/2.jpg" class="lazyload placeholder" data-srcset="/blog/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/blog/2021/10/31/5-7%E5%A4%9A%E5%AE%9E%E4%BE%8B/" class="post-nav-link">
+    <a href="/blog/2022/04/01/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">5.7多实例</div>
+        <div class="title-text">磁盘管理</div>
       </div>
       <!-- <div class="content">
-        多实例安装（基于5.7版本 ）获取软件包:
-[root@localhost ~]#  wget https:&#x2F;
+        Linux磁盘基本管理在Linux系统中，如何有效地对磁盘存储空间加以使用和管理，是一项非常重要的技术，本章节从四个方面
       </div> -->
     </a>
   </div>
