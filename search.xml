@@ -98,6 +98,44 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Ansible</title>
+    <url>/blog/2021/07/18/Ansible/</url>
+    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<span id="more"></span>
+<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAACoCAMAAACPKThEAAAAzFBMVEX////MAAAAAADJAADNAAD09PR6enr6+vqioqKnp6fPz8/f39/QAABGRkadnZ3Dw8M7OzvW1tYUFBS9vb2Wlpbm5ubt7e1NTU1nZ2dWVla1tbU9PT321dX+9/f87+/lior64+OBgYFycnIvLy8jIyONjY2AgIDnk5PSJiZra2snJyf0zMztrKzwuLjWQUEVFRXcXFzifHxfX1/QHh7YTk7gbG3pnZ3ywsL43d3wtLTZNjbYSkrrpqbkhYXVOzvhd3fbWVnfZ2fWJSTVFhbtTysUAAAQWklEQVR4nO2dCXuiOhSGEUQUF9ytuJS6tLU6XWxtO22nm///P00SlpwEFwhWxfo997lVQQZek5OzJCBJRx111FFHHXXUUUcdddRRRx111FFHxVHd9nhycXo3+7r9/Lz9mv27ePwztjq7Pqt9U/f577/Py2Qyl2CVTCbn718XT0ditjrji9v7ZGKVlNzLbPK86xPdtazJV2I1J0+5l7vx721e3ckn3+lWK3n5Md71Se9CnfEsHChH3xfWrk99y+pM3gN2Pb9ys9/UuLoXc1FQtl7/7PoStqTIpJCS17+BVucxOilC6/Xge+Kfl42Qwsp9Wbu+mp/U862wRV9I6+JwHa5HIS9hld4PtCNaDxttVLZyp9qur+sH9LbxRmXr/eACxc7HDzQqW7m/u764zep5c8OfX8m7Q+qHT5vxqZbqobvrK9yYNj/+8fo+FKN1+mOmimp+GM7Dx8+TQso97fo6N6DZVlAdxHD4tSVUCFbcUw/balUEVrxb1nZslQcrzjbrdKuoEKz2rq9YWJMtOAus5taur1lQT1tHlUi8xDOjZf1wYLNYX7u+bBF1IoTLCvlPTBe7vnABiQ+ByvVbu/33QZBWLn7Rzl9hY6Xc2Uc4FYR1H7ekgyWcWlA+3WN8CsKKm8l6EEWVULw+NBY9xGSXVx5ab8KoEu/0KK+Ch8hZO7vw8BLvgQnljR5mIjoYxqkX3gqjYixzR9hDi09gOBZ32N1B0NadaMOKjfuuRSnaMInzZ2HocfFIJxFQvbKHEnUbErl4NKxOhKqNwuU2n4RDnbvFJ7dnehRHlbjkmkPnUvRIsfAbxAcv1Kx8ZubioBtWlGaVtPijWcKscjEIC6M0qwU+5EwY1un2rz2k/kRJhi5IpwgHhYm5bygspTNElaz93sy4SuuSVLdfmrrKfquCNpfQXw3vV5e8r5IPpXo6Q49Sl2oZM/hEFNEYDuvaO0rX8l5eCx/OF0IPZVcNQqvlvZeHkqS7rwdD5nLz6KMCpoK36fZnWfx6il/pMlBJq/aG6aCo2hGaFQgF32beS+GgMPHCn1wVXFYNvW8wrEr0XbEOvoX3SnOsht4xWFa1Sr6aCdqw7sRRQWv8Ovded4UNYJKvgBFW5TK5rLNVrOTRGlZ9slfax0oamgUzIKpOlGZFR/k2bGP/NuY2VAkjTU3hpuNQMNU6luqw0rNmEf/NrmTlAMqjl6qu6xX8poJeaJJm6AFRRStz0WaAYmZqu56FD8hb96rTnvClXjkUKioBJTmsVMcWZVhWVbRXlrI6l+WbFmlHRDW3Q4bSlzgp5cE7SvcepkelT+FjcqkZp11pZ06bcPtgj7KqOx+fsaw8EVbqlSy30nbPFWa1oVAQm3Plw3v7R7gTfrCnh1nd9PsDfGmF5axG3kdLWOE+18OA+po4qyhdEISCxO+g1l08KJyzQxIYBxsaoDBiWZ2sYzXFfZf4EoY4qwjTYkAo2LY/ePQ+EA4KuZGQskppLoWhaZo6y6pFe5e717RQLQxdVgTNSaroIRVi9S3OCoSCTjaUukfWhlJ+mNXUyHstqeEZa4+VOx6Cgd8dB1WXVYY2s3JdlNVzhJIEDQWxZScfUesuHBReM+dn23bD60uEQknHyjqMKkb1hrtyn88AO6UpyipCQlShQ5brqCvUdx8Ld0LGa3B8Btywmi4FR1PWFwXDoI8V8R2a0+a0LztxjgirCBMeQQPwAkDQLd9FWTFeg8OKNCyDZXXCsDqBYwLPCtutFt5AXNCsICvh8Qq66W2vDQHr/ibasBiDha8yhf5iq9yXmNh5CqKVPBul4L1A7KwN3HZHPqhKTksLx6or7AclFBoKgjrXJT30veCBH+AJZisGScegv0YFNR3d8IQ8cJW80EswbsZCe1UwCA1vVsmfSt3bortbwq0JEveuQCgIqQAjJlopvFx0onugCNlj6gfBFAwYHJ9FZ2NZOwARQOLp3k96ECa1B6y7aA4x0sw17ccW2wlnMEEo2GZ4A2deNCj0zy+q9XrAK5fqvV6FvsuMvKSoOeqXy1dTL22cGdnePvq+rVTVc2SNUY8zc6VRj2qENlbSYMjQhIfBe/rzcXaJBomi00//+VgV2EEry7ztufFwlg6SVfuTFPHqWT+slfWOCTJehJ4MVZP0wqhKfxPhiUQKrbjw4x2w7oJB4UzihV1RkJ7CrGgaNCUXCZk6cjQbmYpZyHueaUouu6waoxOkJtp0VV/Oqkn2wprWJdNs6DQTLxzhAKvEJ9eVW4pR7OC+pDtikyfZK8DKyRcAVkOPp37VV3lWTgPRUm6QvZBVCb5XzyrntJs+CaKCVUG/yaMcv4Qa1pxnVZWvDNjrCKuiawVcVi254e5Qr7mbPFae5emTXPQSVmw2WSuBWtpfUVZ0qGr7cID+KVYp5CfMaEU5pZWJu+2xOqc5GIeVeiOf85AXsUrJN2pAVoxEI2fQSz78TQekAIWCQoUr1ZdwhzuxAzqXlXHiXarDCgUy059kdSGGCk4QXWC/gT8hFhRa7FkO5YGGo17PmGBWKPhtMKykJrBhK1gV7YRFaFaCC+Dm8If/k/Tx+PQ2dkViKH46yQBHz2qZJj6z2FRXXVPusqpQX2EBK3fwH7ov19t2VmJlVHaCqGS9+GDRWZEiQWGSvRuBbv/cPVLzoqy0vJ0+9liRnER5CAEAVqMq1rDoDZYLWZ2lkQoLW5dgyZkrDnd4m6VQb7Id/fjnchn/AZ2QsMIAegwryRzY+RmvcQFW1E2VVrCy5RsjxFm9+o7Dh+BgFrfIeiYmIFQH9rmjTuimPm1WuB0ZDCtJM7EfKg9c4wRY5adNpEZZlvul5az6LaR+VVogIVb8BFGs8T0bFNKQTiQoZNqVZ3FRJ9QYVmqRRDeAFd42HDjpQZaV4dJ046Ot2Ct+gihR95VhQvN1nfApP7bs1SP5UInYLYNhhS+uyrNCCKtOVnShbcdfOl/KasU4+E8AlX+CqMMdwlLo5YYPCplxUEO+QbqAVfXKpS4rHBtnfawI1YG6jBUKLsn+W/GvrCUHg44tGCqt0P8Aw6rCBP8ay6o+QM6SnxW2ZKWlrJAzWhdgJbC2C4aCd2wTe76kTQhY99BBIeO3I/+8VbTVd6/YY4VJVs78rCrOVW+SlUA8CFIu3Xtlxtiu7i0t6FDrHrpSCOPBOo77NCI8Eo44VtJUbvX8rMxV7aop1gcF8gxgreBESSjXFnNAGgiA6mHYoBDmGUw4NqWcAjtgVSvLZTcn0/ASKM0V9kp3RsmwrMLnr2AoiBeyKtxdrLzCELDuYYNCWMhpOhkU92JMjhWZqUBYVbBfRaCpXhLCx0pTKwOHflhWAnlRaktcl/yROeTzu00GTMYKGxTSZCEuDwPHUL2y417ICteYCas6njY06A2HvRtn/hHDqp/HapU9fwKxauU9qTarovdBi3dIQzs/MBR0nQTlgzFaHac2BALsBXmbVQL59jT746dsP5JhlfXmn5l9d7hMOTm63qJ8u+OkVZkBti7x+fYUxyp8fon2LLqIR3m1mIPaEQ+s4Yf7N0A3rxQy8MjZQgGjU9MFQNDwphFrxrBZbE3pRqNgz8aup12Z3rZSIQ2Ed6vBTwp8fif0eA5CQZBnV+5Zo2VHPCAhGG6J/p6u5g3pjCrg1l7s9b8xh7VwxAMSzX/D/CT7WncOOZ8BhIJcv1Lu2CgRGTMwGSvU6qj7PV2fGm79Gqg6+JJ4Cndz1QlyJyzvXZibp/hSPr6quxZoMhDZSQ89h325wq0Gsbzv+f0A3mi1L8FkrDDTR/mFcSazfETCI19h/YVpU+xe6H6fXlxhbssAqqSLlyexExG6D9/0TfBBJMmb9qmTK/ZkyBlprep43p9Uyw/X7hlYYSYVAWO9eGTjEvHSP3rZIYJCruJVkxs2myyZu1iT1IxczWJ6JUPHjSZbUiuGKpUq5J2UNQy0o6bLzSzqf2RHSTeIq16q1e2viCnMgjgQCi7xmJRb9kLBu8CzTPgKfVrWi6S61Rqg/+X7ZCII8uZxtV3GIWBDxhMZcGFiqjlL3wq295lHoFHrqjdt11IdXCGXPs+tywyuEMvCYSi4rDyjfC+7rWPgoJCfJVOU0fXjJtW6slmVUvIoraMPp2YKl0+b8kjHsxSMJvbmjaFRKcq1elVupU2b1VQ+N5uILgqRzo0TeWE2PZC+ArNK0lbSWbHXkrszBV5TyM1Uy8pnqJEMKSsNGWzUJ7XyjYQxZBGrulQvFyVnNxVz0iXVtldoXCjhV+rVlaoOkKGvO6VUEQW+mRoIhlcuPFWWLPAOGBTykxmGsq5pxSvIith20mKkDGpKTVlDKBo2VrtIiFjVScUes6oQczeSs9oAYdJu8r5TC6pu4FQD6F0rYxblc+GtA/yTRBaKW5ev9eUbvCxV97MaQVYDh5UpTyuow/0Mq8BL/cBU6jWxsPKy0GgFmz7KFdR0udHr9U6wac7LGJ3LSpMHhECJZXWOExEmYUX7YA9/cYD6YFRWAfPIsCq4tjslF90SOlClkO+CPbuY15JV1LuGpaFM7FVKL6G3PX2IjQ9gdY5GzbOSOcD2qlzUDbv1IbuunyBbFp1VwE4IFtcGMdMLCmOBkmXc/EfVKQ5WZTSmXZGaMjLPNzg/quLcXrGGfQacis/brFS8vKSIu+wJXoVSwz2xVrT9CRXPrNHA3KTwCrQkB1YFg9xSgPe0sAIEhUluFFSdeE7Fq7o006yXyGrADF5CIekZsvKhRtZV4O1k/YSRyar43hZ4b+SS4o2akSHJ4WzN2VNYgSbfwZpdoGyU4n9gUIBK4Tf/nX1TgKnVsCoYMMup+AK7AEHhI/+VfVOAiiqoCoaYUsUbrbUltv2/UVGApfQgSAtxUw+u1LreunOL6PdRa6dCit5BlDdaa1ysfc0eQ611G+AMg1ArkpQ5Y7TWLP+55U9sH7WmYcFQMPSkRmC01hRVc7F4atW6hgViltCTZUGpdc1UrJjc5nd17euT7ihwuybPaK2JpuJgrbBWj1Cfp55E1t0r8wur02mvu8NIHO4CSbT6N1eoBFjhJ1HMlXWPo5jvvW/lSfweextSjO523/7xhzOu1vX6U9wfbfvhVKxi9qiqn3yW7FrF5YbkjnbZC/3LVvZcgqsJN6B4eOyMIjxzIpIWpuf3XOL3UI2mGKRi/BrvxGTFzljZetvB8wdj+7DG7XtZMfOsoLb5FF6sZJwfWyx+e14hVDEKA/3qRLn1fWhUe1/kWq2O6B0cfx8qvHZ5W6hiFgUu0pa6YfxbFVZnG6NhzJ9FTxXlIRQBUe3pEiUBvf1wuPMSv9TCcj39aCC9eE5pbGWJP5h3nXIHMAByOv2hfjg/HFNFNY7w1IClSn4dVv9z1b3beJJmfiiugl/jzZZ3krPDbFSOHjc3ICavI90XOgayPjbUEeexTsAElDXbwIh4/7ini743rXZUWvPHgzZUrKxTcbuVvP4NvQ+qO3kXMly52aFb9IV6Pr0MiSv3MPlFnY9T+/QlqOlK5j7frF2f745l/Z1dJpIrJzUmE7nr06ff26IYWU+nt5e5RS0smZu/z97Gv8RBCKzu89Pk9GP28PI9R7p8v53dPU7G1hHTUUcF0X8hPGkCTEtL3gAAAABJRU5ErkJggg==" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
+<p><strong>Ansible自动化工具原理</strong></p>
+<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
+<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
+<p><strong>Ansible 自动运维管理工具优点：</strong></p>
+<ul>
+<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
+</ul>
+<ul>
+<li><p>采用SSH协议；</p>
+</li>
+<li><p>不需要客户端安装agent；</p>
+</li>
+<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
+</li>
+<li><p>使用python编写，维护更简单；</p>
+</li>
+<li><p>支持sudo普通用户命令；</p>
+</li>
+<li><p>去中心化管理。</p>
+</li>
+</ul>
+<p>Ansible 自动化管理工具原理拓补图：</p>
+<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
+]]></content>
+      <categories>
+        <category>自动化</category>
+      </categories>
+      <tags>
+        <tag>自动化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Apache</title>
     <url>/blog/2021/07/16/Apache/</url>
     <content><![CDATA[<p><img src="https://www.apache.org/img/asf-estd-1999-logo.jpg" class="lazyload placeholder" data-srcset="https://www.apache.org/img/asf-estd-1999-logo.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -186,44 +224,6 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ansible</title>
-    <url>/blog/2021/07/18/Ansible/</url>
-    <content><![CDATA[<p><img src="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" class="lazyload placeholder" data-srcset="https://www.openvirtualization.pro/wp-content/uploads/2019/01/GettingStartedWithAnsible-1200x780.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<span id="more"></span>
-<h4 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h4><h6 id="简介"><a href="#简介" class="headerlink" title="*简介"></a>*<em>简介</em></h6><p>Ansible 安装使用非常简单，而且基于上千个插件和模块，实现各种软件、平台、版本的管理，支持虚拟容器多层级的部署。</p>
-<p><img src="data:image/png;base64,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" alt="What is Dell Technologies PowerStore – Part 16, Automation With Ansible |  Itzikr&#39;s Blog"></p>
-<p><strong>Ansible自动化工具原理</strong></p>
-<p>Ansible 是一款极为灵活的开源工具套件，能够大大简化UNIX管理元的自动化配置管理与流程控制方式，他利用推送方式对客户系统加以配置，这样所有工作都可在服务器端完成。命令行机制同样非常强大，允许大家利用商业许可WEB UI 实现授权管理与配置，通过ansible进行管理的服务。</p>
-<p>Ansible与2015年被Red Hat公司以1.5亿美元收购；</p>
-<p><strong>Ansible 自动运维管理工具优点：</strong></p>
-<ul>
-<li>轻量级，更新时只需要在操作机上进行一次更新即可；</li>
-</ul>
-<ul>
-<li><p>采用SSH协议；</p>
-</li>
-<li><p>不需要客户端安装agent；</p>
-</li>
-<li><p>批量任务执行可以写成脚本，而且不用分发到远程客户端；</p>
-</li>
-<li><p>使用python编写，维护更简单；</p>
-</li>
-<li><p>支持sudo普通用户命令；</p>
-</li>
-<li><p>去中心化管理。</p>
-</li>
-</ul>
-<p>Ansible 自动化管理工具原理拓补图：</p>
-<p><img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" class="lazyload placeholder" data-srcset="https://www.whizlabs.com/blog/wp-content/uploads/2019/09/ansible_architecture.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Ansible Tutorial - A Quick Introduction - Whizlabs Blog"></p>
-]]></content>
-      <categories>
-        <category>自动化</category>
-      </categories>
-      <tags>
-        <tag>自动化</tag>
       </tags>
   </entry>
   <entry>
@@ -355,6 +355,88 @@ prompt &#x3D; &quot;\\u@\\d*\\h \\R:\\m:\\s &gt;&quot;<span aria-hidden="true" c
       </tags>
   </entry>
   <entry>
+    <title>Linux发展历史</title>
+    <url>/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/</url>
+    <content><![CDATA[<h3 id="一、Linux发展及历史"><a href="#一、Linux发展及历史" class="headerlink" title="一、Linux发展及历史"></a>一、Linux发展及历史</h3><h4 id="Linux与开源软件"><a href="#Linux与开源软件" class="headerlink" title="Linux与开源软件"></a>Linux与开源软件</h4><p>Linux 是一种自由和开放源代码的类UNIX操作系统，该操作系统由（林纳斯.托瓦兹）在1991年首次发布，再加上用户空间的应用程序，就成为Linux操作系统。Linux只是操作系统内核本身，但通常采用Linux内核 来表示，Linux完整操作系统包括GUI组件和许多其他实用工具。<br>GNU通用公共许可协议（GNU Grneral Public License,GNU GPL或GPL），是一个广泛使用的自由软件许可协议条款，最初由理查德.斯托曼为GNU计划而拟写，GPL给出了计算机程序自由软件的定义，任何基于GPL软件开发衍生的产品在发布时必须采用GPL许可证方式，且必须公开源代码。<br>Linux 是自由软件和开放源代码软件中最著名的例子，只要遵循GNU  GPL，任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布，随着Linux操作系统飞速发展，因此Linux也成为开源软件的代名词</p>
+<h4 id="Linux在服务领域的发展"><a href="#Linux在服务领域的发展" class="headerlink" title="Linux在服务领域的发展"></a>Linux在服务领域的发展</h4><p>Linux服务器操作系统在整个服务器操作系统市场格局中占据了越来越多的市场份额，已经形成了大规模市场应用的局面，并保持着快速的增长率，尤其在政府、金融、农业、交通、电信等国家关键领域。<br>据权威部门统计，目前Linux在服务器行业领域已经占据99%的市场份额。</p>
+<p>![image-20210119230838160](/Users/abbott/Library/Application Support/typora-user-images/image-20210119230838160.png)</p>
+<h4 id="Linux在桌面领域的发展"><a href="#Linux在桌面领域的发展" class="headerlink" title="Linux在桌面领域的发展"></a>Linux在桌面领域的发展</h4><p>​     Linux 桌面操作系统的发展趋势非常迅猛，国内如：中标麒麟Linux、红旗Linux、深度Linux等系统厂商都推出的Linux桌面操作系统，目前已经在政府、企业、OEM等领域得到了广泛应用。 SUSE、Ubuntu也相继推出了基于Linux的桌面系统，特别是Ubuntu Linux，已经积累了大量社区用户，但是，，从系统的整体功能性能来看，Linux桌面系统与Windows系列相比还有一定的差距，主要表现系统易用性、系统管理、软硬件兼容性、软件的丰富程度等方面，</p>
+<h4 id="Linux在云计算-大数据的发展"><a href="#Linux在云计算-大数据的发展" class="headerlink" title="Linux在云计算/大数据的发展"></a>Linux在云计算/大数据的发展</h4><p>互联网产业的迅速发展，促使云计算、大数据产业的形成并快速发展，云计算、大数据作为一个基于开源软件的平台，Linux占据了核心优势。目前Linux已开始取代UNIX成为最受青睐的云计算、大数据平台操作系统</p>
+<h4 id="Linux在移动嵌入式领域的发展"><a href="#Linux在移动嵌入式领域的发展" class="headerlink" title="Linux在移动嵌入式领域的发展"></a>Linux在移动嵌入式领域的发展</h4><p>Linux的成本、强大定制功能以及良好的可移植性，使得Linux在嵌入式系统方面得到广泛应用，目前Linux已广泛应用于手机、平板电脑、路由器、电视和电子游戏机等领域；</p>
+<p>此外，思科公司在网络防火墙和路由器中也使用了定制的Linux，阿里云也开发了一套基于Linux的操作系统能够“YunOS”,可用于智能手机、平板电脑和网络电视，常见的数字视频、录像机、舞台灯光控制系统等都在逐步采用定制版本的Linux来实现，而这一切均归于Linux与开源的力量。</p>
+<h4 id="选择适合自己的Linux发行版"><a href="#选择适合自己的Linux发行版" class="headerlink" title="选择适合自己的Linux发行版"></a>选择适合自己的Linux发行版</h4><p>Linux的发行版本太多了，以至于谁也不可能给出一个准确的数字，但是有一点可以肯定，Linux正在变得越来越流行。面对这么多的Linux发行版，打算从其他系统转到Linux系统来的初学者可能会感到困惑，即便是忠实的Linux用户也没有时间和精力去挨个尝试。因此，初学者在学习Linux之前，需要有一个明确的方向，选择一个适合自己的Linux系统至关重要。下面介绍Linux发行版</p>
+<h5 id="常见的Linux发行版"><a href="#常见的Linux发行版" class="headerlink" title="==常见的Linux发行版=="></a>==常见的Linux发行版==</h5><p><strong>1、Redhat Linux</strong></p>
+<p>目前Red Hat分为两个系统：由Red Hat公司提供收费技术支持和更新的Red Hat Enterprise Linux 版。以及由社区开发的免费的Fedora Core.  rhel</p>
+<p><strong>2、Fedora Core</strong>    称之为 pc </p>
+<p>Fedora Core（FC）被Redhat公司定位为新技术的测试平台，许多新技术都会在FC中检验。如果这些新技术稳定，Redhat公司会考虑加入到Redhat Enterprise Linux中。</p>
+<p>3、Red Hat Enterprise Linux(RHEL,Redhat的企业版Linux)Redhat现在主要做服务器版的Linux开发，在版本上注重性能和稳定性，以及对硬件的支持，由于企业版操作系统的开发周期较长，注重性能、稳定性和服务端软件支持，因此版本更新相对较缓慢。</p>
+<p><strong>4、CentOS</strong>  </p>
+<p>CentOS全名为“社区企业操作系统”（community Enterprise Operating System）它由来自于RHEL依照开放源代码规定发布的源代码编译而成，由于RHEL是商业产品，因此必须将Redhat的所有logo改成自己的CentOS标识，这就产生了CentOS操作系统。两者的不同在于CentOS并不包含封闭源代码软件。因此CentOS不但可以自由使用，而且能享受CentOS提供的长期免费升级和更新服务。</p>
+<p><strong>5、SUSE Linux</strong></p>
+<p>SUSE 是德国最著名的Linux发行版，也享有很高的声誉，不过命运相当坎坷。2003年11月4日，Novell公司对外宣布收购SUSE。2004年1月，该收购顺利完成，Novell同时将SUSE Linux改为openSUSE社区项目。2010年Attachmate公司收购了Novell公司，在被收购后SUSE Linux发展受阻，而就在3年后，SUSE官方宣布并开源为SUSE的发展之本，仍将持续贡献开源，SUSE仍将全力支持openSUSE。</p>
+<p><strong>6、Ubuntu Linux</strong></p>
+<p>Ubuntu 是一个以桌面应用为主的Linux操作系统，基于Debian GNU/linux，Ubuntu旨在为一般用户提供一个主要自由软件构建而成的最新的同时又相当稳定的操作系统。Ubuntu具有庞大的社区力量，用户可以方便地从社区获得帮助。</p>
+<h4 id="用第三方软件技术帮助学习Linux"><a href="#用第三方软件技术帮助学习Linux" class="headerlink" title="用第三方软件技术帮助学习Linux"></a>用第三方软件技术帮助学习Linux</h4><h5 id="虚拟机技术"><a href="#虚拟机技术" class="headerlink" title="虚拟机技术"></a>虚拟机技术</h5><p>虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离中的完整计算机系统。</p>
+<p>虚拟机会生成现有操作系统的全新的独立虚拟镜像，它与真实系统具有完全一样的功能，进入虚拟机后，所有操作豆子啊这个全新的独立虚拟系统里面进行，可以独立安装、运行软件，保存数据，拥有自己的独立桌面，还不会对真实的系统产生任何影响，而且能够在现有系统与虚拟机之间灵活切换。</p>
+<h5 id="使用虚拟技术的好处"><a href="#使用虚拟技术的好处" class="headerlink" title="使用虚拟技术的好处"></a>使用虚拟技术的好处</h5><p>使用虚拟技术的好处有以下3个：</p>
+<ul>
+<li><p>节省成本</p>
+<p>​    如果要在一台计算机安装Linux和Windows系统，而不用虚拟机，有两个办法，一是安装多个硬盘，每个硬盘安装一个操作系统；这个方法缺点是费用比较昂贵。而是一个硬盘上安装双系统，这个方法是不够安全，因为系统盘的MBR是操作系统的必争之地，Windows更是霸道，每次重新安装系统都要重写系统的MBR，这样，几个操作系统可能会同时崩溃，而使用虚拟机软件即省钱又安全，因此对于新手来说，利用虚拟机学习Linux简直再好不过了。</p>
+</li>
+<li><p>安全便捷</p>
+<p>​    在虚拟机上安装Linux系统，不同担心会格式化掉自己的硬盘，甚至可以随意对虚拟机系统进行任何设置和更改操作，可以格式化虚拟机系统的任何操作都是对软件的操作。</p>
+</li>
+<li><p>简单高效</p>
+<p>​    利用虚拟机模拟出来的Linux系统和真实的Linux系统是一模一样，现在各个公司专门的Linux服务器是不会让新手随意操作的，而共测试的Linux服务器一般又很紧缺，如果在自己的电脑上安装虚拟Linux系统，就可以随意地学习测试，而不受任何环境影响。</p>
+</li>
+</ul>
+<h4 id="虚拟软件的运行环境和硬件需求"><a href="#虚拟软件的运行环境和硬件需求" class="headerlink" title="虚拟软件的运行环境和硬件需求"></a>虚拟软件的运行环境和硬件需求</h4><p><strong>1、运行环境</strong></p>
+<p>​    流行的虚拟机软件有VMware、VirtualBox，他们都有Windows和Linux两个版本，也就是说，他们可以安装在Windows和Linux两个平台下，在Windows平台下可以虚拟出Windows、Linux、Unix等多个操作系统，同理，在Linux平台上也可以虚拟出Windows、Linux、Unix等多个计算机。</p>
+<p><strong>2、硬件需求</strong></p>
+<p>   虚拟软件是将两台以上计算机的任务集成到一台计算机上，因此对硬件的要求比较高，主要涉及的是内存、硬盘和CPU。内存要足够大，因为每个虚拟机都会占用一定的内存资源，内存的大小等于各个虚拟系统的总和，可喜的是，现在内存已经很便宜，因此就不是问题了。同样，硬盘空间也是每个虚拟机都要占用的，CPU现在都发展到了一个多核阶段，硬盘也不是问题。</p>
+<h5 id="虚拟软件的安装及介绍"><a href="#虚拟软件的安装及介绍" class="headerlink" title="虚拟软件的安装及介绍"></a>虚拟软件的安装及介绍</h5><ol>
+<li><p>VirtualBox虚拟机概述</p>
+<p><strong>Oracle VirtualBox</strong>是由<a href="https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%9C%8B">德国</a>InnoTek软件公司出品的<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a><a href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，现在则由<a href="https://zh.wikipedia.org/wiki/%E7%94%B2%E9%AA%A8%E6%96%87%E5%85%AC%E5%8F%B8">甲骨文公司</a>进行开发，是甲骨文公司xVM<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96">虚拟化</a>平台技术的一部分。它提供用户在<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D%E5%85%83">32位</a>或<a href="https://zh.wikipedia.org/wiki/64%E4%BD%8D%E5%85%83">64位</a>的<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>及<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> <a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>上虚拟其它<a href="https://zh.wikipedia.org/wiki/X86">x86</a>的操作系统。用户可以在VirtualBox上安装并且运行<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/DOS">DOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/OS/2">OS/2 Warp</a>、<a href="https://zh.wikipedia.org/wiki/OpenBSD">OpenBSD</a>及<a href="https://zh.wikipedia.org/wiki/FreeBSD">FreeBSD</a>等系统作为客户端操作系统与同性质的<a href="https://zh.wikipedia.org/wiki/VMware_Workstation">VMware</a>及<a href="https://zh.wikipedia.org/wiki/Microsoft_Virtual_PC">Virtual PC</a>比较下，VirtualBox独到之处包括<a href="https://zh.wikipedia.org/wiki/%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E5%8D%94%E5%AE%9A">远程桌面协议</a>（RDP）、<a href="https://zh.wikipedia.org/wiki/ISCSI">iSCSI</a>及<a href="https://zh.wikipedia.org/wiki/USB">USB</a>的支持，VirtualBox在客户机操作系统上已可以支持<a href="https://zh.wikipedia.org/wiki/USB_3.0">USB 3.0</a>的硬件设备，不过要安装Virtualbox Extension Pack。</p>
+<p><strong>硬件支持：</strong></p>
+<ul>
+<li>VirtualBox支持<a href="https://zh.wikipedia.org/wiki/Intel">Intel</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">VT-x</a>与<a href="https://zh.wikipedia.org/wiki/AMD">AMD</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">AMD-V</a>硬件虚拟化技术。</li>
+<li>硬盘被模拟在一个称为虚拟磁盘映像档（Virtual Disk Images）的特殊容器，目前此格式不兼容于其它虚拟机平台运行，通常作为一个系统档存放在主机端操作系统（扩展名.vdi[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-4">4]</a>)。VirtualBox能够链接iSCSI，且能在虚拟硬盘上运作，此外VirtualBox可以读写VMware <a href="https://zh.wikipedia.org/wiki/VMDK">VMDK</a>档与VirtualPC <a href="https://zh.wikipedia.org/w/index.php?title=VHD&action=edit&redlink=1">VHD</a>档。</li>
+<li>ISO映像档可以被挂载成CD/DVD设备，例如下载的Linux发行版DVD映像档可以直接使用在VirtualBox，而不需刻录在光盘上，亦可直接在虚拟机上挂载实体光盘驱动器。</li>
+<li>默认上VirtualBox提供了一个支持<a href="https://zh.wikipedia.org/wiki/VESA%E5%8C%AF%E6%B5%81%E6%8E%92">VESA</a>兼容的虚拟显卡，与一个供Windows、Linux、Solaris、OS/2客户端系统额外的驱动程序（guest addition），可以提供更好的性能与功能，如当虚拟机的视窗被缩放时，会动态的调整分辨率。在4.1更支持<a href="https://zh.wikipedia.org/wiki/WDDM">WDDM</a>兼容的虚拟显卡，令<a href="https://zh.wikipedia.org/wiki/Windows_Vista">Windows Vista</a>及<a href="https://zh.wikipedia.org/wiki/Windows_7">Windows 7</a>可以使用<a href="https://zh.wikipedia.org/wiki/Windows_Aero">Windows Aero</a>。</li>
+<li>在声卡方面，VirtualBox虚拟一个Intel ICH <a href="https://zh.wikipedia.org/wiki/AC97">AC97</a>声卡与SoundBlaster 16 <a href="https://zh.wikipedia.org/wiki/%E8%81%B2%E9%9C%B8%E5%8D%A1">声霸卡</a>。</li>
+<li>在<a href="https://zh.wikipedia.org/wiki/%E4%BB%A5%E5%A4%AA%E7%BD%91">以太网</a>接口卡方面，VirtualBox虚拟了数张<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%8D%A1">网卡</a>：AMD PCnet PCI II、AMD PCnet-Fast III、Intel Pro/1000 MT Desktop、Intel Pro/1000 MT Server、Intel Pro/1000 T Server。</li>
+<li>VirtualBox亦可模拟<a href="https://zh.wikipedia.org/wiki/UEFI">UEFI</a>固件，但是，该UEFI固件不支持部分版本的Windows系统。</li>
+</ul>
+<p><strong>优点：</strong> </p>
+<ul>
+<li>支持64位客户端操作系统，即使主机使用<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D">32位</a><a href="https://zh.wikipedia.org/wiki/CPU">CPU</a> (6.0版后主机仅支持64位操作系统)[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-5">5]</a></li>
+<li>支持<a href="https://zh.wikipedia.org/wiki/SATA">SATA</a>硬盘<a href="https://zh.wikipedia.org/wiki/NCQ">NCQ</a>技术</li>
+<li>虚拟硬盘快照</li>
+<li>无缝视窗模式（须安装客户端驱动程序）</li>
+<li>能够在主机端与客户端共享剪贴板（须安装客户端驱动）</li>
+<li>在主机端与客户端间创建共享文件夹（须安装客户端驱动）</li>
+<li>内置远程桌面服务器</li>
+<li>支持VMware VMDK磁盘档及Virtual PC VHD磁盘档格式</li>
+<li>3D虚拟化技术支持OpenGL（2.1版后支持）、Direct3D（3.0版后支持）、WDDM（4.1版后支持）</li>
+<li>最多虚拟32颗<a href="https://zh.wikipedia.org/wiki/CPU">CPU</a>（3.0版后支持）</li>
+<li>支持VT-x与AMD-V硬件虚拟化技术</li>
+<li>iSCSI支持</li>
+<li>USB与USB2.0支持</li>
+</ul>
+</li>
+<li><p>VMware workstations </p>
+<p><strong>VMware Workstation Pro</strong>（曾用名<strong>VMware Workstation</strong>）是<a href="https://zh.wikipedia.org/wiki/VMware">VMware</a>公司推出的一款桌面虚拟计算软件，具有<a href="https://zh.wikipedia.org/wiki/Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> 版本。此软件可以提供<a href="https://zh.wikipedia.org/wiki/%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a>功能，使计算机可以同时运行多个不同<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>。2015年，VMware Workstation发表12版，<a href="https://zh.wikipedia.org/wiki/VMware_Player">VMware Player</a>转型为VMware Workstation的免费版并改名为<a href="https://zh.wikipedia.org/wiki/VMware_Workstation_Player">VMware Workstation Player</a>，VMware Workstation的付费版定名为VMware Workstation Pro。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux安装软件</title>
     <url>/blog/2021/11/23/Linux%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="五、Linux安装及管理软件"><a href="#五、Linux安装及管理软件" class="headerlink" title="五、Linux安装及管理软件"></a>五、Linux安装及管理软件</h1><p>​    本章主要简介Linux下软件安装方式，Linux安装软件也有自己的一套方式，最常见的有源码安装方式，RPM安装方式、YUM安装方式和二进制安装方式。用户可以根据自己的需要和获得软件包的不同，选择不自己喜欢的安装方式。</p>
@@ -453,88 +535,6 @@ enabled&#x3D;0<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 </li>
 </ol>
 <h3 id><a href="#" class="headerlink" title></a></h3>]]></content>
-      <categories>
-        <category>Linux系列</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux发展历史</title>
-    <url>/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/</url>
-    <content><![CDATA[<h3 id="一、Linux发展及历史"><a href="#一、Linux发展及历史" class="headerlink" title="一、Linux发展及历史"></a>一、Linux发展及历史</h3><h4 id="Linux与开源软件"><a href="#Linux与开源软件" class="headerlink" title="Linux与开源软件"></a>Linux与开源软件</h4><p>Linux 是一种自由和开放源代码的类UNIX操作系统，该操作系统由（林纳斯.托瓦兹）在1991年首次发布，再加上用户空间的应用程序，就成为Linux操作系统。Linux只是操作系统内核本身，但通常采用Linux内核 来表示，Linux完整操作系统包括GUI组件和许多其他实用工具。<br>GNU通用公共许可协议（GNU Grneral Public License,GNU GPL或GPL），是一个广泛使用的自由软件许可协议条款，最初由理查德.斯托曼为GNU计划而拟写，GPL给出了计算机程序自由软件的定义，任何基于GPL软件开发衍生的产品在发布时必须采用GPL许可证方式，且必须公开源代码。<br>Linux 是自由软件和开放源代码软件中最著名的例子，只要遵循GNU  GPL，任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布，随着Linux操作系统飞速发展，因此Linux也成为开源软件的代名词</p>
-<h4 id="Linux在服务领域的发展"><a href="#Linux在服务领域的发展" class="headerlink" title="Linux在服务领域的发展"></a>Linux在服务领域的发展</h4><p>Linux服务器操作系统在整个服务器操作系统市场格局中占据了越来越多的市场份额，已经形成了大规模市场应用的局面，并保持着快速的增长率，尤其在政府、金融、农业、交通、电信等国家关键领域。<br>据权威部门统计，目前Linux在服务器行业领域已经占据99%的市场份额。</p>
-<p>![image-20210119230838160](/Users/abbott/Library/Application Support/typora-user-images/image-20210119230838160.png)</p>
-<h4 id="Linux在桌面领域的发展"><a href="#Linux在桌面领域的发展" class="headerlink" title="Linux在桌面领域的发展"></a>Linux在桌面领域的发展</h4><p>​     Linux 桌面操作系统的发展趋势非常迅猛，国内如：中标麒麟Linux、红旗Linux、深度Linux等系统厂商都推出的Linux桌面操作系统，目前已经在政府、企业、OEM等领域得到了广泛应用。 SUSE、Ubuntu也相继推出了基于Linux的桌面系统，特别是Ubuntu Linux，已经积累了大量社区用户，但是，，从系统的整体功能性能来看，Linux桌面系统与Windows系列相比还有一定的差距，主要表现系统易用性、系统管理、软硬件兼容性、软件的丰富程度等方面，</p>
-<h4 id="Linux在云计算-大数据的发展"><a href="#Linux在云计算-大数据的发展" class="headerlink" title="Linux在云计算/大数据的发展"></a>Linux在云计算/大数据的发展</h4><p>互联网产业的迅速发展，促使云计算、大数据产业的形成并快速发展，云计算、大数据作为一个基于开源软件的平台，Linux占据了核心优势。目前Linux已开始取代UNIX成为最受青睐的云计算、大数据平台操作系统</p>
-<h4 id="Linux在移动嵌入式领域的发展"><a href="#Linux在移动嵌入式领域的发展" class="headerlink" title="Linux在移动嵌入式领域的发展"></a>Linux在移动嵌入式领域的发展</h4><p>Linux的成本、强大定制功能以及良好的可移植性，使得Linux在嵌入式系统方面得到广泛应用，目前Linux已广泛应用于手机、平板电脑、路由器、电视和电子游戏机等领域；</p>
-<p>此外，思科公司在网络防火墙和路由器中也使用了定制的Linux，阿里云也开发了一套基于Linux的操作系统能够“YunOS”,可用于智能手机、平板电脑和网络电视，常见的数字视频、录像机、舞台灯光控制系统等都在逐步采用定制版本的Linux来实现，而这一切均归于Linux与开源的力量。</p>
-<h4 id="选择适合自己的Linux发行版"><a href="#选择适合自己的Linux发行版" class="headerlink" title="选择适合自己的Linux发行版"></a>选择适合自己的Linux发行版</h4><p>Linux的发行版本太多了，以至于谁也不可能给出一个准确的数字，但是有一点可以肯定，Linux正在变得越来越流行。面对这么多的Linux发行版，打算从其他系统转到Linux系统来的初学者可能会感到困惑，即便是忠实的Linux用户也没有时间和精力去挨个尝试。因此，初学者在学习Linux之前，需要有一个明确的方向，选择一个适合自己的Linux系统至关重要。下面介绍Linux发行版</p>
-<h5 id="常见的Linux发行版"><a href="#常见的Linux发行版" class="headerlink" title="==常见的Linux发行版=="></a>==常见的Linux发行版==</h5><p><strong>1、Redhat Linux</strong></p>
-<p>目前Red Hat分为两个系统：由Red Hat公司提供收费技术支持和更新的Red Hat Enterprise Linux 版。以及由社区开发的免费的Fedora Core.  rhel</p>
-<p><strong>2、Fedora Core</strong>    称之为 pc </p>
-<p>Fedora Core（FC）被Redhat公司定位为新技术的测试平台，许多新技术都会在FC中检验。如果这些新技术稳定，Redhat公司会考虑加入到Redhat Enterprise Linux中。</p>
-<p>3、Red Hat Enterprise Linux(RHEL,Redhat的企业版Linux)Redhat现在主要做服务器版的Linux开发，在版本上注重性能和稳定性，以及对硬件的支持，由于企业版操作系统的开发周期较长，注重性能、稳定性和服务端软件支持，因此版本更新相对较缓慢。</p>
-<p><strong>4、CentOS</strong>  </p>
-<p>CentOS全名为“社区企业操作系统”（community Enterprise Operating System）它由来自于RHEL依照开放源代码规定发布的源代码编译而成，由于RHEL是商业产品，因此必须将Redhat的所有logo改成自己的CentOS标识，这就产生了CentOS操作系统。两者的不同在于CentOS并不包含封闭源代码软件。因此CentOS不但可以自由使用，而且能享受CentOS提供的长期免费升级和更新服务。</p>
-<p><strong>5、SUSE Linux</strong></p>
-<p>SUSE 是德国最著名的Linux发行版，也享有很高的声誉，不过命运相当坎坷。2003年11月4日，Novell公司对外宣布收购SUSE。2004年1月，该收购顺利完成，Novell同时将SUSE Linux改为openSUSE社区项目。2010年Attachmate公司收购了Novell公司，在被收购后SUSE Linux发展受阻，而就在3年后，SUSE官方宣布并开源为SUSE的发展之本，仍将持续贡献开源，SUSE仍将全力支持openSUSE。</p>
-<p><strong>6、Ubuntu Linux</strong></p>
-<p>Ubuntu 是一个以桌面应用为主的Linux操作系统，基于Debian GNU/linux，Ubuntu旨在为一般用户提供一个主要自由软件构建而成的最新的同时又相当稳定的操作系统。Ubuntu具有庞大的社区力量，用户可以方便地从社区获得帮助。</p>
-<h4 id="用第三方软件技术帮助学习Linux"><a href="#用第三方软件技术帮助学习Linux" class="headerlink" title="用第三方软件技术帮助学习Linux"></a>用第三方软件技术帮助学习Linux</h4><h5 id="虚拟机技术"><a href="#虚拟机技术" class="headerlink" title="虚拟机技术"></a>虚拟机技术</h5><p>虚拟机（Virtual Machine）指通过软件模拟的具有完整硬件系统功能的、运行在一个完全隔离中的完整计算机系统。</p>
-<p>虚拟机会生成现有操作系统的全新的独立虚拟镜像，它与真实系统具有完全一样的功能，进入虚拟机后，所有操作豆子啊这个全新的独立虚拟系统里面进行，可以独立安装、运行软件，保存数据，拥有自己的独立桌面，还不会对真实的系统产生任何影响，而且能够在现有系统与虚拟机之间灵活切换。</p>
-<h5 id="使用虚拟技术的好处"><a href="#使用虚拟技术的好处" class="headerlink" title="使用虚拟技术的好处"></a>使用虚拟技术的好处</h5><p>使用虚拟技术的好处有以下3个：</p>
-<ul>
-<li><p>节省成本</p>
-<p>​    如果要在一台计算机安装Linux和Windows系统，而不用虚拟机，有两个办法，一是安装多个硬盘，每个硬盘安装一个操作系统；这个方法缺点是费用比较昂贵。而是一个硬盘上安装双系统，这个方法是不够安全，因为系统盘的MBR是操作系统的必争之地，Windows更是霸道，每次重新安装系统都要重写系统的MBR，这样，几个操作系统可能会同时崩溃，而使用虚拟机软件即省钱又安全，因此对于新手来说，利用虚拟机学习Linux简直再好不过了。</p>
-</li>
-<li><p>安全便捷</p>
-<p>​    在虚拟机上安装Linux系统，不同担心会格式化掉自己的硬盘，甚至可以随意对虚拟机系统进行任何设置和更改操作，可以格式化虚拟机系统的任何操作都是对软件的操作。</p>
-</li>
-<li><p>简单高效</p>
-<p>​    利用虚拟机模拟出来的Linux系统和真实的Linux系统是一模一样，现在各个公司专门的Linux服务器是不会让新手随意操作的，而共测试的Linux服务器一般又很紧缺，如果在自己的电脑上安装虚拟Linux系统，就可以随意地学习测试，而不受任何环境影响。</p>
-</li>
-</ul>
-<h4 id="虚拟软件的运行环境和硬件需求"><a href="#虚拟软件的运行环境和硬件需求" class="headerlink" title="虚拟软件的运行环境和硬件需求"></a>虚拟软件的运行环境和硬件需求</h4><p><strong>1、运行环境</strong></p>
-<p>​    流行的虚拟机软件有VMware、VirtualBox，他们都有Windows和Linux两个版本，也就是说，他们可以安装在Windows和Linux两个平台下，在Windows平台下可以虚拟出Windows、Linux、Unix等多个操作系统，同理，在Linux平台上也可以虚拟出Windows、Linux、Unix等多个计算机。</p>
-<p><strong>2、硬件需求</strong></p>
-<p>   虚拟软件是将两台以上计算机的任务集成到一台计算机上，因此对硬件的要求比较高，主要涉及的是内存、硬盘和CPU。内存要足够大，因为每个虚拟机都会占用一定的内存资源，内存的大小等于各个虚拟系统的总和，可喜的是，现在内存已经很便宜，因此就不是问题了。同样，硬盘空间也是每个虚拟机都要占用的，CPU现在都发展到了一个多核阶段，硬盘也不是问题。</p>
-<h5 id="虚拟软件的安装及介绍"><a href="#虚拟软件的安装及介绍" class="headerlink" title="虚拟软件的安装及介绍"></a>虚拟软件的安装及介绍</h5><ol>
-<li><p>VirtualBox虚拟机概述</p>
-<p><strong>Oracle VirtualBox</strong>是由<a href="https://zh.wikipedia.org/wiki/%E5%BE%B7%E5%9C%8B">德国</a>InnoTek软件公司出品的<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a><a href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，现在则由<a href="https://zh.wikipedia.org/wiki/%E7%94%B2%E9%AA%A8%E6%96%87%E5%85%AC%E5%8F%B8">甲骨文公司</a>进行开发，是甲骨文公司xVM<a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96">虚拟化</a>平台技术的一部分。它提供用户在<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D%E5%85%83">32位</a>或<a href="https://zh.wikipedia.org/wiki/64%E4%BD%8D%E5%85%83">64位</a>的<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>及<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> <a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1">操作系统</a>上虚拟其它<a href="https://zh.wikipedia.org/wiki/X86">x86</a>的操作系统。用户可以在VirtualBox上安装并且运行<a href="https://zh.wikipedia.org/wiki/Solaris">Solaris</a>、<a href="https://zh.wikipedia.org/wiki/Microsoft_Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/DOS">DOS</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a href="https://zh.wikipedia.org/wiki/OS/2">OS/2 Warp</a>、<a href="https://zh.wikipedia.org/wiki/OpenBSD">OpenBSD</a>及<a href="https://zh.wikipedia.org/wiki/FreeBSD">FreeBSD</a>等系统作为客户端操作系统与同性质的<a href="https://zh.wikipedia.org/wiki/VMware_Workstation">VMware</a>及<a href="https://zh.wikipedia.org/wiki/Microsoft_Virtual_PC">Virtual PC</a>比较下，VirtualBox独到之处包括<a href="https://zh.wikipedia.org/wiki/%E9%81%A0%E7%AB%AF%E6%A1%8C%E9%9D%A2%E5%8D%94%E5%AE%9A">远程桌面协议</a>（RDP）、<a href="https://zh.wikipedia.org/wiki/ISCSI">iSCSI</a>及<a href="https://zh.wikipedia.org/wiki/USB">USB</a>的支持，VirtualBox在客户机操作系统上已可以支持<a href="https://zh.wikipedia.org/wiki/USB_3.0">USB 3.0</a>的硬件设备，不过要安装Virtualbox Extension Pack。</p>
-<p><strong>硬件支持：</strong></p>
-<ul>
-<li>VirtualBox支持<a href="https://zh.wikipedia.org/wiki/Intel">Intel</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">VT-x</a>与<a href="https://zh.wikipedia.org/wiki/AMD">AMD</a> <a href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E5%8C%96%E6%8A%80%E8%A1%93">AMD-V</a>硬件虚拟化技术。</li>
-<li>硬盘被模拟在一个称为虚拟磁盘映像档（Virtual Disk Images）的特殊容器，目前此格式不兼容于其它虚拟机平台运行，通常作为一个系统档存放在主机端操作系统（扩展名.vdi[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-4">4]</a>)。VirtualBox能够链接iSCSI，且能在虚拟硬盘上运作，此外VirtualBox可以读写VMware <a href="https://zh.wikipedia.org/wiki/VMDK">VMDK</a>档与VirtualPC <a href="https://zh.wikipedia.org/w/index.php?title=VHD&action=edit&redlink=1">VHD</a>档。</li>
-<li>ISO映像档可以被挂载成CD/DVD设备，例如下载的Linux发行版DVD映像档可以直接使用在VirtualBox，而不需刻录在光盘上，亦可直接在虚拟机上挂载实体光盘驱动器。</li>
-<li>默认上VirtualBox提供了一个支持<a href="https://zh.wikipedia.org/wiki/VESA%E5%8C%AF%E6%B5%81%E6%8E%92">VESA</a>兼容的虚拟显卡，与一个供Windows、Linux、Solaris、OS/2客户端系统额外的驱动程序（guest addition），可以提供更好的性能与功能，如当虚拟机的视窗被缩放时，会动态的调整分辨率。在4.1更支持<a href="https://zh.wikipedia.org/wiki/WDDM">WDDM</a>兼容的虚拟显卡，令<a href="https://zh.wikipedia.org/wiki/Windows_Vista">Windows Vista</a>及<a href="https://zh.wikipedia.org/wiki/Windows_7">Windows 7</a>可以使用<a href="https://zh.wikipedia.org/wiki/Windows_Aero">Windows Aero</a>。</li>
-<li>在声卡方面，VirtualBox虚拟一个Intel ICH <a href="https://zh.wikipedia.org/wiki/AC97">AC97</a>声卡与SoundBlaster 16 <a href="https://zh.wikipedia.org/wiki/%E8%81%B2%E9%9C%B8%E5%8D%A1">声霸卡</a>。</li>
-<li>在<a href="https://zh.wikipedia.org/wiki/%E4%BB%A5%E5%A4%AA%E7%BD%91">以太网</a>接口卡方面，VirtualBox虚拟了数张<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E5%8D%A1">网卡</a>：AMD PCnet PCI II、AMD PCnet-Fast III、Intel Pro/1000 MT Desktop、Intel Pro/1000 MT Server、Intel Pro/1000 T Server。</li>
-<li>VirtualBox亦可模拟<a href="https://zh.wikipedia.org/wiki/UEFI">UEFI</a>固件，但是，该UEFI固件不支持部分版本的Windows系统。</li>
-</ul>
-<p><strong>优点：</strong> </p>
-<ul>
-<li>支持64位客户端操作系统，即使主机使用<a href="https://zh.wikipedia.org/wiki/32%E4%BD%8D">32位</a><a href="https://zh.wikipedia.org/wiki/CPU">CPU</a> (6.0版后主机仅支持64位操作系统)[<a href="https://zh.wikipedia.org/wiki/VirtualBox#cite_note-5">5]</a></li>
-<li>支持<a href="https://zh.wikipedia.org/wiki/SATA">SATA</a>硬盘<a href="https://zh.wikipedia.org/wiki/NCQ">NCQ</a>技术</li>
-<li>虚拟硬盘快照</li>
-<li>无缝视窗模式（须安装客户端驱动程序）</li>
-<li>能够在主机端与客户端共享剪贴板（须安装客户端驱动）</li>
-<li>在主机端与客户端间创建共享文件夹（须安装客户端驱动）</li>
-<li>内置远程桌面服务器</li>
-<li>支持VMware VMDK磁盘档及Virtual PC VHD磁盘档格式</li>
-<li>3D虚拟化技术支持OpenGL（2.1版后支持）、Direct3D（3.0版后支持）、WDDM（4.1版后支持）</li>
-<li>最多虚拟32颗<a href="https://zh.wikipedia.org/wiki/CPU">CPU</a>（3.0版后支持）</li>
-<li>支持VT-x与AMD-V硬件虚拟化技术</li>
-<li>iSCSI支持</li>
-<li>USB与USB2.0支持</li>
-</ul>
-</li>
-<li><p>VMware workstations </p>
-<p><strong>VMware Workstation Pro</strong>（曾用名<strong>VMware Workstation</strong>）是<a href="https://zh.wikipedia.org/wiki/VMware">VMware</a>公司推出的一款桌面虚拟计算软件，具有<a href="https://zh.wikipedia.org/wiki/Windows">Windows</a>、<a href="https://zh.wikipedia.org/wiki/Linux">Linux</a> 版本。此软件可以提供<a href="https://zh.wikipedia.org/wiki/%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a>功能，使计算机可以同时运行多个不同<a href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a>。2015年，VMware Workstation发表12版，<a href="https://zh.wikipedia.org/wiki/VMware_Player">VMware Player</a>转型为VMware Workstation的免费版并改名为<a href="https://zh.wikipedia.org/wiki/VMware_Workstation_Player">VMware Workstation Player</a>，VMware Workstation的付费版定名为VMware Workstation Pro。</p>
-</li>
-</ol>
-]]></content>
       <categories>
         <category>Linux系列</category>
       </categories>
@@ -1928,77 +1928,6 @@ MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，
       </tags>
   </entry>
   <entry>
-    <title>MySQL8.0.27版本二进制安装</title>
-    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
-soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
-[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
-[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
-[root@docker mysql827]# ls
-bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
-[mysqld]
-# 选择默认存储引擎为InnoDB
-default-storage-engine&#x3D;InnoDB
-# 用户
-user &#x3D; mysql
-# 监听端口
-port &#x3D; 3306
-#socket通信设置
-socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
-# 安装目录
-basedir&#x3D;&#x2F;app&#x2F;mysql827
-# 数据文件位置
-datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
-# 允许最大连接数 
-max_connections&#x3D;512
-# 等待关闭连接时间
-wait_timeout&#x3D;600
-# 服务端字符集
-character-set-server&#x3D;utf8mb4
-# 错误日志
-log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
-# 默认使用“mysql_native_password”插件认证
-default_authentication_plugin&#x3D;mysql_native_password
-#server-id&#x3D;10
-log_bin&#x3D;gh
-## 兼容sql_mode
-sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
-[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>官方推荐：</p>
-<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
-<p>初始化的时候没有密码：–initialize-insecure </p>
-</blockquote>
-<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
-[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
-export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL优化和运维之道</title>
     <url>/blog/2021/10/26/MySQL%E4%BC%98%E5%8C%96%E5%92%8C%E8%BF%90%E7%BB%B4%E4%B9%8B%E9%81%93/</url>
     <content><![CDATA[<h1 id="MySQL-优化和运维之道"><a href="#MySQL-优化和运维之道" class="headerlink" title="MySQL 优化和运维之道"></a>MySQL 优化和运维之道</h1><h2 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h2><ol>
@@ -2124,10 +2053,81 @@ Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers
       </tags>
   </entry>
   <entry>
+    <title>MySQL8.0.27版本二进制安装</title>
+    <url>/blog/2021/10/27/MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="MySQL-二进制安装"><a href="#MySQL-二进制安装" class="headerlink" title="MySQL 二进制安装"></a>MySQL 二进制安装</h1><h2 id="一、-获取MySQL软件包"><a href="#一、-获取MySQL软件包" class="headerlink" title="一、 获取MySQL软件包"></a>一、 获取MySQL软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="二、创建存放位置并解压软件包"><a href="#二、创建存放位置并解压软件包" class="headerlink" title="二、创建存放位置并解压软件包"></a>二、创建存放位置并解压软件包</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql827]# mkdir &#123;data,log&#125;
+soft]# tar xf mysql-8.0.27-linux-glibc2.17-x86_64-minimal.tar
+[root@docker soft]# mv mysql-8.0.27-linux-glibc2.17-x86_64-minimal  &#x2F;app&#x2F;mysql827
+[root@docker soft]# cd &#x2F;app&#x2F;mysql827&#x2F;
+[root@docker mysql827]# ls
+bin  docs  include  lib  LICENSE  man  README  share  support-files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、修改my-cnf文件-主配置文件"><a href="#三、修改my-cnf文件-主配置文件" class="headerlink" title="三、修改my.cnf文件(主配置文件)"></a>三、修改my.cnf文件(主配置文件)</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;my.cnf
+[mysqld]
+# 选择默认存储引擎为InnoDB
+default-storage-engine&#x3D;InnoDB
+# 用户
+user &#x3D; mysql
+# 监听端口
+port &#x3D; 3306
+#socket通信设置
+socket&#x3D;&#x2F;tmp&#x2F;mysql.sock
+# 安装目录
+basedir&#x3D;&#x2F;app&#x2F;mysql827
+# 数据文件位置
+datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data
+# 允许最大连接数 
+max_connections&#x3D;512
+# 等待关闭连接时间
+wait_timeout&#x3D;600
+# 服务端字符集
+character-set-server&#x3D;utf8mb4
+# 错误日志
+log-error&#x3D;&#x2F;app&#x2F;mysql827&#x2F;log&#x2F;error.log
+# 默认使用“mysql_native_password”插件认证
+default_authentication_plugin&#x3D;mysql_native_password
+#server-id&#x3D;10
+log_bin&#x3D;gh
+## 兼容sql_mode
+sql_mode&#x3D;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="四、添加数据库用户及修改权限"><a href="#四、添加数据库用户及修改权限" class="headerlink" title="四、添加数据库用户及修改权限"></a>四、添加数据库用户及修改权限</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker app]# useradd mysql -s &#x2F;sbin&#x2F;nologin
+[root@docker app]# chown -R mysql:mysql mysql827&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="五、初始化数据库"><a href="#五、初始化数据库" class="headerlink" title="五、初始化数据库"></a>五、初始化数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# &#x2F;app&#x2F;mysql827&#x2F;bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;mysql827 --datadir&#x3D;&#x2F;app&#x2F;mysql827&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>官方推荐：</p>
+<p>初始化的时候添加有密码 –initialize （官方推荐） 初始化密码放在error.log日志里</p>
+<p>初始化的时候没有密码：–initialize-insecure </p>
+</blockquote>
+<h2 id="六、拷贝启动文件，方便在控制端启动服务并启动服务"><a href="#六、拷贝启动文件，方便在控制端启动服务并启动服务" class="headerlink" title="六、拷贝启动文件，方便在控制端启动服务并启动服务"></a>六、<strong>拷贝启动文件，方便在控制端启动服务并启动服务</strong></h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# cp &#x2F;app&#x2F;mysql827&#x2F;support-files&#x2F;mysql.server &#x2F;etc&#x2F;init.d&#x2F;mysql 
+[root@docker mysql827]# &#x2F;etc&#x2F;init.d&#x2F;mysql start  | stop <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"><a href="#七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）" class="headerlink" title="七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）"></a>七、修改环境变量（必须是root权限如果不是root用户您可以使用echo命令）</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# vim &#x2F;etc&#x2F;profile
+export PATH&#x3D;$PATH:&#x2F;app&#x2F;mysql827&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="八、登陆数据库"><a href="#八、登陆数据库" class="headerlink" title="八、登陆数据库"></a>八、登陆数据库</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@docker mysql827]# mysql -uroot -p   # 密码error.log（初始密码）<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="九、-修改登陆密码"><a href="#九、-修改登陆密码" class="headerlink" title="九、 修改登陆密码"></a>九、 修改登陆密码</h2><pre class="line-numbers language-shel;l" data-language="shel;l"><code class="language-shel;l">mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;root123456&#39;;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="至此二进制数据库已经搭建完成"><a href="#至此二进制数据库已经搭建完成" class="headerlink" title="至此二进制数据库已经搭建完成"></a>至此二进制数据库已经搭建完成</h2>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL数据库客户端配置prompt参数</title>
     <url>/blog/2021/11/01/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AEprompt%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<p>[mysql]</p>
-<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#x64;&#x65;&#x76;&#49;&#64;&#49;&#x37;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#x35;&#57;&#46;&#x31;&#x33;&#51;">&#x64;&#x65;&#x76;&#49;&#64;&#49;&#x37;&#x32;&#x2e;&#x31;&#x36;&#x2e;&#x35;&#57;&#46;&#x31;&#x33;&#51;</a> [mysql]&gt;</p>
+<p>prompt=\U [\d]&gt;  显示的效果为 <a href="mailto:&#100;&#x65;&#x76;&#49;&#x40;&#x31;&#55;&#50;&#x2e;&#x31;&#54;&#46;&#53;&#x39;&#x2e;&#x31;&#51;&#x33;">&#100;&#x65;&#x76;&#49;&#x40;&#x31;&#55;&#50;&#x2e;&#x31;&#54;&#46;&#53;&#x39;&#x2e;&#x31;&#51;&#x33;</a> [mysql]&gt;</p>
 <p>虽然在访问 MySQL 数据库时首选图形客户端，但对于许多用户来说，<em>mysql</em>命令行客户端是连接 MySQL 服务器时的首选。很多时候，当您通过 SSH 访问远程机器时，这是唯一可用的选项。</p>
 <p>默认的 mysql 提示很简单：</p>
 <pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">mysql &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -3309,192 +3309,6 @@ k8s-node02   Ready    &lt;none&gt;                 22m   v1.23.0<span aria-hidde
       </tags>
   </entry>
   <entry>
-    <title>mysql5.7主从复制-异步</title>
-    <url>/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="Mysql-5-7-架构之主从复制-异步"><a href="#Mysql-5-7-架构之主从复制-异步" class="headerlink" title="Mysql 5.7  架构之主从复制(异步)"></a>Mysql 5.7  架构之主从复制(异步)</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的DDL和DML 操作通过二进制日志传到复制服务器（也就从库）上，然后从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步。</p>
-<p>MySQL 支持两种复制方式： 基于行的复制和基于语句的复制。基于语句的复制（也称为逻辑复制）早在MySQL3.23 版本总就存在，而基于行的复制方式在5.1版本中才被加进来。这两种方式都是通过主主库上记录二进制日志、在备库重放日志的方式来实现异步的数据复制。这意味着，在同一时间点备库上的数据可能与主库存在不一致，并且无法保证主备之间的延迟。一些大的语句可能导致备库产生几秒、几分钟甚至几个小时的延迟。</p>
-<p><font color="red">注意：</font></p>
-<blockquote>
-<p>由于MySQL 实现的是异步的复制，所以主从库之间存在一定的差距，在从库上进行的查询操作需要考虑到这些数据的差异、一般只有更新不频繁的数据或者对实时要求不高的数据可以通过从库查询，实时性要求高的数据仍需要从主数据库获取</p>
-</blockquote>
-<h2 id="二、复制解决的问题"><a href="#二、复制解决的问题" class="headerlink" title="二、复制解决的问题"></a>二、复制解决的问题</h2><ul>
-<li>数据分布</li>
-<li>负载均衡</li>
-<li>备份</li>
-<li>高可用和故障切换</li>
-<li>MySQL 升级测试</li>
-</ul>
-<h2 id="三、MySQL-复制是如何工作"><a href="#三、MySQL-复制是如何工作" class="headerlink" title="三、MySQL 复制是如何工作"></a>三、MySQL 复制是如何工作</h2><p>MySQL 的复制原理大致如下：</p>
-<p>mysql主从复制需要三个线程，master（binlog dump thread）、slave（I/O thread 、SQL thread）。</p>
-<ol>
-<li>首先，MySQL 主库在事务提交时会把数据变更作为事件Events 记录在二进制日志文件Binlog中；MySQL 主库上的sync_binlog 参数控制Binlog 日志刷新磁盘。</li>
-<li>主库推送二进制日志文件Binlog 中的事件到从库的中继日志 Relay Log 重做数据变更操作，通过逻辑复制以此达到主库和从库的数据一致。</li>
-</ol>
-<p>MySQL 通过3个线程来完成主从库间的数据复制： 其中 Binlog Dump 线程跑在主库上， I/O 线程和SQL线程跑在从库上。当在从库上启动复制（START SLAVE)时，首先创建I/O线程连接主库，主库随后创建Binlog Dump 线程读取数据库事件并发送I/O 线程，I/O线程获 取到</p>
-<ul>
-<li>开启binlog日志</li>
-<li>创建I/O 线程连接主库；</li>
-<li>主库创建Binlog Dump线程读取数据事件并发送给I/O线程；</li>
-<li>I/O 线程获取到事件数据后更新到从库的中继日志 Relay Log 中；</li>
-<li>从库上的SQL 线程读取中继日志Relay Log 中更新数据事件并应用</li>
-</ul>
-<img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211103000318590" style="zoom:50%;">
-
-<h2 id="四、环境介绍"><a href="#四、环境介绍" class="headerlink" title="四、环境介绍"></a>四、环境介绍</h2><table>
-<thead>
-<tr>
-<th>IP地址</th>
-<th>角色</th>
-<th>OS</th>
-<th>软件版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>172.16.59.141</td>
-<td>master</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-<tr>
-<td>172.16.59.142</td>
-<td>slave01</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-<tr>
-<td>172.16.59.143</td>
-<td>slave02</td>
-<td>3.10.0-1160.45.1.el7.x86_64</td>
-<td>5.7.36-log MySQL Community Server (GPL</td>
-</tr>
-</tbody></table>
-<h2 id="五、流程架构图："><a href="#五、流程架构图：" class="headerlink" title="五、流程架构图："></a>五、流程架构图：</h2><img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105232550510" style="zoom:50%;">
-
-<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave01 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
-[root@mysql-slave02 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# mkdir -p &#x2F;app&#x2F;soft
-[root@mysql-master ~]# mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;logs
-[root@mysql-master ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz &#x2F;app&#x2F;soft
-[root@mysql-master soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz 
-[root@mysql-master soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# useradd  mysql -s &#x2F;sbin&#x2F;nologin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master data]# chown mysql:mysql -R mysql5_data&#x2F;
-[root@mysql-master soft]# chown mysql:mysql -R mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="6-5-创建my-cnf"><a href="#6-5-创建my-cnf" class="headerlink" title="6.5 创建my.cnf"></a>6.5 创建my.cnf</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[root@mysql-master ~]# vim  &#x2F;data&#x2F;mysql5_data&#x2F;my.cnf
-[mysqld]
-basedir &#x3D; &#x2F;app&#x2F;soft&#x2F;mysql5
-datadir &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;data
-socket &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock
-port &#x3D; 3306
-server-id &#x3D; 1    # server_id 是唯一
-
-#log setting
-log_error &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
-slow_query_log &#x3D; 1
-long_query_time &#x3D; 1
-slow-query_log_file &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;slow_query.log
-log_queries_not_using_indexes &#x3D; 1
-log_throttle_queries_not_using_indexes &#x3D; 5
-min_examined_row_limit &#x3D; 100
-expire_logs_days &#x3D; 5
-
-#Master-from-set
-log-bin &#x3D; mysql-bin
-binlog_format &#x3D; ROW
-
-#innodb setting
-innodb_buffer_pool_size &#x3D; 64M
-innodb_log_buffer_size &#x3D; 2M
-innodb_lock_wait_timeout &#x3D; 120
-innodb_log_file_size &#x3D; 32M<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font color="red">注意：</font></p>
-<blockquote>
-<p>slave 的server_id 要比主server_id 要大</p>
-</blockquote>
-<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F; --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>初始化密码：会随机打印到屏幕上</p>
-</blockquote>
-<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf  --user&#x3D;mysql &amp;
-~]# mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><font color="red">注意：</font></p>
-<blockquote>
-<p>第一次登陆mysql需要修改密码：set password=password(‘123456’);</p>
-</blockquote>
-<p><font color="red">至此master就安装完成，两台 slave 一样执行，唯独my.cnf文件不一样；</font></p>
-<h3 id="七、在主库上创建用户并授权用于复制使用的"><a href="#七、在主库上创建用户并授权用于复制使用的" class="headerlink" title="七、在主库上创建用户并授权用于复制使用的"></a>七、在主库上创建用户并授权用于复制使用的</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  create user slave@&#39;%&#39; identified by &#39;slave123&#39;;
-root@localhost: [ (none) ]&gt;  grant replication slave on &#39;slave&#39;@&#39;%&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="八、查看master-库上日志文件名及偏移量"><a href="#八、查看master-库上日志文件名及偏移量" class="headerlink" title="八、查看master 库上日志文件名及偏移量"></a>八、查看master 库上日志文件名及偏移量</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show master status \G
-*************************** 1. row ***************************
-             File: mysql-bin.000003
-         Position: 841
-     Binlog_Do_DB: 
- Binlog_Ignore_DB: 
-Executed_Gtid_Set: 
-1 row in set (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>九、在两个从库上执行</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  change master to 
-master_host&#x3D;&#39;172.16.59.141&#39;,          # 表示实现复制的主机的IP地址
-master_port&#x3D;3306, 										# 表示实现复制的主机的端口号
-master_user&#x3D;&#39;slave&#39;, 									# 表示实现复制远程登陆主机的用户命
-master_password&#x3D;&#39;slave123&#39;,					  # 表示实现复制远程登录主机用户的密码
-master_log_file&#x3D;&#39;mysql-bin.000003&#39;,   # 表示实现复制的binlog 日志文件名
-master_log_pos&#x3D;841;                   # 表示实现复制的binlog 日志文件的偏移量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>十、在从库上开启slave进程</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  start slave;
-Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="七、验证："><a href="#七、验证：" class="headerlink" title="七、验证："></a>七、验证：</h2><p>一、主库上查看是否有slave进程</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show processlist;
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
-| Id | User  | Host                | db   | Command     | Time | State                                                         | Info             |
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
-|  3 | root  | localhost           | NULL | Query       |    0 | starting                                                      | show processlist |
-|  4 | slave | 172.16.59.143:41676 | NULL | Binlog Dump |   72 | Master has sent all binlog to slave; waiting for more updates | NULL             |
-|  5 | slave | 172.16.59.142:45184 | NULL | Binlog Dump |   59 | Master has sent all binlog to slave; waiting for more updates | NULL             |
-+----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>二、从库上查看状态</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show slave status \G
-*************************** 1. row ***************************
-               Slave_IO_State: Waiting for master to send event
-                  Master_Host: 172.16.59.141
-                  Master_User: slave
-                  Master_Port: 3306
-                Connect_Retry: 60
-              Master_Log_File: mysql-bin.000003
-          Read_Master_Log_Pos: 841
-               Relay_Log_File: mysql-slave01-relay-bin.000002
-                Relay_Log_Pos: 320
-        Relay_Master_Log_File: mysql-bin.000003
-             Slave_IO_Running: Yes
-            Slave_SQL_Running: Yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><font color="red">注意观察：</font></p>
-<blockquote>
-<p>I/O 线程 和SQL线程的状态是yes, 两个线程必须为也开启状态</p>
-<p>Slave_IO_Running: Yes<br>Slave_SQL_Running: Yes</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kubernetes构建efk日志系统</title>
     <url>/blog/2021/12/21/kubernetes%E6%9E%84%E5%BB%BAefk%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="kubernetes-1-23集群-构建efk-日志系统"><a href="#kubernetes-1-23集群-构建efk-日志系统" class="headerlink" title="kubernetes-1.23集群 构建efk 日志系统"></a>kubernetes-1.23集群 构建efk 日志系统</h1><h2 id="一、EFK-简介"><a href="#一、EFK-简介" class="headerlink" title="一、EFK 简介"></a>一、EFK 简介</h2><p><strong>ElasticSearch：分布式存储检索引擎，用来搜索、存储日志</strong></p>
@@ -4425,6 +4239,192 @@ kibana-logging-647576567c-zdl4w   1&#x2F;1     Running   0          42m<span ari
       </tags>
   </entry>
   <entry>
+    <title>mysql5.7主从复制-异步</title>
+    <url>/blog/2021/11/06/mysql5-7%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-%E5%BC%82%E6%AD%A5/</url>
+    <content><![CDATA[<h1 id="Mysql-5-7-架构之主从复制-异步"><a href="#Mysql-5-7-架构之主从复制-异步" class="headerlink" title="Mysql 5.7  架构之主从复制(异步)"></a>Mysql 5.7  架构之主从复制(异步)</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>MySQL 从3.23版本开始提供复制的功能。复制是指将主数据库的DDL和DML 操作通过二进制日志传到复制服务器（也就从库）上，然后从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步。</p>
+<p>MySQL 支持两种复制方式： 基于行的复制和基于语句的复制。基于语句的复制（也称为逻辑复制）早在MySQL3.23 版本总就存在，而基于行的复制方式在5.1版本中才被加进来。这两种方式都是通过主主库上记录二进制日志、在备库重放日志的方式来实现异步的数据复制。这意味着，在同一时间点备库上的数据可能与主库存在不一致，并且无法保证主备之间的延迟。一些大的语句可能导致备库产生几秒、几分钟甚至几个小时的延迟。</p>
+<p><font color="red">注意：</font></p>
+<blockquote>
+<p>由于MySQL 实现的是异步的复制，所以主从库之间存在一定的差距，在从库上进行的查询操作需要考虑到这些数据的差异、一般只有更新不频繁的数据或者对实时要求不高的数据可以通过从库查询，实时性要求高的数据仍需要从主数据库获取</p>
+</blockquote>
+<h2 id="二、复制解决的问题"><a href="#二、复制解决的问题" class="headerlink" title="二、复制解决的问题"></a>二、复制解决的问题</h2><ul>
+<li>数据分布</li>
+<li>负载均衡</li>
+<li>备份</li>
+<li>高可用和故障切换</li>
+<li>MySQL 升级测试</li>
+</ul>
+<h2 id="三、MySQL-复制是如何工作"><a href="#三、MySQL-复制是如何工作" class="headerlink" title="三、MySQL 复制是如何工作"></a>三、MySQL 复制是如何工作</h2><p>MySQL 的复制原理大致如下：</p>
+<p>mysql主从复制需要三个线程，master（binlog dump thread）、slave（I/O thread 、SQL thread）。</p>
+<ol>
+<li>首先，MySQL 主库在事务提交时会把数据变更作为事件Events 记录在二进制日志文件Binlog中；MySQL 主库上的sync_binlog 参数控制Binlog 日志刷新磁盘。</li>
+<li>主库推送二进制日志文件Binlog 中的事件到从库的中继日志 Relay Log 重做数据变更操作，通过逻辑复制以此达到主库和从库的数据一致。</li>
+</ol>
+<p>MySQL 通过3个线程来完成主从库间的数据复制： 其中 Binlog Dump 线程跑在主库上， I/O 线程和SQL线程跑在从库上。当在从库上启动复制（START SLAVE)时，首先创建I/O线程连接主库，主库随后创建Binlog Dump 线程读取数据库事件并发送I/O 线程，I/O线程获 取到</p>
+<ul>
+<li>开启binlog日志</li>
+<li>创建I/O 线程连接主库；</li>
+<li>主库创建Binlog Dump线程读取数据事件并发送给I/O线程；</li>
+<li>I/O 线程获取到事件数据后更新到从库的中继日志 Relay Log 中；</li>
+<li>从库上的SQL 线程读取中继日志Relay Log 中更新数据事件并应用</li>
+</ul>
+<img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211103000318590.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211103000318590" style="zoom:50%;">
+
+<h2 id="四、环境介绍"><a href="#四、环境介绍" class="headerlink" title="四、环境介绍"></a>四、环境介绍</h2><table>
+<thead>
+<tr>
+<th>IP地址</th>
+<th>角色</th>
+<th>OS</th>
+<th>软件版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>172.16.59.141</td>
+<td>master</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+<tr>
+<td>172.16.59.142</td>
+<td>slave01</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+<tr>
+<td>172.16.59.143</td>
+<td>slave02</td>
+<td>3.10.0-1160.45.1.el7.x86_64</td>
+<td>5.7.36-log MySQL Community Server (GPL</td>
+</tr>
+</tbody></table>
+<h2 id="五、流程架构图："><a href="#五、流程架构图：" class="headerlink" title="五、流程架构图："></a>五、流程架构图：</h2><img src="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" class="lazyload placeholder" data-srcset="/Users/abbott/Library/Application Support/typora-user-images/image-20211105232550510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211105232550510" style="zoom:50%;">
+
+<h2 id="六、搭建过程（主从一样）"><a href="#六、搭建过程（主从一样）" class="headerlink" title="六、搭建过程（主从一样）"></a>六、搭建过程（主从一样）</h2><h3 id="6-1-获取安装"><a href="#6-1-获取安装" class="headerlink" title="6.1 获取安装"></a>6.1 获取安装</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]#  wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
+[root@mysql-slave01 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz
+[root@mysql-slave02 ~]# wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-5.7&#x2F;mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-2-创建目录及解压"><a href="#6-2-创建目录及解压" class="headerlink" title="6.2 创建目录及解压"></a>6.2 创建目录及解压</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# mkdir -p &#x2F;app&#x2F;soft
+[root@mysql-master ~]# mkdir -p &#x2F;data&#x2F;mysql5_data&#x2F;logs
+[root@mysql-master ~]# mv mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz &#x2F;app&#x2F;soft
+[root@mysql-master soft]# tar xf mysql-5.7.36-linux-glibc2.12-x86_64.tar.gz 
+[root@mysql-master soft]# ln -s mysql-5.7.36-linux-glibc2.12-x86_64 mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-3-创建mysql用户"><a href="#6-3-创建mysql用户" class="headerlink" title="6.3 创建mysql用户"></a>6.3 创建mysql用户</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master ~]# useradd  mysql -s &#x2F;sbin&#x2F;nologin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="6-4-修改权限"><a href="#6-4-修改权限" class="headerlink" title="6.4 修改权限"></a>6.4 修改权限</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@mysql-master data]# chown mysql:mysql -R mysql5_data&#x2F;
+[root@mysql-master soft]# chown mysql:mysql -R mysql5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="6-5-创建my-cnf"><a href="#6-5-创建my-cnf" class="headerlink" title="6.5 创建my.cnf"></a>6.5 创建my.cnf</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">[root@mysql-master ~]# vim  &#x2F;data&#x2F;mysql5_data&#x2F;my.cnf
+[mysqld]
+basedir &#x3D; &#x2F;app&#x2F;soft&#x2F;mysql5
+datadir &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;data
+socket &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock
+port &#x3D; 3306
+server-id &#x3D; 1    # server_id 是唯一
+
+#log setting
+log_error &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;logs&#x2F;error.log
+slow_query_log &#x3D; 1
+long_query_time &#x3D; 1
+slow-query_log_file &#x3D; &#x2F;data&#x2F;mysql5_data&#x2F;slow_query.log
+log_queries_not_using_indexes &#x3D; 1
+log_throttle_queries_not_using_indexes &#x3D; 5
+min_examined_row_limit &#x3D; 100
+expire_logs_days &#x3D; 5
+
+#Master-from-set
+log-bin &#x3D; mysql-bin
+binlog_format &#x3D; ROW
+
+#innodb setting
+innodb_buffer_pool_size &#x3D; 64M
+innodb_log_buffer_size &#x3D; 2M
+innodb_lock_wait_timeout &#x3D; 120
+innodb_log_file_size &#x3D; 32M<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font color="red">注意：</font></p>
+<blockquote>
+<p>slave 的server_id 要比主server_id 要大</p>
+</blockquote>
+<h3 id="6-6-初始化"><a href="#6-6-初始化" class="headerlink" title="6.6 初始化"></a>6.6 初始化</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --user&#x3D;mysql --basedir&#x3D;&#x2F;app&#x2F;soft&#x2F;mysql5&#x2F; --datadir&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;data --initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>初始化密码：会随机打印到屏幕上</p>
+</blockquote>
+<h3 id="6-7-启动数据并登陆"><a href="#6-7-启动数据并登陆" class="headerlink" title="6.7 启动数据并登陆"></a>6.7 启动数据并登陆</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">~]# bin&#x2F;mysqld --defaults-file&#x3D;&#x2F;data&#x2F;mysql5_data&#x2F;my.cnf  --user&#x3D;mysql &amp;
+~]# mysql -S &#x2F;data&#x2F;mysql5_data&#x2F;mysql3306.sock -uroot -p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><font color="red">注意：</font></p>
+<blockquote>
+<p>第一次登陆mysql需要修改密码：set password=password(‘123456’);</p>
+</blockquote>
+<p><font color="red">至此master就安装完成，两台 slave 一样执行，唯独my.cnf文件不一样；</font></p>
+<h3 id="七、在主库上创建用户并授权用于复制使用的"><a href="#七、在主库上创建用户并授权用于复制使用的" class="headerlink" title="七、在主库上创建用户并授权用于复制使用的"></a>七、在主库上创建用户并授权用于复制使用的</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  create user slave@&#39;%&#39; identified by &#39;slave123&#39;;
+root@localhost: [ (none) ]&gt;  grant replication slave on &#39;slave&#39;@&#39;%&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="八、查看master-库上日志文件名及偏移量"><a href="#八、查看master-库上日志文件名及偏移量" class="headerlink" title="八、查看master 库上日志文件名及偏移量"></a>八、查看master 库上日志文件名及偏移量</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show master status \G
+*************************** 1. row ***************************
+             File: mysql-bin.000003
+         Position: 841
+     Binlog_Do_DB: 
+ Binlog_Ignore_DB: 
+Executed_Gtid_Set: 
+1 row in set (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>九、在两个从库上执行</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  change master to 
+master_host&#x3D;&#39;172.16.59.141&#39;,          # 表示实现复制的主机的IP地址
+master_port&#x3D;3306, 										# 表示实现复制的主机的端口号
+master_user&#x3D;&#39;slave&#39;, 									# 表示实现复制远程登陆主机的用户命
+master_password&#x3D;&#39;slave123&#39;,					  # 表示实现复制远程登录主机用户的密码
+master_log_file&#x3D;&#39;mysql-bin.000003&#39;,   # 表示实现复制的binlog 日志文件名
+master_log_pos&#x3D;841;                   # 表示实现复制的binlog 日志文件的偏移量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>十、在从库上开启slave进程</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  start slave;
+Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="七、验证："><a href="#七、验证：" class="headerlink" title="七、验证："></a>七、验证：</h2><p>一、主库上查看是否有slave进程</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show processlist;
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
+| Id | User  | Host                | db   | Command     | Time | State                                                         | Info             |
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+
+|  3 | root  | localhost           | NULL | Query       |    0 | starting                                                      | show processlist |
+|  4 | slave | 172.16.59.143:41676 | NULL | Binlog Dump |   72 | Master has sent all binlog to slave; waiting for more updates | NULL             |
+|  5 | slave | 172.16.59.142:45184 | NULL | Binlog Dump |   59 | Master has sent all binlog to slave; waiting for more updates | NULL             |
++----+-------+---------------------+------+-------------+------+---------------------------------------------------------------+------------------+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、从库上查看状态</p>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">root@localhost: [ (none) ]&gt;  show slave status \G
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 172.16.59.141
+                  Master_User: slave
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.000003
+          Read_Master_Log_Pos: 841
+               Relay_Log_File: mysql-slave01-relay-bin.000002
+                Relay_Log_Pos: 320
+        Relay_Master_Log_File: mysql-bin.000003
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><font color="red">注意观察：</font></p>
+<blockquote>
+<p>I/O 线程 和SQL线程的状态是yes, 两个线程必须为也开启状态</p>
+<p>Slave_IO_Running: Yes<br>Slave_SQL_Running: Yes</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>openstack原理</title>
     <url>/blog/2021/10/28/openstack%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h2 id="第一章-原理篇"><a href="#第一章-原理篇" class="headerlink" title="第一章 原理篇"></a>第一章 原理篇</h2><h3 id="一、云计算之OpenStack"><a href="#一、云计算之OpenStack" class="headerlink" title="一、云计算之OpenStack"></a>一、云计算之OpenStack</h3><h4 id="1-1-什么是云"><a href="#1-1-什么是云" class="headerlink" title="1.1    什么是云"></a>1.1    什么是云</h4><h4 id="云计算-Cloud-Computing-："><a href="#云计算-Cloud-Computing-：" class="headerlink" title="云计算(Cloud Computing)："></a>云计算(Cloud Computing)：</h4><p>一种基于因特网的超级计算模式，在远程的数据中心里，成千上万台电脑和服务器连接成一片电脑云。因此，云计算甚至可以让你体验每秒10万亿次的运算能力，拥有这么强大的计算能力可以模拟核爆炸、预测气候变化和市场发展趋势。用户通过电脑、笔记本、手机等方式接入数据中心，按自己的需求进行运算。</p>
@@ -4862,6 +4862,246 @@ vim &#x2F;etc&#x2F;docker&#x2F;daemon.json
       </categories>
       <tags>
         <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RAID</title>
+    <url>/blog/2022/04/03/RAID/RAID/</url>
+    <content><![CDATA[<h1 id="RAID磁盘阵列"><a href="#RAID磁盘阵列" class="headerlink" title="RAID磁盘阵列"></a>RAID磁盘阵列</h1><p>早在1978年，美国加州大学伯克利分校就提出了RAID（Redundant Array of Independent DIsk）虚拟存储系统。RAID即独立冗余磁盘阵列；其思想是将多块独立的磁盘按不同的方式组合为一个逻辑磁盘，从而提高存储容量，提升存储性能或提供数据备份功能。RAID存储系统的组合方式根据RAID基本定义。</p>
+<p>RAID分为软件RAID和硬件RAID两类。在现有的操作系统中。如windows、Linux、Unix等已经集成了软RAID的功能。软件RAID可以实现与硬件RAID相同的功能，当由于其没有独立的硬件控制设备，所以性能不如硬件RAID，但软件RAID实现简单，不需要额外的硬件设备。硬件RAID通常需要有RAID卡，RAID卡本身会有独立控制部件和内存，所以不会占有系统资源，效率高、性能强。当然目前市面的大部分主板已经继承了RAID卡，具体使用方式可以参考硬件说明书</p>
+<h2 id="RAID-级别"><a href="#RAID-级别" class="headerlink" title="RAID 级别"></a>RAID 级别</h2><h3 id="1、-RAID-0-（不含校验与冗余的条带存储）"><a href="#1、-RAID-0-（不含校验与冗余的条带存储）" class="headerlink" title="1、 RAID 0 （不含校验与冗余的条带存储）"></a>1、 RAID 0 （不含校验与冗余的条带存储）</h3><p>在 RAID 0 系统中，数据被分成块，这些块被写入阵列中的所有驱动器。通过同时使用多个磁盘（至少 2 个），这提供了卓越的 I/O 性能。通过使用多个控制器（理想情况下每个磁盘一个控制器）可以进一步增强这种性能。</p>
+<p><strong>RAID 0 的优点</strong></p>
+<ul>
+<li>RAID 0 在读取和写入操作方面都提供了出色的性能。奇偶校验控制不会导致开销。</li>
+<li>使用所有存储容量，没有开销。</li>
+<li>该技术易于实施。</li>
+</ul>
+<p><strong>RAID 0 的缺点</strong></p>
+<ul>
+<li>RAID 0 不是容错的。如果一个驱动器发生故障，RAID 0 阵列中的所有数据都将丢失。它不应用于关键任务系统。</li>
+</ul>
+<h3 id="2、-RAID-1-（不含校验的镜像存储）"><a href="#2、-RAID-1-（不含校验的镜像存储）" class="headerlink" title="2、 RAID 1 （不含校验的镜像存储）"></a>2、 RAID 1 （不含校验的镜像存储）</h3><p>通过将数据写入数据驱动器（或数据驱动器组）和镜像驱动器（或驱动器组），数据被存储两次。如果驱动器发生故障，控制器将使用数据驱动器或镜像驱动器进行数据恢复和连续操作。RAID 1 阵列至少需要 2 个驱动器。</p>
+<p><strong>RAID 1 的优点</strong></p>
+<ul>
+<li>RAID 1 提供出色的读取速度和与单个驱动器相当的写入速度。</li>
+<li>如果驱动器发生故障，则不必重建数据，只需将它们复制到替换驱动器即可。</li>
+<li>RAID 1 是一种非常简单的技术。</li>
+</ul>
+<p><strong>RAID 1 的缺点</strong></p>
+<ul>
+<li>主要缺点是有效存储容量仅为驱动器总容量的一半，因为所有数据都被写入两次。</li>
+<li>软件RAID 1解决方案并不总是允许失败的驱动器的热插拔。这意味着只有在关闭计算机上的计算机下电后才只能替换失败的驱动器。对于许多人同时使用的服务器，这可能是不可接受的。这些系统通常使用支持热插拔的硬件控制器。</li>
+</ul>
+<h3 id="3、-RAID-3-（字节级别的校验式条带存储）"><a href="#3、-RAID-3-（字节级别的校验式条带存储）" class="headerlink" title="3、 RAID 3 （字节级别的校验式条带存储）"></a>3、 RAID 3 （字节级别的校验式条带存储）</h3><p>该级别的磁盘阵列可以参考RAID 2 的读写原理，仅数据分割的单位为字节。å</p>
+<h3 id="4、-RAID-4-（数据块级别的校验式条带存储）"><a href="#4、-RAID-4-（数据块级别的校验式条带存储）" class="headerlink" title="4、 RAID 4 （数据块级别的校验式条带存储）"></a>4、 RAID 4 （数据块级别的校验式条带存储）</h3><p>该级别的磁盘阵列与RAID 2 类似，仅数据分割单位不同。</p>
+<h3 id="5、-RAID-5（数据库级别的分布式校验条带存储）"><a href="#5、-RAID-5（数据库级别的分布式校验条带存储）" class="headerlink" title="5、 RAID 5（数据库级别的分布式校验条带存储）"></a>5、 RAID 5（数据库级别的分布式校验条带存储）</h3><p>RAID-5具有和RAID-0相近似的数据读取速度，同时磁盘空间利用率也要比RAID1高。属于是RAID-0和RAID-1的折中方案，是一种存储性能、数据安全和存储成本兼顾的存储解决方案。由于存储成本相对较低，是目前运用较多的一种解决方案。<br>      RAID-5阵列中数据的分布与RAID-0类似，数据也是分布到每块硬盘上，但Raid-5没有独立的奇偶校验盘，他通过将校验的数据循环存储并分散放在所有磁盘上，其中任意N-1块磁盘上都存储完整的数据，也就是说有相当于一块磁盘容量的空间用于存储奇偶校验信息。因此当RAID5能够支持在一块盘离线的情况下保证数据的正常访问，不会影响数据的完整性，从而保证了数据安全。当损坏的磁盘被替换后，RAID还会自动利用剩下奇偶校验信息去重建此磁盘上的数据，来保持RAID5的高可靠性。<br>      RAID-5的组建，至少需要三块或更多的磁盘，并可以使用0块或更多的备用磁盘，其数据安全保障程度要比RAID1低，写入数据的速度比对单个磁盘进行写入速度稍慢。如果有两块或两块以上硬盘同时离线，或者RAID信息出错等原因，阵列便会失效，这时就需要对数据进行重组。并且做raid 5阵列所有磁盘容量必须一样大，当容量不同时，会以最小的容量为准。 同时，最好硬盘转速一样，否则会影响性能。</p>
+<h3 id="6、-RAID-10-（镜像与条带存储）"><a href="#6、-RAID-10-（镜像与条带存储）" class="headerlink" title="6、 RAID 10 （镜像与条带存储）"></a>6、 RAID 10 （镜像与条带存储）</h3><p>RAID 1+0也被称为RAID-10标准，实际是将RAID-0和RAID-1标准结合的产物，是先对磁盘先进行RAID-1，然后RAID-0，这种方法即提供了冗余，而且也提升了速度。<br>      在连续地以位或字节为单位分割数据并且并行读/写多个磁盘的同时，为每一块磁盘作磁盘镜像进行冗余。它的优点是同时拥有RAID-0的超凡速度和RAID-1的数据高可靠性，但是CPU占用率同样也更高，而且磁盘的利用率比较低。由于利用了RAID-0极高的读写效率和RAID-1较高的数据保护、恢复能力，使RAID-10成为了一种性价比较高的等级，目前几乎所有的RAID控制卡都支持这一等级。</p>
+<table>
+<thead>
+<tr>
+<th align="center">RAID等级</th>
+<th align="center">最少硬盘</th>
+<th align="center">最大容错</th>
+<th align="center">可用容量</th>
+<th align="center">读取效能</th>
+<th align="right">写入效能</th>
+<th align="center">安全性</th>
+<th align="center">目的</th>
+<th align="center">应用产业</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">单一硬盘</td>
+<td align="center">(参考)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="right">1</td>
+<td align="center">无</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">JBOD</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">n</td>
+<td align="center">1</td>
+<td align="right">1</td>
+<td align="center">无（同RAID 0）</td>
+<td align="center">增加容量</td>
+<td align="center">个人（暂时）储存备份</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">n</td>
+<td align="center">n</td>
+<td align="right">n</td>
+<td align="center">一个硬盘异常，全部硬盘都会异常</td>
+<td align="center">追求最大容量、速度</td>
+<td align="center">影片剪接快取用途</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">n-1</td>
+<td align="center">1</td>
+<td align="center">n</td>
+<td align="right">1</td>
+<td align="center">高，一个正常即可</td>
+<td align="center">追求最大安全性</td>
+<td align="center">个人、企业备份</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">n-1</td>
+<td align="center">n-1</td>
+<td align="right">n-1</td>
+<td align="center">中下至中</td>
+<td align="center">追求最大容量、最小预算</td>
+<td align="center">个人、小型企业备份</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">n-2</td>
+<td align="center">n-2</td>
+<td align="right">n-2</td>
+<td align="center">中至中高,仅安全性较RAID 5高</td>
+<td align="center">同RAID 5，但较安全</td>
+<td align="center">个人、企业备份</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">综合RAID 0/1优点，理论速度较快</td>
+<td align="center">大型资料库、伺服器</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="center">6</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">提升资料安全</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">60</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">提升资料安全</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h1 id="创建于管理软RIAD"><a href="#创建于管理软RIAD" class="headerlink" title="创建于管理软RIAD"></a>创建于管理软RIAD</h1><p>1、查看磁盘信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">fdisk -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2、创建RAID 模式md0 </p>
+<ul>
+<li><p>命令：mdadm</p>
+</li>
+<li><p>描述：管理Linux软件RAID设备</p>
+</li>
+<li><p>用法：mdadm [模式] 选项 &lt;raid 设备&gt;</p>
+</li>
+<li><p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">—C， # 创建软件RAID
+-n, --raid-devices&#x3D;   #指定空闲磁盘
+-l  --level&#x3D;          #指定级别 （raid &#123;0, 1 , 5  10 &#125;）
+-X, --examine-bitmap  #指定位图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>示例 ：创建RAID 模式md0 </p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mdadm -C &#x2F;dev&#x2F;md0 -n3 -l5 -x1 &#x2F;dev&#x2F;*d&#123;d,e,f,g&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>查看raid状态：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat &#x2F;proc&#x2F;mdstat
+
+mdadm -D &#x2F;dev&#x2F;md0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>格式文件系统</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkfs.ext4 &#x2F;dev&#x2F;md0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>挂载使用：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mount &#x2F;dev&#x2F;md0 &#x2F;****
+#开机自动挂载
+vim &#x2F;etc&#x2F;fstab  
+&#x2F;dev&#x2F;md0   &#x2F;****    ext4   defaulte     0   0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h1 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h1><h2 id="创建raid"><a href="#创建raid" class="headerlink" title="创建raid"></a>创建raid</h2><p>一、安装mdadm命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost Packages]# yum -y install mdadm*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>命令：mdadm</p>
+<p>语法：<strong>mdadm</strong> [mode] <raiddevice> [options] <component-devices></component-devices></raiddevice></p>
+<p>示例：创建 RAID 5   <font color="red">注意：创建RAID前需要添加磁盘 4块以上</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mdadm 
+--create  创建raid  &#x2F;dev&#x2F;md0
+--level   创建raid级别 
+--raid-devices  表示你要几块磁盘创建raid   设备
+[root@localhost ~]# mdadm --create &#x2F;dev&#x2F;md0 --level&#x3D;5 --raid-devices&#x3D;4  &#x2F;dev&#x2F;sd[bcde]
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array &#x2F;dev&#x2F;md0 started.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、格式化挂载使用</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkfs.ext4 &#x2F;dev&#x2F;md0 
+mke2fs 1.42.9 (28-Dec-2013)
+Allocating group tables: 完成                            
+正在写入inode表: 完成                            
+Creating journal (32768 blocks): 完成
+Writing superblocks and filesystem accounting information: 完成   
+
+#创建挂载点并且挂载md0并使用
+[root@localhost ~]# mkdir &#x2F;raid
+[root@localhost ~]# mount &#x2F;dev&#x2F;md0  &#x2F;raid&#x2F;
+
+#开机自动挂载,永久挂载
+
+使用vim编辑&#x2F;etc&#x2F;fstab这个文件里添加一下内容，然后保存并退出
+&#x2F;dev&#x2F;md0    &#x2F;raid        ext4     defaults   0 0 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>三、开机自动启动raid</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mdadm  -vDs
+ARRAY &#x2F;dev&#x2F;md0 level&#x3D;raid5 num-devices&#x3D;4 metadata&#x3D;1.2 name&#x3D;localhost:0 UUID&#x3D;53ef68dc:4427e09b:c2232fc2:0e76643a
+   devices&#x3D;&#x2F;dev&#x2F;sdb,&#x2F;dev&#x2F;sdc,&#x2F;dev&#x2F;sdd,&#x2F;dev&#x2F;sde
+[root@localhost ~]# mdadm -vDs &gt; &#x2F;etc&#x2F;mdadm.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>四、重启测试</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">init 6  reboot <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h1 id="RAID-性能测试："><a href="#RAID-性能测试：" class="headerlink" title="RAID 性能测试："></a>RAID 性能测试：</h1><ul>
+<li><p>普通磁盘：写入模拟</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">time dd if&#x3D;&#x2F;dev&#x2F;zero  of&#x3D;txt bs&#x3D;1M count&#x3D;1000
+if&#x3D;文件名：输入文件名，默认为标准输入。即指定源文件。
+of&#x3D;文件名：输出文件名，默认为标准输出。即指定目的文件。
+count&#x3D;blocks：仅拷贝blocks个块，块大小等于ibs指定的字节数。
+ibs&#x3D;bytes：一次读入bytes个字节，即指定一个块大小为bytes个字节。
+obs&#x3D;bytes：一次输出bytes个字节，即指定一个块大小为bytes个字节。
+bs&#x3D;bytes：同时设置读入&#x2F;输出的块大小为bytes个字节。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux系列</category>
+      </categories>
+      <tags>
+        <tag>磁盘管理</tag>
       </tags>
   </entry>
   <entry>

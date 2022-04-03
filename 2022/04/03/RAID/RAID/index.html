@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签 | abbott Blog</title>
+  <title>RAID | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -630,170 +630,710 @@
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
         
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-
-<div class="tags-header" style="background-image:url('https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg')">
-    <div class="tags-header-title">
-        tags
-    </div>
-    <div class="tags-header-desc">
+ <!-- prismjs 代码高亮 -->
+ 
     
-        <span class="title" id="tags-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tags-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/4.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        RAID
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-04-03 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/Linux%E7%B3%BB%E5%88%97/" class="post-detail-header_category">
+              Linux系列
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 12k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 10 mins.分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="RAID磁盘阵列"><a href="#RAID磁盘阵列" class="headerlink" title="RAID磁盘阵列"></a>RAID磁盘阵列</h1><p>早在1978年，美国加州大学伯克利分校就提出了RAID（Redundant Array of Independent DIsk）虚拟存储系统。RAID即独立冗余磁盘阵列；其思想是将多块独立的磁盘按不同的方式组合为一个逻辑磁盘，从而提高存储容量，提升存储性能或提供数据备份功能。RAID存储系统的组合方式根据RAID基本定义。</p>
+<p>RAID分为软件RAID和硬件RAID两类。在现有的操作系统中。如windows、Linux、Unix等已经集成了软RAID的功能。软件RAID可以实现与硬件RAID相同的功能，当由于其没有独立的硬件控制设备，所以性能不如硬件RAID，但软件RAID实现简单，不需要额外的硬件设备。硬件RAID通常需要有RAID卡，RAID卡本身会有独立控制部件和内存，所以不会占有系统资源，效率高、性能强。当然目前市面的大部分主板已经继承了RAID卡，具体使用方式可以参考硬件说明书</p>
+<h2 id="RAID-级别"><a href="#RAID-级别" class="headerlink" title="RAID 级别"></a>RAID 级别</h2><h3 id="1、-RAID-0-（不含校验与冗余的条带存储）"><a href="#1、-RAID-0-（不含校验与冗余的条带存储）" class="headerlink" title="1、 RAID 0 （不含校验与冗余的条带存储）"></a>1、 RAID 0 （不含校验与冗余的条带存储）</h3><p>在 RAID 0 系统中，数据被分成块，这些块被写入阵列中的所有驱动器。通过同时使用多个磁盘（至少 2 个），这提供了卓越的 I/O 性能。通过使用多个控制器（理想情况下每个磁盘一个控制器）可以进一步增强这种性能。</p>
+<p><strong>RAID 0 的优点</strong></p>
+<ul>
+<li>RAID 0 在读取和写入操作方面都提供了出色的性能。奇偶校验控制不会导致开销。</li>
+<li>使用所有存储容量，没有开销。</li>
+<li>该技术易于实施。</li>
+</ul>
+<p><strong>RAID 0 的缺点</strong></p>
+<ul>
+<li>RAID 0 不是容错的。如果一个驱动器发生故障，RAID 0 阵列中的所有数据都将丢失。它不应用于关键任务系统。</li>
+</ul>
+<h3 id="2、-RAID-1-（不含校验的镜像存储）"><a href="#2、-RAID-1-（不含校验的镜像存储）" class="headerlink" title="2、 RAID 1 （不含校验的镜像存储）"></a>2、 RAID 1 （不含校验的镜像存储）</h3><p>通过将数据写入数据驱动器（或数据驱动器组）和镜像驱动器（或驱动器组），数据被存储两次。如果驱动器发生故障，控制器将使用数据驱动器或镜像驱动器进行数据恢复和连续操作。RAID 1 阵列至少需要 2 个驱动器。</p>
+<p><strong>RAID 1 的优点</strong></p>
+<ul>
+<li>RAID 1 提供出色的读取速度和与单个驱动器相当的写入速度。</li>
+<li>如果驱动器发生故障，则不必重建数据，只需将它们复制到替换驱动器即可。</li>
+<li>RAID 1 是一种非常简单的技术。</li>
+</ul>
+<p><strong>RAID 1 的缺点</strong></p>
+<ul>
+<li>主要缺点是有效存储容量仅为驱动器总容量的一半，因为所有数据都被写入两次。</li>
+<li>软件RAID 1解决方案并不总是允许失败的驱动器的热插拔。这意味着只有在关闭计算机上的计算机下电后才只能替换失败的驱动器。对于许多人同时使用的服务器，这可能是不可接受的。这些系统通常使用支持热插拔的硬件控制器。</li>
+</ul>
+<h3 id="3、-RAID-3-（字节级别的校验式条带存储）"><a href="#3、-RAID-3-（字节级别的校验式条带存储）" class="headerlink" title="3、 RAID 3 （字节级别的校验式条带存储）"></a>3、 RAID 3 （字节级别的校验式条带存储）</h3><p>该级别的磁盘阵列可以参考RAID 2 的读写原理，仅数据分割的单位为字节。å</p>
+<h3 id="4、-RAID-4-（数据块级别的校验式条带存储）"><a href="#4、-RAID-4-（数据块级别的校验式条带存储）" class="headerlink" title="4、 RAID 4 （数据块级别的校验式条带存储）"></a>4、 RAID 4 （数据块级别的校验式条带存储）</h3><p>该级别的磁盘阵列与RAID 2 类似，仅数据分割单位不同。</p>
+<h3 id="5、-RAID-5（数据库级别的分布式校验条带存储）"><a href="#5、-RAID-5（数据库级别的分布式校验条带存储）" class="headerlink" title="5、 RAID 5（数据库级别的分布式校验条带存储）"></a>5、 RAID 5（数据库级别的分布式校验条带存储）</h3><p>RAID-5具有和RAID-0相近似的数据读取速度，同时磁盘空间利用率也要比RAID1高。属于是RAID-0和RAID-1的折中方案，是一种存储性能、数据安全和存储成本兼顾的存储解决方案。由于存储成本相对较低，是目前运用较多的一种解决方案。<br>      RAID-5阵列中数据的分布与RAID-0类似，数据也是分布到每块硬盘上，但Raid-5没有独立的奇偶校验盘，他通过将校验的数据循环存储并分散放在所有磁盘上，其中任意N-1块磁盘上都存储完整的数据，也就是说有相当于一块磁盘容量的空间用于存储奇偶校验信息。因此当RAID5能够支持在一块盘离线的情况下保证数据的正常访问，不会影响数据的完整性，从而保证了数据安全。当损坏的磁盘被替换后，RAID还会自动利用剩下奇偶校验信息去重建此磁盘上的数据，来保持RAID5的高可靠性。<br>      RAID-5的组建，至少需要三块或更多的磁盘，并可以使用0块或更多的备用磁盘，其数据安全保障程度要比RAID1低，写入数据的速度比对单个磁盘进行写入速度稍慢。如果有两块或两块以上硬盘同时离线，或者RAID信息出错等原因，阵列便会失效，这时就需要对数据进行重组。并且做raid 5阵列所有磁盘容量必须一样大，当容量不同时，会以最小的容量为准。 同时，最好硬盘转速一样，否则会影响性能。</p>
+<h3 id="6、-RAID-10-（镜像与条带存储）"><a href="#6、-RAID-10-（镜像与条带存储）" class="headerlink" title="6、 RAID 10 （镜像与条带存储）"></a>6、 RAID 10 （镜像与条带存储）</h3><p>RAID 1+0也被称为RAID-10标准，实际是将RAID-0和RAID-1标准结合的产物，是先对磁盘先进行RAID-1，然后RAID-0，这种方法即提供了冗余，而且也提升了速度。<br>      在连续地以位或字节为单位分割数据并且并行读/写多个磁盘的同时，为每一块磁盘作磁盘镜像进行冗余。它的优点是同时拥有RAID-0的超凡速度和RAID-1的数据高可靠性，但是CPU占用率同样也更高，而且磁盘的利用率比较低。由于利用了RAID-0极高的读写效率和RAID-1较高的数据保护、恢复能力，使RAID-10成为了一种性价比较高的等级，目前几乎所有的RAID控制卡都支持这一等级。</p>
+<table>
+<thead>
+<tr>
+<th align="center">RAID等级</th>
+<th align="center">最少硬盘</th>
+<th align="center">最大容错</th>
+<th align="center">可用容量</th>
+<th align="center">读取效能</th>
+<th align="right">写入效能</th>
+<th align="center">安全性</th>
+<th align="center">目的</th>
+<th align="center">应用产业</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">单一硬盘</td>
+<td align="center">(参考)</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="right">1</td>
+<td align="center">无</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">JBOD</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">n</td>
+<td align="center">1</td>
+<td align="right">1</td>
+<td align="center">无（同RAID 0）</td>
+<td align="center">增加容量</td>
+<td align="center">个人（暂时）储存备份</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">n</td>
+<td align="center">n</td>
+<td align="right">n</td>
+<td align="center">一个硬盘异常，全部硬盘都会异常</td>
+<td align="center">追求最大容量、速度</td>
+<td align="center">影片剪接快取用途</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">n-1</td>
+<td align="center">1</td>
+<td align="center">n</td>
+<td align="right">1</td>
+<td align="center">高，一个正常即可</td>
+<td align="center">追求最大安全性</td>
+<td align="center">个人、企业备份</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">n-1</td>
+<td align="center">n-1</td>
+<td align="right">n-1</td>
+<td align="center">中下至中</td>
+<td align="center">追求最大容量、最小预算</td>
+<td align="center">个人、小型企业备份</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">n-2</td>
+<td align="center">n-2</td>
+<td align="right">n-2</td>
+<td align="center">中至中高,仅安全性较RAID 5高</td>
+<td align="center">同RAID 5，但较安全</td>
+<td align="center">个人、企业备份</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">综合RAID 0/1优点，理论速度较快</td>
+<td align="center">大型资料库、伺服器</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="center">6</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">提升资料安全</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">60</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="right"></td>
+<td align="center">高</td>
+<td align="center">提升资料安全</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h1 id="创建于管理软RIAD"><a href="#创建于管理软RIAD" class="headerlink" title="创建于管理软RIAD"></a>创建于管理软RIAD</h1><p>1、查看磁盘信息</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">fdisk -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2、创建RAID 模式md0 </p>
+<ul>
+<li><p>命令：mdadm</p>
+</li>
+<li><p>描述：管理Linux软件RAID设备</p>
+</li>
+<li><p>用法：mdadm [模式] 选项 &lt;raid 设备&gt;</p>
+</li>
+<li><p>选项：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">—C， # 创建软件RAID
+-n, --raid-devices&#x3D;   #指定空闲磁盘
+-l  --level&#x3D;          #指定级别 （raid &#123;0, 1 , 5  10 &#125;）
+-X, --examine-bitmap  #指定位图<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>示例 ：创建RAID 模式md0 </p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mdadm -C &#x2F;dev&#x2F;md0 -n3 -l5 -x1 &#x2F;dev&#x2F;*d&#123;d,e,f,g&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>查看raid状态：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat &#x2F;proc&#x2F;mdstat
+
+mdadm -D &#x2F;dev&#x2F;md0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>格式文件系统</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkfs.ext4 &#x2F;dev&#x2F;md0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>挂载使用：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mount &#x2F;dev&#x2F;md0 &#x2F;****
+#开机自动挂载
+vim &#x2F;etc&#x2F;fstab  
+&#x2F;dev&#x2F;md0   &#x2F;****    ext4   defaulte     0   0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h1 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h1><h2 id="创建raid"><a href="#创建raid" class="headerlink" title="创建raid"></a>创建raid</h2><p>一、安装mdadm命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">root@localhost Packages]# yum -y install mdadm*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>命令：mdadm</p>
+<p>语法：<strong>mdadm</strong> [mode] <raiddevice> [options] <component-devices></component-devices></raiddevice></p>
+<p>示例：创建 RAID 5   <font color="red">注意：创建RAID前需要添加磁盘 4块以上</font></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mdadm 
+--create  创建raid  &#x2F;dev&#x2F;md0
+--level   创建raid级别 
+--raid-devices  表示你要几块磁盘创建raid   设备
+[root@localhost ~]# mdadm --create &#x2F;dev&#x2F;md0 --level&#x3D;5 --raid-devices&#x3D;4  &#x2F;dev&#x2F;sd[bcde]
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array &#x2F;dev&#x2F;md0 started.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、格式化挂载使用</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mkfs.ext4 &#x2F;dev&#x2F;md0 
+mke2fs 1.42.9 (28-Dec-2013)
+Allocating group tables: 完成                            
+正在写入inode表: 完成                            
+Creating journal (32768 blocks): 完成
+Writing superblocks and filesystem accounting information: 完成   
+
+#创建挂载点并且挂载md0并使用
+[root@localhost ~]# mkdir &#x2F;raid
+[root@localhost ~]# mount &#x2F;dev&#x2F;md0  &#x2F;raid&#x2F;
+
+#开机自动挂载,永久挂载
+
+使用vim编辑&#x2F;etc&#x2F;fstab这个文件里添加一下内容，然后保存并退出
+&#x2F;dev&#x2F;md0    &#x2F;raid        ext4     defaults   0 0 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>三、开机自动启动raid</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@localhost ~]# mdadm  -vDs
+ARRAY &#x2F;dev&#x2F;md0 level&#x3D;raid5 num-devices&#x3D;4 metadata&#x3D;1.2 name&#x3D;localhost:0 UUID&#x3D;53ef68dc:4427e09b:c2232fc2:0e76643a
+   devices&#x3D;&#x2F;dev&#x2F;sdb,&#x2F;dev&#x2F;sdc,&#x2F;dev&#x2F;sdd,&#x2F;dev&#x2F;sde
+[root@localhost ~]# mdadm -vDs &gt; &#x2F;etc&#x2F;mdadm.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>四、重启测试</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">init 6  reboot <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h1 id="RAID-性能测试："><a href="#RAID-性能测试：" class="headerlink" title="RAID 性能测试："></a>RAID 性能测试：</h1><ul>
+<li><p>普通磁盘：写入模拟</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">time dd if&#x3D;&#x2F;dev&#x2F;zero  of&#x3D;txt bs&#x3D;1M count&#x3D;1000
+if&#x3D;文件名：输入文件名，默认为标准输入。即指定源文件。
+of&#x3D;文件名：输出文件名，默认为标准输出。即指定目的文件。
+count&#x3D;blocks：仅拷贝blocks个块，块大小等于ibs指定的字节数。
+ibs&#x3D;bytes：一次读入bytes个字节，即指定一个块大小为bytes个字节。
+obs&#x3D;bytes：一次输出bytes个字节，即指定一个块大小为bytes个字节。
+bs&#x3D;bytes：同时设置读入&#x2F;输出的块大小为bytes个字节。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="">
+              磁盘管理
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2022/04/03/RAID/RAID/" target="_blank" title="RAID">https://abbott68.github.io/blog/2022/04/03/RAID/RAID/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/blog/2022/04/03/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">逻辑卷管理</div>
+      </div>
+      <!-- <div class="content">
+        逻辑卷管理LVM一、 LVM 的基本概念在对磁盘进行分区大小规划时，有时往往不能确定这个分区要使用的总空间大小，而用fd
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
 </script>
     
-    </div>
-    <div class="mask-box"></div>
-</div>
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
 
 
-<div id="tags" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/blog/tags/MySQL/" title="MySQL: 6">
-                    <span class="tag-content"
-                        title="MySQL" style="background-color: #F9EBEA;">MySQL
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" title="自动化: 2">
-                    <span class="tag-content"
-                        title="自动化" style="background-color: #FEF9E7;">自动化
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Web/" title="Web: 2">
-                    <span class="tag-content"
-                        title="Web" style="background-color: #85C1E9;">Web
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Docker/" title="Docker: 2">
-                    <span class="tag-content"
-                        title="Docker" style="background-color: #F9EBEA;">Docker
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Grafana/" title="Grafana: 1">
-                    <span class="tag-content"
-                        title="Grafana" style="background-color: #D7BDE2;">Grafana
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Linux/" title="Linux: 4">
-                    <span class="tag-content"
-                        title="Linux" style="background-color: #E8F8F5;">Linux
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/VMware-fuison/" title="VMware fuison: 1">
-                    <span class="tag-content"
-                        title="VMware fuison" style="background-color: #85C1E9;">VMware fuison
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/" title="文件共享: 1">
-                    <span class="tag-content"
-                        title="文件共享" style="background-color: #D7BDE2;">文件共享
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Python-%E8%AF%AD%E8%A8%80/" title="Python 语言: 4">
-                    <span class="tag-content"
-                        title="Python 语言" style="background-color: #82E0AA;">Python 语言
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/Zabbix/" title="Zabbix: 1">
-                    <span class="tag-content"
-                        title="Zabbix" style="background-color: #E8F8F5;">Zabbix
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/C%E8%AF%AD%E8%A8%80/" title="C语言: 1">
-                    <span class="tag-content"
-                        title="C语言" style="background-color: #85C1E9;">C语言
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/kubernetes/" title="kubernetes: 3">
-                    <span class="tag-content"
-                        title="kubernetes" style="background-color: #82E0AA;">kubernetes
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/openstack/" title="openstack: 1">
-                    <span class="tag-content"
-                        title="openstack" style="background-color: #A3E4D7;">openstack
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/prometheus/" title="prometheus: 2">
-                    <span class="tag-content"
-                        title="prometheus" style="background-color: #85C1E9;">prometheus
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/blog/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" title="磁盘管理: 3">
-                    <span class="tag-content"
-                        title="磁盘管理" style="background-color: #D7BDE2;">磁盘管理
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
     </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
