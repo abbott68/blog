@@ -689,7 +689,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 15k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 14k |
           </span>
   
           <span class="min2read">
@@ -728,7 +728,8 @@
 <h3 id="手动触发"><a href="#手动触发" class="headerlink" title="手动触发"></a>手动触发</h3><p>手动触发持久化的操作有二个:save和bgsave。它们主要区别体现在:是否阻塞 Redis 主线程的执行。</p>
 <p>save命令</p>
 <p>在客户端中执行 save 命令，就会触发 Redis 的持久化，但同时也是使 Redis 处于阻塞状态，直到 RDB 持久化完<br>成，才会响应其他客户端发来的命令，所以在生产环境一定要慎用</p>
-<p><img src="/blog/.io//image.png" class="lazyload placeholder" data-srcset="/blog/.io//image.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+
+
 <p>示例：</p>
 <pre class="line-numbers language-term" data-language="term"><code class="language-term">
 #检查dump.rdb 的生成时间
@@ -745,7 +746,8 @@ OK
 
 <p>bgsave命令</p>
 <p>bgsave(background save)既后台保存的意思， 它和 save 命令最大的区别就是 bgsave 会 fork() 一个子进程来 执行持久化，整个过程中只有在 fork() 子进程时有短暂的阻塞，当子进程被创建之后，Redis 的主进程就可以响应 其他客户端的请求了，相对于整个流程都阻塞的 save 命令来说，显然 bgsave 命令更适合我们使用</p>
-<p><img src="/blog/.io//image-1.png" class="lazyload placeholder" data-srcset="/blog/.io//image-1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+
+
 <p>示例：</p>
 <pre class="line-numbers language-term" data-language="term"><code class="language-term">
 #执行前
@@ -883,7 +885,8 @@ $6
 xiaowu
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="恢复过程"><a href="#恢复过程" class="headerlink" title="恢复过程"></a>恢复过程</h2><p><img src="/blog/.io//image-2.png" class="lazyload placeholder" data-srcset="/blog/.io//image-2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+<h2 id="恢复过程"><a href="#恢复过程" class="headerlink" title="恢复过程"></a>恢复过程</h2>
+
 <h2 id="AOF-重写"><a href="#AOF-重写" class="headerlink" title="AOF 重写"></a>AOF 重写</h2><p>7.1、为什么要重写 随着aof文件越来越大，需要定期对aof文件进行重写，达到压缩的目的。</p>
 <p>7.2、重写aof改变</p>
 <p>进程内已经超时的数据不再写入文件。<br>旧的aof有无效命令(如:set k1 hello ex 10000)，新的aof文件只保留最终数据的写入命令。</p>
