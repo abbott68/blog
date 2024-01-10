@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | abbott Blog</title>
+  <title>数据持久化 | abbott Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -629,287 +629,772 @@
     <!-- 内容区域 -->
     <div id="safearea">
       <main class="main" id="pjax-container" style="margin-top: 0;">
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/blog/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/blog/js/prism/prism-tomorrow.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   
-  <span class="title" id="archive-header-desc"></span>
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/blog/medias/13.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        数据持久化
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2024-01-10 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/blog/categories/NoSQL/" class="post-detail-header_category">
+              NoSQL
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 15k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 13 mins.分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/blog/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>数据持久化，就是将内存中的数据，持久化到本地磁盘中，推荐（SSD 固态硬盘）</p>
+<p>数据持久化的方式：</p>
+<p><strong>RDB（快照方式）：</strong> RDB方式是一种快照式的持久化方法，将某一时刻的数据持久化到磁盘中。这种方式就是将内存中数据以快照的方式写入到二进制文件中 ，默认的文件名为dump.rdb。</p>
+<p><strong>AOF（日志追加）：</strong> AOF方式是将执行过的写指令记录下来，在数据恢复时按照从前到后的顺序再将指令执行一遍。这种方式 redis 会将每一个收到的写命令都通过 write 函数追加到文件中(默认appendonly.aof)。</p>
+<p><strong>RDB + AOF：</strong> 您也可以在同一实例中合并AOF和RDB</p>
+<h2 id="RDB-优缺点"><a href="#RDB-优缺点" class="headerlink" title="RDB 优缺点"></a>RDB 优缺点</h2><p>优点： 快速和方便<br>缺点： 单服务器出现断电、网络连接不稳定或者服务器出现重启的状态有可能就会丢失数据（数据的不完整性）</p>
+<h2 id="AOF-优缺点"><a href="#AOF-优缺点" class="headerlink" title="AOF 优缺点"></a>AOF 优缺点</h2><p>优点： AOF只是追加日志文件，因此对服务器性能影响较小，速度比RDB要快，消耗的内存较少。<br>缺点： AOF方式生成的日志文件太大，即使通过AOF重写，文件体积仍然很大。 恢复数据的速度比RDB慢。</p>
+<h2 id="RDB持久化触发机制"><a href="#RDB持久化触发机制" class="headerlink" title="RDB持久化触发机制"></a>RDB持久化触发机制</h2><p>触发RDB持久化过程分为手动触发和自动触发</p>
+<h3 id="手动触发"><a href="#手动触发" class="headerlink" title="手动触发"></a>手动触发</h3><p>手动触发持久化的操作有二个:save和bgsave。它们主要区别体现在:是否阻塞 Redis 主线程的执行。</p>
+<p>save命令</p>
+<p>在客户端中执行 save 命令，就会触发 Redis 的持久化，但同时也是使 Redis 处于阻塞状态，直到 RDB 持久化完<br>成，才会响应其他客户端发来的命令，所以在生产环境一定要慎用</p>
+<p><img src="/blog/.io//image.png" class="lazyload placeholder" data-srcset="/blog/.io//image.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+<p>示例：</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">
+#检查dump.rdb 的生成时间
+[root@data-server ~]# ll
+-rw-r--r--  1 root root        99 Dec 21 10:37 dump.rdb
+
+127.0.0.1:6379[1]&gt; save    #登录redis 服务器支持save命令
+OK
+
+#再次查看dump.rdb 的生成时间
+[root@data-server ~]# ll
+-rw-r--r--  1 root root       104 Dec 21 10:38 dump.rdb
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>bgsave命令</p>
+<p>bgsave(background save)既后台保存的意思， 它和 save 命令最大的区别就是 bgsave 会 fork() 一个子进程来 执行持久化，整个过程中只有在 fork() 子进程时有短暂的阻塞，当子进程被创建之后，Redis 的主进程就可以响应 其他客户端的请求了，相对于整个流程都阻塞的 save 命令来说，显然 bgsave 命令更适合我们使用</p>
+<p><img src="/blog/.io//image-1.png" class="lazyload placeholder" data-srcset="/blog/.io//image-1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+<p>示例：</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">
+#执行前
+[root@data-server ~]# ll
+-rw-r--r--  1 root root       104 Dec 21 10:38 dump.rdb
+
+[root@data-server ~]# redis-cli
+127.0.0.1:6379&gt; bgsave
+
+#执行后
+[root@data-server ~]# ll
+-rw-r--r--  1 root root       104 Dec 21 10:58 dump.rdb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="自动触发"><a href="#自动触发" class="headerlink" title="自动触发"></a>自动触发</h3><p>自动触发持久化，本质是 Redis 通过判断，如果满足设置的触发条件，自动执行一次 bgsave 命令。<br>RDB 自动持久化主要来源于以下几种情况:</p>
+<p><code>save m n</code></p>
+<p>表示的是在 m 秒内，如果有 n 个键发生改变，则自动触发持久化。 如:</p>
+<p>配置文件(/usr/local/redis/redis.conf)中的默认配置</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># save 3600 1 300 100 60 10000
+# 如果至少进行了 1 次更改，则在 3600 秒（1 小时）后启动持久化
+# 如果至少执行了 100 次更改，则在 300 秒（5 分钟）后启动持久化
+# 如果至少执行了 10000 次更改，则保存 60 秒后启动持久化<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="RDB持久化配置"><a href="#RDB持久化配置" class="headerlink" title="RDB持久化配置"></a>RDB持久化配置</h3><pre class="line-numbers language-term" data-language="term"><code class="language-term">[root@data-server redis-7.0.14]# cat  redis.conf  | grep save | egrep  &#39;^save&#39;
+
+save  60  5   #定义触发自动RDB持久化的条件 &lt;&#x2F;br&gt;
+stop-writes-on-bgsave-error yes   #如果执行bgsave的时候，出现错误是否定义执行备份，yes|no  yes：表示停止备份，no:不停止
+#rdb文件是否压缩
+rdbcompression yes  
+#写入文件和读取文件时是否开启rdb文件检查，检查是否有无损坏，如果在启动是检查发现损坏，则停止启动
+rdbchecksum yes
+#rdb持久化后存放的文件名
+dbfilename dump_test.rdb
+rdb-del-sync-files no
+#rdb持久化后文件的存放路径
+dir &#x2F;data&#x2F;redis_backup&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h4><pre class="line-numbers language-term" data-language="term"><code class="language-term">[root@data-server redis-7.0.14]# redis-server  redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>触发自动备份的条件</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">[root@data-server ~]# redis-cli
+127.0.0.1:6379&gt; SELECT  2
+OK
+127.0.0.1:6379[2]&gt; set name1 &quot;Xl&quot;
+OK
+127.0.0.1:6379[2]&gt; SET name2 &quot;xw&quot;
+OK
+127.0.0.1:6379[2]&gt; SET name3 &quot;xh&quot;
+OK
+127.0.0.1:6379[2]&gt; SET name4 &quot;xs&quot;
+OK
+127.0.0.1:6379[2]&gt; SET name5 &quot;xs&quot;
+OK
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>检查是否可以实现自动备份</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">[root@data-server redis-7.0.14]# ll &#x2F;data&#x2F;redis-backup&#x2F;
+total 4
+-rw-r--r-- 1 root root 144 Dec 21 11:47 dump_test.rdb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="恢复数据"><a href="#恢复数据" class="headerlink" title="恢复数据"></a>恢复数据</h3><ol>
+<li>清除缓存（redis）</li>
+</ol>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h1 id="AOF-持久化"><a href="#AOF-持久化" class="headerlink" title="AOF  持久化"></a>AOF  持久化</h1><p>AOF方式在使用Redis存储非临时数据时，一般都需要打开AOF持久化来降低进程终止导致的数据丢失，AOF可以将 Redis执行的每一条写命令追加到硬盘文件中，这一过程显然会降低Redis的性能，但是大部分情况下这个影响是可 以接受的，另外，使用较快的硬盘能提高AOF的性能。</p>
+<h2 id="AOF-工作方式"><a href="#AOF-工作方式" class="headerlink" title="AOF 工作方式"></a>AOF 工作方式</h2><p>命令写入 (append)、文件同步(sync)、文件重写(rewrite)、重启加载 (load)</p>
+<h2 id="AOF特点"><a href="#AOF特点" class="headerlink" title="AOF特点"></a>AOF特点</h2><p>默认文件名是 appendonly.aof。保存的位置由配置中 dir 来配置目录。</p>
+<p>AOF 每次都会保存写命令，数据实时性更高。</p>
+<p>AOF 需要使用“重写机制”来优化，每次记录写命令，文件会很大的问题。<br>AOF 根据不同的“缓冲区同步策略”将我们缓冲区中写入的命令，同步到磁盘。、</p>
+<h2 id="缓冲区同步策略"><a href="#缓冲区同步策略" class="headerlink" title="缓冲区同步策略"></a>缓冲区同步策略</h2><p>设置appendfsync 控制，一共3种:</p>
+<p>always:客户端的每一个写操作都保存到aof文件当中，这种策略很安全，但是每个写都会有IO操作，所以也很<br>慢。</p>
+<p>everysec:每秒写入一次aof文件，因此，最多可能会丢失1s的数据。 推荐使用这种方式。</p>
+<p>no: 交由操作系统来处理什么时候写入aof文件。更快，但也是最不安全的选择，不推荐使用。</p>
+<h2 id="开启AOF持久化"><a href="#开启AOF持久化" class="headerlink" title="开启AOF持久化"></a>开启AOF持久化</h2><blockquote>
+<p>redis.conf AOF 持久化默认配置文件</p>
+</blockquote>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">appendonly no     #默认不开启AOF日志备份， NO不开启 yes 开启AOF日志机制
+appendfilename &quot;appendonly.aof&quot;  #AOF持久化文件名
+appenddirname &quot;appendonlydir&quot;    #存放持久化文件的所在目录
+appendfsync everysec            #缓冲同步策略，默认值
+no-appendfsync-on-rewrite no    #是否重写，默认不重写<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>案例：</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">
+[root@gitbook-server ~]# redis-cli -h 192.168.212.163
+192.168.212.163:6379&gt; SELECT 1
+OK
+192.168.212.163:6379[1]&gt; set name   xiaosan
+OK
+192.168.212.163:6379[1]&gt; set name   xiaosi
+
+
+[root@data-server appendonlydir]# cat appendonly_test.aof.1.incr.aof
+*2
+$6
+SELECT
+$1
+1
+*3
+$3
+set
+$4
+name
+$7
+xiaosan
+*3
+$3
+set
+$4
+name
+$6
+xiaosi
+*3
+$3
+SET
+$5
+name2
+$7
+xiaobai
+*3
+$3
+set
+$5
+name3
+$6
+xiaosi
+*3
+$3
+set
+$5
+name4
+$6
+xiaowu
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="恢复过程"><a href="#恢复过程" class="headerlink" title="恢复过程"></a>恢复过程</h2><p><img src="/blog/.io//image-2.png" class="lazyload placeholder" data-srcset="/blog/.io//image-2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Alt text"></p>
+<h2 id="AOF-重写"><a href="#AOF-重写" class="headerlink" title="AOF 重写"></a>AOF 重写</h2><p>7.1、为什么要重写 随着aof文件越来越大，需要定期对aof文件进行重写，达到压缩的目的。</p>
+<p>7.2、重写aof改变</p>
+<p>进程内已经超时的数据不再写入文件。<br>旧的aof有无效命令(如:set k1 hello ex 10000)，新的aof文件只保留最终数据的写入命令。</p>
+<p>多条写命令可以合并为一个(如:lpush list a、lpush list b、lpush list c可以转化为:lpush list a b c)。但也不 能将整个lpush生成的元素全部写在一起，所以对于list、set、hash、zset等类型操作，以64个元素为界拆分为多 条。来防止客户端缓冲区溢出。</p>
+<p>AOF重写降低了文件占用空间，更小的aof 文件启动redis时，加载更快。</p>
+<p>7.3、重写方式 AOF重写过程可以手动触发和自动触发:</p>
+<p>手动触发:直接调用bgrewriteaof命令。</p>
+<p>自动触发:根据auto-aof-rewrite-min-size和auto-aof-rewrite-percentage参数确定自动触发时机</p>
+<p>7.3.1 配置文件 修改配置文件/usr/local/redis/redis.conf</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">auto-aof-rewrite-percentage100#AOF文件增⻓率(当前AOF文件大小超过上一次重写的AOF文件大小的 百分之多少才会重写)
+auto-aof-rewrite-min-size64mb#表示运行AOF重写时文件最小体积，默认为64MB。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>注意:</p>
+<p>aof_current_size: aof当前尺寸(单位:字节)</p>
+<p>aof_base_size: aof上次启动和重写的尺寸(单位:字节)</p>
+<p>7.5.2、自动触发时机</p>
+<p>当前 AOF 文件大小超过最小重写尺寸</p>
+<p>当前 AOF 文件大小超过上次重写完的 AOF 尺寸的百分之多少(auto-aof-rewrite-percentage)</p>
+<p>换算:</p>
+<p>自动触发时机=aof_current_size&gt;auto-aof-rewrite-min-size&amp;&amp;(aof_current_size- aof_base_size)/aof_base_size&gt;=auto-aof-rewrite-percentage</p>
+<p>查看aof_current_size和aof_base_size的值<br>Redis</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">192.168.212.163:6379[1]&gt; info persistence
+# Persistence
+loading:0
+async_loading:0
+current_cow_peak:0
+current_cow_size:0
+current_cow_size_age:0
+current_fork_perc:0.00
+current_save_keys_processed:0
+current_save_keys_total:0
+rdb_changes_since_last_save:0
+rdb_bgsave_in_progress:0
+rdb_last_save_time:1703213843
+rdb_last_bgsave_status:ok
+rdb_last_bgsave_time_sec:0
+rdb_current_bgsave_time_sec:-1
+rdb_saves:4
+rdb_last_cow_size:286720
+rdb_last_load_keys_expired:0
+rdb_last_load_keys_loaded:0
+aof_enabled:1
+aof_rewrite_in_progress:0
+aof_rewrite_scheduled:0
+aof_last_rewrite_time_sec:0
+aof_current_rewrite_time_sec:-1
+aof_last_bgrewrite_status:ok
+aof_rewrites:1
+aof_rewrites_consecutive_failures:0
+aof_last_write_status:ok
+aof_last_cow_size:339968
+module_fork_in_progress:0
+module_fork_last_cow_size:0
+aof_current_size:385
+aof_base_size:192
+aof_pending_rewrite:0
+aof_buffer_length:0
+aof_pending_bio_fsync:0
+aof_delayed_fsync:0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>1 auto-aof-rewrite-percentage100#AOF文件增⻓率(当前AOF文件大小超过上一次重写的AOF文件大小的 百分之多少才会重写)<br>2 auto-aof-rewrite-min-size64mb#表示运行AOF重写时文件最小体积，默认为64MB。</p>
+<p>295&gt;64M &amp;&amp;(295-211)/211&gt;=100</p>
+<p>只有当这二个条件同时成立，我们才会去触发我们的重写AOF 7.6、aof文件恢复</p>
+<h1 id="AOF-恢复"><a href="#AOF-恢复" class="headerlink" title="AOF 恢复"></a>AOF 恢复</h1><p>在写入aof日志文件时，如果Redis服务器宕机，则aof日志文件文件会出格式错误，在重启Redis服务器时，Redis 服务器会拒绝载入这个aof文件，可以通过以下步骤修复aof并恢复数据。<br>备份现在aof文件，以防万一。</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">* Reading RDB preamble from AOF file...
+* Reading the remaining AOF tail...
+# !!! Warning: short read while loading the AOF file !!!
+# !!! Truncating the AOF at offset 439 !!!
+# AOF loaded anyway because aof-load-truncated is enabled<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以通过redis自带工具redis-check-aof工具修复原始文件</p>
+<pre class="line-numbers language-term" data-language="term"><code class="language-term">redis-check-aof --fix &#123;filename&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h1 id="开启redis密码验证"><a href="#开启redis密码验证" class="headerlink" title="开启redis密码验证"></a>开启redis密码验证</h1><pre class="line-numbers language-term" data-language="term"><code class="language-term">
+protected-mode  yes
+requirepass 123456   #设置密码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="客户端登录"><a href="#客户端登录" class="headerlink" title="客户端登录"></a>客户端登录</h2><pre class="line-numbers language-none"><code class="language-none">[root@gitbook-server ~]# redis-cli -h 192.168.212.163 -a 123456
+Warning: Using a password with &#39;-a&#39; or &#39;-u&#39; option on the command line interface may not be safe.
+
+192.168.212.163:6379&gt; KEYS *   #获取所在库里的所有的key
+(empty array)
+192.168.212.163:6379&gt; SELECT 1
+OK
+192.168.212.163:6379[1]&gt; KEYS *
+ 1) &quot;name4&quot;
+ 2) &quot;a8&quot;
+ 3) &quot;a3&quot;
+ 4) &quot;a4&quot;
+ 5) &quot;a9&quot;
+ 6) &quot;name&quot;
+ 7) &quot;a5&quot;
+ 8) &quot;name2&quot;
+ 9) &quot;a11&quot;
+10) &quot;a7&quot;
+11) &quot;a10&quot;
+12) &quot;a2&quot;
+13) &quot;a1&quot;
+14) &quot;a6&quot;
+15) &quot;name3&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/blog/tags/%E9%9D%9E%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="">
+              非关系数据库
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>abbott</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/blog/2024/01/10/redis/数据持久化/" target="_blank" title="数据持久化">https://abbott68.github.io/blog/2024/01/10/redis/数据持久化/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/11.jpg" class="lazyload placeholder" data-srcset="/blog/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/blog/2024/01/10/redis/redis/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">redis</div>
+      </div>
+      
+      <!-- <div class="content">
+        NoSQL 数据库（非关系型数据库）NoSQL 常用软件
+Redis
+MongoDB
+Elasticsearch
+mem
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/blog/2022/04/03/RAID/RAID/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">RAID</div>
+      </div>
+      <!-- <div class="content">
+        RAID磁盘阵列早在1978年，美国加州大学伯克利分校就提出了RAID（Redundant Array of Indep
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/blog/medias/z.jpg" class="lazyload placeholder" data-srcset="/blog/medias/z.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/blog/medias/w.jpg" class="lazyload placeholder" data-srcset="/blog/medias/w.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/blog/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
   <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+    
+  </script>
+
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/blog/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/blog/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
 </script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/blog/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
 </script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/blog/archives/2024">2024</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2024/01/10/redis/redis/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/11.jpg" class="lazyload placeholder" data-srcset="/blog/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">01-10</span>
-              </div>
-              <a class="post-title" href="/blog/2024/01/10/redis/redis/">redis</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2024/01/10/redis/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/13.jpg" class="lazyload placeholder" data-srcset="/blog/medias/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">01-10</span>
-              </div>
-              <a class="post-title" href="/blog/2024/01/10/redis/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">数据持久化</a>
-            </div>
-          </li>
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/blog/archives/2022">2022</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/04/03/RAID/RAID/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">04-03</span>
-              </div>
-              <a class="post-title" href="/blog/2022/04/03/RAID/RAID/">RAID</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/04/03/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/12.jpg" class="lazyload placeholder" data-srcset="/blog/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">04-03</span>
-              </div>
-              <a class="post-title" href="/blog/2022/04/03/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/%E9%80%BB%E8%BE%91%E5%8D%B7%E7%AE%A1%E7%90%86/">逻辑卷管理</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/04/01/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">04-01</span>
-              </div>
-              <a class="post-title" href="/blog/2022/04/01/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/">磁盘管理</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/04/01/NFS%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/14.jpg" class="lazyload placeholder" data-srcset="/blog/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">04-01</span>
-              </div>
-              <a class="post-title" href="/blog/2022/04/01/NFS%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/">NFS文件共享</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/03/24/Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/4.jpg" class="lazyload placeholder" data-srcset="/blog/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">03-24</span>
-              </div>
-              <a class="post-title" href="/blog/2022/03/24/Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">Linux网络配置</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/2.jpg" class="lazyload placeholder" data-srcset="/blog/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">03-22</span>
-              </div>
-              <a class="post-title" href="/blog/2022/03/22/Linux%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2-0/">Linux发展历史</a>
-            </div>
-          </li>
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/blog/archives/2021">2021</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/25/kubernetes1.23%E7%89%88%E6%9C%AC%E9%87%8D%E7%BD%AE/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/8.jpg" class="lazyload placeholder" data-srcset="/blog/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-25</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/25/kubernetes1.23%E7%89%88%E6%9C%AC%E9%87%8D%E7%BD%AE/">kubernetes1.23版 重置</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/blog/2021/12/21/kubernetes%E6%9E%84%E5%BB%BAefk%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/blog/medias/5.jpg" class="lazyload placeholder" data-srcset="/blog/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-21</span>
-              </div>
-              <a class="post-title" href="/blog/2021/12/21/kubernetes%E6%9E%84%E5%BB%BAefk%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/">kubernetes构建efk日志系统</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/archives/page/2/">2</a><a class="page-number" href="/blog/archives/page/3/">3</a><a class="page-number" href="/blog/archives/page/4/">4</a><a class="extend next" rel="next" href="/blog/archives/page/2/">下一页</a>
-  </nav> -->
-  <div class="page-nav">
-    
-    <div class="page-info">
-        <div class="page-info-text">1 / 4</div>
-    </div>
-    
-      <a href="/blog/archives/page/2/"
-         class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
-
-  </div>
-</div>
 
       </main>
     </div>
