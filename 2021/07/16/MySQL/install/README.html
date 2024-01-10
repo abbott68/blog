@@ -1,0 +1,186 @@
+<hr>
+<p>title: mysql install mysql 8<br>date: 2024-01-10 14:29:27<br>tags: MySQL<br>categories: MySQL</p>
+<hr>
+<h1 id="源吗install-mysql"><a href="#源吗install-mysql" class="headerlink" title="源吗install mysql"></a>源吗install mysql</h1><pre><code class="term">cmake . \
+-DCMAKE_INSTALL_PREFIX=/usr/local/mysql10 \
+-DMYSQL_DATADIR=/usr/local/data \
+-DMYSQLX_UNIX_ADDR=/usr/local/data \
+-DWITH_BOOST=/usr/local/mysql5/boost \
+-DWITH_SSL=system  \
+-DFORCE_INSOURCE_BUILD=1
+
+
+
+-DCMAKE_INSTALL_PREFIX #安装路径
+-DMYSQL_DATADIR #数据目录
+-DMYSQLX_UNIX_ADDR  #mysql.sock
+
+make 
+make install
+</code></pre>
+<h2 id="创建用户和组"><a href="#创建用户和组" class="headerlink" title="创建用户和组"></a>创建用户和组</h2><pre><code class="term"># groupadd mysql
+#  useradd -r -g mysql -s /bin/false mysql
+</code></pre>
+<h2 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h2><pre><code class="term">[root@bogon ~]# chown  mysql:mysql  /usr/local/mysql10   -R 
+</code></pre>
+<h2 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h2><pre><code class="term">[root@bogon mysql10]# bin/mysqld --initialize --user=mysql
+2023-12-12T01:53:46.576032Z 0 [System] [MY-013169] [Server] /usr/local/mysql10/bin/mysqld (mysqld 8.0.35) initializing of server in progress as process 37749
+2023-12-12T01:53:46.606977Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-12-12T01:53:47.331431Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-12-12T01:53:48.712559Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: XV)P8ABuXehT
+</code></pre>
+<h2 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h2><pre><code class="term">[root@bogon mysql10]# bin/mysqld_safe  --user=mysql &amp; 
+&amp; #后台运行服务
+
+
+为了方便维护数据库
+把mysql的启动脚本拷贝到/etc/init.d/下
+
+[root@bogon mysql10]# cp support-files/mysql.server  /etc/init.d/
+
+[root@bogon mysql10]# /etc/init.d/mysql.server  start
+Starting MySQL. SUCCESS!
+#查看运行状态
+[root@bogon mysql10]# ss -lutnp | grep mysql
+tcp   LISTEN 0      70                 *:33060            *:*    users:((&quot;mysqld&quot;,pid=38748,fd=20))
+tcp   LISTEN 0      151                *:3306             *:*    users:((&quot;mysqld&quot;,pid=38748,fd=21))
+</code></pre>
+<h2 id="客户端连接"><a href="#客户端连接" class="headerlink" title="客户端连接"></a>客户端连接</h2><pre><code>linux 客户端
+&gt;  mysql 命令
+#本服务器上测试
+dnf -y install mysql
+windows 客户端
+mac 客户端
+![navicat](https://navicat.com.cn/)
+</code></pre>
+<h2 id="更新始化密码"><a href="#更新始化密码" class="headerlink" title="更新始化密码"></a>更新始化密码</h2><pre><code class="mysql">[root@bogon mysql10]# mysql -uroot -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.35
+
+选项： 
+-u #指定用户
+-p #指定密码  
+
+更新密码
+mysql&gt; alter  user &#39;root&#39;@&#39;localhost&#39; identified by &#39;Root@123123&#39;;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+<p>##<font color=red> 错误信息</font></p>
+<ol>
+<li>如果客户端在连接的时候出现以下错误信息</li>
+</ol>
+<pre><code class="term">[root@bogon ~]# mysql  -uroot -p
+Enter password: 
+ERROR 2002 (HY000): Can&#39;t connect to local MySQL server through socket &#39;/var/lib/mysql/mysql.sock&#39; (2)
+</code></pre>
+<p>解决方法: 在本机查找是否有mysql.sock,如果有可以直接复制或者软链接</p>
+<pre><code class="term">[root@bogon ~]# mkdir  /var/lib/mysql
+[root@bogon ~]# ln -s  /tmp/mysql.sock  /var/lib/mysql/mysql.sock
+</code></pre>
+<h1 id="MySQL-的基本语法"><a href="#MySQL-的基本语法" class="headerlink" title="MySQL 的基本语法"></a>MySQL 的基本语法</h1><p>SQL 语句<br>增\删\改\查</p>
+<h2 id="数据库的基本操作"><a href="#数据库的基本操作" class="headerlink" title="数据库的基本操作"></a>数据库的基本操作</h2><p>SQL语句规范</p>
+<blockquote>
+<p>使用sql语句，需要使用关键字大写</p>
+</blockquote>
+<p>获取SQL语句的帮助</p>
+<pre><code class="term">mysql&gt; ? show
+</code></pre>
+<ol>
+<li>查看所有库</li>
+</ol>
+<pre><code class="term">mysql&gt; show databases
+    -&gt; ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>2.查看创建库的基本信息</p>
+<pre><code class="term">语法：`SHOW CREATE DATABASE db_name`
+示例
+mysql&gt; show  create database mysql;
++----------+---------------------------------------------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                                                                 |
++----------+---------------------------------------------------------------------------------------------------------------------------------+
+| mysql    | CREATE DATABASE `mysql` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION=&#39;N&#39; */ |
++----------+---------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<ol start="2">
+<li>创建库</li>
+</ol>
+<pre><code class="term">语法：`create database db_name `
+示例：
+mysql&gt; create database y37;
+Query OK, 1 row affected (0.01 sec)
+</code></pre>
+<ol start="3">
+<li>删除库</li>
+</ol>
+<pre><code class="term">语法: `drop [datbase|table] db_name`
+
+mysql&gt; drop database  y37;
+Query OK, 0 rows affected (0.01 sec) 
+</code></pre>
+<ol start="4">
+<li>使用库<pre><code class="term">语法： use db_name;
+mysql&gt; use suibian
+Database changed
+</code></pre>
+</li>
+</ol>
+<h2 id="表的操作"><a href="#表的操作" class="headerlink" title="表的操作"></a>表的操作</h2><ol>
+<li>创建表（table）</li>
+</ol>
+<pre><code class="term">语法：create table tb_name;
+
+mysql&gt; create table  tb(id int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; create table  tb1(id int,name char);
+Query OK, 0 rows affected (0.01 sec)
+
+&lt;font color=bleen&gt;创建表的时候：指定字段的数据类型&lt;/font&gt;
+</code></pre>
+<ol start="2">
+<li>查看表</li>
+</ol>
+<pre><code class="term">mysql&gt; show tables;
++-------------------+
+| Tables_in_suibian |
++-------------------+
+| tb                |
++-------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<ol start="3">
+<li>查看表结构</li>
+</ol>
+<pre><code class="term">语法：desc tb_name
+示例：
+mysql&gt; desc tb;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+</code></pre>
+<ol start="4">
+<li>删除表</li>
+</ol>
+<pre><code class="term">语法：DROP TABLE tb_name
+mysql&gt; drop table tb1;
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+<h2 id="修改配置文件客户端显示登录数据库的地址及所在库"><a href="#修改配置文件客户端显示登录数据库的地址及所在库" class="headerlink" title="修改配置文件客户端显示登录数据库的地址及所在库"></a>修改配置文件客户端显示登录数据库的地址及所在库</h2><pre><code class="term">vim /etc/my.cnf
+[mysql]
+prompt=\\U [\\d]&gt;
+</code></pre>

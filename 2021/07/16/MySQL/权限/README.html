@@ -1,0 +1,130 @@
+<hr>
+<p>title: mysql 权限管理<br>date: 2024-01-10 14:29:27<br>tags: MySQL<br>categories: MySQL</p>
+<hr>
+<h1 id="mysql-权限"><a href="#mysql-权限" class="headerlink" title="mysql 权限"></a>mysql 权限</h1><h2 id="回顾上周"><a href="#回顾上周" class="headerlink" title="回顾上周"></a>回顾上周</h2><ol>
+<li>install mysql </li>
+</ol>
+<ul>
+<li>source</li>
+<li>rpm ｜ dnf </li>
+<li>glibc (二进制)</li>
+</ul>
+<ol start="2">
+<li><p>SQL的语法</p>
+<ul>
+<li>增<ol>
+<li>create databaase | table</li>
+<li>inster        </li>
+</ol>
+</li>
+<li>删<ol>
+<li>delte | drop </li>
+</ol>
+</li>
+<li>改<ol>
+<li>alter </li>
+<li>update  </li>
+</ol>
+</li>
+<li>查<ol>
+<li>select </li>
+<li>desc </li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>数据类型</p>
+<ul>
+<li>nmber type<ul>
+<li>整数</li>
+<li>浮点数</li>
+</ul>
+</li>
+<li>string type<ul>
+<li>char() </li>
+<li>varchar()</li>
+</ul>
+</li>
+<li>text type<ul>
+<li>文本类型</li>
+</ul>
+</li>
+<li>json type </li>
+</ul>
+</li>
+<li><p>表里的某个字段的约束</p>
+<ul>
+<li>not null</li>
+<li>不可重复</li>
+<li>自增</li>
+<li>主键  </li>
+<li>外键</li>
+<li>索引</li>
+</ul>
+</li>
+</ol>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><blockquote>
+<p> GRANT语句为MySQL用户帐户和角色分配特权和角色<br>blog库只允许blog客户端连接，在对这个blog,实现增删改查（权限）</p>
+</blockquote>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ol>
+<li>创建用户</li>
+</ol>
+<pre><code class="term">语法： create user  ‘用户名’@‘客户端地址｜%’ identified  by &#39;用户密码&#39;
+create user  blog@&#39;192.168.212.10&#39; identified  by &#39;password&#39;
+create user  blog@&#39;192.168.212.%&#39; identified by &#39;password&#39;
+create user  blog@&#39;%&#39; identified by &#39;password&#39;
+</code></pre>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><blockquote>
+<ul>
+<li>SELECT </li>
+<li>INSERT, </li>
+<li>UPDATE,</li>
+<li>DROP,</li>
+<li>DELETE </li>
+<li>CREATE</li>
+<li>ALTER</li>
+</ul>
+</blockquote>
+<p>GRANT语句为MySQL用户帐户和角色分配特权和角色</p>
+<pre><code class="term">语法： GRANT [权限] ON  [database_name]  TO [user@客户端地址]
+GRANT ALL  ON *.*   TO blog@&#39;%&#39;; 
+
+选项权限：
+&gt; SELECT, INSERT, UPDATE, DROP,DELETE,CREATE,ALTER
+</code></pre>
+<p>案例1： 用户dev01对数据库只有select的权限</p>
+<pre><code class="term">1. 创建用户
+root@localhost [(none)]&gt;create user dev01@&#39;192.168.212.135&#39; identified  by &#39;dev@123&#39;;
+Query OK, 0 rows affected (0.01 sec)
+2. 授权
+root@localhost [(none)]&gt;grant  select ON *.* TO dev01@&#39;192.168.212.135&#39;;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+<p>案例1： 用户dev02对数据库只有select, update, create,insetr的权限</p>
+<pre><code class="term">1. 创建用户
+root@localhost [(none)]&gt;create user dev02@&#39;192.168.212.%&#39; identified  by &#39;dev@123&#39;;
+Query OK, 0 rows affected (0.01 sec)
+2. 授权
+root@localhost [(none)]&gt;grant  select, update, create, insert ON *.* TO dev02@&#39;192.168.212.%&#39;;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+<ol start="2">
+<li>回收授权（撤销）</li>
+</ol>
+<pre><code class="term">语法： REVOKE  [权限]  ON [db_name]  TO   [用户]&#39;;
+root@localhost [(none)]&gt;revoke  delete,drop  ON *.* From  blog@&#39;%&#39;;
+</code></pre>
+<p>2.1 案例： 回收权限</p>
+<pre><code class="term">root@localhost [(none)]&gt;revoke  delete,drop  ON *.* From  blog@&#39;%&#39;;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+<ol start="3">
+<li>刷新表</li>
+</ol>
+<pre><code class="term">FLUSH tables
+
+FLUSH PRIVILEGES    #刷新权限
+</code></pre>
+<p>案例：现在需要用户连接数据库blog</p>
+<pre><code>grant all  on *.* to  a@&#39;192.168.212.%&#39; identified  by &quot;&quot;
+</code></pre>

@@ -1,0 +1,362 @@
+<hr>
+<p>title: mysql Data_type<br>date: 2024-01-10 14:29:27<br>tags: MySQL<br>categories: MySQL</p>
+<hr>
+<h1 id="mysql-数据类型"><a href="#mysql-数据类型" class="headerlink" title="mysql 数据类型"></a>mysql 数据类型</h1><h2 id="修改字段名称及类型"><a href="#修改字段名称及类型" class="headerlink" title="修改字段名称及类型"></a>修改字段名称及类型</h2><pre><code class="term">root@localhost [y36]&gt;alter table  student  CHANGE c sex CHAR(5);
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+</code></pre>
+<h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">存储（字节）</th>
+<th align="left">最小值 有符号</th>
+<th align="left">最小值 无符号</th>
+<th align="left">最大值 有符号</th>
+<th align="left">最大值 无符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>TINYINT</code></td>
+<td align="left">1</td>
+<td align="left"><code>-128</code></td>
+<td align="left"><code>0</code></td>
+<td align="left"><code>127</code></td>
+<td align="left"><code>255</code></td>
+</tr>
+<tr>
+<td align="left"><code>SMALLINT</code></td>
+<td align="left">2</td>
+<td align="left"><code>-32768</code></td>
+<td align="left"><code>0</code></td>
+<td align="left"><code>32767</code></td>
+<td align="left"><code>65535</code></td>
+</tr>
+<tr>
+<td align="left"><code>MEDIUMINT</code></td>
+<td align="left">3</td>
+<td align="left"><code>-8388608</code></td>
+<td align="left"><code>0</code></td>
+<td align="left"><code>8388607</code></td>
+<td align="left"><code>16777215</code></td>
+</tr>
+<tr>
+<td align="left"><code>INT</code></td>
+<td align="left">4</td>
+<td align="left"><code>-2147483648</code></td>
+<td align="left"><code>0</code></td>
+<td align="left"><code>2147483647</code></td>
+<td align="left"><code>4294967295</code></td>
+</tr>
+<tr>
+<td align="left"><code>BIGINT</code></td>
+<td align="left">8</td>
+<td align="left"><code>-263</code></td>
+<td align="left"><code>0</code></td>
+<td align="left"><code>263-1</code></td>
+<td align="left"><code>264-1</code></td>
+</tr>
+</tbody></table>
+<p>案例： 根据数据类型</p>
+<pre><code class="term">root@localhost [y36]&gt;create  table student(id int,name char(50),age int, sex char(5), SFID char(50), tel char(11));
+
+root@localhost [y36]&gt;desc  student;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
+| age   | int      | YES  |     | NULL    |       |
+| sex   | char(5)  | YES  |     | NULL    |       |
+| SFID  | char(50) | YES  |     | NULL    |       |
+| tel   | char(11) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+root@localhost [y36]&gt;insert into  student (id,name,age,sex,SFID,tel)values(1,&#39;张三&#39;,10,&#39;男&#39;,&#39;140427190000202020&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;select * from  y36.student;
++------+--------+------+------+--------------------+-------------+
+| id   | name   | age  | sex  | SFID               | tel         |
++------+--------+------+------+--------------------+-------------+
+|    1 | 张三   |   10 | 男   | 140427190000202020 | 18301002516 |
++------+--------+------+------+--------------------+-------------+
+1 row in set (0.00 sec)
+</code></pre>
+<h2 id="浮点数类型："><a href="#浮点数类型：" class="headerlink" title="浮点数类型："></a>浮点数类型：</h2><ul>
+<li><code>FLOAT</code>：单精度浮点数，适用于表示小数值。</li>
+<li><code>DOUBLE</code>：双精度浮点数，适用于表示更大或更精确的小数值。</li>
+</ul>
+<h2 id="字符串类型："><a href="#字符串类型：" class="headerlink" title="字符串类型："></a>字符串类型：</h2><ul>
+<li><code>CHAR</code>：固定长度的字符，适用于存储定长字符串。</li>
+<li><code>VARCHAR</code>：可变长度的字符，适用于存储不定长字符串。</li>
+<li><code>TEXT</code>：用于存储较大文本数据的类型。</li>
+</ul>
+<h2 id="4-日期和时间类型："><a href="#4-日期和时间类型：" class="headerlink" title="4. 日期和时间类型："></a>4. 日期和时间类型：</h2><p><code>DATE：</code> 用于存储日期，格式为YYYY-MM-DD。</p>
+<p><code>TIME：</code> 用于存储时间，格式为HH:MM:SS。</p>
+<p><code>DATETIME：</code> 用于存储日期和时间，格式为YYYY-MM-DD HH:MM:SS。</p>
+<p><code>TIMESTAMP：</code> 类似于DATETIME，但在写入时会自动更新为当前时间。</p>
+<p>案例：</p>
+<pre><code class="term">&lt;font color=red&gt;错误的语法&lt;/font&gt;
+root@localhost [(none)]&gt;insert  into  y36.t1(t,dt,ts)values(&#39;1000-01-01&#39;,&#39;2022-12-14 11:44:00&#39;,&#39;2038-01-19 03:14:07.499999&#39;);
+ERROR 1292 (22007): Incorrect time value: &#39;1000-01-01&#39; for column &#39;t&#39; at row 1
+
+root@localhost [(none)]&gt;insert  into  y36.t1(dt,ts)values(&#39;2022-12-14 11:44:00&#39;,&#39;2038-01-19 03:14:07.499999&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into  y36.t1(t,dt,ts)values(&#39;11:44:00&#39;,&#39;2022-12-14 11:44:00&#39;,&#39;2038-01-19 03:14:07.499999&#39;);
+Query OK, 1 row affected (0.03 sec)
+
+root@localhost [(none)]&gt;insert  into  y36.t1(t,dt,ts)values(&#39;11:44:00&#39;,&#39;2022-12-14 11:44:00&#39;,&#39;2038-01-19 03:14:07.499999&#39;);^C
+root@localhost [(none)]&gt;select * from y36.t1;
++--------------+----------------------------+---------------------+
+| t            | dt                         | ts                  |
++--------------+----------------------------+---------------------+
+| NULL         | 2022-12-14 11:44:00.000000 | 2038-01-19 03:14:07 |
+| 11:44:00.000 | 2022-12-14 11:44:00.000000 | 2038-01-19 03:14:07 |
++--------------+----------------------------+---------------------+
+</code></pre>
+<p>案例2： 在原有的表中添加日期时间的字段</p>
+<pre><code class="trem"># 修改表的的字段（添加一个字段）
+root@localhost [(none)]&gt;alter  table y36.student add  dt DATETIME;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+# 更新表里的数据
+root@localhost [(none)]&gt;update  y36.student set dt=&#39;2023-12-14 12:02:20&#39; where id=1;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+# 验证
+root@localhost [(none)]&gt;select  * from y36.student;
++------+--------+------+------+--------------------+-------------+---------------------+
+| id   | name   | age  | sex  | SFID               | tel         | dt                  |
++------+--------+------+------+--------------------+-------------+---------------------+
+|    1 | 张三   |   10 | 男   | 140427190000202020 | 18301002516 | 2023-12-14 12:02:20 |
++------+--------+------+------+--------------------+-------------+---------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<h2 id="获取当前"><a href="#获取当前" class="headerlink" title="获取当前"></a>获取当前</h2><pre><code class="term">root@localhost [y36]&gt;desc t1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| t     | time(3)     | YES  |     | NULL    |       |
+| dt    | datetime(6) | YES  |     | NULL    |       |
+| ts    | timestamp   | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+root@localhost [y36]&gt;insert into  t1(t,dt,ts)values(CURTiME(),NOW(),CURDATE());
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [y36]&gt;select * from  t1;
++--------------+----------------------------+---------------------+
+| t            | dt                         | ts                  |
++--------------+----------------------------+---------------------+
+| NULL         | 2022-12-14 11:44:00.000000 | 2038-01-19 03:14:07 |
+| 11:44:00.000 | 2022-12-14 11:44:00.000000 | 2038-01-19 03:14:07 |
+| 14:35:38.000 | 2023-12-14 14:35:38.000000 | 2023-12-14 00:00:00 |
++--------------+----------------------------+---------------------+
+3 rows in set (0.01 sec)
+</code></pre>
+<h2 id="回顾："><a href="#回顾：" class="headerlink" title="回顾："></a>回顾：</h2><p>SQL 的基础语法<br>创建表<br>插入表中的数据类型</p>
+<ul>
+<li>数字类型<ol>
+<li>整数类型<ol>
+<li>int() </li>
+</ol>
+</li>
+<li>浮点数类型<ol>
+<li>float() </li>
+<li>double()</li>
+</ol>
+</li>
+</ol>
+</li>
+<li> 字符类型 （String type）</li>
+</ul>
+<ol>
+<li>char()  类型 </li>
+<li>varchar()</li>
+<li>text</li>
+</ol>
+<ul>
+<li> 时间类型 </li>
+</ul>
+<ol>
+<li>time</li>
+<li>date</li>
+<li>datetime </li>
+<li>timestamp</li>
+</ol>
+<h1 id="条件约束"><a href="#条件约束" class="headerlink" title="条件约束"></a>条件约束</h1><p>数据完整性约束用于确保数据库中数据的合法性和一致性，防止不符合预期的数据被插入或修改。以下是常见的数据完整性约束：</p>
+<ol>
+<li><p><strong>NOT NULL：</strong></p>
+<ul>
+<li><code>NOT NULL</code> 约束用于确保列中的值不能为空值（NULL）。</li>
+<li>这意味着在插入或更新数据时，必须为该列提供一个非空值，否则会抛出错误。</li>
+<li>示例：<code>name VARCHAR(50) NOT NULL</code> 表示 <code>name</code> 列不能包含空值。</li>
+</ul>
+</li>
+<li><p><strong>UNIQUE：</strong></p>
+<ul>
+<li><code>UNIQUE</code> 约束用于确保列中的值是唯一的，即不允许有重复的值。</li>
+<li>可以在一个或多个列上创建 <code>UNIQUE</code> 约束。</li>
+<li>示例：<code>email VARCHAR(100) UNIQUE</code> 表示 <code>email</code> 列中的值必须是唯一的，不能有重复的电子邮件地址。</li>
+</ul>
+</li>
+<li><p><strong>PRIMARY KEY：</strong></p>
+<ul>
+<li><code>PRIMARY KEY</code> 约束用于定义表中的主键，确保每一行数据都有唯一的标识。</li>
+<li>一个表只能有一个主键，主键可以由一个或多个列组成。</li>
+<li>示例：<code>student_id INT PRIMARY KEY</code> 表示 <code>student_id</code> 列是主键，用于唯一标识每个学生。</li>
+</ul>
+</li>
+<li><p><strong>FOREIGN KEY：</strong></p>
+<ul>
+<li><code>FOREIGN KEY</code> 约束用于建立表之间的关联，确保一个表的数据与另一个表的数据保持一致。</li>
+<li>外键引用另一个表的主键，用于建立父表和子表之间的关系。</li>
+<li>示例：<code>course_id INT, FOREIGN KEY (course_id) REFERENCES Courses(course_id)</code> 表示 <code>course_id</code> 列是外键，引用了 <code>Courses</code> 表的主键 <code>course_id</code>。</li>
+</ul>
+</li>
+<li><p><strong>CHECK：</strong></p>
+<ul>
+<li><code>CHECK</code> 约束用于限制列中的值必须满足指定的条件。</li>
+<li>可以使用表达式来定义 CHECK 约束，如果表达式为假，则不允许插入或更新数据。</li>
+<li>示例：<code>age INT CHECK (age &gt;= 0)</code> 表示 <code>age</code> 列的值必须大于等于0。</li>
+</ul>
+</li>
+</ol>
+<p>案例：不能为空值</p>
+<pre><code class="term">
+create table y36.class2(id int not null, name char(20) not null, age int(3) not null, sex char(2) not null, SFid  char(20) not null, tel char(11) not null, )
+
+root@localhost [(none)]&gt;desc y36.class2;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | NO   |     | NULL    |       |
+| name  | char(20) | NO   |     | NULL    |       |
+| age   | int      | NO   |     | NULL    |       |
+| sex   | char(2)  | NO   |     | NULL    |       |
+| SFid  | char(20) | NO   |     | NULL    |       |
+| tel   | char(11) | NO   |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+</code></pre>
+<p>案例2： 用户不需要输入ID<br>ID 列设置为自增</p>
+<pre><code class="term">root@localhost [(none)]&gt;CREATE TABLE y36.class3(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NAME CHAR(20) NOT NULL,
+    age INT(3) NOT NULL,
+    sex CHAR(2) NOT NULL,
+    SFid CHAR(20) NOT NULL,
+    tel CHAR(11) NOT NULL
+);
+
+# 插入数据
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.02 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.01 sec)
+</code></pre>
+<p>案例2： SFid 不能出现重复</p>
+<pre><code class="term"># 修改表中SFid字段的属性
+root@localhost [(none)]&gt;alter table y36.class3 modify column SFid  char(20)  not null UNIQUE;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+# 查看表的格式
+root@localhost [(none)]&gt;desc  y36.class3
+    -&gt; ;
++----------+----------+------+-----+---------+----------------+
+| Field    | Type     | Null | Key | Default | Extra          |
++----------+----------+------+-----+---------+----------------+
+| id       | int      | NO   | PRI | NULL    | auto_increment |
+| name     | char(20) | NO   |     | NULL    |                |
+| age      | int      | NO   |     | NULL    |                |
+| sex      | char(2)  | NO   |     | NULL    |                |
+| SFid     | char(20) | YES  | UNI | NULL    |                |
+| tel      | char(11) | NO   |     | NULL    |                |
+| datetime | datetime | YES  |     | NULL    |                |
++----------+----------+------+-----+---------+----------------+
+7 rows in set (0.01 sec)
+
+root@localhost [(none)]&gt;insert  into y36.class3(name,age,sex,SFid,tel)values(&#39;lisi&#39;,18,&#39;m&#39;,&#39;14041900024100111&#39;,&#39;18301002516&#39;);
+Query OK, 1 row affected (0.82 sec)
+</code></pre>
+<h2 id="设置条件"><a href="#设置条件" class="headerlink" title="设置条件"></a>设置条件</h2><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="创建表的属性及约束条件"><a href="#创建表的属性及约束条件" class="headerlink" title="创建表的属性及约束条件"></a>创建表的属性及约束条件</h2><p>一、data_type</p>
+<blockquote>
+<p>data_type表示列定义中的数据类型。有关可用于指定列数据类型的语法的完整描述，以及有关每种类型属性的信息</p>
+</blockquote>
+<p>二、NOT NULL | NULL</p>
+<blockquote>
+<p>如果既没有指定NULL也没有指定NOT NULL，则该列将被视为已指定NULL。</p>
+</blockquote>
+<p>三、 AUTO_INCREMENT 自增</p>
+<blockquote>
+<p>整数或浮点列可以具有附加属性AUTO_INCREMENT。当您在索引的AUTO_INCREMENT列中插入NULL（推荐）或0的值时，该列将设置为下一个序列值。通常这是value+1，其中value是当前表中列的最大值。AUTO_INCREMENT序列以1开头</p>
+</blockquote>
+<p>四、主键 PRIMARY KEY</p>
+<blockquote>
+<p>一个唯一的索引，其中所有键列都必须定义为NOT NULL。如果它们没有被明确声明为NOT NULL，MySQL会隐式（和无声地）声明它们。一张桌子只能有一个PRIMARY KEY。PRIMARY KEY的名称始终为主PRIMARY，因此不能用作任何其他类型索引的名称。</p>
+</blockquote>
+<blockquote>
+<p>如果您没有PRIMARY KEY，并且应用程序在表中要求输入主PRIMARY KEY，MySQL将返回第一个具有noNULL列作为PRIMARY KEY的UNIQUE索引</p>
+</blockquote>
+<p>五、UNIQUE（字段中不能出现重复字段）</p>
+<blockquote>
+<p>UNIQUE索引创建一个约束，使得索引中的所有值都必须是不同的。如果您尝试添加具有与现有行匹配的键值的新行，则会出现错误。对于所有引擎，UNIQUE索引允许为可能包含NULL的列提供多个NULL值。</p>
+</blockquote>
+<p>六、外键(FOREIGN KEY)</p>
+<blockquote>
+<ul>
+<li>外键用于建立表之间的关系，它引用另一个表的主键，将两个表关联起来。</li>
+<li>外键通常位于一个表中，指向另一个表中的主键列，用于建立数据之间的关联。</li>
+<li>外键的作用是维护数据表之间的引用完整性，确保引用的数据存在于关联的表中。</li>
+<li>当在父表中插入、更新或删除记录时，外键可用于自动处理相关联的子表的操作，以保持数据一致性。</li>
+</ul>
+</blockquote>
+<p>七、<strong>索引（Index）：</strong></p>
+<blockquote>
+<ul>
+<li>索引用于加快数据库查询操作，通过创建一个特定列或列组的快速访问结构，从而提高查询性能。</li>
+<li>索引允许数据库更快地找到满足特定条件的行，而不需要扫描整个表。</li>
+<li>索引可以单独创建，也可以在表的创建过程中定义。</li>
+<li>尽管索引提高了查询速度，但同时也会增加写入操作的开销，因为每次插入、更新或删除数据时，都需要维护索引的正确性。</li>
+</ul>
+</blockquote>
+<h1 id="主键-外键和索引"><a href="#主键-外键和索引" class="headerlink" title="主键 外键和索引"></a>主键 外键和索引</h1><p><img src="/Users/abbott/WorkList/blog/source/_posts/mysql/data_type/image-1.png" alt="Alt text"></p>
+<p>案例：</p>
+<pre><code class="term">create database y37;
+CREATE TABLE y37.student (
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+create  table  y37.stu_info(
+    id INT,
+    student_id INT,
+    INDEX stude_id (student_id),
+    FOREIGN KEY (student_id)
+        REFERENCES student(id)
+        ON DELETE CASCADE
+);
+</code></pre>
